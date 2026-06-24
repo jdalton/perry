@@ -46,3 +46,11 @@ pub extern "C" fn perry_ffi_spawn_blocking_with_reactor(
 ) {
     invoke(ctx);
 }
+
+// The transitive `perry-ext-net` dependency references
+// `perry_ffi_spawn_async` (the async bridge normally provided by the host
+// stdlib/runtime archive, absent from a unit-test binary). None of the
+// http-server conversion / value tests touch the async runtime, so a no-op
+// stub lets the test binary link without pulling in the staticlib.
+#[no_mangle]
+pub extern "C" fn perry_ffi_spawn_async(_ctx: *mut c_void) {}

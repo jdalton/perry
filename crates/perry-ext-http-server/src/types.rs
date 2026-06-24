@@ -252,15 +252,18 @@ pub fn jsvalue_to_body_bytes(value: f64) -> Option<Vec<u8>> {
     // size, so the length was preserved) but indexed the data from
     // `ptr + sizeof(StringHeader)` — past the actual bytes — so the
     // wire body was all zeros (#1124 repro). Probe the runtime's
-    // `BUFFER_REGISTRY` first to pick the correct layout; fall back
-    // to `StringHeader` only for non-buffer pointer-tagged values
-    // (the existing string-body path still has to work via this
-    // branch when the caller already pre-strung a value into the
-    // string-tag slot, e.g. some chunked `res.write(stringValue)`
-    // call sites).
+    // `BUFFER_REGISTRY` first to pick the correct `BufferHeader`
+    // layout for real Buffers / Uint8Arrays.
     if v.is_pointer() {
         let bits = value.to_bits();
         let raw = (bits & PTR_MASK) as i64;
+        // Small-handle cutoff: a sub-0x100000 payload is a registry
+        // handle (fetch/zlib/proxy/...), not a heap pointer — never
+        // dereference it. (`value < 0x100000` guideline; subsumes the
+        // null check.)
+        if (raw as u64) < 0x100000 {
+            return None;
+        }
         // SAFETY: `js_buffer_is_buffer` is a C-exposed registry check
         // that handles null / sub-0x1000 garbage internally.
         let is_buffer = unsafe { js_buffer_is_buffer(raw) } != 0;
@@ -275,19 +278,22 @@ pub fn jsvalue_to_body_bytes(value: f64) -> Option<Vec<u8>> {
                 }
             }
         }
-        // Non-buffer pointer — try the string-shaped header (shared
-        // layout for runtime strings the codegen NaN-boxed as
-        // POINTER_TAG instead of STRING_TAG).
-        let ptr = raw as *mut StringHeader;
-        if !ptr.is_null() {
-            if let Some(b) = read_string_header_bytes(ptr) {
-                return Some(b);
-            }
-        }
-        // Fallback: stringify (objects → JSON).
+        // #1781 — a non-buffer `POINTER_TAG` value is NEVER a string:
+        // the runtime tags every JS string with `STRING_TAG` /
+        // `SHORT_STRING_TAG` (handled by the `is_any_string()` branch
+        // above), never `POINTER_TAG`. So a pointer that reaches here
+        // is a heap object / array / closure using the `ObjectHeader`
+        // layout. The old code reinterpreted it as a `StringHeader`
+        // and read `byte_len` bytes from `ptr + 20`, putting object
+        // metadata and adjacent heap onto the HTTP response body
+        // (`res.end({})` leak — the same class as the net crate's
+        // `socket.write({})` leak, #1131). Do NOT read it as a header.
+        // Instead route through `js_json_stringify` (the deliberate
+        // `res.end(obj)` → JSON leniency), which is memory-safe.
         if let Some(s) = jsvalue_to_owned_string(value) {
             return Some(s.into_bytes());
         }
+        return None;
     }
     if v.is_number() {
         return Some(v.to_number().to_string().into_bytes());
@@ -431,6 +437,57 @@ mod tests {
         assert!(
             JsValue::from_bits(parsed.opts.to_bits()).is_pointer(),
             "the pointer arg should be retained as opts, not dropped"
+        );
+    }
+
+    /// #1781 / #1131 — a non-buffer heap object passed as a response body
+    /// (`res.end({})` / `res.write(obj)`) must NOT be reinterpreted through
+    /// the `StringHeader` layout. A JS string carries `STRING_TAG` /
+    /// `SHORT_STRING_TAG` and is handled by the `is_any_string()` branch;
+    /// the only thing that reaches the `POINTER_TAG` branch is an
+    /// `ObjectHeader`/`ArrayHeader`-shaped value. The pre-fix code read
+    /// such a pointer as a `StringHeader` and copied `byte_len` (actually
+    /// the object's *capacity* slot) bytes from `ptr + 20` — past the real
+    /// header, leaking object metadata and adjacent heap onto the wire
+    /// (the twin of the net crate's `socket.write({})` leak). It must now
+    /// route through the memory-safe JSON-stringify path: an empty array
+    /// serializes to `[]`, never raw header bytes.
+    #[test]
+    fn body_bytes_rejects_raw_object_header_read() {
+        // A real empty array stands in for any non-closure, non-buffer heap
+        // object — same fixture the listen test uses for a POINTER_TAG value.
+        let arr = unsafe { perry_ffi::js_array_alloc(0) };
+        let obj_v = JsValue::from_object_ptr(arr as *mut u8);
+        assert!(obj_v.is_pointer(), "fixture must be a POINTER_TAG value");
+
+        let bytes = jsvalue_to_body_bytes(f64::from_bits(obj_v.bits()));
+        // Memory-safe JSON, not a raw `StringHeader` read of the array's
+        // capacity slot. `[]` proves the object went through `js_json_stringify`.
+        assert_eq!(
+            bytes.as_deref(),
+            Some(&b"[]"[..]),
+            "a heap object body must JSON-stringify, never be read as a StringHeader"
+        );
+    }
+
+    /// The fix must not regress the legitimate body paths: a heap string,
+    /// a `null`/`undefined` (no body), and a number still convert as before.
+    #[test]
+    fn body_bytes_preserves_string_null_and_number() {
+        // Heap string (length > 5 → STRING_TAG) round-trips its bytes.
+        let s = perry_ffi::alloc_string("hello-body");
+        let sv = JsValue::from_string_ptr(s.as_raw());
+        assert_eq!(
+            jsvalue_to_body_bytes(f64::from_bits(sv.bits())).as_deref(),
+            Some(&b"hello-body"[..])
+        );
+        // null / undefined → no body.
+        assert!(jsvalue_to_body_bytes(f64::from_bits(JsValue::NULL.bits())).is_none());
+        assert!(jsvalue_to_body_bytes(f64::from_bits(JsValue::UNDEFINED.bits())).is_none());
+        // A number stringifies (the existing lenient body behavior).
+        assert_eq!(
+            jsvalue_to_body_bytes(f64::from_bits(JsValue::from_number(42.0).bits())).as_deref(),
+            Some(&b"42"[..])
         );
     }
 }
