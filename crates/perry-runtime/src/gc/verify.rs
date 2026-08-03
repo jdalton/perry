@@ -144,12 +144,67 @@ pub(super) unsafe fn remember_evacuated_old_copy_young_slots(
         return;
     }
     visit_gc_rewrite_slots(header, |slot| unsafe {
+        if (slot.slot as usize) >> 47 != 0 {
+            diag_dump_bad_slot(header, slot.slot);
+            return;
+        }
         if crate::weakref::is_weak_target_trace_slot(header, slot.slot) {
             return;
         }
         slot.record_layout_read();
         remember_evacuated_old_to_young_slot(sticky, header, slot.slot);
     });
+}
+
+#[cold]
+#[allow(clippy::print_stderr)]
+pub(super) unsafe fn diag_dump_object(tag: &str, header: *mut GcHeader) {
+    let user = (header as *mut u8).add(GC_HEADER_SIZE);
+    let ot = (*header).obj_type;
+    let name = crate::gc::gc_type_info(ot).map_or("?", |i| i.name);
+    let mut words = [0u64; 8];
+    for (i, w) in words.iter_mut().enumerate() {
+        *w = *(user as *const u64).add(i);
+    }
+    let mut before = [0u64; 2];
+    for (i, w) in before.iter_mut().enumerate() {
+        *w = *((header as usize - 16 + i * 8) as *const u64);
+    }
+    eprintln!(
+        "[GCDIAG:{}] header={:#x} user={:#x} obj_type={} ({}) flags={:#x} size={} reserved={:#x} before=[{:#x},{:#x}] payload=[{:#x},{:#x},{:#x},{:#x},{:#x},{:#x},{:#x},{:#x}] reg_set={} reg_map={} gen={:?} space={:?} plausible_arena={} plausible_malloc={}\n{}",
+        tag,
+        header as usize,
+        user as usize,
+        ot,
+        name,
+        (*header).gc_flags,
+        (*header).size,
+        (*header)._reserved,
+        before[0],
+        before[1],
+        words[0],
+        words[1],
+        words[2],
+        words[3],
+        words[4],
+        words[5],
+        words[6],
+        words[7],
+        crate::set::is_registered_set(user as usize),
+        crate::map::is_registered_map(user as usize),
+        crate::arena::classify_heap_generation(user as usize),
+        crate::arena::classify_heap_space(user as usize),
+        plausible_gc_header(header, true),
+        plausible_gc_header(header, false),
+        std::backtrace::Backtrace::force_capture(),
+    );
+}
+
+#[cold]
+#[allow(clippy::print_stderr)]
+unsafe fn diag_dump_bad_slot(header: *mut GcHeader, slot: *mut u64) {
+    eprintln!("[GCDIAG] bad slot={:#x}", slot as usize);
+    diag_dump_object("rebuild", header);
 }
 
 /// Post-cycle remembered-set repair (#5029): after `remembered_set_clear` +

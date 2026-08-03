@@ -581,6 +581,11 @@ impl CopyingNurseryCollector {
             }
             return old_user as usize;
         }
+        if matches!((*header).obj_type, crate::gc::GC_TYPE_MAP | crate::gc::GC_TYPE_SET)
+            && total != GC_HEADER_SIZE + 16
+        {
+            super::verify::diag_dump_object("fromspace", header);
+        }
         let payload = total - GC_HEADER_SIZE;
         let prior_age = copied_survival_age((*header)._reserved, flags);
         let next_age = prior_age.saturating_add(1);
