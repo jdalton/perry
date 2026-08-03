@@ -135,6 +135,8 @@ to collapse that detection latency. **All are default-off and inert when off.**
 | `PERRY_GC_PROTECT_FROMSPACE_DEPTH=N` | How many retired page-sets stay quarantined (default `4`, minimum `1`). Expired sets are restored to read/write and **recycled back into Eden**, never freed, so the quarantine is a ring: steady-state footprint is bounded by `N × from-space bytes` and no `mprotect`'d page is ever handed to the system allocator. |
 | `PERRY_GC_ZEAL=1` | Force an evacuating minor at **every GC safepoint** — loop back-edge polls and the outermost microtask-pump boundary — instead of only when nursery pressure is due. Implies `PERRY_GC_FORCE_EVACUATE`, so survivors actually move — but an explicit `PERRY_GEN_GC_EVACUATE=0` still wins, and with it set zeal moves nothing and therefore surfaces nothing. Zeal also does **not** bypass `gc_safepoint_moving_minor`'s entry guards (in-allocation, suppressed, unsafe FFI zone, non-zero root-lock depth, budgeted cycle): a safepoint reached in any of those states still declines to collect. Modelled on V8 `--stress-scavenge` / SpiderMonkey `gcZeal`. Composes with the two above; that pairing is what turns a rooting bug into an immediate precise fault. |
 | `PERRY_GC_FROMSPACE_SCAN_ABORT=1` | Abort on the **first** offending slot the whole-heap from-space scan finds, printing slot, holder, target (including the target's `obj_type`) and a collector backtrace. Now implies `PERRY_GC_FROMSPACE_SCAN=1`; previously it was silently inert on its own. |
+| `PERRY_GC_SCHEDULE_SEED=<u64>` | **Seeded GC-schedule fuzzing** — collect at a safepoint iff a deterministic pseudo-random function of the seed and a per-thread safepoint ordinal says so. The middle setting between normal pacing and zeal: enough extra collections to turn a rare "what was live when the collector ran" bug into a frequent one, and — because the schedule is a pure function of `(seed, counter)` — **a failing seed is a reproducer**. Implies `PERRY_GC_FORCE_EVACUATE` for the same reason zeal does. A value that does not parse as a `u64` reads as OFF, not as seed 0. |
+| `PERRY_GC_SCHEDULE_RATE=<0..1>` | Expected fraction of handled safepoints that collect (default `0.05`). Inert without a seed. `0` selects nothing but still installs the banner and reporters, so it is a clean control arm; `1` is zeal's density. Out-of-range values clamp. |
 
 These instruments have explicit caveats, because each has burned a prior
 investigation:
@@ -155,6 +157,21 @@ investigation:
   Those require the **compile-time** `PERRY_GC_MOVING_LOOP_POLLS=1` (default off
   since #7161). Without it, zeal only fires at event-loop boundaries and a
   compute-only loop never collects at all. Compile *and* run with the poll opt-in.
+- **`PERRY_GC_SCHEDULE_SEED`'s determinism is per-thread, and that is the honest
+  scope.** The safepoint counter is thread-local: no wall clock, no address, no
+  thread identity enters the decision, so a **single-threaded** program replays
+  a seed exactly. A `perry/thread` program gets a deterministic schedule *per
+  thread given that thread's own safepoint sequence*, but nothing makes the OS
+  schedule that sequence identically twice, so a multi-threaded reproducer is
+  only as reproducible as its threading. A global counter would be strictly
+  worse — it would make even a single thread's schedule depend on interleaving.
+  Report which case you measured.
+- **A clean sweep means nothing without a safepoint count.** The mode prints
+  `[gc-schedule] done: seed=… safepoints=… scheduled_collections=…` at exit, and
+  `scripts/gc_schedule_fuzz.sh` refuses to call a sweep clean when every run
+  reported zero safepoints — the usual cause being a binary compiled without
+  `PERRY_GC_MOVING_LOOP_POLLS=1`, which has no in-loop safepoints for a schedule
+  to select.
 - **Page protection is Unix-only.** `mprotect` / `sigaction` / `sysconf` are not
   exposed by the `libc` crate on `x86_64-pc-windows-msvc`, a target
   `perry-runtime` is genuinely built for. On non-Unix hosts `=1` degrades to

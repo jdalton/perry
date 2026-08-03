@@ -93,9 +93,14 @@ mod verify;
 /// the rewrite pass own root enumeration. Debug-only
 /// (`PERRY_GC_FROMSPACE_SCAN=1`).
 mod fromspace_scan;
+/// #7154 tooling: the middle setting between normal pacing and zeal — collect on
+/// a deterministic pseudo-random schedule derived from a seed, so a failing seed
+/// is a reproducer. Debug-only (`PERRY_GC_SCHEDULE_SEED=<u64>`).
+pub(crate) mod schedule;
 /// #7154 tooling: force an evacuating minor at every safepoint so an unrooted
 /// value dies/moves on its FIRST exposure. Debug-only (`PERRY_GC_ZEAL=1`).
 mod zeal;
+pub use schedule::{gc_schedule_forced_collections, gc_schedule_safepoints};
 pub use verify::*;
 pub use zeal::zeal_forced_collections;
 pub(crate) use zeal::{gc_zeal_enabled, note_zeal_forced_collection};
@@ -263,10 +268,14 @@ fn gc_force_evacuate_enabled() -> bool {
     // `PERRY_GC_ZEAL=1` implies forced evacuation (#7154 tooling): a zealous
     // minor that leaves survivors in place would move nothing, and "an unrooted
     // value moves on its first exposure" is the entire contract of zeal mode.
+    // `PERRY_GC_SCHEDULE_SEED` implies it for exactly the same reason — a
+    // scheduled minor that sweeps in place would make the mode a knob whose name
+    // promises relocation stress and whose effect is sweep pressure.
     // Still subject to `gen_gc_evacuate_enabled()` — an explicit
-    // `PERRY_GEN_GC_EVACUATE=0` wins, so the two knobs cannot silently disagree.
+    // `PERRY_GEN_GC_EVACUATE=0` wins, so the knobs cannot silently disagree.
     gen_gc_evacuate_enabled()
         && (gc_zeal_enabled()
+            || schedule::gc_schedule_enabled()
             || matches!(
                 std::env::var("PERRY_GC_FORCE_EVACUATE").as_deref(),
                 Ok("1") | Ok("on") | Ok("true")
@@ -766,6 +775,13 @@ pub extern "C" fn js_gc_init() {
 pub extern "C" fn js_gc_release_current_thread_collection_side_allocations() {
     crate::map::release_current_thread_map_side_allocations();
     crate::set::release_current_thread_set_side_allocations();
+    // Every process-exit path funnels through here — the generated exit
+    // epilogue, `js_process_exit`, and the fatal-path teardown — and perry's own
+    // exits call `_exit`, so `atexit` alone would not see them. Print the seeded
+    // GC-schedule summary here so a *passing* run still reports how many
+    // safepoints the schedule actually saw. Inert (one cached-`Option` load) and
+    // once-only when the mode is off.
+    schedule::report_exit_summary();
 }
 
 /// #5093: parse a boolean-ish env var by value (not mere presence): true for
