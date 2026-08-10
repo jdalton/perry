@@ -99,3 +99,18 @@ erasure regression itself. Verified by sabotage — marking the new field
 `#[serde(skip)]` turns the erasure test red.
 
 `cargo test -p perry`: 902 passed, 0 failed.
+
+**Review follow-ups.** The unrecognized-mode warning is now held on the policy
+and printed only once the run is known to be speaking, so it can no longer
+appear during `--format json`, in CI, with a piped stderr, or under `--quiet` —
+the precedence rules exist to keep those runs silent and the warning was
+escaping them. The notify interval is keyed to the announced VERSION, not only
+to time: throttling on time alone swallowed the next release whenever it landed
+inside the window, so a long interval set to stop nagging about one version also
+hid the version that fixed it. The interval comparison is unsigned, because
+`Duration::as_secs() as i64` can go negative and a negative interval reads as
+already-elapsed. And the cache write is safe against a second `perry`: each
+write uses its own temporary file rather than one shared name that two writers
+would rename over each other, and the read-modify-write pairs are serialized by
+a lock file, with a refresh re-reading the notice state inside the lock instead
+of using a value read before its request went out.
