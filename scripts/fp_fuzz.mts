@@ -13,10 +13,10 @@
 //   - identity round-trips (x + t - t, a*1, a/b*b)
 //
 // Usage:
-//   node scripts/fp_fuzz.mjs                          # 50 cases, random seed
-//   node scripts/fp_fuzz.mjs --count 500 --seed 42    # reproducible
-//   node scripts/fp_fuzz.mjs --verbose                # per-case markers
-//   node scripts/fp_fuzz.mjs --replay <fail_*.ts>     # rerun a saved case
+//   node scripts/fp_fuzz.mts                          # 50 cases, random seed
+//   node scripts/fp_fuzz.mts --count 500 --seed 42    # reproducible
+//   node scripts/fp_fuzz.mts --verbose                # per-case markers
+//   node scripts/fp_fuzz.mts --replay <fail_*.ts>     # rerun a saved case
 //
 // Failures are dumped under fp_fuzz_failures/ as the .ts source plus a
 // .report with both stdouts.
@@ -30,8 +30,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, "..");
 
-function parseArgs(argv) {
-  const out = {};
+function parseArgs(argv: string[]): Record<string, string> {
+  const out: Record<string, string> = {};
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (!a.startsWith("--")) continue;
@@ -56,9 +56,9 @@ const VERBOSE = args.verbose === "true" || args.verbose === "1";
 const REPLAY = args.replay;
 
 // mulberry32 — small reproducible PRNG.
-function mulberry32(seed) {
+function mulberry32(seed: number): () => number {
   let s = seed >>> 0;
-  return function () {
+  return function (): number {
     s = (s + 0x6d2b79f5) >>> 0;
     let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
@@ -69,7 +69,7 @@ function mulberry32(seed) {
 
 // Magnitudes spanning subnormal-adjacent through near-overflow, log-uniform
 // in the exponent so we hit the precision-loss regime where (a+b)+c ≠ a+(b+c).
-function randomFp(rng) {
+function randomFp(rng: () => number): number {
   const r = rng();
   if (r < 0.04) {
     const specials = [
@@ -92,7 +92,7 @@ function randomFp(rng) {
 // engines' parsers, reproduces the exact same f64 bits. Plain
 // Number#toString already round-trips for finite values; specials need
 // keyword form.
-function tsLit(x) {
+function tsLit(x: number): string {
   if (Object.is(x, -0)) return "-0";
   if (Number.isNaN(x)) return "NaN";
   if (x === Infinity) return "Infinity";
@@ -100,7 +100,7 @@ function tsLit(x) {
   return x.toString();
 }
 
-function genProgram(rng, seed, idx) {
+function genProgram(rng: () => number, seed: number, idx: number): string {
   const N = 6;
   const ops = Array.from({ length: N }, () => randomFp(rng));
   const lits = ops.map(tsLit).join(", ");
@@ -174,7 +174,17 @@ console.log("dot:", dot.toString());
 `;
 }
 
-function runOne({ idx, src, perryBin }) {
+interface RunResult {
+  ok: boolean;
+  reason?: string;
+  src?: string;
+  nodeStdout?: string;
+  perryStdout?: string;
+  nodeStderr?: string;
+  perryStderr?: string;
+}
+
+function runOne({ idx, src, perryBin }: { idx: number | string; src: string; perryBin: string }): RunResult {
   const tag = `fpfuzz_${process.pid}_${idx}`;
   const tsPath = join(tmpdir(), `${tag}.ts`);
   const binPath = join(tmpdir(), `${tag}.bin`);
@@ -213,10 +223,10 @@ function runOne({ idx, src, perryBin }) {
   return { ok: true };
 }
 
-function dumpFailure(failDir, seed, idx, result) {
+function dumpFailure(failDir: string, seed: number, idx: number, result: RunResult): string {
   if (!existsSync(failDir)) mkdirSync(failDir, { recursive: true });
   const base = join(failDir, `fail_${seed}_${idx}`);
-  writeFileSync(`${base}.ts`, result.src);
+  writeFileSync(`${base}.ts`, result.src ?? "");
   writeFileSync(
     `${base}.report`,
     JSON.stringify(
@@ -234,9 +244,9 @@ function dumpFailure(failDir, seed, idx, result) {
   return base;
 }
 
-function diffPreview(node, perry, maxLines = 12) {
-  const nlines = node.split("\n");
-  const plines = perry.split("\n");
+function diffPreview(node: string | undefined, perry: string | undefined, maxLines = 12): string {
+  const nlines = (node ?? "").split("\n");
+  const plines = (perry ?? "").split("\n");
   const out = [];
   const len = Math.max(nlines.length, plines.length);
   for (let i = 0; i < len && out.length < maxLines; i++) {
@@ -266,7 +276,7 @@ if (REPLAY) {
     console.log("--- node stdout ---");
     process.stdout.write(result.nodeStdout);
     console.log("--- perry stdout ---");
-    process.stdout.write(result.perryStdout);
+    process.stdout.write(result.perryStdout ?? "");
     console.log("--- diff ---");
     console.log(diffPreview(result.nodeStdout, result.perryStdout));
   }
@@ -279,7 +289,7 @@ console.log(`fp_fuzz: count=${COUNT} seed=${SEED} perry=${PERRY_BIN}`);
 const rng = mulberry32(SEED);
 let pass = 0;
 let fail = 0;
-const firstFailures = [];
+const firstFailures: (RunResult & { idx: number; base: string })[] = [];
 
 for (let i = 0; i < COUNT; i++) {
   const src = genProgram(rng, SEED, i);
@@ -305,7 +315,7 @@ console.log(`fp_fuzz: pass=${pass}/${COUNT} fail=${fail} seed=${SEED}`);
 
 if (fail > 0) {
   console.log(`\nFailure cases written to ${FAIL_DIR}/`);
-  console.log(`Replay any with: node scripts/fp_fuzz.mjs --replay <path>.ts\n`);
+  console.log(`Replay any with: node scripts/fp_fuzz.mts --replay <path>.ts\n`);
   for (const f of firstFailures) {
     console.log(`idx=${f.idx} reason=${f.reason} -> ${f.base}.ts`);
     if (f.reason === "output-diverged") {

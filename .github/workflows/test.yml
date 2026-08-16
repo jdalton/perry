@@ -198,6 +198,11 @@ jobs:
           # comparison scripts that job runs.
           node-version-file: .node-version
 
+      # Install devDependencies (typescript) for the script type check below.
+      # Uses the committed lockfile; ~1s with cache.
+      - name: Install npm devDependencies
+        run: npm ci --no-fund --no-audit
+
       - name: Validate benchmark artifact and fallback gates
         run: |
           python3 -m unittest discover -s tests -p 'test_benchmark_gate.py' -v
@@ -294,7 +299,16 @@ jobs:
       # newly-soaked upstream releases as advisories.
       - name: Binding upstream pins (lock-step)
         if: ${{ !cancelled() }}
-        run: node scripts/binding_pins.mjs --check
+        run: node scripts/binding_pins.mts --check
+
+      # Type-check the three converted scripts/**/*.mts files (binding_pins,
+      # fp_fuzz, node_compat_matrix) that were renamed from .mjs → .mts.
+      # Runs tsc --noEmit against scripts/tsconfig.json (strict mode) so the
+      # typing stays genuine rather than decorative: a script that compiles
+      # under Node's type-stripping but has real type errors fails CI here.
+      - name: Script .mts type check
+        if: ${{ !cancelled() }}
+        run: npx tsc --noEmit -p scripts/tsconfig.json
 
       # GC write-barrier store-site inventory: every raw heap-slot store in
       # perry-codegen / perry-runtime / perry-stdlib must be barriered or
