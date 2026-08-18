@@ -3,7 +3,6 @@
     "node": {
       "description": "Node.js — the pinned oracle for the builtin-module compatibility matrix (scripts/node_compat_matrix.mjs).",
       "version": "26.5.1",
-      "release": "node-dist",
       "repository": "github:nodejs/node",
       "distBaseUrl": "https://nodejs.org/dist",
       "notes": [
@@ -30,22 +29,21 @@
           "asset": "node-v26.5.1-linux-x64.tar.gz",
           "integrity": "sha512-gP57AfiLlsia+9NJ0G99EACtsN5l0nBrTfDkupo8lzhOfjLX9aZ9WIeOxYy+nGisfpnfUxOLNzz3AqIBRsWB9A=="
         },
-        "win-arm64": {
+        "win32-arm64": {
           "asset": "node-v26.5.1-win-arm64.zip",
           "integrity": "sha512-JJyyH4I6cHQq38iw1gWxcR7VVl+YBrRtGYVEgRH14OUJzSh1JT4RMddH/7Z9MMvgPDH04yFLnp9dHub5YQiWzw=="
         },
-        "win-x64": {
+        "win32-x64": {
           "asset": "node-v26.5.1-win-x64.zip",
           "integrity": "sha512-fkmRHaGoDDQeFPpnpasE7sGwF9xKy55Qg7E8wDrDsCymXKBh+I41nOu0Y/v1ectAHP+AOXv41ysVx/aTiWMPdg=="
         }
-      }
+      },
+      "origin": "node-dist"
     },
     "pnpm": {
       "description": "pnpm — the fleet's package manager.",
       "version": "11.15.1",
-      "packageManager": "pnpm",
       "repository": "github:pnpm/pnpm",
-      "release": "asset",
       "notes": [
         "Latest soaked pnpm — CI downloads + SRI-verifies (sha512) the pinned asset",
         "darwin-x64 has no SEA asset upstream; its pin is the npm registry tarball"
@@ -75,15 +73,16 @@
           "asset": "pnpm-linux-x64-musl.tar.gz",
           "integrity": "sha512-MQ2S67HyPgzj+rk2kvTiC9M62XUxuT5IGQiNsbI8fW+RI9haFjaA/cy+kL84TXi+g/MDok5+plxNUa80Tayjrw=="
         },
-        "win-arm64": {
+        "win32-arm64": {
           "asset": "pnpm-win32-arm64.zip",
           "integrity": "sha512-PiVRWhoYiNcdBXjPPT9I2XQQN+/BZmrgCTVuX5EuV4/1pcpEQlbHxvaU+XMf1nO+Bt9scV0Qi7kk09eBFfqlAA=="
         },
-        "win-x64": {
+        "win32-x64": {
           "asset": "pnpm-win32-x64.zip",
           "integrity": "sha512-U1SFdMLlhEgZ6zQpZU+Y0itOBqF7PPb42WScXJ0VY4aPDGmVjYI4r4g3EsOEkcVwMhPI0ISsACgZ9S2ixBHAMw=="
         }
-      }
+      },
+      "origin": "gh-asset"
     },
     "npm": {
       "notes": [
@@ -93,13 +92,13 @@
       "description": "npm — pinned, SRI-verified registry tarball; installed without self-update",
       "repository": "npm:npm",
       "version": "12.0.1",
-      "integrity": "sha512-L5T9i/YAQWQWqTS/xZxJkei/9zcu99hCeE4qi41IyBVV7mRQad3qc2JfuOktwmH+qwGI/V2rbCL+/UYxb1+RQA=="
+      "integrity": "sha512-L5T9i/YAQWQWqTS/xZxJkei/9zcu99hCeE4qi41IyBVV7mRQad3qc2JfuOktwmH+qwGI/V2rbCL+/UYxb1+RQA==",
+      "origin": "npm"
     },
     "sfw-free": {
       "description": "Socket Firewall (free tier) — malware gate on dep installs.",
       "version": "1.14.0",
       "repository": "github:SocketDev/sfw-free",
-      "release": "asset",
       "binaryName": "sfw",
       "notes": [
         "Used when SOCKET_SECURITY_KEY is not set",
@@ -123,7 +122,7 @@
           "asset": "sfw-free-linux-x86_64",
           "integrity": "sha512-hbEIhCOBuUjFDpNYDYFJ1j/IwIAiaxKHsGaQ4USOiwBK1y1poupGlIRiqtDkVj4P9x+9I0Gki3xoVq6C2nyBbw=="
         },
-        "win-x64": {
+        "win32-x64": {
           "asset": "sfw-free-windows-x86_64.exe",
           "integrity": "sha512-JDpo1DAN+YUYSQ8VlVNPWxbOLoxPjnKSFfyAX+BsnHh3UdURWhCj+vy/aPuA3qg46CZQMpWIlzxBw+l86y/zRw=="
         }
@@ -132,13 +131,13 @@
         "version": "1.14.0",
         "published": "2026-07-23",
         "removable": "2026-07-30"
-      }
+      },
+      "origin": "gh-asset"
     },
     "sfw-enterprise": {
       "description": "Socket Firewall (enterprise tier) — selected when SOCKET_SECURITY_KEY is set.",
       "version": "1.14.0",
       "repository": "github:SocketDev/firewall-release",
-      "release": "asset",
       "binaryName": "sfw",
       "notes": [
         "Used when SOCKET_SECURITY_KEY is set (the one env var every Socket product reads)",
@@ -162,7 +161,7 @@
           "asset": "sfw-linux-x86_64",
           "integrity": "sha512-9SbMTScglJUzlBrrAkJrQlPvSW35LmjZz/VRRIz0VOYCzWuV9tjAxSiXXHTXmnewrDa5ym/pxobYfc1CrnLX0w=="
         },
-        "win-x64": {
+        "win32-x64": {
           "asset": "sfw-windows-x86_64.exe",
           "integrity": "sha512-1SnvHJ04sQrRgMAVtGYri5rBysXFXc8PFPXT1kWBF79X6Xa+4uaJb3epJ6HW9HdRvnquDDgP/ZVj7wb6rglADQ=="
         }
@@ -171,13 +170,13 @@
         "version": "1.14.0",
         "published": "2026-07-23",
         "removable": "2026-07-30"
-      }
+      },
+      "origin": "gh-asset"
     },
     "zizmor": {
       "description": "GitHub Actions security linter — audits .github/ for workflow-injection / credential-leak patterns.",
       "version": "1.28.0",
       "repository": "github:zizmorcore/zizmor",
-      "release": "asset",
       "notes": [
         "Required: CI (blocks merges on medium+ findings)",
         "Installed by the setup-and-install composite; SRI-verified (sha512) per platform"
@@ -199,23 +198,33 @@
           "asset": "zizmor-x86_64-unknown-linux-gnu.tar.gz",
           "integrity": "sha512-j+SaxjjzZpol8oGl+5yoXPijSLnLaZQd/hjQQfQmxAJpoRJsRITzo52iYOd5E7Gf8YmEt455QjzjPO5eVaC6YQ=="
         },
-        "win-x64": {
+        "win32-x64": {
           "asset": "zizmor-x86_64-pc-windows-msvc.zip",
           "integrity": "sha512-YS/j35KOSOO32ZZSCeRgNFQmthYuGBb0hQ2puPimy9c0kSi3eYeINasLBuqEPzfqcoabxePZCG1byBMT4+dDbQ=="
         }
-      }
+      },
+      "origin": "gh-asset"
     },
     "agentshield": {
       "description": "Claude AI config security scanner (prompt injection, secrets)",
       "purl": "pkg:npm/ecc-agentshield@1.4.0",
-      "integrity": "sha512-R98OO1Ujyk2lezDLb+iQmMhF6FwTJCHajy3G4FCB6x7wkSTqR9f8+eAelC5KDzYDsGSbc0sOZvjXOOPRBtMpDg=="
+      "integrity": "sha512-R98OO1Ujyk2lezDLb+iQmMhF6FwTJCHajy3G4FCB6x7wkSTqR9f8+eAelC5KDzYDsGSbc0sOZvjXOOPRBtMpDg==",
+      "origin": "npm"
     },
     "skillspector": {
       "description": "NVIDIA's third-party-skill security scanner (LangGraph-based; YARA + AST + OSV.dev CVE lookups + optional LLM analysis). No PyPI release / no GH tags upstream — pinned to a full git SHA on main; CI reads this ref directly and applies the fleet SOAK_DAYS cutoff with uv --exclude-newer. Sibling to AgentShield: AgentShield audits the operator's .claude/ config; SkillSpector audits untrusted upstream skills before install.",
-      "release": "uv-project",
       "repository": "github:NVIDIA/skillspector",
       "version": "2eb844780ab163f01468ecf142c40a2ec0fcaec0",
-      "versionDate": "2026-05-18"
+      "versionDate": "2026-05-18",
+      "origin": "manager",
+      "manager": "uv"
+    },
+    "cargo-fixit": {
+      "origin": "cargo",
+      "crate": "cargo-fixit",
+      "binary": "cargo-fixit",
+      "version": "0.1.15",
+      "description": "cargo-fixit — automatic Cargo.toml fixup tool (cargo install --locked)"
     }
   }
 }
