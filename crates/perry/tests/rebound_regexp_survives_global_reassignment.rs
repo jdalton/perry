@@ -1,16 +1,19 @@
-//! Regression test: `identify_global_builtin_constructor` recognizing
-//! RegExp's constructor thunk in `is_global_builtin_func` is not enough on
-//! its own — the function also falls back to a `globalThis` singleton walk
-//! when the `direct` mapping (`#5989`) doesn't name the thunk. That walk
-//! fails the moment `globalThis.RegExp` itself is reassigned, exactly the
-//! way `#5989`'s `Date = createDate(Date)` case did before its direct
-//! mapping was added.
+//! Contract test: constructing through a RegExp reference captured BEFORE
+//! `globalThis.RegExp` is reassigned must still produce a real, correctly
+//! branded regex.
 //!
-//! This captures the ORIGINAL RegExp constructor into a variable BEFORE
-//! reassigning the global binding, then constructs through the captured
-//! reference. The singleton walk alone cannot recover "RegExp" once
-//! `globalThis.RegExp` no longer holds the original value; only the direct,
-//! `globalThis`-independent mapping can.
+//! `identify_global_builtin_constructor` has three tiers once a thunk is
+//! recognized in `is_global_builtin_func`: the `direct` mapping (`#5989`),
+//! the closure's own `.name` dynamic property checked against
+//! `GLOBAL_THIS_BUILTIN_CONSTRUCTORS`, and a `globalThis` singleton walk.
+//! `"RegExp"` is in `GLOBAL_THIS_BUILTIN_CONSTRUCTORS`, so the name-record
+//! tier already survives a reassigned global on its own — this test passes
+//! whether or not `direct` also names RegExp. Its `direct` arm (added
+//! alongside the `is_global_builtin_func` recognition, matching every
+//! sibling constructor already listed there) is correct and consistent with
+//! that architecture, but not independently exercisable through a realistic
+//! JS reproduction: the name-record tier always intercepts first for an
+//! unmodified constructor closure.
 
 use std::path::PathBuf;
 use std::process::Command;
