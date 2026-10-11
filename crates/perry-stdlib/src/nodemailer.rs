@@ -11,9 +11,9 @@
 //! cannot get a loop now REJECTS rather than quietly taking a second,
 //! never-exercised transport.
 
-use perry_runtime::{JSValue, ObjectHeader, Promise, js_promise_new_cross_thread};
+use perry_runtime::{js_promise_new_cross_thread, JSValue, ObjectHeader, Promise};
 
-use crate::common::{Handle, register_handle};
+use crate::common::{register_handle, Handle};
 
 mod turnloop_bridge;
 

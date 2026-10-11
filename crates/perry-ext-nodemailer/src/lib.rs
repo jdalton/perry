@@ -25,9 +25,9 @@
 //! info object resolved back to user code on success.
 
 use perry_ffi::{
-    Handle, JsPromise, JsValue, ObjectHeader, Promise, StringHeader, alloc_string,
-    build_object_shape, get_handle, js_object_alloc_with_shape, js_object_get_field,
-    js_object_set_field, register_handle,
+    alloc_string, build_object_shape, get_handle, js_object_alloc_with_shape, js_object_get_field,
+    js_object_set_field, register_handle, Handle, JsPromise, JsValue, ObjectHeader, Promise,
+    StringHeader,
 };
 
 mod dispatch_ext;
