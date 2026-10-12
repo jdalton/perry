@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-12T05:49:51.789068+00:00",
+  "updated_at": "2026-10-12T06:51:11.393892+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification #12007 exact-head validation",
+  "serial_build_owner": "/root/luna_verification #11519 exact-head validation",
   "next_steps": [
-    "Retire12285 candidate after upstream12447 closure; preserve evidence and release validation slot",
-    "Refresh active issue coverage before12007 validation",
-    "Validate12007 then11519;10739 full lint;12202 source review before compilation",
-    "Publish exact-head packets and consume actual PR numbers from local relay"
+    "Local publisher may create12007 draft from765a94d; cloud waits for actual PRnumber beforefragment",
+    "Serial11519 validation then10739 then12202; no overlapping builds",
+    "12202 Astra source review complete; bounded validation plan available",
+    "Publish completed packets immediately; consume actual PRnumbers from inbox at milestones"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -24,10 +24,9 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "12007 committed-head build/compiled acceptance/full lint",
-    "11519 committed-head build/compiled acceptance/full lint",
+    "11519 committed-head validation",
     "10739 full lint and classification",
-    "12202 only after source review; matching build/compiled acceptance/full lint"
+    "12202 bounded runtime validation/full lint"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -36,5 +35,8 @@
     "merged": 2,
     "remaining_to_good_state": 18
   },
-  "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)"
+  "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
+  "cargo_incremental": 0,
+  "publication_packet_12007": "publication/12007/metadata.json",
+  "latest_handoff": "4da2b0b"
 }

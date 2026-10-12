@@ -1,0 +1,10 @@
+{
+  "base": "bb154789600c483aaaf305bc6879ba2a62f71fc8",
+  "head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
+  "verdict": "CLEAR_TO_RESUME_VALIDATION",
+  "changed_file": "crates/perry-runtime/src/value/to_string_buffer_tests.rs",
+  "api_correction": "js_get_string_pointer_unified accepts f64 and returns i64, not f64. Explicit cast to *const StringHeader matches read-only text helper.",
+  "rooting": "Dispatcher result rooted as NaN-box f64 before unified conversion. SSO conversion may allocate; all receivers/encodings remain rooted. Materialized pointer immediately copied by text/str_from_string_header into Rust String with no intervening Perry GC allocation.",
+  "assertions": "All AB/SAB/DataView short+heap hex inputs still assert canonical object tags; Buffer shorthex still asserts6869. No product source or assertion weakening.",
+  "validation": "No build executed by reviewer; original E0308 failure must remain recorded, new exact head requires focused test and resulting artifact acceptance."
+}

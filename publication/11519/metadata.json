@@ -5,8 +5,8 @@
   "head": "jdalton:cloud/issue-11519-byte-family-tostring",
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-11519-byte-family-tostring",
-  "current_head": "bb154789600c483aaaf305bc6879ba2a62f71fc8",
-  "validated_final_head": null,
+  "current_head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
+  "validated_final_head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
   "issues": [
     11519
   ],
