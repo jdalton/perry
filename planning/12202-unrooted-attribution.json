@@ -1,0 +1,60 @@
+{
+  "issue": 12202,
+  "checked_at": "2026-10-12T10:41:32Z",
+  "comparison": {
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "candidate_final": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "candidate_changed_files": 32,
+    "scanner_scope_changed_files": [],
+    "scope_globs": [
+      "crates/perry-stdlib/src/**/*.rs",
+      "crates/perry-ext-*/src/**/*.rs"
+    ]
+  },
+  "checker_identity": {
+    "d74498b261d087a301b80602835bc7199a067957": {
+      "checker_blob": "69b644e7c0887d5e0dea017d3d6dcfe2959dd8fd",
+      "checker_sha256": "25b1bcecda5c7b88a82b6b2ecbe37e1f1d71a0c5d8ee0a2d3d9c535a32ab3fe4",
+      "baseline_blob": "52f9df3a46d6b814d64441792b2ec1bcf9bc0acb",
+      "baseline_schema": 3,
+      "baseline_total": 313,
+      "baseline_per_file_entries": 44,
+      "sharp_baseline": 0
+    },
+    "bc8625f64fd829af5463c8cde8368ec7947f31a1": {
+      "checker_blob": "69b644e7c0887d5e0dea017d3d6dcfe2959dd8fd",
+      "checker_sha256": "25b1bcecda5c7b88a82b6b2ecbe37e1f1d71a0c5d8ee0a2d3d9c535a32ab3fe4",
+      "baseline_blob": "8e0c61d7bbe8a4a1cf22de2d7124f7fe7a42e34a",
+      "baseline_schema": 3,
+      "baseline_total": 309,
+      "baseline_per_file_entries": 43,
+      "sharp_baseline": 0
+    },
+    "266eaf0af23bcef433f50b4b6bb9daf4df87db8d": {
+      "checker_blob": "69b644e7c0887d5e0dea017d3d6dcfe2959dd8fd",
+      "checker_sha256": "25b1bcecda5c7b88a82b6b2ecbe37e1f1d71a0c5d8ee0a2d3d9c535a32ab3fe4",
+      "baseline_blob": "8e0c61d7bbe8a4a1cf22de2d7124f7fe7a42e34a",
+      "baseline_schema": 3,
+      "baseline_total": 309,
+      "baseline_per_file_entries": 43,
+      "sharp_baseline": 0
+    }
+  },
+  "candidate_contribution": {
+    "added_findings": 0,
+    "removed_findings": 0,
+    "per_file": "All measured paths are unchanged between bc862 and 266eaf because no file under either scanner glob changed. The script, extraction lists, and strip/fold rules also have identical blob SHA across d744, bc862, and 266eaf."
+  },
+  "replay_and_current_check": {
+    "bc862_parent_replay": "/workspace/work/perry-queue/10739-bc862-replays/unrooted-local.log",
+    "bc862_parent_result": "Saved exact bc862 parent replay at /workspace/work/perry-queue/10739-bc862-replays/unrooted-local.log reports 299 findings across 44 files and the same sharp per-file regression.",
+    "266eaf_python_check": "Fresh Python-only run `python3 scripts/unrooted_local_shape.py --check`; exit 1; 299 findings across 44 files, same sole per-file regression `crates/perry-ext-sharp/src/lib.rs: 4 findings exceeds per-file ceiling 0`.",
+    "d744_debt_comparison": "Fresh Python-only run `python3 scripts/unrooted_local_shape.py --no-raise-vs d74498b261d087a301b80602835bc7199a067957`; exit 1: recorded 313 -> 309, measured 299, with one violation: crates/perry-ext-sharp/src/lib.rs, 4 measured findings exceeds not recorded at the merge base."
+  },
+  "attribution": {
+    "failing_path_unchanged_from_bc862": "yes; crates/perry-ext-sharp/src/lib.rs is outside candidate diff and is a scanner input unchanged since base",
+    "global_counts": "The 299/44 whole-tree result is attributable to the base here by exact input-surface identity (no scanner input file changed), not merely by matching diagnostics. It remains exposure-surface count, not bug count.",
+    "baseline_policy": "No candidate-induced reduction in measured debt exists, so no debt-baseline lowering is warranted for this change. The aggregate baseline is already 309 at bc862 and 266eaf; the earlier d744-to-bc862 313-to-309 change is pre-candidate and should not be attributed to this worktree."
+  },
+  "limitations": "This attribution covers only scripts/unrooted_local_shape.py --check and its --no-raise-vs d744 record. It does not classify other lint gates or assert the checker is fully green."
+}

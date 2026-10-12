@@ -1,0 +1,22 @@
+{
+  "issue": 12165,
+  "decision": "UNCERTAIN pending repeated natural-exit witness on source that includes merged12447; no new repair claim",
+  "live": "OPEN, no comments, updated2026-10-07T21:25:01Z",
+  "overlap": {
+    "pr": 12447,
+    "mergedAt": "2026-10-12T05:26:08Z",
+    "mechanism": "worker_pump::js_worker_threads_has_pending changes global LIVE_REFED_WORKERS check to records whose owner_agent matches current agent; old logic could count parent record on child and keep child alive. Worker checkpoints also reevaluate agent liveness.",
+    "direct_witness": "Merged test_gap_worker_12285_natural.ts creates worker, sends body then naturally returns, parent expects own exit output.",
+    "limitation": "Reported9/9 witness pass does not establish repeated-flake elimination; no direct12165 causal reproduction comparison found. Exit delivery body itself is not changed by inspected worker_pump diff."
+  },
+  "candidate_source_boundary": "Current12202 branch derives bc8625 before12447; its fresh trio is not evidence for post12447 behavior. Do not use it to justify a duplicate worker repair. First require matching compiler/runtime/stdlib built from source including12447, e.g. next validated current-main checkout. No build authorized here.",
+  "next_probe": {
+    "shape": "One self-spawning module: parent installs events.once(worker, exit) immediately, awaits it, prints exit code; child computes deterministic result then returns with no parentPort listener and no terminate. Repeat the executable as30 separate processes with per-run timeout; capture each stdout/exit, do not hide hang by terminate.",
+    "node": "Pinned26.5.1 oracle30 bounded processes; same module Worker(new URL(import.meta.url)).",
+    "expected": "30/30 exit0 and exactly one parent exit0 line each",
+    "interpretation": "Any missing exit on post12447 coherent artifacts establishes residual;30passes supports nonreproduction but is not mathematical proof of no race. No broad suite or claim from single pass."
+  },
+  "coverage_recommendation": "Move cached uncovered to uncertain if root reconciles; keep12447 as substantive overlap/partial evidence, not proven whole12165 coverage from generic worker suite alone.",
+  "central_ledger_changed": false,
+  "builds": false
+}

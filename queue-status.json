@@ -7,18 +7,19 @@
     12396,
     12408,
     12425,
-    12435,
     12448,
     12451,
     12452,
     12453,
     12454,
-    12455
+    12455,
+    12462,
+    12466
   ],
   "merged_prs_this_turn": 6,
   "coverage_counts": {
-    "uncovered": 143,
-    "uncertain": 17,
+    "uncovered": 142,
+    "uncertain": 18,
     "covered_open": 20,
     "closed": 44
   },
@@ -102,11 +103,11 @@
     "remaining": 15,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
-      "repo_open": 190,
+      "repo_open": 191,
       "original_open": 180,
       "original_closed": 44,
-      "observed_at": "2026-10-12T09:23:28Z",
-      "evidence": "planning/original224-state-refresh-2026-10-12T092328Z.json"
+      "observed_at": "2026-10-12T10:43:51Z",
+      "evidence": "planning/original224-state-refresh-20261012T104351Z.json"
     },
     "drafts": 0,
     "ready_for_review": 0,
@@ -221,20 +222,20 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
       "has_uncommitted_changes": false,
-      "state": "Source-cleared warningcleanup + requiredinventorydecrease; validation in progress, no publication",
+      "state": "Final266 warnings exactlymatchparent; freshtrio and noauto fixturePASS; genuineauto/full lint underway",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "266eaf awaiting exact-head gates; identicalRust4e focusedtests active. Priorb4 full lint completed32/137fail2skip, including29candidate-addedwarnings now source-corrected. Inventory runtime331\u2192329 credits1candidate removal+1preexisting drift. Interrupted overlappingwarningcheck excluded; rerunserial required.",
+      "validation": "55focusedtestsPASS at4e (identicalRustsource);266 product42/host35diagnostics exactparentmatches, noaddedwarnings; freshmatchingtrio and pinnedNode fixtureparityPASS. Auto/fullpending. Priorfailed/interruptedgatesretained.",
       "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
-  "coverage_freshness": "planning/original224-state-refresh-2026-10-12T092328Z.json",
+  "coverage_freshness": "planning/original224-state-refresh-20261012T104351Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T10:34:26.155646+00:00",
-  "publisher_inbox_checked_at": "2026-10-12T09:50:17.784354+00:00",
+  "updated_at": "2026-10-12T10:44:58.593278+00:00",
+  "publisher_inbox_checked_at": "2026-10-12T10:43:51Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,
@@ -250,7 +251,7 @@
   "cargo_incremental": 0,
   "active_issue_state_evidence": "planning/active-issue-milestone-states.json",
   "closure_attribution": "Issue states observed independently; cloud closed no issues. Referenced issues closing does not prove partial PRs resolved their whole scope.",
-  "coverage_counts_observed_at": "2026-10-12T09:23:28Z",
-  "coverage_classification_refreshed_at": "2026-10-12T09:01:02.035175+00:00",
-  "coverage_classification_evidence": "planning/four-hold-coverage-classification.json"
+  "coverage_counts_observed_at": "2026-10-12T10:43:51Z",
+  "coverage_classification_refreshed_at": "2026-10-12T10:44:58.593278+00:00",
+  "coverage_classification_evidence": "planning/12165-12447-overlap-assessment.json"
 }

@@ -1,0 +1,500 @@
+{
+  "repository": "PerryTS/perry",
+  "checked_at": "2026-10-12T10:43:51Z",
+  "purpose": "Read-only state reconciliation of the fixed original-224 issue ID set; later-created issues excluded; issue states only, no coverage attribution.",
+  "comparison": {
+    "prior_full_refresh": "planning/original224-state-refresh-2026-10-12T092328Z.json",
+    "prior_checked_at": "2026-10-12T09:23:28Z",
+    "prior_repo_open_issues": 190,
+    "prior_original_open": 180,
+    "prior_original_closed": 44,
+    "prior_new_open_excluded": [
+      12396,
+      12408,
+      12425,
+      12435,
+      12448,
+      12451,
+      12452,
+      12453,
+      12454,
+      12455
+    ]
+  },
+  "current_counts": {
+    "repo_open_issues_excluding_prs": 191,
+    "original_count": 224,
+    "original_open": 180,
+    "original_closed_individually_confirmed": 44,
+    "new_open_excluded_from_original": [
+      12396,
+      12408,
+      12425,
+      12448,
+      12451,
+      12452,
+      12453,
+      12454,
+      12455,
+      12462,
+      12466
+    ]
+  },
+  "deltas_since_prior_refresh": {
+    "repo_open_issues": 1,
+    "original_open": 0,
+    "original_closed": 0,
+    "newly_missing_originals": [],
+    "newly_closed_originals": [],
+    "reopened_originals": [],
+    "newly_open_excluded_from_original": [
+      12462,
+      12466
+    ],
+    "previously_open_excluded_no_longer_open": [
+      12435
+    ]
+  },
+  "open_list_consistency": {
+    "method": "Two complete REST open-issues page sweeps, 100/page, excluding pull_request objects; compare issue ID sets.",
+    "first_page_lengths": [
+      100,
+      100,
+      15
+    ],
+    "second_page_lengths": [
+      100,
+      100,
+      15
+    ],
+    "unique_open_issue_count": 191,
+    "changed_ids_between_sweeps": [],
+    "stable": true
+  },
+  "individual_state_verification": {
+    "method": "Direct GET of every original ID absent from the second open listing; recorded only state, closed_at, updated_at, and PR marker.",
+    "closed_original_ids": [
+      8085,
+      8549,
+      8821,
+      10198,
+      10308,
+      10310,
+      10321,
+      10323,
+      10324,
+      10334,
+      10351,
+      10365,
+      10641,
+      10642,
+      10884,
+      11377,
+      11378,
+      11379,
+      11460,
+      11824,
+      11828,
+      11869,
+      11871,
+      11905,
+      11934,
+      11935,
+      11948,
+      11953,
+      12007,
+      12099,
+      12148,
+      12156,
+      12188,
+      12212,
+      12237,
+      12243,
+      12249,
+      12252,
+      12278,
+      12285,
+      12302,
+      12303,
+      12310,
+      12390
+    ],
+    "closed_records": [
+      {
+        "number": 8085,
+        "state": "closed",
+        "closed_at": "2026-10-12T05:57:37Z",
+        "updated_at": "2026-10-12T05:57:39Z",
+        "is_pr": false
+      },
+      {
+        "number": 8549,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:09Z",
+        "updated_at": "2026-10-12T03:25:09Z",
+        "is_pr": false
+      },
+      {
+        "number": 8821,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:12Z",
+        "updated_at": "2026-10-12T03:25:12Z",
+        "is_pr": false
+      },
+      {
+        "number": 10198,
+        "state": "closed",
+        "closed_at": "2026-10-12T04:58:50Z",
+        "updated_at": "2026-10-12T04:58:50Z",
+        "is_pr": false
+      },
+      {
+        "number": 10308,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:15Z",
+        "updated_at": "2026-10-12T03:25:15Z",
+        "is_pr": false
+      },
+      {
+        "number": 10310,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:18Z",
+        "updated_at": "2026-10-12T03:25:18Z",
+        "is_pr": false
+      },
+      {
+        "number": 10321,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:28:28Z",
+        "updated_at": "2026-10-12T03:28:29Z",
+        "is_pr": false
+      },
+      {
+        "number": 10323,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:20Z",
+        "updated_at": "2026-10-12T03:25:20Z",
+        "is_pr": false
+      },
+      {
+        "number": 10324,
+        "state": "closed",
+        "closed_at": "2026-10-11T23:26:07Z",
+        "updated_at": "2026-10-11T23:26:07Z",
+        "is_pr": false
+      },
+      {
+        "number": 10334,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:22Z",
+        "updated_at": "2026-10-12T03:25:22Z",
+        "is_pr": false
+      },
+      {
+        "number": 10351,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:25Z",
+        "updated_at": "2026-10-12T03:25:25Z",
+        "is_pr": false
+      },
+      {
+        "number": 10365,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:28Z",
+        "updated_at": "2026-10-12T03:25:28Z",
+        "is_pr": false
+      },
+      {
+        "number": 10641,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:31Z",
+        "updated_at": "2026-10-12T03:25:31Z",
+        "is_pr": false
+      },
+      {
+        "number": 10642,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:34Z",
+        "updated_at": "2026-10-12T03:25:34Z",
+        "is_pr": false
+      },
+      {
+        "number": 10884,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:36Z",
+        "updated_at": "2026-10-12T03:25:36Z",
+        "is_pr": false
+      },
+      {
+        "number": 11377,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:39Z",
+        "updated_at": "2026-10-12T03:25:39Z",
+        "is_pr": false
+      },
+      {
+        "number": 11378,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:42Z",
+        "updated_at": "2026-10-12T03:25:42Z",
+        "is_pr": false
+      },
+      {
+        "number": 11379,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:44Z",
+        "updated_at": "2026-10-12T03:25:44Z",
+        "is_pr": false
+      },
+      {
+        "number": 11460,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:47Z",
+        "updated_at": "2026-10-12T03:25:47Z",
+        "is_pr": false
+      },
+      {
+        "number": 11824,
+        "state": "closed",
+        "closed_at": "2026-10-11T21:42:20Z",
+        "updated_at": "2026-10-11T21:42:20Z",
+        "is_pr": false
+      },
+      {
+        "number": 11828,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:49Z",
+        "updated_at": "2026-10-12T03:25:49Z",
+        "is_pr": false
+      },
+      {
+        "number": 11869,
+        "state": "closed",
+        "closed_at": "2026-10-11T23:38:35Z",
+        "updated_at": "2026-10-11T23:38:35Z",
+        "is_pr": false
+      },
+      {
+        "number": 11871,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:33:03Z",
+        "updated_at": "2026-10-11T22:33:03Z",
+        "is_pr": false
+      },
+      {
+        "number": 11905,
+        "state": "closed",
+        "closed_at": "2026-10-11T16:02:38Z",
+        "updated_at": "2026-10-11T16:02:38Z",
+        "is_pr": false
+      },
+      {
+        "number": 11934,
+        "state": "closed",
+        "closed_at": "2026-10-11T16:04:59Z",
+        "updated_at": "2026-10-11T16:04:59Z",
+        "is_pr": false
+      },
+      {
+        "number": 11935,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:51Z",
+        "updated_at": "2026-10-12T03:25:51Z",
+        "is_pr": false
+      },
+      {
+        "number": 11948,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:41:45Z",
+        "updated_at": "2026-10-11T22:41:45Z",
+        "is_pr": false
+      },
+      {
+        "number": 11953,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:11:34Z",
+        "updated_at": "2026-10-11T22:11:34Z",
+        "is_pr": false
+      },
+      {
+        "number": 12007,
+        "state": "closed",
+        "closed_at": "2026-10-12T07:28:41Z",
+        "updated_at": "2026-10-12T07:28:41Z",
+        "is_pr": false
+      },
+      {
+        "number": 12099,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:54Z",
+        "updated_at": "2026-10-12T03:25:54Z",
+        "is_pr": false
+      },
+      {
+        "number": 12148,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:28:34Z",
+        "updated_at": "2026-10-12T03:28:34Z",
+        "is_pr": false
+      },
+      {
+        "number": 12156,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:37:23Z",
+        "updated_at": "2026-10-11T22:37:23Z",
+        "is_pr": false
+      },
+      {
+        "number": 12188,
+        "state": "closed",
+        "closed_at": "2026-10-11T21:52:47Z",
+        "updated_at": "2026-10-11T21:52:47Z",
+        "is_pr": false
+      },
+      {
+        "number": 12212,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:46:24Z",
+        "updated_at": "2026-10-11T22:46:24Z",
+        "is_pr": false
+      },
+      {
+        "number": 12237,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:28:31Z",
+        "updated_at": "2026-10-12T03:28:31Z",
+        "is_pr": false
+      },
+      {
+        "number": 12243,
+        "state": "closed",
+        "closed_at": "2026-10-11T19:38:49Z",
+        "updated_at": "2026-10-11T19:38:49Z",
+        "is_pr": false
+      },
+      {
+        "number": 12249,
+        "state": "closed",
+        "closed_at": "2026-10-11T16:13:23Z",
+        "updated_at": "2026-10-11T16:13:23Z",
+        "is_pr": false
+      },
+      {
+        "number": 12252,
+        "state": "closed",
+        "closed_at": "2026-10-11T16:17:45Z",
+        "updated_at": "2026-10-11T16:17:45Z",
+        "is_pr": false
+      },
+      {
+        "number": 12278,
+        "state": "closed",
+        "closed_at": "2026-10-11T23:03:30Z",
+        "updated_at": "2026-10-11T23:03:30Z",
+        "is_pr": false
+      },
+      {
+        "number": 12285,
+        "state": "closed",
+        "closed_at": "2026-10-12T05:26:09Z",
+        "updated_at": "2026-10-12T05:26:09Z",
+        "is_pr": false
+      },
+      {
+        "number": 12302,
+        "state": "closed",
+        "closed_at": "2026-10-11T16:04:58Z",
+        "updated_at": "2026-10-11T16:04:58Z",
+        "is_pr": false
+      },
+      {
+        "number": 12303,
+        "state": "closed",
+        "closed_at": "2026-10-11T22:20:17Z",
+        "updated_at": "2026-10-11T22:20:17Z",
+        "is_pr": false
+      },
+      {
+        "number": 12310,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:25:56Z",
+        "updated_at": "2026-10-12T03:25:56Z",
+        "is_pr": false
+      },
+      {
+        "number": 12390,
+        "state": "closed",
+        "closed_at": "2026-10-12T03:38:10Z",
+        "updated_at": "2026-10-12T03:38:10Z",
+        "is_pr": false
+      }
+    ],
+    "anomalies": [],
+    "verification_result": "All missing original IDs individually returned state=closed with non-null closed_at; two issue-list sweeps matched."
+  },
+  "publisher_inbox": {
+    "repository": "jdalton/perry",
+    "branch": "cloud/local-publisher-inbox",
+    "path": "publisher-status.json",
+    "url": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
+    "observed_blob_sha": "72da520936a3dbbf070fed95c38a72de7d424a6b",
+    "updated_at": "2026-10-12T08:57:48.728555+00:00",
+    "batch": {
+      "target": 20,
+      "opened": 5,
+      "ready_for_review": 0,
+      "merged": 5,
+      "drafts": 0,
+      "remaining": 15,
+      "new_prs": [
+        {
+          "number": 12444,
+          "state": "merged",
+          "issues": [
+            9927,
+            8085
+          ],
+          "ready_for_review": false,
+          "merged": true
+        },
+        {
+          "number": 12445,
+          "state": "merged",
+          "issues": [
+            10198
+          ],
+          "ready_for_review": false,
+          "merged": true
+        },
+        {
+          "number": 12450,
+          "state": "merged",
+          "issues": [
+            12007
+          ],
+          "ready_for_review": false,
+          "merged": true
+        },
+        {
+          "number": 12456,
+          "state": "merged",
+          "issues": [
+            11519
+          ],
+          "ready_for_review": false,
+          "merged": true
+        },
+        {
+          "number": 12458,
+          "state": "merged",
+          "issues": [
+            10739
+          ],
+          "ready_for_review": false,
+          "merged": true
+        }
+      ]
+    }
+  },
+  "method": "GitHub REST issues collection, state=open, per_page=100 through all pages, excluding PRs; fixed original IDs from planning/original224-coverage.json. Missing originals directly fetched to disambiguate closed states. Later-created issue IDs are listed separately and receive no coverage/causal credit."
+}

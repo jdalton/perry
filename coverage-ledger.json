@@ -1,0 +1,2020 @@
+{
+  "cohort": "original224",
+  "state_observed_at": "2026-10-12T10:43:51Z",
+  "classification_updated_at": "2026-10-12T10:44:58.593278+00:00",
+  "counts": {
+    "covered": 20,
+    "uncertain": 18,
+    "uncovered": 142,
+    "closed": 44
+  },
+  "policy": "Covering PRs, partial repairs, observed closures and actual contributor merges are separate; source claims and WIP are not coverage.",
+  "issues": [
+    {
+      "issue": 12390,
+      "status": "closed",
+      "covering_prs": [
+        12439
+      ],
+      "partial_prs": [
+        12113,
+        12114,
+        12115,
+        12116,
+        12117,
+        12149,
+        12276
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": true,
+      "claim": {
+        "owner": "cloud /root/luna_verification",
+        "task": "/root/luna_verification",
+        "branch": "cloud/issue-12390-remove-parked-streams",
+        "current_head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+        "validation": "Finalhead1273aff: fresh compiler/runtime-static/stdlib-static build PASS; routing2/2, serialstreams33/33, sixexplicitNode26.5.1parityruns PASS; bothauto featurearchive sets forciblyrebuilt andlinked withoutarchivefallback. Full lint unchangedimplementation28baseline+2envfails; CI39warnings/16TLSgroups baselineattributed.",
+        "merge_state": "MERGED PR12439",
+        "closure_state": "CLOSED",
+        "publication_state": "Merged; original issue closed"
+      }
+    },
+    {
+      "issue": 12357,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        11630,
+        11631
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12355,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12352,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12350,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12330,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12329,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12323,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12320,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12310,
+      "status": "closed",
+      "covering_prs": [
+        12345
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12307,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12306,
+      "status": "covered",
+      "covering_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12304,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12303,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12302,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12299,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12294,
+      "status": "covered",
+      "covering_prs": [
+        12383
+      ],
+      "nearby_or_partial_prs": [
+        12114,
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12293,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12286,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12285,
+      "status": "closed",
+      "covering_prs": [
+        12447
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": true,
+      "claim": {
+        "owner": "cloud /root/luna_worker_lifecycle",
+        "task": "/root/luna_worker_lifecycle",
+        "branch": "cloud/issue-12285-parentport-lifecycle",
+        "current_head": "804c6b6e8080b584f0e804ff637800d91636deb2",
+        "validation": "Before retirement: committed-head fresh build and8/8 compiled fixtures passed; full lint interrupted (gate9 PASS, gate10 interrupted, gate11 NOT RUN); preserved without publication",
+        "merge_state": "Covered by upstream merged PR12447, not our candidate",
+        "closure_state": "CLOSED",
+        "publication_state": "RETIRED; do not publish duplicate"
+      }
+    },
+    {
+      "issue": 12284,
+      "status": "covered",
+      "covering_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12283,
+      "status": "covered",
+      "covering_prs": [
+        12113,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12279,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12278,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12252,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12249,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12243,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12242,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12241
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12240,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12245
+      ],
+      "nearby_or_partial_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12237,
+      "status": "closed",
+      "covering_prs": [
+        10631,
+        12244
+      ],
+      "nearby_or_partial_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12231,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12253
+      ],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12229,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12236
+      ],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12228,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12213,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12212,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12211,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12210,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12209,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12202,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_class_tdz",
+        "task": "/root/luna_class_tdz",
+        "branch": "cloud/issue-12202-wtf8-class-keys",
+        "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+        "validation": "55focusedtestsPASS at4e (identicalRustsource);266 product42/host35diagnostics exactparentmatches, noaddedwarnings; freshmatchingtrio and pinnedNode fixtureparityPASS. Auto/fullpending. Priorfailed/interruptedgatesretained.",
+        "merge_state": "no PR",
+        "closure_state": "OPEN",
+        "publication_state": "Not ready; correctedheadvalidation"
+      }
+    },
+    {
+      "issue": 12201,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12220
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12196,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12195,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12121,
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12188,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12187,
+      "status": "covered",
+      "covering_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12174,
+      "status": "covered",
+      "covering_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12165,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12447
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12158,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12159
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12156,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12148,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12145,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12135,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12114,
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12110,
+      "status": "covered",
+      "covering_prs": [
+        12121,
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12102,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12117,
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12099,
+      "status": "closed",
+      "covering_prs": [
+        12108
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12090,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12100
+      ],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12044,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12015,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 12007,
+      "status": "closed",
+      "covering_prs": [
+        12450
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_class_tdz",
+        "task": "/root/luna_class_tdz",
+        "branch": "cloud/issue-12007-class-expression-tdz",
+        "current_head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+        "validation": "Final7f128 freshmatchingtrio and4scopednoauto acceptance witnesses PASS; full lint765 reusedfragment-onlydelta,33/137failures2skips classifiedbaseline/environment. Linuxonly; no full lintgreen claim.",
+        "merge_state": "MERGED PR12450",
+        "closure_state": "CLOSED",
+        "publication_state": "Merged at validated7f128cf; originalissueclosed independentlyverified"
+      }
+    },
+    {
+      "issue": 11988,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        11630,
+        11631
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11953,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11951,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12117,
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11948,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11935,
+      "status": "closed",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11934,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11932,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11919,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11915,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11905,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11871,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11869,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11828,
+      "status": "closed",
+      "covering_prs": [],
+      "partial_prs": [
+        11841,
+        11851
+      ],
+      "nearby_or_partial_prs": [
+        12117,
+        12149,
+        12276
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11824,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11804,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11791,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11745,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11699,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        11630,
+        11631,
+        9949
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11670,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11638,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11560,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11549,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        11630,
+        11631
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11519,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12456
+      ],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_verification",
+        "task": "/root/luna_verification",
+        "branch": "cloud/issue-11519-byte-family-tostring",
+        "current_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+        "validation": "Final6f2f fresh locked trio, fragment gates and no-auto18case Node parity PASS;5e41 unit/auto/full lint explicitly reused unchangedsource",
+        "merge_state": "MERGED PR12456",
+        "closure_state": "OPEN",
+        "publication_state": "Merged partial repair"
+      }
+    },
+    {
+      "issue": 11497,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11460,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11412,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12208
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11400,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11380,
+      "status": "covered",
+      "covering_prs": [
+        12208
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11379,
+      "status": "closed",
+      "covering_prs": [
+        12208
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11378,
+      "status": "closed",
+      "covering_prs": [
+        12208
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11377,
+      "status": "closed",
+      "covering_prs": [
+        12208
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11375,
+      "status": "covered",
+      "covering_prs": [
+        12208
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11210,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        10961
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11046,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11043,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 11042,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10957,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10942,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10922,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10884,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10871,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10869,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10868,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10837,
+      "status": "covered",
+      "covering_prs": [
+        10825
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10821,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10803,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10777,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10772,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10769,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10762,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11355,
+        11643
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10755,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10739,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12458
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-10739-derived-workspace-counts",
+        "current_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
+        "validation": "Final84d fresh matching trio,18architecturetests,metadata,pycompile,diff,fragmentselftest PASS; livefragmentgate notapplicable(no crates). Full32/137classified failures reused1ce",
+        "merge_state": "MERGED PR12458",
+        "closure_state": "OPEN",
+        "publication_state": "Merged partial repair; original issue remains open"
+      }
+    },
+    {
+      "issue": 10709,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10697,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11388
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10695,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10670,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10665,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10654,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10642,
+      "status": "closed",
+      "covering_prs": [
+        11297,
+        11587
+      ],
+      "nearby_or_partial_prs": [
+        12263
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10641,
+      "status": "closed",
+      "covering_prs": [
+        9798,
+        11840
+      ],
+      "nearby_or_partial_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10616,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10602,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10598,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10594,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10590,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10572,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10531,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10528,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10527,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10526,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10525,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10523,
+      "status": "covered",
+      "covering_prs": [
+        11351
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10521,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10520,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10519,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10518,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10517,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10516,
+      "status": "covered",
+      "covering_prs": [
+        11794,
+        11819
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10515,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10514,
+      "status": "covered",
+      "covering_prs": [
+        11588
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10513,
+      "status": "covered",
+      "covering_prs": [
+        11588
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10511,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11788
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10510,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11385
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10509,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11794
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10508,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10507,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11787
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10506,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10505,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10504,
+      "status": "covered",
+      "covering_prs": [
+        11793
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10503,
+      "status": "covered",
+      "covering_prs": [
+        11793
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10502,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12263
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10501,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11793
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10497,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11796,
+        12024
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10496,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10495,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        11796
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10471,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10470,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10459,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10409,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10408,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10406,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10405,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10395,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10394,
+      "status": "covered",
+      "covering_prs": [
+        10971,
+        11888
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10391,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10385,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10365,
+      "status": "closed",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12118,
+        12149
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10362,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        11630,
+        11631
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10351,
+      "status": "closed",
+      "covering_prs": [
+        10354
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10334,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10327,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10324,
+      "status": "closed",
+      "covering_prs": [],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10323,
+      "status": "closed",
+      "covering_prs": [
+        10354
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10321,
+      "status": "closed",
+      "covering_prs": [
+        11135
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10310,
+      "status": "closed",
+      "covering_prs": [
+        10354
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10308,
+      "status": "closed",
+      "covering_prs": [
+        11085
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10243,
+      "status": "covered",
+      "covering_prs": [
+        6459,
+        12154
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10198,
+      "status": "closed",
+      "covering_prs": [],
+      "partial_prs": [
+        12121,
+        12149,
+        12276,
+        12445
+      ],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": true,
+      "claim": {
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-10198-compound-test-cfg",
+        "current_head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+        "validation": "Fragment-head scoped Python checks PASS; only numbered fragment changed; prior full lint non-green reused, not repeated",
+        "merge_state": "MERGED PR12445",
+        "closure_state": "CLOSED",
+        "publication_state": "Merged partial repair"
+      }
+    },
+    {
+      "issue": 10182,
+      "status": "covered",
+      "covering_prs": [
+        10204
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10166,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10165,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12149,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10124,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10110,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10109,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10107,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10106,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10073,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10039,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10030,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10029,
+      "status": "covered",
+      "covering_prs": [
+        10354
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 10027,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9980,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9974,
+      "status": "uncertain",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9956,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9942,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9935,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9928,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9927,
+      "status": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        12444
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-9927-freshness-search",
+        "current_head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+        "validation": "Fragment-head scoped Python checks PASS; only numbered fragment changed; prior full lint non-green reused, not repeated",
+        "merge_state": "MERGED PR12444",
+        "closure_state": "OPEN",
+        "publication_state": "Merged partial repair"
+      }
+    },
+    {
+      "issue": 9925,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9915,
+      "status": "uncertain",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9908,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9852,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9843,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9841,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9839,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9792,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9673,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9659,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9588,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9361,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12117,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9347,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12114,
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 9202,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8821,
+      "status": "closed",
+      "covering_prs": [],
+      "partial_prs": [
+        9012
+      ],
+      "nearby_or_partial_prs": [
+        11631,
+        12276
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8549,
+      "status": "closed",
+      "covering_prs": [
+        8566
+      ],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8512,
+      "status": "uncovered",
+      "covering_prs": [],
+      "nearby_or_partial_prs": [
+        12276
+      ],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8410,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8271,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8154,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 8085,
+      "status": "closed",
+      "covering_prs": [],
+      "partial_prs": [
+        12444
+      ],
+      "live_state": "CLOSED",
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-9927-freshness-search",
+        "current_head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+        "validation": "Fragment-head scoped Python checks PASS; only numbered fragment changed; prior full lint non-green reused, not repeated",
+        "merge_state": "MERGED PR12444",
+        "closure_state": "CLOSED",
+        "publication_state": "Partial PR12444 merged; issue separately observed closed by bot"
+      }
+    },
+    {
+      "issue": 7685,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 6845,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 5519,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 5497,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 4644,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 3888,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    },
+    {
+      "issue": 1116,
+      "status": "uncovered",
+      "covering_prs": [],
+      "live_state": "OPEN",
+      "resolution_verified": false
+    }
+  ]
+}

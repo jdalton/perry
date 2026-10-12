@@ -1,0 +1,476 @@
+{
+  "issue": 12202,
+  "candidate_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "lint_base": "d74498b261d087a301b80602835bc7199a067957",
+  "comparison_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "purpose": "Per-failed-row attribution for b4b8 full lint; read-only, no checks rerun.",
+  "inputs": {
+    "candidate_classification": "/workspace/work/perry-queue/12202-b4b8-full-lint-classification.json",
+    "candidate_log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log",
+    "10739_static_map": "/workspace/work/perry-queue/planning/10739-static-preclassification.json",
+    "10739_candidate_log": "/workspace/work/perry-queue/10739-full-lint-1ce48b9.log",
+    "bc862_parent_replays": "/workspace/work/perry-queue/10739-bc862-replays/"
+  },
+  "method": "Compared each failed gate block by order and full text SHA256 between b4b8 and #10739. Used only the 19 named d744 exact fingerprints in the saved static map and explicitly recorded exact bc862 parent replays. Environment and delegated categories are separate; no aggregate 27/32 inference.",
+  "counts": {
+    "baseline": 25,
+    "candidate": 0,
+    "environment": 1,
+    "unresolved": 6
+  },
+  "rows": [
+    {
+      "row": 1,
+      "gate": "Validate benchmark artifact and fallback gates",
+      "command": "./tests/test_benchmark_peer_fallback.sh",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "9e439ee57027e5aefbca3997715e0091c4a016c7fbbd86261fae1f417852f65b",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "9b0e1dd5c1efc31917f30a62ccd89f7cdb92ffeaaa5cdb0b586639d3db9945cf"
+    },
+    {
+      "row": 2,
+      "gate": "Release pipeline failure-path regressions",
+      "command": "python3 tests/test_release_pipeline.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "8f351407b280dd8aa99599fd0e114054e4cf66a1a3ba25d493c02cd7110496fb",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "7 tests, 1 failure; same failing simulated workflow-dispatch path, with only runtime duration differing from the d744 excerpt.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic differs textually from #10739; the exact bc862 replay supplies the parent reproduction."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "eea5cfbe599b7603ab6ad271da309309af00e111f167a3cf1c906b70b05f7e97",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "tests/test_release_pipeline.py"
+      ]
+    },
+    {
+      "row": 3,
+      "gate": "Type-check Windows runtime and stdlib",
+      "command": "cargo xwin check -p perry-runtime -p perry-stdlib --target x86_64-pc-windows-msvc",
+      "classification": "environment",
+      "current_vs_10739_full_record_sha256": "ea0c10f3ca76c297a45e20fd516407e22b36ed4ae47dcd130fa5bcd22758e033",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Current failure is Windows MSVC CRT setup ending in HTTP CONNECT proxy 403; saved #10739 record is byte-identical. d744 lacked cargo-xwin, so this is toolchain/network availability, not source attribution."
+      ]
+    },
+    {
+      "row": 4,
+      "gate": "Check formatting",
+      "command": "cargo fmt --all -- --check",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "842ca3ef3a33770b035ca25616835dc2a3e14e4ca4fbc00fdfab43dfb000e6c4",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "de8378d99bb7fe3c6e7d91b878032376493ee39034780094cce3ab6f61bb55c4"
+    },
+    {
+      "row": 5,
+      "gate": "File size limit",
+      "command": "./scripts/check_file_size.sh",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "57f73de18786ecf1083e8635593386c5cd6857b47155d73155a1f315c90d6977",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Exact bc862 parent replay reports the same three oversized paths and byte counts; the three offending files are unchanged bc862\u2192b4b8.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic is byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "crates/perry-runtime/src/arena/page_meta/mod.rs",
+        "crates/perry-runtime/src/arena/tests.rs",
+        "crates/perry-runtime/src/json/replacer.rs"
+      ]
+    },
+    {
+      "row": 6,
+      "gate": "Buffer layout zero-debt gate",
+      "command": "./scripts/check_buffer_layout.sh --self-test && ./scripts/check_buffer_layout.sh",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "416eddd116885ab0d6cb5acd6f08d52fd8b34603aeb3091e526a873c8fd7ec24",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "1a4f8d1c3587438da4aae0a7704a6bf48a5019560b09711d4da8a27fae900da2"
+    },
+    {
+      "row": 7,
+      "gate": "Local binding type-proof audit",
+      "command": "python3 scripts/local_binding_type_audit.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "7333d84130ce54e1dcdf4971872b91c6c79789acb485bec76a43af13e8c01b4f",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Exact bc862 parent replay reports the same three findings; all implicated codegen source files are unchanged bc862\u2192b4b8.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic is byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "9096089ae0eebbb03f01492569d0cd7742ddf6451b3f0bdc7c6f6bf2ee353eae",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "crates/perry-codegen/src/codegen/arguments.rs",
+        "crates/perry-codegen/src/lower_call/property_get/dispatch_receiver_class.rs",
+        "crates/perry-codegen/src/expr/property_get.rs"
+      ]
+    },
+    {
+      "row": 8,
+      "gate": "GC store-site inventory",
+      "command": "python3 scripts/gc_store_site_inventory.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "be3b931325dce68fafb42e4ee81f7cca6a1c633ddebf4fdd572399900c110c36",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "1bc53feadce4b6a5b6cd53d6b4ea2b04e39cd934db458ab22412556565d155b8"
+    },
+    {
+      "row": 9,
+      "gate": "Address-classification audit",
+      "command": "python3 scripts/addr_class_inventory.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "1f93a5dc16c127471f5ae30bd4228f656e14a03d98c1ecf74095ee163ed46863",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "8e1d866a2c875a0727eddacd624b476837b98855fd0edef0305d43241fd1dc79"
+    },
+    {
+      "row": 10,
+      "gate": "String payload-access inventory",
+      "command": "python3 scripts/string_payload_access_inventory.py",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "88de41100eacf8087e30f148ddd61e6d99e898d691ed11feae6930b7f5b4ba2b",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "Excluded from this attribution per scope. Diagnostic count differs between b4b8 and #10739, so no baseline inference is made; source-owner review owns this row."
+      ],
+      "delegated_owner": "string-payload/source-owner"
+    },
+    {
+      "row": 11,
+      "gate": "SSO string-unboxing inventory",
+      "command": "python3 scripts/sso_unbox_inventory.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "908c78b06328b21663aae4e1b7f4471ed20a85751fd6b508a0f31315fd5493c3",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "4b71363d15b4c01f8942b5c427d47e74720a2a62d617214a7278cc31787ea859"
+    },
+    {
+      "row": 12,
+      "gate": "Object-header shape-descriptor census",
+      "command": "python3 scripts/shape_descriptor_census.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "833d7b5aeeca2bc46c2f4e43955af181f2783c6b760f533c9398d7f66e197464",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "f8c0212cac5cad1604c33de3fafb12334296a30b8afa5a5eb5882acdcd9aa760"
+    },
+    {
+      "row": 13,
+      "gate": "GC pin-site custody audit",
+      "command": "python3 scripts/gc_pin_sites.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "6f52da4563574017d06fff8724e2a42ff2b76435e96dca20dda24a1323e559f9",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Exact bc862 parent replay reports the same single pin-site violation at addr_class/image.rs:77; that file is unchanged bc862\u2192b4b8.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic is byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "6317c64dfbfe51ce654d1245609fd655ad6a297614bd6eec8988a0cae7da9798",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "crates/perry-runtime/src/value/addr_class/image.rs"
+      ]
+    },
+    {
+      "row": 14,
+      "gate": "Runtime GC-pointer holder custody audit",
+      "command": "python3 scripts/gc_runtime_root_holders.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "40640a4d4d2f91f3ce280542989354e177a5cdf6274b3c5742500e8d3d0f374b",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "43155c12bdd04892f8f4602993ec4dbb5790576ba65afeef548caf3a8e3ce34a"
+    },
+    {
+      "row": 15,
+      "gate": "Thread-exit custody of address-keyed globals (#11471)",
+      "command": "python3 scripts/thread_exit_address_globals.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "00219ed7cd2df15c4a11639c715c340da8024b55e19d7ae301c6ba13426454d7",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "f9ecdf3cb8c3b27085de3e5dc8a7061f646700a7da8f1b3c42767f19f461a3d2"
+    },
+    {
+      "row": 16,
+      "gate": "Registry lifetime audit (#11511)",
+      "command": "python3 scripts/registry_lifetime_check.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "b244e137a2221e23042497fa2711910efd969b67507d66ffbaed07cf55fab73f",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "6449c7d9d88bd7f88cde9d44b2ad12f36371c1aac36d6e397a562db25222fad0"
+    },
+    {
+      "row": 17,
+      "gate": "GC environment-knob drift audit",
+      "command": "python3 scripts/check_gc_env_knobs.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "728d1cbe57348bf9e93adf0a663bfe9d14df61cc9d63ef978b17ba47b67096f4",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "c86b2afbe37502e8b8f85cdfcc0a62c17412b5c1569ef91185e2b4f0b7bdcb71"
+    },
+    {
+      "row": 18,
+      "gate": "GC documentation claim audit",
+      "command": "python3 scripts/check_gc_doc_claims.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "555ece2787a4483004180b846d4bdcabbf8a55a2ecb6da1e2f78f3a05b0b25df",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "ae3b0677877a2a777b34c0a0ca80c2afa72e6d09adc01654eec19e1f7e27dce3"
+    },
+    {
+      "row": 19,
+      "gate": "Windows-portable text I/O in the Windows-CI audits",
+      "command": "python3 scripts/check_locale_independent_io.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "b74705da6f2ab184e9ffa350106f3f1e9021a261f5a25314b8e9950018c3361e",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "0cdc553b82993e314bc1c13e036be7cfb37bbf2ca4f7aaa261d17bb022bb8c1c"
+    },
+    {
+      "row": 20,
+      "gate": "Native runtime ABI consistency",
+      "command": "python3 scripts/runtime_abi_check.py --check-wasm-abi",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "1364a312d34a95d53d058e37cb7dc91bee725c0bee99fedc4dcb7cf4e0c62686",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "439a7ca1a22ff35036cd415c2250ee9fd55760678ff8a20155207562f83d4f22"
+    },
+    {
+      "row": 21,
+      "gate": "Raw-handle debt ratchet",
+      "command": "python3 scripts/raw_handle_debt.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "42d5f47ddf9109d028e0a7a190a92aa3d7978fe27257f8bf1580599827c4aebf",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "63ee6d148aaef6baac6582a3538c7ebed930a18fe063104a094c622d150a448a"
+    },
+    {
+      "row": 22,
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py --self-test",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "12e730a5a8b6d6aa6f5f4094d317c67ff58d6253d8266bcc773da2d0bbf026f3",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "02f19c52634ff122aaa8120df293fbdf4f343c0458fae1eda27d7d447a8c455f"
+    },
+    {
+      "row": 23,
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "ceb84bb98514e91cd2a749fe509eb85557e83adc81d99edd2c6525db684e755e",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Exact bc862 parent replay reports the same 154/140 counts and four violations. All cited buffer/layout/census/header/object files and the ledger/checker inputs are unchanged bc862\u2192b4b8.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic is byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "ad8e8c073e37deae2a0650640aeae651e41269a84532f45aff16ae7b636cb219",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "crates/perry-runtime/src/buffer/store/layout.rs",
+        "crates/perry-runtime/src/object/dynamic_key_read/census.rs",
+        "crates/perry-runtime/src/buffer/header.rs",
+        "crates/perry-runtime/src/object/mod.rs",
+        "scripts/native_handle_ledger.py",
+        "scripts/native_handle_ledger.txt"
+      ]
+    },
+    {
+      "row": 24,
+      "gate": "Unrooted-local shape ratchet",
+      "command": "python3 scripts/unrooted_local_shape.py --check",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "fd4574315c9ed2b735266afb3001ccc9634e96b56e207d5689f07def61c5791f",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "b4b8 record is byte-identical to #10739, and saved exact bc862 replay reports 299 findings across 44 files. This is a whole-tree census with 24 extra files elided in the lint excerpt; current evidence does not isolate candidate-specific per-file contribution, so I do not label it baseline."
+      ],
+      "baseline_basis": "parent_replay_matches_but_whole_tree_contribution_not_isolated"
+    },
+    {
+      "row": 25,
+      "gate": "Unrooted-local shape ratchet vs. merge base",
+      "command": "python3 scripts/unrooted_local_shape.py --no-raise-vs \"$BASE_SHA\"",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "53483e2faf9c17740b3fa83e7e9c9f1906350e46a2b98bac275f2b47909861a6",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Exact bc862 parent replay reports one violation on crates/perry-ext-sharp/src/lib.rs; that file is unchanged bc862\u2192b4b8.",
+        "Saved bc862 replay log is the cited concrete failure reproduction.",
+        "b4b8 full-lint diagnostic is byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_bc862_parent_replay",
+      "replay_exit": 1,
+      "parent_replay_log_sha256": "0089b54c0ab41d33b20749d3babeb2e31e0b577a0d511a36f03febec3a3478ec",
+      "input_paths_unchanged_bc862_to_b4b8": [
+        "crates/perry-ext-sharp/src/lib.rs"
+      ]
+    },
+    {
+      "row": 26,
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py --self-test",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "74ab3803b13edc9b593de2451ff09982676e2aea0bf98bccb43bc12e66bd33ad",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "14d6023e03938354b6b84dcbe22b3101d324c324362ec3e5fbd4b88537bc326b"
+    },
+    {
+      "row": 27,
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "47021d63a1138c66f39cdd0881344bdad79b2e895f34fe380e102d4af9b27c1a",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "22998a443fbbf73ea8e8916f8f2fe4579d6ed92ff0e398fbe92482a88dbc7ca4"
+    },
+    {
+      "row": 28,
+      "gate": "Per-test global sinks",
+      "command": "python3 scripts/global_sink_isolation.py",
+      "classification": "baseline",
+      "current_vs_10739_full_record_sha256": "7f73a953564c43789b6efc560a072f002de5adda3f51a945ead9a935d542a324",
+      "same_full_record_as_10739": true,
+      "evidence": [
+        "Named gate has a saved exact d744 diagnostic fingerprint in planning/10739-static-preclassification.json; this b4b8 failure block is also byte-identical to #10739."
+      ],
+      "baseline_basis": "exact_d744_static_record",
+      "d744_normalized_record_sha256": "d9328fd6d269de528d108817726678af2a5cf77760d7aca7d3f9eeeb6a6fc99e"
+    },
+    {
+      "row": 29,
+      "gate": "warnings: rustc warnings (product)",
+      "command": "RUSTFLAGS=\"-D warnings\" cargo check -p perry --bins",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "223aa419d2a30a71df089b5446ec9d405daa5a3e8fc276a0408ba40878f483cd",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "Excluded from static attribution per task scope. Compiler-warning rows differ from #10739; separate source-owner warning-delta analysis exists at planning/12202-warning-delta-source-plan.json, so no individual attribution is made here."
+      ],
+      "delegated_owner": "source-owner/verifier"
+    },
+    {
+      "row": 30,
+      "gate": "warnings: rustc warnings (host-compatible, all targets)",
+      "command": "RUSTFLAGS=\"-D warnings\" cargo check --workspace --all-targets --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "9e336670b818444946073acc6d7ee630b4679dc857349e18deb387832cd738d3",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "Excluded from static attribution per task scope. Compiler-warning rows differ from #10739; separate source-owner warning-delta analysis exists at planning/12202-warning-delta-source-plan.json, so no individual attribution is made here."
+      ],
+      "delegated_owner": "source-owner/verifier"
+    },
+    {
+      "row": 31,
+      "gate": "check: Clippy (host-compatible)",
+      "command": "cargo clippy --workspace --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "1bbe44b569e446caacfb2855f8da70e6e01e66fc684108b62cf21a349fab78e7",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "Excluded from static attribution per task scope. Clippy warning output/count differs from #10739; source-owner/verifier review owns it."
+      ],
+      "delegated_owner": "source-owner/verifier"
+    },
+    {
+      "row": 32,
+      "gate": "check: Regenerate API docs",
+      "command": "./scripts/regen_api_docs.sh",
+      "classification": "unresolved",
+      "current_vs_10739_full_record_sha256": "fab3c5792a5c0d1d0cee48054d95e2280652e072ab70b793d0289b28eed40f4f",
+      "same_full_record_as_10739": false,
+      "evidence": [
+        "Excluded from static attribution per task scope. API-doc regeneration block differs from #10739; no baseline claim is made from duration or warning context."
+      ],
+      "delegated_owner": "source-owner/verifier"
+    }
+  ]
+}
