@@ -1,0 +1,35 @@
+{
+  "decision": "Mandatory scoped formatting approved; final-head validation must reflect changed Rust source text",
+  "scope": "Only14 candidate_diff_files from12202-scoped-format-attribution.json with pinned rustfmt edition2021 repository config skip_children=true",
+  "rules": [
+    {
+      "source": "MERGE_GUIDE.md214",
+      "text": "Run scripts/run_lint_gates.sh \u2014 all of it.",
+      "meaning": "Complete gate coverage required; no explicit full-driver repetition after every formatting commit stated."
+    },
+    {
+      "source": "MERGE_GUIDE.md279",
+      "text": "Rebuild compiler after every commit, including docs-only.",
+      "meaning": "Final formatting commit requires compiler rebuild with matching runtime/stdlib archives under CLAUDE requirements."
+    }
+  ],
+  "minimal_honest_validation": [
+    "Review exact diff for formatter-only transformations; verify no tokens/attributes/macros or semantic changes beyond formatter-permitted import ordering/punctuation; do not assert byte-identical source",
+    "Pinned scoped rustfmt --check plus applicable whole formatter gate",
+    "Rerun source/text-sensitive gates affected by changed Rust files; do not automatically reuse them as unchanged inputs",
+    "Fresh matching trio at final head and focused compiled acceptance; no stale artifacts relabeled",
+    "Reuse unaffected completed gates only with explicit original-head provenance and input identity or justified equivalence; user unchanged-source reuse is not a blanket waiver for changed gate input text",
+    "Execute any interrupted/unexecuted gates on final head; full driver is sensible if selective gate-input proof costs more, but repeat-all-after-format is not an explicit rule"
+  ],
+  "active_driver": "Root authorized clean stop266 at autooptfeatures gate, not docs. Preserve exact completed/interrupted/not-run manifest; reviewer did not stop process.",
+  "limitations": "Final diff not yet reviewed; no source-equivalence or green gate result asserted. Candidate formatting defects cannot be attributed to baseline merely because final log tail names another file.",
+  "final_format_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "format_proof": {
+    "method": "Independently extract parent266 versions for14 files into temporary directory; pinned rustfmt edition2021 repo config skip_children=true; compare output bytes to exact56c6 blobs",
+    "scope_matches_approved14": true,
+    "mismatches": 0,
+    "decision": "Formatting-only source clearance; no build result"
+  },
+  "complete_coverage_requirement": "Account for all137 driver gates individually: completed prior-head gate result with valid reuse evidence, final-head rerun, or explicitly unresolved environmental/baseline failure/skip. Interrupted/not-run gates cannot be credited; execute on final head. Do not call stitched evidence a fresh complete56c6 full-driver run.",
+  "attribution_requirement": "A shared last diagnostic or tail fingerprint does not establish baseline equivalence. For file_size and broad Rust scanners, retain complete output and compare full diagnostic sets or prove changed-file findings specifically. Reclassify any previously tail-only match as unproven until audited."
+}

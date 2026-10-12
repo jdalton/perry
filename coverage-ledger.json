@@ -384,11 +384,11 @@
         "owner": "cloud /root/luna_class_tdz",
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-12202-wtf8-class-keys",
-        "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-        "validation": "55focusedtestsPASS at4e (identicalRustsource);266 warnings42/35 exactbcparentfingerprints, noaddedwarnings; freshtrio and bothfixturemodesPASS withNode26.5.1 andfresharchives. Required finalfull lint pending; earlierfailed/interruptedruns retained.",
+        "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+        "validation": "56c6 scopedfmtPASS; freshtrio/paritypending. 266 behaviorPASS+42/35parentwarnings but full lintINTERRUPTED inautooptfeatures aftercandidateformatfindings. 53unique tests/55executions at4e retained; priorunaffectedresultsreuse requiresper-gateformat-equivalence/provenance. Allaffected/interrupted/unrun gates toexecute56c6.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Not ready; finalfull lint running"
+        "publication_state": "Not ready; formatting correction exactheadvalidation"
       }
     },
     {

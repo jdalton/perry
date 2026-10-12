@@ -1,0 +1,10 @@
+{
+  "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+  "dispatch_filter_passed": 3,
+  "wtf8_filter_passed": 35,
+  "named_controls_passed": 17,
+  "dispatch_wtf8_overlap": 2,
+  "unique_tests_passed": 53,
+  "successful_test_executions": 55,
+  "method": "Parsed successful test names in all three saved result sets; no rerun."
+}

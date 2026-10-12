@@ -1,0 +1,35 @@
+{
+  "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "parent": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+  "commit_subject": "Format issue 12202 changed Rust files",
+  "scoped_rustfmt": "PASS",
+  "rustfmt": "rustfmt 1.11.0-nightly (db8f076d26 2026-10-03)",
+  "args": [
+    "--check",
+    "--edition",
+    "2021",
+    "--config-path",
+    "rustfmt.toml",
+    "--config",
+    "skip_children=true"
+  ],
+  "formatted_file_count": 14,
+  "formatted_files": [
+    "crates/perry-runtime/src/closure/dynamic_props.rs",
+    "crates/perry-runtime/src/closure/mod.rs",
+    "crates/perry-runtime/src/closure/props.rs",
+    "crates/perry-runtime/src/object/accessor_pair.rs",
+    "crates/perry-runtime/src/object/class_registry.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+    "crates/perry-runtime/src/object/descriptors.rs",
+    "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+    "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+    "crates/perry-runtime/src/object/field_set_by_name.rs",
+    "crates/perry-runtime/src/object/mod.rs",
+    "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+    "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+  ],
+  "diff_check": "PASS",
+  "format_only_scope": "Applied pinned rustfmt write mode only to the 14 files reported by the scoped pre-check; no non-listed file changed. No Cargo/builds/probes run."
+}

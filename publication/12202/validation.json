@@ -1,7 +1,7 @@
 {
   "issue": 12202,
-  "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-  "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
   "worktree_retired": false,
   "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
   "source_scope": {
@@ -20,7 +20,7 @@
         "scripts/string_payload_access_baseline.txt"
       ],
       "rust_source_changed": false,
-      "meaning": "55 focused tests passed at 4e; this file-only inventory update does not make those results an exact-266 run."
+      "meaning": "53 unique focused tests (55 executions) passed at 4e; this file-only inventory update does not make those results an exact-266 run."
     },
     "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
     "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
@@ -59,116 +59,41 @@
     "validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b"
   },
   "acceptance_matrix": {
-    "collision_keys": [
-      "lone high surrogate",
-      "lone low surrogate",
-      "U+FFFD",
-      "literal escaped text",
-      "empty",
-      "ASCII",
-      "BMP",
-      "valid astral scalar"
-    ],
-    "member_paths": [
-      "instance/static methods",
-      "instance/static getters and setters",
-      "function names and lengths",
-      "descriptors and attributes",
-      "duplicate keys and getter/setter composition",
-      "delete/re-add ordering",
-      "per-evaluation class identity",
-      "inheritance and own-descriptor ownership",
-      "symbol control",
-      "static prototype rejection",
-      "single ToPropertyKey coercion"
-    ],
     "focused_runtime_units": {
-      "status": "PASS; reused from 4e after confirming no Rust source changed",
-      "validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-      "tests_passed": 55,
-      "breakdown": {
-        "invalid_utf8_method": 3,
-        "wtf8": 35,
-        "controls": 17
-      },
-      "exact_266_run": false,
-      "evidence": [
-        "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
-        "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
-        "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
-      ]
+      "status": "prior-head only; 53 unique tests across 55 executions passed at 4e; fresh 56c6 rerun/equivalence accounting pending",
+      "prior_validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "unique_tests": 53,
+      "executions": 55,
+      "overlap_executions": 2,
+      "exact_56c6_run": false
     },
     "matching_dev_trio": {
-      "status": "PASS at exact 266",
-      "validated_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-      "log": "/workspace/work/perry-queue/12202-266eaf-trio-build.log"
+      "status": "IN_PROGRESS at 56c6",
+      "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+      "log": "/workspace/work/perry-queue/12202-56c6-trio-build.log",
+      "exit_record_pending": true
     },
     "compiled_fixture_vs_node": {
-      "status": "PASS at exact 266, no-auto",
-      "node_version": "v26.5.1",
-      "compile_exit": 0,
-      "node_exit": 0,
-      "perry_exit": 0,
-      "parity_exit": 0,
-      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
-      "record_dir": "/workspace/work/perry-queue/12202-266eaf-acceptance"
+      "status": "PENDING fresh 56c6 compiled run",
+      "no_auto": null,
+      "auto_opt": null
+    },
+    "affected_source_text_gates": {
+      "status": "PENDING; formatter changed source text in 14 Rust files; only explicit per-gate input equivalence can justify reuse"
     },
     "full_lint": {
-      "status": "PENDING; final driver started",
-      "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-      "log": "/workspace/work/perry-queue/12202-266eaf-full-lint.log",
+      "status": "PENDING; 266 driver was interrupted at auto-opt feature gate",
+      "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+      "driver_gate_total": 137,
+      "complete_accounting": "PENDING",
       "final_counts": null,
-      "historical_b4b8": {
-        "exit": 1,
-        "failed": 32,
-        "total": 137,
-        "ci_only_skipped": 2,
-        "log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log"
-      }
+      "interruption_record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json"
     },
-    "auto_opt": {
-      "status": "PASS at exact 266 with genuine freshly rebuilt archives",
-      "node_version": "v26.5.1",
-      "compile_exit": 0,
-      "node_exit": 0,
-      "perry_exit": 0,
-      "parity_exit": 0,
-      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
-      "record_dir": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance",
-      "archive_hashes": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance/auto-artifact-hashes.sha256",
-      "fallback_observed": false
+    "prior_266_warnings": {
+      "status": "prior-head only; 42 product and 35 host fingerprints matched base, but both warning gates were non-green; re-evaluate source-sensitive checks for 56c6"
     },
-    "focused_runtime": {
-      "status": "passed at 4e only; exact 266 rerun pending",
-      "prior_validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-      "tests_passed": 55,
-      "counts": {
-        "invalid_utf8_method": 3,
-        "wtf8": 35,
-        "named_controls": 17
-      },
-      "failure_count": 0,
-      "provenance": "git diff 4e0241768d5c1031fac10fa8dcacae8629fcc038..266eaf0af23bcef433f50b4b6bb9daf4df87db8d changes only scripts/string_payload_access_baseline.txt; no Rust source changes. This is explicit source equivalence, not exact-266 execution.",
-      "evidence": [
-        "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
-        "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
-        "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
-      ]
-    },
-    "product_warnings_266": {
-      "diagnostics": 42,
-      "exit": 101,
-      "baseline_fingerprint_added": 0,
-      "baseline_fingerprint_removed": 0,
-      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
-      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-product.log"
-    },
-    "host_warnings_266": {
-      "diagnostics": 35,
-      "baseline_fingerprint_added": 0,
-      "baseline_fingerprint_removed": 0,
-      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
-      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-host.log"
+    "prior_b4_format_failures": {
+      "status": "historical candidate formatting failures retained; final changed paths compare clean against parent formatting, not blanket baseline attribution"
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -253,18 +178,17 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "EXACT_266_ACCEPTANCE_COMPLETE; FULL_LINT_PENDING",
+  "readiness": "FORMAT_ONLY_SOURCE_CLEAR; FINAL_HEAD_VALIDATION_PENDING",
   "current_head_validation": {
-    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-    "status": "focused source-equivalent tests, matching trio, no-auto parity, and genuine auto-opt parity complete; full lint pending",
-    "focused_tests": "55 passed at 4e; reused because no Rust source changed at 266",
-    "matching_dev_trio": "PASS exact 266",
-    "compiled_fixture_node_parity": "PASS exact 266, no-auto",
-    "auto_opt": "PASS exact 266, genuine rebuilt archives",
-    "product_warnings": "42 diagnostics; exact bc862 fingerprint match, 0 added/removed; gate non-green",
-    "host_warnings": "35 diagnostics; exact bc862 fingerprint match, 0 added/removed; gate non-green",
-    "full_lint": "PENDING; final driver started",
-    "evidence": "266eaf-acceptance-evidence.json"
+    "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+    "status": "formatter-only source clearance; final-head validation pending",
+    "format_proof": "Configured rustfmt output matches all 14 changed files against independently formatted parent versions; source bytes differ.",
+    "matching_dev_trio": "IN_PROGRESS",
+    "compiled_fixture_node_parity": "PENDING fresh exact-head run",
+    "focused_runtime": "53 unique/55 executions at 4e are prior-head evidence only; 56c6 accounting pending",
+    "affected_gates": "PENDING input-equivalence proof or rerun",
+    "full_lint": "PENDING; prior 266 driver interrupted at auto-opt feature gate; complete 137-gate accounting pending",
+    "exact_evidence": "56c6-format-validation-evidence.json"
   },
   "source_review_history": {
     "latest": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
@@ -280,9 +204,19 @@
     "note": "The b4b8 compiled fixture link line explicitly resolves this fresh runtime archive."
   },
   "interrupted_validation": {
-    "head": "78e8f7fcbebffecc6aaafaba931e9dc9f797288f",
-    "status": "interrupted; no results",
-    "record": "/workspace/work/perry-queue/12202-78e8-interrupted-validation.json"
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "driver": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957 CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:${PYTHONPATH:-} RUNNER_TEMP=/workspace/work/perry-queue/12202-lint-runner-temp GITHUB_PATH=/workspace/work/perry-queue/12202-lint-runner-temp/github-path bash scripts/run_lint_gates.sh",
+    "log": "/workspace/work/perry-queue/12202-266eaf-full-lint.log",
+    "started_utc_approx": "2026-10-12T10:43:00Z",
+    "interrupted_utc": "2026-10-12T11:05:00Z",
+    "reason": "Root authorized stopping the obsolete 266eaf full driver after scoped rustfmt comparison found a candidate-sensitive formatting failure and a corrected final source head was prepared.",
+    "interrupted_gate": "./scripts/check_auto_optimize_features.sh",
+    "active_child_at_stop": "cargo check --locked -p perry-runtime-static -p perry-stdlib-static --no-default-features --features perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/external-zlib-pump,perry-stdlib/external-net-pump,perry-stdlib/external-net-tls,perry-stdlib/external-http-client-pump,perry-stdlib/external-http-server-pump,perry-stdlib/external-ws-pump",
+    "termination": "Ctrl-C did not stop the nested children; explicitly sent TERM to owned driver, check script, and cargo PID 969299, then verified all were exited (remaining entries were defunct shells only).",
+    "completed_before_interruption": "The log records completed checks through Lean dependency boundaries. Product/host warnings and host Clippy rows were recorded as failures; no final full-driver summary or exit code exists.",
+    "not_completed": "All later gates, including compiler API docs and any complete final status summary. This run is interrupted and must not be counted as completed lint.",
+    "network_replay_needed": "Pinned PyYAML 6.0.2 installation attempted during this driver but failed with Operation not permitted under restricted network; retain this attempt and replay only that gate with approved network.",
+    "candidate_format_issue": "See planning/12202-scoped-format-attribution.json and 12202-266-scoped-rustfmt.diff."
   },
   "unbuilt_source_review_heads": [
     "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
@@ -514,21 +448,11 @@
     }
   ],
   "prior_4e_focused_runtime": {
-    "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-    "status": "passed at 4e only; pending exact-head rerun at 266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-    "tests_passed": 55,
-    "counts": {
-      "invalid_utf8_method": 3,
-      "wtf8": 35,
-      "named_controls": 17
-    },
-    "failures": 0,
-    "evidence": [
-      "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
-      "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
-      "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
-    ],
-    "provenance": "git diff 4e0241768d5c1031fac10fa8dcacae8629fcc038..266eaf0af23bcef433f50b4b6bb9daf4df87db8d changes only scripts/string_payload_access_baseline.txt; no Rust source changes. This is explicit source equivalence, not exact-266 execution."
+    "status": "prior-head only",
+    "unique_tests": 53,
+    "executions": 55,
+    "overlap_executions": 2,
+    "validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038"
   },
   "product_warning_check_266": {
     "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
@@ -580,8 +504,186 @@
     "exact_266_product_host_fingerprints_match_base": true
   },
   "limitations": {
-    "platform": "Linux only; no macOS or Windows validation claim",
-    "generic_computed_default_parameter_length": "Separate ASCII/WTF-8 limitation remains on generic entryless computed-method path; traced to branch-base source, not claimed fixed or baseline-binary-proven"
+    "platform": "Linux only",
+    "generic_computed_default_parameter_length": "Separate generic entryless computed-method limitation for ASCII/WTF-8; not claimed fixed."
   },
-  "exact_266_acceptance_evidence": "266eaf-acceptance-evidence.json"
+  "exact_266_acceptance_evidence": "previous-266-acceptance-evidence.json (prior-head only)",
+  "prior_266_acceptance": {
+    "collision_keys": [
+      "lone high surrogate",
+      "lone low surrogate",
+      "U+FFFD",
+      "literal escaped text",
+      "empty",
+      "ASCII",
+      "BMP",
+      "valid astral scalar"
+    ],
+    "member_paths": [
+      "instance/static methods",
+      "instance/static getters and setters",
+      "function names and lengths",
+      "descriptors and attributes",
+      "duplicate keys and getter/setter composition",
+      "delete/re-add ordering",
+      "per-evaluation class identity",
+      "inheritance and own-descriptor ownership",
+      "symbol control",
+      "static prototype rejection",
+      "single ToPropertyKey coercion"
+    ],
+    "focused_runtime_units": {
+      "status": "PASS; reused from 4e after confirming no Rust source changed",
+      "validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "tests_passed": 55,
+      "breakdown": {
+        "invalid_utf8_method": 3,
+        "wtf8": 35,
+        "controls": 17
+      },
+      "exact_266_run": false,
+      "evidence": [
+        "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
+        "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
+      ]
+    },
+    "matching_dev_trio": {
+      "status": "PASS at exact 266",
+      "validated_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "log": "/workspace/work/perry-queue/12202-266eaf-trio-build.log"
+    },
+    "compiled_fixture_vs_node": {
+      "status": "PASS at exact 266, no-auto",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "parity_exit": 0,
+      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "record_dir": "/workspace/work/perry-queue/12202-266eaf-acceptance"
+    },
+    "full_lint": {
+      "status": "PENDING; final driver started",
+      "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "log": "/workspace/work/perry-queue/12202-266eaf-full-lint.log",
+      "final_counts": null,
+      "historical_b4b8": {
+        "exit": 1,
+        "failed": 32,
+        "total": 137,
+        "ci_only_skipped": 2,
+        "log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log"
+      }
+    },
+    "auto_opt": {
+      "status": "PASS at exact 266 with genuine freshly rebuilt archives",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "parity_exit": 0,
+      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "record_dir": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance",
+      "archive_hashes": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance/auto-artifact-hashes.sha256",
+      "fallback_observed": false
+    },
+    "focused_runtime": {
+      "status": "passed at 4e only; exact 266 rerun pending",
+      "prior_validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "tests_passed": 55,
+      "counts": {
+        "invalid_utf8_method": 3,
+        "wtf8": 35,
+        "named_controls": 17
+      },
+      "failure_count": 0,
+      "provenance": "git diff 4e0241768d5c1031fac10fa8dcacae8629fcc038..266eaf0af23bcef433f50b4b6bb9daf4df87db8d changes only scripts/string_payload_access_baseline.txt; no Rust source changes. This is explicit source equivalence, not exact-266 execution.",
+      "evidence": [
+        "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
+        "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
+      ]
+    },
+    "product_warnings_266": {
+      "diagnostics": 42,
+      "exit": 101,
+      "baseline_fingerprint_added": 0,
+      "baseline_fingerprint_removed": 0,
+      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
+      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-product.log"
+    },
+    "host_warnings_266": {
+      "diagnostics": 35,
+      "baseline_fingerprint_added": 0,
+      "baseline_fingerprint_removed": 0,
+      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
+      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-host.log"
+    },
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "status": "historical exact-266 acceptance only; not current-head validation"
+  },
+  "prior_266_driver_interruption": {
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "driver": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957 CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:${PYTHONPATH:-} RUNNER_TEMP=/workspace/work/perry-queue/12202-lint-runner-temp GITHUB_PATH=/workspace/work/perry-queue/12202-lint-runner-temp/github-path bash scripts/run_lint_gates.sh",
+    "log": "/workspace/work/perry-queue/12202-266eaf-full-lint.log",
+    "started_utc_approx": "2026-10-12T10:43:00Z",
+    "interrupted_utc": "2026-10-12T11:05:00Z",
+    "reason": "Root authorized stopping the obsolete 266eaf full driver after scoped rustfmt comparison found a candidate-sensitive formatting failure and a corrected final source head was prepared.",
+    "interrupted_gate": "./scripts/check_auto_optimize_features.sh",
+    "active_child_at_stop": "cargo check --locked -p perry-runtime-static -p perry-stdlib-static --no-default-features --features perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/external-zlib-pump,perry-stdlib/external-net-pump,perry-stdlib/external-net-tls,perry-stdlib/external-http-client-pump,perry-stdlib/external-http-server-pump,perry-stdlib/external-ws-pump",
+    "termination": "Ctrl-C did not stop the nested children; explicitly sent TERM to owned driver, check script, and cargo PID 969299, then verified all were exited (remaining entries were defunct shells only).",
+    "completed_before_interruption": "The log records completed checks through Lean dependency boundaries. Product/host warnings and host Clippy rows were recorded as failures; no final full-driver summary or exit code exists.",
+    "not_completed": "All later gates, including compiler API docs and any complete final status summary. This run is interrupted and must not be counted as completed lint.",
+    "network_replay_needed": "Pinned PyYAML 6.0.2 installation attempted during this driver but failed with Operation not permitted under restricted network; retain this attempt and replay only that gate with approved network.",
+    "candidate_format_issue": "See planning/12202-scoped-format-attribution.json and 12202-266-scoped-rustfmt.diff."
+  },
+  "format_validation": {
+    "issue": 12202,
+    "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+    "parent_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+    "format_proof": {
+      "record": "/workspace/work/perry-queue/planning/12202-format-validation-decision.json",
+      "scope": 14,
+      "rustfmt": "1.11.0-nightly (db8f076d26 2026-10-03)",
+      "edition": 2021,
+      "repo_config_skip_children": true,
+      "parent266_extraction_mismatches": 0,
+      "decision": "format-only source clearance; source bytes differ; no validation result"
+    },
+    "changed_files": {
+      "count": 14,
+      "diffstat": "14 files changed, 95 insertions(+), 109 deletions(-)",
+      "record": "/workspace/work/perry-queue/planning/12202-scoped-format-attribution.json"
+    },
+    "prior_266_driver": {
+      "status": "INTERRUPTED",
+      "record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json",
+      "gate_at_interruption": "./scripts/check_auto_optimize_features.sh",
+      "active_child": "cargo check --locked -p perry-runtime-static -p perry-stdlib-static --no-default-features --features perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/external-zlib-pump,perry-stdlib/external-net-pump,perry-stdlib/external-net-tls,perry-stdlib/external-http-client-pump,perry-stdlib/external-ws-pump",
+      "final_summary": false,
+      "later_gates_incomplete": true,
+      "network_replay": "Pinned PyYAML 6.0.2 installation failed with Operation not permitted; gate must be replayed under approved network"
+    },
+    "coverage": {
+      "driver_gate_total": 137,
+      "accounting_status": "pending; every gate must be assigned valid prior-head reuse with input identity/equivalence, rerun at 56c6, or explicitly unresolved baseline/environment/skip",
+      "interrupted_or_unrun_credit": false,
+      "do_not_call_stitched_evidence_fresh_complete_driver": true
+    },
+    "validation_status": {
+      "56c6_matching_trio": "underway; see 12202-56c6-trio-build.log; no result recorded here",
+      "compiled_fixture_no_auto": "pending fresh 56c6 run",
+      "compiled_fixture_auto_opt": "pending fresh 56c6 run",
+      "affected_source_text_gates": "pending fresh run or documented input-equivalence proof",
+      "full_lint_final_summary": "pending"
+    },
+    "history": {
+      "focused_runtime": "53 unique tests / 55 executions passed at 4e (two overlapping executions); prior-head result only",
+      "266_acceptance": "preserved in previous-266-acceptance-evidence.json; never relabel as 56c6",
+      "b4_format_failures": "preserved historical candidate formatting failures; parent format clean on 14 final changed paths; not blanket baseline attribution"
+    }
+  },
+  "exact_56c6_format_evidence": "56c6-format-validation-evidence.json"
 }

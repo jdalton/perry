@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T10:44:58.593278+00:00",
+  "updated_at": "2026-10-12T11:06:49.978949+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
@@ -123,12 +123,13 @@
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "266 freshtrio/fixturePASS; finalauto/full lint underway",
+  "latest_handoff": "Final56c6sourceclear; prior266driverinterrupted; exactfinalvalidationactive",
   "current_serial_issue": 12202,
   "serial_pending": [],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
-  "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-  "validation_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-  "pending_validation_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-  "serial_concurrency_incident": "Warningcheck briefly overlappedfocusedcompile; stopped; no resultclaimed; ownedchildexitverification andserialrerun required"
+  "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "validation_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "pending_validation_head": null,
+  "serial_concurrency_incident": "Warningcheck briefly overlappedfocusedcompile; stopped; no resultclaimed; ownedchildexitverification andserialrerun required",
+  "validation_policy": "planning/12202-format-validation-decision.json: all137gatesaccounted; reusedcompletedunaffectedresults labeledoriginalhead; freshfinaltrio/parity and affected/unfinishedgates required, not a freshwhole-driverpass"
 }

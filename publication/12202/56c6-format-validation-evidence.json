@@ -1,0 +1,47 @@
+{
+  "issue": 12202,
+  "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "parent_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+  "format_proof": {
+    "record": "/workspace/work/perry-queue/planning/12202-format-validation-decision.json",
+    "scope": 14,
+    "rustfmt": "1.11.0-nightly (db8f076d26 2026-10-03)",
+    "edition": 2021,
+    "repo_config_skip_children": true,
+    "parent266_extraction_mismatches": 0,
+    "decision": "format-only source clearance; source bytes differ; no validation result"
+  },
+  "changed_files": {
+    "count": 14,
+    "diffstat": "14 files changed, 95 insertions(+), 109 deletions(-)",
+    "record": "/workspace/work/perry-queue/planning/12202-scoped-format-attribution.json"
+  },
+  "prior_266_driver": {
+    "status": "INTERRUPTED",
+    "record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json",
+    "gate_at_interruption": "./scripts/check_auto_optimize_features.sh",
+    "active_child": "cargo check --locked -p perry-runtime-static -p perry-stdlib-static --no-default-features --features perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/external-zlib-pump,perry-stdlib/external-net-pump,perry-stdlib/external-net-tls,perry-stdlib/external-http-client-pump,perry-stdlib/external-ws-pump",
+    "final_summary": false,
+    "later_gates_incomplete": true,
+    "network_replay": "Pinned PyYAML 6.0.2 installation failed with Operation not permitted; gate must be replayed under approved network"
+  },
+  "coverage": {
+    "driver_gate_total": 137,
+    "accounting_status": "pending; every gate must be assigned valid prior-head reuse with input identity/equivalence, rerun at 56c6, or explicitly unresolved baseline/environment/skip",
+    "interrupted_or_unrun_credit": false,
+    "do_not_call_stitched_evidence_fresh_complete_driver": true
+  },
+  "validation_status": {
+    "56c6_matching_trio": "underway; see 12202-56c6-trio-build.log; no result recorded here",
+    "compiled_fixture_no_auto": "pending fresh 56c6 run",
+    "compiled_fixture_auto_opt": "pending fresh 56c6 run",
+    "affected_source_text_gates": "pending fresh run or documented input-equivalence proof",
+    "full_lint_final_summary": "pending"
+  },
+  "history": {
+    "focused_runtime": "53 unique tests / 55 executions passed at 4e (two overlapping executions); prior-head result only",
+    "266_acceptance": "preserved in previous-266-acceptance-evidence.json; never relabel as 56c6",
+    "b4_format_failures": "preserved historical candidate formatting failures; parent format clean on 14 final changed paths; not blanket baseline attribution"
+  }
+}
