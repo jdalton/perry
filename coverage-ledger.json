@@ -1,7 +1,7 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T12:17:49Z",
-  "classification_updated_at": "2026-10-12T13:52:16Z",
+  "classification_updated_at": "2026-10-12T14:03:07Z",
   "counts": {
     "covered": 22,
     "uncertain": 19,
@@ -388,11 +388,11 @@
         "branch": "cloud/issue-12202-wtf8-class-keys",
         "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
         "has_uncommitted_changes": false,
-        "validation": "Validated implementation remains exact head2272: scoped 59 unique tests/67 executions, fresh trio and no-auto/genuine-auto parity passed; full lint 105 pass,32 fail (30 baseline,2 environment/path),2 skips; warn-level Clippy +3/-1 disclosed. PR head dfd64b7 is a changelog-only numbered fragment; source bytes remain 2272. Draft is not ready for review.",
-        "merge_state": "DRAFT OPEN PR12471",
+        "validation": "Exact fragment head dfd64b7: fresh trio,53 unique focused tests/55 executions, pinned Node26.5.1 no-auto fixture parity, fragment self-test and live PR gate PASS. Auto-opt and full lint are inherited only from source head2272 because this head adds only the numbered fragment; full lint remains exit1 with 105 pass,32 fail (30 baseline,2 environment/path),2 skips.",
+        "merge_state": "DRAFT OPEN PR12471; ready-for-review handoff authorized, live PR remains draft until publisher transition.",
         "closure_state": "OPEN",
-        "publication_state": "Draft PR12471 open at changelog fragment head dfd64b7; not ready for review. Issue remains open; no merge or closure credit.",
-        "evidence": "publication/12202/2272-final-validation.json; publication/12202/2272-final-failure-attribution.json; publication/12202/2272-final-freshness.json"
+        "publication_state": "Ready-for-review packet authorized at exact fragment head dfd64b7. Live PR12471 remains open/draft; this handoff does not change PR state. Issue remains open; no merge or closure credit.",
+        "evidence": "publication/12202/dfd64-final-validation.json; publication/12202/2272-final-validation.json"
       },
       "draft_prs": [
         12471

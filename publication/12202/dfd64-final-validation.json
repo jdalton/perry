@@ -1,0 +1,120 @@
+{
+  "issue": 12202,
+  "status": "FINAL_NUMBERED_FRAGMENT_HEAD_VALIDATION_READY",
+  "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+  "parent": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "checkout": "/workspace/work/perry-queue/issue-9927",
+  "target": "/workspace/work/perry-queue/target-12390",
+  "worktree_clean": true,
+  "final_commit_diff": {
+    "only_file": "changelog.d/12471-wtf8-class-keys.md",
+    "status": "added",
+    "diff_stat": "1 insertion",
+    "git_diff_check": "passed"
+  },
+  "live_pr": {
+    "baseRefName": "main",
+    "headRefName": "cloud/issue-12202-wtf8-class-keys",
+    "headRefOid": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+    "isDraft": true,
+    "number": 12471,
+    "state": "OPEN",
+    "title": "Preserve WTF-8 keys for computed class members"
+  },
+  "fragment_gate": {
+    "self_test_exit": 0,
+    "self_test_log": "/workspace/work/perry-queue/12202-dfd64-fragment-self-test.log",
+    "live_pr_gate_exit": 0,
+    "live_pr_gate_command": "bash scripts/check_changeset_fragment.sh PerryTS/perry 12471",
+    "live_pr_gate_log": "/workspace/work/perry-queue/12202-dfd64-fragment-live.log"
+  },
+  "fresh_final_head_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "started_utc": "2026-10-12T13:51:30Z",
+    "finished_utc": "2026-10-12T13:54:40Z",
+    "duration": "3m10s",
+    "log": "/workspace/work/perry-queue/12202-dfd64-trio.log",
+    "hashes": "/workspace/work/perry-queue/12202-dfd64-trio.sha256",
+    "compiler_sha256": "b83ce95a0a9f3714813b8a11671f61883b34589320c0eeb7c8e6f28b861975c5",
+    "runtime_archive_sha256": "1bb09a78697a743febf019aad002d46a26061569deb3d2e098df03ce1accff58",
+    "stdlib_archive_sha256": "0126d419bbee5a9e57e796ef111aac12fa124a511391051080c500316cc515b0",
+    "tool_launch_utc": "2026-10-12T13:51:18Z",
+    "timestamp_note": "started_utc is the recorded shell timestamp; tool launch is recorded separately. Build log reports 3m09s; rounded shell interval is about 3m10s."
+  },
+  "focused_runtime_acceptance": {
+    "invalid_utf8_method": {
+      "passed": 3,
+      "failed": 0,
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-dfd64-invalid-utf8.log"
+    },
+    "wtf8_filter": {
+      "passed": 35,
+      "failed": 0,
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-dfd64-wtf8.log"
+    },
+    "named_controls": {
+      "passed": 17,
+      "failed": 0,
+      "exit": 0,
+      "results": "/workspace/work/perry-queue/12202-dfd64-controls-results.txt",
+      "logs": "/workspace/work/perry-queue"
+    },
+    "unique_tests": 53,
+    "executions": 55,
+    "overlap": "2 invalid-UTF8 method tests are also selected by the wtf8 filter"
+  },
+  "fresh_no_auto_compiled_fixture": {
+    "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+    "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+    "compile_command": "perry compile --no-cache --no-auto-optimize test-files/test_issue_12202_wtf8_class_keys.ts -o /workspace/work/perry-queue/12202-dfd64-acceptance/perry.bin",
+    "compile_exit": 0,
+    "perry_exit": 0,
+    "node_path": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "node_version": "v26.5.1",
+    "node_exit": 0,
+    "stdout_parity_exit": 0,
+    "acceptance_dir": "/workspace/work/perry-queue/12202-dfd64-acceptance",
+    "compiler_sha256": "b83ce95a0a9f3714813b8a11671f61883b34589320c0eeb7c8e6f28b861975c5"
+  },
+  "full_lint_reuse": {
+    "policy": "Reuse allowed for fragment-only commit after fresh final-head compiler trio, fragment-sensitive checks, and scoped acceptance; do not claim a fresh full driver run at dfd64b7.",
+    "original_source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "final_head_parent": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "source_build_and_gate_inputs_unchanged_except_numbered_fragment": true,
+    "evidence": "/workspace/work/perry-queue/12202-2272-final-validation.json",
+    "full_lint_exit": 1,
+    "passed": 105,
+    "failed": 32,
+    "ci_only_skipped": 2,
+    "total_status_rows": 139,
+    "failure_classification": {
+      "baseline": 30,
+      "candidate": 0,
+      "environment": 2,
+      "unresolved": 0
+    },
+    "warnings": {
+      "product_errors": 42,
+      "exact_parent_signatures": 42,
+      "host_errors": 35,
+      "exact_parent_signatures_host": 35
+    },
+    "genuine_auto_opt_fixture": {
+      "compile_exit": 0,
+      "perry_exit": 0,
+      "node_exit": 0,
+      "parity_exit": 0,
+      "fallback": "none observed; fresh feature-specific archives built and linked"
+    },
+    "limitation": "The inherited full lint is failed, not green: baseline and environment failures remain. Gate counts/classifications retain the original 2272 head provenance."
+  },
+  "resources_after_validation": {
+    "workspace_free": "~3.2 GiB",
+    "tmp_free": "~2.7 GiB"
+  },
+  "checked_at_utc": "2026-10-12T14:02:05.693496+00:00"
+}

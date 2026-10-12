@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T13:52:16Z",
+  "checked_at": "2026-10-12T14:03:07Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -128,7 +128,7 @@
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "Fetched jdalton/perry cloud/local-publisher-inbox/publisher-status.json (blob 59b919b); direct issue fetch confirms #12202 OPEN; snapshot planning/12202-milestone-refresh-20261012T130710Z.json",
+    "evidence_source": "Inbox fetched at 2026-10-12T14:03:07Z; blob 59b919bfb3084932b47572495c47557b0f2c37ed still listed PR12471 draft at source head2272; direct PR read confirms open/draft at dfd64b7. Snapshot: publication/12202/dfd64-publisher-refresh.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -242,15 +242,15 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "has_uncommitted_changes": false,
-      "state": "Full source behavior covered by draft PR12471; PR remains open/draft and not ready for review; issue OPEN",
+      "state": "Ready-for-review handoff authorized at exact fragment head dfd64b7; live PR12471 remains open/draft until publisher transition; issue OPEN.",
       "draft_creation_allowed": false,
-      "ready_for_review": false,
+      "ready_for_review": true,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "59 unique tests/67 executions, fresh trio and both Node parity modes PASS. Full lint exit1:105 pass,32 fail (30 baseline,2 environment/path),2 CI skips; warn-level Clippy +3/-1 disclosed as informational.",
+      "validation": "Fresh exact dfd64 trio,53 unique tests/55 executions, Node26.5.1 no-auto parity and fragment gates PASS. Genuine auto-opt and full lint are reused only from source head2272; full lint exit1, 105 pass/32 fail (30 baseline,2 environment/path),2 skips.",
       "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "packet": "publication/12202/metadata.json",
       "publisher_actions": [
-        "Luna_class owns numbered-fragment/source-branch follow-up; verifier will resume after #12145."
+        "Local publisher may review/advance existing PR12471 using this ready packet; do not create a duplicate PR. Live PR remains draft in this snapshot."
       ],
       "pr_number": 12471,
       "observed_draft": true,
@@ -258,11 +258,15 @@
       "validated_source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
       "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "coverage": "covered",
-      "coverage_basis": "Full source behavior accepted at validated source head2272; draft/open state is tracked separately.",
+      "coverage_basis": "Full source behavior accepted at 2272; exact numbered-fragment head dfd64 acceptance passed. Draft/open and issue-open state tracked separately.",
       "covering_prs": [
         12471
       ],
-      "issue_state": "OPEN"
+      "issue_state": "OPEN",
+      "push_allowed": false,
+      "pr_creation_allowed": false,
+      "validation_evidence": "publication/12202/dfd64-final-validation.json",
+      "pr_url": "https://github.com/PerryTS/perry/pull/12471"
     },
     {
       "issues": [
@@ -329,8 +333,8 @@
   "coverage_freshness": "planning/original224-state-refresh-20261012T104351Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T13:52:16Z",
-  "publisher_inbox_checked_at": "2026-10-12T10:43:51Z",
+  "updated_at": "2026-10-12T14:03:07Z",
+  "publisher_inbox_checked_at": "2026-10-12T14:03:07Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,
@@ -369,7 +373,7 @@
     "status": "parked-open-unresolved-unpublished",
     "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
-  "publisher_inbox_snapshot": "planning/12145-full-lint-start-milestone.json",
+  "publisher_inbox_snapshot": "publication/12202/dfd64-publisher-refresh.json",
   "resource_milestone": {
     "record": "planning/11915-resource-preflight-milestone-e190.json",
     "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",
