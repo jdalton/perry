@@ -1,0 +1,28 @@
+{
+  "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
+  "log": "/workspace/work/perry-queue/issue12285-full-lint.log",
+  "overall_status": "incomplete_interrupted_for_disk_safety",
+  "run_command": "source /workspace/work/perry-queue/env.sh; unset SKIP_COMPILE_GATES; BASE_SHA=d74498b261d087a301b80602835bc7199a067957 CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390 CARGO_BUILD_JOBS=1 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:${PYTHONPATH:-} bash scripts/run_lint_gates.sh",
+  "lint_tier": "128 gates derived; static lint tier completed with 28 failures and 2 CI-only skips (count before compile tier; see log for per-gate diagnostics).",
+  "compile_tier": "11 commands derived; first 2 commands finished as FAIL (warnings product: 37 errors; warnings host-compatible: 30 errors); third gate, clippy product, was stalled with no rustc process for about 2.5 minutes at 677MB free.",
+  "safety_action": {
+    "driver_pid": 673778,
+    "driver_signal": "SIGSTOP",
+    "command_shell_pid": 697807,
+    "signal": "SIGINT",
+    "cargo_clippy_pid": 697808,
+    "state_after": "defunct",
+    "cargo_check_pid": 697817,
+    "reason": "no rustc active, no progress for ~2.5min, only 677MB disk available; user authorized clean stop and rerun of interrupted gate"
+  },
+  "cleanup": {
+    "path": "/workspace/work/perry-queue/target-12390/debug/incremental",
+    "resolved_path": "/workspace/work/perry-queue/target-12390/debug/incremental",
+    "pre_cleanup_size": "2.8G",
+    "owner_file": "/workspace/work/perry-queue/target-12390/OWNER",
+    "removed": true,
+    "preserved": "source files, logs, archives, binaries, reports, snapshots",
+    "disk_free_after": "3.3GB"
+  },
+  "next": "Rerun full lint with CARGO_INCREMENTAL=0 after safely stopping/resuming the paused wrappers; preserve this partial run and classify every diagnostic against pristine baseline."
+}
