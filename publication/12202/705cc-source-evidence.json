@@ -1,0 +1,51 @@
+{
+  "issue": 12202,
+  "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "parent": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "source_status": "source clear; static gate preflight still required before build authorization",
+  "change_paths": [
+    "crates/perry-runtime/src/object/native_call_method.rs",
+    "crates/perry-runtime/src/object/class_value.rs",
+    "crates/perry-runtime/src/object/class_value/tests.rs"
+  ],
+  "change_summary": "class_value tests moved from inline module into class_value/tests.rs; native_call_method raw key materialization changed to avoid a new raw-handle site",
+  "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
+  "source_checks": {
+    "raw_handle_no_raise_vs_base": "PASS (exit 0; previously new site removed by with_const_ptr + nanbox_string_key root materialization)",
+    "raw_handle_total": "1203, same as exact parent; per-module comparison is not raised",
+    "rustfmt": "PASS (pinned 1.11.0-nightly, edition 2021, repo config, skip_children=true on all 3 affected files)",
+    "git_diff_check": "PASS",
+    "file_size_gate": "check_file_size.sh exits 1 only for the three parent-known files arena/page_meta/mod.rs (2020), arena/tests.rs (2020), json/replacer.rs (2004); class_value.rs is now 1588 and new tests.rs 472.",
+    "class_value_lines_before": 2061,
+    "class_value_lines_after": 1588,
+    "extracted_tests_lines": 472,
+    "tests_preservation": "The extracted tests module body byte-matches rustfmt output of the original committed inline module.",
+    "builds_or_runtime": "Not run as instructed."
+  },
+  "prior_56_interruption": {
+    "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json",
+    "completed_gate_rows": 20,
+    "state": "INTERRUPTED; no complete-driver result",
+    "last_active_gate": "cargo fmt --all -- --check; the log had completed 20 gate rows, ending after Windows type-check CRT setup failed with HTTP CONNECT proxy 403.",
+    "windows_typecheck_environment": "HTTP CONNECT proxy 403 during CRT setup",
+    "owned_processes": "driver/cargo-fmt/children verified exited at interruption; no active command may be credited"
+  },
+  "current_705_validation": {
+    "focused_tests": "NOT RUN; awaiting static preflight",
+    "matching_trio": "NOT RUN; awaiting static preflight",
+    "compiled_fixture_parity": "NOT RUN; awaiting static preflight",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN; all-gate status pending; prior 56 driver interruption remains history"
+  },
+  "earlier_heads": {
+    "56_trio_and_no_auto_fixture": "PASS at 56 only; see prior-56c6-acceptance-evidence.json",
+    "266_genuine_auto_opt": "PASS at 266 only; see previous-266-acceptance-evidence.json"
+  },
+  "node_12211_probe": "Separate issue diagnostic only; no #12202 test or acceptance credit.",
+  "owned_worktree": {
+    "path": "/workspace/work/perry-queue/issue-12202",
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "tracked_or_untracked_changes": "none observed in current read-only status check",
+    "prior_56_driver_processes": "interruption record states owned driver and children were verified exited"
+  }
+}

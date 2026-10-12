@@ -1,0 +1,19 @@
+{
+  "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "fresh_matching_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12202-56c6-trio-build.log",
+    "artifacts": "/workspace/work/perry-queue/12202-56c6-acceptance/debug-artifact-hashes.sha256"
+  },
+  "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+  "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+  "compiler_command": "perry compile --no-auto-optimize --no-cache test-files/test_issue_12202_wtf8_class_keys.ts",
+  "compiler_exit": 0,
+  "perry_exit": 0,
+  "node": "/workspace/.toolchains/node-26.5.1/bin/node v26.5.1",
+  "node_exit": 0,
+  "parity_exit": 0,
+  "record_dir": "/workspace/work/perry-queue/12202-56c6-acceptance",
+  "outputs_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3"
+}

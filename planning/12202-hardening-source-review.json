@@ -1,0 +1,13 @@
+{
+  "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "parent": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "decision": "Source clear; no build authorization until root static gate preflight complete",
+  "key_rooting": "Existing rooted key passed via with_const_ptr to never-allocating nanbox_string_key, immediate boxed root before polymorphic Get. Receiver,args,original/rebound callee ordering unchanged.",
+  "test_extraction": "Independently compared extracted module contents ignoring formatting; same body. Surrounding parent source byte-identical after replacement with cfg(test) path module declaration. Same module hierarchy/privacy/test names.",
+  "line_counts": {
+    "parent": 1588,
+    "child": 472
+  },
+  "abi_or_global_changes": false,
+  "reported_checks": "Source owner raw-handle no-raise PASS, scopedfmt/diff PASS; file-size only3 baseline files remain. No reviewer Cargo/runtime."
+}

@@ -1,0 +1,196 @@
+{
+  "issue": 12202,
+  "comparison_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "candidate_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "checked_at_utc": "2026-10-12T11:10Z",
+  "purpose": "Harden static failure attribution against full candidate-to-parent scanner output; read-only source checks, no Rust builds.",
+  "changed_path_count": 32,
+  "changed_paths": [
+    "crates/perry-runtime/src/closure/dynamic_props.rs",
+    "crates/perry-runtime/src/closure/mod.rs",
+    "crates/perry-runtime/src/closure/props.rs",
+    "crates/perry-runtime/src/object/accessor_pair.rs",
+    "crates/perry-runtime/src/object/class_image.rs",
+    "crates/perry-runtime/src/object/class_registry.rs",
+    "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+    "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+    "crates/perry-runtime/src/object/class_registry/declarations.rs",
+    "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+    "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+    "crates/perry-runtime/src/object/class_registry/registration.rs",
+    "crates/perry-runtime/src/object/class_registry/state.rs",
+    "crates/perry-runtime/src/object/class_value.rs",
+    "crates/perry-runtime/src/object/descriptor_state.rs",
+    "crates/perry-runtime/src/object/descriptors.rs",
+    "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+    "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+    "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+    "crates/perry-runtime/src/object/field_set_by_name.rs",
+    "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+    "crates/perry-runtime/src/object/mod.rs",
+    "crates/perry-runtime/src/object/native_call_method.rs",
+    "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+    "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+    "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+    "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+    "scripts/string_payload_access_baseline.txt",
+    "test-files/test_issue_12202_wtf8_class_keys.ts"
+  ],
+  "source_gate_full_output_comparisons": [
+    {
+      "gate": "addr_class",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+      "candidate_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c"
+    },
+    {
+      "gate": "sso",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "971c0781fa6491b9108e2b54be2d45032f2a6042f45dd6d6929e5b0bdccc5bd5",
+      "candidate_sha256": "971c0781fa6491b9108e2b54be2d45032f2a6042f45dd6d6929e5b0bdccc5bd5"
+    },
+    {
+      "gate": "shape",
+      "comparison": "full stdout line comparison (normalizing only worktree root in shape traceback)",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "d80660ee0cda3c7045210cd41ab0f227a49d76cd64517b819414a0c22fae24a3",
+      "candidate_sha256": "0e64f4bdcccf588b4c7d466574b0c2282045604dae15fadfdc128eaa3261627e"
+    },
+    {
+      "gate": "gc_pin",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "6317c64dfbfe51ce654d1245609fd655ad6a297614bd6eec8988a0cae7da9798",
+      "candidate_sha256": "6317c64dfbfe51ce654d1245609fd655ad6a297614bd6eec8988a0cae7da9798"
+    },
+    {
+      "gate": "gc_holders",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "2dbc6185e24e1ba078f313246c08723235c5c4af724e0aa2a30991da36424174",
+      "candidate_sha256": "2dbc6185e24e1ba078f313246c08723235c5c4af724e0aa2a30991da36424174"
+    },
+    {
+      "gate": "thread_exit",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "1cc9197b4f5912763e1f23f59d3968c1e302f7049ec458c44c42c189c7e345d8",
+      "candidate_sha256": "1cc9197b4f5912763e1f23f59d3968c1e302f7049ec458c44c42c189c7e345d8"
+    },
+    {
+      "gate": "registry_lifetime",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "25d608efe67e2d061cd536b5bba5e85703973f96ea5ffc31b22d4269b026a541",
+      "candidate_sha256": "25d608efe67e2d061cd536b5bba5e85703973f96ea5ffc31b22d4269b026a541"
+    },
+    {
+      "gate": "native_ledger",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "ad8e8c073e37deae2a0650640aeae651e41269a84532f45aff16ae7b636cb219",
+      "candidate_sha256": "ad8e8c073e37deae2a0650640aeae651e41269a84532f45aff16ae7b636cb219"
+    },
+    {
+      "gate": "test_registration",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "abc60dd7cf42a285f997161f0445443013662d7f35252d4191130bc61a8a06ab",
+      "candidate_sha256": "abc60dd7cf42a285f997161f0445443013662d7f35252d4191130bc61a8a06ab"
+    },
+    {
+      "gate": "gc_env",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "cba5e1fe9d23406f70a8bb3efd2c58cc3def52dd7734dbdc72e431fdac3a3204",
+      "candidate_sha256": "cba5e1fe9d23406f70a8bb3efd2c58cc3def52dd7734dbdc72e431fdac3a3204"
+    },
+    {
+      "gate": "gc_docs",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "9aa057587f04620d32fca43f2cd85f1720a958f1ebc070e70d344c682d754455",
+      "candidate_sha256": "9aa057587f04620d32fca43f2cd85f1720a958f1ebc070e70d344c682d754455"
+    },
+    {
+      "gate": "locale",
+      "comparison": "full stdout exact line comparison",
+      "substantive_output_equal": true,
+      "base_exit": 1,
+      "candidate_exit": 1,
+      "base_sha256": "993cb1fc15ba6ab0e68ab97e1401343f36e5f9ec9928d5a64c1bbdf04d9a6827",
+      "candidate_sha256": "993cb1fc15ba6ab0e68ab97e1401343f36e5f9ec9928d5a64c1bbdf04d9a6827"
+    }
+  ],
+  "candidate_sensitive_findings": [
+    {
+      "gate": "Raw-handle debt ratchet",
+      "classification": "candidate_failure",
+      "parent": "1203 sites; 72 per-module violations",
+      "candidate": "1204 sites; 73 per-module violations",
+      "new_candidate_finding": "crates/perry-runtime/src/object/native_call_method.rs (one debt site)",
+      "why": "Direct full stdout comparison of same checker in git archive at bc862 and candidate; new violation path is among changed paths. New helper call_invalid_utf8_method_exact is in changed file.",
+      "parent_output": "/tmp/12202-gate-compare/12202-bc862-static-compare-raw_handle.log",
+      "candidate_output": "/tmp/12202-gate-compare/issue-12202-raw_handle.log"
+    },
+    {
+      "gate": "File size limit",
+      "classification": "candidate_failure",
+      "parent_replay": "same three existing files only: arena/page_meta/mod.rs 2020; arena/tests.rs 2020; json/replacer.rs 2004",
+      "candidate": "same three plus object/class_value.rs 2061",
+      "new_candidate_finding": "crates/perry-runtime/src/object/class_value.rs is 2061 lines at head vs 1981 at bc862",
+      "why": "The exact parent replay /10739-bc862-replays/file-size.log plus candidate full lint output; independent git-show and worktree line counts. Candidate path is changed."
+    }
+  ],
+  "unresolved_source_sensitive_gates": [
+    {
+      "gate": "GC store-site inventory",
+      "reason": "Same scanner timed out after 90 seconds in both exact source trees; candidate lint excerpt/tail and d744 fingerprint do not prove no changed-path contribution.",
+      "required_evidence": "Verifier rerun with longer bound or direct changed-path scan/candidate-vs-parent full output comparison."
+    },
+    {
+      "gate": "Per-test global sinks",
+      "reason": "Same scanner timed out after 90 seconds in both exact source trees; candidate lint excerpt/tail and d744 fingerprint do not prove no changed-path contribution.",
+      "required_evidence": "Verifier rerun with longer bound or direct changed-path scan/candidate-vs-parent full output comparison."
+    },
+    {
+      "gate": "Native runtime ABI consistency",
+      "reason": "Same scanner timed out after 90 seconds in both exact source trees; candidate lint excerpt/tail and d744 fingerprint do not prove no changed-path contribution.",
+      "required_evidence": "Verifier rerun with longer bound or direct changed-path scan/candidate-vs-parent full output comparison."
+    }
+  ],
+  "scope_classification": "No blanket baseline claim. Full stdout comparisons found identical substantive output for the listed unchanged gates; raw-handle and file-size have new candidate-induced failures; three slow source-sensitive gates remain unclassified pending verifier evidence.",
+  "evidence": {
+    "parent_replay_file_size_sha256": "e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a",
+    "direct_comparison_summary": "/tmp/12202-gate-compare/summary.json",
+    "candidate_full_lint": "/workspace/work/perry-queue/12202-b4b8-full-lint.log",
+    "prior_attribution": "/workspace/work/perry-queue/planning/12202-static-attribution.json"
+  }
+}

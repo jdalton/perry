@@ -1,0 +1,137 @@
+{
+  "issue": 12211,
+  "observed_at_utc": "2026-10-12T11:14:41Z",
+  "purpose": "Bounded freshness and overlap review after a diagnostic-only derived-artifact probe; no implementation claim or authorization inferred.",
+  "diagnostic_probe": {
+    "record": "/workspace/work/perry-queue/planning/next-candidates/12211-next-probe/result.json",
+    "source_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+    "provenance": "Derived #12202 compiler/runtime/stdlib artifacts, not pristine-main proof.",
+    "node": "v26.5.1",
+    "fixture_sha256": "c75d0d442ab39615a7ae1fc466eb792a8daed86c619921a090fcb040d5e8a245",
+    "node_exit": 0,
+    "compile_exit": 0,
+    "perry_exit": 0,
+    "node_stdout": "B1\\n",
+    "perry_stdout": "A1\\n",
+    "parity_exit": 1,
+    "interpretation": "Reproduces the predicted mismatch on the derived 56c6 artifact only. Does not independently prove the same runtime behavior on pristine current main."
+  },
+  "live_issue": {
+    "number": 12211,
+    "title": "Make class super property writes follow the live home prototype",
+    "state": "open",
+    "updated_at": "2026-10-08T12:31:12Z",
+    "comments": 0,
+    "closed_at": null,
+    "url": "https://github.com/PerryTS/perry/issues/12211",
+    "current_body_scope": "super writes must use the home object current prototype and original receiver, capture the reference before an observable RHS, root home/key/value/receiver, and cover relinking/static/proxy/extends-null cases."
+  },
+  "related_homeobject_issue": {
+    "number": 12210,
+    "title": "Pass the actual class [[HomeObject]] from codegen for super reads/calls",
+    "state": "open",
+    "updated_at": "2026-10-08T12:31:11Z",
+    "comments": 0,
+    "url": "https://github.com/PerryTS/perry/issues/12210",
+    "relationship": "Coupled blocker: current home-owner logic can infer from receiver/private-brand/template context; issue requests lexical HomeObject carried from codegen. A safe setter fix cannot substitute receiver-derived home or late setter-time parent lookup."
+  },
+  "current_main": {
+    "default_branch": "main",
+    "observed_head": "8e5224dc6844d2bf60aa536a6cc4c88926c6da63",
+    "head_evidence": "Latest repository commit search at observation time (committer timestamp 2026-10-12T10:23:12Z); current default-branch files fetched at this exact ref.",
+    "comparison_from_bc862": {
+      "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+      "status": "ahead",
+      "ahead_by": 23,
+      "behind_by": 0,
+      "changed_files": 163
+    },
+    "relevant_inputs": [
+      {
+        "path": "crates/perry-codegen/src/expr/super_method.rs",
+        "blob_sha": "3b8d4541bf9eeb227d20898780947a899b387976",
+        "d744_matches_bc_and_56": true,
+        "bc_to_main_changed": false,
+        "finding": "SuperPropertySet still selects parent_class_id/declared parent; lowers key/value operands and calls js_super_put_value_set(parent_cid, key, value, receiver, strict). No evaluated live home/base is carried."
+      },
+      {
+        "path": "crates/perry-runtime/src/proxy.rs",
+        "blob_sha": "7820b381b6a5bc1a726bcec8309b225fae0b4982",
+        "d744_matches_bc_and_56": true,
+        "bc_to_main_changed": false,
+        "finding": "js_super_put_value_set resolves static dynamic/declared parent or declared class accessor chain and eventually ordinary PutValue; it does not use class_super_base/live method-home prototype."
+      },
+      {
+        "path": "crates/perry-runtime/src/object/class_super_chain.rs",
+        "blob_sha": "c77a12440535c03892afa89fc86839a8f4a94fb2",
+        "d744_matches_bc_and_56": true,
+        "bc_to_main_changed": false,
+        "finding": "class_super_base reads current home prototype for read/call paths, but caller still supplies home_cid and its home owner can come from lexical brand/template fallback; actual [[HomeObject]] handoff remains #12210 scope."
+      },
+      {
+        "path": "crates/perry-runtime/src/object/property_key.rs",
+        "blob_sha": "82ebb7d3fcccce17ae669d7a66a48327aff22104",
+        "d744_matches_bc_and_56": true,
+        "bc_to_main_changed": false,
+        "finding": "object-literal super setter helper uses captured home, but codegen has already evaluated RHS before calling; this is not a safe class setter template without reference/base capture ordering changes."
+      }
+    ],
+    "path_comparison": "The four relevant local blobs are identical at d744 baseline, bc862 reference, and 56c6 candidate. Current-main compare from bc862 lists 163 changed paths, but none of these four; fetched main blob SHAs also match local candidate/baseline hashes. No relevant code-path drift across these references."
+  },
+  "focused_pr_coverage": [
+    {
+      "pr": 4233,
+      "title": "Fix prototype and super assignment parity",
+      "state": "merged",
+      "merge_commit": "dc79cf9899c9769571b1c3cba1ab32ed2fac7998",
+      "coverage": "Established class instance SuperPropertySet and ordinary [[Set]]/receiver/computed key-RHS ordering; it does not establish live home-prototype resolution after relinking. Historical assignment machinery only.",
+      "changed_paths_include": [
+        "crates/perry-codegen/src/expr/super_method.rs",
+        "crates/perry-runtime/src/proxy.rs",
+        "crates/perry-runtime/src/object/property_key.rs"
+      ]
+    },
+    {
+      "pr": 12191,
+      "title": "fix(runtime): unify super calls through the actual home prototype",
+      "state": "merged",
+      "merge_commit": "66b7275cb5473186f29e383f0b44507f023be640",
+      "coverage": "Reads/calls route through live home prototype and receiver-aware lookup. Its super_method.rs patch changes call key/call dispatch; it does not change the SuperPropertySet branch. Changed-file inventory does not include proxy.rs, so setter path remains separate."
+    },
+    {
+      "pr": 11777,
+      "title": "Read super members and instanceof from the live prototype chain",
+      "state": "merged",
+      "merge_commit": "334217b507e875535648d243fe6d8cf3d2749941",
+      "coverage": "Live prototype reads/calls and instanceof after relinking; title/body scope is reads/calls, not writes."
+    },
+    {
+      "pr": 12426,
+      "title": "Fix object-literal super getter receiver",
+      "state": "merged",
+      "merge_commit": "ccdbb1fe355e72a4b84fea751c69a50a75b453e5",
+      "coverage": "Object-literal super getter receiver/proxy semantics; not class SuperPropertySet."
+    }
+  ],
+  "search_coverage": {
+    "queries": [
+      "12211",
+      "super property",
+      "super assignment",
+      "home prototype super write"
+    ],
+    "result": "No exact issue-12211 implementation PR surfaced. Related results above are scoped; do not infer duplicate coverage from shared super code."
+  },
+  "decision": {
+    "candidate_status": "Remains an open, distinct issue worth retaining; probe mismatch is consistent with source findings but is not pristine-main runtime proof.",
+    "duplicate_blocker": "No duplicate implementation PR found in focused search; merged #12191/#11777 address reads/calls, merged #4233 provides earlier assignment semantics but not live-home relinking.",
+    "rebase_blocker": "Shared architectural dependency with open #12210. Before a claim-ready implementation, determine whether #12211 can be scoped to writes with existing lexical home available, or requires a shared #12210 design. Must capture base at spec-required reference evaluation point before observable RHS; setter-time lookup alone is unsafe.",
+    "recommendation": "Keep on hold pending root authorization/shared #12210 design and a pristine-main baseline reproduction. No implementation or candidate-readiness claim."
+  },
+  "actions": {
+    "builds": false,
+    "source_edits": false,
+    "central_ledgers_modified": false,
+    "publication_or_issue_writes": false
+  }
+}

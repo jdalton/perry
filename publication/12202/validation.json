@@ -1,6 +1,6 @@
 {
   "issue": 12202,
-  "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
   "worktree_retired": false,
   "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
@@ -59,41 +59,44 @@
     "validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b"
   },
   "acceptance_matrix": {
+    "static_preflight": {
+      "status": "PENDING; root preflight required before build authorization"
+    },
+    "source_checks": {
+      "status": "PASS at exact 705cc",
+      "raw_handle_no_raise_vs_base": "PASS",
+      "raw_handle_total": 1203,
+      "scoped_rustfmt": "PASS",
+      "git_diff_check": "PASS",
+      "file_size": "class_value.rs 1588 lines; three unrelated existing offenders remain",
+      "evidence": "705cc-source-evidence.json"
+    },
     "focused_runtime_units": {
-      "status": "prior-head only; 53 unique tests across 55 executions passed at 4e; fresh 56c6 rerun/equivalence accounting pending",
-      "prior_validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-      "unique_tests": 53,
-      "executions": 55,
-      "overlap_executions": 2,
-      "exact_56c6_run": false
+      "status": "NOT RUN at 705cc; pending static preflight",
+      "prior_56c6": "53 unique tests across 55 executions at 4e; not 705cc evidence"
     },
     "matching_dev_trio": {
-      "status": "IN_PROGRESS at 56c6",
-      "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
-      "log": "/workspace/work/perry-queue/12202-56c6-trio-build.log",
-      "exit_record_pending": true
+      "status": "NOT RUN at 705cc; pending static preflight",
+      "prior_56c6": "PASS; prior-56c6-acceptance-evidence.json"
     },
     "compiled_fixture_vs_node": {
-      "status": "PENDING fresh 56c6 compiled run",
-      "no_auto": null,
-      "auto_opt": null
+      "status": "NOT RUN at 705cc; pending static preflight",
+      "prior_56c6": "PASS no-auto; prior-56c6-acceptance-evidence.json"
     },
-    "affected_source_text_gates": {
-      "status": "PENDING; formatter changed source text in 14 Rust files; only explicit per-gate input equivalence can justify reuse"
+    "auto_opt": {
+      "status": "NOT RUN at 705cc",
+      "prior_266": "PASS genuine auto-opt; previous-266-acceptance-evidence.json"
     },
     "full_lint": {
-      "status": "PENDING; 266 driver was interrupted at auto-opt feature gate",
-      "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
-      "driver_gate_total": 137,
-      "complete_accounting": "PENDING",
-      "final_counts": null,
-      "interruption_record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json"
-    },
-    "prior_266_warnings": {
-      "status": "prior-head only; 42 product and 35 host fingerprints matched base, but both warning gates were non-green; re-evaluate source-sensitive checks for 56c6"
-    },
-    "prior_b4_format_failures": {
-      "status": "historical candidate formatting failures retained; final changed paths compare clean against parent formatting, not blanket baseline attribution"
+      "status": "NOT RUN at 705cc; complete gate accounting pending",
+      "prior_56c6": {
+        "status": "INTERRUPTED after 20 gate rows; no final summary",
+        "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json"
+      },
+      "prior_266": {
+        "status": "INTERRUPTED at auto-opt features; no final summary",
+        "record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json"
+      }
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -178,17 +181,18 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "FORMAT_ONLY_SOURCE_CLEAR; FINAL_HEAD_VALIDATION_PENDING",
+  "readiness": "SOURCE_CLEAR; STATIC_PREFLIGHT_AND_FINAL_VALIDATION_PENDING",
   "current_head_validation": {
-    "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
-    "status": "formatter-only source clearance; final-head validation pending",
-    "format_proof": "Configured rustfmt output matches all 14 changed files against independently formatted parent versions; source bytes differ.",
-    "matching_dev_trio": "IN_PROGRESS",
-    "compiled_fixture_node_parity": "PENDING fresh exact-head run",
-    "focused_runtime": "53 unique/55 executions at 4e are prior-head evidence only; 56c6 accounting pending",
-    "affected_gates": "PENDING input-equivalence proof or rerun",
-    "full_lint": "PENDING; prior 266 driver interrupted at auto-opt feature gate; complete 137-gate accounting pending",
-    "exact_evidence": "56c6-format-validation-evidence.json"
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "status": "source clear; static preflight and final validation pending",
+    "source_checks": "Raw-handle no-raise, scoped rustfmt, and diff checks pass; class_value.rs now 1588 lines and file-size gate only reports three parent-known files.",
+    "focused_tests": "NOT RUN at 705cc",
+    "matching_dev_trio": "NOT RUN at 705cc",
+    "compiled_fixture_node_parity": "NOT RUN at 705cc",
+    "auto_opt": "NOT RUN at 705cc",
+    "full_lint": "NOT RUN at 705cc; 56c6 prior driver interrupted after 20 rows",
+    "next_gate": "Static preflight before builds/tests",
+    "evidence": "705cc-source-evidence.json"
   },
   "source_review_history": {
     "latest": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
@@ -504,7 +508,7 @@
     "exact_266_product_host_fingerprints_match_base": true
   },
   "limitations": {
-    "platform": "Linux only",
+    "platform": "Linux only; no macOS or Windows validation claim",
     "generic_computed_default_parameter_length": "Separate generic entryless computed-method limitation for ASCII/WTF-8; not claimed fixed."
   },
   "exact_266_acceptance_evidence": "previous-266-acceptance-evidence.json (prior-head only)",
@@ -685,5 +689,96 @@
       "b4_format_failures": "preserved historical candidate formatting failures; parent format clean on 14 final changed paths; not blanket baseline attribution"
     }
   },
-  "exact_56c6_format_evidence": "56c6-format-validation-evidence.json"
+  "exact_56c6_format_evidence": "56c6-format-validation-evidence.json",
+  "prior_56c6_acceptance": {
+    "status": "prior-head only; not 705cc validation",
+    "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+    "trio_and_fixture": {
+      "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+      "fresh_matching_trio": {
+        "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+        "exit": 0,
+        "log": "/workspace/work/perry-queue/12202-56c6-trio-build.log",
+        "artifacts": "/workspace/work/perry-queue/12202-56c6-acceptance/debug-artifact-hashes.sha256"
+      },
+      "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+      "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+      "compiler_command": "perry compile --no-auto-optimize --no-cache test-files/test_issue_12202_wtf8_class_keys.ts",
+      "compiler_exit": 0,
+      "perry_exit": 0,
+      "node": "/workspace/.toolchains/node-26.5.1/bin/node v26.5.1",
+      "node_exit": 0,
+      "parity_exit": 0,
+      "record_dir": "/workspace/work/perry-queue/12202-56c6-acceptance",
+      "outputs_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3"
+    },
+    "full_lint_interruption": {
+      "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+      "driver": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957 CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:${PYTHONPATH:-} RUNNER_TEMP=/workspace/work/perry-queue/12202-56c6-lint-runner-temp GITHUB_PATH=/workspace/work/perry-queue/12202-56c6-lint-runner-temp/github-path bash scripts/run_lint_gates.sh",
+      "network_permission": "require_escalated requested for pinned package install and Windows cross-target checks",
+      "log": "/workspace/work/perry-queue/12202-56c6-full-lint.log",
+      "started_utc_approx": "2026-10-12T11:10:16Z",
+      "interrupted_utc": "2026-10-12T11:10:55Z",
+      "reason": "Root directed stopping the final-head driver after source audit established candidate-sensitive raw_handle (+1) and file-size failures that must be fixed first.",
+      "active_gate": "cargo fmt --all -- --check; the log had completed 20 gate rows, ending after Windows type-check CRT setup failed with HTTP CONNECT proxy 403.",
+      "termination": "Sent Ctrl-C to the owned driver session and verified no driver, cargo-fmt, or child processes remained.",
+      "completed_row_count": 20,
+      "final_driver_status": "Interrupted; no exit marker or full-driver result. Do not count this as completed lint.",
+      "known_candidate_failures_from_read_only_audit": {
+        "raw_handle": "bc862 1203 sites / 72 violations; 56c6 1204 sites / 73 violations, new violation in crates/perry-runtime/src/object/native_call_method.rs",
+        "file_size": "changed crates/perry-runtime/src/object/class_value.rs is 2061 lines; bc862 file-size cannot be compared using the archive checkout because the script follows git state"
+      },
+      "audit": "/workspace/work/perry-queue/planning/12202-static-attribution-hardening.json"
+    }
+  },
+  "prior_266_auto_acceptance": "previous-266-acceptance-evidence.json; genuine auto-opt parity PASS at 266 only",
+  "source_validation_705cc": {
+    "issue": 12202,
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "parent": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+    "source_status": "source clear; static gate preflight still required before build authorization",
+    "change_paths": [
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/class_value/tests.rs"
+    ],
+    "change_summary": "class_value tests moved from inline module into class_value/tests.rs; native_call_method raw key materialization changed to avoid a new raw-handle site",
+    "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
+    "source_checks": {
+      "raw_handle_no_raise_vs_base": "PASS (exit 0; previously new site removed by with_const_ptr + nanbox_string_key root materialization)",
+      "raw_handle_total": "1203, same as exact parent; per-module comparison is not raised",
+      "rustfmt": "PASS (pinned 1.11.0-nightly, edition 2021, repo config, skip_children=true on all 3 affected files)",
+      "git_diff_check": "PASS",
+      "file_size_gate": "check_file_size.sh exits 1 only for the three parent-known files arena/page_meta/mod.rs (2020), arena/tests.rs (2020), json/replacer.rs (2004); class_value.rs is now 1588 and new tests.rs 472.",
+      "class_value_lines_before": 2061,
+      "class_value_lines_after": 1588,
+      "extracted_tests_lines": 472,
+      "tests_preservation": "The extracted tests module body byte-matches rustfmt output of the original committed inline module.",
+      "builds_or_runtime": "Not run as instructed."
+    },
+    "prior_56_interruption": {
+      "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json",
+      "completed_gate_rows": 20,
+      "state": "INTERRUPTED; no complete-driver result",
+      "last_active_gate": "cargo fmt --all -- --check; the log had completed 20 gate rows, ending after Windows type-check CRT setup failed with HTTP CONNECT proxy 403.",
+      "windows_typecheck_environment": "HTTP CONNECT proxy 403 during CRT setup",
+      "owned_processes": "driver/cargo-fmt/children verified exited at interruption; no active command may be credited"
+    },
+    "current_705_validation": {
+      "focused_tests": "NOT RUN; awaiting static preflight",
+      "matching_trio": "NOT RUN; awaiting static preflight",
+      "compiled_fixture_parity": "NOT RUN; awaiting static preflight",
+      "auto_opt": "NOT RUN",
+      "full_lint": "NOT RUN; all-gate status pending; prior 56 driver interruption remains history"
+    },
+    "earlier_heads": {
+      "56_trio_and_no_auto_fixture": "PASS at 56 only; see prior-56c6-acceptance-evidence.json",
+      "266_genuine_auto_opt": "PASS at 266 only; see previous-266-acceptance-evidence.json"
+    },
+    "node_12211_probe": "Separate issue diagnostic only; no #12202 test or acceptance credit."
+  },
+  "node_12211_probe_disclosure": "Separate derived-artifact #12211 diagnostic; no #12202 test or validation credit.",
+  "exact_705cc_source_evidence": "705cc-source-evidence.json",
+  "prior_56c6_acceptance_evidence": "prior-56c6-acceptance-evidence.json",
+  "prior_266_acceptance_evidence": "previous-266-acceptance-evidence.json"
 }

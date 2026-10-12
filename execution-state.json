@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T11:06:49.978949+00:00",
+  "updated_at": "2026-10-12T11:18:56.127327+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification",
+  "serial_build_owner": null,
   "next_steps": [
     "Finish12202 scoped runtime/trio/parity/full lint at corrected head; stop on candidate failure",
     "Continue bounded uncovered-issue selection without duplicate or speculative changes"
@@ -123,13 +123,16 @@
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "Final56c6sourceclear; prior266driverinterrupted; exactfinalvalidationactive",
+  "latest_handoff": "705sourcehardeningclear; Cargohelduntilstaticpreflight",
   "current_serial_issue": 12202,
-  "serial_pending": [],
+  "serial_pending": [
+    "705staticpreflight thenexactvalidation"
+  ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
-  "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
-  "validation_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+  "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "validation_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
   "pending_validation_head": null,
   "serial_concurrency_incident": "Warningcheck briefly overlappedfocusedcompile; stopped; no resultclaimed; ownedchildexitverification andserialrerun required",
-  "validation_policy": "planning/12202-format-validation-decision.json: all137gatesaccounted; reusedcompletedunaffectedresults labeledoriginalhead; freshfinaltrio/parity and affected/unfinishedgates required, not a freshwhole-driverpass"
+  "validation_policy": "Runtimecodechangedafterformat-only56; old705behaviornotvalidated. Exact-head checks required aftercandidate-sensitive staticclear.",
+  "serial_static_owner": "/root/luna_tls_checker"
 }

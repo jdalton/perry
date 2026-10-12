@@ -220,21 +220,21 @@
         12202
       ],
       "branch": "cloud/issue-12202-wtf8-class-keys",
-      "head": "56c6a19f769052dac87f5ca816b6276e629bc0fa",
+      "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
       "has_uncommitted_changes": false,
-      "state": "Formatter-only correction source-cleared; finalhead validation and137-gate accounting in progress",
+      "state": "Root-handle/filesize regressions corrected; all-static preflight before Cargo",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "56c6 scopedfmtPASS; freshtrio/paritypending. 266 behaviorPASS+42/35parentwarnings but full lintINTERRUPTED inautooptfeatures aftercandidateformatfindings. 53unique tests/55executions at4e retained; priorunaffectedresultsreuse requiresper-gateformat-equivalence/provenance. Allaffected/interrupted/unrun gates toexecute56c6.",
-      "current_head": "56c6a19f769052dac87f5ca816b6276e629bc0fa"
+      "validation": "705cc sourceclear, scopedfmt/diff/rawhandle-no-raisePASS; file-sizeonly3baselineoffenders. Runtime/buildsnotrun. Prior56freshtrio/fixturePASS butnewrawhandle+1 andclass_value2061failed;56full driverinterrupted20rows. 266autoresultspriorheadonly; no matchingnewvalidationclaim.",
+      "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-20261012T104351Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T11:06:49.978949+00:00",
+  "updated_at": "2026-10-12T11:18:56.127327+00:00",
   "publisher_inbox_checked_at": "2026-10-12T10:43:51Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
