@@ -1,0 +1,41 @@
+{
+  "issue": 10027,
+  "checked_at": "2026-10-12T14:13:40Z",
+  "branch": "cloud/issue-10027-root-ws-dispatch",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+  "tree": "b1fed386e21c170783d9f1ee2f070c248ce495f9",
+  "worktree": "/workspace/work/perry-queue/issue-10027",
+  "worktree_clean": true,
+  "previous_head": {
+    "head": "b678eadbdc87741bbd9068a3db3042827fb08a6a",
+    "summary": "Removed unavailable empty GC test frame.",
+    "focused_test": "Compile completed but link failed because test symbols promise_new, resolve_bits, reject_deferred were missing. Parent reports matching trio passed at b678; this is prior-head evidence only and is not inherited by 9d6973c."
+  },
+  "current_head_validation": {
+    "focused_command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
+    "compile_and_link": "PASS",
+    "runtime_test": "FAIL exit1; TypeError: value is not a function at <anonymous>",
+    "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.log",
+    "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.run.json",
+    "no_capture_exit": 1,
+    "first_focused_attempt": {
+      "exit": 1,
+      "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.log",
+      "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.run.json"
+    }
+  },
+  "acceptance": {
+    "fresh_trio": "NOT RUN at9d6973c",
+    "runtime_fixture_parity": "NOT RUN",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN",
+    "deployed_mb24_browser_retest": "NOT RUN; still required for whole-issue closure"
+  },
+  "current_status": "Focused regression compiles and links at9d6973c but fails at runtime. Verifier stopped; class owner is diagnosing. No broader acceptance or coverage credit.",
+  "coverage": "uncovered",
+  "issue_state": "OPEN",
+  "covering_prs": [],
+  "draft_creation_allowed": false,
+  "ready_for_review": false
+}

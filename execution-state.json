@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-10-12T14:03:07Z",
+  "updated_at": "2026-10-12T14:13:40Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "After #12471 finalization, obtain serial validation authorization for fresh exact-head #12145 2e094 trio and scoped acceptance; do not reuse 22726 as current-head acceptance.",
-    "Complete and classify the required full lint for the exact validated #12145 head; the prior 22726 run ended at the 30-minute cap during API docs release compilation and is incomplete.",
-    "#10027 focused tests and matching build/runtime acceptance; MB24 browser retest required before closure.",
-    "#11915 remains parked open/unresolved/unpublished at e190.",
-    "#12202 exact fragment head dfd64 ready-for-review packet is published; live PR12471 remains open/draft pending local publisher transition."
+    "Continue bounded #10027 runtime TypeError diagnosis; do not reuse b678 trio or start broader checks before a fix and serial authorization.",
+    "After diagnosis, rerun fresh matching trio and focused acceptance, followed by authorized parity/full lint and MB24 browser retest.",
+    "Revalidate #12145 exact2e094; previous22726 lint was incomplete at the 30-minute cap.",
+    "#12471 ready packet is published; live PR remains open/draft pending publisher."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -25,11 +24,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 exact2e094: delimiter-only per_test_global! checker fix; static A/B matches base (12 findings/70 asserted), no build/runtime validation. Prior22726 trio,37 controls and integration1/1 passed; full lint exit124 at API docs release build (104 ok,31 fail,2 skip; no footer, incomplete).",
-    "#12202/#12471: ready-for-review handoff packet authorized at exact dfd64; live PR remains OPEN/DRAFT until publisher transitions. No new PR action by this handoff.",
-    "#10027 committed head2816d18 has source/static preflight clear; focused acceptance pending; MB24 retest required before closure.",
-    "#11915 remains parked open/unresolved/unpublished at e190.",
-    "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
+    "#10027 exact9d6973c focused regression compiles/links but fails at runtime: TypeError: value is not a function. Owner diagnosing; no broader acceptance/full lint. Evidence planning/10027-9d6973-current-failure.json.",
+    "#12145 exact2e094 has only static A/B equivalence; no exact-head build/runtime. Prior22726 full lint was capped and incomplete.",
+    "#12202/#12471 ready-for-review handoff exact dfd64; live PR open/draft, publisher action pending.",
+    "#11915 parked open/unresolved/unpublished at e190."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -98,26 +96,37 @@
         "ready_for_review": false,
         "merged": true,
         "merged_at": "2026-10-12T08:55:05Z"
+      },
+      {
+        "number": 12471,
+        "url": "https://github.com/PerryTS/perry/pull/12471",
+        "issues": [
+          12202
+        ],
+        "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
-    "remaining": 15,
+    "remaining": 14,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
-      "repo_open": 191,
+      "repo_open": 190,
       "original_open": 180,
       "original_closed": 44,
-      "observed_at": "2026-10-12T10:43:51Z",
-      "evidence": "planning/original224-state-refresh-20261012T104351Z.json"
+      "observed_at": "2026-10-12T14:13:40Z",
+      "evidence": "planning/original224-state-refresh-20261012T141340Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 5,
-    "opened": 5,
-    "remaining_to_open": 15,
+    "opened": 6,
+    "remaining_to_open": 14,
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "live GitHub REST newer than publisher inbox",
+    "evidence_source": "Publisher inbox fetched at 2026-10-12T14:13:40Z: blob 59b919bfb3084932b47572495c47557b0f2c37ed still lists PR12471 draft at stale source head2272; direct GitHub PR read confirms open/draft at dfd64b7. Issue state refresh: planning/original224-state-refresh-20261012T141340Z.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -125,18 +134,27 @@
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
     "ready_transition_packets": 0,
-    "draft_creation_packets_available": 0
+    "draft_creation_packets_available": 0,
+    "pr_state_counts": {
+      "as_of": "2026-10-12T14:13:40Z",
+      "opened": 6,
+      "merged": 5,
+      "closed_unmerged": 0,
+      "currently_open": 1,
+      "drafts": 1,
+      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the one open draft. PR lifecycle, issue state, and coverage are separate."
+    }
   },
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": 12145,
+  "current_serial_issue": 10027,
   "serial_pending": [
-    "12145 current source head2e094; fresh matching trio and focused acceptance pending serial authorization. Prior22726 lint cap was incomplete at API docs release build.",
-    "12471 verifier is finalizing numbered-fragment head/readiness; next slot milestone.",
-    "#10027 focused tests and matching build/runtime acceptance; MB24 browser retest required before closure.",
-    "#11915 parked open/unresolved/unpublished at e190; no further runs authorized."
+    "#10027 exact9d6973c focused runtime regression compiles/links but fails exit1 with TypeError: value is not a function; verifier stopped and class owner diagnosing. No broader acceptance at this head.",
+    "#12145 exact2e094 current source has only static A/B equivalence; exact-head build/runtime and full lint remain pending. Prior22726 full lint stopped at cap and is incomplete.",
+    "#12471 exact dfd64 packet ready for review; live PR remains open/draft until publisher transition.",
+    "#11915 parked open/unresolved/unpublished at e190; further runs unauthorized."
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -146,14 +164,14 @@
   "validation_policy": "#12202 exact dfd64 numbered-fragment head has fresh trio,53 unique runtime tests/55 executions, no-auto Node26.5.1 parity, and fragment gates PASS. Auto-opt and full lint are explicitly reused from unchanged source head2272; full lint is non-green with classified failures. The publisher-ready packet does not transition the live PR.",
   "serial_static_owner": null,
   "current_validation_progress": {
-    "issue": 11915,
-    "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
-    "status": "parked open/unresolved/unpublished; diagnosis complete",
-    "diagnosis": "Array.prototype.slice property write invariant mismatch before reflective call; no fix attempted",
+    "issue": 10027,
+    "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+    "status": "focused runtime regression failed after compile/link; owner diagnosing, no broader acceptance",
+    "diagnosis": "TypeError: value is not a function at <anonymous>",
     "active_processes_at_slot_census": [],
     "further_runs_authorized": false,
-    "next_lane": "12145 source-only implementation by Luna_tls; no heavy build yet",
-    "evidence": "planning/11915-parked-e190-diagnosis.json"
+    "next_lane": "Await source-owner diagnosis; 12145 remains exact-head validation pending later serial authorization",
+    "evidence": "planning/10027-9d6973-current-failure.json"
   },
   "validation_resource_policy": {
     "full_lint_hard_cap_minutes": 30,
@@ -185,10 +203,11 @@
   },
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T12:40:28.644475+00:00",
-    "next_task": "No current validation job; 11915 parked, no further runs authorized. 12145 source-only until local claim and later serial authorization.",
+    "checked_at": "2026-10-12T14:13:40Z",
+    "next_task": "Verifier stopped after focused #10027 failure; class owner diagnosing.",
     "active_validation_processes": [],
-    "census_clean": true
+    "census_clean": true,
+    "evidence": "planning/10027-9d6973-current-failure.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -215,20 +234,20 @@
   },
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
-    "issue": 12145,
-    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-    "gate": "full run_lint_gates.sh, exact128-command/75-step inventory",
-    "started_at": "2026-10-12T13:20:22Z",
-    "hard_deadline": "2026-10-12T13:50:22Z",
-    "cap_seconds": 1800,
-    "owner": "cloud /root/luna_verification",
-    "status": "STOPPED at hard cap; exit124 during API docs cargo build --release -p perry; no live descendants, only zombies. 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete. Docs drift gate not run."
+    "issue": 10027,
+    "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+    "gate": "focused moving-GC WebSocket listener/payload regression",
+    "status": "FAIL exit1 after compile and link pass: TypeError: value is not a function. No broader acceptance/full lint. Verifier stopped; class owner diagnosing.",
+    "evidence": "planning/10027-9d6973-current-failure.json",
+    "active_processes": []
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T13:06:21Z",
-    "source": "publisher-status.json",
-    "source_updated_at": "2026-10-12T12:17:49Z",
-    "issue_12202_assignment": "none observed; no newer local inbox snapshot available"
+    "observed_at": "2026-10-12T14:13:40Z",
+    "source": "cloud/local-publisher-inbox/publisher-status.json",
+    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "issue_12202_assignment": "PR12471 exists; direct fresh read confirms OPEN/DRAFT at dfd64b7. Inbox itself is stale, listing source2272.",
+    "state_evidence": "planning/original224-state-refresh-20261012T141340Z.json"
   },
   "next_independent_candidate": {
     "issue": 12145,
@@ -244,11 +263,12 @@
     "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T13:20:48Z",
-    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
-    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "observed_at": "2026-10-12T14:13:40Z",
+    "source": "cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "result": "No new assignment/state in inbox snapshot; #12471 remains draft per last snapshot; prior API-confirmed fragment head dfd64b7 unchanged."
+    "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "issue_12202_assignment": "PR12471 exists; direct fresh read confirms OPEN/DRAFT at dfd64b7. Inbox itself is stale, listing source2272.",
+    "state_evidence": "planning/original224-state-refresh-20261012T141340Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -257,17 +277,45 @@
     "closed": 44
   },
   "current_validation_results": {
-    "issue": 12145,
-    "validated_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-    "current_source_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "prior_head_acceptance": {
-      "trio": "PASS fresh matching 3-package build,1m57",
-      "focused_controls": "37/37 PASS (store19, inline14, agent3, thread_exit1)",
-      "production_integration": "PASS1/1",
-      "auto_optimize_pruned_feature_check": "PASS"
+    "issue": 10027,
+    "checked_at": "2026-10-12T14:13:40Z",
+    "branch": "cloud/issue-10027-root-ws-dispatch",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+    "tree": "b1fed386e21c170783d9f1ee2f070c248ce495f9",
+    "worktree": "/workspace/work/perry-queue/issue-10027",
+    "worktree_clean": true,
+    "previous_head": {
+      "head": "b678eadbdc87741bbd9068a3db3042827fb08a6a",
+      "summary": "Removed unavailable empty GC test frame.",
+      "focused_test": "Compile completed but link failed because test symbols promise_new, resolve_bits, reject_deferred were missing. Parent reports matching trio passed at b678; this is prior-head evidence only and is not inherited by 9d6973c."
     },
-    "current_head_static": "2e094 delimiter-only per_test_global! parser fix; A/B global-sink check base=candidate 12 findings/70 asserted; prior22726 candidate16/74. No current-head build or runtime test.",
-    "full_lint": "22726 run exit124 at hard cap during release API-doc build; 104 ok,31 fail,2 skip rows; no footer, not classified, incomplete; docs drift gate not run.",
-    "prior_38a_failure": "Preserved; invalid numeric f64 test argument instead of boxed Timeout handle; corrected at22726."
-  }
+    "current_head_validation": {
+      "focused_command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
+      "compile_and_link": "PASS",
+      "runtime_test": "FAIL exit1; TypeError: value is not a function at <anonymous>",
+      "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.log",
+      "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.run.json",
+      "no_capture_exit": 1,
+      "first_focused_attempt": {
+        "exit": 1,
+        "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.log",
+        "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.run.json"
+      }
+    },
+    "acceptance": {
+      "fresh_trio": "NOT RUN at9d6973c",
+      "runtime_fixture_parity": "NOT RUN",
+      "auto_opt": "NOT RUN",
+      "full_lint": "NOT RUN",
+      "deployed_mb24_browser_retest": "NOT RUN; still required for whole-issue closure"
+    },
+    "current_status": "Focused regression compiles and links at9d6973c but fails at runtime. Verifier stopped; class owner is diagnosing. No broader acceptance or coverage credit.",
+    "coverage": "uncovered",
+    "issue_state": "OPEN",
+    "covering_prs": [],
+    "draft_creation_allowed": false,
+    "ready_for_review": false
+  },
+  "active_source_issue": 10027
 }

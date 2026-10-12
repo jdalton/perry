@@ -291,16 +291,16 @@
       "worktree": "/workspace/work/perry-queue/issue-10027",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "base_tree": "296f53dedd6f4d0461bb60c629cb8946a939244f",
-      "current_head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
-      "tree": "8232aa984ba812dc490bccf346392d85c3c31f10",
+      "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+      "tree": "b1fed386e21c170783d9f1ee2f070c248ce495f9",
       "has_uncommitted_changes": false,
-      "validation": "Committed source head2816d18; Astra source review and static checks clear. Static preflight compares exact head to d3e5359: raw-handle and asserted-global no-raise checks pass; GC-holder and file-size failures are unchanged baseline findings outside changed paths. Cargo/runtime and focused tests not run (slot held by #12145). Deployed MB24 browser retest remains required before closure.",
+      "validation": "Exact9d6973c focused regression compiles and links, then fails exit1: TypeError: value is not a function. Previous b678 focused link failure and parent-reported trio pass are older-head evidence only. No 9d trio, broader acceptance, parity, auto-opt, or full lint.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T13:07:10Z",
-      "evidence": "planning/provisional-10027/metadata.json; planning/provisional-10027/validation.json; planning/10027-static-preflight.json",
-      "publication_state": "Committed local candidate; provisional packet only; draft creation/push/PR publication not authorized.",
-      "remaining": "Run focused and matching-build/runtime acceptance, then perform deployed MB24 browser retest before any closure claim."
+      "refreshed_at": "2026-10-12T14:13:40Z",
+      "evidence": "planning/10027-9d6973-current-failure.json",
+      "publication_state": "Committed candidate remains local/unpublished; focused runtime regression fails and owner is diagnosing. No coverage or publication readiness.",
+      "remaining": "Resolve runtime TypeError, then obtain authorized exact-head acceptance; MB24 browser retest remains required before closure."
     },
     {
       "issue": 12145,
