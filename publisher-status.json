@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:47:41.835980+00:00",
+  "updated_at": "2026-10-12T08:53:54.363252+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
@@ -48,9 +48,9 @@
           11519
         ],
         "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-        "state": "ready_for_review",
-        "ready_for_review": true,
-        "merged": false
+        "state": "merged",
+        "ready_for_review": false,
+        "merged": true
       },
       {
         "number": 12458,
@@ -58,13 +58,13 @@
         "issues": [
           10739
         ],
-        "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
-        "state": "draft",
-        "ready_for_review": false,
+        "head": "84d1315def71dbdcc3447f95441aea8c29789b68",
+        "state": "ready_for_review",
+        "ready_for_review": true,
         "merged": false
       }
     ],
-    "remaining": 16,
+    "remaining": 15,
     "owner": "cloud implements; local coordinates and publishes",
     "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf",
     "live_issue_snapshot": {
@@ -74,12 +74,12 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 1,
+    "drafts": 0,
     "ready_for_review": 1,
-    "merged": 3,
+    "merged": 4,
     "opened": 5,
     "remaining_to_open": 15,
-    "remaining_to_good_state": 16,
+    "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2
   },
