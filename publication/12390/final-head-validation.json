@@ -1,0 +1,139 @@
+{
+  "checked_at_utc": "2026-10-12T03:14:56.650599+00:00",
+  "commit": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+  "tree": "2147ef96e26f0fce9d599b7c35d919c1d7f8294c",
+  "worktree_clean": true,
+  "pr": {
+    "number": 12439,
+    "url": "https://github.com/PerryTS/perry/pull/12439",
+    "state": "open",
+    "draft": true,
+    "base": "main",
+    "base_sha": "996bc5d629dfbc4b0e99a377b6eeab57c32e54c6",
+    "head_sha": "1273aff03f8685e3d8a2f539dff9ac94088ac857"
+  },
+  "build": {
+    "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit_code": 0,
+    "log": "/workspace/work/perry-queue/12390-pr12439-final-build.log",
+    "result_file": "/workspace/work/perry-queue/12390-pr12439-final-build-result.txt",
+    "artifacts": {
+      "compiler": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "fcb2c4116295ba9bd9aa9bd736a8e5ed4e44ad58768bc077c0820a184a028614"
+      },
+      "debug_runtime": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+        "sha256": "14059c31a78b341ae65aca629c29d26ccb7a961a03064cc60cc057e5e27b1565"
+      },
+      "debug_stdlib": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a",
+        "sha256": "fceedd5753d966024d0b08eefed6d5ecfa0eaaacd19ff9cf1ac7e30260b988ce"
+      }
+    }
+  },
+  "scoped_tests": [
+    {
+      "command": "cargo test -p perry --bin perry web_streams -- --test-threads=1",
+      "exit_code": 0,
+      "result": "2 routing tests passed",
+      "log": "/workspace/work/perry-queue/12390-pr12439-final-routing-test.log"
+    },
+    {
+      "command": "cargo test -p perry-stdlib --lib streams:: -- --test-threads=1",
+      "exit_code": 0,
+      "result": "33 passed; 235 filtered",
+      "log": "/workspace/work/perry-queue/12390-pr12439-final-stdlib-streams.log"
+    }
+  ],
+  "fixtures": {
+    "noauto_issue320": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-issue320-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-issue320-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-issue320-run.log",
+      "passed": true
+    },
+    "auto_issue320": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-issue320-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-issue320-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-issue320-run.log",
+      "passed": true
+    },
+    "noauto_readable-web": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-readable-web-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-readable-web-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-readable-web-run.log",
+      "passed": true
+    },
+    "auto_readable-web": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-readable-web-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-readable-web-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-readable-web-run.log",
+      "passed": true
+    },
+    "noauto_node-readable": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-node-readable-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-node-readable-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/noauto-node-readable-run.log",
+      "passed": true
+    },
+    "auto_node-readable": {
+      "result_file": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-node-readable-result.txt",
+      "result": "compile_exit=0\nrun_exit=0\nnode_parity=passed",
+      "compile_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-node-readable-compile.log",
+      "run_log": "/workspace/work/perry-queue/12390-pr12439-final-acceptance/auto-node-readable-run.log",
+      "passed": true
+    }
+  },
+  "node_oracle": {
+    "path": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "version": "v26.5.1"
+  },
+  "auto_archives": {
+    "forced_rebuild": true,
+    "invalidation": "Preserved previous stamp/hash records, then removed only owned generated release archive outputs and stamp files for the two exact feature keys; standard auto-optimize path rebuilt them at this head.",
+    "web_streams": {
+      "features": "async-bridge,bundled-streams,web-fetch",
+      "stamp": "perry-auto-optimized-v2\nkey=async-bridge,bundled-streams,web-fetch|true|host|wasm=false|napi=false|regex=false|temporal=false|ee=false|url=false|norm=false|seg=false|loc=false|intlns=false|gns=truefalsefalsefalsefalsefalsefalsefalsetruefalse|diag=false|dgram=false|http2=false|nodetest=false|dyneval=false|importopts=false|cobuild=|sizeopt=off|anchors=true|instr=false|hotdiag=false|v=0.5.1659\ntarget=host\ntriple=host\nfeatures=perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/bundled-streams,perry-stdlib/web-fetch,perry-runtime/global-math,perry-runtime/global-webfetch,perry-runtime/alloc-mimalloc,perry-runtime/keepalive-anchors,perry-runtime/external-fetch-symbols\ncobuild=\nsrcs=51a570233fd6e028e9f983e99d53e1bd\n",
+      "stamp_sha256": "02029245c1e45e072d9d4757b2bbc30569be3e998ddbf9020c28b8e1ace369db",
+      "runtime": {
+        "path": "/workspace/work/perry-queue/issue-12390/target/perry-auto-4643743ac91f713d/release/libperry_runtime.a",
+        "sha256": "2237173cb04e1a88bcd0238a7852f6a5ee6e222889098f0e0ac6fc0f8bf262f7"
+      },
+      "stdlib": {
+        "path": "/workspace/work/perry-queue/issue-12390/target/perry-auto-4643743ac91f713d/release/libperry_stdlib.a",
+        "sha256": "0eef017b507f984e3e513bd0c08f6d7169c48ec41eab2086e291c0c1339ac1f0"
+      }
+    },
+    "node_readable": {
+      "features": "async-bridge",
+      "stamp": "perry-auto-optimized-v2\nkey=async-bridge|true|host|wasm=false|napi=false|regex=false|temporal=false|ee=false|url=false|norm=false|seg=false|loc=false|intlns=false|gns=truefalsefalsefalsefalsefalsefalsefalsefalsefalse|diag=false|dgram=false|http2=false|nodetest=false|dyneval=false|importopts=false|cobuild=|sizeopt=off|anchors=true|instr=false|hotdiag=false|v=0.5.1659\ntarget=host\ntriple=host\nfeatures=perry-runtime/full,perry-stdlib/async-bridge,perry-runtime/global-math,perry-runtime/alloc-mimalloc,perry-runtime/keepalive-anchors\ncobuild=\nsrcs=51a570233fd6e028e9f983e99d53e1bd\n",
+      "stamp_sha256": "ab15f264954d40178a0066221f75efc116437207d713f05bd164229050ab7c26",
+      "runtime": {
+        "path": "/workspace/work/perry-queue/issue-12390/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+        "sha256": "dfd1117d22edd0f9f18cc0620974411f00d6016e1bfc9e8f279dd3fad9e1b541"
+      },
+      "stdlib": {
+        "path": "/workspace/work/perry-queue/issue-12390/target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a",
+        "sha256": "c54098dc3de31bfa308695e2cfc9713de7e0ae63bb778a02da740624bd76932d"
+      }
+    },
+    "fallback_assessment": "No runtime/stdlib auto-optimization fallback observed: logs show rebuilding and built archive paths, and link commands select those archives. Logs do contain separate \u201ctiny program fallback\u201d messages for compiler tiny-program subset selection; these are unrelated to auto archive fallback."
+  },
+  "full_lint_and_ci": {
+    "implementation_source_unchanged_since_full_lint": true,
+    "identity_proof": "/workspace/work/perry-queue/12390-full-lint-tree-identity.json",
+    "full_lint_summary": "Prior full lint at unchanged implementation source: 28 reproduced baseline failures and 2 environment failures; no re-run after changelog-only commit.",
+    "ci_baseline_attribution": "/workspace/work/perry-queue/planning/12439-ci-baseline-attribution.json",
+    "ci_attribution_summary": "39/39 unique warning diagnostics and 16/16 TLS rows matched baseline; this is attribution, not a green CI verdict."
+  },
+  "cleanup": {
+    "only_removed": "owned idle target-12390/debug/incremental cache after scoped routing test, per authorization; preserved binaries, archives, fingerprints, source, and logs."
+  },
+  "readiness": "Final changelog-only commit is pushed and validated for build/coherence, scoped suites, and six Node parity fixtures. Parent owns PR body reconciliation and final ready state; CI still has attributed non-green baseline/environment jobs."
+}

@@ -1,0 +1,176 @@
+{
+  "committed_head_validation": {
+    "head": "c9e720b17f959c0052819939bd1328c7a56fd415",
+    "worktree_clean": true,
+    "tree": "8d04e3569161e2ed512369153800af47105fec2b",
+    "source_identity_to_full_lint": {
+      "committed_head": "c9e720b17f959c0052819939bd1328c7a56fd415",
+      "tree": "8d04e3569161e2ed512369153800af47105fec2b",
+      "precommit_snapshot": "/workspace/work/perry-queue/snapshots/20261012T014119Z/12390-tracked.patch",
+      "binary_patch_identical": true,
+      "patch_sha256": "fb00db02eba58bb4860c4c6c3b34fb2b739b1f387abc1bc5852eee9326a4b9d4",
+      "scope": "Full-lint implementation source unchanged across commit; committed-head compiler/static coherence validation is separate"
+    },
+    "fresh_build": {
+      "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "target_dir": "/workspace/work/perry-queue/target-12390",
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12390-committed-build.log",
+      "result": "/workspace/work/perry-queue/12390-committed-build-result.txt"
+    },
+    "focused_tests": [
+      {
+        "command": "cargo test -p perry --bin perry web_streams -- --test-threads=1",
+        "exit_code": 0,
+        "passed": 2,
+        "log": "/workspace/work/perry-queue/12390-committed-routing-test.log",
+        "result": "/workspace/work/perry-queue/12390-committed-routing-test-result.txt"
+      },
+      {
+        "command": "cargo test -p perry-stdlib --lib streams:: -- --test-threads=1",
+        "exit_code": 0,
+        "passed": 33,
+        "failed": 0,
+        "filtered": 235,
+        "log": "/workspace/work/perry-queue/12390-committed-stdlib-streams.log",
+        "result": "/workspace/work/perry-queue/12390-committed-stdlib-streams-result.txt"
+      }
+    ],
+    "fixtures": [
+      {
+        "fixture": "issue320 global ReadableStream",
+        "mode": "noauto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-issue320-result.txt",
+        "result": "exit_code=0",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-issue320-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-issue320-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-issue320-reference.log",
+        "linked_archives": "perry_stdlib.a + perry_runtime.a",
+        "node_parity": "passed"
+      },
+      {
+        "fixture": "node:stream/web readable constructor",
+        "mode": "noauto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-readable-web-result.txt",
+        "result": "exit_code=0",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-readable-web-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-readable-web-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-readable-web-reference.log",
+        "linked_archives": "perry_stdlib.a + perry_runtime.a",
+        "node_parity": "passed"
+      },
+      {
+        "fixture": "Node Readable constructor",
+        "mode": "noauto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-node-readable-result.txt",
+        "result": "exit_code=0",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-node-readable-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-noauto-node-readable-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-node-readable-reference.log",
+        "linked_archives": "perry_runtime.a only",
+        "node_parity": "passed"
+      },
+      {
+        "fixture": "issue320 global ReadableStream",
+        "mode": "auto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-issue320-result.txt",
+        "result": "compile_and_run_exit=0\nnode_parity=passed\nlink_mode=stdlib\nselected_archives=perry_stdlib.a,perry_runtime.a\nauto_optimize=rebuilt_real_runtime_stdlib_panic_abort_async-bridge,bundled-streams,web-fetch\nwrapper_exit=1_due_to_generic_tiny_program_fallback_check_matching_unrelated_optimization_notice",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-issue320-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-issue320-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-issue320-reference.log",
+        "linked_archives": "perry_stdlib.a + perry_runtime.a",
+        "node_parity": "passed"
+      },
+      {
+        "fixture": "node:stream/web readable constructor",
+        "mode": "auto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-readable-web-result.txt",
+        "result": "compile_exit=0\nnode_parity=passed\nauto_optimize=used_current-head_fresh_archives_built_by_committed-auto-issue320\nselected=perry_stdlib.a,perry_runtime.a\nlog_note=compiler reused cached object and selected the just-built feature-stamped auto archives; no fallback line or prebuilt debug archive in link command",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-readable-web-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-readable-web-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-readable-web-reference.log",
+        "linked_archives": "perry_stdlib.a + perry_runtime.a",
+        "node_parity": "passed"
+      },
+      {
+        "fixture": "Node Readable constructor",
+        "mode": "auto",
+        "result_file": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-node-readable-result.txt",
+        "result": "compile_and_run_exit=0\nnode_parity=passed",
+        "compile_log": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-node-readable-compile.log",
+        "run_output": "/workspace/work/perry-queue/12390-committed-acceptance/committed-auto-node-readable-run.log",
+        "node_reference": "/workspace/work/perry-queue/12390-committed-acceptance/committed-node-node-readable-reference.log",
+        "linked_archives": "perry_runtime.a only",
+        "node_parity": "passed"
+      }
+    ],
+    "auto_optimize": {
+      "web_feature_set": "async-bridge,bundled-streams,web-fetch; panic=abort; real release rebuild at committed source; no auto-opt fallback; link selected feature-specific runtime+stdlib archives",
+      "web_archive_stamp": "perry-auto-optimized-v2\nkey=async-bridge,bundled-streams,web-fetch|true|host|wasm=false|napi=false|regex=false|temporal=false|ee=false|url=false|norm=false|seg=false|loc=false|intlns=false|gns=truefalsefalsefalsefalsefalsefalsefalsetruefalse|diag=false|dgram=false|http2=false|nodetest=false|dyneval=false|importopts=false|cobuild=|sizeopt=off|anchors=true|instr=false|hotdiag=false|v=0.5.1659\ntarget=host\ntriple=host\nfeatures=perry-runtime/full,perry-stdlib/async-bridge,perry-stdlib/bundled-streams,perry-stdlib/web-fetch,perry-runtime/global-math,perry-runtime/global-webfetch,perry-runtime/alloc-mimalloc,perry-runtime/keepalive-anchors,perry-runtime/external-fetch-symbols\ncobuild=\nsrcs=51a570233fd6e028e9f983e99d53e1bd\n",
+      "node_readable_feature_set": "async-bridge; panic=abort; real release rebuild at committed source; no auto-opt fallback; Node Readable linked runtime-only",
+      "node_archive_stamp": "perry-auto-optimized-v2\nkey=async-bridge|true|host|wasm=false|napi=false|regex=false|temporal=false|ee=false|url=false|norm=false|seg=false|loc=false|intlns=false|gns=truefalsefalsefalsefalsefalsefalsefalsefalsefalse|diag=false|dgram=false|http2=false|nodetest=false|dyneval=false|importopts=false|cobuild=|sizeopt=off|anchors=true|instr=false|hotdiag=false|v=0.5.1659\ntarget=host\ntriple=host\nfeatures=perry-runtime/full,perry-stdlib/async-bridge,perry-runtime/global-math,perry-runtime/alloc-mimalloc,perry-runtime/keepalive-anchors\ncobuild=\nsrcs=51a570233fd6e028e9f983e99d53e1bd\n",
+      "result_verifier_note": "The issue320 auto run/Node output comparison passed. The shell wrapper returned 1 only because its broad `rg fallback` check matched `tiny program fallback: statement is outside the proven subset`; the specific auto-opt log shows rebuild + built archives, and the link/run/parity succeeded."
+    },
+    "sha256": {
+      "compiler": "d7769369e5173ec7cf1d4e9535d713902c2f9feda58d757c4a3622fcbe6ca58f",
+      "debug_runtime": "a22b4a47f60fa5b7f56cb2e48e1fe01d38bdbf9b070f05f75c150bff1a6b328a",
+      "debug_stdlib": "2eb522270367f8eca57fad7aab9849d1239a5f2140814c8c82214eafc01f5e92",
+      "auto_web_runtime": "9a41056caa27d5f0d455024493aeaa0637ddfb5aade912de919c1474ddda8f18",
+      "auto_web_stdlib": "46eab50619cc05d4f8e125a22afba694e0c92a5db263e8e07df01f73975bb376",
+      "auto_node_runtime": "19b8b5686c1b54ed3802293230aedd0d47b5bfeaec7c1e07467f30143aaa2f2c",
+      "auto_node_stdlib": "b69dddd0e3cb515dea39d85ee6ab722391186e522e9fc6f65b10da5ae10de353"
+    },
+    "archive_paths": {
+      "debug_runtime": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+      "debug_stdlib": "/workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a",
+      "auto_web_runtime": "/workspace/work/perry-queue/issue-12390/target/perry-auto-4643743ac91f713d/release/libperry_runtime.a",
+      "auto_web_stdlib": "/workspace/work/perry-queue/issue-12390/target/perry-auto-4643743ac91f713d/release/libperry_stdlib.a",
+      "auto_node_runtime": "/workspace/work/perry-queue/issue-12390/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+      "auto_node_stdlib": "/workspace/work/perry-queue/issue-12390/target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a"
+    },
+    "node_version": "v24.19.0",
+    "target_free_disk_after_checks": "overlay          32G   25G  5.5G  82% /workspace",
+    "source_changes_after_commit": "",
+    "remaining_release_readiness": "No source changes; PR-number changelog fragment remains a later local step and will require a fresh coherent rebuild/revalidation for that final PR head. Do not treat c9e720b as the future PR head."
+  },
+  "full_lint_tree_identity": {
+    "committed_head": "c9e720b17f959c0052819939bd1328c7a56fd415",
+    "tree": "8d04e3569161e2ed512369153800af47105fec2b",
+    "precommit_snapshot": "/workspace/work/perry-queue/snapshots/20261012T014119Z/12390-tracked.patch",
+    "binary_patch_identical": true,
+    "patch_sha256": "fb00db02eba58bb4860c4c6c3b34fb2b739b1f387abc1bc5852eee9326a4b9d4",
+    "scope": "Full-lint implementation source unchanged across commit; committed-head compiler/static coherence validation is separate"
+  },
+  "compile_failure_baseline_comparison": {
+    "checked_at": "2026-10-12T02:02:36.273405+00:00",
+    "baseline": "d74498b261d087a301b80602835bc7199a067957",
+    "commands": "baseline-compile-ab.sh",
+    "results": "baseline-compile-ab-results.txt",
+    "all_three_exit_codes": 101,
+    "same_package_scopes": true,
+    "comparison": "Diagnostic code, message, primary file/line/column exact match; summary abort diagnostics counted separately from real errors",
+    "real_errors": {
+      "warnings_product": 37,
+      "warnings_host": 30,
+      "clippy_host": 1
+    },
+    "scopes": [
+      {
+        "fingerprint": "ae538316e618e20d",
+        "same_error_signatures": true,
+        "diagnostic_count_including_abort_summary": 2
+      },
+      {
+        "fingerprint": "204ff5c9487fc645",
+        "same_error_signatures": true,
+        "diagnostic_count_including_abort_summary": 31
+      },
+      {
+        "fingerprint": "e8c422f62dba1238",
+        "same_error_signatures": true,
+        "diagnostic_count_including_abort_summary": 38
+      }
+    ]
+  },
+  "note": "Artifact hashes describe files at validation time. The serial target directory is later reused by other cloud claims; rebuild from the intended commit before further execution. No binaries or credentials are included in this publication packet."
+}

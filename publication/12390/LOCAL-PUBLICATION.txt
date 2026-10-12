@@ -1,12 +1,16 @@
-Draft PR #12439 already exists: https://github.com/PerryTS/perry/pull/12439
-Do not create another PR. Keep unrelated local workers paused.
+PR #12439 already exists: https://github.com/PerryTS/perry/pull/12439
+Do not create another PR.
 
-Cloud is adding changelog.d/12439-remove-unused-streams.md in a normal follow-up commit, pushing the existing implementation branch, and rebuilding the exact resulting head with matching compiler, runtime-static and stdlib-static archives. The local coordinator should wait for final-head readiness evidence before marking ready.
+Validated head: 1273aff03f8685e3d8a2f539dff9ac94088ac857
+Head: jdalton:cloud/issue-12390-remove-parked-streams
+Base: main (observed996bc5d629dfbc4b0e99a377b6eeab57c32e54c6; branch validated on d744 baseline, no rebase)
 
-The code commit c9e720b17f959c0052819939bd1328c7a56fd415 was validated on baseline d74498b261d087a301b80602835bc7199a067957. Upstream main has advanced to 996bc5d629dfbc4b0e99a377b6eeab57c32e54c6 and is being assessed for overlap.
+Final fragment-head build/coherence, routing2, streams33 and six explicit Node26.5.1 comparisons passed. Both feature-specific auto archive sets were rebuilt and linked. See final-head-validation.json and evidence-summary.json. Full lint and the two investigated CI jobs remain non-green with documented baseline/environment attribution. Linux does not establish macOS behavior.
 
-body.md currently describes the original code-commit validation; it is not a claim that the subsequent fragment commit has passed. pr-12439-observed.json records the body actually published locally. Full lint remains non-green: 28 baseline-reproduced failures and two environment failures. Linux does not prove macOS behavior.
+Use the existing LOCAL GitHub connection after confirming the PR still has the exact validated head:
+  gh pr view 12439 --repo PerryTS/perry --json headRefOid,isDraft,state
+  gh pr edit 12439 --repo PerryTS/perry --body-file publication/12390/body.md
+  gh pr ready 12439 --repo PerryTS/perry
+These commands are provided for the local coordinator, not executed by cloud. No credential transfer is needed. Keep unrelated local workers paused.
 
-Evidence manifest node_version discrepancy (v24.19.0 versus task environment and saved Node oracle v26.5.1) is under provenance review. The final validation will record exact Node path/version. No credentials or binaries are included.
-
-After final evidence, update the existing PR body and mark ready through the local connection. Coverage is draft/open, not merged or issue-closed.
+body.md is reconciled with the latest locally edited draft body, corrects Node Readable routing wording, supplies exact final-head Node provenance, and adds exact CI attribution. Historical body/evidence are preserved in code-commit-* files. No merge or issue closure is claimed.
