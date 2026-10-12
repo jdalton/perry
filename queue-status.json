@@ -222,11 +222,11 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
       "has_uncommitted_changes": false,
-      "state": "Final266 warnings exactlymatchparent; freshtrio and noauto fixturePASS; genuineauto/full lint underway",
+      "state": "Final266 freshtrio/noauto/genuineauto parity PASS; required final full lint running",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "55focusedtestsPASS at4e (identicalRustsource);266 product42/host35diagnostics exactparentmatches, noaddedwarnings; freshmatchingtrio and pinnedNode fixtureparityPASS. Auto/fullpending. Priorfailed/interruptedgatesretained.",
+      "validation": "55focusedtestsPASS at4e (identicalRustsource);266 warnings42/35 exactbcparentfingerprints, noaddedwarnings; freshtrio and bothfixturemodesPASS withNode26.5.1 andfresharchives. Required finalfull lint pending; earlierfailed/interruptedruns retained.",
       "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
     }
   ],
@@ -234,7 +234,7 @@
   "coverage_freshness": "planning/original224-state-refresh-20261012T104351Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T10:44:58.593278+00:00",
+  "updated_at": "2026-10-12T10:49:54.572121+00:00",
   "publisher_inbox_checked_at": "2026-10-12T10:43:51Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,

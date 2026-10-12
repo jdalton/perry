@@ -12,7 +12,7 @@
     "inventory_files": 1,
     "inventory_file": "scripts/string_payload_access_baseline.txt",
     "codegen_or_abi_changes": false,
-    "diffstat": "32 files changed, 1804 insertions(+), 643 deletions(-) (from bc8625f64fd829af5463c8cde8368ec7947f31a1 to 266eaf0af23bcef433f50b4b6bb9daf4df87db8d)",
+    "diffstat": "32 files changed, 1804 insertions(+), 643 deletions(-)",
     "path_list_source": "git diff --name-only bc8625f64fd829af5463c8cde8368ec7947f31a1..266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
     "provenance_after_4e": {
       "parent_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
@@ -21,7 +21,9 @@
       ],
       "rust_source_changed": false,
       "meaning": "55 focused tests passed at 4e; this file-only inventory update does not make those results an exact-266 run."
-    }
+    },
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
   },
   "issue_state": {
     "state": "open",
@@ -81,36 +83,60 @@
       "single ToPropertyKey coercion"
     ],
     "focused_runtime_units": {
-      "status": "pending at current head",
-      "prior_validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
-      "prior_counts": "3 invalid_utf8_method +35 WTF-8 +17 controls passed; not current-head validation"
+      "status": "PASS; reused from 4e after confirming no Rust source changed",
+      "validated_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "tests_passed": 55,
+      "breakdown": {
+        "invalid_utf8_method": 3,
+        "wtf8": 35,
+        "controls": 17
+      },
+      "exact_266_run": false,
+      "evidence": [
+        "/workspace/work/perry-queue/12202-4e024-invalid-utf8-method.log",
+        "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
+      ]
     },
     "matching_dev_trio": {
-      "status": "pending at exact 266 head",
-      "prior_validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
-      "prior_b4b8_result": "passed; not exact-266 validation"
+      "status": "PASS at exact 266",
+      "validated_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "log": "/workspace/work/perry-queue/12202-266eaf-trio-build.log"
     },
     "compiled_fixture_vs_node": {
-      "status": "pending at exact 266 head",
-      "prior_validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
-      "prior_no_auto_parity": "passed at b4b8 only",
-      "prior_auto_opt_parity": "passed at b4b8 only"
+      "status": "PASS at exact 266, no-auto",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "parity_exit": 0,
+      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "record_dir": "/workspace/work/perry-queue/12202-266eaf-acceptance"
     },
     "full_lint": {
-      "status": "pending at exact 266 head",
-      "prior_b4b8": {
+      "status": "PENDING; final driver started",
+      "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "log": "/workspace/work/perry-queue/12202-266eaf-full-lint.log",
+      "final_counts": null,
+      "historical_b4b8": {
         "exit": 1,
         "failed": 32,
         "total": 137,
         "ci_only_skipped": 2,
         "log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log"
-      },
-      "static_attribution": "partial; see static_attribution"
+      }
     },
     "auto_opt": {
-      "status": "pending at exact 266 head",
-      "prior_validated_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
-      "prior_b4b8_parity": "passed; not exact-266 validation"
+      "status": "PASS at exact 266 with genuine freshly rebuilt archives",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "parity_exit": 0,
+      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "record_dir": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance",
+      "archive_hashes": "/workspace/work/perry-queue/12202-266eaf-auto-acceptance/auto-artifact-hashes.sha256",
+      "fallback_observed": false
     },
     "focused_runtime": {
       "status": "passed at 4e only; exact 266 rerun pending",
@@ -128,6 +154,21 @@
         "/workspace/work/perry-queue/12202-4e024-wtf8-tests.log",
         "/workspace/work/perry-queue/12202-4e024-controls-results.txt"
       ]
+    },
+    "product_warnings_266": {
+      "diagnostics": 42,
+      "exit": 101,
+      "baseline_fingerprint_added": 0,
+      "baseline_fingerprint_removed": 0,
+      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
+      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-product.log"
+    },
+    "host_warnings_266": {
+      "diagnostics": 35,
+      "baseline_fingerprint_added": 0,
+      "baseline_fingerprint_removed": 0,
+      "result": "same fingerprints as bc862 parent; non-green -D warnings gate",
+      "log": "/workspace/work/perry-queue/12202-266eaf-warnings-host.log"
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -167,7 +208,7 @@
   "compile_retry": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "status": "matching trio and focused tests pass; compiled fixture mismatch blocks further acceptance",
-    "runtime_or_compiler_result": "compile successful; Perry fixture exits 1 with TypeError: \ufffd\ufffd\ufffd is not a function"
+    "runtime_or_compiler_result": "compile successful; Perry fixture exits 1 with TypeError: ��� is not a function"
   },
   "pointer_correction": {
     "commit": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
@@ -212,19 +253,18 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "SOURCE_SCOPE_REVIEWED; EXACT_266_VALIDATION_PENDING",
+  "readiness": "EXACT_266_ACCEPTANCE_COMPLETE; FULL_LINT_PENDING",
   "current_head_validation": {
     "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-    "status": "inventory-only update after 4e; exact-head validation pending",
-    "source_provenance": "Only scripts/string_payload_access_baseline.txt changed from 4e to 266; Rust source unchanged.",
-    "focused_tests": "pending exact 266; 55 passed at 4e",
-    "matching_dev_trio": "pending exact 266",
-    "compiled_fixture_node_parity": "pending exact 266",
-    "auto_opt": "pending exact 266",
-    "product_warnings": "completed at 266, exit 101, 42 diagnostics; baseline fingerprint attribution pending verifier",
-    "host_warnings_clippy_api_docs": "pending exact 266",
-    "full_lint": "pending exact 266",
-    "interrupted_overlapping_warning_check": "non-result; formal verifier record pending"
+    "status": "focused source-equivalent tests, matching trio, no-auto parity, and genuine auto-opt parity complete; full lint pending",
+    "focused_tests": "55 passed at 4e; reused because no Rust source changed at 266",
+    "matching_dev_trio": "PASS exact 266",
+    "compiled_fixture_node_parity": "PASS exact 266, no-auto",
+    "auto_opt": "PASS exact 266, genuine rebuilt archives",
+    "product_warnings": "42 diagnostics; exact bc862 fingerprint match, 0 added/removed; gate non-green",
+    "host_warnings": "35 diagnostics; exact bc862 fingerprint match, 0 added/removed; gate non-green",
+    "full_lint": "PENDING; final driver started",
+    "evidence": "266eaf-acceptance-evidence.json"
   },
   "source_review_history": {
     "latest": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
@@ -248,7 +288,7 @@
     "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
     "c727637cd909fc7d4861bf9d21d65afc8cd54f5a"
   ],
-  "checked_at": "2026-10-12T10:37:42Z",
+  "checked_at": "2026-10-12",
   "previous_head_acceptance": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
@@ -271,7 +311,7 @@
       "node_version": "v26.5.1",
       "perry_exit": 1,
       "parity_exit": 1,
-      "observed_error": "TypeError: \ufffd\ufffd\ufffd is not a function",
+      "observed_error": "TypeError: ��� is not a function",
       "evidence_directory": "/workspace/work/perry-queue/12202-70123-acceptance"
     },
     "diagnostic_status": "Exact d047 JSON leaves identify accessor outputs as the only target-value mismatch; computed default length is a separate generic mismatch. Factory outputs were equal in original d047 fixture.",
@@ -473,15 +513,6 @@
       "classification": "source-only cfg(test) re-export correction; source-reviewed, no build/test claim"
     }
   ],
-  "current_head_acceptance": {
-    "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-    "status": "pending; no validation results recorded at this source head",
-    "focused_runtime": "pending at exact head",
-    "matching_dev_trio": "pending at exact head",
-    "compiled_fixture_node_parity": "pending at exact head",
-    "auto_opt": "pending at exact head",
-    "full_lint": "pending at exact head"
-  },
   "prior_4e_focused_runtime": {
     "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
     "status": "passed at 4e only; pending exact-head rerun at 266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
@@ -509,19 +540,48 @@
     "interpretation": "Count is recorded as an observed result only. Verifier fingerprint comparison against the exact bc862 parent is pending; do not call this green or baseline-clean."
   },
   "interrupted_overlapping_warning_check": {
-    "status": "interrupted_non_result",
-    "formal_verifier_record": "pending",
-    "interpretation": "A separate overlapping warning-check attempt was interrupted. Its reported 42 count is not accepted as completed-check proof and is not substituted for the completed product-warning command above."
+    "status": "historical interrupted attempt; non-result",
+    "count_not_claimed": true,
+    "formal_verifier_record": "pending"
   },
   "static_attribution": {
-    "status": "partial; not final for head 266",
+    "status": "b4b8 historical attribution completed; exact-266 final lint attribution pending",
     "b4b8_mapping": "/workspace/work/perry-queue/planning/12202-static-attribution.json",
-    "counts_at_b4b8": {
+    "b4b8_counts": {
       "baseline": 25,
       "environment": 1,
       "unresolved_or_delegated": 6,
       "candidate_attributed": 0
     },
-    "note": "Several rows remain unresolved/delegated; refresh attribution for the 266 head and final lint results before making a global baseline claim."
-  }
+    "note": "Do not infer a final 266 failure count or blanket baseline classification before the final driver completes."
+  },
+  "unrooted_scan": {
+    "status": "same findings as parent; checker remains non-green",
+    "record": "/workspace/work/perry-queue/planning/12202-unrooted-attribution.json",
+    "findings": 299,
+    "files": 44,
+    "added": 0,
+    "removed": 0,
+    "sole_violation": "crates/perry-ext-sharp/src/lib.rs; four accesses over limit"
+  },
+  "string_payload_access_policy": {
+    "status": "one-row ratchet approved; unrelated findings remain",
+    "record": "/workspace/work/perry-queue/planning/12202-string-payload-ratchet-decision.json",
+    "inline_offset_perry_runtime_baseline": {
+      "old": 331,
+      "new": 329,
+      "parent": 330
+    },
+    "unrelated_ext_zlib_and_stdlib_findings": "unchanged from parent; checker is not fully green"
+  },
+  "warning_cleanup_review": {
+    "record": "/workspace/work/perry-queue/planning/12202-warning-cleanup-review.json",
+    "later_source_cleanup_addressed_historical_b4b8_added_warning_delta": true,
+    "exact_266_product_host_fingerprints_match_base": true
+  },
+  "limitations": {
+    "platform": "Linux only; no macOS or Windows validation claim",
+    "generic_computed_default_parameter_length": "Separate ASCII/WTF-8 limitation remains on generic entryless computed-method path; traced to branch-base source, not claimed fixed or baseline-binary-proven"
+  },
+  "exact_266_acceptance_evidence": "266eaf-acceptance-evidence.json"
 }
