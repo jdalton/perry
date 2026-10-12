@@ -1,0 +1,26 @@
+{
+  "purpose": "lossless cold storage of completed d74498b baseline validation archive",
+  "original_path": "/workspace/work/perry-queue/target-baseline/debug/libperry_runtime.a",
+  "compressed_path": "/workspace/work/perry-queue/target-baseline/debug/libperry_runtime.a.zst",
+  "temporary_path": "/workspace/work/perry-queue/target-baseline/debug/libperry_runtime.a.zst.tmp.781662",
+  "original_size_bytes": 394108692,
+  "original_sha256": "66884aa11d48d1762516e9c0e6da8bce9b3db717594198968dccbb24c13045dc",
+  "original_mode": 384,
+  "original_mtime_ns": 1791765504120235118,
+  "original_uid": 1000,
+  "original_gid": 1000,
+  "compressed_size_bytes": 59372421,
+  "compressed_sha256": "09f80cf3a48f5a6c96f9f665d4431dac853f8d4a8f1758a6a31dcb7bb5ced572",
+  "owner_file": "/workspace/work/perry-queue/target-baseline/OWNER",
+  "artifacts_manifest": "/workspace/work/perry-queue/baseline-artifacts.json",
+  "baseline_head": "d74498b261d087a301b80602835bc7199a067957",
+  "preserved_baseline_binary": {
+    "path": "/workspace/work/perry-queue/target-baseline/debug/perry",
+    "size_bytes": 346884152
+  },
+  "verified": {
+    "zstd_test": true,
+    "decompressed_sha256_matches": true
+  },
+  "restore": "python3 /workspace/work/perry-queue/restore-cold-archive.py /workspace/work/perry-queue/target-baseline-baseline-libperry-runtime-cold-storage.json"
+}

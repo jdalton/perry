@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T05:48:03.894965+00:00",
+  "updated_at": "2026-10-12T05:49:51.789068+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "worker_lifecycle stopping retired12285 validation; pending handoff to verification12007",
+  "serial_build_owner": "/root/luna_verification #12007 exact-head validation",
   "next_steps": [
     "Retire12285 candidate after upstream12447 closure; preserve evidence and release validation slot",
     "Refresh active issue coverage before12007 validation",
@@ -35,5 +35,6 @@
     "target": 20,
     "merged": 2,
     "remaining_to_good_state": 18
-  }
+  },
+  "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)"
 }
