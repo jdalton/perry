@@ -1,0 +1,30 @@
+{
+  "issue": 12202,
+  "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+  "checkout": "/workspace/work/perry-queue/issue-9927",
+  "worktree_clean_after_attempt": true,
+  "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+  "environment": {
+    "cargo_target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_build_jobs": 1,
+    "cargo_incremental": 0
+  },
+  "exit": 101,
+  "log": "/workspace/work/perry-queue/12202-wtf8-tests.log",
+  "tests_executed": 0,
+  "diagnostic_count": 21,
+  "diagnostics": {
+    "let_chains_wrong_edition": 1,
+    "unresolved_or_missing_byte_api_symbols": 7,
+    "type_mismatches": 11,
+    "missing_as_str_on_vec_u8": 1,
+    "vec_u8_borrow_str_trait_failure": 1
+  },
+  "representative_sites": [
+    "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs:1486: let chains are only allowed in Rust 2024 or later",
+    "crates/perry-runtime/src/object/native_module/class_ref_values.rs:222: unresolved class_declaration_value_bytes import",
+    "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs:87: byte-vector/string type mismatches",
+    "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs:130: no as_str method for &Vec<u8>"
+  ],
+  "status": "Stopped at first scoped build failure; no tests ran, no source changes made, and no trio/fixture/full-lint validation attempted. Needs source-owner diagnosis and correction before resuming."
+}

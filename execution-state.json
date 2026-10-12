@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T08:46:47.004071+00:00",
+  "updated_at": "2026-10-12T08:47:47.231087+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification #11519 fragment6f2f final checks",
+  "serial_build_owner": "/root/luna_verification #10739 fragment84d final checks",
   "next_steps": [
     "Local publisher apply12456 finalbody andmarkready",
     "10739fragment84d finalchecks nextsafe boundary, thenresume12202",
@@ -124,7 +124,7 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "publication milestone:12456ready,12458fragmentpending",
-  "current_serial_issue": 11519,
+  "current_serial_issue": 10739,
   "serial_pending": [
     12202
   ],

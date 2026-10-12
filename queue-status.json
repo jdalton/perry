@@ -222,17 +222,18 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "6ed44871f1a2d45920433242236f98a5772681c7",
       "has_uncommitted_changes": false,
-      "state": "Committed, Astra source clear; runtime-only build plan prepared; compiled validation queued",
+      "state": "First scoped compile failed21 errors at6ed448;0tests; Luna source corrections underway",
       "draft_creation_allowed": false,
       "ready_for_review": false,
-      "validation_plan": "planning/12202-minimal-validation-plan.json"
+      "validation_plan": "planning/12202-minimal-validation-plan.json",
+      "validation": "12202-initial-build-failure.json; no trio/compiledfixture/full lint attempted"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "One serial validator with CARGO_INCREMENTAL=0; no cache deletion at this milestone.",
-  "updated_at": "2026-10-12T08:46:47.004071+00:00",
+  "updated_at": "2026-10-12T08:47:47.231087+00:00",
   "publisher_inbox_checked_at": "2026-10-12T08:46:47.004071+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
