@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-12T04:57:38.795510+00:00",
+  "checked_at": "2026-10-12T05:01:28.129639+00:00",
   "original224_total": 224,
-  "original_open": 184,
-  "original_closed": 40,
+  "original_open": 183,
+  "original_closed": 41,
   "open_new_excluded": [
     12396,
     12408,
@@ -10,15 +10,15 @@
     12435
   ],
   "open_prs_created_this_turn": 1,
-  "merged_prs_this_turn": 1,
-  "original_issues_closed_this_turn": 1,
+  "merged_prs_this_turn": 3,
+  "original_issues_closed_this_turn": 2,
   "coverage_counts": {
-    "uncovered": 154,
+    "uncovered": 153,
     "uncertain": 10,
     "covered_open": 20,
-    "closed": 40
+    "closed": 41
   },
-  "conservative_uncovered_upper_bound": 164,
+  "conservative_uncovered_upper_bound": 163,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -42,10 +42,10 @@
           9927,
           8085
         ],
-        "head": "1bba095359ba0bc3a91efd3060119965c172327d",
-        "state": "draft",
+        "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true
       },
       {
         "number": 12445,
@@ -53,10 +53,10 @@
         "issues": [
           10198
         ],
-        "head": "af0c2a033db40117c63099751964d467accd35ae",
-        "state": "draft",
+        "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true
       }
     ],
     "remaining": 18,
@@ -67,14 +67,16 @@
       "original_open": 184,
       "note": "Fresh API counts; substantial other-maintainer closures since prior ledger. Refresh candidate states and coverage before further work/publication."
     },
-    "drafts": 2,
+    "drafts": 0,
     "ready_for_review": 0,
-    "merged": 0,
+    "merged": 2,
     "opened": 2,
     "remaining_to_open": 18,
-    "remaining_to_good_state": 20,
+    "remaining_to_good_state": 18,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
-    "code_ready_packets": 2
+    "code_ready_packets": 2,
+    "original_issues_closed": 1,
+    "evidence_source": "live GitHub REST newer than publisher inbox"
   },
   "packets": [
     {
@@ -83,41 +85,35 @@
         8085
       ],
       "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
-      "state": "code ready; local body application and ready transition pending",
+      "state": "merged",
       "draft_creation_allowed": false,
       "ready_for_review": true,
       "packet": "publication/9927/metadata.json",
       "pr_number": 12444,
-      "observed_draft": true,
-      "publisher_actions": [
-        "apply body.md",
-        "verify exact head",
-        "mark existing draft ready"
-      ]
+      "observed_draft": false,
+      "publisher_actions": [],
+      "merged": true
     },
     {
       "issues": [
         10198
       ],
       "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
-      "state": "code ready; local body application and ready transition pending",
+      "state": "merged",
       "draft_creation_allowed": false,
       "ready_for_review": true,
       "packet": "publication/10198/metadata.json",
       "pr_number": 12445,
-      "observed_draft": true,
-      "publisher_actions": [
-        "apply body.md",
-        "verify exact head",
-        "mark existing draft ready"
-      ]
+      "observed_draft": false,
+      "publisher_actions": [],
+      "merged": true
     },
     {
       "issues": [
         12285
       ],
       "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
-      "state": "committed-head validation running",
+      "state": "8/8 compiled fixtures pass; full lint running",
       "draft_creation_allowed": false,
       "ready_for_review": false
     },
