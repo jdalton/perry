@@ -1,0 +1,36 @@
+{
+  "repository": "PerryTS/perry",
+  "issue": 12202,
+  "existing_pr": 12471,
+  "pr_url": "https://github.com/PerryTS/perry/pull/12471",
+  "requested_publisher_action": "close_duplicate_existing_pr",
+  "actual_state": "OPEN",
+  "state_snapshot_read_at_utc": "2026-10-12T16:32:15Z",
+  "reported_pr_updated_at_utc": "2026-10-12T13:08:27Z",
+  "state_evidence": "observed-pr-snapshot.json",
+  "observed_remote_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+  "observed_base_ref": "main",
+  "observed_draft": true,
+  "duplicate_resolution": {
+    "pr": 12487,
+    "url": "https://github.com/PerryTS/perry/pull/12487",
+    "state": "MERGED",
+    "merged_at_utc": "2026-10-12T16:01:40Z",
+    "head": "92257d7d6e3e9c0aa8d5ac888953e375fb091285",
+    "merge_commit": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "scope_decision": "upstream12487-retirement-scope-decision.json"
+  },
+  "historical_local_candidate": {
+    "head": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01",
+    "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+    "status": "validated_locally_but_never_pushed; now_superseded_by_merged_duplicate",
+    "validation": "historical-ac2a-validation.json",
+    "full_lint": "not run for ac2a"
+  },
+  "accessor_residual": "The separate accessor-name edge case is outside original issue 12202's method-key scope and is intentionally not folded into this retirement or PR.",
+  "draft_creation_allowed": false,
+  "ready_for_review": false,
+  "ready_to_publish": false,
+  "remote_mutation_performed": false,
+  "pr_closed": false
+}

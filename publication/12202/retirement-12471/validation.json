@@ -1,0 +1,38 @@
+{
+  "packet_kind": "duplicate_retirement",
+  "issue": 12202,
+  "existing_pr": 12471,
+  "decision_basis": {
+    "original_scope": "WTF-8/lone-surrogate computed class method keys and method registration/call behavior",
+    "covered_by_merged_pr": 12487,
+    "merged_head": "92257d7d6e3e9c0aa8d5ac888953e375fb091285",
+    "merge_commit": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "source": "upstream12487-retirement-scope-decision.json"
+  },
+  "historical_candidate_evidence": {
+    "head": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01",
+    "result": "focused runtime tests and compiled Node v26.5.1 parity passed at this local head",
+    "evidence": "historical-ac2a-validation.json",
+    "limitations": [
+      "The candidate was not pushed and was not validated against the later merged upstream head.",
+      "Full lint was not run for ac2a.",
+      "The candidate conflicts with the merged upstream source and is not proposed for publication."
+    ]
+  },
+  "external_state": {
+    "pr_state": "OPEN",
+    "pr_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+    "pr_base": "main",
+    "is_draft": true,
+    "snapshot": "observed-pr-snapshot.json",
+    "snapshot_read_at_utc": "2026-10-12T16:32:15Z",
+    "reported_pr_updated_at_utc": "2026-10-12T13:08:27Z"
+  },
+  "requested_action": "Close existing PR #12471 as a duplicate after publisher refreshes and confirms the live PR state.",
+  "comment_file": "closing-comment.md",
+  "draft_creation_allowed": false,
+  "ready_for_review": false,
+  "ready_to_publish": false,
+  "remote_mutation_performed": false,
+  "actual_state": "OPEN"
+}

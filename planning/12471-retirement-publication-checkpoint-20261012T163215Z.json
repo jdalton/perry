@@ -1,0 +1,46 @@
+{
+  "observed_at_utc": "2026-10-12T16:32:15Z",
+  "scope": "single publication milestone refresh; read-only",
+  "pr_12471": {
+    "repository": "PerryTS/perry",
+    "number": 12471,
+    "url": "https://github.com/PerryTS/perry/pull/12471",
+    "observed_at_utc": "2026-10-12T16:32:15Z",
+    "state": "OPEN",
+    "draft": true,
+    "mergeable": false,
+    "base": "main",
+    "head_branch": "cloud/issue-12202-wtf8-class-keys",
+    "head_sha": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+    "updated_at": "2026-10-12T13:08:27Z",
+    "merged": false,
+    "closed_at": null,
+    "evidence_source": "GitHub PR metadata API"
+  },
+  "issue_12202": {
+    "state": "OPEN",
+    "closed_at": null,
+    "observed_at_utc": "2026-10-12T16:32:15Z",
+    "source": "GitHub issue API"
+  },
+  "publisher_inbox": {
+    "repository": "jdalton/perry",
+    "branch": "cloud/local-publisher-inbox",
+    "path": "publisher-status.json",
+    "checked_at_utc": "2026-10-12T16:32:15Z",
+    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "result": "stale; no new assignment for #12145 or #9202",
+    "listed_prs": [
+      12444,
+      12445,
+      12450,
+      12456,
+      12458,
+      12471
+    ],
+    "pr_12471_inbox_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "note": "Direct live PR metadata fetched at checked_at_utc is authoritative for current #12471 state/head; inbox record is stale and retains the prior draft submission head."
+  },
+  "actionable_feedback": "No new inbox assignment; retirement packet requests local publisher to close existing draft PR #12471 as duplicate #12487 after confirmation.",
+  "remote_mutations_performed": false
+}

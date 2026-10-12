@@ -1,0 +1,3 @@
+Closing this as a duplicate: [#12487](https://github.com/PerryTS/perry/pull/12487) was merged at `034b1357c3baf4a22e5b006940176cf99ba8a5de` and covers the original #12202 computed class method key issue, including lone-surrogate and empty-key cases.
+
+The separately observed accessor-name edge case is outside #12202's method-only scope and should be tracked independently. A local candidate at `ac2a4029acd57b63cf2d605a20bd4d76a3525c01` passed its recorded focused tests and Node parity checks, but was never pushed; full lint was not run for that head. Those historical results do not change the duplicate disposition.

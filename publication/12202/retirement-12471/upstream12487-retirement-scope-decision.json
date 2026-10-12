@@ -1,0 +1,34 @@
+{
+  "issue": 12202,
+  "original224_member": true,
+  "live_issue_state": "open",
+  "closed_at": null,
+  "merged_pr": 12487,
+  "merged_at": "2026-10-12T16:01:40Z",
+  "pr_head": "92257d7d6e3e9c0aa8d5ac888953e375fb091285",
+  "merge_commit": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "actual_upstream_main": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "actual_main_parent": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+  "stale_pr_base_api": "283ab130bf3c507753324d9ff842208543d9d267",
+  "original_acceptance": "Declaring a class method as `[\"\\uD800\"]() {}` registers it under an empty name, because HIR method names are Rust `String`s and the lone surrogate is lost. Calling it then fails. This is on main too, and was found while working on #12193. The fix is to carry method names as WTF-8 bytes, the same as runtime keys.",
+  "mapping": [
+    "MemberName::Str(Vec<u8>) and member_name_of_value preserve raw key bytes instead of lossily decoding.",
+    "class_member_name/member_is_named and class_method_decl[_index]_bytes resolve exact declaration key.",
+    "class_prototype_method_value_for_bytes preserves exact key and computed function name.",
+    "native_call_method exact WTF-8 property lookup bypasses UTF-8 string-only dispatch.",
+    "Computed static methods materialize own shape properties; codegen method/name string pool updated.",
+    "test_gap_classsem_12202_class_wtf8_method.ts directly covers high/low surrogate and empty instance keys, static method, reflected names and anonymous class expression."
+  ],
+  "validation_evidence": "Merged12487 reports all5gapfixtures Node parity, dedicated homes/keys GC witness,78test comparison only intended differences,mergedtree cargocheck. These are upstream reported results, not rerun here.",
+  "decision": "Original method-key scope covered by merged12487; retire owned duplicate12471 instead of replaying35paths or changing PRbase. Preserve branch/commits/logs. External closure/publication actions belong to root.",
+  "classification_recommendation": "covered (merged upstream, issue read still OPEN); if laterliveclosed then closed by reconciliation, not our batch credit",
+  "accessor_residual": {
+    "status": "unclaimed distinct residual, outside original narrow method-only issue",
+    "source": [
+      "class_registry/declarations.rs name_computed_member_by_key converts accessor bytes via from_utf8.expect(\"accessor name\")",
+      "class_registry/state.rs install_class_decl_prototype_method_fields same conversion"
+    ],
+    "action": "Park. No source edit/new issue/PR unless qualifying original scope independently authorized."
+  },
+  "own_candidate": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01 is onecommit/35paths relative243bdd, but nowduplicates mergedmethodrepair and has9conflicts with034b; not publishable as-is"
+}

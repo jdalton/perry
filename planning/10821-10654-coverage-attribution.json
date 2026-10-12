@@ -1,0 +1,47 @@
+{
+  "scope": "Two previously unattributed uncertainoriginal224records; targetedliveissue/timelines,issue-numberPRsearches,explicittrains/sourcecommitlookup. No builds/code/PRreviews/writes.",
+  "assessments": [
+    {
+      "issue": 10821,
+      "original224_member": true,
+      "live_state": "OPEN",
+      "recommendation": "uncovered",
+      "covering_prs": [],
+      "partial_prs": [
+        10864,
+        10930
+      ],
+      "components_not_themselves_merged": [
+        10831,
+        10836,
+        10915,
+        10924
+      ],
+      "proof": [
+        "Issue explicitly says twoof13familiesdone andremainsopen; latestcommentasksaboutotherfamiliesunder10508/10694.",
+        "Merged10864 (6768ed6bb2c550922bb7bdbebe41429a58438139,2026-09-21T06:07:29Z) carries10831text+10836timers.",
+        "Merged10930 (a022cf2e41ec90a95a05fa0a6a298a69f79c4025,2026-09-22T04:47:50Z) carries10915TUI+10924nullstub.",
+        "Atactualupstream034b1357, perry-ext-typescript/src/bun.rs js_bun_transpiler_new returnsregister_handle(BunTranspiler); perry-ffi/src/handle.rs483-495 register_handle usesidentity.numeric_id andregistryrecord; perry-codegen/src/lower_call/builtin.rs201-207 nanboxes thisnumericid directlyasPOINTER. Native table bun.rs stillNR_HANDLE_ID.",
+        "Thusrealheapidentity/POINTER=>GCcell scope explicitlyrequired byissue remainsunimplemented foratleastonecommonfamily entry. This isstronger thanstaleledgercounts."
+      ],
+      "limits": "Not claiming current same-family IDcollision or reproducingaWeakMapwrongvalue: survivingrepresentationgap itself isexplicitacceptance residual. TextEncoderreproaloneisfixed. No migrationimplementationGO."
+    },
+    {
+      "issue": 10654,
+      "original224_member": true,
+      "live_state": "OPEN",
+      "recommendation": "uncertain",
+      "covering_prs": [],
+      "partial_prs": [
+        11192
+      ],
+      "proof": [
+        "Targeted10654PRsearchreturns0; sourcehistory attributes replace_this_in_expr exhaustivefallback tocommita004113307c91b028f9293bc36026f6fe858d33f, associatedmerged11192 at2026-09-24T09:06:11Z.",
+        "11192 body explicitly hardensreplace_this_in_stmts with exhaustivewalk_expr_children_mut,DoWhile/Labeledandarrowcaptures.",
+        "Current034b analysis.rs158 collect_local_refs_expr delegatesremainingchildren toexhaustivewalk_expr_children;1377 replace_this_in_expr catchall delegatesmutablewalker; replace_this_in_stmt explicitlyenumeratesStmt variants.",
+        "Issue asksbroaderaudit everytotalhandwrittenExpr/Stmttraversal, notonlythetwoknownexamples. No linkedcompleteauditevidence or completewalkerinventoryfoundinthisboundedpass."
+      ],
+      "gap": "Namedmechanisms repaired but wholeaudit/exhaustiveness scopeunproven; retainuncertainwithoutinventingremainingbug orcreditingfullcoverage."
+    }
+  ]
+}

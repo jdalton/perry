@@ -1,0 +1,16 @@
+{
+  "repository": "PerryTS/perry",
+  "number": 12471,
+  "url": "https://github.com/PerryTS/perry/pull/12471",
+  "observed_at_utc": "2026-10-12T16:32:15Z",
+  "state": "OPEN",
+  "draft": true,
+  "mergeable": false,
+  "base": "main",
+  "head_branch": "cloud/issue-12202-wtf8-class-keys",
+  "head_sha": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+  "updated_at": "2026-10-12T13:08:27Z",
+  "merged": false,
+  "closed_at": null,
+  "evidence_source": "GitHub PR metadata API"
+}

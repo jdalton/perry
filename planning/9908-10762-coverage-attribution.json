@@ -1,0 +1,88 @@
+{
+  "scope": "Targeted live issue/timeline and linked merged source attribution only; no tests/build/PR reviews/writes. Both original224 members; both liveOPEN.",
+  "assessments": [
+    {
+      "issue": 9908,
+      "recommendation": "covered",
+      "covering_prs": [
+        9981,
+        11518
+      ],
+      "component_prs": [
+        9918
+      ],
+      "merged_evidence": [
+        {
+          "pr": 9981,
+          "merged_at": "2026-09-07T23:18:46Z",
+          "merge_commit": "2e4d63984d1eaa6c6d3e3a7e89e2a70d4abb20dc"
+        },
+        {
+          "pr": 11518,
+          "merged_at": "2026-09-27T12:34:34Z",
+          "merge_commit": "b105e8ae009972f158b605332c8c11e36eb51360"
+        }
+      ],
+      "mapping": [
+        "Original two concerns are address-keyed source/identity tables and72Bheader pressure.9918 removes traced-source table and shares onePrograms handle,72\u219256B; its measured diagnostic reports src_ins0 and56B/header.",
+        "9918 itself closed UNMERGED, but maintainer timeline explicitly says landed via9981;9981 mergedtrain body lists9918, with runtime3310/codegen1947/HIR630/stdlib132 passing. This is train coverage, never count9918 as merged.",
+        "11518 subsequently removes remaining identity source-table registry and custom death/rekeywalks using GCheader+sharedexpandohooks; source has no tabledefinitions, hot_diag counters explicitly zero.",
+        "Current regex ownership evolved further toRegExpData32B; this does not restore original72B/table defect."
+      ],
+      "limits": [
+        "Coverage is substantive merged implementation, not independent acceptance/closure.",
+        "9918 explicitly did not run test262 RegExp subset;11518 did not run compiled gapunderforcedGC locally. No claim that those checks ran.",
+        "Original shrink vs avoid-allocation are alternative directions; implementing shrink suffices for second design direction, not claim of zero allocations."
+      ],
+      "ledger_patch": {
+        "status": "covered",
+        "covering_prs": [
+          9981,
+          11518
+        ],
+        "partial_prs": [],
+        "live_state": "OPEN",
+        "resolution_verified": false
+      }
+    },
+    {
+      "issue": 10762,
+      "recommendation": "uncertain",
+      "covering_prs": [],
+      "partial_prs": [
+        11355,
+        11643
+      ],
+      "merged_evidence": [
+        {
+          "pr": 11355,
+          "merged_at": "2026-09-25T23:50:24Z",
+          "merge_commit": "dc70c80b10d2b5b846306ebaf297b289952d1bf2"
+        },
+        {
+          "pr": 11643,
+          "merged_at": "2026-10-03T04:52:53Z",
+          "merge_commit": "e054b861aef524d891b2bae350ab7abd2fe9f69a"
+        }
+      ],
+      "mapping": [
+        "Live correction says originalfour-spelling table confoundedvalue ranges;String/template samepath. Identifies two required improvements: SSOABI and inline conversion.",
+        "11355 implementsSSOABI andexplicitlyleavesinlinehalf.",
+        "11643 merged implementsinlineintegerconversion andstringproof/ASCIIcharCodeAt; current source+tests match.",
+        "11643fragmenthistoricalsame-range length-onlyrows131/133instructions vs160\u2013186before, bareloop23; not directly comparabletooriginalBun30 dueharness/measurement differences. PR explicitly says historical counts not remeasured atrevisedhead."
+      ],
+      "gap": "Both named mechanisms implemented, but broad performance parity/current originalcomparison not established. No latestauthorcomment explicitly retaining quantified residual after11643 like10511; therefore uncertain rather than asserting known-uncovered or fullcovered.",
+      "excluded": "10767 closedUNMERGED; do not credititsstate asmerged. Prefixconstruction11745/11743 explicitlyseparate issue scope.",
+      "ledger_patch": {
+        "status": "uncertain",
+        "covering_prs": [],
+        "partial_prs": [
+          11355,
+          11643
+        ],
+        "live_state": "OPEN",
+        "resolution_verified": false
+      }
+    }
+  ]
+}

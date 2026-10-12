@@ -1,11 +1,11 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T14:52:43Z",
-  "classification_updated_at": "2026-10-12T14:52:43Z",
+  "classification_updated_at": "2026-10-12T16:34:41Z",
   "counts": {
-    "covered": 22,
+    "covered": 23,
     "uncertain": 19,
-    "uncovered": 139,
+    "uncovered": 138,
     "closed": 44
   },
   "policy": "Classify coverage by accepted source behavior, not PR or issue state. A fully accepted fix may count as covered while its PR remains draft/open; track draft/open, merged, closed-unmerged and issue closure separately. Partial repairs remain partial; source claims and WIP are not coverage.",
@@ -378,27 +378,27 @@
       "issue": 12202,
       "status": "covered",
       "covering_prs": [
-        12471
+        12487
       ],
       "live_state": "OPEN",
       "resolution_verified": false,
       "claim": {
-        "owner": "cloud /root/luna_class_tdz",
-        "task": "/root/luna_class_tdz",
+        "owner": "cloud coordination / root retirement; historical candidate owner cloud /root/luna_class_tdz",
+        "task": "retire duplicate #12471; do not resume source lane",
         "branch": "cloud/issue-12202-wtf8-class-keys",
         "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
-        "has_uncommitted_changes": false,
-        "validation": "Exact fragment head dfd64b7: fresh trio,53 unique focused tests/55 executions, pinned Node26.5.1 no-auto fixture parity, fragment self-test and live PR gate PASS. Auto-opt and full lint are inherited only from source head2272 because this head adds only the numbered fragment; full lint remains exit1 with 105 pass,32 fail (30 baseline,2 environment/path),2 skips.",
-        "merge_state": "DRAFT OPEN PR12471; ready-for-review handoff authorized, live PR remains draft until publisher transition.",
-        "closure_state": "OPEN",
-        "publication_state": "Ready-for-review packet authorized at exact fragment head dfd64b7. Live PR12471 remains open/draft; this handoff does not change PR state. Issue remains open; no merge or closure credit.",
-        "evidence": "publication/12202/dfd64-final-validation.json; publication/12202/2272-final-validation.json"
+        "validation": "Historical candidate ac2a was locally tested; exact pushed fragment head dfd64b7 had fresh trio/focused/fragment gates. Full lint evidence is inherited from 2272 only. The original method-key issue is now covered by merged #12487, whose reported validation is referenced in the retirement packet; not rerun here.",
+        "merge_state": "Covered by merged upstream PR #12487; local PR #12471 remains OPEN/DRAFT and is requested to be closed as duplicate.",
+        "closure_state": "Issue OPEN; PR #12471 OPEN/DRAFT at observed head dfd64b7.",
+        "publication_state": "Retirement packet ready for local publisher action; no mutation performed.",
+        "evidence": "publication/12202/retirement-12471/validation.json"
       },
       "draft_prs": [
         12471
       ],
-      "coverage_evidence": "planning/12202-coverage-classification.json",
-      "coverage_basis": "Full source behavior is accepted at validated source head2272; PR12471 is open draft at changelog-only fragment headdfd64b7. Draft/open state, issue-open state, and merge state are tracked separately and do not negate coverage."
+      "coverage_evidence": "publication/12202/retirement-12471/upstream12487-retirement-scope-decision.json",
+      "coverage_basis": "Original method-key scope is covered by merged #12487. Validation is reported by #12487 and was not rerun here. Issue #12202 remains open; our #12471 is still an open draft pending publisher duplicate retirement.",
+      "coverage_decided_at": "2026-10-12T16:32:15Z"
     },
     {
       "issue": 12201,
@@ -1005,10 +1005,17 @@
     },
     {
       "issue": 10821,
-      "status": "uncertain",
+      "status": "uncovered",
       "covering_prs": [],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "partial_prs": [
+        10864,
+        10930
+      ],
+      "coverage_evidence": "planning/10821-10654-coverage-attribution.json",
+      "coverage_decided_at": "2026-10-12T16:34:41Z",
+      "coverage_basis": "Merged trains address four named components, but the original heap-identity/GC-cell requirement remains absent in current source. This does not claim a reproduced collision."
     },
     {
       "issue": 10803,
@@ -1040,14 +1047,17 @@
     },
     {
       "issue": 10762,
-      "status": "uncovered",
+      "status": "uncertain",
       "covering_prs": [],
       "partial_prs": [
         11355,
         11643
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "coverage_evidence": "planning/9908-10762-coverage-attribution.json",
+      "coverage_decided_at": "2026-10-12T16:32:15Z",
+      "coverage_basis": "Both named implementation mechanisms are present in merged PRs, but the original performance parity acceptance is not established. Issue remains open."
     },
     {
       "issue": 10755,
@@ -1119,7 +1129,13 @@
       "status": "uncertain",
       "covering_prs": [],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "partial_prs": [
+        11192
+      ],
+      "coverage_evidence": "planning/10821-10654-coverage-attribution.json",
+      "coverage_decided_at": "2026-10-12T16:34:41Z",
+      "coverage_basis": "Merged PR #11192 repairs named traversal mechanisms, while the issue-wide audit/exhaustiveness requirement is not established."
     },
     {
       "issue": 10642,
@@ -1309,10 +1325,13 @@
       "status": "uncovered",
       "covering_prs": [],
       "partial_prs": [
+        11384,
+        11650,
         11788
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "attribution_evidence": "planning/10511-coverage-attribution.json"
     },
     {
       "issue": 10510,
@@ -1868,10 +1887,17 @@
     },
     {
       "issue": 9908,
-      "status": "uncovered",
-      "covering_prs": [],
+      "status": "covered",
+      "covering_prs": [
+        9981,
+        11518
+      ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "partial_prs": [],
+      "coverage_evidence": "planning/9908-10762-coverage-attribution.json",
+      "coverage_decided_at": "2026-10-12T16:32:15Z",
+      "coverage_basis": "Source attribution maps the original acceptance to merged PRs #9981 and #11518. This is coverage, not issue closure; issue remains open."
     },
     {
       "issue": 9852,

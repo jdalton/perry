@@ -1,0 +1,62 @@
+{
+  "issue": 10511,
+  "original224_member": true,
+  "classification": "uncovered",
+  "change": "Retain classification; enrich partial merged coverage. No count change.",
+  "live_state": "OPEN",
+  "covering_prs": [],
+  "partial_prs": [
+    11384,
+    11650,
+    11788
+  ],
+  "related_closed_unmerged_prs": [
+    11708
+  ],
+  "evidence": [
+    {
+      "pr": 11384,
+      "merged_at": "2026-09-26T07:28:48Z",
+      "merge_commit": "1328148ae2c735a0bc52d762c84174d9bd8da4fe",
+      "scope": "fmod-free runtime ToInt32, range-guarded bitwise codegen and int32 result fact",
+      "limitation": "PR explicitly states issue target not reached; boxed-local root/barrier overhead remains."
+    },
+    {
+      "pr": 11650,
+      "merged_at": "2026-09-29T06:07:10Z",
+      "merge_commit": "9e89d521175362a2c84f2457b1cf16e47db74573",
+      "scope": "Related loop-region bare-property accesses; identified by issue acceptance update as partial foundation."
+    },
+    {
+      "pr": 11788,
+      "merged_at": "2026-10-03T12:02:53Z",
+      "merge_commit": "98ba9f97a124136df006cbc71164e695deb423b1",
+      "scope": "Number-local loop versioning and unary bitwise guard; destructure/annotated 212/213\u219257 instructions",
+      "limitation": "Explicit partial. prop/bigmask 78/186 unchanged, versus Node9.8/43; destructure57 exceeds own-control target~40."
+    }
+  ],
+  "authoritative_residual_comment": "https://github.com/PerryTS/perry/issues/10511#issuecomment-5968990954",
+  "acceptance_comment": "https://github.com/PerryTS/perry/issues/10511#issuecomment-5913294191",
+  "remaining_acceptance": [
+    "destructure at most2x or0 (~40 instructions)",
+    "prop and bigmask at most2x Node",
+    "No regression on listed node-forge, big.js, bignumber.js, decimal.js, nanoid package workloads"
+  ],
+  "source_match": [
+    "dynamic_arith.rs793-850 fmod-free conversion with regression tests1173+",
+    "expr/binary.rs guarded bitwise range conversion cites10511",
+    "stmt/number_local_loop.rs explicit10511 implementation"
+  ],
+  "limits": "No new performance run; measurements quoted are merged PR/issue evidence, not current-main measurements. No whole coverage claim from source alone.11708 is closed unmerged, not coverage credit.",
+  "ledger_patch_recommendation": {
+    "status": "uncovered",
+    "covering_prs": [],
+    "partial_prs": [
+      11384,
+      11650,
+      11788
+    ],
+    "evidence": "Live issue explicitly retains residual acceptance after merged11384/11650/11788; current source contains those mechanisms. See planning/10511-coverage-attribution.json.",
+    "resolution_verified": false
+  }
+}
