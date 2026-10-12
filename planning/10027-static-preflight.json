@@ -1,0 +1,32 @@
+{
+  "issue": 10027,
+  "head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "changed_files": [
+    "crates/perry-ext-ws/src/lib.rs",
+    "crates/perry-ext-ws/src/tests.rs"
+  ],
+  "checks": {
+    "raw_handle_debt_no_raise_vs_base": {
+      "command": "python3 scripts/raw_handle_debt.py --no-raise-vs d3e535944edbe7f7cf858c9ec932da355a7de26b",
+      "exit": 0,
+      "result": "PASS; recorded total 861 -> 861, module ceilings 108 -> 108, no raises."
+    },
+    "global_sink_no_raise_vs_base": {
+      "command": "python3 scripts/global_sink_isolation.py --asserted-no-raise-vs d3e535944edbe7f7cf858c9ec932da355a7de26b",
+      "exit": 0,
+      "result": "PASS; perry-runtime asserted-global baseline 58 -> 58, no additions. The scanner scope is perry-runtime only, so it does not enumerate perry-ext-ws test statics. Manual diff/search found eight AtomicBool/AtomicUsize test-only counters/snapshots used only by the new dispatch test; address values are recorded as integers for identity/movement comparisons and are not dereferenced or used to keep objects alive."
+    },
+    "gc_runtime_root_holders": {
+      "command": "python3 scripts/gc_runtime_root_holders.py",
+      "exit": 1,
+      "result": "One unclassified holder: crates/perry-runtime/src/object/property_key.rs:485 SUPER_GET_KEY_CONVERSIONS (rule B). The source file and scripts/gc_runtime_root_holders.json are byte-identical to base; this is pre-existing and outside both changed paths."
+    },
+    "file_size": {
+      "command": "bash scripts/check_file_size.sh",
+      "exit": 1,
+      "result": "Only three unchanged baseline files exceed 2000 lines: arena/page_meta/mod.rs 2020, arena/tests.rs 2020, json/replacer.rs 2004. Verified same line counts at d3e5359. Changed files are 1718 and 700 lines."
+    }
+  },
+  "interpretation": "No source-sensitive candidate failure identified. Raw-handle and global-sink comparisons pass. The GC-holder and file-size commands remain non-green on unchanged baseline findings; no baseline or inventory edits are proposed. Cargo/build/runtime not run; #12145 owns the slot."
+}

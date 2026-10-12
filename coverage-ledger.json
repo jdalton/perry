@@ -1,7 +1,7 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T12:17:49Z",
-  "classification_updated_at": "2026-10-12T13:10:00Z",
+  "classification_updated_at": "2026-10-12T13:20:48Z",
   "counts": {
     "covered": 22,
     "uncertain": 19,
@@ -500,16 +500,16 @@
       "live_state": "OPEN",
       "resolution_verified": false,
       "claim": {
-        "owner": "cloud /root/luna_tls_checker",
-        "task": "/root/luna_tls_checker",
-        "branch": "cloud/issue-12145-primary-timer-scan",
-        "current_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+        "owner": "cloud /root",
+        "task": "/root",
+        "branch": "cloud/issue-10027-root-ws-dispatch",
+        "current_head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
         "has_uncommitted_changes": false,
-        "validation": "At38a896, trio PASS (3m08), 37 focused unit controls PASS, but production integration exited101 because the witness passed control_id as f64 instead of a boxed JS handle; final pending count stayed1. This is classified as an invalid test API argument, not a demonstrated production defect. Astra reviewed the correction at22726d3; it changes only the integration test (2 lines), using js_nanbox_pointer before clear_timeout_value. Fresh matching trio is currently running on22726d3 (started13:13:50Z; 45-minute deadline13:58:50Z); production integration will be rerun after it. Full lint not started.",
+        "validation": "Committed source head2816d18; Astra source review and static checks clear. Static preflight compares exact head to d3e5359: raw-handle and asserted-global no-raise checks pass; GC-holder and file-size failures are unchanged baseline findings outside changed paths. Cargo/runtime and focused tests not run (slot held by #12145). Deployed MB24 browser retest remains required before closure.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Validation rerun in progress after correcting invalid integration-witness argument; no publication or coverage credit.",
-        "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started; 12145-227-trio.log"
+        "publication_state": "Committed local candidate; provisional packet only; draft creation/push/PR publication not authorized.",
+        "evidence": "planning/provisional-10027/metadata.json; planning/provisional-10027/validation.json; planning/10027-static-preflight.json"
       }
     },
     {

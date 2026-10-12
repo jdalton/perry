@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-10-12T13:20:48Z",
+  "issue12145": {
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "trio": {
+      "result": "PASS",
+      "duration": "1m57",
+      "log": "12145-227-trio.log",
+      "hashes": "12145-227-trio.sha256"
+    },
+    "focused_controls": {
+      "store": 19,
+      "inline_timer": 14,
+      "agent": 3,
+      "thread_exit": 1,
+      "total": 37,
+      "result": "PASS",
+      "logs": [
+        "12145-227-store-tests.log",
+        "12145-227-timer-inline.log",
+        "12145-227-agent-tests.log",
+        "12145-227-thread-exit-tests.log"
+      ]
+    },
+    "production_integration": {
+      "passed": 1,
+      "failed": 0,
+      "exit": 0,
+      "log": "12145-227-production-integration.log"
+    },
+    "preserved_prior_failure": "12145-38a-validation-result.json; invalid test API argument, corrected in test-only commit22726d3",
+    "full_lint": {
+      "started_at": "2026-10-12T13:20:22Z",
+      "deadline": "2026-10-12T13:50:22Z",
+      "cap_seconds": 1800,
+      "commands": 128,
+      "steps": 75,
+      "log": "12145-full-lint.log",
+      "status": "running; classification pending",
+      "ready_for_review": false
+    }
+  },
+  "issue10027_static_preflight": "planning/10027-static-preflight.json; raw-handle/global-sink checks pass; remaining GC-holder/file-size failures match unchanged baseline; no Cargo/runtime tests.",
+  "publisher_inbox": {
+    "repo": "jdalton/perry",
+    "branch": "cloud/local-publisher-inbox",
+    "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "refreshed_at": "2026-10-12T13:20:48Z",
+    "change": "No newer assignment/state; #12471 still draft per inbox snapshot; prior API-confirmed fragment headdfd64b7 unchanged."
+  },
+  "coverage_and_readiness": "#12145 remains uncovered with ready_for_review=false until full-lint classification."
+}

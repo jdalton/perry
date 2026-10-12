@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T13:14:00Z",
+  "checked_at": "2026-10-12T13:20:48Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -293,12 +293,13 @@
       "state": "Committed local source candidate; Astra source review and static checks clear; acceptance pending",
       "draft_creation_allowed": false,
       "ready_for_review": false,
-      "validation": "Source review/static checks pass; Cargo/runtime tests pending serial slot. MB24 deployed retest is required before closure.",
+      "validation": "Astra source review clear. Static preflight: raw-handle/global-sink no-raise checks pass; remaining GC-holder and file-size findings match unchanged baseline. Cargo/runtime tests pending the serial slot; MB24 retest required before closure.",
       "packet": "planning/provisional-10027/metadata.json",
       "publisher_actions": [],
       "validation_evidence": "planning/provisional-10027/validation.json",
       "push_allowed": false,
-      "pr_creation_allowed": false
+      "pr_creation_allowed": false,
+      "static_preflight_evidence": "planning/10027-static-preflight.json"
     },
     {
       "issues": [
@@ -310,8 +311,8 @@
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
       "has_uncommitted_changes": false,
-      "state": "38a production witness failed due invalid test API argument; corrected test-only head22726 is under revalidation",
-      "validation": "38a fresh trio and37 scoped unit controls PASS; production integration failed because witness cast timer control ID to f64. Astra-cleared head22726 changes only that test to pass a boxed JS handle. Fresh trio running since13:13:50Z, deadline13:58:50Z; integration rerun pending; full lint not started.",
+      "state": "Trio, focused controls, and production integration PASS at22726d3; full lint running under 30-minute cap; not ready",
+      "validation": "Exact head22726d3 trio PASS1m57; focused controls37/37 PASS (19 store,14 inline,3 agent,1 thread-exit); production integration1/1 PASS. Full lint128 commands/75 steps started13:20:22Z, deadline13:50:22Z; classifications pending. Preserve the38a invalid-witness-argument failure record.",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "push_allowed": false,
@@ -320,7 +321,8 @@
       "publisher_actions": [],
       "coverage": "uncovered",
       "covering_prs": [],
-      "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json"
+      "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json",
+      "full_lint_evidence": "12145-full-lint-run.json; 12145-full-lint.log"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
@@ -363,7 +365,7 @@
     "status": "parked-open-unresolved-unpublished",
     "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
-  "publisher_inbox_snapshot": "planning/12202-milestone-refresh-20261012T130710Z.json",
+  "publisher_inbox_snapshot": "planning/12145-full-lint-start-milestone.json",
   "resource_milestone": {
     "record": "planning/11915-resource-preflight-milestone-e190.json",
     "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",

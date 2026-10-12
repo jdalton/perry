@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-10-12T13:14:00Z",
+  "updated_at": "2026-10-12T13:20:48Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Run the fresh matching trio and production-integration witness on corrected head22726d3. Treat38a failure as invalid test API argument and preserve its result; full lint only if corrected acceptance passes.",
-    "Keep #12145 uncovered and not ready until exact-head acceptance passes.",
-    "Keep #10027 committed at2816d18 with source/static checks clear; focused tests/runtime acceptance and MB24 browser retest pending.",
-    "Keep #11915 parked at e190.",
-    "#12202 remains covered by accepted source in draft PR12471 at dfd64b7; PR draft/open and issue-open, no merge/closure credit."
+    "Finish all128 #12145 full-lint commands by13:50:22Z and classify every failure; keep readiness false until classification.",
+    "#10027 committed head2816d18 has source/static preflight clear with only unchanged baseline static findings; tests wait for serial slot, MB24 retest required before closure.",
+    "#11915 remains parked open/unresolved/unpublished at e190.",
+    "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -25,10 +24,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 corrected test-only head22726d3: fresh trio running since13:13:50Z, deadline13:58:50Z; then production integration rerun; no lint until acceptance passes.",
-    "#10027 committed candidate2816d18; no Cargo/runtime tests yet; MB24 retest required before closure.",
+    "#12145 exact22726d3: trio,37 controls and integration1/1 PASS; full lint128 commands/75 steps running13:20:22Z\u201313:50:22Z; no readiness until classification.",
+    "#10027 source/static preflight clear with baseline-only GC-holder/file-size findings; focused acceptance pending.",
     "#11915 parked open/unresolved/unpublished at e190.",
-    "#12202 fully source-covered by draft PR12471 at dfd64b7; not ready for review, issue OPEN, no merge/closure credit."
+    "#12202 source-covered by draft PR12471 at dfd64b7; not ready for review; issue OPEN."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -213,11 +212,12 @@
   "current_validation_gate": {
     "issue": 12145,
     "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-    "gate": "fresh matching trio on corrected integration-witness head; then rerun production integration",
-    "started_at": "2026-10-12T13:13:50Z",
-    "hard_deadline": "2026-10-12T13:58:50Z",
+    "gate": "full run_lint_gates.sh, exact128-command/75-step inventory",
+    "started_at": "2026-10-12T13:20:22Z",
+    "hard_deadline": "2026-10-12T13:50:22Z",
+    "cap_seconds": 1800,
     "owner": "cloud /root/luna_verification",
-    "status": "running; prior38a integration failed due invalid witness argument, corrected test-only head under rerun"
+    "status": "running; all prior focused controls and production integration passed; final lint classification pending"
   },
   "publisher_inbox_refresh": {
     "observed_at": "2026-10-12T13:06:21Z",
@@ -239,17 +239,32 @@
     "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T13:07:10Z",
+    "observed_at": "2026-10-12T13:20:48Z",
     "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "issue_12202_assignment": "PR12471 draft at head2272; subsequent source-branch fragment head dfd64b7 pushed and API-confirmed open/unmerged; not ready for review",
-    "issue_12202_live_state": "OPEN; updated 2026-10-08T11:06:28Z; 0 comments"
+    "result": "No new assignment/state in inbox snapshot; #12471 remains draft per last snapshot; prior API-confirmed fragment head dfd64b7 unchanged."
   },
   "coverage_counts": {
     "uncovered": 139,
     "uncertain": 19,
     "covered": 22,
     "closed": 44
+  },
+  "current_validation_results": {
+    "issue": 12145,
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "trio": "PASS 3-package build,1m57; exact artifact hashes recorded",
+    "focused_controls": {
+      "store": 19,
+      "inline_timer": 14,
+      "agent": 3,
+      "thread_exit": 1,
+      "total": 37,
+      "all_pass": true
+    },
+    "production_integration": "PASS 1/1",
+    "prior_38a_failure": "Preserved; invalid test API argument (f64 cast instead of boxed Timeout handle), corrected by test-only commit22726d3.",
+    "full_lint": "running; 128 commands / 75 steps; hard cap 1800s; final classification pending"
   }
 }
