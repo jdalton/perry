@@ -5,14 +5,14 @@
   "head": "jdalton:cloud/issue-12202-wtf8-class-keys",
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12202-wtf8-class-keys",
-  "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
   "validated_final_head": null,
   "issues": [
     12202
   ],
   "title": "Preserve WTF-8 keys for computed class members",
   "scope": "Preserve exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. Exact 705cc diff: 33 paths (31 runtime Rust files, one fixture, one access-baseline inventory row); no codegen or ABI changes.",
-  "readiness": "SOURCE_REVIEWED; STATIC_PREFLIGHT_BLOCKED_ON_MIGRATED_TEST_ALLOWANCE; FINAL_VALIDATION_PENDING",
+  "readiness": "STATIC_PREFLIGHT_CLEAR; EXACT_HEAD_VALIDATION_AUTHORIZED_AND_PENDING",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "ready_to_publish": false,
@@ -27,16 +27,16 @@
   "validation": "validation.json",
   "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
-  "issue_state_snapshot": "705-publication-freshness.json",
-  "checked_at": "2026-10-12T11:28:25Z",
+  "issue_state_snapshot": "2272-publication-freshness.json",
+  "checked_at": "2026-10-12T11:34:20Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
   "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until static preflight, exact-705cc build/runtime acceptance, and complete lint-gate accounting are finished and classified.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "validation.json",
-  "latest_acceptance_record": "705cc-source-evidence.json; raw-handle no-raise, scoped format/diff and file-size checks pass; latest TLS preflight found migrated test allowance mismatch, so Cargo/build/runtime validation remains blocked.",
-  "current_head_validation": "At exact 705cc, raw-handle count matches base (1203), scoped rustfmt/diff pass, class_value.rs is 1588 lines, with three unrelated parent-known file-size offenders. Latest static preflight is blocked: class_value/tests.rs:271 has a missing existing allowance for direct classify_heap_generation and a stale old write_once_then_minors count. No exact-head build/runtime validation has run.",
+  "latest_acceptance_record": "2272-static-preflight-summary.json; static preflight clear for authorized serial validation; exact-head build/test/runtime/full-lint remain pending.",
+  "current_head_validation": "At exact source head 2272f7b520206d8e76d4f86440f92e035e25ce63 (tree 20d752b0857dedc73a65ec1e05bab85143f5b673), static preflight is clear. The 34-path scope is 31 runtime Rust files, one fixture and two inventory files. Full scanner comparison provenance is retained in the static proof; the one post-705 commit moves an existing exception path without increasing its count. Exact-head acceptance remains pending.",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
-  "overlap_note": "Freshness checked 2026-10-12T11:28:25Z: issue #12202 remains open with zero comments; candidate diff is exactly 33 paths. Upstream main is 8e5224dc6844d2bf60aa536a6cc4c88926c6da63; its only path overlap is object/mod.rs adding unrelated mod class_accessor_guard. PR #12263 remains open with 14 overlapping paths and no demonstrated duplicate semantics; merge-order risk remains. Evidence: 705-publication-freshness.json.",
+  "overlap_note": "Latest main compare: 283ab130bf3c507753324d9ff842208543d9d267, only candidate overlap is object/mod.rs with unrelated class_accessor_guard module addition. PR #12263 still has 14 shared paths, no demonstrated duplicate semantics, merge-order risk remains. New allowlist path overlaps neither. Evidence: 2272-publication-freshness.json.",
   "publication_overlap_decision": {
     "record": "/workspace/work/perry-queue/planning/12202-12263-publication-overlap-decision.json",
     "decision": "No demonstrated semantic blocker to publishing current candidate; disclose integration/merge-order risk. No external review performed.",
@@ -44,7 +44,7 @@
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   },
-  "full_lint_status": "No complete 705cc full-lint run; static preflight currently blocks validation. Prior 56c6 and 266 full-lint drivers were interrupted and remain non-results.",
+  "full_lint_status": "No exact-2272 full lint result yet; validation authorized and pending. Do not reuse older-head full-lint interruptions as a pass.",
   "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
   "source_history": [
     {
@@ -72,16 +72,56 @@
     }
   ],
   "source_scope": {
-    "changed_files_total": 33,
+    "changed_files_total": 34,
     "runtime_rust_files": 31,
     "fixture_files": 1,
     "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
-    "inventory_files": 1,
-    "inventory_file": "scripts/string_payload_access_baseline.txt",
+    "inventory_files": 2,
+    "inventory_paths": [
+      "scripts/string_payload_access_baseline.txt",
+      "scripts/string_validator_allowlist.txt"
+    ],
     "codegen_or_abi_changes": false,
     "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
-    "path_list_source": "705-publication-freshness.json"
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "path_list_source": "2272-publication-freshness.json",
+    "changed_paths": [
+      "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "crates/perry-runtime/src/closure/mod.rs",
+      "crates/perry-runtime/src/closure/props.rs",
+      "crates/perry-runtime/src/object/accessor_pair.rs",
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+      "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/class_value/tests.rs",
+      "crates/perry-runtime/src/object/descriptor_state.rs",
+      "crates/perry-runtime/src/object/descriptors.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+      "scripts/string_payload_access_baseline.txt",
+      "scripts/string_validator_allowlist.txt",
+      "test-files/test_issue_12202_wtf8_class_keys.ts"
+    ]
   },
   "interrupted_overlapping_warning_check": {
     "status": "interrupted_non_result",
@@ -108,12 +148,7 @@
     },
     "note": "Several rows remain unresolved/delegated; refresh attribution for the 266 head and final lint results before making a global baseline claim."
   },
-  "current_head_static_preflight_blocker": {
-    "status": "BLOCKED",
-    "detail": "class_value/tests.rs:271 needs its pre-existing direct classify_heap_generation allowance migrated; old write_once_then_minors count is stale. Astra is reviewing the minimal correction.",
-    "observed_at_utc": "2026-10-12T11:28:25Z",
-    "validation_authorized": false
-  },
+  "current_head_static_preflight_blocker": null,
   "flags": {
     "draft_creation_allowed": false,
     "ready_for_review": false,

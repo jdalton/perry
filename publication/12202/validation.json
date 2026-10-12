@@ -1,20 +1,24 @@
 {
   "issue": 12202,
-  "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
   "worktree_retired": false,
   "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
   "source_scope": {
-    "changed_files_total": 33,
+    "changed_files_total": 34,
     "runtime_rust_files": 31,
     "fixture_files": 1,
     "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
-    "inventory_files": 1,
-    "inventory_file": "scripts/string_payload_access_baseline.txt",
+    "inventory_files": 2,
+    "inventory_paths": [
+      "scripts/string_payload_access_baseline.txt",
+      "scripts/string_validator_allowlist.txt"
+    ],
     "codegen_or_abi_changes": false,
-    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
-    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
-    "path_list_source": "705-publication-freshness.json",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "path_list_source": "2272-publication-freshness.json",
     "changed_paths": [
       "crates/perry-runtime/src/closure/dynamic_props.rs",
       "crates/perry-runtime/src/closure/mod.rs",
@@ -48,6 +52,7 @@
       "crates/perry-runtime/src/object/native_module/class_method_values.rs",
       "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
       "scripts/string_payload_access_baseline.txt",
+      "scripts/string_validator_allowlist.txt",
       "test-files/test_issue_12202_wtf8_class_keys.ts"
     ]
   },
@@ -86,7 +91,7 @@
   },
   "acceptance_matrix": {
     "static_preflight": {
-      "status": "BLOCKED on migrated test allowance correction; rerun candidate-sensitive static checks before authorizing Cargo."
+      "status": "PASS at exact 2272 source tree; serial validation authorized."
     },
     "source_checks": {
       "status": "PASS at exact 705cc",
@@ -98,23 +103,23 @@
       "evidence": "705cc-source-evidence.json"
     },
     "focused_runtime_units": {
-      "status": "NOT RUN at 705cc; blocked by static preflight.",
+      "status": "PENDING at exact 2272; no result claimed.",
       "prior_56c6": "53 unique tests across 55 executions at 4e; not 705cc evidence"
     },
     "matching_dev_trio": {
-      "status": "NOT RUN at 705cc; blocked by static preflight.",
+      "status": "PENDING at exact 2272; no result claimed.",
       "prior_56c6": "PASS; prior-56c6-acceptance-evidence.json"
     },
     "compiled_fixture_vs_node": {
-      "status": "NOT RUN at 705cc; blocked by static preflight.",
+      "status": "PENDING at exact 2272; no result claimed.",
       "prior_56c6": "PASS no-auto; prior-56c6-acceptance-evidence.json"
     },
     "auto_opt": {
-      "status": "NOT RUN at 705cc; blocked by static preflight.",
+      "status": "PENDING at exact 2272; no result claimed.",
       "prior_266": "PASS genuine auto-opt; previous-266-acceptance-evidence.json"
     },
     "full_lint": {
-      "status": "NOT RUN at 705cc; complete gate accounting pending and static preflight blocks execution.",
+      "status": "PENDING at exact 2272; no result claimed.",
       "prior_56c6": {
         "status": "INTERRUPTED after 20 gate rows; no final summary",
         "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json"
@@ -208,7 +213,7 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "SOURCE_REVIEWED; STATIC_PREFLIGHT_BLOCKED_ON_MIGRATED_TEST_ALLOWANCE; FINAL_VALIDATION_PENDING",
+  "readiness": "STATIC_PREFLIGHT_CLEAR; EXACT_HEAD_VALIDATION_AUTHORIZED_AND_PENDING",
   "current_head_validation": {
     "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
     "status": "source clear; static preflight and final validation pending",
@@ -253,7 +258,7 @@
     "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
     "c727637cd909fc7d4861bf9d21d65afc8cd54f5a"
   ],
-  "checked_at": "2026-10-12",
+  "checked_at": "2026-10-12T11:34:20Z",
   "previous_head_acceptance": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
@@ -809,44 +814,34 @@
   "prior_56c6_acceptance_evidence": "prior-56c6-acceptance-evidence.json",
   "prior_266_acceptance_evidence": "previous-266-acceptance-evidence.json",
   "freshness": {
-    "checked_at": "2026-10-12T11:28:25Z",
-    "issue_state": "OPEN",
-    "current_main_head": "8e5224dc6844d2bf60aa536a6cc4c88926c6da63",
-    "current_main_changed_paths": 163,
+    "checked_at": "2026-10-12T11:34:20Z",
+    "issue_state": "OPEN; reused recent refresh at 11:28:25Z",
+    "current_main_head": "283ab130bf3c507753324d9ff842208543d9d267",
+    "current_main_changed_paths": 178,
     "candidate_main_overlap_paths": [
       "crates/perry-runtime/src/object/mod.rs"
     ],
-    "candidate_main_overlap_review": "crates/perry-runtime/src/object/mod.rs gains only mod class_accessor_guard; relative to bc862; unrelated to the WTF-8 candidate hunks.",
+    "candidate_main_overlap_review": "Only object/mod.rs overlaps; the reviewed hunk adds unrelated mod class_accessor_guard. The new scripts/string_validator_allowlist.txt path is absent from the complete main changed-path set.",
     "pr_12263_state": "OPEN",
     "pr_12263_overlap_count": 14,
-    "pr_12263_overlap_paths": [
-      "crates/perry-runtime/src/object/class_image.rs",
-      "crates/perry-runtime/src/object/class_registry.rs",
-      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
-      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
-      "crates/perry-runtime/src/object/class_registry/registration.rs",
-      "crates/perry-runtime/src/object/class_registry/state.rs",
-      "crates/perry-runtime/src/object/class_value.rs",
-      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
-      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
-      "crates/perry-runtime/src/object/mod.rs",
-      "crates/perry-runtime/src/object/native_call_method.rs",
-      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
-      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
-      "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
-    ],
+    "new_allowlist_path_overlap": false,
     "semantic_decision": "No demonstrated duplicate semantics; merge-order risk remains.",
-    "evidence": "705-publication-freshness.json"
+    "evidence": "2272-publication-freshness.json"
   },
   "current_head_preflight": {
-    "status": "BLOCKED; migrated test allowance/count correction and rerun required before Cargo.",
-    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
-    "blocker": "class_value/tests.rs:271 migrated tests lack the existing direct classify_heap_generation allowance and retain stale old write_once_then_minors count; minimal correction under Astra review.",
-    "raw_handle_no_raise": "PASS; 1203 total, equal to base",
-    "scoped_rustfmt": "PASS",
-    "git_diff_check": "PASS",
-    "file_size": "class_value.rs 1588 lines; three unrelated parent-known offenders",
-    "builds_or_runtime": "NOT RUN; preflight blocks",
-    "evidence": "705cc-source-evidence.json"
+    "status": "STATIC PREFLIGHT CLEAR",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "summary": "2272-static-preflight-summary.json",
+    "authorization": "Root authorized one serial verifier through the plan."
+  },
+  "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "static_preflight": {
+    "status": "PASS; cleared for authorized serial validation",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "evidence": "2272-static-preflight-summary.json",
+    "full_scanner_provenance": "2272-static-preflight-source.json",
+    "allowlist_path_migration": "2272-allowlist-path-proof.json"
   }
 }

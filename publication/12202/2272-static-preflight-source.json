@@ -1,0 +1,271 @@
+{
+  "issue": 12202,
+  "checked_at_utc": "2026-10-12T11:32:16Z",
+  "comparison_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "purpose": "Complete source-only static preflight before Cargo; full outputs compared at exact source trees. No source or ledger edits made by this audit.",
+  "trees": {
+    "baseline_path": "/tmp/12202-bc862-static-compare",
+    "baseline_clean": true,
+    "candidate_path": "/workspace/work/perry-queue/issue-12202",
+    "candidate_clean": false,
+    "owner_sidecar": "/tmp/12202-bc862-static-compare-OWNER.txt"
+  },
+  "changed_path_count": 33,
+  "changed_paths": [
+    "crates/perry-runtime/src/closure/dynamic_props.rs",
+    "crates/perry-runtime/src/closure/mod.rs",
+    "crates/perry-runtime/src/closure/props.rs",
+    "crates/perry-runtime/src/object/accessor_pair.rs",
+    "crates/perry-runtime/src/object/class_image.rs",
+    "crates/perry-runtime/src/object/class_registry.rs",
+    "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+    "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+    "crates/perry-runtime/src/object/class_registry/declarations.rs",
+    "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+    "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+    "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+    "crates/perry-runtime/src/object/class_registry/registration.rs",
+    "crates/perry-runtime/src/object/class_registry/state.rs",
+    "crates/perry-runtime/src/object/class_value.rs",
+    "crates/perry-runtime/src/object/class_value/tests.rs",
+    "crates/perry-runtime/src/object/descriptor_state.rs",
+    "crates/perry-runtime/src/object/descriptors.rs",
+    "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+    "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+    "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+    "crates/perry-runtime/src/object/field_set_by_name.rs",
+    "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+    "crates/perry-runtime/src/object/mod.rs",
+    "crates/perry-runtime/src/object/native_call_method.rs",
+    "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+    "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+    "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+    "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+    "scripts/string_payload_access_baseline.txt",
+    "test-files/test_issue_12202_wtf8_class_keys.ts"
+  ],
+  "paths_changed_since_56c6": [
+    "crates/perry-runtime/src/object/class_value.rs",
+    "crates/perry-runtime/src/object/class_value/tests.rs",
+    "crates/perry-runtime/src/object/native_call_method.rs"
+  ],
+  "results": {
+    "address_class": {
+      "status": "candidate_full_stdout_matches_base_after_path_only_migration",
+      "base_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+      "candidate_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+      "full_stdout_byte_equal": true,
+      "candidate_added_findings": [],
+      "path_migration_commit": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+      "candidate_log": "/tmp/12202-gate-compare/705ccdae-addr_class-path-migrated.log",
+      "detail": "The original candidate finding was solely the allowlist path retaining the pre-split file. The existing exception was moved with its test, retaining count 1; full scanner output now matches base exactly."
+    },
+    "raw_handle": {
+      "status": "candidate_regression_fixed_on_705ccdae",
+      "full_stdout_equal_base": true,
+      "base_counts": "1203 sites / 72 violations",
+      "candidate_counts": "1203 sites / 72 violations",
+      "base_sha256": "0906094286a2db78dd66a0cbe2912aaff567cac38bc8335edb3915252e20c828",
+      "candidate_sha256": "0906094286a2db78dd66a0cbe2912aaff567cac38bc8335edb3915252e20c828",
+      "candidate_log": "/tmp/12202-gate-compare/705ccdae-raw_handle.log"
+    },
+    "file_size": {
+      "status": "candidate_regression_fixed_on_705ccdae",
+      "full_stdout_equal_base": true,
+      "base": {
+        "path": "/tmp/12202-gate-compare/bc862-file_size.log",
+        "sha256": "e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a",
+        "bytes": 688,
+        "exit": 1
+      },
+      "candidate": {
+        "path": "/tmp/12202-gate-compare/705ccdae-file_size.log",
+        "sha256": "e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a",
+        "bytes": 688,
+        "exit": 1
+      },
+      "identical_remaining_offenders": [
+        "crates/perry-runtime/src/arena/page_meta/mod.rs: 2020",
+        "crates/perry-runtime/src/arena/tests.rs: 2020",
+        "crates/perry-runtime/src/json/replacer.rs: 2004"
+      ],
+      "class_value_line_counts": {
+        "bc862": 1981,
+        "705ccdae": 1588,
+        "new_tests_child": 472
+      }
+    },
+    "gc_store": {
+      "status": "base_candidate_full_stdout_exact_equal",
+      "base": {
+        "path": "/tmp/12202-gate-compare/bc862-gc_store.log",
+        "sha256": "c7e2b73294b0169e4761b324170b02fc1fcbffbb56b4c211e06309843815cee5",
+        "bytes": 5019,
+        "exit": 1
+      },
+      "candidate": {
+        "path": "/tmp/12202-gate-compare/705ccdae-gc_store.log",
+        "sha256": "c7e2b73294b0169e4761b324170b02fc1fcbffbb56b4c211e06309843815cee5",
+        "bytes": 5019,
+        "exit": 1
+      }
+    },
+    "runtime_abi": {
+      "status": "base_candidate_full_stdout_exact_equal",
+      "base": {
+        "path": "/tmp/12202-gate-compare/bc862-runtime_abi.log",
+        "sha256": "1dd4053f4ba0c1ee1b772bd4369e13d561b0015d2a193f84b4e709189cc7fc28",
+        "bytes": 119,
+        "exit": 1
+      },
+      "candidate": {
+        "path": "/tmp/12202-gate-compare/705ccdae-runtime_abi.log",
+        "sha256": "1dd4053f4ba0c1ee1b772bd4369e13d561b0015d2a193f84b4e709189cc7fc28",
+        "bytes": 119,
+        "exit": 1
+      },
+      "diagnostic": "crates/perry-codegen/src/wasm32/runtime_abi.tsv stale; identical on both trees"
+    },
+    "global_sinks": {
+      "status": "same diagnostic totals with duplicate-name resolution-order variation",
+      "base_counts": "12 hazards / 70 asserted globals",
+      "candidate_counts": "12 hazards / 70 asserted globals",
+      "base_sha256": "fd031d3a2685560bb64886bc3084d194f9700af227ce087c7ebd957b6ac5b489",
+      "candidate_sha256": "0fc37c274f716460f0f511e9d065a3e79e94d05cf014337880a377d916dd202c",
+      "difference": "reset_for_test is printed as PROC=thread_local on base (first fn definition: turnloop_proc/mod.rs), STORE=per_test on candidate (first definition: timer/store.rs). Scanner chooses first of 12 same-named definitions from rglob order; the two definitions and their inputs are unchanged."
+    },
+    "buffer_layout": {
+      "status": "base_candidate_full_stdout_exact_equal",
+      "self_test": "25 sabotage cases red on both trees",
+      "base_sha256": "272776167b5839fbe4aa5584f73146d25b8c0b4cd0352ac8f954a951a1f3a533",
+      "candidate_sha256": "272776167b5839fbe4aa5584f73146d25b8c0b4cd0352ac8f954a951a1f3a533",
+      "diagnostic": "same one forbidden site: gc/tests/canonical_keys_minor_prune.rs:69"
+    }
+  },
+  "other_full_scanner_comparisons": [
+    {
+      "gate": "sso",
+      "full_output_substantively_equal": true,
+      "base_sha256": "971c0781fa6491b9108e2b54be2d45032f2a6042f45dd6d6929e5b0bdccc5bd5",
+      "candidate_sha256": "971c0781fa6491b9108e2b54be2d45032f2a6042f45dd6d6929e5b0bdccc5bd5",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "shape",
+      "full_output_substantively_equal": true,
+      "base_sha256": "d80660ee0cda3c7045210cd41ab0f227a49d76cd64517b819414a0c22fae24a3",
+      "candidate_sha256": "0e64f4bdcccf588b4c7d466574b0c2282045604dae15fadfdc128eaa3261627e",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "absolute worktree prefix only"
+    },
+    {
+      "gate": "gc_pin",
+      "full_output_substantively_equal": true,
+      "base_sha256": "6317c64dfbfe51ce654d1245609fd655ad6a297614bd6eec8988a0cae7da9798",
+      "candidate_sha256": "6317c64dfbfe51ce654d1245609fd655ad6a297614bd6eec8988a0cae7da9798",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "gc_holders",
+      "full_output_substantively_equal": true,
+      "base_sha256": "2dbc6185e24e1ba078f313246c08723235c5c4af724e0aa2a30991da36424174",
+      "candidate_sha256": "2dbc6185e24e1ba078f313246c08723235c5c4af724e0aa2a30991da36424174",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "thread_exit",
+      "full_output_substantively_equal": true,
+      "base_sha256": "1cc9197b4f5912763e1f23f59d3968c1e302f7049ec458c44c42c189c7e345d8",
+      "candidate_sha256": "1cc9197b4f5912763e1f23f59d3968c1e302f7049ec458c44c42c189c7e345d8",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "registry_lifetime",
+      "full_output_substantively_equal": true,
+      "base_sha256": "25d608efe67e2d061cd536b5bba5e85703973f96ea5ffc31b22d4269b026a541",
+      "candidate_sha256": "25d608efe67e2d061cd536b5bba5e85703973f96ea5ffc31b22d4269b026a541",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "native_ledger",
+      "full_output_substantively_equal": true,
+      "base_sha256": "ad8e8c073e37deae2a0650640aeae651e41269a84532f45aff16ae7b636cb219",
+      "candidate_sha256": "ad8e8c073e37deae2a0650640aeae651e41269a84532f45aff16ae7b636cb219",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "test_registration",
+      "full_output_substantively_equal": true,
+      "base_sha256": "abc60dd7cf42a285f997161f0445443013662d7f35252d4191130bc61a8a06ab",
+      "candidate_sha256": "abc60dd7cf42a285f997161f0445443013662d7f35252d4191130bc61a8a06ab",
+      "exit_base": null,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "gc_env",
+      "full_output_substantively_equal": true,
+      "base_sha256": "cba5e1fe9d23406f70a8bb3efd2c58cc3def52dd7734dbdc72e431fdac3a3204",
+      "candidate_sha256": "cba5e1fe9d23406f70a8bb3efd2c58cc3def52dd7734dbdc72e431fdac3a3204",
+      "exit_base": 1,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "gc_docs",
+      "full_output_substantively_equal": true,
+      "base_sha256": "9aa057587f04620d32fca43f2cd85f1720a958f1ebc070e70d344c682d754455",
+      "candidate_sha256": "9aa057587f04620d32fca43f2cd85f1720a958f1ebc070e70d344c682d754455",
+      "exit_base": 1,
+      "exit_candidate": 1,
+      "normalization": "none"
+    },
+    {
+      "gate": "buffer_layout",
+      "full_output_substantively_equal": true,
+      "base_sha256": "272776167b5839fbe4aa5584f73146d25b8c0b4cd0352ac8f954a951a1f3a533",
+      "candidate_sha256": "272776167b5839fbe4aa5584f73146d25b8c0b4cd0352ac8f954a951a1f3a533",
+      "exit_base": 1,
+      "exit_candidate": 1,
+      "normalization": "none"
+    }
+  ],
+  "locale_io": {
+    "status": "prior comparison reusable; relevant input scope unchanged",
+    "reason": "No Python checker files changed between bc862 and 705ccdae; previous full candidate/base outputs matched."
+  },
+  "decision": "STATIC_PREFLIGHT_CLEAR: latest clean commit 2272f7b520206d8e76d4f86440f92e035e25ce63 has no candidate-specific failures in checked source scanners. Raw-handle and file-size regressions are fixed; gc-store and runtime-ABI full outputs exactly match base; global-sink totals match with documented duplicate-name resolution-order variation; the existing address-class exception was path-migrated without increasing its count and output equals base. Safe for root to start the authorized serial validation; this agent did not start Cargo/full lint.",
+  "logs_root": "/tmp/12202-gate-compare",
+  "candidate_tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "candidate_clean": true,
+  "paths_changed_since_705ccdae": [
+    "scripts/string_validator_allowlist.txt"
+  ],
+  "final_allowlist_path_migration": {
+    "commit": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "commit_title": "Move string validator exception with class tests",
+    "path": "scripts/string_validator_allowlist.txt",
+    "effect": "Moved the existing one-count test exception from class_value.rs to class_value/tests.rs; no count increase or new exception.",
+    "sha256": "42c895766658e035b6163ddacd095ca0f26b0d18f5926e731da17984cb8a4fd2",
+    "addr_class_full_stdout_equals_bc862": true,
+    "base_stdout_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+    "candidate_stdout_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+    "candidate_full_log": "/tmp/12202-gate-compare/705ccdae-addr_class-path-migrated.log"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "issue": 12202,
+  "observed_at_utc": "2026-10-12T11:34:20Z",
+  "candidate": {
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "changed_path_count": 34,
+    "runtime_rust_files": 31,
+    "fixture_files": 1,
+    "inventory_files": 2,
+    "changed_paths": [
+      "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "crates/perry-runtime/src/closure/mod.rs",
+      "crates/perry-runtime/src/closure/props.rs",
+      "crates/perry-runtime/src/object/accessor_pair.rs",
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+      "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/class_value/tests.rs",
+      "crates/perry-runtime/src/object/descriptor_state.rs",
+      "crates/perry-runtime/src/object/descriptors.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+      "scripts/string_payload_access_baseline.txt",
+      "scripts/string_validator_allowlist.txt",
+      "test-files/test_issue_12202_wtf8_class_keys.ts"
+    ]
+  },
+  "live_issue_refresh": "Reused recent 2026-10-12T11:28:25Z refresh: OPEN, updated 2026-10-08T11:06:28Z, zero comments; this task refreshed changed-path overlaps only.",
+  "current_main": {
+    "repository": "PerryTS/perry",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "main_head": "283ab130bf3c507753324d9ff842208543d9d267",
+    "ahead_by": 24,
+    "behind_by": 0,
+    "changed_path_count": 178,
+    "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "candidate_path_count": 34,
+    "overlap_paths": [
+      "crates/perry-runtime/src/object/mod.rs"
+    ],
+    "overlap_review": "Only object/mod.rs overlaps; the reviewed hunk adds unrelated mod class_accessor_guard. The new scripts/string_validator_allowlist.txt path is absent from the complete main changed-path set."
+  },
+  "pr_12263": {
+    "state": "OPEN",
+    "head_sha": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+    "changed_path_count": 71,
+    "candidate_overlap_paths": [
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+    ],
+    "candidate_overlap_count": 14,
+    "new_allowlist_path_overlap": false,
+    "review": "No demonstrated duplicate semantics; integration/merge-order risk remains per existing semantic review."
+  },
+  "preflight": {
+    "status": "STATIC_PREFLIGHT_CLEAR",
+    "evidence": "2272-static-preflight-source.json",
+    "allowlist_path_proof": "2272-allowlist-path-proof.json",
+    "authorized_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "scope_note": "Full-scanner comparisons retain their actual source/input heads in the proof. The new commit changes only the allowlist path; no claim that every scanner was rerun on 2272."
+  },
+  "validation": {
+    "exact_head_build_tests_runtime_full_lint": "PENDING; no acceptance result claimed",
+    "authorization": "Root authorized one serial Luna verifier through the plan; preserve serialized execution."
+  },
+  "publication_flags": {
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "external_pr_created": false,
+    "pushed_to_fork": false,
+    "full_lint_complete": false
+  }
+}

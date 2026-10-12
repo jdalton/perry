@@ -1,0 +1,28 @@
+{
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "parent": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+  "base_for_full_comparison": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+  "change": "Single approved row path migration in scripts/string_validator_allowlist.txt: class_value.rs -> class_value/tests.rs; count=1 and justification unchanged.",
+  "addr_class_inventory": {
+    "command": "python3 scripts/addr_class_inventory.py",
+    "candidate_exit": 1,
+    "parent_exit": 1,
+    "candidate_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+    "parent_sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+    "full_stdout_byte_identical": true,
+    "residual": "Both fail identically on the pre-existing method_site.rs:796 gcheader-cast finding."
+  },
+  "addr_class_selftest": {
+    "command": "python3 scripts/addr_class_inventory.py --self-test",
+    "candidate_exit": 0,
+    "parent_exit": 0,
+    "stdout_sha256": "31aa412d8a1bb9a13691aac03c63005d9a6b8d75ac674f3d0db88f43a7c6d942"
+  },
+  "string_validator_inventory": {
+    "command": "python3 scripts/string_validator_inventory.py",
+    "candidate_exit": 0,
+    "parent_exit": 0,
+    "stdout_sha256": "a762dbe0fbd784310d4695baffe4831a3523889242c9e63e0f78617b1979266e"
+  },
+  "build_or_runtime": "Not run."
+}

@@ -1,0 +1,75 @@
+{
+  "issue": 12202,
+  "candidate_commit": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "candidate_tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "proof_record": "2272-static-preflight-source.json",
+  "proof_checked_at_utc": "2026-10-12T11:32:16Z",
+  "scope": {
+    "paths": 34,
+    "runtime_rust": 31,
+    "fixture": 1,
+    "inventory": 2
+  },
+  "scanner_findings": {
+    "addr_class": {
+      "candidate_vs_base_stdout_identical": true,
+      "sha256": "f878e3b2a912539759a08e2d50a6041c7d77b5bb506e2d9d1ea04e38ec756b5c",
+      "added_findings": [],
+      "existing_allowance_moved_with_test": true,
+      "count": 1
+    },
+    "raw_handle": {
+      "candidate_vs_base_stdout_identical": true,
+      "sites": 1203,
+      "violations": 72,
+      "sha256": "0906094286a2db78dd66a0cbe2912aaff567cac38bc8335edb3915252e20c828"
+    },
+    "file_size": {
+      "candidate_vs_base_stdout_identical": true,
+      "class_value_rs_lines": 1588,
+      "moved_tests_lines": 472,
+      "same_three_parent_offenders": [
+        "crates/perry-runtime/src/arena/page_meta/mod.rs: 2020",
+        "crates/perry-runtime/src/arena/tests.rs: 2020",
+        "crates/perry-runtime/src/json/replacer.rs: 2004"
+      ],
+      "sha256": "e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a"
+    },
+    "gc_store": {
+      "candidate_vs_base_stdout_identical": true,
+      "bytes": 5019,
+      "sha256": "c7e2b73294b0169e4761b324170b02fc1fcbffbb56b4c211e06309843815cee5"
+    },
+    "runtime_abi": {
+      "candidate_vs_base_stdout_identical": true,
+      "bytes": 119,
+      "sha256": "1dd4053f4ba0c1ee1b772bd4369e13d561b0015d2a193f84b4e709189cc7fc28",
+      "diagnostic": "stale wasm32 runtime_abi.tsv on both trees"
+    },
+    "global_sinks": {
+      "same_totals": true,
+      "base": "12 hazards / 70 asserted globals",
+      "candidate": "12 hazards / 70 asserted globals",
+      "base_sha256": "fd031d3a2685560bb64886bc3084d194f9700af227ce087c7ebd957b6ac5b489",
+      "candidate_sha256": "0fc37c274f716460f0f511e9d065a3e79e94d05cf014337880a377d916dd202c",
+      "difference": "Only duplicate reset_for_test resolution order differs; definitions/inputs unchanged."
+    },
+    "buffer_layout": {
+      "candidate_vs_base_stdout_identical": true,
+      "self_tests": "25 sabotage cases red on both",
+      "sha256": "272776167b5839fbe4aa5584f73146d25b8c0b4cd0352ac8f954a951a1f3a533",
+      "same_diagnostic": "gc/tests/canonical_keys_minor_prune.rs:69"
+    }
+  },
+  "preflight_conclusion": "Clear for root-authorized serial validation. Gate outputs above retain their actual comparison provenance; allowlist migration is the only change after 705.",
+  "diagnostic_excerpt": {
+    "address_class": "Both base and candidate emit: \"addr-class RATCHET FAILED \u2014 a file gained a site in a rule that is frozen at its current count.\" Full stdout is byte-identical; no candidate-added findings.",
+    "raw_handle": "Both emit 1203 debt sites (baseline 861) and 72 per-module violations; full stdout SHA-256 is byte-identical.",
+    "file_size": "Both exit 1 with exactly the same three offenders: arena/page_meta/mod.rs 2020; arena/tests.rs 2020; json/replacer.rs 2004. Candidate class_value.rs is 1588 lines.",
+    "gc_store": "Both emit the same GC store-site inventory failures; full 5019-byte stdout hashes match exactly.",
+    "runtime_abi": "Both emit: \"crates/perry-codegen/src/wasm32/runtime_abi.tsv is stale; regenerate with scripts/runtime_abi_check.py --emit-wasm-abi\"; 119-byte stdout hashes match exactly.",
+    "global_sinks": "Both report 12 hazards / 70 asserted globals. Only printed source for duplicate reset_for_test differs because scanner uses first of 12 same-named definitions and rglob order; definitions and inputs are unchanged.",
+    "buffer_layout": "Both report the same forbidden site gc/tests/canonical_keys_minor_prune.rs:69; 25 sabotage cases fail on both trees."
+  },
+  "provenance_caveat": "The named gate log basenames and the underlying comparison records identify actual execution heads. Most source-sensitive scanner commands ran at 705cc; allowlist-specific address-class was rerun after the path migration. Other checks are reused only where their relevant inputs did not change. This compact summary does not claim every scanner was rerun on commit 2272."
+}
