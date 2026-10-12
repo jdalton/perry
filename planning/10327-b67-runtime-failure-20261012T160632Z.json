@@ -1,0 +1,21 @@
+{
+  "issue": 10327,
+  "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+  "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+  "status": "Acceptance failed; no PR or publication authorization.",
+  "checks": {
+    "focused_getter": "PASS, 1/1",
+    "fresh_matching_trio": "PASS",
+    "no_auto_compile": {"exit": 0, "run": "10327-committed-acceptance/noauto-compile.run.json"},
+    "compiled_fixture": {"exit": 1, "failure": "TLS socket metadata mismatch at fixture line 74; earlier preface, peer TLS, and HTTP/2 session assertions passed.", "stdout": "10327-committed-acceptance/candidate.stdout", "stderr": "10327-committed-acceptance/candidate.stderr"},
+    "pinned_node_v26_5_1": {"exit": 0, "stdout": "10327-committed-acceptance/node.stdout"},
+    "parity": {"exit": 1, "diff": "10327-committed-acceptance/stdout.diff", "result": "Node emitted the expected TLS no-ALPN, TLS h2, and h2c lines; Perry failed before output."}
+  },
+  "prior_attempts": [{"start_utc": "2026-10-12T15:09:58Z", "timeout_seconds": 180, "exit": 124, "meaning": "Separate earlier compile timeout while building coherent no-auto archives; no executable was produced."}],
+  "next_step": "One bounded source diagnosis (up to 10 minutes) is authorized; do not weaken assertions.",
+  "coverage": "uncovered",
+  "partial_prs": [10354],
+  "covering_prs": [],
+  "issue_state": "OPEN",
+  "publication_authorized": false
+}
