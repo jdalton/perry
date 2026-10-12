@@ -1,0 +1,86 @@
+{
+  "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "bounded_internal_review": {
+    "reviewer": "Astra planning agent",
+    "status": "cleared",
+    "scope": "schema migration, preserved closure protections, fixture tests"
+  },
+  "checks": {
+    "python_py_compile": {
+      "status": "pass",
+      "command": "python3 -m py_compile scripts/workspace_architecture.py"
+    },
+    "workspace_architecture_self_test": {
+      "status": "pass",
+      "cases": 18,
+      "command": "python3 scripts/workspace_architecture.py --self-test"
+    },
+    "workspace_metadata_audit": {
+      "status": "pass",
+      "command": "source /workspace/work/perry-queue/env.sh && python3 scripts/workspace_architecture.py --check --print-summary",
+      "summary": {
+        "workspace_members": 68,
+        "default_members": 2,
+        "default_dependency_closure": 25,
+        "perry_dependency_closure": 24
+      },
+      "result": "Workspace architecture policy: OK"
+    },
+    "diff_check": {
+      "status": "pass",
+      "command": "git diff --check HEAD^ HEAD"
+    },
+    "file_size_gate": {
+      "status": "fail_baseline_only",
+      "exit_code": 1,
+      "command": "./scripts/check_file_size.sh",
+      "limit_lines": 2000,
+      "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+      "unchanged_base_files_over_limit": [
+        {
+          "path": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "base_blob": "ca8b12ec739b1362dc1453d001c9cac4207fe7c8",
+          "head_blob": "ca8b12ec739b1362dc1453d001c9cac4207fe7c8",
+          "base_lines": 2020,
+          "head_lines": 2020
+        },
+        {
+          "path": "crates/perry-runtime/src/arena/tests.rs",
+          "base_blob": "d9bdf96855f581709bc35dd3e370ff48f2250309",
+          "head_blob": "d9bdf96855f581709bc35dd3e370ff48f2250309",
+          "base_lines": 2020,
+          "head_lines": 2020
+        },
+        {
+          "path": "crates/perry-runtime/src/json/replacer.rs",
+          "base_blob": "7daebe1a2d2c0020e849f8d8415c4ffe3776e8a5",
+          "head_blob": "7daebe1a2d2c0020e849f8d8415c4ffe3776e8a5",
+          "base_lines": 2004,
+          "head_lines": 2004
+        }
+      ],
+      "checker_script": {
+        "path": "scripts/check_file_size.sh",
+        "base_blob": "8156115448e6a59bb9f49aa2dde5b59d0e1cae18",
+        "head_blob": "8156115448e6a59bb9f49aa2dde5b59d0e1cae18",
+        "unchanged": true
+      },
+      "classification": "unchanged baseline files already exceed the threshold; this change introduces no regression",
+      "record_correction": "An earlier wrapper call failed to surface the exit code and was mistakenly reported as passing. A captured rerun returned exit 1; this record is authoritative."
+    },
+    "full_lint": {
+      "status": "pending_serial_slot",
+      "command": "./scripts/run_lint_gates.sh"
+    },
+    "cargo_build_or_runtime_tests": {
+      "status": "not_run",
+      "reason": "Python-only change; serial Cargo slot not assigned"
+    }
+  },
+  "scope_limits": [
+    "partial #10739 implementation only",
+    "no whole-issue closure claim",
+    "no external PR write"
+  ]
+}

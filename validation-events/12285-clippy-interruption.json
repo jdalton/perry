@@ -1,7 +1,7 @@
 {
   "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
   "log": "/workspace/work/perry-queue/issue12285-full-lint.log",
-  "overall_status": "incomplete_interrupted_for_disk_safety",
+  "overall_status": "first_full_lint_attempt_interrupted_for_disk_safety; preserve full partial log and restart unchanged full driver with CARGO_INCREMENTAL=0",
   "run_command": "source /workspace/work/perry-queue/env.sh; unset SKIP_COMPILE_GATES; BASE_SHA=d74498b261d087a301b80602835bc7199a067957 CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390 CARGO_BUILD_JOBS=1 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:${PYTHONPATH:-} bash scripts/run_lint_gates.sh",
   "lint_tier": "128 gates derived; static lint tier completed with 28 failures and 2 CI-only skips (count before compile tier; see log for per-gate diagnostics).",
   "compile_tier": "11 commands derived; first 2 commands finished as FAIL (warnings product: 37 errors; warnings host-compatible: 30 errors); third gate, clippy product, was stalled with no rustc process for about 2.5 minutes at 677MB free.",
@@ -22,7 +22,15 @@
     "owner_file": "/workspace/work/perry-queue/target-12390/OWNER",
     "removed": true,
     "preserved": "source files, logs, archives, binaries, reports, snapshots",
-    "disk_free_after": "3.3GB"
+    "disk_free_after": "3.3GB",
+    "pre_second_cleanup_size": "2.2G",
+    "disk_free_after_second_cleanup": "2.1GB"
   },
-  "next": "Rerun full lint with CARGO_INCREMENTAL=0 after safely stopping/resuming the paused wrappers; preserve this partial run and classify every diagnostic against pristine baseline."
+  "next": "Fresh full run from start with the same command set/toolchain/base SHA and CARGO_INCREMENTAL=0; preserve both partial and complete logs; compare compiler diagnostics against pristine baseline.",
+  "auto_optimize_compile_gate_interruption": {
+    "driver_pid": 673778,
+    "gate_parent_pid": 700193,
+    "gate_shell_pid": 700194,
+    "gate": "check_auto_optimize_features.sh feature-matrix cargo check (perry-runtime-static + perry-stdlib-static; compression-gzip feature) interrupted at critically low 87MB free; cargo PID 717046 and rustc PID 717054 received SIGINT; control chain received SIGINT and was resumed to exit; this gate is INTERRUPTED, not failed or passed."
+  }
 }

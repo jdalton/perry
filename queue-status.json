@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T05:17:43.331344+00:00",
+  "checked_at": "2026-10-12T05:24:35.490867+00:00",
   "original224_total": 224,
   "original_open": 183,
   "original_closed": 41,
@@ -139,15 +139,16 @@
       "issues": [
         10739
       ],
-      "head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+      "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
       "branch": "cloud/issue-10739-derived-workspace-counts",
-      "state": "claimed; schema/checker/docs implementation",
+      "state": "committed; focused18tests and metadata audit pass; full lint queued",
       "draft_creation_allowed": false,
-      "ready_for_review": false
+      "ready_for_review": false,
+      "packet": "publication/10739/metadata.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit.",
   "actual_prs_created_in_continuation": 3,
-  "validation_resource_event": "12285 clippy gate interrupted during owned-process disk recovery; only idle owned debug/incremental removed after safe pause, logs/archives/source preserved; exact gate rerun pending; future CARGO_INCREMENTAL=0"
+  "validation_resource_event": "12285 original full run interrupted at clippy and auto-opt feature gate; source/logs/archives preserved; full driver restarted with CARGO_INCREMENTAL=0 after idle incremental cleanup"
 }
