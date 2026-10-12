@@ -1,16 +1,16 @@
 {
   "issue": 12202,
-  "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+  "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-  "worktree_retired": true,
+  "worktree_retired": false,
   "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
   "source_scope": {
-    "changed_files_total": 28,
-    "runtime_rust_files": 27,
+    "changed_files_total": 30,
+    "runtime_rust_files": 29,
     "fixture_files": 1,
     "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
     "codegen_or_abi_changes": false,
-    "diffstat": "27 runtime Rust files + 1 fixture; 1598 insertions, 565 deletions (from bc8625f64fd829af5463c8cde8368ec7947f31a1 to current head)"
+    "diffstat": "29 runtime Rust files + 1 fixture; 1869 insertions, 603 deletions (bc8625f64fd829af5463c8cde8368ec7947f31a1..b4b8f0488b8a76e65b2d6bceefd445deb267711b)"
   },
   "issue_state": {
     "state": "open",
@@ -26,21 +26,24 @@
     "related_pr": "#12193 is contextual; its method lookup/call-forwarding optimization did not cover HIR computed method-name lowering or claim the surrogate-key defect."
   },
   "source_review": {
-    "verdict": "SOURCE_REVIEW_CLEAR_TO_COMPILE_WITH_ROOT_SLOT_APPROVAL",
-    "record": "/workspace/work/perry-queue/planning/12202-source-review-fifth.json",
-    "remaining_known_source_blockers": [],
-    "not_runtime_acceptance": true
+    "verdict": "SOURCE CLEAR; not runtime acceptance",
+    "d047_call_fallback_review": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
+    "setter_head": "17d760fb64c9e069341f467ff9082abc4874fa82",
+    "setter_verdict": "Astra source review found no blocker: byte wrappers preserve no-move accessor lookup and rooted setter invocation; caller owns key bytes, keeps own-shadow and getter-only behavior, and preserves static/instance separation.",
+    "fixture_separation_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "fixture_separation_verdict": "Astra approved moving computed default-parameter length to a standalone diagnostic while retaining WTF-8 formal/rest controls and accessor/call/identity controls.",
+    "review_is_not_build_or_test": true
   },
   "node_oracle": {
-    "status": "passed",
+    "status": "passed; exact Perry parity also passed on b4b8 no-auto/no-cache run",
     "node_version": "v26.5.1",
     "command": "/workspace/.toolchains/node-26.5.1/bin/node --experimental-strip-types test-files/test_issue_12202_wtf8_class_keys.ts",
     "exit": 0,
-    "fixture_sha256": "5313661ad5c2d0f01cb8da3c9e64df95b48e4e0e95fabfd95592c8a94a634ef0",
-    "stdout": "/workspace/work/perry-queue/planning/12202-node-expanded.stdout",
-    "stderr": "/workspace/work/perry-queue/planning/12202-node-expanded.stderr",
-    "record": "/workspace/work/perry-queue/planning/12202-node-expanded-result.json",
-    "perry_validated": false
+    "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+    "stdout": "/workspace/work/perry-queue/12202-b4b8-acceptance/node.stdout",
+    "stderr": "/workspace/work/perry-queue/12202-b4b8-acceptance/node.stderr",
+    "perry_validated": true,
+    "compiled_acceptance_record": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
   },
   "acceptance_matrix": {
     "collision_keys": [
@@ -67,41 +70,55 @@
       "single ToPropertyKey coercion"
     ],
     "focused_runtime_units": {
-      "status": "passed at 70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
-      "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
-      "result": "33 passed; 0 failed",
-      "additional_controls": "17 individually selected controls passed",
-      "evidence": [
-        "/workspace/work/perry-queue/12202-70123-wtf8-tests.log",
-        "/workspace/work/perry-queue/12202-70123-control-results.txt"
-      ]
+      "status": "passed at b4b8",
+      "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+      "invalid_utf8_method": "3 passed",
+      "wtf8_filter": "35 passed",
+      "named_controls": "17 passed",
+      "evidence": {
+        "invalid_utf8_method": {
+          "passed": 3,
+          "failed": 0,
+          "log": "/workspace/work/perry-queue/12202-b4b8-invalid-utf8-method.log"
+        },
+        "wtf8_filter": {
+          "passed": 35,
+          "failed": 0,
+          "log": "/workspace/work/perry-queue/12202-b4b8-wtf8-tests.log"
+        },
+        "named_controls": {
+          "passed": 17,
+          "failed": 0,
+          "results": "/workspace/work/perry-queue/12202-b4b8-control-results.txt"
+        }
+      }
     },
     "matching_dev_trio": {
-      "status": "passed at 70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+      "status": "passed at b4b8",
+      "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
       "packages": [
         "perry",
         "perry-runtime-static",
         "perry-stdlib-static"
       ],
       "exit": 0,
-      "log": "/workspace/work/perry-queue/12202-70123-trio-build.log"
+      "log": "/workspace/work/perry-queue/12202-b4b8-trio-build.log"
     },
     "compiled_fixture_vs_node": {
-      "status": "failed: Node oracle passed, Perry fixture raised TypeError; outputs are not parity",
-      "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+      "status": "passed exact stdout parity at b4b8 (no-auto, no-cache)",
+      "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
       "node_version": "v26.5.1",
       "compile_exit": 0,
       "node_exit": 0,
-      "perry_exit": 1,
-      "parity_exit": 1,
-      "error": "TypeError: \ufffd\ufffd\ufffd is not a function",
-      "evidence": "/workspace/work/perry-queue/12202-70123-acceptance"
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
     },
     "full_lint": {
-      "status": "not run after compiled fixture mismatch"
+      "status": "pending/running"
     },
     "auto_opt": {
-      "status": "not run after compiled fixture mismatch"
+      "status": "pending/running"
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -168,10 +185,74 @@
       "log": "/workspace/work/perry-queue/12202-a4e7-wtf8-tests.log",
       "record": "/workspace/work/perry-queue/12202-a4e7-initial-build-failure.json",
       "status": "failed before tests with E0641 pointer-type errors; earlier head"
+    },
+    {
+      "head": "78e8f7fcbebffecc6aaafaba931e9dc9f797288f",
+      "command": "cargo test -p perry-runtime --lib invalid_utf8_method -- --test-threads=1",
+      "tests_executed": 0,
+      "status": "interrupted before results; neither pass nor failure",
+      "log": "/workspace/work/perry-queue/12202-78e8-invalid-utf8-method.log",
+      "record": "/workspace/work/perry-queue/12202-78e8-interrupted-validation.json"
+    },
+    {
+      "head": "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
+      "status": "not built; superseded during source review"
+    },
+    {
+      "head": "c727637cd909fc7d4861bf9d21d65afc8cd54f5a",
+      "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "CURRENT_HEAD_COMPILES; FOCUSED_RUNTIME_TESTS_PASS; COMPILED_FIXTURE_MISMATCH",
-  "current_head_acceptance": {
+  "readiness": "CURRENT_HEAD_NO_AUTO_BUILD_AND_FIXTURE_PARITY_PASS; AUTO_OPT_AND_FULL_LINT_PENDING",
+  "current_head_validation": {
+    "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "status": "no-auto/no-cache matching trio and exact compiled Node parity passed; auto-opt/full lint remain pending/running",
+    "focused_tests": {
+      "invalid_utf8_method": "3 passed",
+      "wtf8_filter": "35 passed",
+      "named_controls": "17 passed"
+    },
+    "fresh_matching_trio": {
+      "status": "passed",
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-b4b8-trio-build.log"
+    },
+    "compiled_fixture_node_parity": {
+      "status": "passed",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
+    },
+    "auto_opt": "pending/running",
+    "full_lint": "pending/running"
+  },
+  "source_review_history": {
+    "latest": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
+    "latest_verdict": "SOURCE_CLEAR_FOR_COMPILER_RETRY",
+    "runtime_tests_by_reviewer": false
+  },
+  "runtime_provenance": {
+    "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "mode": "fresh no-auto, no-cache",
+    "verbose_link_record": "/workspace/work/perry-queue/12202-b4b8-acceptance/compile.stderr",
+    "runtime_archive": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+    "runtime_archive_sha256": "68caaf2145fb4181e432821e686da6d23ab0585fab59b1a13af11f5409f8a372",
+    "note": "The b4b8 compiled fixture link line explicitly resolves this fresh runtime archive."
+  },
+  "interrupted_validation": {
+    "head": "78e8f7fcbebffecc6aaafaba931e9dc9f797288f",
+    "status": "interrupted; no results",
+    "record": "/workspace/work/perry-queue/12202-78e8-interrupted-validation.json"
+  },
+  "unbuilt_source_review_heads": [
+    "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
+    "c727637cd909fc7d4861bf9d21d65afc8cd54f5a"
+  ],
+  "checked_at": "2026-10-12T09:48:00Z",
+  "previous_head_acceptance": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
     "matching_dev_trio": {
@@ -196,8 +277,84 @@
       "observed_error": "TypeError: \ufffd\ufffd\ufffd is not a function",
       "evidence_directory": "/workspace/work/perry-queue/12202-70123-acceptance"
     },
-    "diagnostic_status": "The current acceptance proves the compiled fixture fails when invoking the expected method. No source-owner diagnostic record was found that establishes whether an independent read operation succeeds; that distinction is intentionally not inferred.",
+    "diagnostic_status": "Exact d047 JSON leaves identify accessor outputs as the only target-value mismatch; computed default length is a separate generic mismatch. Factory outputs were equal in original d047 fixture.",
     "auto_opt": "not run",
     "full_lint": "not run"
+  },
+  "computed_default_length_diagnostic": {
+    "record": "/workspace/work/perry-queue/planning/12202-computed-method-length-diagnostic.json",
+    "standalone_fixture": "/workspace/work/perry-queue/planning/12202-computed-method-length-diagnostic.ts",
+    "finding": "At d047, ASCII and WTF-8 computed methods with a leading default parameter both report Perry length 1 vs Node 0; rest length is 0. Current issue fixture checks only required-formal length 1 and rest length 0.",
+    "source_attribution": "Astra traced the entryless computed declaration length formula to code already present at base bc8625f; no baseline binary run proves pre-change runtime behavior.",
+    "not_claimed_as_passing_parity": true
+  },
+  "prior_d047_acceptance": {
+    "head": "d04756817c3333cf05d2beb4ffea68caefca3dae",
+    "source": "/workspace/work/perry-queue/12202-d047-fixture-mismatch.json",
+    "matching_dev_trio": {
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-d047-trio-build.log",
+      "hashes": {
+        "perry": "0b9c01cb72b182f8ee53f90bad4cf50606806dacc44687b893b971f34e4b81d0",
+        "runtime_archive": "0d996062f6146df4da00dceff4b272a4904c1f4201d56e76ff310750b3425871",
+        "stdlib_archive": "a4e59b0607a608bcd96973f1d139c79b8b184b8bc31fa7dd7384ed4a7653bee3"
+      }
+    },
+    "focused_runtime": {
+      "invalid_utf8_method_tests_passed": 3,
+      "wtf8_tests_passed": 35,
+      "named_controls_passed": 17,
+      "failed": 0,
+      "evidence": "/workspace/work/perry-queue/12202-d047-invalid-utf8-method.log, /workspace/work/perry-queue/12202-d047-wtf8-tests.log, /workspace/work/perry-queue/12202-d047-control-results.txt"
+    },
+    "compiled_fixture": {
+      "compile_exit": 0,
+      "node_exit": 0,
+      "node_version": "v26.5.1",
+      "perry_exit": 0,
+      "stdout_parity_exit": 1,
+      "result": "Perry and Node both exit 0, but stdout parity fails.",
+      "mismatch_summary": "Node values include 17 and 19 where Perry produced 19 and null; Node function lengths are [0,0] while Perry reports [1,0]. The rest of the large JSON fixture output is preserved in node.stdout, perry.stdout, and parity.diff.",
+      "evidence_directory": "/workspace/work/perry-queue/12202-d047-acceptance",
+      "artifact_hashes": "/workspace/work/perry-queue/12202-d047-acceptance/inputs.sha256"
+    },
+    "auto_opt": "not run after substantive fixture mismatch",
+    "full_lint": "not run"
+  },
+  "current_head_acceptance": {
+    "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "source": "b4b8-current-validation.json",
+    "focused_runtime": {
+      "invalid_utf8_method_tests_passed": 3,
+      "wtf8_tests_passed": 35,
+      "named_controls_passed": 17,
+      "failed": 0,
+      "evidence": [
+        "/workspace/work/perry-queue/12202-b4b8-invalid-utf8-method.log",
+        "/workspace/work/perry-queue/12202-b4b8-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-b4b8-control-results.txt"
+      ]
+    },
+    "matching_dev_trio": {
+      "status": "passed",
+      "exit": 0,
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "log": "/workspace/work/perry-queue/12202-b4b8-trio-build.log"
+    },
+    "compiled_fixture": {
+      "mode": "no-auto, no-cache",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "node_version": "v26.5.1",
+      "node_stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "perry_stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "status": "exact stdout parity passed",
+      "evidence_directory": "/workspace/work/perry-queue/12202-b4b8-acceptance"
+    },
+    "auto_opt": "pending/running",
+    "full_lint": "pending/running"
   }
 }

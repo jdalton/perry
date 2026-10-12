@@ -1,0 +1,41 @@
+{
+  "issue": 12202,
+  "purpose": "Separate generic computed-method default-parameter length mismatch from WTF-8 key acceptance.",
+  "current_source_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "runtime_artifact_head": "d04756817c3333cf05d2beb4ffea68caefca3dae",
+  "node_version": "v26.5.1",
+  "probes": [
+    {
+      "fixture": "/workspace/work/perry-queue/planning/12202-computed-method-length-diagnostic.ts",
+      "fixture_sha256": "ed998ca0e36840b8edac3dbe16f4347a42820b456f7290e283a66399968deb32",
+      "shape": "ASCII and lone-surrogate computed methods, each with one leading default parameter and one rest parameter.",
+      "command": "timeout 180s /workspace/work/perry-queue/target-12390/debug/perry compile --no-auto-optimize --no-cache /workspace/work/perry-queue/12202-d047-diagnostics/ascii-computed-length.ts -o /workspace/work/perry-queue/12202-d047-diagnostics/ascii-computed-length.bin; timeout 30s /workspace/work/perry-queue/12202-d047-diagnostics/ascii-computed-length.bin",
+      "node_stdout": "{\"asciiComputed\":[0,0],\"wtf8Computed\":[0,0]}",
+      "perry_stdout": "{\"asciiComputed\":[1,0],\"wtf8Computed\":[1,0]}",
+      "node_exit": 0,
+      "perry_compile_exit": 0,
+      "perry_exit": 0,
+      "evidence_directory": "/workspace/work/perry-queue/12202-d047-diagnostics"
+    },
+    {
+      "fixture": "/workspace/work/perry-queue/12202-d047-diagnostics/full-ascii-keys.ts",
+      "shape": "Full acceptance fixture, changing only the high/low surrogate constants to distinct three-byte ASCII strings.",
+      "node_exit": 0,
+      "perry_compile_exit": 0,
+      "perry_exit": 0,
+      "parity": "All fields match except computed default method length: Node 0, Perry 1. This confirms the discrepancy persists with ASCII keys in the same full fixture shape.",
+      "evidence_directory": "/workspace/work/perry-queue/12202-d047-diagnostics"
+    }
+  ],
+  "source_attribution": {
+    "reviewer": "Astra planning reviewer",
+    "finding": "The entryless computed declaration path was present at base bc8625f64fd829af5463c8cde8368ec7947f31a1; its materialized closure computes length as params minus synthetic/rest, without default-parameter metadata. The WTF-8 migration retains that calculation.",
+    "runtime_baseline_execution_proven": false,
+    "classification": "Source-attributed to existing generic computed-method length behavior; not proven by running a baseline binary. Do not report as a demonstrated pre-change runtime result.",
+    "current_setter_fix_changes_length_logic": false
+  },
+  "next_action": "Keep this separate from the #12202 setter/call parity result; preserve the original d047 outputs and report the length discrepancy if it remains in the current acceptance fixture.",
+  "separation_commit": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "source_scope_note": "The main acceptance fixture now checks the WTF-8 computed formal-parameter length (1) and rest length (0). The default-parameter case remains in this standalone diagnostic with equal-shape ASCII and WTF-8 controls.",
+  "publication_note": "The original d047 full-fixture stdout and mismatch remain preserved in 12202-d047-acceptance; no earlier raw failure was overwritten."
+}

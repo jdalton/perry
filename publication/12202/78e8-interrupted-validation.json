@@ -1,0 +1,9 @@
+{
+  "head": "78e8f7fcbebffecc6aaafaba931e9dc9f797288f",
+  "command": "cargo test -p perry-runtime --lib invalid_utf8_method -- --test-threads=1",
+  "state": "interrupted at parent/source-owner request after Astra identified source blockers; not a pass or candidate failure",
+  "process_status": 143,
+  "tests_executed": 0,
+  "log": "/workspace/work/perry-queue/12202-78e8-invalid-utf8-method.log",
+  "note": "Cargo and its rustc child were terminated; follow-up process inspection found no active Cargo/rustc process. Partial compile warnings only; no final result. No other validation was started at 78e8."
+}

@@ -17,14 +17,14 @@
   "platform_goal_status": "User reports UI Failed to set goal; no create_goal/get_goal tools exposed; unsupported here",
   "milestone_status": {
     "original224_under200_confirmed": true,
-    "basis": "147 uncovered +13 uncertain =160 conservative unresolved;20 covered/open and44closed tracked separately",
-    "coverage_evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
+    "basis": "143 uncovered +17 uncertain =160 conservative unresolved;20 covered/open and44 closed separately",
+    "coverage_evidence": "planning/original224-state-refresh-2026-10-12T092328Z.json"
   },
   "platform_goal_checked_at": "2026-10-12T01:49:48.702752+00:00",
-  "publication_status": "2/20 additional PRs merged;10198closed,9927/8085remainopen",
+  "publication_status": "5/20 additional PRs merged;15 remain; no pending ready packets",
   "blocker": "pr-write-blocker.json",
   "automatic_continuation": false,
-  "updated_at": "2026-10-12T08:55:51.844653+00:00",
+  "updated_at": "2026-10-12T09:50:17.784354+00:00",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
   "implementation_authorized_while_publication_blocked": true,
   "new_batch": {
@@ -100,8 +100,8 @@
       "repo_open": 190,
       "original_open": 180,
       "original_closed": 44,
-      "observed_at": "2026-10-12T07:28:51Z",
-      "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
+      "observed_at": "2026-10-12T09:23:28Z",
+      "evidence": "planning/original224-state-refresh-2026-10-12T092328Z.json"
     },
     "drafts": 0,
     "ready_for_review": 0,

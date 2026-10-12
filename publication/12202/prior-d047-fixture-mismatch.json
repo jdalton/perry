@@ -1,0 +1,33 @@
+{
+  "issue": 12202,
+  "head": "d04756817c3333cf05d2beb4ffea68caefca3dae",
+  "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+  "node_version": "v26.5.1",
+  "compiler_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12202-d047-trio-build.log",
+    "hashes": {
+      "perry": "0b9c01cb72b182f8ee53f90bad4cf50606806dacc44687b893b971f34e4b81d0",
+      "runtime_archive": "0d996062f6146df4da00dceff4b272a4904c1f4201d56e76ff310750b3425871",
+      "stdlib_archive": "a4e59b0607a608bcd96973f1d139c79b8b184b8bc31fa7dd7384ed4a7653bee3"
+    }
+  },
+  "scoped_runtime_tests": {
+    "invalid_utf8_method": "3 passed",
+    "wtf8_filter": "35 passed",
+    "named_controls": "17 individual tests passed",
+    "evidence": "/workspace/work/perry-queue/12202-d047-invalid-utf8-method.log, /workspace/work/perry-queue/12202-d047-wtf8-tests.log, /workspace/work/perry-queue/12202-d047-control-results.txt"
+  },
+  "fixture": {
+    "compile_exit": 0,
+    "node_exit": 0,
+    "perry_exit": 0,
+    "stdout_parity_exit": 1,
+    "link_command": "Captured under compile.stderr; links /workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+    "mismatch_summary": "Node values include 17 and 19 where Perry produced 19 and null; Node function lengths are [0,0] while Perry reports [1,0]. The rest of the large JSON fixture output is preserved in node.stdout, perry.stdout, and parity.diff.",
+    "evidence_dir": "/workspace/work/perry-queue/12202-d047-acceptance",
+    "artifact_hashes": "/workspace/work/perry-queue/12202-d047-acceptance/inputs.sha256"
+  },
+  "status": "Substantive final-head fixture mismatch. Stopped before auto-optimize and full lint. No validator source edits were made."
+}

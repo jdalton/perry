@@ -1,0 +1,40 @@
+{
+  "head": "78e8f7fcbebffecc6aaafaba931e9dc9f797288f",
+  "verdict": "BLOCKED_SOURCE_CORRECTIONS_REQUIRED",
+  "positive": [
+    "Exact name bytes copied before allocation",
+    "Receiver/arguments/key/lookupresult rooted",
+    "ValidUTF8 exits helper before newGet; symbol entrypaths unchanged"
+  ],
+  "findings": [
+    {
+      "severity": "blocker",
+      "mechanism": "args refreshed to plainVec before call_chain_value; clone_closure_rebind_this allocates forcapturesThisclosure, moves argumentobjects, rawVec stale.",
+      "fix": "Clone/rebind first, root returnedcallee, then refreshargumenthandles immediately before native_call_value_this."
+    },
+    {
+      "severity": "acceptance_gap",
+      "mechanism": "pointeronlyreceiver guard excludes legacy taggedClassRef static/prototype references, leaving original lossy dispatch.",
+      "fix": "Use existing canonical value-based exactGet supporting classwords, with rooted boxedkey; avoid dereferencing taggedclassword asObjectHeader."
+    }
+  ],
+  "tests": "Current two tests only zeroarg plainobjectmethod andASCIIcontrol. Add heapargument across collectingrebind, legacyClassRef/static/computedclass controls, getterreturnsfunction/correctthis, missing/noncallableTypeError, exactsurrogate versusU+FFFD. Preserveprimitivewrong-keyboundary explicitly; no broadunrelateddispatchrewrite.",
+  "runtime_attribution": "Root reports fresharchiveprovenance confirmed; no runtime executionbyreviewer",
+  "superseding_review": {
+    "head": "d04756817c3333cf05d2beb4ffea68caefca3dae",
+    "verdict": "SOURCE_CLEAR_FOR_COMPILER_RETRY",
+    "verified": [
+      "js_object_get_index_polymorphic takes i64 boxed/raw receiver word and f64 key; code125-172 explicitly handles pointer/string/SSO and registeredClassRef via js_dyn_index_get, retaining exactheapstringkey",
+      "js_dyn_index_get legacyclass branch passes originalclassword andexactstringheader toclassgetter; objectgetterbytepaths already reviewed",
+      "Tower canonicalizes receiver and rejects unvouched bare numericword beforefallback, avoiding arbitrary numericpointer interpretation",
+      "Callee root before potentiallyallocatingrebind, reboundroot thenrefreshthis/arguments immediatelybefore native_call_value_this",
+      "Owned keybytecopy, receiver/args/key roots remain; validUTF8returnsbeforefallback; symbolsunchanged",
+      "Noncallableexactsurrogate versuscallableU+FFFD collisiontest added"
+    ],
+    "limits": [
+      "No builds/tests byreviewer; no claim everyprimitive prototype extension is covered",
+      "Existing canonicalgetter semantics reused; no broaderprimitivebehaviorrepair requested",
+      "Focusedtests+compiledfixture mustprove receiver/static/instance/accessor/identity acceptance; runtimeprovenance independentlyverified byowner"
+    ]
+  }
+}

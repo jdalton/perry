@@ -1,0 +1,9 @@
+{
+  "issue": 12202,
+  "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "setter_fix_commit": "17d760fb64c9e069341f467ff9082abc4874fa82",
+  "verdict": "SOURCE_CLEAR",
+  "review": "Astra reviewed byte-aware instance accessor/setter wrappers and the affected tail path; key bytes are owned across prototype materialization/user code, the existing no-move lookup and rooted invocation remain, own-property shadowing/getter-only behavior and static/instance separation remain.",
+  "fixture_separation_review": "Astra approved the b4b8f fixture separation: required-formal/rest controls remain in the issue fixture, while default-parameter length is kept in a standalone ASCII/WTF-8 diagnostic with explicit source-only attribution.",
+  "runtime_or_build_validation": false
+}

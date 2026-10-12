@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-12T09:50:37Z",
+  "repository": "PerryTS/perry",
+  "issue": {
+    "number": 12202,
+    "state": "open",
+    "closed_at": null,
+    "updated_at": "2026-10-08T11:06:28Z",
+    "timeline": [],
+    "conclusion": "No issue-state/timeline change; lone-surrogate computed class method keys remain the live issue scope."
+  },
+  "candidate": {
+    "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "changed_path_count": 30,
+    "fixture_path": "test-files/test_issue_12202_wtf8_class_keys.ts"
+  },
+  "upstream_main": {
+    "head": "51e9fa630255a628fe5c66d8053de298525278e4",
+    "compare_from_base": {
+      "status": "ahead",
+      "ahead_by": 21,
+      "behind_by": 0,
+      "changed_file_count": 132
+    },
+    "candidate_exact_path_overlap_since_base": [],
+    "fixture_on_main": "GitHub Contents API 404 at ref=main; fixture absent from main",
+    "conclusion": "No same-path main drift among the 30 candidate paths since bc8625. The prior complete changed-path comparison does not need to be reused because current main is not unchanged; the live compare endpoint was used instead."
+  },
+  "focused_pr_search": {
+    "queries": [
+      "is:pr is:open 12202",
+      "is:pr is:open WTF-8",
+      "is:pr is:open lone surrogate class",
+      "is:pr is:open computed class method",
+      "is:pr is:open class method lone surrogate",
+      "is:pr is:open WTF-8 class method",
+      "is:pr is:open class_registry method name"
+    ],
+    "exact_topic_matches": [],
+    "relevant_open_overlap": {
+      "number": 12263,
+      "state": "open",
+      "draft": true,
+      "title": "test: inspect deleted evaluation methods without invoking them",
+      "head": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+      "base": "abb472dacd3f0eec9b7869c86f30363a08bd9d26",
+      "updated_at": "2026-10-09T19:19:49Z",
+      "exact_changed_path_overlap_count": 13,
+      "overlapping_paths": [
+        "crates/perry-runtime/src/object/class_image.rs",
+        "crates/perry-runtime/src/object/class_registry.rs",
+        "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+        "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+        "crates/perry-runtime/src/object/class_registry/registration.rs",
+        "crates/perry-runtime/src/object/class_registry/state.rs",
+        "crates/perry-runtime/src/object/class_value.rs",
+        "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+        "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+        "crates/perry-runtime/src/object/native_call_method.rs",
+        "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+        "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+        "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+      ],
+      "body_scope": "Fixes a repeated-evaluation deletion test that invoked a deleted method before assertions; describes a test correction, not WTF-8 method-key storage.",
+      "assessment": "No duplicate coverage, but substantial exact source-path overlap means merge ordering/rebase conflict risk must be coordinated before publication."
+    }
+  },
+  "coverage_blocker": "No upstream coverage blocker found. Open draft PR #12263 is a path-overlap/integration risk only; its stated behavior does not cover #12202.",
+  "method": "Read-only GitHub issue/timeline/search/compare/contents and PR metadata/files GETs; local exact changed path list from b4b8 against bc8625. No builds, source changes, or PR mutations."
+}
