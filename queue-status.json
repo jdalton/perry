@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T15:30:05Z",
+  "checked_at": "2026-10-12T15:32:28Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -310,19 +310,19 @@
       ],
       "branch": "cloud/issue-12145-primary-timer-scan",
       "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-      "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "current_head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "state": "Source pushed at fork head2e094d; partial draft creation authorized. Ready-for-review remains false; full lint incomplete.",
-      "validation": "Exact-head trio,37 focused controls,production witness,release compiler build,pinned formatting/diff pass. Full lint incomplete: cap exit124 in API-doc release build;104 ok,31 failed,2 skipped,no footer; Clippy fatal fingerprint unresolved.",
-      "draft_creation_allowed": true,
+      "state": "HOLD: consolidated source head4a248 awaits fresh exact-head validation; old 2e packet is not authorized for draft creation.",
+      "validation": "Prior 2e validation remains historical: trio,37 controls,production witness,release build,format/diff passed; full lint timed out. Consolidated 4a248 exact-head checks pending.",
+      "draft_creation_allowed": false,
       "ready_for_review": false,
       "push_allowed": false,
       "pr_creation_allowed": false,
       "packet": "planning/12145-full-lint-cap-milestone.json",
       "publisher_actions": [
-        "Create a draft for the exact pushed source head using the supplied body; verify PR head2e094d7; leave draft and do not mark ready because full lint is incomplete."
+        "Wait for single-commit exact-head validation; do not create a draft from the old 2e packet."
       ],
       "coverage": "uncovered",
       "covering_prs": [],
@@ -564,5 +564,14 @@
     "actual_pr_number": null,
     "actual_pr_url": null,
     "evidence": "planning/12145-2e-publication-milestone.json"
+  },
+  "one_commit_policy": {
+    "enforced": true,
+    "12202_pr": 12471,
+    "current_commits": 17,
+    "changed_files": 35,
+    "mergeable": false,
+    "status": "Astra conflict assessment active; one-commit consolidation planned from parent bc8625f; no head mutation yet.",
+    "source": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
   }
 }

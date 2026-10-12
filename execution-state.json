@@ -227,12 +227,12 @@
     "evidence": "publication/12202/dfd64-final-validation.json; publication/12202/dfd64-publisher-refresh.json"
   },
   "serial_slot_status": {
-    "owner": "none",
-    "checked_at": "2026-10-12T15:17:47Z",
-    "next_task": "#10327 parked after bounded compiled fixture timeout; #9202 candidate is pending Astra GO. No runtime/build slot active for #10327.",
+    "owner": "cloud /root/luna_verification",
+    "checked_at": "2026-10-12T15:32:28Z",
+    "next_task": "Run fresh exact-head #12145 checks at consolidated 4a24802; #10327 coherent release build resumes when resources allow. #9202 packet awaits local draft.",
     "active_validation_processes": [],
     "census_clean": true,
-    "evidence": "planning/10327-b67-heavy-validation-parked.json"
+    "evidence": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -259,15 +259,12 @@
   },
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
-    "issue": 10327,
-    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
-    "gate": "compiled no-auto TLS metadata fixture",
-    "started_at": "2026-10-12T15:09:58Z",
-    "hard_deadline": "2026-10-12T15:12:58Z",
-    "cap_seconds": 180,
+    "issue": 12145,
+    "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
+    "gate": "fresh exact-head checks after single-commit consolidation",
+    "status": "PENDING; previous 2e validation is not credited to 4a248.",
     "owner": "cloud /root/luna_verification",
-    "status": "PARKED: getter1/1 and matching trio PASS; compiled fixture timed out after180s before executable. No Perry/Node parity, auto-opt, or full lint. No publication authorization.",
-    "evidence": "planning/10327-b67-heavy-validation-parked.json"
+    "evidence": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
   },
   "publisher_inbox_refresh": {
     "observed_at": "2026-10-12T15:30:05Z",
@@ -391,56 +388,21 @@
   },
   "12145_publication_status": {
     "issue": 12145,
-    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
     "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
-    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-    "checked_at": "2026-10-12T15:04:11Z",
-    "fork_source_ref": {
-      "repository": "jdalton/perry",
-      "branch": "cloud/issue-12145-primary-timer-scan",
-      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-      "verified_at": "2026-10-12T15:07:57Z"
-    },
-    "acceptance": {
-      "fresh_trio": "PASS",
-      "focused_controls": "37/37 PASS",
-      "production_integration": "1/1 PASS",
-      "api_docs_release_compiler_build": "PASS",
-      "pinned_rustfmt_and_diff_check": "PASS"
-    },
-    "full_lint": {
-      "status": "INCOMPLETE_TIMEOUT",
-      "started_at": "2026-10-12T14:26:21Z",
-      "deadline": "2026-10-12T14:56:21Z",
-      "exit": 124,
-      "counts": {
-        "ok": 104,
-        "fail": 31,
-        "skip": 2,
-        "footer": false
-      },
-      "interrupted_at": "API docs regeneration; cargo build --release -p perry",
-      "last_completed_gate": "Auto-optimize pruned feature builds",
-      "classification": "31 failed rows retained; not fully independently attributed. Host Clippy fatal fingerprint remains unresolved; no green/full pass claim.",
-      "log": "/workspace/work/perry-queue/12145-2e-full-lint.log"
-    },
+    "checked_at": "2026-10-12T15:32:28Z",
+    "validated_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "status": "HOLD until consolidated head receives exact-head revalidation.",
     "publication": {
-      "source_branch_pushed": true,
-      "draft_creation_allowed": true,
+      "draft_creation_allowed": false,
       "ready_for_review": false,
-      "full_lint_complete": false,
-      "actual_pr_created": false,
+      "external_pr_created": false,
       "pr_number": null,
       "pr_url": null
     },
-    "body_sha256": "52e25561d15b4fea0870f123ff14e66eb365a89448388ca24af32f86412b1d2a",
-    "metadata_sha256": "6f0e57a766bd292b2ef1ef3d84a527e41ab08190aa78b88c9f74276619690916",
-    "validation_json_sha256": "b6c092779231dd02b8693b32e5778c7fa2c1c27c300f2f0264dd795a62431575",
-    "source_validation_evidence": "publication/12145/2e-final-validation.json",
-    "handoff_packet": "publication/12145/metadata.json",
-    "checked_at_relay": "2026-10-12T15:08:11Z"
+    "evidence": "publication/12145/metadata.json; planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
   },
-  "checked_at": "2026-10-12T15:30:05Z",
+  "checked_at": "2026-10-12T15:32:28Z",
   "9202_source_claim": {
     "issue": 9202,
     "branch": "cloud/issue-9202-parity-fatal-verdict",
@@ -461,5 +423,41 @@
       "external_pr_created": false
     },
     "evidence": "publication/9202/metadata.json; publication/9202/validation.json; publication/9202/live-overlap.json"
+  },
+  "resource_recovery": {
+    "recovered_bytes": 1991708672,
+    "workspace_free_bytes": 2799263744,
+    "issues": [
+      12285,
+      10739
+    ],
+    "evidence": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json",
+    "validation_checkout_untouched": true
+  },
+  "open_authored_pr_maintenance": {
+    "open_prs": [
+      12471
+    ],
+    "12471_state": "OPEN/DRAFT",
+    "head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+    "commits": 17,
+    "changed_files": 35,
+    "mergeable": false,
+    "status": "Astra conflict assessment active; one-commit consolidation planned from bc8625f; no head mutation yet.",
+    "reviews": 0,
+    "review_threads": 0,
+    "deduplicated_comment_ids": [
+      6124210400
+    ],
+    "evidence": "planning/authored-open-pr-poll-20261012T152903Z.json"
+  },
+  "9202_publication_status": {
+    "issue": 9202,
+    "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "external_pr_created": false,
+    "status": "One-commit packet relayed; awaiting local publisher assignment.",
+    "evidence": "publication/9202/metadata.json"
   }
 }

@@ -6,7 +6,7 @@
   "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
   "branch": "cloud/issue-12145-primary-timer-scan",
   "title": "fix(timer): limit freed-range cleanup to the primary partition",
-  "draft_creation_allowed": true,
+  "draft_creation_allowed": false,
   "ready_for_review": false,
   "external_pr_created": false,
   "full_lint_complete": false,
@@ -14,7 +14,7 @@
   "validation": "validation.json",
   "live_duplicate_check": "live-overlap.json",
   "fragment_draft": "changelog-fragment.txt",
-  "checked_at": "2026-10-12T15:06:29Z",
+  "checked_at": "2026-10-12T15:32:28Z",
   "publisher_actions": [
     "create supplied draft body for this exact source head",
     "verify the created PR head",
@@ -27,5 +27,8 @@
     "No measured speedup claim",
     "Do not create a numbered changelog file until an actual PR number is assigned"
   ],
-  "static_attribution": "static-failure-attribution.json"
+  "static_attribution": "static-failure-attribution.json",
+  "source_ref_current_head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
+  "validated_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "hold_reason": "Single-commit-per-PR policy: source head has been consolidated to 4a24802, but this old 2e packet is not authorized for draft creation until the consolidated exact head is revalidated."
 }

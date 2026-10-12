@@ -1,0 +1,49 @@
+{
+  "observed_at_utc": "2026-10-12T15:32:28Z",
+  "resource_recovery": {
+    "method": "benchmark-only sparse checkout retirement, reversible and idle-owned",
+    "issues": [12285, 10739],
+    "recovered_bytes": 1991708672,
+    "workspace_free_bytes": 2799263744,
+    "evidence": [
+      "planning/benchmark-sparse-recovery/12285-result.json",
+      "planning/benchmark-sparse-recovery/10739-result.json"
+    ],
+    "preservation": "Claims, commit/tree identities, and ignored pyc hashes retained; active validation checkout untouched."
+  },
+  "next_validation": {
+    "issue": 12145,
+    "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
+    "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+    "status": "Fresh exact-head checks are next; previous 2e backup ref remains preserved with identical tree.",
+    "publication_hold": "Old 2e packet now held with draft_creation_allowed=false pending single-commit consolidation and exact-head revalidation."
+  },
+  "open_pr_maintenance": {
+    "authored_open_prs": [12471],
+    "pr_12471": {
+      "url": "https://github.com/PerryTS/perry/pull/12471",
+      "state": "OPEN/DRAFT",
+      "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "base_parent_for_consolidation": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+      "commits": 17,
+      "changed_files": 35,
+      "mergeable": false,
+      "maintenance": "One-commit consolidation planning; Astra conflict assessment active; no head mutations yet.",
+      "reviews": 0,
+      "review_threads": 0,
+      "deduplicated_comment_ids": [6124210400],
+      "checks_observed": ["CodeRabbit: success"]
+    }
+  },
+  "candidate_publication": {
+    "issue": 9202,
+    "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+    "status": "One-commit packet pushed; draft_creation_allowed=true; awaiting local publisher. No PR assignment observed at this milestone.",
+    "packet": "publication/9202/metadata.json"
+  },
+  "issue_10327": {
+    "status": "Parked after bounded compiled fixture timeout. Resume coherent release graph only when resources allow; no valid warm artifact shortcut.",
+    "evidence": "planning/10327-b67-heavy-validation-parked.json"
+  },
+  "counts": "PR opened/merged/closed-unmerged/open counts and original224 coverage counts unchanged."
+}
