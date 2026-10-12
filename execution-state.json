@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-10-12T13:20:48Z",
+  "updated_at": "2026-10-12T13:52:16Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Finish all128 #12145 full-lint commands by13:50:22Z and classify every failure; keep readiness false until classification.",
-    "#10027 committed head2816d18 has source/static preflight clear with only unchanged baseline static findings; tests wait for serial slot, MB24 retest required before closure.",
+    "After #12471 finalization, obtain serial validation authorization for fresh exact-head #12145 2e094 trio and scoped acceptance; do not reuse 22726 as current-head acceptance.",
+    "Complete and classify the required full lint for the exact validated #12145 head; the prior 22726 run ended at the 30-minute cap during API docs release compilation and is incomplete.",
+    "#10027 focused tests and matching build/runtime acceptance; MB24 browser retest required before closure.",
     "#11915 remains parked open/unresolved/unpublished at e190.",
     "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
   ],
@@ -24,10 +25,11 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 exact22726d3: trio,37 controls and integration1/1 PASS; full lint128 commands/75 steps running13:20:22Z\u201313:50:22Z; no readiness until classification.",
-    "#10027 source/static preflight clear with baseline-only GC-holder/file-size findings; focused acceptance pending.",
-    "#11915 parked open/unresolved/unpublished at e190.",
-    "#12202 source-covered by draft PR12471 at dfd64b7; not ready for review; issue OPEN."
+    "#12145 exact2e094: delimiter-only per_test_global! checker fix; static A/B matches base (12 findings/70 asserted), no build/runtime validation. Prior22726 trio,37 controls and integration1/1 passed; full lint exit124 at API docs release build (104 ok,31 fail,2 skip; no footer, incomplete).",
+    "#12471 finalization: verifier is checking numbered-fragment head/readiness; preserve source acceptance and current draft state separately.",
+    "#10027 committed head2816d18 has source/static preflight clear; focused acceptance pending; MB24 retest required before closure.",
+    "#11915 remains parked open/unresolved/unpublished at e190.",
+    "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -131,10 +133,11 @@
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
   "current_serial_issue": 12145,
   "serial_pending": [
-    "12145 focused timer controls and production integration acceptance are running on final head38a896; full lint only after this phase if acceptance passes",
-    "10027 focused tests and matching build/runtime acceptance after serial slot release; provisional packet, MB24 browser retest required before closure",
-    "11915 parked open/unresolved/unpublished at e190; no further runs authorized",
-    "12202 draft PR12471 open at fragment head dfd64b7, source validation remains head2272, not ready for review"
+    "12145 current source head2e094; fresh matching trio and focused acceptance pending serial authorization. Prior22726 lint cap was incomplete at API docs release build.",
+    "12471 verifier is finalizing numbered-fragment head/readiness; next slot milestone.",
+    "#10027 focused tests and matching build/runtime acceptance; MB24 browser retest required before closure.",
+    "#11915 parked open/unresolved/unpublished at e190; no further runs authorized.",
+    "#12202 draft PR12471 open at fragment head dfd64b7, source validation remains head2272, not ready for review."
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -217,7 +220,7 @@
     "hard_deadline": "2026-10-12T13:50:22Z",
     "cap_seconds": 1800,
     "owner": "cloud /root/luna_verification",
-    "status": "running; all prior focused controls and production integration passed; final lint classification pending"
+    "status": "STOPPED at hard cap; exit124 during API docs cargo build --release -p perry; no live descendants, only zombies. 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete. Docs drift gate not run."
   },
   "publisher_inbox_refresh": {
     "observed_at": "2026-10-12T13:06:21Z",
@@ -253,18 +256,16 @@
   },
   "current_validation_results": {
     "issue": 12145,
-    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-    "trio": "PASS 3-package build,1m57; exact artifact hashes recorded",
-    "focused_controls": {
-      "store": 19,
-      "inline_timer": 14,
-      "agent": 3,
-      "thread_exit": 1,
-      "total": 37,
-      "all_pass": true
+    "validated_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "current_source_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "prior_head_acceptance": {
+      "trio": "PASS fresh matching 3-package build,1m57",
+      "focused_controls": "37/37 PASS (store19, inline14, agent3, thread_exit1)",
+      "production_integration": "PASS1/1",
+      "auto_optimize_pruned_feature_check": "PASS"
     },
-    "production_integration": "PASS 1/1",
-    "prior_38a_failure": "Preserved; invalid test API argument (f64 cast instead of boxed Timeout handle), corrected by test-only commit22726d3.",
-    "full_lint": "running; 128 commands / 75 steps; hard cap 1800s; final classification pending"
+    "current_head_static": "2e094 delimiter-only per_test_global! parser fix; A/B global-sink check base=candidate 12 findings/70 asserted; prior22726 candidate16/74. No current-head build or runtime test.",
+    "full_lint": "22726 run exit124 at hard cap during release API-doc build; 104 ok,31 fail,2 skip rows; no footer, not classified, incomplete; docs drift gate not run.",
+    "prior_38a_failure": "Preserved; invalid numeric f64 test argument instead of boxed Timeout handle; corrected at22726."
   }
 }

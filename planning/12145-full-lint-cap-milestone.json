@@ -1,0 +1,46 @@
+{
+  "issue": 12145,
+  "observed_at": "2026-10-12T13:52:16Z",
+  "source_candidate": {
+    "branch": "cloud/issue-12145-primary-timer-scan",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+    "worktree_clean": true,
+    "delta_from_22726": "crates/perry-runtime/src/timer/store.rs only; delimiter-only brace parsing for already-isolated per_test_global! macros",
+    "static_check": "A/B global-sink check reports base=candidate: 12 findings and 70 asserted; prior 22726 candidate reported 16 findings and 74 asserted. Tests and counterassertions unchanged. This is static evidence only; 2e094 has no build or runtime validation."
+  },
+  "prior_validated_head": {
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "trio": "PASS, fresh matching 3-package build, 1m57; artifact hashes in 12145-227-trio.sha256",
+    "focused_controls": "PASS: timer_store19, inline_timer14, agent3, thread_exit1; 37 total",
+    "production_integration": "PASS 1/1; 12145-227-production-integration.log",
+    "auto_optimize": "last completed pruned-feature check PASS before release docs gate; separate exact-head evidence was retained in full lint run",
+    "earlier_bad_witness": "38a896 failed because the test passed numeric f64 instead of boxed Timeout handle; corrected at 22726, preserved in 12145-38a-validation-result.json"
+  },
+  "full_lint": {
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "command": "bash scripts/run_lint_gates.sh",
+    "started_at": "2026-10-12T13:20:22Z",
+    "hard_deadline": "2026-10-12T13:50:22Z",
+    "exit": 124,
+    "stop_reason": "30-minute hard cap reached during API docs cargo build --release -p perry; no live descendants remained after stop, only zombies",
+    "parser_rows": {
+      "ok": 104,
+      "fail": 31,
+      "skip": 2,
+      "total": 137
+    },
+    "footer": "No final footer; this is an incomplete run, not final gate classification. The run did not finish all128 commands/75 steps; docs drift gate was not run.",
+    "last_completed_gate": "Auto-optimize pruned feature check PASS",
+    "logs": "/workspace/work/perry-queue/12145-full-lint.log; /workspace/work/perry-queue/12145-full-lint.exit"
+  },
+  "publication": {
+    "pr_authorized": false,
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "coverage": "uncovered",
+    "covering_prs": []
+  },
+  "next": "Await validation-slot authorization for fresh exact-head 2e094 build and focused acceptance; no readiness or coverage claim until validation and lint classification."
+}

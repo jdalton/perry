@@ -1,7 +1,7 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T12:17:49Z",
-  "classification_updated_at": "2026-10-12T13:20:48Z",
+  "classification_updated_at": "2026-10-12T13:52:16Z",
   "counts": {
     "covered": 22,
     "uncertain": 19,
@@ -500,16 +500,16 @@
       "live_state": "OPEN",
       "resolution_verified": false,
       "claim": {
-        "owner": "cloud /root",
-        "task": "/root",
-        "branch": "cloud/issue-10027-root-ws-dispatch",
-        "current_head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-12145-primary-timer-scan",
+        "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
         "has_uncommitted_changes": false,
-        "validation": "Committed source head2816d18; Astra source review and static checks clear. Static preflight compares exact head to d3e5359: raw-handle and asserted-global no-raise checks pass; GC-holder and file-size failures are unchanged baseline findings outside changed paths. Cargo/runtime and focused tests not run (slot held by #12145). Deployed MB24 browser retest remains required before closure.",
+        "validation": "Exact22726: fresh trio,37 focused controls, production integration1/1 PASS. Full lint exit124 at30-minute cap during API docs release build; 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete and unclassified. New exact head2e094 changes only timer/store checker parsing; static A/B findings match base (12/70), but no build/runtime validation on this head.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Committed local candidate; provisional packet only; draft creation/push/PR publication not authorized.",
-        "evidence": "planning/provisional-10027/metadata.json; planning/provisional-10027/validation.json; planning/10027-static-preflight.json"
+        "publication_state": "Unvalidated source update; no PR or coverage credit.",
+        "evidence": "planning/12145-full-lint-cap-milestone.json"
       }
     },
     {

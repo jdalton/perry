@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T13:20:48Z",
+  "checked_at": "2026-10-12T13:52:16Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -306,30 +306,30 @@
         12145
       ],
       "branch": "cloud/issue-12145-primary-timer-scan",
-      "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-      "current_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-      "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
+      "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "state": "Trio, focused controls, and production integration PASS at22726d3; full lint running under 30-minute cap; not ready",
-      "validation": "Exact head22726d3 trio PASS1m57; focused controls37/37 PASS (19 store,14 inline,3 agent,1 thread-exit); production integration1/1 PASS. Full lint128 commands/75 steps started13:20:22Z, deadline13:50:22Z; classifications pending. Preserve the38a invalid-witness-argument failure record.",
+      "state": "Prior head22726 focused acceptance passed; its full lint was capped at the API docs release build. Current head2e094 static-only; exact-head acceptance pending.",
+      "validation": "Exact22726: fresh trio,37 focused controls, production integration1/1 PASS. Full lint exit124 at30-minute cap during API docs release build; 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete and unclassified. New exact head2e094 changes only timer/store checker parsing; static A/B findings match base (12/70), but no build/runtime validation on this head. Full-lint detail and the 2e094 static A/B are recorded in planning/12145-full-lint-cap-milestone.json.",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "push_allowed": false,
       "pr_creation_allowed": false,
-      "packet": "planning/12145-source-review.json",
+      "packet": "planning/12145-full-lint-cap-milestone.json",
       "publisher_actions": [],
       "coverage": "uncovered",
       "covering_prs": [],
       "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json",
-      "full_lint_evidence": "12145-full-lint-run.json; 12145-full-lint.log"
+      "full_lint_evidence": "12145-full-lint.log; 12145-full-lint.exit; planning/12145-full-lint-cap-milestone.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-20261012T104351Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T12:25:05.623379+00:00",
+  "updated_at": "2026-10-12T13:52:16Z",
   "publisher_inbox_checked_at": "2026-10-12T10:43:51Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
@@ -341,7 +341,11 @@
   "original_closures_associated_with_our_merged_prs": 4,
   "serial_validation_owner": null,
   "serial_priority": [
-    11915
+    "#12145 exact2e094: delimiter-only per_test_global! checker fix; static A/B matches base (12 findings/70 asserted), no build/runtime validation. Prior22726 trio,37 controls and integration1/1 passed; full lint exit124 at API docs release build (104 ok,31 fail,2 skip; no footer, incomplete).",
+    "#12471 finalization: verifier is checking numbered-fragment head/readiness; preserve source acceptance and current draft state separately.",
+    "#10027 committed head2816d18 has source/static preflight clear; focused acceptance pending; MB24 retest required before closure.",
+    "#11915 remains parked open/unresolved/unpublished at e190.",
+    "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
   ],
   "cargo_incremental": 0,
   "active_issue_state_evidence": "planning/active-issue-milestone-states.json",
@@ -439,5 +443,12 @@
       "issue_state": "OPEN",
       "evidence": "planning/12202-coverage-classification.json"
     }
+  ],
+  "next_steps": [
+    "After #12471 finalization, obtain serial validation authorization for fresh exact-head #12145 2e094 trio and scoped acceptance; do not reuse 22726 as current-head acceptance.",
+    "Complete and classify the required full lint for the exact validated #12145 head; the prior 22726 run ended at the 30-minute cap during API docs release compilation and is incomplete.",
+    "#10027 focused tests and matching build/runtime acceptance; MB24 browser retest required before closure.",
+    "#11915 remains parked open/unresolved/unpublished at e190.",
+    "#12202 remains covered by accepted source in draft PR12471 at fragment headdfd64b7; issue open, PR draft not ready, no merge/closure credit."
   ]
 }
