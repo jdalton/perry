@@ -221,18 +221,18 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
       "has_uncommitted_changes": false,
-      "state": "Third scoped compile attempt at corrected70123b7 running serially",
+      "state": "70123 runtime33+17 andtrio PASS; compiledfixtureFAIL; diagnosis underway",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "Prior6ed21errors and a4e4errors, both0tests, preserved. No trio/compiledfixture/full lint yet."
+      "validation": "NodePASS/PerryTypeError; auto/full lint not attempted; not publishable"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
   "actual_prs_created_in_continuation": 6,
-  "validation_resource_event": "One serial validator with CARGO_INCREMENTAL=0; no cache deletion at this milestone.",
-  "updated_at": "2026-10-12T08:55:51.844653+00:00",
+  "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
+  "updated_at": "2026-10-12T09:00:33.457509+00:00",
   "publisher_inbox_checked_at": "2026-10-12T08:55:51.844653+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

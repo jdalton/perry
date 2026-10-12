@@ -196,7 +196,8 @@
       "pushed_commit": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "partial_prs": [
         12456
-      ]
+      ],
+      "worktree_state": "Completed canonical retired after clean/idle checks; branch and verified standalone source.bundle retained in snapshots/retired-11519"
     },
     {
       "issue": 10739,
@@ -234,17 +235,17 @@
       "worktree": "/workspace/work/perry-queue/issue-12202",
       "current_head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
       "has_uncommitted_changes": false,
-      "validation": "6ed compile21errors; a4e compile4errors; both0tests. Corrected70123b7 pending.",
+      "validation": "70123:33WTF8 and17controls PASS; matching trio PASS; compiledfixtureFAIL TypeError. Auto/full lint not attempted. Prior failedcompile attempts retained.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
       "refreshed_at": "2026-10-12T05:29:00.306974+00:00",
       "evidence": "planning/12202-go-no-go.json and referenced byte-metadata plan",
-      "publication_state": "Third scoped compile attempt running serially",
-      "remaining": "Fix compile/API failures, boundedAstra review, exacthead unit/trio/parity/full lint validation",
+      "publication_state": "Behavioral diagnosis; not publishable",
+      "remaining": "Fix compiledfixture mismatch with source-evidenced cause, rerun affected gates thenauto/full lint",
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T08:55:51.844653+00:00",
+  "updated_at": "2026-10-12T09:00:33.457509+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

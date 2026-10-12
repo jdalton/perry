@@ -1,0 +1,69 @@
+{
+  "issue": 11519,
+  "status": "retired_with_verified_standalone_bundle",
+  "observed_at_utc": "2026-10-12T08:59:15Z",
+  "authorization": "Root explicitly authorized normal removal of only the completed idle canonical issue-11519 worktree after refreshed evidence; no force removal.",
+  "ownership": {
+    "cloud_task_claim": "Root delegation assigned the #11519 implementation/test correction on this cloud branch; this task authored commits 210e8b72caddf77d45de81cc5c731e7b58b7a453 and 5e41d1d8b19c030754975afeca52a9c277eda739; candidate history also includes f9d86c19c053fb2aceadddff3edd932716825393 and bb154789600c483aaaf305bc6879ba2a62f71fc8.",
+    "tracked_OWNER": "OWNER recorded upstream historical provenance (session 57b8a088, train120 assembly, no build), not cloud ownership.",
+    "evidence": [
+      "/workspace/work/perry-queue/planning/11519-retirement-plan.json",
+      "/workspace/work/perry-queue/publication/11519/packet.json",
+      "/workspace/work/perry-queue/planning/11519-source-review.json"
+    ]
+  },
+  "worktree": {
+    "path": "/workspace/work/perry-queue/issue-11519",
+    "common_repo": "/workspace/perry",
+    "branch": "cloud/issue-11519-byte-family-tostring",
+    "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+    "tree": "8a46c6bdc95a0f92114764961e6e4f212faae630",
+    "base": "d74498b261d087a301b80602835bc7199a067957",
+    "tracked_file_count": 36790,
+    "modified_or_untracked_count": 0,
+    "ignored_or_untracked_count": 0,
+    "git_clean_dry_run_candidates": 0,
+    "changed_paths_from_base": [
+      "changelog.d/12456-byte-view-tostring.md",
+      "crates/perry-runtime/src/object/buffer_dispatch.rs",
+      "crates/perry-runtime/src/value/to_string_buffer_tests.rs",
+      "test-files/test_gap_11519_arraybuffer_to_string_short_encoding.ts"
+    ],
+    "path_exists_after_removal": false
+  },
+  "process_census": {
+    "method": "Fresh /proc scan of cwd/cmdline/ppid/state; inspection command and all ancestors excluded; descendant scan found no unrelated matching process.",
+    "external_direct_matches": 0,
+    "observed_at_utc": "2026-10-12T08:59:15Z",
+    "active_validation_worktree_to_preserve": {
+      "path": "/workspace/work/perry-queue/issue-9927",
+      "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+      "action": "untouched"
+    }
+  },
+  "preservation": {
+    "bundle_path": "/workspace/work/perry-queue/snapshots/retired-11519/source.bundle",
+    "bundle_sha256": "7c3f834a50cef6d2543e918849eb42a7dc596ed7a0f718a32bde12d11ea6999b",
+    "bundle_size_bytes": 492810656,
+    "bundle_ref": "refs/heads/cloud/issue-11519-byte-family-tostring",
+    "bundle_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+    "bundle_tree": "8a46c6bdc95a0f92114764961e6e4f212faae630",
+    "verification": "git bundle verify succeeded; bundle says complete history; list-heads contains exact branch ref/head.",
+    "common_repo_branch_retained": true,
+    "logs_and_evidence": "All existing planning, publication, validation logs, snapshots, common-repo source history, and other worktrees remain untouched.",
+    "bundle_verified_after_removal": true
+  },
+  "retirement_scope": {
+    "only_allowed_path": "/workspace/work/perry-queue/issue-11519",
+    "method": "git -C /workspace/perry worktree remove /workspace/work/perry-queue/issue-11519",
+    "force": false,
+    "other_worktrees_or_caches_touched": false,
+    "completed": true,
+    "method_result": "Normal non-force git worktree remove succeeded; only canonical #11519 checkout removed."
+  },
+  "disk": {
+    "free_bytes_before_removal": 1744121856,
+    "free_bytes_after_removal": 3098324992
+  },
+  "completed_at_utc": "2026-10-12T08:59:35Z"
+}

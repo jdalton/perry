@@ -1,0 +1,26 @@
+{
+  "issue": 12202,
+  "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+  "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+  "fixture_sha256": "recorded in 12202-70123-acceptance/fixture-input.sha256",
+  "node": "/workspace/.toolchains/node-26.5.1/bin/node v26.5.1",
+  "compiler_trio": {
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12202-70123-trio-build.log",
+    "hashes_recorded_in_log": true
+  },
+  "focused_runtime_tests": {
+    "wtf8_filter": "33 passed; 0 failed",
+    "additional_controls": "17 individual tests passed",
+    "evidence": "/workspace/work/perry-queue/12202-70123-wtf8-tests.log and /workspace/work/perry-queue/12202-70123-control-results.txt"
+  },
+  "fixture_result": {
+    "compile_exit": 0,
+    "node_exit": 0,
+    "perry_exit": 1,
+    "parity_exit": 1,
+    "error": "TypeError: ��� is not a function",
+    "evidence_directory": "/workspace/work/perry-queue/12202-70123-acceptance"
+  },
+  "status": "Candidate fixture mismatch. Validation stopped before auto-opt and full lint; no validation source edits were made."
+}
