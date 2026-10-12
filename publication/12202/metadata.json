@@ -5,14 +5,14 @@
   "head": "jdalton:cloud/issue-12202-wtf8-class-keys",
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12202-wtf8-class-keys",
-  "current_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+  "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
   "validated_final_head": null,
   "issues": [
     12202
   ],
   "title": "Preserve WTF-8 keys for computed class members",
   "scope": "Carry exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. 30 runtime Rust files plus one focused fixture (31 changed files total); no codegen or ABI changes.",
-  "readiness": "CURRENT_HEAD_SOURCE_REVIEW_CLEAR; EXACT_HEAD_VALIDATION_PENDING",
+  "readiness": "SOURCE_SCOPE_REVIEWED; EXACT_266_VALIDATION_PENDING",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "ready_to_publish": false,
@@ -28,13 +28,13 @@
   "source_review": "/workspace/work/perry-queue/planning/12202-warning-cleanup-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
   "issue_state_snapshot": "../../planning/12202-prepublication-freshness.json",
-  "checked_at": "2026-10-12T09:48:00Z",
+  "checked_at": "2026-10-12T10:37:42Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
-  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until all validation is completed on exact source head 4e0241768d5c1031fac10fa8dcacae8629fcc038 and full-lint results are classified.",
+  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until required validation is completed and classified for exact source head 266eaf0af23bcef433f50b4b6bb9daf4df87db8d.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "/workspace/work/perry-queue/publication/12202/validation.json",
-  "latest_acceptance_record": "b4b8-current-validation.json",
-  "current_head_validation": "4e0241768d5c1031fac10fa8dcacae8629fcc038 is source-reviewed; all exact-head tests/build/parity/lint pending",
+  "latest_acceptance_record": "validation.json (55 focused tests passed at 4e only; exact 266 acceptance pending)",
+  "current_head_validation": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d changes only scripts/string_payload_access_baseline.txt after focused tests at 4e0241768d5c1031fac10fa8dcacae8629fcc038; no Rust source changed, but exact-head focused tests, matching trio, fixture parity, auto-opt, and full lint remain pending.",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
   "overlap_note": "Astra exact-diff review found no duplicate or demonstrated semantic blocker in draft12263. Its broader identity/cache/ABI changes overlap13paths; disclose merge-order risk and revalidate any integration. See ../../planning/12202-12263-publication-overlap-decision.json.",
   "publication_overlap_decision": {
@@ -44,7 +44,7 @@
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   },
-  "full_lint_status": "pending at 4e024; b4b8 warning delta (29 added product and host warning errors versus exact bc8625 parent) remains prior evidence; final full-lint total pending",
+  "full_lint_status": "Full lint pending at 266eaf0af23bcef433f50b4b6bb9daf4df87db8d. Prior b4b8 run exited 1 with 32/137 failed and 2 CI-only skips; its +29 product/host warning-error delta was addressed by later warning-cleanup source commits. The 266 product-warning command exited 101 with 42 diagnostics; parent fingerprint attribution is pending. Static attribution remains partial.",
   "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
   "source_history": [
     {
@@ -63,16 +63,53 @@
       "commit": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
       "subject": "Retain class prototype test re-export",
       "classification": "source-only cfg(test) re-export correction; source-reviewed, no build/test claim"
+    },
+    {
+      "commit": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+      "subject": "Record reduced runtime StringHeader access debt",
+      "classification": "inventory-baseline-only change after 4e; no Rust source changed; validation remains pending at this exact head"
     }
   ],
   "source_scope": {
-    "changed_files_total": 31,
+    "changed_files_total": 32,
     "runtime_rust_files": 30,
     "fixture_files": 1,
+    "inventory_files": 1,
     "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
-    "diffstat": "31 files changed, 1803 insertions(+), 642 deletions(-)",
+    "inventory_file": "scripts/string_payload_access_baseline.txt",
+    "diffstat": "32 files changed, 1804 insertions(+), 643 deletions(-) (from bc8625f64fd829af5463c8cde8368ec7947f31a1 to 266eaf0af23bcef433f50b4b6bb9daf4df87db8d)",
     "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-    "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-    "codegen_or_abi_changes": false
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "codegen_or_abi_changes": false,
+    "post_4e_changed_paths": [
+      "scripts/string_payload_access_baseline.txt"
+    ],
+    "post_4e_rust_source_changed": false
+  },
+  "interrupted_overlapping_warning_check": {
+    "status": "interrupted_non_result",
+    "formal_verifier_record": "pending",
+    "interpretation": "A separate overlapping warning-check attempt was interrupted. Its reported 42 count is not accepted as completed-check proof and is not substituted for the completed product-warning command above."
+  },
+  "product_warning_check_266": {
+    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+    "command": "RUSTFLAGS=\"-D warnings\" cargo check -p perry --bins",
+    "status": "completed_non_green",
+    "exit": 101,
+    "reported_warning_errors": 42,
+    "log": "/workspace/work/perry-queue/12202-266eaf-warnings-product.log",
+    "interpretation": "Count is recorded as an observed result only. Verifier fingerprint comparison against the exact bc862 parent is pending; do not call this green or baseline-clean."
+  },
+  "static_attribution": {
+    "status": "partial; not final for head 266",
+    "b4b8_mapping": "/workspace/work/perry-queue/planning/12202-static-attribution.json",
+    "counts_at_b4b8": {
+      "baseline": 25,
+      "environment": 1,
+      "unresolved_or_delegated": 6,
+      "candidate_attributed": 0
+    },
+    "note": "Several rows remain unresolved/delegated; refresh attribution for the 266 head and final lint results before making a global baseline claim."
   }
 }

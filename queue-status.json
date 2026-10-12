@@ -219,21 +219,21 @@
         12202
       ],
       "branch": "cloud/issue-12202-wtf8-class-keys",
-      "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
       "has_uncommitted_changes": false,
-      "state": "Warning cleanup source-cleared; exact new-head validation pending; prior b4 lint finishing",
+      "state": "Source-cleared warningcleanup + requiredinventorydecrease; validation in progress, no publication",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "4e024 source review PASS, tests/builds pending. Prior b4 focusedtests/trio/noauto/auto parity PASS but29candidatewarning errors; full lint finalclassification pending. No prior artifacts relabeled.",
-      "current_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038"
+      "validation": "266eaf awaiting exact-head gates; identicalRust4e focusedtests active. Priorb4 full lint completed32/137fail2skip, including29candidate-addedwarnings now source-corrected. Inventory runtime331\u2192329 credits1candidate removal+1preexisting drift. Interrupted overlappingwarningcheck excluded; rerunserial required.",
+      "current_head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T092328Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T10:22:23.482444+00:00",
+  "updated_at": "2026-10-12T10:34:26.155646+00:00",
   "publisher_inbox_checked_at": "2026-10-12T09:50:17.784354+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

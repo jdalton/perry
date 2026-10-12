@@ -1,0 +1,13 @@
+{
+  "issue": 12202,
+  "decision": "Approve single-row inline-offset perry-runtime331->329",
+  "policy": "scripts/string_payload_access_inventory.py11-13 requires decreases lower baseline in same change; compare_counts reports lower count as stale",
+  "evidence": "planning/12202-string-payload-source-triage.json: unchanged checker, exact bc330,4e329, sole candidate removal property_key_string raw StringHeader offset replaced by js_string_key_bytes",
+  "attribution": "One baseline-stale count plus one candidate-caused removal; not two candidate reductions",
+  "constraints": [
+    "Only this row; no global regeneration",
+    "No raise/exemption or checker change",
+    "Leave unrelated ext-zlib/stdlib stale rows; full gate not claimed green",
+    "No builds or interruption of active4e tests"
+  ]
+}

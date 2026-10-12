@@ -1,0 +1,34 @@
+{
+  "issue": 12202,
+  "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+  "status": "read_only_source_checker_triage; no source or baseline edits; no Cargo",
+  "checker": {
+    "path": "scripts/string_payload_access_inventory.py",
+    "sha256_at_exact_parent_and_candidate": "5a3d805dfbbec1d1d3c367e88fc173fddecfd1a94badd6f94efeda9f57ee2d48",
+    "policy": "The committed baseline is debt, not an allowance for new code. A category may never increase in a crate, and a decrease must lower the baseline in the same change. New crates implicitly start at zero.",
+    "policy_source": "Checker module docstring and compare_counts: any found < allowed is stale, as is any found > allowed regression.",
+    "exact_command": "cd /workspace/work/perry-queue/issue-12202 && python3 scripts/string_payload_access_inventory.py --list",
+    "command_exit": 1,
+    "full_list_log": "/workspace/work/perry-queue/12202-4e-string-payload-list.log"
+  },
+  "counts": {
+    "baseline_file_inline_offset_perry_runtime": 331,
+    "exact_bc862_parent_inline_offset_perry_runtime": 330,
+    "exact_4e_candidate_inline_offset_perry_runtime": 329,
+    "exact_bc862_parent_reader_helper_perry_runtime": 11,
+    "exact_4e_candidate_reader_helper_perry_runtime": 11,
+    "source_files_scanned_parent_candidate": [4949, 4950],
+    "parent_current_source_scan_method": "Imported the unchanged checker module from issue-12202 and called collect_inventory(root) on a temporary git-archive of the exact bc862 crates tree, then called it on the 4e worktree. No checkout/build/cache mutation."
+  },
+  "attribution": {
+    "changed_finding": "One inline-offset finding was removed from crates/perry-runtime/src/object/class_registry/parent_static.rs; no new source checker findings were added.",
+    "parent_site": "bc862 parent_static.rs:751 in property_key_string: raw payload pointer adds size_of::<crate::StringHeader>() before from_raw_parts.",
+    "candidate_site": "4e parent_static.rs:738-745 property_key_bytes uses crate::string::js_string_key_bytes with a bounded stack buffer and returns copied bytes; no open-coded StringHeader payload access remains.",
+    "candidate_diff_mechanism": "The ClassBody computed-key conversion switched from String/property_key_string to byte-oriented property_key_bytes as part of the WTF-8 class-key support. This is the one source-side count decrease from exact parent to candidate."
+  },
+  "recommendation": {
+    "same_pr_baseline_action": "Checker policy requires recording a decrease in the same change. For the candidate-caused runtime improvement, the only relevant baseline row is inline-offset | perry-runtime; it must match the candidate count 329 (331 -> 329) for a clean comparison at this head.",
+    "scope_boundary": "Exact parent is already one below committed runtime baseline (330 vs 331), so reducing to 329 records both that pre-existing stale unit and the additional candidate removal. Do not change unrelated baseline rows as part of this narrow source fix without separate attribution/authorization.",
+    "other_stale_rows": "Current checker output also reports ext-zlib baseline 3/found 0 and stdlib baseline 26/found 22. Those same counts are already present at exact bc862 parent (per parent source scan), so they are not caused by #12202; current full string-payload gate remains non-green until separately handled."
+  }
+}
