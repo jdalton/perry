@@ -1,0 +1,40 @@
+{
+  "decision": "Next source-evidenced partial candidate12145: restrict freed-thread timer scan to primary partition. No claim until live overlap/ownership check; no runtime execution.",
+  "bounded_pass": {
+    "cached_bodies": [
+      12145,
+      12135,
+      10869,
+      10590,
+      10408
+    ],
+    "source_inspections": [
+      12145,
+      10869
+    ],
+    "exclusions": "No11915split or12202work.12135GCdeathprotocol broad;10590package compile nondeterminism noisolatedcause;10408Windows unavailable;10869collectorflag historicalsite no longer present in inspectedtransfer file, no speculativeedit."
+  },
+  "selected": {
+    "issue": 12145,
+    "scope": "Only explicitly requested primary-agent freed-range scan; underlying primary-reachable allocation ownership remains separate/unfixed. Refs12145 partial.",
+    "source_head": "Fresh11915base283ab130bf3c507753324d9ff842208543d9d267",
+    "evidence": [
+      "timer/store.rs930 iterates every store.agents partition and runs remove_where; only primary calls publish_primary",
+      "samefunction comment says worker partitions purged whole duringretirement; nonworker exit entries reside primary",
+      "agent.rs168retire_agent calls timer::purge_agent_timers at193; timer/store.rs907purge_agent removes entire requested partition"
+    ],
+    "small_change": "Replace all-partition iteration with existing primarypartition lookup; remove only matchingfreed entries, republish primary counters, drop removedentries after releasingstorelock asbefore. Preserve absentprimary noallocation behavior and poison tolerance.",
+    "safety_proof_needed": "Confirm all worker retire paths purge own partition before arena retirement and no supported nonworker helper allocates callbacks for a worker partition. Do not infer ownership from comment alone; sourcecheck narrow callsitesbeforeclaim.",
+    "tests": [
+      "Shared private selection/removal helper exercised by production cfg(not(test)) and focused test, since current release_entries wrapper is no-op undercfg(test)",
+      "Primary freedcallback/arg removed, liveprimaryentry retained; counters republished",
+      "Otheragent entries untouched byprimaryscan; workerretirement independentlypurgesownpartition",
+      "Removed ScheduledTimerId drops afterlock, avoid nestedregistrylock inversion",
+      "Absentprimary no-op"
+    ],
+    "estimated_scope": "timer/store.rs plus focused test module/integration hook if existing fixture harness; likely2files, no ABI/newregistry. Stop if test requires broadproductionhooks.",
+    "benefit_limit": "Eliminates redundant scanning of unrelated worker partitions byconstruction. No measuredCPUclaim; doesnot claimscheduledcallback lossfixed.",
+    "validation": "Fulloutputs statics +focusedstore/agentretirement tests, existing timer/workerregressions, matchingtrio and fullrequiredlint undercaps. Liveissue/openPRoverlap mustrefresh beforeclaim.",
+    "overlap_uncertainty": "Cachedoriginaluncovered; no live refresh this pass. Related12143foundation mayhavefollowupmerged; mustcheck."
+  }
+}

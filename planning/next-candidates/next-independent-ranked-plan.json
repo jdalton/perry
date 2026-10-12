@@ -1,0 +1,48 @@
+{
+  "decision": "GO for one independently scoped implementation; no second or third viable candidate established",
+  "ranked_viable": [
+    {
+      "rank": 1,
+      "issue": 12145,
+      "scope": "Restrict thread-exit stale timer entry scan to existing PRIMARY_AGENT partition. Refs only; helper-thread callback loss remains unresolved.",
+      "base": "Fresh needed main checkout, or verified 283ab timer/agent paths; root confirms relevant path identity before implementation.",
+      "files": [
+        "crates/perry-runtime/src/timer/store.rs",
+        "existing timer test module or narrowly extracted test child"
+      ],
+      "mechanism": "with_current assigns queue partition from thread-local agent; unassigned helper threads resolve PRIMARY_AGENT. Supported worker entry paths get fresh IDs and retire/purge partition before arena destruction. Configured production profiles panic=abort eliminate surviving-process unwind bypass of manual map/filter retirement.",
+      "implementation": [
+        "Use get_mut(PRIMARY_AGENT), never entry/or_default, to avoid creating absent partition.",
+        "Share selection/removal helper with production wrapper and tests; cfg(test) outer cleanup wrapper is currently a no-op.",
+        "Keep exact entry_in_freed_ranges predicate, poison recovery, existing primary counter publication, and removed-entry destruction outside STORE lock.",
+        "Do not change retirement, callback ownership, GC, ABI, exemptions or baselines."
+      ],
+      "acceptance": [
+        "Mixed primary and worker slabs: remove matching primary callback/args/receiver/promise/value entries while preserving primary nonmatches and every worker entry.",
+        "Absent primary: do not create partition or scan worker entries.",
+        "Counter/check/pending state agrees with retained primary entries after removal.",
+        "Existing purge-agent behavior still removes retired worker slab.",
+        "Exercise shared production logic rather than cfg(test) no-op wrapper; preserve actual entry drop outside lock."
+      ],
+      "validation": "Source-sensitive static checks and focused timer/agent unit filters first; root assigns sole serial matching-trio/full-driver slot under existing caps. No second heavy build while11915 diagnosis active.",
+      "publication": "Prepare changelog fragment text only; create numbered file after real PR assignment. Refs #12145, explicitly partial; no callback-loss resolution, no measured performance claim.",
+      "proof": "12145-worker-retirement-proof.json",
+      "limitations": [
+        "Public doc-hidden enter_agent_for_test is documented test-only and has no production callsites; relies on that existing contract.",
+        "Targeted open-PR searches are not exhaustive inventory."
+      ]
+    }
+  ],
+  "not_viable_now": [
+    {
+      "issue": 12211,
+      "reason": "Proven mismatch but requires explicit per-evaluation home/kind and pre-RHS reference capture; not small safe partial late lookup."
+    },
+    {
+      "issue": 12231,
+      "reason": "Prepared forced-outline witness has not demonstrated residual missing-storage path; no source-confirmed implementation GO."
+    }
+  ],
+  "builds_run": false,
+  "central_ledgers_changed": false
+}

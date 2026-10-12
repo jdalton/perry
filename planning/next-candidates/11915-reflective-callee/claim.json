@@ -1,7 +1,7 @@
 {
   "issue": 11915,
-  "status": "blocked-on-candidate-sensitive-runtime-abort",
-  "checked_at_utc": "2026-10-12T12:40:28Z",
+  "status": "parked-open-unresolved-unpublished",
+  "checked_at_utc": "2026-10-12T12:47:18Z",
   "claimed_by": "/root/luna_class_tdz",
   "scope": "Partial Refs #11915: reflective ordinary callee resolution for Object.prototype.*.call/Object.hasOwnProperty.call and borrowed builtin prototype .call/.apply lowering only.",
   "excluded_issue_scope": [
@@ -55,9 +55,12 @@
     "auto_opt": "NOT RUN",
     "full_lint": "NOT RUN"
   },
-  "next": "Verifier runs focused HIR tests, then matching trio/compiled acceptance serially under45min cap; full lint after acceptance under30min cap.",
+  "next": "No further #11915 runs or fixes authorized under this candidate; retain e190 and evidence.",
   "resource_milestone": "../../11915-resource-preflight-milestone-e190.json",
   "last_validation_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
   "acceptance_result": "../../11915-e190-acceptance-status.json",
-  "publication_status": "Not publishable; candidate-sensitive runtime abort requires bounded source/binary diagnosis and corrected head."
+  "publication_status": "Not publishable; candidate-sensitive runtime abort requires bounded source/binary diagnosis and corrected head.",
+  "runtime_invariant_diagnosis": "../../11915-parked-e190-diagnosis.json",
+  "no_fix_attempted": true,
+  "further_runs_authorized": false
 }

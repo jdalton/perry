@@ -1,0 +1,24 @@
+{
+  "issue": 11915,
+  "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+  "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+  "status": "parked open/unresolved/unpublished; no further #11915 runs authorized",
+  "observed_at_utc": "2026-10-12T12:47:18Z",
+  "timeboxed_diagnosis": {
+    "status": "runtime-invariant-isolated-outside-changed-runtime-source",
+    "timebox_result": "Isolated before deadline; stop further probes and do not broaden into runtime source.",
+    "failure": "Array.prototype.slice property write aborts at shapes_store_kind.rs:190 before the reflective call executes. Object.prototype.hasOwnProperty.call direct control passes; Object.prototype mutation/call/restore passes; Array.prototype write does not reach its completion marker.",
+    "invariant": {
+      "source": "crates/perry-runtime/src/object/shapes_store_kind.rs:190",
+      "message": "shape store facts disagree: kind=Some(OrdinaryUnmarked), class_id=0x0, reserved=0x0a00",
+      "plain_ordinary_flag": "OBJ_FLAG_PLAIN_ORDINARY = 0x200; present in reserved 0x0a00",
+      "logic": "For class_id 0 with PLAIN_ORDINARY set, receiver_ordinary_kind computes Ordinary. The existing shape is OrdinaryUnmarked, so store_facts_agree rejects it during the Array.prototype write.",
+      "scope": "No runtime source changed in e190; failure occurs before the new reflective Array call executes."
+    },
+    "no_fix_attempted": true,
+    "no_runtime_source_changed": true,
+    "no_further_runs_authorized": true,
+    "full_record": "/workspace/work/perry-queue/11915-e190-acceptance/runtime-invariant-diagnosis.json",
+    "full_record_sha256": "afc24393721f0211bfd571873d304590a7049359a6049d4248c1cfe0ad3eba69"
+  }
+}

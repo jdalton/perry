@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-10-12T12:40:28Z",
+  "updated_at": "2026-10-12T12:47:18Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Luna_class performs bounded source/binary diagnosis of the e190 runtime abort; no heavy build or runtime rerun",
-    "Only after a corrected committed head and root plan, rerun focused acceptance under the45min cap",
-    "Keep #12202 exact2272 draft-allowed; no PR number in publisher inbox"
+    "Keep #11915 open/unresolved/unpublished at e190; no further runs or fixes authorized under that lane",
+    "Luna_tls begins the bounded #12145 source-only implementation after its local claim is recorded; no base/head is assigned centrally yet and no heavy build is authorized",
+    "Preserve #12202 draft-allowed at exact2272; no actual PR number in publisher inbox"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -23,8 +23,9 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#11915: bounded diagnosis only, no heavy build; next acceptance requires corrected committed head and fresh root authorization",
-    "#12202: draft allowed at exact2272; wait for publisher assignment"
+    "#12145 sole independent source lane: Luna_tls implements narrow PRIMARY_AGENT timer-scan restriction; await local claim before recording base/head, no heavy build yet",
+    "#11915 parked at e190; no further runs authorized",
+    "#12202 draft allowed at exact2272; await actual publisher assignment"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -126,9 +127,10 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": 11915,
+  "current_serial_issue": null,
   "serial_pending": [
-    "11915 runtime abort diagnosis and corrected head before any validation restart",
+    "12145 local source claim and bounded source implementation; no head/base until claim arrives",
+    "11915 parked, open/unresolved/unpublished; no further runs authorized",
     "12202 local draft PR assignment"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
@@ -141,16 +143,12 @@
   "current_validation_progress": {
     "issue": 11915,
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
-    "status": "blocked on candidate-sensitive Perry runtime abort",
-    "completed": "HIR 3/3, fresh trio, fixture compile",
-    "failed": "Perry exits134 at shapes_store_kind.rs:190",
-    "not_run": [
-      "Node parity",
-      "auto-opt",
-      "full lint"
-    ],
+    "status": "parked open/unresolved/unpublished; diagnosis complete",
+    "diagnosis": "Array.prototype.slice property write invariant mismatch before reflective call; no fix attempted",
     "active_processes_at_slot_census": [],
-    "evidence": "planning/11915-e190-acceptance-status.json"
+    "further_runs_authorized": false,
+    "next_lane": "12145 source-only implementation by Luna_tls; no heavy build yet",
+    "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
   "validation_resource_policy": {
     "full_lint_hard_cap_minutes": 30,
@@ -162,17 +160,12 @@
     "base": "283ab130bf3c507753324d9ff842208543d9d267",
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
     "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
-    "worktree_clean": true,
-    "static_preflight": "candidate-specific clear; baseline-only registration/file-size failures",
-    "focused_hir_tests": "PASS: 3",
-    "fresh_trio": "PASS: 3m04s",
-    "fixture_compile": "PASS: 22s",
-    "perry_runtime": "FAIL: exit134 abort at shapes_store_kind.rs:190 OrdinaryUnmarked shape facts",
-    "parity": "NOT RUN",
-    "auto_opt": "NOT RUN",
-    "full_lint": "NOT RUN",
-    "diagnosis_owner": "/root/luna_class_tdz, bounded source/binary evidence only; no heavy build",
-    "evidence": "planning/11915-e190-acceptance-status.json"
+    "status": "parked open/unresolved/unpublished",
+    "acceptance": "HIR3 PASS; trio PASS; fixture compile PASS; Perry abort134 before reflective Array call",
+    "diagnosis": "Array.prototype.slice property write invariant mismatch; no fix attempted",
+    "parity_auto_lint": "not run",
+    "further_runs_authorized": false,
+    "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
   "12202_publication_status": {
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -185,7 +178,7 @@
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
     "checked_at": "2026-10-12T12:40:28.644475+00:00",
-    "next_task": "awaiting bounded source diagnosis/corrected head",
+    "next_task": "No current validation job; 11915 parked, no further runs authorized. 12145 source-only until local claim and later serial authorization.",
     "active_validation_processes": [],
     "census_clean": true
   },
@@ -202,5 +195,14 @@
     "contents_preserved": true,
     "canonical_symlinks_verified": true,
     "debug_deps_note": "Normal nightly per-crate layout; no dependencies were lost."
+  },
+  "12145_next_lane": {
+    "rank": 1,
+    "owner": "cloud /root/luna_tls",
+    "decision": "Astra GO for narrow primary-partition-only timer scan",
+    "scope": "Refs #12145; helper-thread callback loss remains unresolved",
+    "local_claim": "pending; no base or head assigned centrally",
+    "heavy_build_authorized": false,
+    "evidence": "planning/next-candidates/next-independent-ranked-plan.json and planning/next-candidates/12145-worker-retirement-proof.json"
   }
 }

@@ -241,12 +241,12 @@
       "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "has_uncommitted_changes": false,
-      "state": "Blocked on candidate-sensitive Perry abort; source diagnosis required",
+      "state": "Parked open/unresolved/unpublished at e190; no further runs authorized",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/next-candidates/11915-reflective-callee-go-plan.json",
-      "validation": "HIR3 PASS; fresh trio PASS; fixture compile PASS; Perry exits134 at shapes_store_kind.rs:190. Node parity not run, auto/full lint not run.",
-      "packet": "planning/11915-e190-acceptance-status.json",
+      "validation": "HIR3/trio/fixture compile passed; Perry aborts before reflective call while writing Array.prototype.slice. Timeboxed diagnosis isolated runtime invariant outside changed source; no fix attempted.",
+      "packet": "planning/11915-parked-e190-diagnosis.json",
       "publisher_actions": []
     }
   ],
@@ -282,15 +282,15 @@
   },
   "draft_creation_packets_available": 1,
   "ready_transition_packets": 0,
-  "milestone_updated_at": "2026-10-12T12:40:28Z",
+  "milestone_updated_at": "2026-10-12T12:47:18Z",
   "latest_source_milestone": {
     "issue": 11915,
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
     "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
-    "status": "blocked-on-candidate-sensitive-runtime-abort",
-    "evidence": "planning/11915-e190-acceptance-status.json"
+    "status": "parked-open-unresolved-unpublished",
+    "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
-  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-source-milestone.json",
+  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-park-milestone.json",
   "resource_milestone": {
     "record": "planning/11915-resource-preflight-milestone-e190.json",
     "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",
@@ -306,10 +306,20 @@
   },
   "current_validation_slot": {
     "owner": "cloud /root/luna_verification",
-    "checkout": "/workspace/work/perry-queue/issue-9927",
-    "target": "/workspace/work/perry-queue/target-12390",
     "checked_at": "2026-10-12T12:40:28.644475+00:00",
     "active_validation_processes": [],
-    "next_task": "bounded source/binary diagnosis by Luna_class only; no heavy build"
+    "next_task": "No further #11915 runs authorized; 12145 is source-only until local claim and later validation authorization."
+  },
+  "next_independent_candidate": {
+    "issue": 12145,
+    "rank": 1,
+    "owner": "cloud /root/luna_tls",
+    "decision": "Astra GO for narrow primary-agent timer freed-range scan; Refs #12145 only.",
+    "scope": "Restrict stale timer entry scan to existing PRIMARY_AGENT partition; helper-thread callback loss remains unresolved.",
+    "source_claim": "pending from Luna_tls; do not infer branch/base/head",
+    "base": null,
+    "head": null,
+    "heavy_build_authorized": false,
+    "evidence": "planning/next-candidates/next-independent-ranked-plan.json; planning/next-candidates/12145-worker-retirement-proof.json"
   }
 }

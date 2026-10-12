@@ -665,10 +665,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-11915-reflective-callee",
         "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
-        "validation": "HIR3 PASS; trio PASS; fixture compile PASS; Perry abort134 at shapes_store_kind.rs:190. No parity/auto/full lint; bounded source diagnosis pending.",
+        "validation": "At e190: HIR3/trio/fixture compile pass, Perry abort134 before reflective Array call; no parity/auto/lint. Diagnosis isolated Array.prototype.slice write invariant outside changed runtime source; no fix attempted.",
         "merge_state": "No PR",
         "closure_state": "OPEN",
-        "publication_state": "Blocked by runtime abort; no PR/push."
+        "publication_state": "Parked open/unresolved/unpublished; no further runs authorized."
       }
     },
     {

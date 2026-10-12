@@ -1,0 +1,72 @@
+{
+  "issue": 12145,
+  "checked_at": "2026-10-12T12:43:27Z",
+  "recommendation": "GO for the narrow primary-partition-only freed-range scan, conditional on a shared helper test; keep the separate callback-loss/primary-reachability part explicitly unresolved (Refs only).",
+  "source_revision": {
+    "requested_head": "283ab130bf3c507753324d9ff842208543d9d267",
+    "worktree_branch_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+    "method": "Read requested-base source using git show; no source edits or runtime/build commands."
+  },
+  "safety_evidence": [
+    {
+      "path": "crates/perry-runtime/src/timer/store.rs:878-920",
+      "finding": "with_current selects the timer slab from agent::current_agent(); purge_agent removes a whole agent slab. release_entries_in_freed_ranges currently scans all slabs, drops matching entries after unlocking, and republishes counters only for PRIMARY_AGENT."
+    },
+    {
+      "path": "crates/perry-runtime/src/agent.rs:89-112,168-212",
+      "finding": "CURRENT_AGENT is thread-local, starts unset (therefore PRIMARY_AGENT), and is set to a fresh worker id only by enter_worker_agent. enter_agent_for_test is public/doc-hidden and documented for tests only; no production callsites were found. retire_agent shuts down the worker loop, purges its timer slab, then retires other per-agent state before the arena is dropped."
+    },
+    {
+      "path": "crates/perry-runtime/src/thread.rs:832-884,1121-1166,1366-1431",
+      "finding": "parallel_map, parallel_filter, and spawn claim their own agent before allocations and call retire_agent after dropping their GC scope. spawn catches the body result/panic and then reaches retirement. The two direct closure-call paths use the non-unwinding JS body ABI. Workspace dev/release/distribution profiles use panic=abort, so an unexpected runtime panic cannot leave a surviving process with an unretired worker slab."
+    },
+    {
+      "path": "crates/perry-stdlib/src/worker_threads.rs:1413-1506",
+      "finding": "Worker thread enters its own agent before initialization; its worker body is caught, then retire_agent runs before thread return/arena destruction."
+    },
+    {
+      "path": "crates/perry-runtime/src/arena/thread_exit.rs:110-140",
+      "finding": "Freed-range hooks run during arena TLS teardown. They must not use TLS or call JS. Timer entry removal keeps drops outside the timer-store lock."
+    },
+    {
+      "path": "crates/perry-runtime/src/agent.rs:105-112",
+      "finding": "A newly spawned helper thread has no inherited CURRENT_AGENT, so timer operations on it are primary-partition operations. Only explicit enter_worker_agent (or test-only enter_agent_for_test) assigns a worker partition. Production worker creation sites establish and retire their worker agent; helper threads acting on primary state remain in PRIMARY_AGENT."
+    }
+  ],
+  "testability_constraint": "The release_entries_in_freed_ranges wrapper is a no-op under cfg(test), because tests use per-thread stores. A focused test must exercise a private shared selection/removal helper also called by the production wrapper; do not test only the no-op wrapper.",
+  "limits": [
+    "This source proof does not establish that nonworker helpers never queue callbacks into primary-owned timers whose values live in their own arenas; the primary scan remains necessary for that issue body concern.",
+    "The narrow change would remove scanning of unrelated worker slabs, not fix silently dropped callbacks or establish a measured speedup.",
+    "enter_agent_for_test is public but doc-hidden and explicitly documented as test-only; a source search found no production callsites. The GO therefore relies on that documented ownership contract; if arbitrary external callers are in scope, require a separate API restriction before claiming all worker slabs are purged."
+  ],
+  "live_issue_refresh": {
+    "source": "GitHub issue fetch #12145",
+    "state": "open",
+    "updated_at": "2026-10-07T07:44:52Z",
+    "closed_at": null,
+    "comments": 0,
+    "scope": "The live body retains both the primary-reachable callback investigation and the requested all-agent-scan restriction."
+  },
+  "overlap_refresh": [
+    {
+      "pr": 12143,
+      "state": "merged",
+      "merge_commit": "88a80d19edf4eafe254ede1e5a935a088fc174da",
+      "relation": "Foundation only: added thread-exit cleanup for stale timer pointers. Its body says workers were unaffected; it does not implement primary-only scanning or the helper-thread ownership fix."
+    },
+    {
+      "pr": 12447,
+      "state": "merged",
+      "merge_commit": "16735744146515169225c82699c9193eb3fd8e47",
+      "relation": "Worker-lifecycle adjacent, but changed-file list has worker_threads.rs and worker pump/port files, not timer/store.rs, agent.rs, thread.rs, or arena/thread_exit.rs. It addresses worker liveness and does not overlap the proposed timer scan."
+    },
+    {
+      "searches": [
+        "repo:PerryTS/perry \"12145\" (open PRs)",
+        "repo:PerryTS/perry timer worker retirement thread-exit (open PRs)"
+      ],
+      "result": "No matching open PR results returned. Search is narrow and not an exhaustive PR inventory."
+    }
+  ],
+  "decision": "Proceed only with the primary-scan portion and shared-helper regression controls. Keep PR/issue wording Refs #12145; do not claim the broader callback-loss cause is resolved."
+}
