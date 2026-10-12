@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-12T13:14:00Z",
+  "prior_head": "38a89678c1fe0387d03781730fbfc18584152a23",
+  "prior_result": "12145-38a-validation-result.json",
+  "prior_trio": "PASS 3m08",
+  "prior_unit_controls": "37 total PASS",
+  "production_integration": "FAIL exit101: timer pending remained1 after clear_timeout_value(control_id as f64); earlier helper-thread release and main-control-retention assertions passed. Root/Astra diagnose this as the test witness encoding a Timeout handle as a numeric f64.",
+  "corrected_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+  "corrected_tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
+  "change_scope": "Only crates/perry-runtime/tests/timer_thread_exit.rs; 2-line API-argument correction, Astra-cleared, rustfmt/diff checks pass.",
+  "current_retry": {
+    "trio": "running",
+    "started_at": "2026-10-12T13:13:50Z",
+    "deadline": "2026-10-12T13:58:50Z",
+    "log": "12145-227-trio.log",
+    "exit_file": "12145-227-trio.exit",
+    "integration": "pending after trio",
+    "full_lint": "not started"
+  },
+  "coverage": "No coverage claim; issue remains uncovered until acceptance passes."
+}

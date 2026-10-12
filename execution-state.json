@@ -1,14 +1,15 @@
 {
-  "updated_at": "2026-10-12T13:10:00Z",
+  "updated_at": "2026-10-12T13:14:00Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Finish #12145 focused controls and production integration; the final-head matching trio passed in3m08.",
-    "Keep #10027 committed at2816d18; source/static review clear, Cargo/runtime acceptance pending, MB24 retest required before closure.",
+    "Run the fresh matching trio and production-integration witness on corrected head22726d3. Treat38a failure as invalid test API argument and preserve its result; full lint only if corrected acceptance passes.",
+    "Keep #12145 uncovered and not ready until exact-head acceptance passes.",
+    "Keep #10027 committed at2816d18 with source/static checks clear; focused tests/runtime acceptance and MB24 browser retest pending.",
     "Keep #11915 parked at e190.",
-    "#12202 draft PR12471 remains open at changelog-only fragment head dfd64b7; readiness false; implementation validation is at2272."
+    "#12202 remains covered by accepted source in draft PR12471 at dfd64b7; PR draft/open and issue-open, no merge/closure credit."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -24,10 +25,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 final-head trio passed38a896 (3m08, exit0); focused timer controls and production integration running; deadline13:49:57Z.",
-    "#10027 committed candidate2816d18; source/static checks clear, no Cargo/runtime tests; MB24 retest required before closure.",
+    "#12145 corrected test-only head22726d3: fresh trio running since13:13:50Z, deadline13:58:50Z; then production integration rerun; no lint until acceptance passes.",
+    "#10027 committed candidate2816d18; no Cargo/runtime tests yet; MB24 retest required before closure.",
     "#11915 parked open/unresolved/unpublished at e190.",
-    "#12202 draft PR12471 at fragment headdfd64b7, not ready for review; source acceptance at2272."
+    "#12202 fully source-covered by draft PR12471 at dfd64b7; not ready for review, issue OPEN, no merge/closure credit."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -211,12 +212,12 @@
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
     "issue": 12145,
-    "head": "38a89678c1fe0387d03781730fbfc18584152a23",
-    "gate": "scoped timer controls and production integration acceptance",
-    "started_at": "2026-10-12T13:04:57Z",
-    "hard_deadline": "2026-10-12T13:49:57Z",
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "gate": "fresh matching trio on corrected integration-witness head; then rerun production integration",
+    "started_at": "2026-10-12T13:13:50Z",
+    "hard_deadline": "2026-10-12T13:58:50Z",
     "owner": "cloud /root/luna_verification",
-    "status": "fresh matching trio PASS on final head38a896 (3m08, exit0); controls/integration running"
+    "status": "running; prior38a integration failed due invalid witness argument, corrected test-only head under rerun"
   },
   "publisher_inbox_refresh": {
     "observed_at": "2026-10-12T13:06:21Z",
@@ -230,11 +231,12 @@
     "branch": "cloud/issue-12145-primary-timer-scan",
     "worktree": "/workspace/work/perry-queue/issue-12145",
     "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-    "head": "38a89678c1fe0387d03781730fbfc18584152a23",
-    "tree": "dc833214eee0541f90ec463fdb01b5b133158c45",
-    "claim_status": "committed candidate; validation in progress",
-    "heavy_build_authorized": "matching trio, scoped controls, production integration, then full lint if passes",
-    "evidence": "planning/12145-source-review.json; planning/next-candidates/12145-worker-retirement-proof.json"
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
+    "claim_status": "source reviewed; corrected integration-witness test is under fresh acceptance",
+    "heavy_build_authorized": "fresh matching trio and production integration; full lint only if acceptance passes",
+    "prior_failure": "38a896 production integration result exit101 caused by invalid test API argument; planning result preserved at12145-38a-validation-result.json",
+    "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
     "observed_at": "2026-10-12T13:07:10Z",

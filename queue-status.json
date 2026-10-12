@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T13:10:00Z",
+  "checked_at": "2026-10-12T13:14:00Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -305,19 +305,22 @@
         12145
       ],
       "branch": "cloud/issue-12145-primary-timer-scan",
-      "head": "38a89678c1fe0387d03781730fbfc18584152a23",
-      "current_head": "38a89678c1fe0387d03781730fbfc18584152a23",
+      "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+      "current_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-      "tree": "dc833214eee0541f90ec463fdb01b5b133158c45",
+      "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
       "has_uncommitted_changes": false,
-      "state": "Final-head trio PASS; focused controls/production integration running",
-      "validation": "Astra source-clear. Three focused timer-store tests passed at prior head7cbb. Fresh final-head trio passed on38a896 (3m08, exit0); scoped controls and production integration acceptance are running under 13:49:57Z deadline.",
+      "state": "38a production witness failed due invalid test API argument; corrected test-only head22726 is under revalidation",
+      "validation": "38a fresh trio and37 scoped unit controls PASS; production integration failed because witness cast timer control ID to f64. Astra-cleared head22726 changes only that test to pass a boxed JS handle. Fresh trio running since13:13:50Z, deadline13:58:50Z; integration rerun pending; full lint not started.",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "push_allowed": false,
       "pr_creation_allowed": false,
       "packet": "planning/12145-source-review.json",
-      "publisher_actions": []
+      "publisher_actions": [],
+      "coverage": "uncovered",
+      "covering_prs": [],
+      "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",

@@ -503,13 +503,13 @@
         "owner": "cloud /root/luna_tls_checker",
         "task": "/root/luna_tls_checker",
         "branch": "cloud/issue-12145-primary-timer-scan",
-        "current_head": "38a89678c1fe0387d03781730fbfc18584152a23",
+        "current_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
         "has_uncommitted_changes": false,
-        "validation": "Astra source-clear. Three focused timer-store tests passed at prior head7cbb (1 pass each, 5825 filtered). Fresh matching trio passed on final head38a896 in 3m08 (exit0); scoped timer controls and production integration acceptance are now running. Started 2026-10-12T13:04:57Z, 45-minute deadline 13:49:57Z.",
+        "validation": "At38a896, trio PASS (3m08), 37 focused unit controls PASS, but production integration exited101 because the witness passed control_id as f64 instead of a boxed JS handle; final pending count stayed1. This is classified as an invalid test API argument, not a demonstrated production defect. Astra reviewed the correction at22726d3; it changes only the integration test (2 lines), using js_nanbox_pointer before clear_timeout_value. Fresh matching trio is currently running on22726d3 (started13:13:50Z; 45-minute deadline13:58:50Z); production integration will be rerun after it. Full lint not started.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Source validation in progress; no PR and no issue coverage credited.",
-        "evidence": "planning/12145-source-review.json; planning/next-candidates/12145-worker-retirement-proof.json; 12145-focused-1.log; 12145-focused-2.log; 12145-focused-3.log"
+        "publication_state": "Validation rerun in progress after correcting invalid integration-witness argument; no publication or coverage credit.",
+        "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started; 12145-227-trio.log"
       }
     },
     {
