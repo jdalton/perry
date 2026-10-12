@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:57:48.728555+00:00",
+  "updated_at": "2026-10-12T12:24:51.074087+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
@@ -62,23 +62,34 @@
         "state": "merged",
         "ready_for_review": false,
         "merged": true
+      },
+      {
+        "number": 12471,
+        "url": "https://github.com/PerryTS/perry/pull/12471",
+        "issues": [
+          12202
+        ],
+        "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
     "remaining": 15,
     "owner": "cloud implements; local coordinates and publishes",
     "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf",
     "live_issue_snapshot": {
-      "repo_open": 190,
+      "repo_open": 191,
       "original_open": 180,
       "original_closed": 44,
-      "observed_at": "2026-10-12T07:28:51Z",
-      "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
+      "observed_at": "2026-10-12T10:43:51Z",
+      "evidence": "planning/original224-state-refresh-20261012T104351Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 5,
-    "opened": 5,
-    "remaining_to_open": 15,
+    "opened": 6,
+    "remaining_to_open": 14,
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2
