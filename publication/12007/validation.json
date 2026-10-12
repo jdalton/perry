@@ -63,12 +63,68 @@
     "prior_e8ad66b_aggregate_attempt": "compiled but run exit 1 because dynamically imported self-TDZ rejection escaped its handler and prevented later module progress; corrected fixture commit 765a94d31 replaced that witness with aggregate top-level catch and preserved direct self-initializer as isolated subprocess test. Earlier logs remain intact; this is not hidden or relabeled as a pass."
   },
   "full_lint": {
-    "status": "pending",
-    "reason": "waiting for serial full-lint gate and adequate disk headroom"
+    "status": "completed with failures; do not report green",
+    "command": "bash scripts/run_lint_gates.sh",
+    "base_sha": "d74498b261d087a301b80602835bc7199a067957",
+    "exit": 1,
+    "failed_commands": 33,
+    "total_commands": 137,
+    "ci_only_skipped": 2,
+    "log": "/workspace/work/perry-queue/12007-full-lint-765a94.log",
+    "exit_file": "/workspace/work/perry-queue/12007-full-lint-765a94.exit",
+    "classification": {
+      "23_static_gate_rows": "Exact normalized output matches against baseline-script-lint.log; 59 referenced paths had identical source blobs at d74498b and 765a94d. Evidence: /workspace/work/perry-queue/planning/12007-static-lint-preliminary-map.json.",
+      "3_compile_warning_clippy_rows": "All exact diagnostic signatures match pristine d74498b A/B for the same command scopes. 37 product warnings, 30 host warnings, 1 Clippy error. Evidence: /workspace/work/perry-queue/12390-compile-ab-comparison.json and /workspace/work/perry-queue/12390-compile-ab-results.txt. Runtime sources unchanged from baseline.",
+      "3_benchmark_release_test_rows": "Benchmark zero-RSS artifact failure plus Python release-pipeline and Node platform-visibility failures reproduce in baseline-script-lint.log.",
+      "rustup_toolchain_install": "Non-unwinding rustup panic is also present in baseline-script-lint.log; toolchain commands otherwise execute with pinned installed nightly.",
+      "xwin": "Initial candidate attempt failed due sandbox Operation not permitted. Permissioned replay still failed: CONNECT proxy returned 403/403 for aka.ms channel URL; no product compile started. Replay: /workspace/work/perry-queue/12007-xwin-replay.log.",
+      "pyyaml": "Initial install failure was sandbox network denial. Permissioned pinned PIP_TARGET/PYTHONPATH replay succeeded (PyYAML 6.0.2); workflow topology consumer command block passed. Logs: /workspace/work/perry-queue/12007-pyyaml-replay.log and /workspace/work/perry-queue/12007-yaml-workflow-replay.log.",
+      "api_docs": "Source-proven baseline drift: identical manifest crate tree, CLI, generator and tracked outputs at d744 and 765a94; manifest emission exits before HIR lowering. Generator always emits a nonempty header, tracked markdown is empty. Wrapper also hardcodes checkout target despite external CARGO_TARGET_DIR. Direct fresh release output: d.ts unchanged, markdown 91,751 bytes. Gate remains non-green. See docs-lint-attribution.json."
+    },
+    "ready_blockers": [],
+    "auto_optimize_feature_gate": "passed in the full lint log",
+    "remaining_validation_limits": [
+      "Windows xwin compile unavailable: proxy403.",
+      "Full lint is non-green with classified baseline/environment failures.",
+      "Linux only; no macOS runtime proof."
+    ]
   },
   "run_gap_tests_wrapper": {
     "exit": 2,
     "reason": "validation checkout lacks root node_modules; wrapper stopped at preflight before running fixture. Direct pinned Node and Perry compile/runtime commands above were run instead."
   },
-  "prior_interrupted_build": "/workspace/work/perry-queue/12007-committed-build-result.json"
+  "prior_interrupted_build": "/workspace/work/perry-queue/12007-committed-build-result.json",
+  "final_original_probes": {
+    "primary_only_source": "/workspace/work/perry-queue/12007-primary-only.ts",
+    "node_binary": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "node_version": "v26.5.1",
+    "perry_command": "/workspace/work/perry-queue/target-12390/debug/perry compile --no-auto-optimize /workspace/work/perry-queue/12007-primary-only.ts -o /workspace/work/perry-queue/12007-765a94-original.bin",
+    "compile_exit": 0,
+    "run_exit": 0,
+    "node_exit": 0,
+    "stdout_diff_exit": 0,
+    "evidence_prefix": "/workspace/work/perry-queue/12007-765a94-original",
+    "coverage": [
+      "module direct read before initialization",
+      "typeof before initialization",
+      "new before initialization",
+      "earlier closure read",
+      "earlier class-method read",
+      "post-initialization construction/name controls"
+    ]
+  },
+  "anonymous_name_control": {
+    "source": "/workspace/work/perry-queue/12007-765a94-anon-name.ts",
+    "assertion": "const C = class {}; console.log(\"anonymous-name\", C.name === \"C\")",
+    "node_exit": 0,
+    "perry_compile_exit": 0,
+    "perry_run_exit": 0,
+    "stdout_diff_exit": 0,
+    "evidence_prefix": "/workspace/work/perry-queue/12007-765a94-anon-name"
+  },
+  "checkout_final_state": {
+    "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+    "clean": true,
+    "status_command": "git status --short"
+  }
 }

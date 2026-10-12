@@ -1,0 +1,39 @@
+{
+  "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "baseline": "d74498b261d087a301b80602835bc7199a067957",
+  "decision": "DOCS_MARKDOWN_DRIFT_SOURCE_PROVEN_BASELINE; wrapper failure environment/path configuration",
+  "source_identity": {
+    "scripts/regen_api_docs.sh": {
+      "baseline": "9314fc42ccd7e854b7706dbee99ffa29f4db5ba2",
+      "candidate": "9314fc42ccd7e854b7706dbee99ffa29f4db5ba2"
+    },
+    "crates/perry/src/main.rs": {
+      "baseline": "8d36bea2cc6b3565f442afe515b6b59ef0255e55",
+      "candidate": "8d36bea2cc6b3565f442afe515b6b59ef0255e55"
+    },
+    "crates/perry-api-manifest": {
+      "baseline": "b9085b80aef6bfbc8b329cd0aa0fab13d342061b",
+      "candidate": "b9085b80aef6bfbc8b329cd0aa0fab13d342061b"
+    },
+    "docs/src/api/reference.md": {
+      "baseline": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "candidate": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "docs/api/perry.d.ts": {
+      "baseline": "ad2e2afb2d8cd834b19bff6c8d45045bdadbb3e1",
+      "candidate": "ad2e2afb2d8cd834b19bff6c8d45045bdadbb3e1"
+    }
+  },
+  "mechanism": [
+    "scripts/regen_api_docs.sh builds with Cargo but executes fixed $ROOT/target/release/perry, ignoring external CARGO_TARGET_DIR",
+    "Shell redirects markdown before attempting execution; missing binary can truncate output to empty before failing",
+    "main.rs410-442 prints manifest via perry_api_manifest emit_markdown/emit_dts and returns before subcommand dispatch; does not parse/lower TypeScript or execute changed HIR code",
+    "emit.rs19 uses deterministic compile-time API_MANIFEST and sorted groups; generator plus entire manifest tree unchanged",
+    "Tracked reference.md is0bytes at both baseline and candidate; generator unconditionally writes a nonempty Supported API Reference header"
+  ],
+  "reported_replay": "Root/verifier reports exact fresh release replay91751-byte markdown and d.ts identical tracked; reviewer did not rerun release or generator",
+  "limits": "Source identity and excluded HIR call path prove drift is baseline-present; this is not an independently executed baseline release replay nor full lint pass",
+  "publication_keyword": "Fixes #12007 justified after root-reported final-head original new/typeof/anonymousC.name probesPASS; separate dynamic-import rejection issue outside original scope",
+  "lint_publication": "Retain full33/137failure and2skip classification; docs wrapper path failure and real baseline docs drift are separate findings, not a green docs gate. Final exact totals/replay classifications remain validator-owned",
+  "mutations": "Only this planning evidence file; no checkout/build changes"
+}

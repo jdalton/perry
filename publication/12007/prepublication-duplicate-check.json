@@ -1,0 +1,63 @@
+{
+  "repository": "PerryTS/perry",
+  "checked_at": "2026-10-12T06:46:17Z",
+  "candidate": {
+    "issue": 12007,
+    "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+    "paths": [
+      "crates/perry-hir/src/lower/lower_module_fn.rs",
+      "crates/perry-hir/src/lower/tests/class_expr_naming_and_shadowing.rs",
+      "test-files/_helpers/issue_12007_anonymous_self_tdz.ts",
+      "test-files/_helpers/issue_12007_cycle_a.ts",
+      "test-files/_helpers/issue_12007_cycle_b.ts",
+      "test-files/test_gap_12007_class_expression_tdz.ts"
+    ]
+  },
+  "live_issue": {
+    "state": "open",
+    "updated_at": "2026-10-05T01:16:03Z",
+    "closed_at": null,
+    "title": "const C = class {} has no TDZ and an empty name (node: ReferenceError before the declaration; C.name === 'C')",
+    "scope_check": "Still tracks module class-expression TDZ and inferred-name behavior; no issue-state change since the 2026-10-12 06:16:56Z issue snapshot."
+  },
+  "open_pr_refresh": {
+    "current_open_pr_count": 24,
+    "previous_inventory": "planning/shortlist-open-prs-latest.json (24 IDs; saved 2026-10-12 01:51:17Z)",
+    "current_vs_previous_ids": {
+      "added": [],
+      "removed": []
+    },
+    "focused_searches": [
+      {
+        "query": "repo:PerryTS/perry is:pr is:open 12007",
+        "results": []
+      },
+      {
+        "query": "repo:PerryTS/perry is:pr is:open path:crates/perry-hir/src/lower/lower_module_fn.rs",
+        "results": []
+      },
+      {
+        "query": "repo:PerryTS/perry is:pr is:open path:crates/perry-hir/src/lower/tests/class_expr_naming_and_shadowing.rs",
+        "results": []
+      },
+      {
+        "query": "repo:PerryTS/perry is:pr is:open path:test-files/test_gap_12007_class_expression_tdz.ts",
+        "results": []
+      }
+    ],
+    "result": "No new or currently open PR overlap found on the candidate's production or focused test paths; no candidate PR head/file-list fetch was needed."
+  },
+  "11995_exclusion_reused": {
+    "pr": 11995,
+    "state": "MERGED",
+    "merged_at": "2026-10-05T01:16:26Z",
+    "merge_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+    "ancestry_evidence": "planning/12007-11995-baseline-ancestry.json and planning/12007-11995-main-ancestry.json: merge commit is ancestor of both d744 baseline and main; 11995 explicitly says class-expression TDZ is out of scope.",
+    "coverage_decision": "Existing planning/12007-11995-overlap-decision.json concludes the mechanisms are distinct; no change to that exclusion."
+  },
+  "conclusion": "No newly surfaced duplicate or overlapping open PR. Issue remains open. Refs #12007 scope remains appropriate pending the already-recorded exact final-head anonymous-name control; this refresh supplies no new validation or coverage credit.",
+  "limitations": [
+    "No PR bodies, changed-file lists, reviews, or broad diffs were fetched.",
+    "This is a read-only state/duplicate refresh; it does not change the candidate's validation or full-lint classification."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-12T06:37:33.944422+00:00",
+  "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "live_issue": {
+    "state": "open",
+    "updated_at": "2026-10-05T01:16:03Z",
+    "requested_behaviors": [
+      "new before module const class-expression declaration throws ReferenceError",
+      "typeof before same declaration throws ReferenceError",
+      "anonymous class expression inherits binding name C"
+    ]
+  },
+  "source_review": "Candidate repairs module lexical preregistration.11995 does not overlap and predates candidate baseline. No specific unresolved original-issue mechanism identified.",
+  "current_keyword_recommendation": "Refs #12007 until exact final-head anonymous-name control is recorded; this is a verification limitation, not proof the patch leaves a defect",
+  "precise_metadata_scope": "Repairs the remaining module TDZ defect; reported anonymous-name symptom already passes on d744. Exact module-level anonymous-name control has not been separately recorded at final head.",
+  "evidence": [
+    "d744 issue-12007-result.json reports name C in both Node and Perry while TDZ fails",
+    "Final fixture uses named top-level class C=class Named and nested anonymous C; top-level Anonymous.name is not printed",
+    "Final aggregate/direct-helper acceptance and HIR result are reported by packet, not rerun in this review"
+  ],
+  "upgrade_condition": "Run existing tiny original probe with final matching artifacts and verify both TDZ checks plus name C; then Fixes #12007 is justified if all original behaviors pass, without treating separate dynamic-import rejection limitation as original issue scope",
+  "packet_findings": [
+    "Body Fixes conflicts with metadata Partial repair",
+    "metadata validation path ../12007-validated-765a94.json resolves to missing publication/12007-validated-765a94.json at review time",
+    "Readiness remains pending full lint; no approval to publish before completion/classification"
+  ],
+  "actions": "Read-only live GitHub issue plus local source/packet review; no build/source/network write; ledger unchanged",
+  "updated_keyword_decision": "Fixes #12007 now justified: root reports exact finalhead new/typeof/anonymousC.name probesPASS",
+  "full_lint_limitation": "Non-green baseline/environment classifications must remain explicit; docs source attribution in12007-docs-lint-attribution.json"
+}

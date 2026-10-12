@@ -6,23 +6,25 @@
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12007-class-expression-tdz",
   "current_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-  "validated_final_head": null,
+  "validated_final_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
   "issues": [
     12007
   ],
   "title": "fix(hir): preserve TDZ for class expressions",
-  "scope": "Repairs the remaining module TDZ defect; final-head original anonymous-name control and full lint classification pending.",
-  "readiness": "PENDING_FULL_LINT",
-  "draft_creation_allowed": false,
+  "scope": "Repairs the remaining module TDZ defect; all original new/typeof/anonymous-name behaviors verified on final code head.",
+  "readiness": "DRAFT_CREATION_ALLOWED",
+  "draft_creation_allowed": true,
   "ready_for_review": false,
   "pr_number": null,
   "no_version_bump": true,
   "body_file": "body.md",
   "title_file": "title.txt",
   "validation": "validation.json",
-  "overlap_evidence": "../../planning/12007-11995-overlap-decision.json",
-  "full_lint_status": "pending; do not claim pass or add provisional gate counts",
+  "overlap_evidence": "prepublication-duplicate-check.json",
+  "full_lint_status": "Completed: exit1,33/137 failed,2 CI-only skips; baseline/environment attribution complete, not green.",
   "fragment_instruction": "Create changelog fragment only after actual PR number is assigned.",
-  "code_ready": false,
-  "publication_instruction": "Do not push, create a PR, or imply a PR number until mandatory full lint has completed and all results are classified."
+  "code_ready": true,
+  "publication_instruction": "Local publisher may create one draft from the exact fork head. Return actual PR number in inbox; cloud adds numbered fragment and validates resulting exact head before readiness.",
+  "fork_head_verified": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "checked_at": "2026-10-12T06:50:04.963127+00:00"
 }

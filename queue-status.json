@@ -128,10 +128,13 @@
         12007
       ],
       "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-      "state": "Exact corrected-head trio and both no-auto acceptance witnesses PASS; full lint running",
-      "draft_creation_allowed": false,
+      "state": "Fork head verified; draft creation allowed; awaiting actual PR number and numbered fragment",
+      "draft_creation_allowed": true,
       "ready_for_review": false,
-      "packet": "publication/12007/metadata.json"
+      "packet": "publication/12007/metadata.json",
+      "publisher_actions": [
+        "Create draft using publication/12007 title/body, base main, exact fork head765a94d; record PR number in inbox"
+      ]
     },
     {
       "issues": [
@@ -139,7 +142,7 @@
       ],
       "head": "bb154789600c483aaaf305bc6879ba2a62f71fc8",
       "branch": "cloud/issue-11519-byte-family-tostring",
-      "state": "committed and source-cleared; compiled acceptance/full lint queued",
+      "state": "Serial validation starting; candidate checks pending",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/11519/metadata.json"
@@ -172,7 +175,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
   "actual_prs_created_in_continuation": 3,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T06:39:50.884740+00:00",
+  "updated_at": "2026-10-12T06:50:04.963127+00:00",
   "publisher_inbox_checked_at": "2026-10-12T06:39:50.884740+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

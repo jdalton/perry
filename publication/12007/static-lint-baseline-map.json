@@ -1,0 +1,485 @@
+{
+  "issue": 12007,
+  "purpose": "Preliminary attribution for completed static failures only; verifier owns final totals/classification of non-static and environment-gated failures.",
+  "candidate_commit": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "candidate_parent": "d74498b261d087a301b80602835bc7199a067957",
+  "candidate_lint_log": "/workspace/work/perry-queue/12007-full-lint-765a94.log",
+  "baseline_lint_log": "/workspace/work/perry-queue/baseline-script-lint.log",
+  "baseline_reference": "Existing full script-lint capture from d744 base; failure records compared command-for-command after normalizing only checkout path.",
+  "static_failure_records": [
+    {
+      "gate": "Check formatting",
+      "command": "cargo fmt --all -- --check",
+      "classification": "baseline_exact",
+      "candidate_log_line": 50,
+      "baseline_log_line": 53,
+      "normalized_record_sha256": "28ab224910a3c38bd677cdaf3ab57d1d22ec518e0af00b64388d1941405a7b23",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Buffer layout zero-debt gate",
+      "command": "./scripts/check_buffer_layout.sh --self-test && ./scripts/check_buffer_layout.sh",
+      "classification": "baseline_exact",
+      "candidate_log_line": 83,
+      "baseline_log_line": 86,
+      "normalized_record_sha256": "9d0f6cf78893216bfb8dc18759ad8440e188e42915787b7710b341ce84519da1",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Local binding type-proof audit",
+      "command": "python3 scripts/local_binding_type_audit.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 91,
+      "baseline_log_line": 94,
+      "normalized_record_sha256": "c0228ff072dbea62af4da74f7f9266919d3f66fd269271d4779ac263d2f1e963",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "GC store-site inventory",
+      "command": "python3 scripts/gc_store_site_inventory.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 97,
+      "baseline_log_line": 100,
+      "normalized_record_sha256": "ea5e39bc86fe003392c46932625db54056cb279c636a7ef5c361e6d981af79cc",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Address-classification audit",
+      "command": "python3 scripts/addr_class_inventory.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 105,
+      "baseline_log_line": 108,
+      "normalized_record_sha256": "a5742c7cc384162170a4a441f05cb33aa008d4dbbdf942609600150319667141",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "String payload-access inventory",
+      "command": "python3 scripts/string_payload_access_inventory.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 116,
+      "baseline_log_line": 119,
+      "normalized_record_sha256": "8cd901bb086639054c1b5ae9912cccbc34ff3db4a746858339eb6f7387178807",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "SSO string-unboxing inventory",
+      "command": "python3 scripts/sso_unbox_inventory.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 124,
+      "baseline_log_line": 127,
+      "normalized_record_sha256": "87afbee9e8556a9e8b9dad716641f0691136d85d2f013fc6339f0ee75ab272b9",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Object-header shape-descriptor census",
+      "command": "python3 scripts/shape_descriptor_census.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 132,
+      "baseline_log_line": 135,
+      "normalized_record_sha256": "141e85ae8b31f12c80675b377a2b07848fe1c852d7eb2c4973f9f2be0bda9b1b",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Runtime GC-pointer holder custody audit",
+      "command": "python3 scripts/gc_runtime_root_holders.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 144,
+      "baseline_log_line": 147,
+      "normalized_record_sha256": "2a08495100472ab9029c4fb24d4923292196f3506288fbb2bd29aca1a186d1ae",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Thread-exit custody of address-keyed globals (#11471)",
+      "command": "python3 scripts/thread_exit_address_globals.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 152,
+      "baseline_log_line": 155,
+      "normalized_record_sha256": "93a5189d97068d829283e20164d85a3a8744acfda76cf7b415f5b0bc9715f1b7",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Registry lifetime audit (#11511)",
+      "command": "python3 scripts/registry_lifetime_check.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 160,
+      "baseline_log_line": 163,
+      "normalized_record_sha256": "c9e42d25e7c4a661a1ae3c603a41ddb031c0df80ea7786c0e6f8a40a9cd94481",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "GC environment-knob drift audit",
+      "command": "python3 scripts/check_gc_env_knobs.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 176,
+      "baseline_log_line": 179,
+      "normalized_record_sha256": "8543ff6a12b332695e719d7d7388d0207cf4f00589f95499646c303953ab61c0",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "GC documentation claim audit",
+      "command": "python3 scripts/check_gc_doc_claims.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 189,
+      "baseline_log_line": 192,
+      "normalized_record_sha256": "efb0fee1afd6757a5120525e6eb6f6f87a0536264960468ed8d95159aab51cc6",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Windows-portable text I/O in the Windows-CI audits",
+      "command": "python3 scripts/check_locale_independent_io.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 194,
+      "baseline_log_line": 197,
+      "normalized_record_sha256": "8210b70d29cb8a4d0cd70df3cd87eb3f3d5b3524db24c96bf181c16d7bfdb516",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Native runtime ABI consistency",
+      "command": "python3 scripts/runtime_abi_check.py --check-wasm-abi",
+      "classification": "baseline_exact",
+      "candidate_log_line": 203,
+      "baseline_log_line": 206,
+      "normalized_record_sha256": "97e99e1692fd3eedc894edb7c18b5c315c872f1b156ce9693d229b40f65cedef",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Raw-handle debt ratchet",
+      "command": "python3 scripts/raw_handle_debt.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 212,
+      "baseline_log_line": 215,
+      "normalized_record_sha256": "2ae1b75d98c164d50df1d4e676dfd05d2bb7bac0408679fb0657f6d61217be9f",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py --self-test",
+      "classification": "baseline_exact",
+      "candidate_log_line": 219,
+      "baseline_log_line": 222,
+      "normalized_record_sha256": "faa7642e1caca805d6650bb968aff70da8cbe00c29cda5777cde03dea654fd67",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 221,
+      "baseline_log_line": 224,
+      "normalized_record_sha256": "0d7123299d9f6f3e5626abbb40e9d9e58c5546b7aebd9742359e782b92f5b3a0",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Unrooted-local shape ratchet",
+      "command": "python3 scripts/unrooted_local_shape.py --check",
+      "classification": "baseline_exact",
+      "candidate_log_line": 229,
+      "baseline_log_line": 232,
+      "normalized_record_sha256": "3bdd676f502b316ee2cb790ed62fab4225d139270001f264d83d7599dc5c96e0",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Unrooted-local shape ratchet vs. merge base",
+      "command": "python3 scripts/unrooted_local_shape.py --no-raise-vs \"$BASE_SHA\"",
+      "classification": "baseline_exact",
+      "candidate_log_line": 236,
+      "baseline_log_line": 239,
+      "normalized_record_sha256": "f185641bddacf12a4224e765fd7d5decbc0de94812de9dc643ab1e86b0530f17",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py --self-test",
+      "classification": "baseline_exact",
+      "candidate_log_line": 251,
+      "baseline_log_line": 254,
+      "normalized_record_sha256": "dbc40ae956481b75d42ab5d5449a935cd49cdc480d53dca977b54466aa783d38",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 258,
+      "baseline_log_line": 261,
+      "normalized_record_sha256": "fe8894e68df03f1cb22eabffd145091c53baf8daf0cdece16a394af26c788cd5",
+      "baseline_exact_match": true
+    },
+    {
+      "gate": "Per-test global sinks",
+      "command": "python3 scripts/global_sink_isolation.py",
+      "classification": "baseline_exact",
+      "candidate_log_line": 267,
+      "baseline_log_line": 270,
+      "normalized_record_sha256": "6001ea8c31700e384179275efb212ca9995e1d1a556a1795f341d8af7984d621",
+      "baseline_exact_match": true
+    }
+  ],
+  "source_blob_crosscheck": {
+    "candidate_changed_paths": [
+      "crates/perry-hir/src/lower/lower_module_fn.rs",
+      "crates/perry-hir/src/lower/tests/class_expr_naming_and_shadowing.rs",
+      "test-files/_helpers/issue_12007_anonymous_self_tdz.ts",
+      "test-files/_helpers/issue_12007_cycle_a.ts",
+      "test-files/_helpers/issue_12007_cycle_b.ts",
+      "test-files/test_gap_12007_class_expression_tdz.ts"
+    ],
+    "all_logged_paths_present_and_same_blob": [
+      {
+        "path": "crates/perry-codegen/src/codegen/arguments.rs",
+        "blob": "87f46563e889c1057027e9531ec3f66b2810520c"
+      },
+      {
+        "path": "crates/perry-codegen/src/expr/property_get.rs",
+        "blob": "5710caae6979ff4d3a208eb9cbdf36a57fd833ba"
+      },
+      {
+        "path": "crates/perry-codegen/src/expr/property_get/generic_dispatch.rs",
+        "blob": "94feabd78994e9f69d6899261038e8bcf5fbcdb2"
+      },
+      {
+        "path": "crates/perry-codegen/src/expr/put_value_store_ic.rs",
+        "blob": "a5033b92acdd60813b341d40426806a5f219708b"
+      },
+      {
+        "path": "crates/perry-codegen/src/expr/shape_chain.rs",
+        "blob": "3a8430169a1a817f07febdec10a2f6876262ba97"
+      },
+      {
+        "path": "crates/perry-codegen/src/lower_call/new_alloc.rs",
+        "blob": "c8165d74804ac16e3ed183ba1b0cca64ae41e43e"
+      },
+      {
+        "path": "crates/perry-codegen/src/wasm32/runtime_abi.tsv",
+        "blob": "d9de7dfd7c053a53f2686a363fe724c1f774fc8b"
+      },
+      {
+        "path": "crates/perry-ext-cheerio/src/lib.rs",
+        "blob": "5678a2c69b6f1bb27eb0b9e6e6dad1d0be9fc05c"
+      },
+      {
+        "path": "crates/perry-ext-sharp/src/lib.rs",
+        "blob": "d63a1fd67aec92e91f1632a5933461c951f50669"
+      },
+      {
+        "path": "crates/perry-ext-zlib/src/stream/allocation.rs",
+        "blob": "1bc45d0bf88c8f673714303b9f1090724c4ebff8"
+      },
+      {
+        "path": "crates/perry-runtime/src/arena/block.rs",
+        "blob": "9312915fc4fc52301c14883de709f2a8a13b94d0"
+      },
+      {
+        "path": "crates/perry-runtime/src/arena/old_sweep_quarantine.rs",
+        "blob": "18f5c2f89d13ab2dff61b402491ad0dad8ae3747"
+      },
+      {
+        "path": "crates/perry-runtime/src/arena/region.rs",
+        "blob": "a5a22e1c48d2ceb84858fc8f7018f691a2db454e"
+      },
+      {
+        "path": "crates/perry-runtime/src/arena/region/reservation.rs",
+        "blob": "dbb9d6b85d6fd9392c1a92e1852f3db04ef0893b"
+      },
+      {
+        "path": "crates/perry-runtime/src/buffer/header.rs",
+        "blob": "5d91eff4eeb6c0b5f5ea3b528473a44a76373189"
+      },
+      {
+        "path": "crates/perry-runtime/src/buffer/store/layout.rs",
+        "blob": "2e5e086199e42c1f1e2585685d302ef4b6491d0e"
+      },
+      {
+        "path": "crates/perry-runtime/src/gc/tests/canonical_keys_minor_prune.rs",
+        "blob": "708f736ca59c9b70d053fe40daa5ec377444a5aa"
+      },
+      {
+        "path": "crates/perry-runtime/src/gc/tests/rooted_array_accessors.rs",
+        "blob": "744cb8d6dd38db3b37c740b6ac68e11980a43d92"
+      },
+      {
+        "path": "crates/perry-runtime/src/node_stream_readwrite.rs",
+        "blob": "01e3bddaaa4db451719b2549aa14c4643d0ee709"
+      },
+      {
+        "path": "crates/perry-runtime/src/object/class_registry/class_meta.rs",
+        "blob": "521fd3cba51a25ed5a467a7a1578c702e7762064"
+      },
+      {
+        "path": "crates/perry-runtime/src/object/dynamic_key_read/census.rs",
+        "blob": "d20d250d544a1b0db7844e1946de54d7e6acb7bd"
+      },
+      {
+        "path": "crates/perry-runtime/src/object/method_site.rs",
+        "blob": "443166703de898906095a3a97f994eceddb0402a"
+      },
+      {
+        "path": "crates/perry-runtime/src/object/mod.rs",
+        "blob": "a2fe6921dca58c1985f771351a95beae453fdefc"
+      },
+      {
+        "path": "crates/perry-runtime/src/object/property_key.rs",
+        "blob": "82ebb7d3fcccce17ae669d7a66a48327aff22104"
+      },
+      {
+        "path": "crates/perry-runtime/src/symbol/get.rs",
+        "blob": "5b8e325f6c59e1a7ca6bad815fef76454bcc622a"
+      },
+      {
+        "path": "crates/perry-runtime/src/symbol/properties.rs",
+        "blob": "54d20287d866289dad33e6d862c6cc76ee02e619"
+      },
+      {
+        "path": "crates/perry-runtime/src/thread/clone_write.rs",
+        "blob": "ed60801d9bb65b987e6fa761f079d655d6a23e6d"
+      },
+      {
+        "path": "crates/perry-runtime/src/value/dynamic_object.rs",
+        "blob": "bfc95b6f44f7b102fb4841c14e233b34d64c7841"
+      },
+      {
+        "path": "crates/perry-runtime/src/value/jsvalue.rs",
+        "blob": "2aa52b9daaf368b88b27f4e16287b9b0307bdb48"
+      },
+      {
+        "path": "crates/perry-runtime/src/weakref/storage.rs",
+        "blob": "164568cf1054e9ccff932cb60cee0d135b9b6534"
+      },
+      {
+        "path": "crates/perry-stdlib/src/cheerio.rs",
+        "blob": "463aecf3b45e1dad37a7baf52202d3032ab044a5"
+      },
+      {
+        "path": "crates/perry-stdlib/src/ethers.rs",
+        "blob": "04d8dd00b25332d7c378a3ca3a524bea393904e9"
+      },
+      {
+        "path": "crates/perry-stdlib/src/tls.rs",
+        "blob": "6d08549f73239b9b0d4d4ae47538c7103470a488"
+      },
+      {
+        "path": "crates/perry-stdlib/src/worker_threads/worker_surface.rs",
+        "blob": "16876dddf9431d764be6bae11a61ace6772af8b0"
+      },
+      {
+        "path": "docs/src/internals/garbage-collector.md",
+        "blob": "e80db355431ae737992867405619b9af94206a88"
+      },
+      {
+        "path": "docs/src/internals/gc-rooting-invariant.md",
+        "blob": "58829a952dc3d0748619b57a020f97aab61f3ded"
+      },
+      {
+        "path": "docs/src/internals/weakmap-owned-index-validation.md",
+        "blob": "ff5e5383935ba4e753f50aeeed80f574a7fc86f3"
+      },
+      {
+        "path": "scripts/addr_class_allowlist.txt",
+        "blob": "da0209e7d5eee1cc8f8b25db56ffa1d06f55a866"
+      },
+      {
+        "path": "scripts/addr_class_inventory.py",
+        "blob": "53326e59bdd872f5ddcb2802f351b71c9cec0188"
+      },
+      {
+        "path": "scripts/check_gc_doc_claims.py",
+        "blob": "dc1005744633ce9d6104cab448de5200604052ca"
+      },
+      {
+        "path": "scripts/check_gc_env_knobs.py",
+        "blob": "34e9b3127d12baf75db4deb16d7fe943b833899f"
+      },
+      {
+        "path": "scripts/check_locale_independent_io.py",
+        "blob": "31deb64cdbe542783741662bf8e8aa7cf2de2406"
+      },
+      {
+        "path": "scripts/check_test_registration.py",
+        "blob": "0867ec3fec848e042d0524530a0e4909168687a2"
+      },
+      {
+        "path": "scripts/gc_runtime_root_holders.py",
+        "blob": "63245d910574fee585af37b9690add710dc2f743"
+      },
+      {
+        "path": "scripts/gc_store_site_inventory.py",
+        "blob": "d9f70384ada5857d62b6c79360bd52574ba4d865"
+      },
+      {
+        "path": "scripts/global_sink_isolation.py",
+        "blob": "de99618bc0f613b1dd90293aef396f06281b7e22"
+      },
+      {
+        "path": "scripts/local_binding_type_audit.py",
+        "blob": "cb7fbe5001855623c7d57d0ddf818f5902dc8147"
+      },
+      {
+        "path": "scripts/native_handle_ledger.py",
+        "blob": "b67f5256421ae5f8c2bfa1ea449639b671fea5b2"
+      },
+      {
+        "path": "scripts/raw_handle_debt.py",
+        "blob": "6a3d0618f62e082662e24a40133520b8b3068367"
+      },
+      {
+        "path": "scripts/registry_lifetime_allowlist.json",
+        "blob": "b0523a1d09f10b6e13428facd1376acc4d320865"
+      },
+      {
+        "path": "scripts/registry_lifetime_check.py",
+        "blob": "1f24ffa578a09e660f995c748e9c7057745cc61a"
+      },
+      {
+        "path": "scripts/runtime_abi_check.py",
+        "blob": "59b81e4a7fad67c1d57e7059da2122ebdd006a01"
+      },
+      {
+        "path": "scripts/shape_descriptor_census.py",
+        "blob": "2f5f3912f982d4f81df68d524ff54e7e2267e4e2"
+      },
+      {
+        "path": "scripts/sso_unbox_inventory.py",
+        "blob": "7de102fee6fe7a8de572653184b5b094fd81a198"
+      },
+      {
+        "path": "scripts/string_payload_access_inventory.py",
+        "blob": "1aa1140ad5229216d44d584e6f9cbc21029913c8"
+      },
+      {
+        "path": "scripts/thread_exit_address_globals.py",
+        "blob": "3de03220490326688f267fe781ccc4c9febefed0"
+      },
+      {
+        "path": "scripts/unrooted_local_shape.py",
+        "blob": "69b644e7c0887d5e0dea017d3d6dcfe2959dd8fd"
+      },
+      {
+        "path": "scripts/wasi_acceptance/exception_boundaries.json",
+        "blob": "04e3a747ad3fd9129ad166247144aba79e193fff"
+      },
+      {
+        "path": "scripts/wasi_acceptance/thread_fallback.json",
+        "blob": "04e3a747ad3fd9129ad166247144aba79e193fff"
+      }
+    ],
+    "missing_or_documented_nonexistent_paths": [
+      ".github/workflows/gc-root-dominance.yml",
+      "docs/src/testing/test-registration.md.",
+      "scripts/gc_runtime_root_holders.json.",
+      "scripts/gc_store_site_allowlist.txt.",
+      "scripts/raw_handle_debt_files.txt."
+    ],
+    "changed_logged_paths": [],
+    "interpretation": "Issue change is only HIR lowering/test coverage (six changed paths total). No reported static-gate source path or checker file changed. The exact candidate/baseline failure text also matches for every mapped record."
+  },
+  "12439_baseline_context": {
+    "file": "planning/12439-ci-baseline-attribution.json",
+    "summary": "39/39 unique compiler warning errors and 16/16 TLS rows were reproduced as exact baseline diagnostics in the saved audit.",
+    "limit": "Separate CI warning/TLS evidence; not used to infer these static script-gate classifications."
+  },
+  "not_mapped_here": [
+    "Bun benchmark artifact zero-RSS sample and release/platform test failures: not static; exact causal attribution is uncertain and verifier owns final classification.",
+    "rustup/toolchain, xwin CRT, and pip/PyYAML EPERM/download failures: environment-dependent; verifier owns authorized reruns."
+  ],
+  "actions": "Read-only log/source comparison only. No test, lint, build, or rerun launched."
+}

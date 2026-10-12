@@ -68,17 +68,18 @@
       "task": "/root/luna_class_tdz",
       "branch": "cloud/issue-12007-class-expression-tdz",
       "worktree": "/workspace/work/perry-queue/issue-12007",
-      "validation": "Exact765a94d matching trio PASS; aggregate no-auto Node parity PASS; separate direct ReferenceError subprocess PASS; unchanged-source HIR unit1pass reused; full lint running",
-      "merge_state": "no PR",
+      "validation": "Exact matching dev trio, no-auto compiled fixtures/original probes and pinned Node parity PASS; full lint33/137 failures2skip baseline/environment classified; docs source-proven baseline drift; xwinproxy403. Not green.",
+      "merge_state": "NO PR",
       "closure_state": "OPEN",
       "evidence": "issue12007-status.json; refreshed 25 open PR inventories with no exact-path overlap",
-      "refreshed_at": "2026-10-12T05:49:51.789068+00:00",
-      "publication_state": "Exact-head validation authorized after fresh OPEN state and11995 ancestor/scope exclusion check",
+      "refreshed_at": "2026-10-12T06:50:19.066680+00:00",
+      "publication_state": "Draft creation allowed; no PR yet; actual-number fragment and final-head validation pending",
       "current_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
       "has_uncommitted_changes": false,
       "remaining": "Serial matching build, compiled acceptance and full lint in fixed issue-9927 validation checkout after12285 releases",
       "validation_owner": "/root/luna_verification",
-      "worktree_state": "Redundant canonical checkout retired; branch/tree/source bundle retained; active validation in issue-9927"
+      "worktree_state": "Redundant canonical checkout retired; branch/tree/source bundle retained; active validation in issue-9927",
+      "pushed_commit": "765a94d31e9b129641c5046c65b06624c6ad7358"
     },
     {
       "issue": 10198,
