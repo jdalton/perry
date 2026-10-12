@@ -291,16 +291,16 @@
       "worktree": "/workspace/work/perry-queue/issue-10027",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "base_tree": "296f53dedd6f4d0461bb60c629cb8946a939244f",
-      "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
-      "tree": "b1fed386e21c170783d9f1ee2f070c248ce495f9",
+      "current_head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
+      "tree": "ed7a99f7bb8bb1c151d4f7c016cf7264f9bb68bb",
       "has_uncommitted_changes": false,
-      "validation": "Exact9d6973c focused regression compiles and links, then fails exit1: TypeError: value is not a function. Previous b678 focused link failure and parent-reported trio pass are older-head evidence only. No 9d trio, broader acceptance, parity, auto-opt, or full lint.",
+      "validation": "Exact canonical head6f21d9c: the gc_init retry removed the prior TypeError and reached callback assertions, but the first client-text case failed because the payload address did not move across forced GC (tests.rs:395; exit101). Binary-client and server-fallback cases were not reached. This is a focused regression failure, not acceptance; no trio/parity/auto/full lint or MB24 retest at this head. Candidate remains open/uncovered/unpublished; retain 9d and diagnostic-branch attempts separately.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T14:13:40Z",
-      "evidence": "planning/10027-9d6973-current-failure.json",
-      "publication_state": "Committed candidate remains local/unpublished; focused runtime regression fails and owner is diagnosing. No coverage or publication readiness.",
-      "remaining": "Resolve runtime TypeError, then obtain authorized exact-head acceptance; MB24 browser retest remains required before closure."
+      "refreshed_at": "2026-10-12T14:26:21Z",
+      "evidence": "planning/10027-6f21-parked-status.json",
+      "publication_state": "Parked focused runtime failure at 6f21d9c; no PR, coverage or publication readiness.",
+      "remaining": "Payload movement assertion must pass on an authorized exact head before broader acceptance; MB24 browser retest remains required before closure."
     },
     {
       "issue": 12145,
@@ -320,11 +320,11 @@
       "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
       "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "validation": "Exact22726: fresh trio,37 focused controls, production integration1/1 PASS. Full lint exit124 at30-minute cap during API docs release build; 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete and unclassified. New exact head2e094 changes only timer/store checker parsing; static A/B findings match base (12/70), but no build/runtime validation on this head.",
+      "validation": "Exact2e094: fresh matching trio PASS; 37 focused controls PASS (19 store,14 inline timer,3 agent,1 thread exit); production integration1/1 PASS. Full run_lint_gates.sh started 2026-10-12T14:26:21Z with 30-minute hard deadline14:56:21Z; currently running, result/classification pending.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T13:52:16Z",
-      "evidence": "planning/12145-full-lint-cap-milestone.json; 12145-227-final-validation.json; 12145-227-trio.sha256; 12145-227-production-integration.log; 12145-38a-validation-result.json; /workspace/work/perry-queue/12145-full-lint.log",
+      "refreshed_at": "2026-10-12T14:26:21Z",
+      "evidence": "planning/12145-2e-full-lint-start.json; /workspace/work/perry-queue/12145-2e-trio.run.json; /workspace/work/perry-queue/12145-2e-production-integration.run.json",
       "publication_state": "Unvalidated source update at2e094; full lint on prior head22726 was capped/incomplete. Draft creation and review readiness false; no PR authorization.",
       "remaining": "Obtain serial authorization for fresh exact-head 2e094 build and focused acceptance, then complete/classify required lint; no publication until all gates are reviewed."
     }

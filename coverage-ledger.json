@@ -1,6 +1,6 @@
 {
   "cohort": "original224",
-  "state_observed_at": "2026-10-12T14:13:40Z",
+  "state_observed_at": "2026-10-12T14:26:21Z",
   "classification_updated_at": "2026-10-12T14:03:07Z",
   "counts": {
     "covered": 22,
@@ -505,11 +505,11 @@
         "branch": "cloud/issue-12145-primary-timer-scan",
         "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
         "has_uncommitted_changes": false,
-        "validation": "Exact22726: fresh trio,37 focused controls, production integration1/1 PASS. Full lint exit124 at30-minute cap during API docs release build; 137 rows parsed (104 ok,31 fail,2 skip), no footer, incomplete and unclassified. New exact head2e094 changes only timer/store checker parsing; static A/B findings match base (12/70), but no build/runtime validation on this head.",
+        "validation": "Exact2e094 fresh trio,37 focused controls,production integration1/1 PASS; full lint running from14:26:21Z to14:56:21Z cap, final result/classification pending.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
         "publication_state": "Unvalidated source update; no PR or coverage credit.",
-        "evidence": "planning/12145-full-lint-cap-milestone.json"
+        "evidence": "planning/12145-2e-full-lint-start.json"
       }
     },
     {
@@ -1748,13 +1748,13 @@
         "owner": "cloud /root",
         "task": "/root",
         "branch": "cloud/issue-10027-root-ws-dispatch",
-        "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+        "current_head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
         "has_uncommitted_changes": false,
-        "validation": "Exact9d6973c focused regression compiles and links, then fails exit1: TypeError: value is not a function. Previous b678 results are older-head evidence only; no broader acceptance or full lint.",
+        "validation": "Exact canonical head6f21d9c: the gc_init retry removed the prior TypeError and reached callback assertions, but the first client-text case failed because the payload address did not move across forced GC (tests.rs:395; exit101). Binary-client and server-fallback cases were not reached. This is a focused regression failure, not acceptance; no trio/parity/auto/full lint or MB24 retest at this head. Candidate remains open/uncovered/unpublished; retain 9d and diagnostic-branch attempts separately.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Local candidate; focused runtime regression failing and owner diagnosing.",
-        "evidence": "planning/10027-9d6973-current-failure.json"
+        "publication_state": "Parked focused runtime failure; no PR or coverage credit.",
+        "evidence": "planning/10027-6f21-parked-status.json"
       }
     },
     {

@@ -1,0 +1,49 @@
+{
+  "issue": 12145,
+  "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "checked_at": "2026-10-12T14:26:21Z",
+  "fresh_matching_trio": {
+    "result": "PASS",
+    "started_at": "2026-10-12T14:18:32Z",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12145-2e-trio.log"
+  },
+  "focused_controls": {
+    "result": "PASS",
+    "tests": {
+      "store": 19,
+      "inline_timer": 14,
+      "agent": 3,
+      "thread_exit": 1
+    },
+    "total": 37,
+    "logs": [
+      "/workspace/work/perry-queue/12145-2e-store-tests.log",
+      "/workspace/work/perry-queue/12145-2e-timer-inline.log",
+      "/workspace/work/perry-queue/12145-2e-agent-tests.log",
+      "/workspace/work/perry-queue/12145-2e-thread-exit-tests.log"
+    ]
+  },
+  "production_integration": {
+    "result": "PASS",
+    "passed": 1,
+    "failed": 0,
+    "started_at": "2026-10-12T14:22:51Z",
+    "log": "/workspace/work/perry-queue/12145-2e-production-integration.log"
+  },
+  "full_lint": {
+    "command": "timeout -s TERM -k 30s 1800s bash scripts/run_lint_gates.sh",
+    "started_at": "2026-10-12T14:26:21Z",
+    "hard_deadline": "2026-10-12T14:56:21Z",
+    "kill_grace_seconds": 30,
+    "status": "RUNNING; final exit and classification pending",
+    "log": "/workspace/work/perry-queue/12145-2e-full-lint.log",
+    "started_marker": "/workspace/work/perry-queue/12145-2e-full-lint.started",
+    "ready_for_review": false
+  },
+  "coverage": "uncovered",
+  "pr_creation_allowed": false,
+  "ready_for_review": false
+}

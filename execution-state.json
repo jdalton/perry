@@ -1,14 +1,13 @@
 {
-  "updated_at": "2026-10-12T14:13:40Z",
+  "updated_at": "2026-10-12T14:26:21Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Continue bounded #10027 runtime TypeError diagnosis; do not reuse b678 trio or start broader checks before a fix and serial authorization.",
-    "After diagnosis, rerun fresh matching trio and focused acceptance, followed by authorized parity/full lint and MB24 browser retest.",
-    "Revalidate #12145 exact2e094; previous22726 lint was incomplete at the 30-minute cap.",
-    "#12471 ready packet is published; live PR remains open/draft pending publisher."
+    "Complete exact2e094 full lint and classify every gate by14:56:21Z cap.",
+    "Keep #10027 parked at6f21d9c pending further source-owner diagnosis/authorization; payload movement assertion failed.",
+    "#12471 ready packet remains published; live PR open/draft."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -24,10 +23,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#10027 exact9d6973c focused regression compiles/links but fails at runtime: TypeError: value is not a function. Owner diagnosing; no broader acceptance/full lint. Evidence planning/10027-9d6973-current-failure.json.",
-    "#12145 exact2e094 has only static A/B equivalence; no exact-head build/runtime. Prior22726 full lint was capped and incomplete.",
-    "#12202/#12471 ready-for-review handoff exact dfd64; live PR open/draft, publisher action pending.",
-    "#11915 parked open/unresolved/unpublished at e190."
+    "#12145 exact2e094: trio PASS; 37 focused controls and production integration PASS; full lint running started14:26:21Z, cap14:56:21Z; outcome pending.",
+    "#10027 exact6f21d9c parked after client-text payload-address-movement assertion failed at tests.rs:395; gc_init resolved previous TypeError but acceptance fails. No broader tests.",
+    "#12202/#12471 ready-for-review packet exact dfd64; live PR remains open/draft.",
+    "#11915 remains parked open/unresolved/unpublished at e190."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -149,12 +148,12 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": 10027,
+  "current_serial_issue": 12145,
   "serial_pending": [
-    "#10027 exact9d6973c focused runtime regression compiles/links but fails exit1 with TypeError: value is not a function; verifier stopped and class owner diagnosing. No broader acceptance at this head.",
-    "#12145 exact2e094 current source has only static A/B equivalence; exact-head build/runtime and full lint remain pending. Prior22726 full lint stopped at cap and is incomplete.",
-    "#12471 exact dfd64 packet ready for review; live PR remains open/draft until publisher transition.",
-    "#11915 parked open/unresolved/unpublished at e190; further runs unauthorized."
+    "#12145 exact2e094 full lint running from14:26:21Z to14:56:21Z cap; trio,37 focused controls,production integration passed.",
+    "#10027 exact6f21d9c parked after focused payload-address-movement assertion failure; no broader acceptance.",
+    "#12471 exact dfd64 ready packet; open/draft PR.",
+    "#11915 parked at e190."
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -164,14 +163,17 @@
   "validation_policy": "#12202 exact dfd64 numbered-fragment head has fresh trio,53 unique runtime tests/55 executions, no-auto Node26.5.1 parity, and fragment gates PASS. Auto-opt and full lint are explicitly reused from unchanged source head2272; full lint is non-green with classified failures. The publisher-ready packet does not transition the live PR.",
   "serial_static_owner": null,
   "current_validation_progress": {
-    "issue": 10027,
-    "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
-    "status": "focused runtime regression failed after compile/link; owner diagnosing, no broader acceptance",
-    "diagnosis": "TypeError: value is not a function at <anonymous>",
-    "active_processes_at_slot_census": [],
-    "further_runs_authorized": false,
-    "next_lane": "Await source-owner diagnosis; 12145 remains exact-head validation pending later serial authorization",
-    "evidence": "planning/10027-9d6973-current-failure.json"
+    "issue": 12145,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "status": "full lint running under 30-minute cap",
+    "started_at": "2026-10-12T14:26:21Z",
+    "hard_deadline": "2026-10-12T14:56:21Z",
+    "prior_gates": {
+      "trio": "PASS",
+      "focused_controls": "37 PASS (19 store,14 inline timer,3 agent,1 thread exit)",
+      "production_integration": "1/1 PASS"
+    },
+    "evidence": "planning/12145-2e-full-lint-start.json"
   },
   "validation_resource_policy": {
     "full_lint_hard_cap_minutes": 30,
@@ -203,11 +205,13 @@
   },
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T14:13:40Z",
-    "next_task": "Verifier stopped after focused #10027 failure; class owner diagnosing.",
-    "active_validation_processes": [],
-    "census_clean": true,
-    "evidence": "planning/10027-9d6973-current-failure.json"
+    "checked_at": "2026-10-12T14:26:21Z",
+    "next_task": "Complete/classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
+    "active_validation_processes": [
+      "run_lint_gates.sh for #12145 exact2e094"
+    ],
+    "census_clean": false,
+    "evidence": "planning/12145-2e-full-lint-start.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -234,12 +238,16 @@
   },
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
-    "issue": 10027,
-    "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
-    "gate": "focused moving-GC WebSocket listener/payload regression",
-    "status": "FAIL exit1 after compile and link pass: TypeError: value is not a function. No broader acceptance/full lint. Verifier stopped; class owner diagnosing.",
-    "evidence": "planning/10027-9d6973-current-failure.json",
-    "active_processes": []
+    "issue": 12145,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "gate": "full scripts/run_lint_gates.sh (128-command/75-step inventory)",
+    "started_at": "2026-10-12T14:26:21Z",
+    "hard_deadline": "2026-10-12T14:56:21Z",
+    "cap_seconds": 1800,
+    "kill_grace_seconds": 30,
+    "owner": "cloud /root/luna_verification",
+    "status": "RUNNING; exact-head trio,37 focused controls,and production integration passed; full lint final result and classification pending.",
+    "evidence": "planning/12145-2e-full-lint-start.json"
   },
   "publisher_inbox_refresh": {
     "observed_at": "2026-10-12T14:13:40Z",
@@ -277,45 +285,53 @@
     "closed": 44
   },
   "current_validation_results": {
-    "issue": 10027,
-    "checked_at": "2026-10-12T14:13:40Z",
-    "branch": "cloud/issue-10027-root-ws-dispatch",
+    "issue": 12145,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
     "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-    "current_head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
-    "tree": "b1fed386e21c170783d9f1ee2f070c248ce495f9",
-    "worktree": "/workspace/work/perry-queue/issue-10027",
-    "worktree_clean": true,
-    "previous_head": {
-      "head": "b678eadbdc87741bbd9068a3db3042827fb08a6a",
-      "summary": "Removed unavailable empty GC test frame.",
-      "focused_test": "Compile completed but link failed because test symbols promise_new, resolve_bits, reject_deferred were missing. Parent reports matching trio passed at b678; this is prior-head evidence only and is not inherited by 9d6973c."
+    "checked_at": "2026-10-12T14:26:21Z",
+    "fresh_matching_trio": {
+      "result": "PASS",
+      "started_at": "2026-10-12T14:18:32Z",
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-trio.log"
     },
-    "current_head_validation": {
-      "focused_command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
-      "compile_and_link": "PASS",
-      "runtime_test": "FAIL exit1; TypeError: value is not a function at <anonymous>",
-      "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.log",
-      "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.run.json",
-      "no_capture_exit": 1,
-      "first_focused_attempt": {
-        "exit": 1,
-        "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.log",
-        "run_record": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.run.json"
-      }
+    "focused_controls": {
+      "result": "PASS",
+      "tests": {
+        "store": 19,
+        "inline_timer": 14,
+        "agent": 3,
+        "thread_exit": 1
+      },
+      "total": 37,
+      "logs": [
+        "/workspace/work/perry-queue/12145-2e-store-tests.log",
+        "/workspace/work/perry-queue/12145-2e-timer-inline.log",
+        "/workspace/work/perry-queue/12145-2e-agent-tests.log",
+        "/workspace/work/perry-queue/12145-2e-thread-exit-tests.log"
+      ]
     },
-    "acceptance": {
-      "fresh_trio": "NOT RUN at9d6973c",
-      "runtime_fixture_parity": "NOT RUN",
-      "auto_opt": "NOT RUN",
-      "full_lint": "NOT RUN",
-      "deployed_mb24_browser_retest": "NOT RUN; still required for whole-issue closure"
+    "production_integration": {
+      "result": "PASS",
+      "passed": 1,
+      "failed": 0,
+      "started_at": "2026-10-12T14:22:51Z",
+      "log": "/workspace/work/perry-queue/12145-2e-production-integration.log"
     },
-    "current_status": "Focused regression compiles and links at9d6973c but fails at runtime. Verifier stopped; class owner is diagnosing. No broader acceptance or coverage credit.",
+    "full_lint": {
+      "command": "timeout -s TERM -k 30s 1800s bash scripts/run_lint_gates.sh",
+      "started_at": "2026-10-12T14:26:21Z",
+      "hard_deadline": "2026-10-12T14:56:21Z",
+      "kill_grace_seconds": 30,
+      "status": "RUNNING; final exit and classification pending",
+      "log": "/workspace/work/perry-queue/12145-2e-full-lint.log",
+      "started_marker": "/workspace/work/perry-queue/12145-2e-full-lint.started",
+      "ready_for_review": false
+    },
     "coverage": "uncovered",
-    "issue_state": "OPEN",
-    "covering_prs": [],
-    "draft_creation_allowed": false,
+    "pr_creation_allowed": false,
     "ready_for_review": false
   },
-  "active_source_issue": 10027
+  "active_source_issue": 12145
 }

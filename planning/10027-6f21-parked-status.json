@@ -1,0 +1,114 @@
+{
+  "issue": 10027,
+  "head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
+  "base_commit": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "checkout": "/workspace/work/perry-queue/issue-9927",
+  "status": "PARKED_FOCUSED_RUNTIME_FAILURE",
+  "attempts": [
+    {
+      "head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+      "command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --test-threads=1",
+      "exit_code": 101,
+      "test_executed": false,
+      "failure": "E0425 test references to missing perry_runtime::gc::js_shadow_frame_push/pop",
+      "log": "/workspace/work/perry-queue/10027-focused-moving-gc.log",
+      "metadata": "/workspace/work/perry-queue/10027-focused-moving-gc-run.json"
+    },
+    {
+      "head": "b678eadbdc87741bbd9068a3db3042827fb08a6a",
+      "command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --test-threads=1",
+      "exit_code": 101,
+      "test_executed": false,
+      "failure": "Linker undefined promise FFI symbols: perry_ffi_promise_reject_deferred, perry_ffi_promise_resolve_bits, perry_ffi_promise_new",
+      "log": "/workspace/work/perry-queue/10027-b678-focused-moving-gc.log",
+      "metadata": "/workspace/work/perry-queue/10027-b678-focused-moving-gc-run.json"
+    },
+    {
+      "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+      "command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --test-threads=1",
+      "exit_code": 1,
+      "test_executed": true,
+      "failure": "Test process exited abnormally; no detail without --nocapture",
+      "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.log",
+      "metadata": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc.run.json"
+    },
+    {
+      "head": "9d6973c6cc6a45461077b6e42c6ad21435ebbe87",
+      "command": "timeout --signal=TERM 120s cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
+      "exit_code": 1,
+      "test_executed": true,
+      "failure": "TypeError: value is not a function at <anonymous>",
+      "log": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.log",
+      "metadata": "/workspace/work/perry-queue/10027-9d6973-focused-moving-gc-nocapture.run.json"
+    },
+    {
+      "head": "59eee6dc05ad047b93dfb44f654f3d8689b50cbe",
+      "branch": "cloud/diag-10027-moving-gc",
+      "diagnostic_only": true,
+      "command": "timeout --signal=TERM 120s cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
+      "exit_code": 1,
+      "test_executed": true,
+      "failure": "After client-first callback and forced minor GC, dispatcher reaches client message listener index 1 then throws TypeError: value is not a function before second callback entry. Server fixture not reached.",
+      "log": "/workspace/work/perry-queue/10027-59eee6-diagnostic.log",
+      "metadata": "/workspace/work/perry-queue/10027-59eee6-diagnostic.run.json",
+      "exit_file": "/workspace/work/perry-queue/10027-59eee6-diagnostic.exit"
+    },
+    {
+      "head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
+      "command": "cargo test --locked -p perry-ext-ws --lib message_dispatch_roots_listener_snapshot_and_payload_across_moving_gc -- --nocapture --test-threads=1",
+      "exit_code": 101,
+      "test_executed": true,
+      "failure": "gc_init allowed the second listener path to run, but assertion at tests.rs:395 failed: payload address unchanged across forced GC (left==right 138910988501000).",
+      "log": "/workspace/work/perry-queue/10027-6f21-focused.log",
+      "metadata": "/workspace/work/perry-queue/10027-6f21-focused.run.json",
+      "exit_file": "/workspace/work/perry-queue/10027-6f21-focused.exit",
+      "case": "First subcase in test ordering: client text payload via message_dispatch_roots_move_for(..., binary=false). The binary-client and server-fallback cases were not reached.",
+      "interpretation": "gc_init removed the prior stale-callback TypeError; both listener calls now reach assertions, but payload pointer is unchanged across the forced minor collection. This is a failing relocation acceptance, not a pass."
+    }
+  ],
+  "trio_build": {
+    "head": "b678eadbdc87741bbd9068a3db3042827fb08a6a",
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "target": "/workspace/work/perry-queue/target-12390",
+    "profile": "dev",
+    "exit_code": 0,
+    "started_utc": "2026-10-12T14:07:31Z",
+    "duration": "3m11s",
+    "note": "Built before test-only source correction 9d6973c; product source did not change between b678 and 9d6973c. No test acceptance implied."
+  },
+  "acceptance": "Parked at 6f21d9c after the first client-text case fails payload-address movement. Callback and payload movement across all client text/binary and server fallback paths remains unaccepted. No further retries/fixes, no broad tests, no compiled parity, no full lint or deployed MB24 browser retest.",
+  "ownership": {
+    "source_changes_by_validator": false,
+    "diagnostic_branch_unpublishable": true,
+    "next_action": "Validation slot returned to #12145. Preserve 6f21d9c canonical source and 59eee6dc diagnostic branch; no PR authorization/readiness."
+  },
+  "checked_at_utc": "2026-10-12T14:20:00Z",
+  "relay_checked_at": "2026-10-12T14:26:21Z",
+  "diagnostic_branch_provenance": "59eee6dc is an isolated diagnostic branch only; not publishable, and not the canonical source head.",
+  "preserved_evidence": {
+    "10027-focused-validation-status.json": {
+      "sha256": "4221f2ca3f10c6d3c03ebf032ef06a740e8fe286f5002826017a11128ba838b9",
+      "bytes": 5541
+    },
+    "10027-6f21-focused.log": {
+      "sha256": "397d17ef65425620147a3dfc0ae2a4c2dd07a4db1e7b16b278e71f379111b305",
+      "bytes": 16818
+    },
+    "10027-6f21-focused.run.json": {
+      "sha256": "547b6dc21455eab1fe23ba96be555ac501e9ac5c9331289fa38aa5170a4f9290",
+      "bytes": 467
+    },
+    "10027-6f21-focused.exit": {
+      "sha256": "39b8dc3fc8b44765c8e6f1adee04c5b465e555ab791cc42d0d9e810d5b64297c",
+      "bytes": 4
+    },
+    "10027-9d6973-focused-moving-gc-nocapture.log": {
+      "sha256": "7ddbbf465e481fe4e78ea2a5e9fbca8d03bdc0106e4f24eae7b6091856fd62f1",
+      "bytes": 16086
+    },
+    "10027-59eee6-diagnostic.log": {
+      "sha256": "2eb46cbb20ad88191bdf2caa73e61caefb5c54003f6f9e4c9adb2c82a3e3e637",
+      "bytes": 16823
+    }
+  }
+}
