@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T04:46:58.886478+00:00",
+  "updated_at": "2026-10-12T04:47:42.099141+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
@@ -9,7 +9,13 @@
     "new_prs": [],
     "remaining": 20,
     "owner": "cloud implements; local coordinates and publishes",
-    "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf"
+    "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf",
+    "live_issue_snapshot": {
+      "repo_open": 188,
+      "original_closed": 40,
+      "original_open": 184,
+      "note": "Fresh API counts; substantial other-maintainer closures since prior ledger. Refresh candidate states and coverage before further work/publication."
+    }
   },
   "previous_pr": {
     "number": 12439,
