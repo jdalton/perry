@@ -3,7 +3,7 @@
   "title": "fix(runtime): preserve byte-view toString with short encodings",
   "head": {
     "branch": "cloud/issue-11519-byte-family-tostring",
-    "sha": "210e8b72caddf77d45de81cc5c731e7b58b7a453"
+    "sha": "5e41d1d8b19c030754975afeca52a9c277eda739"
   },
   "base": "main",
   "body_file": "/workspace/work/perry-queue/publication/11519/body.md",
@@ -23,7 +23,7 @@
     "baseline_repro": "/workspace/work/perry-queue/planning/next-candidates/11519-deferred-probe-plan.json"
   },
   "validation_pending": [
-    "rerun focused direct runtime test after E0308 test-only correction",
+    "run focused direct runtime test after unsafe-scope correction; prior compile reported E0133 at three bytes_mut calls",
     "candidate coherent dev trio build at exact head",
     "direct runtime unit test",
     "compiled fixture parity against pinned Node",
@@ -39,5 +39,5 @@
     "ready_for_review": false,
     "fragment": "Only after actual PR number is assigned."
   },
-  "candidate_test_correction_commit": "210e8b72caddf77d45de81cc5c731e7b58b7a453"
+  "candidate_test_correction_commit": "5e41d1d8b19c030754975afeca52a9c277eda739"
 }

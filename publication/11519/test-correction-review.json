@@ -6,5 +6,20 @@
   "api_correction": "js_get_string_pointer_unified accepts f64 and returns i64, not f64. Explicit cast to *const StringHeader matches read-only text helper.",
   "rooting": "Dispatcher result rooted as NaN-box f64 before unified conversion. SSO conversion may allocate; all receivers/encodings remain rooted. Materialized pointer immediately copied by text/str_from_string_header into Rust String with no intervening Perry GC allocation.",
   "assertions": "All AB/SAB/DataView short+heap hex inputs still assert canonical object tags; Buffer shorthex still asserts6869. No product source or assertion weakening.",
-  "validation": "No build executed by reviewer; original E0308 failure must remain recorded, new exact head requires focused test and resulting artifact acceptance."
+  "validation": "No build executed by reviewer; original E0308 failure must remain recorded, new exact head requires focused test and resulting artifact acceptance.",
+  "superseding_review": {
+    "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+    "scope": "Entire added buffer_dispatch_to_string_uses_object_tags_for_non_indexed_views test plus called helper APIs, not merely delta",
+    "verdict": "SOURCE_CLEAR_TO_RESUME_VALIDATION",
+    "previous_miss": "Earlier delta-only review missed three existing added-test unsafe bytes_mut calls; E0133 preserved by verifier",
+    "checks": [
+      "All three bytes_mut calls now inside documented unsafe blocks under no_gc with exclusive fresh views; SAB unshared with other threads",
+      "Allocation APIs/from_slice/short_string_unchecked safe signatures verified",
+      "All receiver, encoding, returned value lifetimes rooted; address reload per dispatch",
+      "NaN-box helper preserves already-boxed bits",
+      "Unified string pointer returns i64; explicit pointer cast correct, immediate Rust String copy before next Perry safepoint",
+      "Six object tag comparisons and Buffer6869 control unchanged; productsource unchanged"
+    ],
+    "tests_run": false
+  }
 }

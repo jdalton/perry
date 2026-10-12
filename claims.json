@@ -181,9 +181,9 @@
       "task": "/root/luna_verification",
       "branch": "cloud/issue-11519-byte-family-tostring",
       "worktree": "/workspace/work/perry-queue/issue-11519",
-      "current_head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
+      "current_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
       "has_uncommitted_changes": false,
-      "validation": "Priorbb154 matchingtrio and18case no-auto parity pass; unit-test compilation failed E0308. Corrected test-only210e8 Astra cleared; exact resulting-head checks pending.",
+      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
       "refreshed_at": "2026-10-12T05:02:36.635642+00:00",
@@ -234,7 +234,7 @@
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T06:56:56.305391+00:00",
+  "updated_at": "2026-10-12T07:09:12.204342+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

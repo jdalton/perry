@@ -140,14 +140,14 @@
       "issues": [
         11519
       ],
-      "head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
+      "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
       "branch": "cloud/issue-11519-byte-family-tostring",
-      "state": "Test-only correction committed/source-cleared; exact-head validation running",
+      "state": "Exact-head focused checks pass; defaultauto and full lint pending",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/11519/metadata.json",
-      "current_head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
-      "validation": "Priorbb154 matchingtrio and18case no-auto parity pass; unit-test compilation failed E0308. Corrected test-only210e8 Astra cleared; exact resulting-head checks pending."
+      "current_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained."
     },
     {
       "issues": [
@@ -177,7 +177,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
   "actual_prs_created_in_continuation": 3,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T06:56:56.305391+00:00",
+  "updated_at": "2026-10-12T07:09:12.204342+00:00",
   "publisher_inbox_checked_at": "2026-10-12T06:39:50.884740+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
