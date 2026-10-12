@@ -241,12 +241,12 @@
       "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "has_uncommitted_changes": false,
-      "state": "Static preflight clear; verifier-owned HIR test pending",
+      "state": "Blocked on candidate-sensitive Perry abort; source diagnosis required",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/next-candidates/11915-reflective-callee-go-plan.json",
-      "validation": "Scoped fmt/diff pass. Test-registration and file-size checks report unchanged baseline failures only; no candidate-specific blocker. HIR test not run yet.",
-      "packet": "planning/11915-resource-preflight-milestone-e190.json",
+      "validation": "HIR3 PASS; fresh trio PASS; fixture compile PASS; Perry exits134 at shapes_store_kind.rs:190. Node parity not run, auto/full lint not run.",
+      "packet": "planning/11915-e190-acceptance-status.json",
       "publisher_actions": []
     }
   ],
@@ -282,13 +282,13 @@
   },
   "draft_creation_packets_available": 1,
   "ready_transition_packets": 0,
-  "milestone_updated_at": "2026-10-12T12:35:19Z",
+  "milestone_updated_at": "2026-10-12T12:40:28Z",
   "latest_source_milestone": {
     "issue": 11915,
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
     "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
-    "status": "static-preflight-clear-awaiting-verifier-HIR-test",
-    "evidence": "planning/11915-resource-preflight-milestone-e190.json"
+    "status": "blocked-on-candidate-sensitive-runtime-abort",
+    "evidence": "planning/11915-e190-acceptance-status.json"
   },
   "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-source-milestone.json",
   "resource_milestone": {
@@ -303,5 +303,13 @@
     "slot_checked_at": "2026-10-12T12:36:28.989186+00:00",
     "active_processes": [],
     "next_task": "#11915 exact e190 fresh compiler/runtime-static/stdlib-static build and compiled fixture acceptance"
+  },
+  "current_validation_slot": {
+    "owner": "cloud /root/luna_verification",
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "target": "/workspace/work/perry-queue/target-12390",
+    "checked_at": "2026-10-12T12:40:28.644475+00:00",
+    "active_validation_processes": [],
+    "next_task": "bounded source/binary diagnosis by Luna_class only; no heavy build"
   }
 }

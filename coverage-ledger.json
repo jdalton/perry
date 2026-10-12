@@ -665,10 +665,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-11915-reflective-callee",
         "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
-        "validation": "Static preflight clear for candidate-specific changes; scoped fmt/diff pass; registration/file-size gates only report unchanged baseline findings. Verifier-owned HIR tests and serial acceptance remain pending.",
+        "validation": "HIR3 PASS; trio PASS; fixture compile PASS; Perry abort134 at shapes_store_kind.rs:190. No parity/auto/full lint; bounded source diagnosis pending.",
         "merge_state": "No PR",
         "closure_state": "OPEN",
-        "publication_state": "No PR; candidate source and static preflight are ready for verifier HIR test."
+        "publication_state": "Blocked by runtime abort; no PR/push."
       }
     },
     {

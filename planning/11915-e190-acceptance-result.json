@@ -1,0 +1,61 @@
+{
+  "issue": 11915,
+  "status": "blocked_on_candidate_sensitive_runtime_abort",
+  "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+  "base_head": "283ab130bf3c507753324d9ff842208543d9d267",
+  "fixed_checkout": "/workspace/work/perry-queue/issue-9927",
+  "source_checkout": "/workspace/work/perry-queue/issue-11915",
+  "source_worktree_clean": true,
+  "scope": "One focused HIR test module, fresh compiler/static-wrapper build, and one compiled no-auto/no-cache fixture run. Stopped on runtime abort.",
+  "focused_hir_test": {
+    "command": "cargo test --locked -p perry-hir --lib reflective_prototype_call_tests -- --test-threads=1",
+    "exit": 0,
+    "passed": 3,
+    "filtered": 644,
+    "log": "/workspace/work/perry-queue/11915-e190-focused-hir.log"
+  },
+  "fresh_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/11915-e190-trio-build.log",
+    "duration": "3m04s",
+    "artifacts": {
+      "compiler": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "aeb6774b340f3abe4b31c78b9036f97b651d53454d5b56f3de549f1d1b484daf"
+      },
+      "runtime_static": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+        "sha256": "b67370f3b2d6943c542f900d2042c73a20de38a6003fa8f1bf3ef1d8b2aaf9ca"
+      },
+      "stdlib_static": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a",
+        "sha256": "7ecf8d89a2fbbcd9e6fd839b9e3f58c193c8ec6424d0a99491557740fd007796"
+      }
+    }
+  },
+  "fixture": {
+    "path": "/workspace/work/perry-queue/issue-11915/test-files/test_gap_11915_reflective_builtin_callee.ts",
+    "sha256": "63cfc0eaad72a6c499c7df658bec11b9211de9124751a23e02bf77f6d4e69ced",
+    "node_oracle": "Existing source-review packet validates exact Node 26.5.1 oracle, exit 0, stdout SHA-256 40b9ddf0e75a824dd1ef81468a224ff63260795d907a680d18670da4a192fde9; no duplicate Node invocation was needed after Perry aborted."
+  },
+  "compiled_acceptance": {
+    "command": "perry compile --no-auto-optimize --no-cache test-files/test_gap_11915_reflective_builtin_callee.ts -o 11915-e190-acceptance/perry.bin",
+    "compile_exit": 0,
+    "compile_stdout": "/workspace/work/perry-queue/11915-e190-acceptance/compile.stdout",
+    "compile_stderr": "/workspace/work/perry-queue/11915-e190-acceptance/compile.stderr",
+    "compiled_binary_sha256": "0e414465e3845f577e9b6ab5370c69c000476603607db8e5cca93a297263c37c",
+    "runtime_exit": 134,
+    "parity_not_run": "Perry aborted before producing stdout; stopped without rerun or broader acceptance."
+  },
+  "failure": {
+    "kind": "runtime abort",
+    "primary": "thread panic at crates/perry-runtime/src/object/shapes_store_kind.rs:190:5",
+    "message": "shape store facts disagree: obj=0x7ed96b605b70 shape=0x804000ad kind=Some(OrdinaryUnmarked) class_id=0x0 reserved=0x0a00",
+    "stderr": "/workspace/work/perry-queue/11915-e190-acceptance/perry.stderr",
+    "stdout": "/workspace/work/perry-queue/11915-e190-acceptance/perry.stdout"
+  },
+  "decision": "Candidate-sensitive acceptance failure. Do not claim the issue fixed or run further acceptance until source owner/Astra diagnosis and a corrected committed head are provided.",
+  "no_source_edits": true,
+  "checked_at_utc": "2026-10-12T12:40:28.644475+00:00"
+}

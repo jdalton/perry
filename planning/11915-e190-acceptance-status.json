@@ -1,0 +1,47 @@
+{
+  "issue": 11915,
+  "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+  "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+  "base": "283ab130bf3c507753324d9ff842208543d9d267",
+  "observed_at_utc": "2026-10-12T12:40:28Z",
+  "status": "blocked on candidate-sensitive Perry runtime abort; not publishable",
+  "acceptance": {
+    "focused_hir_tests": {
+      "status": "PASS",
+      "passed": 3,
+      "duration": "1m01s"
+    },
+    "fresh_matching_trio": {
+      "status": "PASS",
+      "duration": "3m04s",
+      "compiler_sha256": "aeb6774b340f3abe4b31c78b9036f97b651d53454d5b56f3de549f1d1b484daf",
+      "runtime_static_sha256": "b67370f3b2d6943c542f900d2042c73a20de38a6003fa8f1bf3ef1d8b2aaf9ca",
+      "stdlib_static_sha256": "7ecf8d89a2fbbcd9e6fd839b9e3f58c193c8ec6424d0a99491557740fd007796"
+    },
+    "fixture_compile": {
+      "status": "PASS",
+      "duration": "22s",
+      "exit": 0,
+      "binary_sha256": "0e414465e3845f577e9b6ab5370c69c000476603607db8e5cca93a297263c37c"
+    },
+    "perry_runtime": {
+      "status": "FAIL",
+      "exit": 134,
+      "kind": "runtime abort",
+      "location": "crates/perry-runtime/src/object/shapes_store_kind.rs:190:5",
+      "message": "shape store facts disagree: kind=Some(OrdinaryUnmarked), class_id=0x0"
+    },
+    "node_parity": "NOT RUN because Perry aborted before producing stdout",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN"
+  },
+  "decision": "Candidate-sensitive runtime failure. Do not claim parity or fix; no further heavy build or acceptance until bounded source/binary diagnosis and corrected head.",
+  "diagnosis_owner": "/root/luna_class_tdz (bounded source/binary evidence only; no heavy build)",
+  "slot_observation": {
+    "owner": "cloud /root/luna_verification",
+    "checked_at_utc": "2026-10-12T12:40:28.644475+00:00",
+    "next_task": "#11915 stopped after candidate-sensitive runtime abort at e190; awaiting source diagnosis/corrected head",
+    "active_validation_processes": []
+  },
+  "evidence": "planning/11915-e190-acceptance-result.json"
+}
