@@ -1,0 +1,12 @@
+Draft PR #12439 already exists: https://github.com/PerryTS/perry/pull/12439
+Do not create another PR. Keep unrelated local workers paused.
+
+Cloud is adding changelog.d/12439-remove-unused-streams.md in a normal follow-up commit, pushing the existing implementation branch, and rebuilding the exact resulting head with matching compiler, runtime-static and stdlib-static archives. The local coordinator should wait for final-head readiness evidence before marking ready.
+
+The code commit c9e720b17f959c0052819939bd1328c7a56fd415 was validated on baseline d74498b261d087a301b80602835bc7199a067957. Upstream main has advanced to 996bc5d629dfbc4b0e99a377b6eeab57c32e54c6 and is being assessed for overlap.
+
+body.md currently describes the original code-commit validation; it is not a claim that the subsequent fragment commit has passed. pr-12439-observed.json records the body actually published locally. Full lint remains non-green: 28 baseline-reproduced failures and two environment failures. Linux does not prove macOS behavior.
+
+Evidence manifest node_version discrepancy (v24.19.0 versus task environment and saved Node oracle v26.5.1) is under provenance review. The final validation will record exact Node path/version. No credentials or binaries are included.
+
+After final evidence, update the existing PR body and mark ready through the local connection. Coverage is draft/open, not merged or issue-closed.
