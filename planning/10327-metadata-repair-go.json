@@ -1,0 +1,43 @@
+{
+  "issue": 10327,
+  "original224": true,
+  "decision": "GO for narrow source implementation; root owns claim/assignment",
+  "classification_recommendation": "uncovered",
+  "partial_prs": [
+    10354
+  ],
+  "covering_prs": [],
+  "checked_at": "2026-10-12T14:41:31.669863+00:00",
+  "base_recommendation": "Fresh main38bc59e28bfe952a607a153d2a56103ba15580c0 or newer after identity check; do not reuse unrelated candidate runtime changes. Preserve immutable mirror/shallow boundary.",
+  "evidence": [
+    "10327-probe/result.json: Node TLS noALPN accepted, encrypted true/sessionALPN false/socketALPN false/H2 preface observed",
+    "planning/10327-current-source-overlap.json: four affected core blobs identical to live main; all file pages of24 open PRs checked, no exact-path overlap; issue liveOPEN",
+    "Current client_transport_ready maps None to h2c; mark_turnloop_client_connected overwrites transport encryption with protocol==h2; dispatch exposes false/h2c. This source-established metadata defect is within original issue incorrect encrypted/h2c metadata scope."
+  ],
+  "limitations": [
+    "No compiled Perry reproduction yet; do not claim runtime failure observation or acceptance pass.",
+    "Actual TLS transport is retained; do not label this plaintext downgrade.",
+    "Merged10354 fixes original large transport/runtime mechanisms; this repair alone does not prove all original acceptance or justify Fixes."
+  ],
+  "implementation": [
+    "Read secure bool and negotiated ALPN separately from the same H2Conn snapshot in client_transport_ready. Pass both to internal session-marking function. Do not derive encryption from protocol text.",
+    "Represent absent ALPN distinctly (prefer Option<String> in internal Http2SessionHandle, rather than false encoded as a string). Plain transport yields Some(h2c); TLS h2 yields Some(h2); TLS absent yields None.",
+    "Session getter returns JS boolean false for connected None; string for Some; unchanged undefined before connected. Existing server/session/test constructors preserve their current explicit protocol as Some. Do not redesign server ALPN negotiation/fallback.",
+    "No exported extern-C signature/codegen/native module ABI changes; this is internal Rust metadata. Verify all struct initializers and readers. No new globals or GC root holders."
+  ],
+  "expected_files": [
+    "crates/perry-ext-http/src/server/turnloop_h2/conn.rs",
+    "crates/perry-ext-http/src/server/http2_server/turnloop_glue.rs",
+    "crates/perry-ext-http/src/server/http2_server/dispatch.rs",
+    "crates/perry-ext-http/src/server/http2_server.rs",
+    "crates/perry-ext-http/src/server/http2_server/session.rs",
+    "crates/perry-ext-http/src/server/http2_server/pump.rs",
+    "focused tests/standalone localhost fixture as appropriate"
+  ],
+  "acceptance": [
+    "Focused unit/regression exercises actual marking plus observable getters for secure+None => true/boolean false, secure+h2 => true/string h2, plain+None => false/string h2c; before connected remains undefined. Do not only test a duplicate pure helper.",
+    "Bounded compiled localhost fixture with TLS peer noALPN proves connect metadata and receivedH2preface; negotiatedh2 and plaintext controls preserve exact outputs. Compare pinned Node26.5.1; socket metadata control remains correct. Bound server teardown/timeouts, no external service.",
+    "Source checks include scopedfmt, allinitializers/type checks, file-size/global/TLS/roots scanners for changed paths; focused ext-http tests before matching freshtrio/compiled witness and full-driver policy. Serial validator only; current task runs no builds."
+  ],
+  "publication": "Refs #10327; disclose partial metadata repair and exact validation limits. No automatic closure/full coverage credit."
+}

@@ -1,0 +1,179 @@
+{
+  "main": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+  "source_identity": [
+    {
+      "path": "crates/perry-ext-http/src/server/turnloop_h2/conn.rs",
+      "main_blob": "8f533c04cacdc8a59377ed20d41ae81cb3e1fdab",
+      "local_blob": "8f533c04cacdc8a59377ed20d41ae81cb3e1fdab",
+      "identical": true
+    },
+    {
+      "path": "crates/perry-ext-http/src/server/http2_server/turnloop_glue.rs",
+      "main_blob": "012e4ee4ad4cd7167ce6c59d2a56e7d2fd945bdd",
+      "local_blob": "012e4ee4ad4cd7167ce6c59d2a56e7d2fd945bdd",
+      "identical": true
+    },
+    {
+      "path": "crates/perry-ext-http/src/server/http2_server/dispatch.rs",
+      "main_blob": "2c964e582357e83ac7ee61bef55add2d50758493",
+      "local_blob": "2c964e582357e83ac7ee61bef55add2d50758493",
+      "identical": true
+    },
+    {
+      "path": "crates/perry-ext-http/src/server/http2_server.rs",
+      "main_blob": "83eeea94b7e7eb78294a5dd511b1b3d6cea3325a",
+      "local_blob": "83eeea94b7e7eb78294a5dd511b1b3d6cea3325a",
+      "identical": true
+    }
+  ],
+  "open_prs": [
+    {
+      "headRefOid": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "number": 12471,
+      "title": "Preserve WTF-8 keys for computed class members"
+    },
+    {
+      "headRefOid": "e8fa5fe9edbd358586575f8f1c04ba700d40007c",
+      "number": 12276,
+      "title": "fix(ci): repair main's CI failures after the call-path/regex/roots lanes"
+    },
+    {
+      "headRefOid": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+      "number": 12263,
+      "title": "test: inspect deleted evaluation methods without invoking them"
+    },
+    {
+      "headRefOid": "ef6aee0ce990777e20b2464284ef16cbbd593c6d",
+      "number": 12149,
+      "title": "fix(runtime): match node on the gap-suite regressions"
+    },
+    {
+      "headRefOid": "07857a06ce57ffcfa538eb5a0d80d8e881c36bb2",
+      "number": 12121,
+      "title": "fix(runtime): clear the gates that #12109 left red"
+    },
+    {
+      "headRefOid": "a6c46cdc9ebb427f17a13cb642471ca39a942e38",
+      "number": 12120,
+      "title": "docs: regenerate the API reference"
+    },
+    {
+      "headRefOid": "bfcfa4ab9e5cc530632aaf96794c1858eefaa51a",
+      "number": 12119,
+      "title": "fix(gc_effects): exempt aHash's random-source init from the indirect-call taint"
+    },
+    {
+      "headRefOid": "fece12e8a516785cb14e9ee38035acd076472146",
+      "number": 12118,
+      "title": "fix(runtime): instanceof never mints a class object for a builtin id"
+    },
+    {
+      "headRefOid": "ed19ccd05bbdbd13e8292f7d71f1eacbe2a7f552",
+      "number": 12117,
+      "title": "fix(runtime): root raw handles across calls and correct the handle ratchets"
+    },
+    {
+      "headRefOid": "ada1b587d26b1f348cf29cd335f9dc121055c822",
+      "number": 12116,
+      "title": "refactor: split five files back under the 2000-line cap"
+    },
+    {
+      "headRefOid": "43bf8bce6b88bba5050550b19af16d94440d6e74",
+      "number": 12115,
+      "title": "ci: register the dark GC witnesses and isolate the new test counters"
+    },
+    {
+      "headRefOid": "cded27de5d466061aa82c03107f26c1909c8d90d",
+      "number": 12114,
+      "title": "fix(runtime): audit the new raw stores and classify addresses with addr_class"
+    },
+    {
+      "headRefOid": "ee6659c664cf3916b84121616148fc6bc382d014",
+      "number": 12113,
+      "title": "fix(ext): ext-crate tests root values through RuntimeHandleScope"
+    },
+    {
+      "headRefOid": "f93cdd9312e721ef0cdea75d7d31e6b3a7feaff1",
+      "number": 12112,
+      "title": "fix(docs): the my-bindings fixture reads buffers inside a no-GC scope"
+    },
+    {
+      "headRefOid": "247a8b11c4ec2b1669d1c9c969b22ae2c699bd14",
+      "number": 11879,
+      "title": "audit(gc): revalidate RSS change source pins and page-size cache"
+    },
+    {
+      "headRefOid": "00ad2a4f20224df7083ce8173852c6d90fd2940f",
+      "number": 11761,
+      "title": "fix(async_hooks): defer destroy until execution scopes finish"
+    },
+    {
+      "headRefOid": "7daff508d270df5ab36455468bdb2dd796a5fc2a",
+      "number": 11631,
+      "title": "gc: function-entry polls at indirect entries and recursive SCCs (RFC deferred collection S5, polls)"
+    },
+    {
+      "headRefOid": "3cfe20ff09d4e21870c05011ffbde0b69188e95c",
+      "number": 11630,
+      "title": "gc: allocation never begins a precise collection phase (RFC deferred collection S5, runtime)"
+    },
+    {
+      "headRefOid": "0e903f3d91d5d6b03013547eddba18dd23fb9903",
+      "number": 11528,
+      "title": "docs(gc): RFC \u2014 deferred collection (L2b)"
+    },
+    {
+      "headRefOid": "19fbbfd554ee23551217225a59be93faea6acb99",
+      "number": 10961,
+      "title": "test: add measured non-retaining old-GC corpus control"
+    },
+    {
+      "headRefOid": "6796cd3328e78253ee12a7de4acc5b59a4d96f54",
+      "number": 10204,
+      "title": "gc: a full mark-sweep promotes its Eden survivors in place; bounded promoted cohort (#10182) [does not meet acceptance]"
+    },
+    {
+      "headRefOid": "4b912d964ce634596953bfc719283b736142cc4f",
+      "number": 9949,
+      "title": "gc(tenuring): the survival-rate lock latches S=1 only on steady-state evidence, never from the startup cohort"
+    },
+    {
+      "headRefOid": "debefa55c1b83161af7986429e382d1ac596a779",
+      "number": 7754,
+      "title": "feat(ui-ios): drive onFrame from CADisplayLink and add frame-time metrics"
+    },
+    {
+      "headRefOid": "a1be25e3a8d050eb28ee2efee4c5b5eafb38f021",
+      "number": 5811,
+      "title": "feat: Electron-compat shim + perry electron runner (packaged apps run natively)"
+    }
+  ],
+  "overlapping_files": [],
+  "limit": "All file pages checked for24 currently open PRs; scoped to4 exact affected metadata paths. PR-head movement after inventory requires refresh.",
+  "completed_file_pages": {
+    "12471": 2,
+    "12276": 2,
+    "12263": 2,
+    "12149": 2,
+    "12121": 2,
+    "12120": 2,
+    "12119": 2,
+    "12118": 2,
+    "12117": 2,
+    "12116": 2,
+    "12115": 2,
+    "12114": 2,
+    "12113": 2,
+    "12112": 2,
+    "11879": 2,
+    "11761": 2,
+    "11631": 2,
+    "11630": 2,
+    "11528": 2,
+    "10961": 2,
+    "10204": 2,
+    "9949": 2,
+    "7754": 2,
+    "5811": 2
+  }
+}

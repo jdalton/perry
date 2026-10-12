@@ -1,13 +1,15 @@
 {
-  "updated_at": "2026-10-12T14:26:21Z",
+  "updated_at": "2026-10-12T14:52:43Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Complete exact2e094 full lint and classify every gate by14:56:21Z cap.",
-    "Keep #10027 parked at6f21d9c pending further source-owner diagnosis/authorization; payload movement assertion failed.",
-    "#12471 ready packet remains published; live PR open/draft."
+    "Complete and classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
+    "After #12145 releases serial slot, obtain authorized exact-head Perry validation for #10327 b67a01f; no acceptance claims before compiled witness.",
+    "Keep #10027 parked at6f21d9c after the focused payload-movement failure.",
+    "#12471 ready packet is published; live PR remains open/draft pending publisher.",
+    "#11915 remains parked open/unresolved/unpublished at e190."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -23,10 +25,11 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 exact2e094: trio PASS; 37 focused controls and production integration PASS; full lint running started14:26:21Z, cap14:56:21Z; outcome pending.",
-    "#10027 exact6f21d9c parked after client-text payload-address-movement assertion failed at tests.rs:395; gc_init resolved previous TypeError but acceptance fails. No broader tests.",
-    "#12202/#12471 ready-for-review packet exact dfd64; live PR remains open/draft.",
-    "#11915 remains parked open/unresolved/unpublished at e190."
+    "#12145 exact2e094: fresh trio,37 focused controls,production integration pass; full lint running from14:26:21Z to14:56:21Z; outcome pending. Evidence planning/12145-2e-full-lint-start.json.",
+    "#10327 source-clear b67a01f: pinned Node TLS/no-ALPN witness and scoped format pass; Perry acceptance pending behind #12145. Remains uncovered/partial10354; no PR.",
+    "#10027 exact6f21d9c parked after payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
+    "#12471 exact dfd64 ready packet; live PR open/draft/unmerged, direct metadata current; inbox stale.",
+    "#11915 parked open/unresolved/unpublished at e190."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -125,7 +128,7 @@
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "Publisher inbox fetched at 2026-10-12T14:13:40Z: blob 59b919bfb3084932b47572495c47557b0f2c37ed still lists PR12471 draft at stale source head2272; direct GitHub PR read confirms open/draft at dfd64b7. Issue state refresh: planning/original224-state-refresh-20261012T141340Z.json.",
+    "evidence_source": "Inbox refreshed 2026-10-12T14:52:43Z (blob 59b919bfb3084932b47572495c47557b0f2c37ed) remains stale at PR12471 head2272; direct PR metadata confirms open/draft/unmerged at dfd64b7. Snapshot: planning/12471-refresh-20261012T145243Z.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -135,13 +138,13 @@
     "ready_transition_packets": 0,
     "draft_creation_packets_available": 0,
     "pr_state_counts": {
-      "as_of": "2026-10-12T14:13:40Z",
+      "as_of": "2026-10-12T14:52:43Z",
       "opened": 6,
       "merged": 5,
       "closed_unmerged": 0,
       "currently_open": 1,
       "drafts": 1,
-      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the one open draft. PR lifecycle, issue state, and coverage are separate."
+      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the only open draft; direct PR metadata confirms dfd64b7. Inbox branch still lists stale 2272."
     }
   },
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
@@ -150,9 +153,10 @@
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
   "current_serial_issue": 12145,
   "serial_pending": [
-    "#12145 exact2e094 full lint running from14:26:21Z to14:56:21Z cap; trio,37 focused controls,production integration passed.",
-    "#10027 exact6f21d9c parked after focused payload-address-movement assertion failure; no broader acceptance.",
-    "#12471 exact dfd64 ready packet; open/draft PR.",
+    "#12145 exact2e094 full lint running14:26:21Z–14:56:21Z; trio,37 focused controls,production integration passed.",
+    "#10327 b67a01f source clear with Node no-ALPN witness and scoped format PASS; Perry validation pending after #12145.",
+    "#10027 6f21d9c parked after focused payload-address-movement assertion failure; no broader acceptance.",
+    "#12471 dfd64 ready packet; live PR open/draft/unmerged.",
     "#11915 parked at e190."
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
@@ -250,12 +254,12 @@
     "evidence": "planning/12145-2e-full-lint-start.json"
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T14:13:40Z",
-    "source": "cloud/local-publisher-inbox/publisher-status.json",
+    "observed_at": "2026-10-12T14:52:43Z",
+    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "PR12471 exists; direct fresh read confirms OPEN/DRAFT at dfd64b7. Inbox itself is stale, listing source2272.",
-    "state_evidence": "planning/original224-state-refresh-20261012T141340Z.json"
+    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "issue_12202_assignment": "PR12471 remains open/draft/unmerged at dfd64b7 by direct metadata; inbox snapshot is stale at 2272.",
+    "evidence": "planning/12471-refresh-20261012T145243Z.json"
   },
   "next_independent_candidate": {
     "issue": 12145,
@@ -271,12 +275,12 @@
     "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T14:13:40Z",
-    "source": "cloud/local-publisher-inbox/publisher-status.json",
+    "observed_at": "2026-10-12T14:52:43Z",
+    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "PR12471 exists; direct fresh read confirms OPEN/DRAFT at dfd64b7. Inbox itself is stale, listing source2272.",
-    "state_evidence": "planning/original224-state-refresh-20261012T141340Z.json"
+    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "issue_12202_assignment": "PR12471 remains open/draft/unmerged at dfd64b7 by direct metadata; inbox snapshot is stale at 2272.",
+    "evidence": "planning/12471-refresh-20261012T145243Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -333,5 +337,51 @@
     "pr_creation_allowed": false,
     "ready_for_review": false
   },
-  "active_source_issue": 12145
+  "active_source_issue": 12145,
+  "10327_source_milestone": {
+    "issue": 10327,
+    "branch": "cloud/issue-10327-metadata-repair",
+    "worktree": "/workspace/work/perry-queue/issue-10327",
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+    "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+    "worktree_clean": true,
+    "status": "Source-clear implementation committed; Perry validation pending serial slot after #12145.",
+    "source_review": "Astra source review cleared. Scoped formatting check passed.",
+    "behavior_evidence": "Pinned Node no-ALPN witness passes: TLS remains encrypted, session ALPN absent; candidate metadata observation reproduces source-level discrepancy (false/h2c). This establishes mismatch evidence, not compiled Perry acceptance.",
+    "validation": {
+      "pinned_node_witness": "PASS",
+      "scoped_format": "PASS",
+      "perry_runtime": "PENDING; serial slot held by #12145 full lint",
+      "fresh_trio": "NOT RUN",
+      "compiled_parity": "NOT RUN",
+      "auto_opt": "NOT RUN",
+      "full_lint": "NOT RUN"
+    },
+    "coverage": "uncovered",
+    "partial_prs": [
+      10354
+    ],
+    "covering_prs": [],
+    "issue_state": "OPEN",
+    "publication": {
+      "draft_creation_allowed": false,
+      "ready_for_review": false,
+      "pr_creation_allowed": false
+    },
+    "evidence": [
+      "planning/10327-metadata-repair-go.json",
+      "planning/10327-current-source-overlap.json",
+      "planning/10327-merged-source-reconciliation.json",
+      "/workspace/work/perry-queue/10327-probe/result.json"
+    ],
+    "checked_at": "2026-10-12T14:52:43Z"
+  },
+  "12390_sparse_recovery": {
+    "record": "planning/12390-sparse-recovery-milestone.json",
+    "recovered_bytes": 995856384,
+    "preserved_ignored_cache_files": 5,
+    "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
+    "validation_checkout_untouched": true
+  }
 }

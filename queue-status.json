@@ -127,7 +127,7 @@
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "Publisher inbox fetched at 2026-10-12T14:13:40Z: blob 59b919bfb3084932b47572495c47557b0f2c37ed still lists PR12471 draft at stale source head2272; direct GitHub PR read confirms open/draft at dfd64b7. Issue state refresh: planning/original224-state-refresh-20261012T141340Z.json.",
+    "evidence_source": "Inbox refreshed 2026-10-12T14:52:43Z (blob 59b919bfb3084932b47572495c47557b0f2c37ed) remains stale at PR12471 head2272; direct PR metadata confirms open/draft/unmerged at dfd64b7. Snapshot: planning/12471-refresh-20261012T145243Z.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -137,13 +137,13 @@
     "ready_transition_packets": 0,
     "draft_creation_packets_available": 0,
     "pr_state_counts": {
-      "as_of": "2026-10-12T14:13:40Z",
+      "as_of": "2026-10-12T14:52:43Z",
       "opened": 6,
       "merged": 5,
       "closed_unmerged": 0,
       "currently_open": 1,
       "drafts": 1,
-      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the one open draft. PR lifecycle, issue state, and coverage are separate."
+      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the only open draft; direct PR metadata confirms dfd64b7. Inbox branch still lists stale 2272."
     }
   },
   "packets": [
@@ -326,14 +326,41 @@
       "covering_prs": [],
       "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json",
       "full_lint_evidence": "planning/12145-2e-full-lint-start.json"
+    },
+    {
+      "issues": [
+        10327
+      ],
+      "branch": "cloud/issue-10327-metadata-repair",
+      "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+      "current_head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+      "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+      "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+      "has_uncommitted_changes": false,
+      "state": "Source-clear local candidate; Perry validation pending serial slot after #12145.",
+      "validation": "Astra source review and scoped formatting check PASS; pinned Node TLS/no-ALPN witness PASS. Perry validation, matching trio, compiled parity, auto-opt, and full lint are pending.",
+      "coverage": "uncovered",
+      "partial_prs": [
+        10354
+      ],
+      "covering_prs": [],
+      "issue_state": "OPEN",
+      "draft_creation_allowed": false,
+      "ready_for_review": false,
+      "push_allowed": false,
+      "pr_creation_allowed": false,
+      "packet": "planning/10327-b67-source-milestone.json",
+      "publisher_actions": [],
+      "validation_evidence": "planning/10327-b67-source-milestone.json",
+      "source_overlap_evidence": "planning/10327-current-source-overlap.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-20261012T141340Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T14:26:21Z",
-  "publisher_inbox_checked_at": "2026-10-12T14:13:40Z",
+  "updated_at": "2026-10-12T14:52:43Z",
+  "publisher_inbox_checked_at": "2026-10-12T14:52:43Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,
@@ -344,17 +371,18 @@
   "original_closures_associated_with_our_merged_prs": 4,
   "serial_validation_owner": null,
   "serial_priority": [
-    "#12145 exact2e094 fresh trio,37 focused controls,and production integration1/1 PASS; full lint is running from14:26:21Z with hard deadline14:56:21Z. See planning/12145-2e-full-lint-start.json.",
-    "#10027 exact6f21d9c parked: gc_init resolved prior TypeError, but first client-text payload-movement assertion failed (tests.rs:395); no other subcases or broader acceptance. See planning/10027-6f21-parked-status.json.",
-    "#12471 exact dfd64 ready-for-review packet published; live PR remains OPEN/DRAFT, no merge/closure credit.",
-    "#11915 parked open/unresolved/unpublished at e190; no further runs authorized."
+    "#12145 exact2e094: fresh trio,37 focused controls,production integration pass; full lint running from14:26:21Z to14:56:21Z; outcome pending. Evidence planning/12145-2e-full-lint-start.json.",
+    "#10327 source-clear b67a01f: pinned Node TLS/no-ALPN witness and scoped format pass; Perry acceptance pending behind #12145. Remains uncovered/partial10354; no PR.",
+    "#10027 exact6f21d9c parked after payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
+    "#12471 exact dfd64 ready packet; live PR open/draft/unmerged, direct metadata current; inbox stale.",
+    "#11915 parked open/unresolved/unpublished at e190."
   ],
   "cargo_incremental": 0,
   "active_issue_state_evidence": "planning/original224-state-refresh-20261012T141340Z.json",
   "closure_attribution": "Issue states observed independently; cloud closed no issues. Referenced issues closing does not prove partial PRs resolved their whole scope.",
   "coverage_counts_observed_at": "2026-10-12T14:13:40Z",
-  "coverage_classification_refreshed_at": "2026-10-12T10:44:58.593278+00:00",
-  "coverage_classification_evidence": "planning/12202-coverage-classification.json; planning/original224-state-refresh-20261012T141340Z.json",
+  "coverage_classification_refreshed_at": "2026-10-12T14:41:31.669863+00:00",
+  "coverage_classification_evidence": "planning/12202-coverage-classification.json; planning/original224-state-refresh-20261012T141340Z.json; planning/10395-merged-source-reconciliation.json; planning/10327-metadata-repair-go.json; planning/10327-current-source-overlap.json; planning/10327-merged-source-reconciliation.json",
   "active_source_issue": 12145,
   "command_caps": {
     "full_lint_minutes": 30,
@@ -363,27 +391,24 @@
   },
   "draft_creation_packets_available": 1,
   "ready_transition_packets": 0,
-  "milestone_updated_at": "2026-10-12T14:13:40Z",
+  "milestone_updated_at": "2026-10-12T14:52:43Z",
   "latest_source_milestone": {
-    "issue": 10027,
-    "head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
-    "tree": "ed7a99f7bb8bb1c151d4f7c016cf7264f9bb68bb",
-    "status": "Parked after focused payload-movement assertion failure; no broader acceptance.",
-    "evidence": "planning/10027-6f21-parked-status.json"
+    "issue": 10327,
+    "branch": "cloud/issue-10327-metadata-repair",
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+    "status": "Source-clear commit; Node witness and scoped formatting pass; Perry validation pending serial slot.",
+    "evidence": "planning/10327-b67-source-milestone.json"
   },
-  "publisher_inbox_snapshot": "planning/original224-state-refresh-20261012T141340Z.json",
+  "publisher_inbox_snapshot": "planning/12471-refresh-20261012T145243Z.json",
   "resource_milestone": {
-    "record": "planning/11915-resource-preflight-milestone-e190.json",
-    "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",
-    "manifest_sha256": "a85a0e6dd35b8e1f0114b4749014d5a6ad778b97743b3f5d702902cb0dbd73fa",
-    "relocated_bytes": 2575846078,
-    "subtrees": 3,
-    "workspace_free": "3.0 GiB",
-    "tmp_free": "5.2 GiB",
-    "slot_owner": "cloud /root/luna_verification",
-    "slot_checked_at": "2026-10-12T12:36:28.989186+00:00",
-    "active_processes": [],
-    "next_task": "#11915 exact e190 fresh compiler/runtime-static/stdlib-static build and compiled fixture acceptance"
+    "record": "planning/12390-sparse-recovery-milestone.json",
+    "issue": 12390,
+    "recovered_bytes": 995856384,
+    "ignored_python_cache_files_preserved": 5,
+    "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
+    "validation_checkout_untouched": true,
+    "previous_idle_cache_relocation": "planning/idle-cache-relocation-20261012.json"
   },
   "current_validation_slot": {
     "owner": "cloud /root/luna_verification",
@@ -416,14 +441,6 @@
   "coverage_policy": "Coverage follows accepted source behavior and is independent of PR or issue state; a full fix can be covered while the PR is draft/open. Track opened/merged/closed-unmerged PRs and issue closures separately. Continue toward original224 coverage; do not submit issue-covering reviews/comments until coverage is complete.",
   "coverage_reconciliations": [
     {
-      "issue": 10327,
-      "status": "uncertain",
-      "partial_prs": [
-        10354
-      ],
-      "evidence": "planning/10327-merged-source-reconciliation.json"
-    },
-    {
       "issue": 9843,
       "status": "covered",
       "covering_prs": [
@@ -447,11 +464,34 @@
       "pr_state": "draft/open/unmerged",
       "issue_state": "OPEN",
       "evidence": "planning/12202-coverage-classification.json"
+    },
+    {
+      "issue": 10395,
+      "status": "uncertain",
+      "partial_prs": [
+        10354
+      ],
+      "covering_prs": [],
+      "issue_state": "OPEN",
+      "evidence": "planning/10395-merged-source-reconciliation.json",
+      "reason": "Merged10354 introduced central API/tests, but binding migrations and per-binding operation acceptance remain unproven."
+    },
+    {
+      "issue": 10327,
+      "status": "uncovered",
+      "partial_prs": [
+        10354
+      ],
+      "covering_prs": [],
+      "issue_state": "OPEN",
+      "evidence": "planning/10327-metadata-repair-go.json; planning/10327-current-source-overlap.json; planning/10327-merged-source-reconciliation.json",
+      "reason": "Current source maps TLS/no-ALPN session metadata incorrectly; partial central mechanisms in10354 do not cover residual metadata behavior."
     }
   ],
   "next_steps": [
-    "Complete and classify #12145 exact2e094 full lint by14:56:21Z hard deadline; do not claim readiness before final gate accounting.",
-    "Keep #10027 parked at6f21d9c after the focused payload-movement failure; no new runs until separately authorized.",
+    "Complete and classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
+    "After #12145 releases serial slot, obtain authorized exact-head Perry validation for #10327 b67a01f; no acceptance claims before compiled witness.",
+    "Keep #10027 parked at6f21d9c after the focused payload-movement failure.",
     "#12471 ready packet is published; live PR remains open/draft pending publisher.",
     "#11915 remains parked open/unresolved/unpublished at e190."
   ],
@@ -462,5 +502,21 @@
     "started_at": "2026-10-12T14:26:21Z",
     "hard_deadline": "2026-10-12T14:56:21Z",
     "evidence": "planning/12145-2e-full-lint-start.json"
+  },
+  "publisher_inbox_refresh": {
+    "checked_at": "2026-10-12T14:52:43Z",
+    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
+    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "snapshot": "planning/12471-refresh-20261012T145243Z.json",
+    "actual_12471_state": "open/draft/unmerged at dfd64b7, confirmed by direct PR metadata; inbox lists stale 2272 head."
+  },
+  "latest_disk_recovery": {
+    "issue": 12390,
+    "recovered_bytes": 995856384,
+    "preserved_ignored_cache_files": 5,
+    "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
+    "validation_checkout_untouched": true,
+    "evidence": "planning/12390-sparse-recovery-milestone.json"
   }
 }

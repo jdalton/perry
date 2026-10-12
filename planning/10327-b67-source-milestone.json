@@ -1,0 +1,39 @@
+{
+  "issue": 10327,
+  "branch": "cloud/issue-10327-metadata-repair",
+  "worktree": "/workspace/work/perry-queue/issue-10327",
+  "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+  "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+  "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+  "worktree_clean": true,
+  "status": "Source-clear implementation committed; Perry validation pending serial slot after #12145.",
+  "source_review": "Astra source review cleared. Scoped formatting check passed.",
+  "behavior_evidence": "Pinned Node no-ALPN witness passes: TLS remains encrypted, session ALPN absent; candidate metadata observation reproduces source-level discrepancy (false/h2c). This establishes mismatch evidence, not compiled Perry acceptance.",
+  "validation": {
+    "pinned_node_witness": "PASS",
+    "scoped_format": "PASS",
+    "perry_runtime": "PENDING; serial slot held by #12145 full lint",
+    "fresh_trio": "NOT RUN",
+    "compiled_parity": "NOT RUN",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN"
+  },
+  "coverage": "uncovered",
+  "partial_prs": [
+    10354
+  ],
+  "covering_prs": [],
+  "issue_state": "OPEN",
+  "publication": {
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "pr_creation_allowed": false
+  },
+  "evidence": [
+    "planning/10327-metadata-repair-go.json",
+    "planning/10327-current-source-overlap.json",
+    "planning/10327-merged-source-reconciliation.json",
+    "/workspace/work/perry-queue/10327-probe/result.json"
+  ],
+  "checked_at": "2026-10-12T14:52:43Z"
+}

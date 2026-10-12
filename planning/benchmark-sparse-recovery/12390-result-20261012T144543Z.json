@@ -1,0 +1,18 @@
+{
+  "issue": 12390,
+  "head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+  "tree": "2147ef96e26f0fce9d599b7c35d919c1d7f8294c",
+  "owner_evidence": "issue-12390-owner.txt",
+  "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
+  "preserved_ignored_cache_sha256": {
+    "benchmarks/__pycache__/benchmark_gate.cpython-312.pyc": "d4f93a059424da9c0aafa4163a401bb853323c7e075c75ea0bc1a8001d199ebe",
+    "benchmarks/__pycache__/benchmark_time.cpython-312.pyc": "9f726ea0b60d8392de2e5ba8b1b89be9241386136427bdc8cd5ee2fd4215c9cb",
+    "benchmarks/__pycache__/benchmark_time.cpython-313.pyc": "8968967fc1bcb1e20fe082821a773da721fde35ffd7dde2afabcc64c2161742d",
+    "benchmarks/__pycache__/public_baseline.cpython-312.pyc": "61bf364d20d06781fc36a801d8142095b6871ca9cbec63133eccf1deed76a9aa",
+    "benchmarks/__pycache__/verify_benchmark_output.cpython-313.pyc": "2ad0dcbb12f000295af13344c4af873d3b93814955e662726b1e18947bd3ca61"
+  },
+  "patterns": "/*\n!/benchmarks/*\n/benchmarks/__pycache__/\n",
+  "recovered_bytes": 995856384,
+  "time": "2026-10-12T14:45:43.289986+00:00",
+  "active_validation_checkout_untouched": true
+}

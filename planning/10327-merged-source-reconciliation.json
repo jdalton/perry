@@ -1,0 +1,36 @@
+{
+  "issue": 10327,
+  "original224": true,
+  "live_state": "open",
+  "classification_recommendation": "uncertain",
+  "covering_prs": [],
+  "partial_prs": [
+    10354
+  ],
+  "issue_url": "https://github.com/PerryTS/perry/issues/10327",
+  "merged_implementation": {
+    "pr": 10354,
+    "url": "https://github.com/PerryTS/perry/pull/10354",
+    "merged_at": "2026-09-22T23:48:24Z",
+    "commit": "b77aba63433b100b9482d47181b5ccc5e724ff81",
+    "ancestor_of_inspected_base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "verified_source": "git show merged commit includes ClientTls, install_client_session and client_alpn, plus finish_handshake. Current session.rs138\u2013220 creates secure TLS client configuration and uses turnloop or explicit decline; private tokio session path removed."
+  },
+  "satisfied_mechanisms": [
+    "HTTPS creates actual TLS client session instead of plaintext TCP",
+    "h2 ALPN offered alone",
+    "default authority scheme/port corrected",
+    "private per-session/per-request tokio runtimes removed"
+  ],
+  "remaining_proof_gap": "Current and merged finish_handshake treats Some(h2)|None identically without client/server distinction; None can enter HTTP2 core and client_transport_ready reports h2c. Original acceptance requests h2 negotiation and explicit reject/fallback rather than downgrade. Source alone does not establish full external behavior for missing ALPN; do not call this plaintext transmission merely from label.",
+  "historical_validation_caution": "Merged PR11107 body explicitly records test_gap_http2_alpn_secure parity_fail attributed10327; fixture also tests broader secure-server behavior so this alone does not establish current client failure.",
+  "next_minimal_evidence": "Local TLS peer with negotiated h2 positive and no-ALPN negative; assert wire remains TLS, actual protocol/error behavior, encrypted/session protocol values against pinned Node. No test run in this reconciliation.",
+  "limits": "Coverage distinct from acceptance/closure. No central ledger mutation, no external review/comment, no code or build.",
+  "cohort_proof": {
+    "original_snapshot": "/workspace/shared/perry-cloud-handoff/cloud-handoff/issues.json",
+    "number_present": true,
+    "ledger": "planning/original224-coverage.json",
+    "row_count": 1,
+    "prior_status": "uncovered"
+  }
+}

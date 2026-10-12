@@ -1,0 +1,37 @@
+{
+  "issue": 10395,
+  "original224_membership": true,
+  "ledger_prior_status": "uncovered",
+  "live_state": "open",
+  "classification_recommendation": "uncertain",
+  "covering_prs": [],
+  "partial_prs": [
+    10354
+  ],
+  "issue_url": "https://github.com/PerryTS/perry/issues/10395",
+  "merged_source": {
+    "pr_url": "https://github.com/PerryTS/perry/pull/10354",
+    "merge_sha": "b77aba63433b100b9482d47181b5ccc5e724ff81",
+    "merged_at": "2026-09-22T23:48:24Z",
+    "source_introduction": "git log -S pub fn post_to_agent and turnloop_post file history both trace to10354 merge; merge ancestor of inspected d3e5359 previouslyverified"
+  },
+  "step1_acceptance": [
+    {
+      "requirement": "Poster stored with owner route; post without owning loop",
+      "source": "event_pump/agent_loop.rs89 and1082"
+    },
+    {
+      "requirement": "Missing route explicit error, accepted payload not retried",
+      "source": "post_to_agent NoRoute/NotPublished/Refused ownership-preserving return; turnloop_post documents nonnegative accepted including queued-unwoken"
+    },
+    {
+      "requirement": "Other thread posts and owner receives exactly once",
+      "source": "agent_loop_tests.rs740+ and889+ test Rust and CABI owner-job paths"
+    }
+  ],
+  "whole_issue_boundary": "Issue separates central enabler from end-to-end per-binding conversions; step2 requests one real binding proof and step3 database conversions. API tests alone do not establish these.",
+  "later_source_context": "scripts/tokio_inventory.json now declares zero tokio edges; removal commitb9cae04d1b13637ebaacab4ea046fdfaf2c3f4f1. Absence of tokio alone does not prove non-owner binding operations use owner posting rather than rejecting/blocking. No merged PR attribution or per-binding owner-thread regression proof gathered for that later migration in this bounded pass.",
+  "recommendation": "Move stale uncovered classification to uncertain with10354 partial evidence. Do not recode central API, mark whole covered, or infer modern binding acceptance.",
+  "next_minimal_reconciliation": "Trace final migration PR and exact non-owner-thread socket/database tests; no runtime or code needed until evidence identifies residual.",
+  "actions": "No build/edit/central-ledger mutation/external review/comment."
+}
