@@ -3,7 +3,7 @@
   "title": "fix(runtime): preserve byte-view toString with short encodings",
   "head": {
     "branch": "cloud/issue-11519-byte-family-tostring",
-    "sha": "5e41d1d8b19c030754975afeca52a9c277eda739"
+    "sha": "6f2f622f228f93ce6d56026b5041c7b456ca2195"
   },
   "base": "main",
   "body_file": "body.md",
@@ -33,10 +33,11 @@
     "typed-string Symbol.iterator identity is outside scope"
   ],
   "publication": {
-    "draft_creation_allowed": true,
+    "draft_creation_allowed": false,
     "ready_for_review": false,
-    "reason": "Requiredcheckscomplete; failuresclassified; actual-numberfragment/final-headchecksremain",
-    "fragment": "Only afteractualPRnumberassigned"
+    "reason": "Existing draft; finalfragment-headvalidation pending",
+    "fragment": "changelog.d/12456-byte-view-tostring.md",
+    "pr_number": 12456
   },
   "candidate_test_correction_commit": "5e41d1d8b19c030754975afeca52a9c277eda739",
   "validation_history": [

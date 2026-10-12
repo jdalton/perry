@@ -1,0 +1,10 @@
+{
+  "pr": 12456,
+  "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+  "parent": "5e41d1d8b19c030754975afeca52a9c277eda739",
+  "only_change": "changelog.d/12456-byte-view-tostring.md",
+  "validation": "Pendingserialslot afteractive10739full driver",
+  "state": "DRAFT, notmerged/closed",
+  "whole_issue_coverage": false,
+  "received_body_matches_code_packet": true
+}

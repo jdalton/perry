@@ -28,9 +28,9 @@
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
   "source_preserved": "Archived bare mirror, exact shallow boundary, 30 valid head/tree snapshots, patches and ledgers verified. New five worktrees snapshotted at snapshots/20261012T020605Z/manifest.json",
   "local_workers": "paused",
-  "publication_origin": "User local connection created draft PR12439; cloud PR creation count0",
+  "publication_origin": "Localpublisher created12439/12444/12445/12450/12456; cloudPRcreation0",
   "cloud_prs_created": 0,
-  "local_prs_created": 4,
+  "local_prs_created": 5,
   "pr12439_state": "MERGED; original12390 CLOSED",
   "new_batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
@@ -73,6 +73,17 @@
         "ready_for_review": false,
         "merged": true,
         "merged_at": "2026-10-12T07:28:40Z"
+      },
+      {
+        "number": 12456,
+        "url": "https://github.com/PerryTS/perry/pull/12456",
+        "issues": [
+          11519
+        ],
+        "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
     "remaining": 17,
@@ -84,14 +95,13 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 3,
-    "opened": 3,
-    "remaining_to_open": 17,
+    "opened": 4,
+    "remaining_to_open": 16,
     "remaining_to_good_state": 17,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
-    "code_ready_packets": 2,
     "original_issues_closed": 3,
     "evidence_source": "live GitHub REST newer than publisher inbox",
     "observed_closed_referenced_originals": [
@@ -100,7 +110,8 @@
       12007
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
-    "ready_transition_packets": 0
+    "ready_transition_packets": 0,
+    "draft_creation_packets_available": 0
   },
   "packets": [
     {
@@ -161,17 +172,19 @@
       "issues": [
         11519
       ],
-      "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "branch": "cloud/issue-11519-byte-family-tostring",
-      "state": "Validatedforkhead; draftcreationallowed; actualPRnumberpending",
-      "draft_creation_allowed": true,
+      "state": "Draft12456; numberedfragmentpushed; exact final-head validation pending afteractive10739",
+      "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/11519/metadata.json",
-      "current_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "current_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained.",
       "publisher_actions": [
-        "Createone draft from5e41d1d using11519packet; writeactualPRnumbertoinbox"
-      ]
+        "Waitfor final-headready packet; no duplicatePR"
+      ],
+      "pr_number": 12456,
+      "observed_draft": true
     },
     {
       "issues": [
@@ -199,9 +212,9 @@
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
-  "actual_prs_created_in_continuation": 4,
+  "actual_prs_created_in_continuation": 5,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T08:00:40.124838+00:00",
+  "updated_at": "2026-10-12T08:07:18.946428+00:00",
   "publisher_inbox_checked_at": "2026-10-12T07:12:25.987763+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

@@ -1,0 +1,63 @@
+{
+  "decision": "FRAGMENT_ONLY_IDENTITY_DOES_NOT_WAIVE_FINAL_HEAD_COMPILER_REBUILD",
+  "scope": "11519 future numbered fragment commit atop5e41d1d8; policy review only",
+  "applicable_rules": [
+    {
+      "file": "AGENTS.md",
+      "line": 3,
+      "rule": "Read CLAUDE.md and follow instructions"
+    },
+    {
+      "file": "CLAUDE.md",
+      "line": 56,
+      "rule": "Read MERGE_GUIDE before queue work"
+    },
+    {
+      "file": "MERGE_GUIDE.md",
+      "line": 279,
+      "quote": "Rebuild the compiler after every commit, including docs-only ones, or ext-routed gap tests fail on commit skew rather than on your change."
+    },
+    {
+      "file": "MERGE_GUIDE.md",
+      "line": 214,
+      "quote": "Run scripts/run_lint_gates.sh \u2014 all of it."
+    },
+    {
+      "file": "CLAUDE.md",
+      "line": 246,
+      "rule": "Build -p perry -p perry-runtime-static -p perry-stdlib-static, keep package set identical; stale .a is not evidence"
+    },
+    {
+      "file": "MERGE_GUIDE.md",
+      "line": 272,
+      "rule": "Commit coherence stamp compares commits, not only content"
+    },
+    {
+      "file": "changelog.d/README.md",
+      "line": 3,
+      "rule": "Numbered per-PR fragment in samePR, entrybody no version header"
+    }
+  ],
+  "minimal_honest_final_head_plan": [
+    "Wait for actual PR number; add only correctly named fragment; verify exact committed diff and clean tree",
+    "Prove all source/build inputs and non-fragment gate inputs identical to5e41; record changed fragment separately and inspect scripts that consume fragments",
+    "At next safe serial boundary execute same matching compiler/runtime-static/stdlib-static trio at finalhead using normal Cargo cache reuse; verify actual artifacts/coherence and keep honest provenance",
+    "Run actual numbered-fragment checks and applicable scoped final-head checks/acceptance against fresh coherent artifacts",
+    "Cite previously completed full137-gate run explicitly as5e41 unchanged-input evidence, retaining its failures/skips/classifications; do not call it a fresh final-head full run",
+    "No mandatory duplicate full driver solely because of numbered fragment; reassess only if input identity fails or new failure provides cause"
+  ],
+  "interpretation_limits": [
+    "Explicit compiler-after-every-commit rule retained",
+    "No explicit full-lint-after-every-doc-commit rule found; previous contrary requirement retracted",
+    "Normal Cargo cache reuse allowed; no clean build requirement",
+    "Existing user authorization supports unchanged-input reuse without requesting another waiver"
+  ],
+  "execution": "No builds, source edits or external writes performed",
+  "clarification": {
+    "explicit_rule": "MERGE_GUIDE279 requires compiler rebuild after every commit including docs-only;214-220 requires complete suite for validation, not explicitly a repeat after every fragment commit",
+    "prior_error": "Earlier recommendation to rerun full driver at every final fragment head was conservative inference, not an explicit rule. Retracted as a requirement.",
+    "user_authorization": "Parent confirms user permits unchanged-source validation reuse and prior fragment packets used full-lint evidence with fresh final compiler/scoped checks",
+    "corrected_decision": "Reuse complete5e41 full-lint evidence with explicit original-head provenance when source/build/gate inputs and environment are unchanged apart from numbered fragment; fresh matching trio and fragment-sensitive/scoped final-head checks remain required",
+    "boundary": "Any additional change to source, build inputs, gate scripts/configuration or relevant environment requires reassessing affected validation. Fragment-sensitive inputs themselves are changed and must be checked; do not assert all gate inputs identical."
+  }
+}
