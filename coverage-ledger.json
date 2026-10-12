@@ -1,7 +1,7 @@
 {
   "cohort": "original224",
-  "state_observed_at": "2026-10-12T12:21:52Z",
-  "classification_updated_at": "2026-10-12T10:44:58.593278+00:00",
+  "state_observed_at": "2026-10-12T12:17:49Z",
+  "classification_updated_at": "2026-10-12T12:25:05.623379+00:00",
   "counts": {
     "covered": 20,
     "uncertain": 18,
@@ -385,10 +385,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-12202-wtf8-class-keys",
         "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-        "validation": "Exact 2272: 59 unique/67 focused runtime executions PASS; matching trio and no-auto/auto parity PASS. Full lint exit 1: 105 pass,32 fail,2 CI-only skipped; 30 baseline-reproduced and2 environment/path. Warn-level Clippy delta +3/-1 is informational and disclosed.",
-        "merge_state": "source fork branch pushed; no PR",
+        "validation": "Exact 2272 scoped tests/trio/no-auto/auto parity PASS. Full lint completed non-green: 105 pass,32 fail,2 CI-only skipped; failure attribution 30 reproduced baseline,2 environment/path,0 candidate. TLS review of nonfatal Clippy warning count 1102 vs1100 pending; no readiness claim.",
+        "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Draft authorized; not ready for review until PR number, numbered fragment, and final-head validation."
+        "publication_state": "Waiting for final TLS Clippy warning-delta review and root GO; all publish flags false."
       }
     },
     {
@@ -659,7 +659,17 @@
       "status": "uncovered",
       "covering_prs": [],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_class_tdz",
+        "task": "/root/luna_class_tdz",
+        "branch": "cloud/issue-11915-reflective-callee",
+        "current_head": "283ab130bf3c507753324d9ff842208543d9d267",
+        "validation": "Source implementation only. Diagnostic on 2272-derived compiler reproduced three mismatches; not pristine-current-main validation. No candidate build/tests yet.",
+        "merge_state": "No PR",
+        "closure_state": "OPEN",
+        "publication_state": "Source work claimed; not publishable"
+      }
     },
     {
       "issue": 11905,

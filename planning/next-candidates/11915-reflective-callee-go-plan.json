@@ -1,0 +1,37 @@
+{
+  "issue": 11915,
+  "decision": "GO for root-managed source claim and bounded implementation of reflective prototype call/apply lowering; validation still required. Partial Refs #11915 only.",
+  "evidence": "11915-2272-diagnostic/result.json: coherent derived2272 repro shows patched Object.hasOwnProperty ignored, patched Array.slice ignored, callee gettercount0/argumentcount1. Three responsible HIR files identical latest-knownmain283ab; liveissueopen and focusedPRsearches no matches per root. Not pristine-main runtime proof.",
+  "base": "Create only needed isolated worktree at freshly verified currentmain commit (latestknown283ab130...), retain immutablemirror/shallowboundary; do not stack on12202 to inherit unrelated byte migration. Record sourceblob identity. Validate new candidate with matching freshtrio atserialslot; source-only work can proceed meanwhile.",
+  "implementation_instruction": [
+    "Remove/decline semantic-erasing Object.prototype.method.call and Object.hasOwnProperty.call rewrites; ordinary lowering must read selected callee instead of ExternFuncRef by name",
+    "Remove/decline builtin-prototype method call/apply rewriting to thisArg.method or Array algorithm, including saved-method alias shortcut. Keep native-module/namespace rewrites outside claimed scope",
+    "Use existing ordinary property read and Function.prototype.call/apply invocation. Preserve callee/Get-call-before-arguments ordering and original selected function receiver; do not introduce duplicate dynamic dispatch or mutable-prototype guard assumptions",
+    "Clean obsolete helper wiring/tests only within proven scope. If ordinary builtin function values are missing or generic callee-ordering is wrong, stop and report exact runtime/IR blocker before broadening into all11915 cases",
+    "Do not touch Date/Map/Set/Symbol placeholder or inherited-prototype-copy issues; no wholeissueclosure credit"
+  ],
+  "expected_files": [
+    "crates/perry-hir/src/lower/expr_call/intrinsics/apply_call.rs",
+    "crates/perry-hir/src/lower/expr_call/post_args_dispatch.rs",
+    "crates/perry-hir/src/lower/expr_call/mod.rs",
+    "intrinsics.rs reexports if unused helper removal",
+    "Focused existing/new HIR regression module + test registration if needed",
+    "Standalone compiled parity fixture"
+  ],
+  "acceptance": [
+    "Original diagnostic patched hasOwnProperty and slice observe replacement",
+    "Getter-selected callee evaluated exactlyonce before arg sideeffects; getter throw prevents argument evaluation; arg mutation after getter cannot change alreadycapturedcallee",
+    "Saved original alias calls original afterprototype replacement; receiver-own slice does not override selected borrowedfunction",
+    "call and apply with literal/nonliteral arrays, empty args and null/undefined this for generic vsbrandchecked methods",
+    "Pristine Array slice/map/reduce on arraylike, Object toString/hasOwnProperty/propertyIsEnumerable and AnnexB controls within removedscope",
+    "No removal of brandcheck semantics for primitive builtin prototypes; existing exclusions/tests remainpassing",
+    "HIR asserts ordinary callee/property call rather than rewritten runtimeintrinsic or receiver-owned method"
+  ],
+  "minimal_validation": [
+    "Source review beforecompile; pinnedfmt/diff/filesize and complete changed-path static diagnostics",
+    "Focused HIR tests and singlecompiled Node26.5.1 fixture using freshlybuilt matchingtrio",
+    "Required full lint with user30mincap; individualremaininggatecompletion ifcapped, full output attribution nottailmatching",
+    "Final numberedfragment/freshhead rules whenPRnumberavailable;45min build/acceptancecap"
+  ],
+  "claim_limit": "Implementation authorized only by root assignment; this planningGO does not itself create claim/worktree or publish. Runtime extension beyond ordinary callable builtin support requires concrete failingcontrol and scope review."
+}

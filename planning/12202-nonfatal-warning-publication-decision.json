@@ -1,0 +1,18 @@
+{
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "decision": "May publish otherwise validated draft with explicit candidate nonfatal warning disclosure; no mandatory cleanup/rebuild",
+  "policy": {
+    "source": ".github/workflows/test.yml1170-1173",
+    "quote": "Clippy enforces the deny-level lints in [workspace.lints] (root Cargo.toml). cargo clippy exits nonzero only on deny lints, so warn-level output is informational and never blocks a PR."
+  },
+  "evidence": "planning/12202-final-attribution-reconciliation.json complete hostClippy comparison",
+  "disclosure": "3 added nonfatal Clippy warnings (2 type_complexity at ClassImageTables byte-key bind length maps,1 unnecessary_cast in static method template),1 prior collapsible_if removed; net+2. Distinct from full-driver32fatal gate failures classified30baseline/2environment.",
+  "not_claimed": [
+    "No new warnings",
+    "Clippy clean/pass",
+    "All gates green",
+    "Warnings attributed baseline"
+  ],
+  "optional_cleanup_if_root_chooses": "Two-file same-type alias for HashMap<(u32,Vec<u8>),u32> and removal of alreadyconst ObjectHeader pointer cast; no lint allows. Not necessary to meet stated warning policy, avoid delaying packet for optional cleanup. Any future source commit still needs exact-head compiler/matchingarchives, source-sensitive checks and targeted acceptance under existing reuse rules.",
+  "scope": "Publication readiness of own candidate only; no external PR review or merge approval. Required live CI/fragment policy remains applicable."
+}

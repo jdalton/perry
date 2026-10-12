@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-10-12T12:21:52Z",
+  "updated_at": "2026-10-12T12:25:05.623379+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": null,
   "next_steps": [
-    "Create the authorized draft from exact fork head 2272f7b520206d8e76d4f86440f92e035e25ce63 using publication/12202/body.md and title.txt",
-    "After GitHub assigns the actual PR number, create the numbered changelog fragment and record final-head validation",
-    "Keep ready_for_review false until the numbered fragment and final-head validation are complete"
+    "Local publisher may create12202 draft from exact2272 packet; no new PR counted until assignment",
+    "Complete11915 bounded source repair and Astra review before new builds"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -16,14 +15,15 @@
     "No new exemption or baseline raise to hide regressions"
   ],
   "resource_note": "32GB filesystem; avoid broad perry cargo test integration build. Use --bin perry filters, serial runtime/stdlib tests; require OWNER and announcement before target cleanup.",
-  "publication_blocker": null,
-  "publication_policy": "Root authorized exact source fork push and draft creation; do not mark ready for review or publish/merge without PR-numbered fragment and final-head validation.",
+  "publication_blocker": "pr-write-blocker.json",
+  "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
   "implementation_authorized_while_publication_blocked": true,
   "publication_packet_12390": "/workspace/work/perry-queue/publication/12390",
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "12202 corrected-head scoped tests, trio, compiled parity and full lint"
+    "11915 source review and static preflight, then serial validation",
+    "12202 numbered fragment and final-head validation when PR number arrives"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -124,23 +124,23 @@
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "705sourcehardeningclear; Cargohelduntilstaticpreflight",
-  "current_serial_issue": 12202,
+  "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
+  "current_serial_issue": null,
   "serial_pending": [
-    "TLS reviewer decision on nonfatal host Clippy warning-count difference (1102 vs 1100)",
-    "Root final GO before source push/draft; no readiness flags changed"
+    "11915 implementation/source review",
+    "12202 local draft PR assignment"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
   "validation_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
   "pending_validation_head": null,
   "serial_concurrency_incident": "Warningcheck briefly overlappedfocusedcompile; stopped; no resultclaimed; ownedchildexitverification andserialrerun required",
-  "validation_policy": "Exact 2272 full validation finished; full lint is non-green but fully attributed. Do not push source or enable draft/readiness until TLS review of Clippy warning delta and root GO. Preserve current ownership fields.",
-  "serial_static_owner": "/root/luna_tls_checker",
+  "validation_policy": "12202 exact2272 completed; baseline/environment failures and informational Clippy delta disclosed. Root authorized draft creation. Ready-for-review awaits numbered fragment and exact final-head checks. Serial CARGO_INCREMENTAL=0; full lint30min and builds/compiled acceptance45min hard caps.",
+  "serial_static_owner": null,
   "current_validation_progress": {
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
     "full_lint": "completed exit1; 105 pass/32 fail/2 CI skips; 30 baseline/2 environment-path/0 candidate",
-    "pending": "TLS review of Clippy nonfatal warning-count delta 1102 vs 1100",
+    "pending": "No validation hold on2272; awaiting local PR assignment",
     "evidence": "publication/12202/2272-final-validation.json and 2272-final-failure-attribution.json"
   },
   "validation_resource_policy": {
@@ -148,11 +148,5 @@
     "build_or_compiled_acceptance_hard_cap_minutes": 45,
     "at_cap": "Cleanly stop owned tree, wait for children, preserve logs; interrupted/incomplete never counts green.",
     "progress_updates_minutes_max": 10
-  },
-  "12202_final_validation": "Exact 2272 scoped acceptance complete; full lint completed non-green (105 pass,32 fail,2 skipped;30 baseline,2 env/path). Warn-level Clippy delta +3/-1 is informational under repo workflow and disclosed. Draft authorized; not ready for review.",
-  "12202_fork_push": {
-    "branch": "cloud/issue-12202-wtf8-class-keys",
-    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-    "verified": true
   }
 }
