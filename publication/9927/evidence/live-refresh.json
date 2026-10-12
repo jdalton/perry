@@ -1,0 +1,19 @@
+{
+  "issues": [
+    9927,
+    8085
+  ],
+  "read_only_refresh": {
+    "9927": "open; current automated issue cites scheduled Gate Freshness failure, run 37699715772",
+    "8085": "open; current automated issue cites npm-publish-freshness missing a completed main result in sampled window",
+    "open_pr_search": "No open PR result for exact issue refs 9927/8085 or 10198. Related open TLS work (#12121/#12149 and the broader #12276 chain) concerns runtime TLS conversions/other CI repairs, not this freshness checker. No same-path duplicate surfaced in bounded searches.",
+    "searched_at": "2026-10-12; read-only GitHub connector issue fetches and open-PR searches"
+  },
+  "duplicate_or_overlap_conclusion": "No same change/path overlap found in targeted open-PR search; related existing work is described explicitly.",
+  "main_head_observed": "1fd108718b33d33608510b06a298cc559105a0d1",
+  "implementation_base": "d74498b261d087a301b80602835bc7199a067957",
+  "rebase_policy": "Target is main; do not automatically rebase. Confirm expected integration/stacking with publisher and revalidate exact final head.",
+  "open_pr_file_audit": "open-pr-path-audit.json",
+  "open_pr_path_result": "Live open-PR IDs and head SHAs exactly match the saved 24-PR inventory. Live changed-file lists were fetched for all 24 PRs; neither candidate checker path appears.",
+  "open_pr_heads_live_verified": true
+}

@@ -1,0 +1,6 @@
+{
+  "self_test": "PASS",
+  "py_compile": "PASS",
+  "git_diff_check": "PASS",
+  "historical_replay": "PASS; baseline mixed-page checker result null, fixed checker recovers selected-job failure from run 38145723062 at 2026-10-11T14:05:29Z, age 9.8365h under unchanged 30h threshold; 43 logical GETs, cap 256; contemporaneous-page limitation documented in replay result"
+}

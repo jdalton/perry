@@ -1,0 +1,32 @@
+{
+  "repository": "PerryTS/perry",
+  "base": "main",
+  "base_sha_observed": "1fd108718b33d33608510b06a298cc559105a0d1",
+  "validated_branch_base": "d74498b261d087a301b80602835bc7199a067957",
+  "head": "jdalton:cloud/issue-9927-freshness-search",
+  "head_repo": "jdalton/perry",
+  "branch": "cloud/issue-9927-freshness-search",
+  "validated_final_head": "1bba095359ba0bc3a91efd3060119965c172327d",
+  "issues": [
+    9927,
+    8085
+  ],
+  "title": "fix(ci): partition bounded gate freshness search by event",
+  "scope": "Partial issue repair; references only, no issue closure claim.",
+  "readiness": "Packet prepared; draft creation authorized, not ready for review until actual PR number, numbered fragment, and exact-head revalidation are recorded.",
+  "draft_creation_allowed": true,
+  "ready_for_review": false,
+  "pr_number": null,
+  "fragment_path": null,
+  "no_version_bump": true,
+  "validation": "validation.json",
+  "live_state_refresh": "evidence/live-refresh.json",
+  "duplicate_refresh": "Targeted read-only search completed 2026-10-12; see evidence/live-refresh.json.",
+  "packet_body_sha256": "ebea58aa45b2adff372c1ff8239afd0e03acf0e3cbc2ca00992e3178582c8a79",
+  "body_file": "body.md",
+  "title_file": "title.txt",
+  "fragment_draft_file": "fragment-draft.txt",
+  "fragment_steps": "fragment-creation-steps.md",
+  "publication_instruction": "Do not create or imply a PR number in this packet. Local publisher creates draft; actual number arrives through publisher relay.",
+  "base_observation_source": "Astra read-only live main observation; implementation branch base remains d74498b261d087a301b80602835bc7199a067957. No automatic rebase performed."
+}

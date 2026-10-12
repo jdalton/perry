@@ -1,0 +1,212 @@
+{
+  "issue_refs": [
+    9927,
+    8085
+  ],
+  "scope": "Bounded freshness-search false-alert repair only; not npm-publish fix, whole-coverage claim, or issue closure.",
+  "candidate": {
+    "branch": "cloud/issue-9927-freshness-search",
+    "head": "1bba095359ba0bc3a91efd3060119965c172327d",
+    "base": "d74498b261d087a301b80602835bc7199a067957",
+    "changed_paths_vs_base": [
+      "scripts/check_gate_freshness.py"
+    ],
+    "worktree_clean_after_validation": true
+  },
+  "full_lint": {
+    "driver": "scripts/run_lint_gates.sh (unchanged; no SKIP_COMPILE_GATES)",
+    "command": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957 bash scripts/run_lint_gates.sh",
+    "environment": "First full execution used source env.sh, PIP_TARGET=/workspace/.toolchains/lint-python, PYTHONPATH including that target, shared CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390, CARGO_BUILD_JOBS=1, RUST_TEST_THREADS=1, PERRY_WORKSPACE_ROOT=/workspace/work/perry-queue/issue-9927. The first execution was default-sandbox, not network-enabled.",
+    "exit": 1,
+    "total_commands": 137,
+    "failed_commands": 33,
+    "ci_only_skips": 2,
+    "full_log": "/workspace/work/perry-queue/staging/full-lint-9927.log",
+    "classification": "No candidate-specific Rust source changes: the only path changed from base is the Python checker. 29 failed gate results are supported as baseline/source-inherited by exact baseline output comparisons or unchanged-source identity; 3 initial sandbox network-sensitive failures were resolved by targeted require_escalated retries; the Windows CRT setup still fails due proxy 403; API-doc generator was retried after a worktree target path fix and reveals tracked generated-doc drift. This is an exit-1 full run, never a full-green result.",
+    "failed_gates": [
+      {
+        "gate": "Validate benchmark artifact and fallback gates",
+        "classification": "exact baseline excerpt; Bun unavailable and saved artifact has zero RSS sample"
+      },
+      {
+        "gate": "Release pipeline failure-path regressions: python tests/test_release_pipeline.py",
+        "classification": "candidate and actual d744 baseline both fail the same ancestor-gate fixture with malformed jq output and unexpected workflow dispatch"
+      },
+      {
+        "gate": "Release pipeline failure-path regressions: Node platform visibility",
+        "classification": "initial sandbox run failed; network-capable rerun passes all 6 tests"
+      },
+      {
+        "gate": "Install Rust toolchain",
+        "classification": "initial sandbox run panicked; network-capable pinned-toolchain retry exits 0"
+      },
+      {
+        "gate": "Windows cargo xwin check",
+        "classification": "network-capable retry remains blocked: proxy returns HTTP 403 fetching aka.ms MSVC CRT channel"
+      },
+      {
+        "gate": "cargo fmt --all -- --check",
+        "classification": "exact baseline formatting drift; full diagnostic saved"
+      },
+      {
+        "gate": "Install PyYAML",
+        "classification": "initial sandbox network failure; retry with PIP_TARGET exits 0"
+      },
+      {
+        "gate": "Buffer layout zero-debt gate",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Local binding type-proof audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "GC store-site inventory",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Address-classification audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "String payload-access inventory",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "SSO string-unboxing inventory",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Object-header shape-descriptor census",
+        "classification": "actual d744 baseline replay matches candidate diagnostics; only absolute worktree path differs"
+      },
+      {
+        "gate": "Runtime GC-pointer holder custody audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Thread-exit custody of address-keyed globals",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Registry lifetime audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "GC environment-knob drift audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "GC documentation claim audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Windows-portable text I/O audit",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Native runtime ABI wasm check",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Raw-handle debt ratchet",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Native-handle ledger self-test",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Native-handle ledger ratchet",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Unrooted-local shape check",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Unrooted-local shape vs merge base",
+        "classification": "exact baseline/source state; not affected by Python checker"
+      },
+      {
+        "gate": "Test registration self-test",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Test registration check",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "Per-test global sinks",
+        "classification": "exact baseline excerpt"
+      },
+      {
+        "gate": "warnings product cargo check",
+        "classification": "baseline Rust warnings/errors; candidate Rust source is identical to d744"
+      },
+      {
+        "gate": "warnings host-compatible cargo check",
+        "classification": "baseline Rust warnings/errors; candidate Rust source is identical to d744"
+      },
+      {
+        "gate": "Clippy host-compatible",
+        "classification": "full captured retry reports one baseline clippy::reversed_empty_ranges error at crates/perry-runtime/src/regex/instance.rs:43 plus 1092 warnings; Rust source identical to d744"
+      },
+      {
+        "gate": "API-doc regeneration and drift",
+        "classification": "initial command built release perry successfully but failed because regen script hardcodes absent worktree target path. Exact gate retry using ignored symlink to freshly built candidate binary exits 0; generated API reference drift is 3772-line diff and is preserved separately. Generated docs and temporary symlink were then removed/restored; this remains a docs-drift failure from unchanged Rust source."
+      }
+    ],
+    "targeted_reruns": {
+      "rustup": {
+        "exit": 0,
+        "log": "/workspace/work/perry-queue/staging/9927-rustup-retry.log"
+      },
+      "pip_pyyaml": {
+        "exit": 0,
+        "log": "/workspace/work/perry-queue/staging/9927-pip-retry.log"
+      },
+      "node_platform_visibility": {
+        "exit": 0,
+        "log": "/workspace/work/perry-queue/staging/9927-platform-visibility-retry.log"
+      },
+      "release_pipeline_python": {
+        "exit": 1,
+        "baseline_exit": 1,
+        "log": "/workspace/work/perry-queue/staging/9927-release-pipeline-retry.log",
+        "baseline_log": "/workspace/work/perry-queue/staging/9927-baseline-release-pipeline.log"
+      },
+      "xwin": {
+        "exit": 1,
+        "classification": "proxy 403 on Microsoft CRT feed",
+        "log": "/workspace/work/perry-queue/staging/9927-xwin-retry.log"
+      },
+      "shape_descriptor_census": {
+        "exit": 1,
+        "baseline_exit": 1,
+        "log": "/workspace/work/perry-queue/staging/9927-baseline-shape-census.log",
+        "candidate_evidence": "full-lint-9927.log",
+        "comparison": "same callsite census diagnostic; absolute script path reflects worktree"
+      },
+      "api_docs": {
+        "generator_exit": 0,
+        "diff_gate_exit": 1,
+        "generator_log": "/workspace/work/perry-queue/staging/9927-regen-api-docs-retry.log",
+        "drift_patch": "/workspace/work/perry-queue/staging/9927-api-docs-drift.diff",
+        "drift_patch_lines": 3772,
+        "temporary_ignored_symlink_removed": true,
+        "generated_docs_restored": true
+      },
+      "cargo_fmt_full_output": "/workspace/work/perry-queue/staging/9927-fmt-full-diagnostic.log",
+      "clippy_host_full_output": "/workspace/work/perry-queue/staging/9927-clippy-host-retry.log"
+    }
+  },
+  "focused_and_replay": {
+    "self_test": "PASS",
+    "py_compile": "PASS",
+    "git_diff_check": "PASS",
+    "historical_replay": "PASS; baseline mixed-page checker result null, fixed checker recovers selected-job failure from run 38145723062 at 2026-10-11T14:05:29Z, age 9.8365h under unchanged 30h threshold; 43 logical GETs, cap 256; contemporaneous-page limitation documented in replay result"
+  },
+  "review": "Astra source review clear; no blocking findings.",
+  "publication": "Pushed branch exists; no PR or fragment created. Full lint exit 1 and classification must be included in any PR packet."
+}

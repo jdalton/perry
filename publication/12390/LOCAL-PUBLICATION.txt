@@ -1,4 +1,1 @@
-COMPLETED: local publisher applied body from handoff4f2639b and marked PR12439 READY.
-Validated head:1273aff03f8685e3d8a2f539dff9ac94088ac857.
-PR is open and unmerged; issue12390 remains open. No further local publication action requested.
-Preserve the live bot appendix. No duplicate PR.
+COMPLETE: PR12439 merged; original issue12390 closed. See merged-observed.json. No further publication action.

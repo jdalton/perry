@@ -1,0 +1,28 @@
+{
+  "source": "planning/12439-ci-baseline-attribution.json",
+  "full_ci_tls_rows": 16,
+  "tls_diagnostics": 16,
+  "tls_exact_baseline_matches": 16,
+  "alloc_census_focus": {
+    "file": "crates/perry-runtime/src/alloc_census.rs",
+    "source": [
+      {
+        "line": 84,
+        "code": "std::thread_local! {"
+      },
+      {
+        "line": 87,
+        "code": "static CREDIT: Cell<i64> = const { Cell::new(1 << 20) };"
+      },
+      {
+        "line": 89,
+        "code": "static IN_SAMPLER: Cell<bool> = const { Cell::new(false) };"
+      }
+    ],
+    "diagnostic": "2 raw `thread_local!` declaration(s), none allowed.",
+    "baseline_exact_match": true,
+    "pr_changes_file": false
+  },
+  "interpretation": "Baseline has 16 exact TLS CI rows; this checker change removes one local grouped finding only. alloc_census raw declarations remain outside its direct compound-cfg fix.",
+  "tls_rows_exactly_reproduced_on_d744": 16
+}

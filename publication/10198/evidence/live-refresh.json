@@ -1,0 +1,17 @@
+{
+  "issues": [
+    10198
+  ],
+  "read_only_refresh": {
+    "10198": "open; current automated issue cites TLS Budget failure in Enforce the thread-local policy ratchet",
+    "open_pr_search": "No open PR result for exact issue ref 10198 or check_thread_locals.py. Open PRs #12121/#12149 and #12276 include separate real TLS/runtime CI repairs; no duplicate checker path/change surfaced.",
+    "searched_at": "2026-10-12; read-only GitHub connector issue fetches and open-PR searches"
+  },
+  "duplicate_or_overlap_conclusion": "No same change/path overlap found in targeted open-PR search; related existing work is described explicitly.",
+  "main_head_observed": "1fd108718b33d33608510b06a298cc559105a0d1",
+  "implementation_base": "d74498b261d087a301b80602835bc7199a067957",
+  "rebase_policy": "Target is main; do not automatically rebase. Confirm expected integration/stacking with publisher and revalidate exact final head.",
+  "open_pr_file_audit": "open-pr-path-audit.json",
+  "open_pr_path_result": "Live open-PR IDs and head SHAs exactly match the saved 24-PR inventory. Live changed-file lists were fetched for all 24 PRs; neither candidate checker path appears.",
+  "open_pr_heads_live_verified": true
+}

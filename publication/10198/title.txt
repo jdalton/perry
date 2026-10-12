@@ -1,0 +1,1 @@
+fix(lint): honor compound test cfg in TLS checker

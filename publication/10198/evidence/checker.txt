@@ -1,0 +1,7 @@
+python3 scripts/check_thread_locals.py --self-test: PASS
+python3 -m py_compile scripts/check_thread_locals.py: PASS
+Exact CI checker comparison: baseline 16 grouped findings; candidate 15; only cycle_malloc_trim group removed; all 15 remaining groups unchanged.
+
+Candidate/baseline diff: ../../staging/10198-tls-baseline-diff.txt
+Candidate output: ../../staging/10198-tls-candidate-ci.log
+Baseline output: ../../staging/10198-tls-baseline-ci.log

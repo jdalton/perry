@@ -1,0 +1,6 @@
+Draft creation allowed. Create exactly one draft in PerryTS/perry with title.txt and body.md.
+Base: main
+Head: jdalton:cloud/issue-9927-freshness-search
+Expected head SHA: 1bba095359ba0bc3a91efd3060119965c172327d
+Record actual PR number/head/state in cloud/local-publisher-inbox publisher-status.json batch.new_prs.
+Cloud will add the numbered fragment, push, and revalidate. Do not mark ready until ready_for_review=true for the resulting exact head.

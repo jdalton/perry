@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-12T04:47:56.924694+00:00",
+  "pr": 12439,
+  "state": "MERGED",
+  "merged_at": "2026-10-12T03:38:08Z",
+  "head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+  "merge_commit": "229e44d71e87beaa68aba668fe24e72aff5cbfbd",
+  "issue": 12390,
+  "issue_state": "CLOSED",
+  "closed_at": "2026-10-12T03:38:10Z",
+  "source": "live GitHub REST read"
+}

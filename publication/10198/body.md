@@ -1,0 +1,9 @@
+The TLS checker counted direct `thread_local!` blocks gated by compound test-only cfg expressions as shipping declarations. It now conservatively evaluates direct block attributes with `test=false` and suppresses a declaration only when the predicate is provably false; malformed and unknown attributes remain shipping. Focused self-tests cover nested all/any/not, malformed and string/comment controls, unknown predicates, and sabotage cases.
+
+Refs #10198. This is a partial checker-only repair limited to direct macro-block attributes; it does not claim whole-issue coverage or close #10198. Inline and external-module cfg classification retain prior behavior.
+
+The exact checker invocation reports 15 grouped findings versus 16 on baseline d744. The sole removed group is `cycle_malloc_trim.rs`; 15 residual groups remain. CI previously reproduced all 16 TLS rows on d744, and `alloc_census.rs` still reports two raw declarations. See [checker evidence](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/10198/evidence/checker.txt) and [CI baseline evidence](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/10198/evidence/ci-baseline.txt).
+
+The unchanged mandatory full lint driver completed on this head with exit 1 (30/137 failed; 2 CI-only skipped). Windows CRT fetch remains blocked by proxy HTTP 403; API docs regeneration exposed generated-doc drift, which was recorded and restored. Failure classifications are in [full-lint evidence](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/10198/evidence/full-lint.txt) and [validation.json](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/10198/validation.json). Full lint is not green.
+
+[Astra source review](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/10198/evidence/review.txt).

@@ -1,0 +1,3 @@
+Read-only live open-PR overlap check (2026-10-12): GitHub returned 24 open PR ids, exactly matching the saved inventory. A live read-only GitHub CLI query fetched each open PR head SHA; all 24 match the saved inventory. Exact IDs and SHAs are in open-pr-path-audit.json. Fetched changed-filename lists for all 24 current PRs (no file-list errors). Candidate path for this packet: `scripts/check_gate_freshness.py`. Live path intersection: empty. No open PR currently changes this freshness checker path.
+
+Adjacent TLS PRs remain separate runtime/checker work: #12121 and #12149 (plus broader CI repair #12276); their current file lists have no candidate-path overlap. Exact PR ids, saved snapshot head SHAs, and live changed-file counts are in `open-pr-path-audit.json`.

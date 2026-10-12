@@ -10,10 +10,10 @@
   "branch": "cloud/issue-12390-remove-parked-streams",
   "validated_final_head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
   "validated_tree": "2147ef96e26f0fce9d599b7c35d919c1d7f8294c",
-  "readiness": "READY for upstream review; local publisher applied final body and marked ready",
+  "readiness": "MERGED; original issue CLOSED",
   "draft_observed": false,
-  "merged": false,
-  "original_issue_state": "open",
+  "merged": true,
+  "original_issue_state": "closed",
   "fragment_path": "changelog.d/12439-remove-unused-streams.md",
   "fragment_present": true,
   "no_version_bump": true,
@@ -29,7 +29,7 @@
   "full_lint": "28 baseline-reproduced failures +2 environment failures; unchanged implementation source, driver not repeated for fragment-only commit",
   "ci_attribution": "39 distinct warnings /16 TLS groups matched baseline in two specified jobs; CI synthetic merge differs from branch head",
   "body_sha256": "b332dd87c1556290d993b5f4ddee31a54aa7ebc7031aa5aeba3866f030b58038",
-  "checked_at": "2026-10-12T03:42:15.782727+00:00",
+  "checked_at": "2026-10-12T04:47:56.924694+00:00",
   "local_workers": "paused; local publication coordinator only",
   "publication_origin": "Draft created through local connection; cloud only pushed authorized fork branches"
 }

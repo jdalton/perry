@@ -1,0 +1,9 @@
+Gate freshness could miss a recently completed scheduled run when high-volume `workflow_run` activity crowded it out of one mixed-event page. This change searches schedule, push, and workflow_dispatch partitions within explicit request and page bounds, and selects evidence using configured job completion times, including completed failures. Shared parent/job requests are cached; malformed, repeated, failed, or exhausted searches report incomplete explicitly. A fresh observed completion is sufficient evidence without claiming a globally newest run. The freshness threshold is unchanged.
+
+Refs #9927 and #8085. This is a bounded checker repair; it does not fix npm publication or claim complete historical coverage, and it does not close either issue.
+
+Validation: focused self-test, py_compile, diff check, and replay of saved API evidence pass. The replay recovers run 38145723062 (selected job completion 2026-10-11T14:05:29Z) using 43 logical GETs within the 256-request cap. The exact contemporaneous mixed-page response was not archived; see [replay evidence](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/9927/evidence/replay.txt).
+
+The unchanged mandatory full lint driver completed on this head with exit 1 (33/137 failed; 2 CI-only skipped). The Windows CRT fetch remained blocked by proxy HTTP 403; baseline failures, network retries, and API-doc drift are classified in [full-lint evidence](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/9927/evidence/full-lint.txt) and [validation.json](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/9927/validation.json). This is not a green full-lint result.
+
+[Astra source review](https://github.com/jdalton/perry/blob/cloud/publication-handoffs/publication/9927/evidence/review.txt).

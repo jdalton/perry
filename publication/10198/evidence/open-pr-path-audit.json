@@ -1,0 +1,263 @@
+{
+  "checked_at": "2026-10-12",
+  "repository": "PerryTS/perry",
+  "live_open_pr_search": "GitHub connector read-only search `is:open`; 24 open PR ids.",
+  "prior_inventory": "/workspace/work/perry-queue/live-open-prs.json; same 24 PR ids. Its headRefOid values are included below as exact SHAs from that saved inventory.",
+  "head_sha_caveat": "None for open PR head SHAs: all current head SHAs were read live and matched the saved inventory.",
+  "candidate_changed_paths": [
+    "scripts/check_gate_freshness.py",
+    "scripts/check_thread_locals.py"
+  ],
+  "current_live_file_list_requests": 24,
+  "file_list_request_errors": [],
+  "overlap_results": {
+    "scripts/check_gate_freshness.py": [],
+    "scripts/check_thread_locals.py": []
+  },
+  "interpretation": "All 24 currently open PRs have live changed-file lists and neither candidate path appears in any list. The current open PR id set matches the saved inventory; no open PR changes either candidate checker path. Related open TLS PRs are listed as distinct paths in the detailed results.",
+  "pull_requests": [
+    {
+      "pr": 12276,
+      "url": "https://github.com/PerryTS/perry/pull/12276",
+      "title": "fix(ci): repair main's CI failures after the call-path/regex/roots lanes",
+      "head_sha_from_prior_open_pr_snapshot": "e8fa5fe9edbd358586575f8f1c04ba700d40007c",
+      "changed_file_count_live": 178,
+      "target_path_overlap_live": [],
+      "live_head_sha": "e8fa5fe9edbd358586575f8f1c04ba700d40007c",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12263,
+      "url": "https://github.com/PerryTS/perry/pull/12263",
+      "title": "test: inspect deleted evaluation methods without invoking them",
+      "head_sha_from_prior_open_pr_snapshot": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+      "changed_file_count_live": 71,
+      "target_path_overlap_live": [],
+      "live_head_sha": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12218,
+      "url": "https://github.com/PerryTS/perry/pull/12218",
+      "title": "build(deps): bump seroval and solid-js in /tests/release/packages/solid-reactivity",
+      "head_sha_from_prior_open_pr_snapshot": "5d8272afff84a1ab7b238b2e6fb49a2a4057f156",
+      "changed_file_count_live": 2,
+      "target_path_overlap_live": [],
+      "live_head_sha": "5d8272afff84a1ab7b238b2e6fb49a2a4057f156",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12149,
+      "url": "https://github.com/PerryTS/perry/pull/12149",
+      "title": "fix(runtime): match node on the gap-suite regressions",
+      "head_sha_from_prior_open_pr_snapshot": "ef6aee0ce990777e20b2464284ef16cbbd593c6d",
+      "changed_file_count_live": 144,
+      "target_path_overlap_live": [],
+      "live_head_sha": "ef6aee0ce990777e20b2464284ef16cbbd593c6d",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12121,
+      "url": "https://github.com/PerryTS/perry/pull/12121",
+      "title": "fix(runtime): clear the gates that #12109 left red",
+      "head_sha_from_prior_open_pr_snapshot": "07857a06ce57ffcfa538eb5a0d80d8e881c36bb2",
+      "changed_file_count_live": 103,
+      "target_path_overlap_live": [],
+      "live_head_sha": "07857a06ce57ffcfa538eb5a0d80d8e881c36bb2",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12120,
+      "url": "https://github.com/PerryTS/perry/pull/12120",
+      "title": "docs: regenerate the API reference",
+      "head_sha_from_prior_open_pr_snapshot": "a6c46cdc9ebb427f17a13cb642471ca39a942e38",
+      "changed_file_count_live": 84,
+      "target_path_overlap_live": [],
+      "live_head_sha": "a6c46cdc9ebb427f17a13cb642471ca39a942e38",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12119,
+      "url": "https://github.com/PerryTS/perry/pull/12119",
+      "title": "fix(gc_effects): exempt aHash's random-source init from the indirect-call taint",
+      "head_sha_from_prior_open_pr_snapshot": "bfcfa4ab9e5cc530632aaf96794c1858eefaa51a",
+      "changed_file_count_live": 83,
+      "target_path_overlap_live": [],
+      "live_head_sha": "bfcfa4ab9e5cc530632aaf96794c1858eefaa51a",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12118,
+      "url": "https://github.com/PerryTS/perry/pull/12118",
+      "title": "fix(runtime): instanceof never mints a class object for a builtin id",
+      "head_sha_from_prior_open_pr_snapshot": "fece12e8a516785cb14e9ee38035acd076472146",
+      "changed_file_count_live": 80,
+      "target_path_overlap_live": [],
+      "live_head_sha": "fece12e8a516785cb14e9ee38035acd076472146",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12117,
+      "url": "https://github.com/PerryTS/perry/pull/12117",
+      "title": "fix(runtime): root raw handles across calls and correct the handle ratchets",
+      "head_sha_from_prior_open_pr_snapshot": "ed19ccd05bbdbd13e8292f7d71f1eacbe2a7f552",
+      "changed_file_count_live": 70,
+      "target_path_overlap_live": [],
+      "live_head_sha": "ed19ccd05bbdbd13e8292f7d71f1eacbe2a7f552",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12116,
+      "url": "https://github.com/PerryTS/perry/pull/12116",
+      "title": "refactor: split five files back under the 2000-line cap",
+      "head_sha_from_prior_open_pr_snapshot": "ada1b587d26b1f348cf29cd335f9dc121055c822",
+      "changed_file_count_live": 45,
+      "target_path_overlap_live": [],
+      "live_head_sha": "ada1b587d26b1f348cf29cd335f9dc121055c822",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12115,
+      "url": "https://github.com/PerryTS/perry/pull/12115",
+      "title": "ci: register the dark GC witnesses and isolate the new test counters",
+      "head_sha_from_prior_open_pr_snapshot": "43bf8bce6b88bba5050550b19af16d94440d6e74",
+      "changed_file_count_live": 33,
+      "target_path_overlap_live": [],
+      "live_head_sha": "43bf8bce6b88bba5050550b19af16d94440d6e74",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12114,
+      "url": "https://github.com/PerryTS/perry/pull/12114",
+      "title": "fix(runtime): audit the new raw stores and classify addresses with addr_class",
+      "head_sha_from_prior_open_pr_snapshot": "cded27de5d466061aa82c03107f26c1909c8d90d",
+      "changed_file_count_live": 23,
+      "target_path_overlap_live": [],
+      "live_head_sha": "cded27de5d466061aa82c03107f26c1909c8d90d",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12113,
+      "url": "https://github.com/PerryTS/perry/pull/12113",
+      "title": "fix(ext): ext-crate tests root values through RuntimeHandleScope",
+      "head_sha_from_prior_open_pr_snapshot": "ee6659c664cf3916b84121616148fc6bc382d014",
+      "changed_file_count_live": 8,
+      "target_path_overlap_live": [],
+      "live_head_sha": "ee6659c664cf3916b84121616148fc6bc382d014",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 12112,
+      "url": "https://github.com/PerryTS/perry/pull/12112",
+      "title": "fix(docs): the my-bindings fixture reads buffers inside a no-GC scope",
+      "head_sha_from_prior_open_pr_snapshot": "f93cdd9312e721ef0cdea75d7d31e6b3a7feaff1",
+      "changed_file_count_live": 2,
+      "target_path_overlap_live": [],
+      "live_head_sha": "f93cdd9312e721ef0cdea75d7d31e6b3a7feaff1",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 11879,
+      "url": "https://github.com/PerryTS/perry/pull/11879",
+      "title": "audit(gc): revalidate RSS change source pins and page-size cache",
+      "head_sha_from_prior_open_pr_snapshot": "247a8b11c4ec2b1669d1c9c969b22ae2c699bd14",
+      "changed_file_count_live": 8,
+      "target_path_overlap_live": [],
+      "live_head_sha": "247a8b11c4ec2b1669d1c9c969b22ae2c699bd14",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 11761,
+      "url": "https://github.com/PerryTS/perry/pull/11761",
+      "title": "fix(async_hooks): defer destroy until execution scopes finish",
+      "head_sha_from_prior_open_pr_snapshot": "00ad2a4f20224df7083ce8173852c6d90fd2940f",
+      "changed_file_count_live": 3,
+      "target_path_overlap_live": [],
+      "live_head_sha": "00ad2a4f20224df7083ce8173852c6d90fd2940f",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 11631,
+      "url": "https://github.com/PerryTS/perry/pull/11631",
+      "title": "gc: function-entry polls at indirect entries and recursive SCCs (RFC deferred collection S5, polls)",
+      "head_sha_from_prior_open_pr_snapshot": "7daff508d270df5ab36455468bdb2dd796a5fc2a",
+      "changed_file_count_live": 59,
+      "target_path_overlap_live": [],
+      "live_head_sha": "7daff508d270df5ab36455468bdb2dd796a5fc2a",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 11630,
+      "url": "https://github.com/PerryTS/perry/pull/11630",
+      "title": "gc: allocation never begins a precise collection phase (RFC deferred collection S5, runtime)",
+      "head_sha_from_prior_open_pr_snapshot": "3cfe20ff09d4e21870c05011ffbde0b69188e95c",
+      "changed_file_count_live": 35,
+      "target_path_overlap_live": [],
+      "live_head_sha": "3cfe20ff09d4e21870c05011ffbde0b69188e95c",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 11528,
+      "url": "https://github.com/PerryTS/perry/pull/11528",
+      "title": "docs(gc): RFC \u2014 deferred collection (L2b)",
+      "head_sha_from_prior_open_pr_snapshot": "0e903f3d91d5d6b03013547eddba18dd23fb9903",
+      "changed_file_count_live": 2,
+      "target_path_overlap_live": [],
+      "live_head_sha": "0e903f3d91d5d6b03013547eddba18dd23fb9903",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 10961,
+      "url": "https://github.com/PerryTS/perry/pull/10961",
+      "title": "test: add measured non-retaining old-GC corpus control",
+      "head_sha_from_prior_open_pr_snapshot": "19fbbfd554ee23551217225a59be93faea6acb99",
+      "changed_file_count_live": 6,
+      "target_path_overlap_live": [],
+      "live_head_sha": "19fbbfd554ee23551217225a59be93faea6acb99",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 10204,
+      "url": "https://github.com/PerryTS/perry/pull/10204",
+      "title": "gc: a full mark-sweep promotes its Eden survivors in place; bounded promoted cohort (#10182) [does not meet acceptance]",
+      "head_sha_from_prior_open_pr_snapshot": "6796cd3328e78253ee12a7de4acc5b59a4d96f54",
+      "changed_file_count_live": 13,
+      "target_path_overlap_live": [],
+      "live_head_sha": "6796cd3328e78253ee12a7de4acc5b59a4d96f54",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 9949,
+      "url": "https://github.com/PerryTS/perry/pull/9949",
+      "title": "gc(tenuring): the survival-rate lock latches S=1 only on steady-state evidence, never from the startup cohort",
+      "head_sha_from_prior_open_pr_snapshot": "4b912d964ce634596953bfc719283b736142cc4f",
+      "changed_file_count_live": 6,
+      "target_path_overlap_live": [],
+      "live_head_sha": "4b912d964ce634596953bfc719283b736142cc4f",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 7754,
+      "url": "https://github.com/PerryTS/perry/pull/7754",
+      "title": "feat(ui-ios): drive onFrame from CADisplayLink and add frame-time metrics",
+      "head_sha_from_prior_open_pr_snapshot": "debefa55c1b83161af7986429e382d1ac596a779",
+      "changed_file_count_live": 22,
+      "target_path_overlap_live": [],
+      "live_head_sha": "debefa55c1b83161af7986429e382d1ac596a779",
+      "head_sha_matches_prior_snapshot": true
+    },
+    {
+      "pr": 5811,
+      "url": "https://github.com/PerryTS/perry/pull/5811",
+      "title": "feat: Electron-compat shim + perry electron runner (packaged apps run natively)",
+      "head_sha_from_prior_open_pr_snapshot": "a1be25e3a8d050eb28ee2efee4c5b5eafb38f021",
+      "changed_file_count_live": 47,
+      "target_path_overlap_live": [],
+      "live_head_sha": "a1be25e3a8d050eb28ee2efee4c5b5eafb38f021",
+      "head_sha_matches_prior_snapshot": true
+    }
+  ],
+  "current_head_sha_source": "Live read-only GitHub CLI: gh pr list --repo PerryTS/perry --state open --limit 100 --json number,headRefOid. All 24 results matched saved live-open-prs.json head SHAs exactly.",
+  "same_open_pr_ids_as_prior_inventory": true,
+  "same_head_shas_as_prior_inventory": true
+}

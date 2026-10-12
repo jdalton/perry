@@ -1,171 +1,85 @@
 {
-  "updated_at": "2026-10-12T03:42:15.782727+00:00",
-  "local_workers": "paused",
-  "priority": [
-    9927,
-    10198,
-    12285,
-    12007
+  "checked_at": "2026-10-12T04:52:34.221866+00:00",
+  "original224_total": 224,
+  "original_open": 206,
+  "original_closed": 18,
+  "open_new_excluded": [
+    12396,
+    12408,
+    12425,
+    12435
   ],
-  "coverage": {
-    "original224": 224,
+  "open_prs_created_this_turn": 1,
+  "merged_prs_this_turn": 1,
+  "original_issues_closed_this_turn": 1,
+  "coverage_counts": {
     "uncovered": 160,
     "uncertain": 12,
-    "covered_open": 35,
-    "closed": 17
+    "covered_open": 34,
+    "closed": 18
   },
-  "continuation_changes": {
-    "new_prs": 1,
-    "cloud_created_prs": 0,
-    "merges": 0,
-    "original_issue_closures": 0
+  "conservative_uncovered_upper_bound": 172,
+  "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
+  "scheduled_execution": false,
+  "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
+  "source_preserved": "Archived bare mirror, exact shallow boundary, 30 valid head/tree snapshots, patches and ledgers verified. New five worktrees snapshotted at snapshots/20261012T020605Z/manifest.json",
+  "local_workers": "paused",
+  "publication_origin": "User local connection created draft PR12439; cloud PR creation count0",
+  "cloud_prs_created": 0,
+  "local_prs_created": 1,
+  "pr12439_state": "MERGED; original12390 CLOSED",
+  "new_batch": {
+    "target": 20,
+    "baseline_last_pr": 12439,
+    "previous_batch_merged": 20,
+    "new_prs": [],
+    "merged": 0,
+    "ready_for_review": 0,
+    "drafts": 0,
+    "remaining": 20,
+    "count_policy": "20 distinct substantive contributor PRs after12439; count only merged or good reviewable state; no artificial splits"
   },
-  "claims": [
+  "packets": [
     {
-      "issue": 12390,
-      "cohort": "original224",
-      "coverage": "covered",
-      "covering_prs": [
-        12439
+      "issues": [
+        9927,
+        8085
       ],
-      "partial_overlaps": [
-        12113,
-        12114,
-        12115,
-        12116,
-        12117,
-        12149,
-        12276
+      "head": "1bba095359ba0bc3a91efd3060119965c172327d",
+      "state": "draft_creation_allowed",
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "packet": "publication/9927/metadata.json"
+    },
+    {
+      "issues": [
+        10198
       ],
-      "overlap_note": "Partial PRs fix removed shadow frame test calls; none delete or own the parked crate. Astra inspected live PR hunks.",
-      "owner": "cloud /root/luna_verification",
-      "task": "/root/luna_verification",
-      "branch": "cloud/issue-12390-remove-parked-streams",
-      "worktree": "/workspace/work/perry-queue/issue-12390",
-      "validation": "Finalhead1273aff: fresh compiler/runtime-static/stdlib-static build PASS; routing2/2, serialstreams33/33, sixexplicitNode26.5.1parityruns PASS; bothauto featurearchive sets forciblyrebuilt andlinked withoutarchivefallback. Full lint unchangedimplementation28baseline+2envfails; CI39warnings/16TLSgroups baselineattributed.",
-      "merge_state": "OPEN PR12439, ready for review, unmerged",
-      "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T03:37:26.822660+00:00",
-      "evidence": "publication/12390/pr-12439-ready-observed.json: open, draft=false, merged=false, exact validated 1273aff head; approved body plus bot appendix",
-      "publication_state": "Verifiedreadyforreview; userlocalcoordinatorappliedfinalbodyandmarkedready",
-      "pushed_commit": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
-      "current_head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
-      "has_uncommitted_changes": false,
-      "local_publication_packet": "/workspace/work/perry-queue/publication/12390",
-      "remaining": "Upstreamreview/merge/closure; no requestedimplementationwork remains on12390",
-      "coverage_stage": "open ready for review",
-      "pr_url": "https://github.com/PerryTS/perry/pull/12439",
-      "handoff_url": "https://github.com/jdalton/perry/tree/4f2639b/publication/12390"
+      "head": "af0c2a033db40117c63099751964d467accd35ae",
+      "state": "draft_creation_allowed",
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "packet": "publication/10198/metadata.json"
     },
     {
-      "issue": 12285,
-      "cohort": "original224",
-      "coverage": "uncovered",
-      "covering_prs": [],
-      "owner": "cloud /root/luna_worker_lifecycle",
-      "task": "/root/luna_worker_lifecycle",
-      "branch": "cloud/issue-12285-parentport-lifecycle",
-      "worktree": "/workspace/work/perry-queue/issue-12285",
-      "validation": "Fresh candidate trio build passed; 1stdlibownership and4runtimefocusedtests passed serially; fixedarchive eightfixture run6pass2fail. Bothfail direct parentPort.close AOTmanifestregistration, candidatefixpending. GenericTCPechohelper sandboxfailureunrelated; full lintpending.",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "evidence": "issue12285-status.json; refreshed 25 open PR inventories with no exact-path overlap",
-      "refreshed_at": "2026-10-12T03:42:15.782727+00:00",
-      "publication_state": "Committed locally; not pushed; committed-head compiled acceptance and full lint pending",
-      "current_head": "804c6b6e8080b584f0e804ff637800d91636deb2",
-      "has_uncommitted_changes": false,
-      "remaining": "Fresh matching compiler/static archives, committed-head compiled fixtures and required full lint after checker lanes"
-    },
-    {
-      "issue": 12007,
-      "cohort": "original224",
-      "coverage": "uncovered",
-      "covering_prs": [],
-      "owner": "cloud /root/luna_class_tdz",
-      "task": "/root/luna_class_tdz",
-      "branch": "cloud/issue-12007-class-expression-tdz",
-      "worktree": "/workspace/work/perry-queue/issue-12007",
-      "validation": "Focused HIR unit test actual1 passed; pinned Node full fixture exit0; Astra internal review complete; Perry compiled acceptance pending; isolated HIR target cache removed after pass.",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "evidence": "issue12007-status.json; refreshed 25 open PR inventories with no exact-path overlap",
-      "refreshed_at": "2026-10-12T03:42:15.782727+00:00",
-      "publication_state": "Committed locally; not pushed; committed-head compiled acceptance and full lint pending",
-      "current_head": "e8ad66b00b45646a174f02092c33bb59f727a25c",
-      "has_uncommitted_changes": false,
-      "remaining": "Fresh matching compiler/static archives, committed-head compiled fixtures and required full lint after checker lanes"
-    },
-    {
-      "issue": 10198,
-      "cohort": "original224",
-      "coverage": "uncovered",
-      "scope": "Residual checker false-positive repair only; not whole-issue coverage",
-      "covering_prs": [],
-      "partial_overlaps": [
-        12121,
-        12149,
-        12276
+      "issues": [
+        12285
       ],
-      "owner": "cloud /root/luna_tls_checker",
-      "task": "/root/luna_tls_checker",
-      "branch": "cloud/issue-10198-compound-test-cfg",
-      "worktree": "/workspace/work/perry-queue/issue-10198",
-      "validation": "Exact committed-head Python self-test, py_compile, diff-check and file-size pass; Astra source review clear; full lint pending",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T01:12:19.814156+00:00",
-      "evidence": "planning/next-candidates/issue-10198-checker-plan.json",
-      "publication_state": "Fork branch pushed; no PR; second upcoming serial full lint before local packet",
-      "current_head": "af0c2a033db40117c63099751964d467accd35ae",
-      "has_uncommitted_changes": false,
-      "pushed_commit": "af0c2a033db40117c63099751964d467accd35ae",
-      "remaining": "Full unchanged lint driver, classify baseline/environment failures, publish partial-scope Refs10198 packet; notwholeissuecoverage",
-      "publication_coverage_policy": "Refs-only partial repair; a future draft is not by itself whole-issue coverage or closure. Keep uncovered unless separate full-scope evidence establishes coverage."
+      "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
+      "state": "committed-head validation running",
+      "draft_creation_allowed": false,
+      "ready_for_review": false
     },
     {
-      "issue": 9927,
-      "cohort": "original224",
-      "coverage": "uncovered",
-      "covering_prs": [],
-      "scope": "Bounded freshness-checker false missing-execution alert; does not repair actual npm publication failures",
-      "owner": "cloud /root/luna_tls_checker",
-      "task": "/root/luna_tls_checker",
-      "branch": "cloud/issue-9927-freshness-search",
-      "worktree": "/workspace/work/perry-queue/issue-9927",
-      "validation": "Exact committed-head Python self-test, py_compile, diff-check and historical real-payload replay pass; Astra source review clear; full lint pending",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T02:00:56.836454+00:00",
-      "evidence": "planning/next-candidates/9927-8085-bounded-plan.json; fresh issue JSON and 24 open PR overlap scan",
-      "publication_state": "Fork branch pushed; no PR; next serial full lint before local publication packet",
-      "current_head": "1bba095359ba0bc3a91efd3060119965c172327d",
-      "has_uncommitted_changes": false,
-      "pushed_commit": "1bba095359ba0bc3a91efd3060119965c172327d",
-      "remaining": "Full unchanged lint driver at committed head, classify baseline/environment failures, publish exact local packet; after real PR add fragment and recheck",
-      "publication_coverage_policy": "Refs-only partial repair; a future draft is not by itself whole-issue coverage or closure. Keep uncovered unless separate full-scope evidence establishes coverage."
-    },
-    {
-      "issue": 8085,
-      "cohort": "original224",
-      "coverage": "uncovered",
-      "covering_prs": [],
-      "scope": "Bounded freshness-checker false missing-execution alert; does not repair actual npm publication failures",
-      "owner": "cloud /root/luna_tls_checker",
-      "task": "/root/luna_tls_checker",
-      "branch": "cloud/issue-9927-freshness-search",
-      "worktree": "/workspace/work/perry-queue/issue-9927",
-      "validation": "Exact committed-head Python self-test, py_compile, diff-check and historical real-payload replay pass; Astra source review clear; full lint pending",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T02:00:56.836454+00:00",
-      "evidence": "planning/next-candidates/9927-8085-bounded-plan.json; fresh issue JSON and 24 open PR overlap scan",
-      "publication_state": "Fork branch pushed; no PR; next serial full lint before local publication packet",
-      "current_head": "1bba095359ba0bc3a91efd3060119965c172327d",
-      "has_uncommitted_changes": false,
-      "pushed_commit": "1bba095359ba0bc3a91efd3060119965c172327d",
-      "remaining": "Full unchanged lint driver at committed head, classify baseline/environment failures, publish exact local packet; after real PR add fragment and recheck",
-      "publication_coverage_policy": "Refs-only partial repair; a future draft is not by itself whole-issue coverage or closure. Keep uncovered unless separate full-scope evidence establishes coverage."
+      "issues": [
+        12007
+      ],
+      "head": "e8ad66b00b45646a174f02092c33bb59f727a25c",
+      "state": "awaiting validation slot",
+      "draft_creation_allowed": false,
+      "ready_for_review": false
     }
   ],
-  "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only"
+  "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
+  "coverage_freshness": "Last full open-state refresh2026-10-12T02:51:13Z;12390 merge/closure and claimed-issue overlap refreshed at this milestone."
 }

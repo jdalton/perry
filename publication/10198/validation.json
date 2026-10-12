@@ -1,0 +1,88 @@
+{
+  "issues": [
+    10198
+  ],
+  "title": "Fix false TLS checker findings for direct compound test cfg blocks",
+  "scope": "Partial checker-only repair; Refs #10198. This repairs direct thread_local! block compound-cfg false positives only; it does not claim whole-issue coverage or close #10198.",
+  "candidate": {
+    "branch": "cloud/issue-10198-compound-test-cfg",
+    "head": "af0c2a033db40117c63099751964d467accd35ae",
+    "base": "d74498b261d087a301b80602835bc7199a067957",
+    "changed_paths": [
+      "scripts/check_thread_locals.py"
+    ],
+    "commit_pushed_to_fork": true,
+    "clean_after_validation": true
+  },
+  "full_lint": {
+    "driver": "unchanged scripts/run_lint_gates.sh; no SKIP_COMPILE_GATES",
+    "command": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957 bash scripts/run_lint_gates.sh",
+    "environment": "Network-enabled full run; PIP_TARGET=/workspace/.toolchains/lint-python and PYTHONPATH set; CARGO_TARGET_DIR=/workspace/work/perry-queue/target-12390, CARGO_BUILD_JOBS=1, RUST_TEST_THREADS=1, PERRY_WORKSPACE_ROOT=/workspace/work/perry-queue/issue-9927.",
+    "exit": 1,
+    "total_commands": 137,
+    "failed_commands": 30,
+    "ci_only_skips": 2,
+    "log": "/workspace/work/perry-queue/staging/full-lint-10198.log",
+    "classification": "Full run remains non-green. Failures are inherited/source-baseline or environment/generator issues; changed path is only Python checker, and Rust source matches d744. API docs retry reveals generated-document drift. No full-lint pass is claimed.",
+    "notable_failures": [
+      {
+        "gate": "Windows cargo xwin check",
+        "result": "proxy HTTP 403 fetching Microsoft CRT; targeted network run did not resolve"
+      },
+      {
+        "gate": "Release pipeline Python regressions",
+        "result": "same ancestor-gate fixture failure reproduced on actual d744 baseline"
+      },
+      {
+        "gate": "Benchmark artifact fallback",
+        "result": "Bun unavailable and saved artifact lacks RSS sample; baseline behavior"
+      },
+      {
+        "gate": "Rust formatting/inventory/audit gates",
+        "result": "inherited failures on unchanged Rust/repository state"
+      },
+      {
+        "gate": "Warnings product and host-compatible checks",
+        "result": "baseline Rust diagnostics; source identical to d744"
+      },
+      {
+        "gate": "Host clippy",
+        "result": "one clippy::reversed_empty_ranges error at crates/perry-runtime/src/regex/instance.rs:43 plus 1092 warnings; Rust source identical to d744"
+      },
+      {
+        "gate": "API docs",
+        "result": "full driver builds current candidate release binary then hits regen script hardcoded worktree target path. Retried exact generator using temporary ignored symlink to that freshly built binary: generator exit 0, diff gate exit 1; generated docs restored."
+      }
+    ],
+    "targeted_retries": {
+      "rustup_and_windows_target": "PASS in full network-enabled driver",
+      "PyYAML_install": "PASS in full network-enabled driver",
+      "Node_platform_visibility": "PASS in full network-enabled driver (6 tests)",
+      "xwin": "FAIL proxy HTTP 403",
+      "release_pipeline": "FAIL; same failure reproduced on actual baseline",
+      "API_docs_generator": "exit 0; docs drift gate exit 1; drift patch /workspace/work/perry-queue/staging/10198-api-docs-drift.diff"
+    }
+  },
+  "focused_checks": {
+    "self_test": "PASS: python3 scripts/check_thread_locals.py --self-test",
+    "py_compile": "PASS: python3 -m py_compile scripts/check_thread_locals.py",
+    "baseline_comparison": "PASS: exact checker invocation on d744 and candidate; baseline 16 grouped diagnostics, candidate 15. Sole removed group is cycle_malloc_trim.rs (baseline 1 recorded/3 found; candidate identifies two test-only direct blocks and leaves one shipping declaration). The 15 residual groups are unchanged.",
+    "baseline_log": "/workspace/work/perry-queue/staging/10198-tls-baseline-ci.log",
+    "candidate_log": "/workspace/work/perry-queue/staging/10198-tls-candidate-ci.log",
+    "diff": "/workspace/work/perry-queue/staging/10198-tls-baseline-diff.txt",
+    "tls_selftest_log": "/workspace/work/perry-queue/staging/10198-tls-selftest.log"
+  },
+  "review": "Astra internal review approved direct-block-only scope; parser negatives, nested-not controls and fail-closed behavior were independently checked.",
+  "ci_context": {
+    "source": "planning/12439-ci-baseline-attribution.json",
+    "baseline_tls_rows": 16,
+    "rows_reproduced_exactly_on_d744": 16,
+    "alloc_census_remaining": "2 raw declarations; unchanged."
+  },
+  "limits": [
+    "Compound cfg support does not expand inline or external-module handling.",
+    "No runtime changes, allowlist increases, or baseline exemptions.",
+    "Full lint completed with exit 1; this packet does not claim a green full-lint result.",
+    "No PR created; branch already pushed to authorized fork."
+  ]
+}

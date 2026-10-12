@@ -1,0 +1,3 @@
+Unchanged scripts/run_lint_gates.sh; BASE_SHA=d74498b261d087a301b80602835bc7199a067957; full run exit 1, 33/137 failed, 2 CI-only skipped. Retry/classification details and full log path are in validation.json. xwin CRT feed returned proxy HTTP 403; release-pipeline fixture and shape census reproduced on actual baseline; generated API docs drift recorded/restored.
+
+Full log: ../../staging/full-lint-9927.log
