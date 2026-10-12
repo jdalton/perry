@@ -1,0 +1,32 @@
+{
+  "issue": 12211,
+  "decision": "GO minimal confirmed residual repair",
+  "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "live_issue": "OPEN",
+  "coverage": "Originalrelinkedsetter scopepartiallyfixedbymerged12487; exactremainingobservablekey/RHSorder reproducedonfreshmatching034btrio.",
+  "duplicate_refresh": {
+    "issue_timeline": "Only034breference,nootherlinkedPR",
+    "open_issue_number_pr_search": 0,
+    "open_super_ToPropertyKey_pr_search": 0,
+    "main_api": "034b1357c3baf4a22e5b006940176cf99ba8a5de"
+  },
+  "evidence": "planning/12211-034b-validation.json (fresh matching trio exit 0; compiled Perry/Node exit 0; parity exit 1 due key/RHS order mismatch)",
+  "production_scope": "crates/perry-codegen/src/expr/super_method.rs ObjectSuperPropertySet: removeearlyjs_to_property_key/adopt;rootrawkey/home/receiver beforeRHS,lowerandrootRHS,readcurrenthomeprototype androotbase,thenrereadrawkey/value/receiver toexistingjs_put_value_set. Runtimehelperalreadyrootsandcoerceskey. NoABI/runtimechange/generalrefactor.",
+  "invariants": [
+    "Evaluatekeyexpression beforeRHS, but deferToPropertyKeyuntilPutValue.",
+    "Captureoriginalreceiverandhome beforeRHS; retainmovingGCroots andrereadafterallocatingoperations.",
+    "LookuplivehomeprototypeafterRHS butBEFOREkeycoercion. NodeRHS A\u2192B,key B\u2192C mustinvokeBsetter.",
+    "ThrowingkeyconversionrunsonlyafterRHS;no setterinvocationonthrow.",
+    "PreserveordinarystrictPutValue,data/nonwritable/proxy/static/extendsnullbehavior from12487."
+  ],
+  "tests": [
+    "FocusedcodegenIRordering assertionthroughproductionlowering: RHScall beforePutValue, noexplicitjs_to_property_keybeforeRHS; nonvacuouscompiledregression primaryproof.",
+    "StandaloneTSfixture coverskey-expression timing,Symbol.toPrimitive timing,throwingkey RHSsideeffect,originalreceiveridentity,keycoercionrelinkafterbasecapture,staticandinstancecontrols.",
+    "PinnedNodeoracleandfreshcandidatecoherenttrio no-auto exactfixture comparison; existing12487super-writefixture toprotectsame-scopebehavior. Noheavybuildbeforeownerresourcegrant."
+  ],
+  "publication": "Refs #12211 for narrowlyvalidatedresidualrepair. Do notclaimwholeoriginalGC/proxy/etcacceptance solelyfromnarrowprobe; Fixes canonlybereconsideredwithcompleteoriginalacceptanceaccounting.",
+  "implementation_owner": "luna_class_tdz",
+  "one_commit": "Singlecleanlogicalcommit against034b; actualnumberedfragmentonlyafterPRassignment, preserveonecommitpolicy viaownerflow.",
+  "old_concern_withdrawn": "PrototypecapturebeforeRHS inferencewaswrong, disprovenbyNodeB7B7. Do notmovebase lookup earlier.",
+  "authorized_at_utc": "2026-10-12T16:48:47Z"
+}

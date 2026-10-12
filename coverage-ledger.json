@@ -1,12 +1,12 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T14:52:43Z",
-  "classification_updated_at": "2026-10-12T16:34:41Z",
+  "classification_updated_at": "2026-10-12T16:48:47Z",
   "counts": {
     "covered": 23,
     "uncertain": 19,
-    "uncovered": 138,
-    "closed": 44
+    "uncovered": 137,
+    "closed": 45
   },
   "policy": "Classify coverage by accepted source behavior, not PR or issue state. A fully accepted fix may count as covered while its PR remains draft/open; track draft/open, merged, closed-unmerged and issue closure separately. Partial repairs remain partial; source claims and WIP are not coverage.",
   "issues": [
@@ -47,7 +47,9 @@
         11631
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "coverage_evidence": "planning/uncertain-four-final-classification.json",
+      "coverage_decided_at": "2026-10-12T16:48:47Z"
     },
     {
       "issue": 12355,
@@ -352,17 +354,52 @@
         12149
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "partial_prs": [
+        12487
+      ],
+      "state_observed_at": "2026-10-12T16:48:47Z",
+      "coverage_decided_at": "2026-10-12T16:48:47Z",
+      "coverage_evidence": "planning/12211-key-coercion-residual-go.json",
+      "coverage_basis": "Merged #12487 addresses the original live-home setter path partially, but an exact fresh-main compiled discriminator confirms computed key coercion runs before RHS, contrary to Node. Narrow residual fix authorized; original issue remains uncovered.",
+      "claim": {
+        "owner": "cloud /root/luna_class_tdz",
+        "task": "12211-super-key-order",
+        "branch": "cloud/issue-12211-super-key-order",
+        "current_head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+        "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+        "phase": "implementation",
+        "has_uncommitted_changes": false,
+        "validation": "Fresh matching main trio passed; pinned Node v26.5.1 compiled discriminator reproduces the key-coercion/RHS ordering mismatch. No candidate source implementation or acceptance validation yet.",
+        "merge_state": "Partial upstream implementation in #12487; do not claim full issue coverage.",
+        "closure_state": "OPEN",
+        "publication_state": "Source implementation authorized after live-overlap review; no PR or publication packet.",
+        "evidence": [
+          "planning/12211-key-coercion-residual-go.json",
+          "planning/12211-034b-validation.json"
+        ]
+      }
     },
     {
       "issue": 12210,
-      "status": "uncovered",
-      "covering_prs": [],
+      "status": "closed",
+      "covering_prs": [
+        12487
+      ],
       "nearby_or_partial_prs": [
         12149
       ],
-      "live_state": "OPEN",
-      "resolution_verified": false
+      "live_state": "CLOSED",
+      "resolution_verified": true,
+      "state_observed_at": "2026-10-12T16:48:47Z",
+      "coverage_decided_at": "2026-10-12T16:48:47Z",
+      "coverage_evidence": "planning/12487-related-issue-coverage-decision.json",
+      "coverage_basis": "Original issue closed at 2026-10-12T16:01:41Z and acceptance attributed to merged PR #12487. This is upstream closure, not credit for our batch.",
+      "upstream_closure": {
+        "closed_at": "2026-10-12T16:01:41Z",
+        "covering_pr": 12487,
+        "our_batch_credit": false
+      }
     },
     {
       "issue": 12209,
@@ -609,10 +646,13 @@
       "covering_prs": [],
       "nearby_or_partial_prs": [
         11630,
-        11631
+        11631,
+        11917
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "coverage_evidence": "planning/uncertain-four-final-classification.json",
+      "coverage_decided_at": "2026-10-12T16:48:47Z"
     },
     {
       "issue": 11953,
@@ -631,7 +671,9 @@
         12276
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "coverage_evidence": "planning/uncertain-four-final-classification.json",
+      "coverage_decided_at": "2026-10-12T16:48:47Z"
     },
     {
       "issue": 11948,
@@ -795,7 +837,9 @@
         12276
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "coverage_evidence": "planning/uncertain-four-final-classification.json",
+      "coverage_decided_at": "2026-10-12T16:48:47Z"
     },
     {
       "issue": 11549,

@@ -1,0 +1,44 @@
+{
+  "pr": 12487,
+  "merged_at": "2026-10-12T16:01:40Z",
+  "merge_commit": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "assessments": [
+    {
+      "issue": 12210,
+      "original224_member": true,
+      "live_state": "CLOSED",
+      "closed_at": "2026-10-12T16:01:41Z",
+      "recommendation": "closed",
+      "covering_prs": [
+        12487
+      ],
+      "mapping": "LexicalClassMethodHome/capture0 and explicitkind replace receiverinference; fixturecovers originaldetached/borrowed/retained,relink,arrow,generator,spread,getter,null,privatebrand,nativeparent; PRreportsrealprogramA-B andGCfixture. Upstreamclosure, notourcredit."
+    },
+    {
+      "issue": 12211,
+      "original224_member": true,
+      "live_state": "OPEN",
+      "closed_at": null,
+      "recommendation": "uncertain pending exact computed-key order discriminator",
+      "covering_prs": [],
+      "partial_prs": [
+        12487
+      ],
+      "mapping": "Livehome/rootedstrictPutValue and relink,data,readonly,static,proxy,null fixtures substantivelyaddress originalscope.",
+      "withdrawn_inference": "Earlierclaim that prototypebase mustbecaptured beforeRHS was WRONG. PinnedNode26.5.1 printsB7B7 onexactRHSrelink, agreeingwith034b lateprototype lookup. Existingcontrol isvalid.",
+      "distinct_source_gap": "034b expr/super_method.rs ObjectSuperPropertySet callsjs_to_property_key BEFOREloweringvalue/RHS. PinnedNode26.5.1 computedobjectkey logs rhs,key,new:9; throwingkey stillrunsrhs first. Existingmergedfixtureusesplainstring key so cannotobservecoercionorder.",
+      "minimal_proposed_scope": "Delete early codegen ToPropertyKey; keep rawkey/home/receiver rooted before RHS; after RHS resolve/root live home prototype; pass rooted raw key to existing js_put_value_set, whose own rooted ToPropertyKey must run after base capture. NO implementation GO until compiled discriminator.",
+      "evidence": "next-candidates/12211-order/witness.js,node-version.txt,node.stdout",
+      "execution_limits": "OnlypinnedNodeoracleexecuted; noPerry/Cargo, noactualcurrentmainfailureclaimed.",
+      "final_order_oracle": "Pinned Node26.5.1: RHSrelinksA\u2192B then keycoercionrelinksB\u2192C yields [\"rhs\",\"key\",\"B1\"]. Source witness next-candidates/12211-order/key-relinks-home.js. This disproves moving keyconversion before postRHSbase lookup."
+    },
+    {
+      "issue": 12396,
+      "original224_member": false,
+      "live_state": "OPEN",
+      "closed_at": null,
+      "recommendation": "Excludeoriginal224counts"
+    }
+  ],
+  "reconciled_at_utc": "2026-10-12T16:48:47Z"
+}

@@ -1,0 +1,60 @@
+{
+  "decision": "Reviewed boundedcollector evidence; retainallfouruncertain, no countchange/coveragecredit.",
+  "reviewer": "astra_planning",
+  "evidence": "uncertain-four-linked-evidence.json",
+  "checked_at_utc": "2026-10-12T16:36:15Z",
+  "issues": [
+    {
+      "issue": 11560,
+      "classification": "uncertain",
+      "live_state": "OPEN",
+      "covering_prs": [],
+      "candidate_prs": [
+        12149,
+        12276
+      ],
+      "reason": "The issue requires the full-tier release gate to pass across the specified parity shards, cargo-test-perry shards, docs, and other named jobs. The issue timeline documents individual bucket fixes, but linked #12149 and #12276 are still open drafts. #12276 says CI validation is in progress and says not to merge until every job is green; no exact full-suite green result is present in their live metadata/comments. #12149 is scoped to gap-suite and selected CI repairs, not the complete full-tier outcome.",
+      "missing_acceptance": "An exact current-main/full-tier run with all required 12 parity shards, 8/8 cargo-test-perry shards, docs and remaining full-suite gates passing, or a complete itemized failure ledger showing each listed mechanism resolved and the gate green."
+    },
+    {
+      "issue": 11951,
+      "classification": "uncertain",
+      "live_state": "OPEN",
+      "covering_prs": [],
+      "candidate_prs": [
+        12117,
+        12149,
+        12276
+      ],
+      "reason": "The issue requires all enumerated native leaf and compiled-frame holders to be rooted, or allocation calls in compiled code made non-collecting, before removing the conservative scan fallback. #12117 addresses selected raw-handle/call sites; #12149 addresses gap regressions and tooling; #12276 describes several rooted windows and moving-GC fixtures. The live PR bodies do not claim or demonstrate complete coverage of the issue's holder inventory or safe fallback removal.",
+      "missing_acceptance": "A holder-by-holder audit and moving-GC tests covering the enumerated native and compiled holders, followed by evidence that the conservative scan fallback can be dropped without the 39/496 failure class."
+    },
+    {
+      "issue": 11988,
+      "classification": "uncertain",
+      "live_state": "OPEN",
+      "covering_prs": [],
+      "candidate_prs": [
+        11630,
+        11631,
+        11917
+      ],
+      "reason": "The issue asks for the same due trigger to select budgeted versus sync full independently of which safepoint sees it first, with tsc sweep acceptance. #11630/#11631 PR bodies explicitly describe the RFC work as not changing call safepoint classification / only adding polls. An issue comment points to merged #11917's instrumentation knob, but explicitly asks to run tsc with it on and off; that measurement is absent from the linked evidence.",
+      "missing_acceptance": "A tsc sweep or equivalent exact regression proving deterministic budgeted-vs-sync selection (or documented deterministic policy), including full-count/instruction outcome across both safepoint paths."
+    },
+    {
+      "issue": 12357,
+      "classification": "uncertain",
+      "live_state": "OPEN",
+      "covering_prs": [],
+      "candidate_prs": [
+        11630,
+        11631
+      ],
+      "reason": "The issue requires an actual reduction in the tsc.ts remembered_set/array promotion and phase-sensitive cost (roughly 30.9 MB promotion, 13.9 MB through remembered_set/array, \u00b10.6% instruction swing, +27 MB peak RSS). #11630/#11631 concern collection/poll placement and do not report this tsc acceptance. Their PR bodies do not establish that generic poll changes improve the named peak.",
+      "missing_acceptance": "A same-workload, phase-controlled tsc.ts comparison showing the remembered-set promotion and cost improve, with allocation-pad sensitivity reported."
+    }
+  ],
+  "limits": "No runtime/sourcefreshproof collected; open drafts only relevantoverlap, notmerged/fullcoverage.11917instrumentationmergedbutnotacceptanceresolution. No needbroadsweep or newbuild forclassification.",
+  "next": "Stopplanningwhileauthorized12211probe runs."
+}

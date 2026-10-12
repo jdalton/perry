@@ -1,0 +1,94 @@
+{
+  "task": "#12211 bounded compiled discriminator; diagnostic only, no issue claim or source edits",
+  "status": "BEHAVIORAL_MISMATCH_CONFIRMED_ON_UPSTREAM_MAIN",
+  "source": {
+    "verified_ref": "upstream main",
+    "head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "parent": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+    "tree": "542f530bc0c54fa01cc69c415c1e72b3f2429cec",
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "worktree_clean": true
+  },
+  "environment": {
+    "rust_toolchain": "nightly-2026-10-04",
+    "node": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "node_version": "v26.5.1",
+    "target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_incremental": 0,
+    "cargo_build_jobs": 1,
+    "rust_test_threads": 1
+  },
+  "resources": {
+    "preflight_workspace_free_bytes": 1434730496,
+    "preflight_tmp_free_bytes": 2129920000,
+    "after_trio_workspace_free_bytes": 1435791360,
+    "after_trio_tmp_free_bytes": 2128683008,
+    "post_acceptance_workspace_free_bytes": 1404911616,
+    "post_acceptance_tmp_free_bytes": 2128584704,
+    "cleanup": "none"
+  },
+  "fresh_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "started_utc": "2026-10-12T16:41:19Z",
+    "exit": 0,
+    "elapsed_reported": "2m59s",
+    "cap_seconds": 2700,
+    "log": "/workspace/work/perry-queue/12211-034b-validation/trio.log",
+    "exit_file": "/workspace/work/perry-queue/12211-034b-validation/trio.exit",
+    "artifacts": {
+      "compiler": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "6f350aab521db910b697723179954d3a72cce870952441510b9ce5618c71da71"
+      },
+      "runtime_archive": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime-static/3bf18cdc5628ba02/out/libperry_runtime-3bf18cdc5628ba02.a",
+        "sha256": "f2600ae31c4b4a480810449edef38d2bf4038d87e184ee77d806995dea70310c"
+      },
+      "stdlib_archive": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-stdlib-static/6df0f927c48619b6/out/libperry_stdlib-6df0f927c48619b6.a",
+        "sha256": "047c4fab097746e8e724ec62ad7ddfe6a93b634168ce0bb34ee8d6ceab66e0c5"
+      }
+    }
+  },
+  "fixture": {
+    "path": "/workspace/work/perry-queue/planning/next-candidates/12211-order/witness.js",
+    "sha256": "57372ba970d59b7d817c95d7b5248c23863d165454e879bfd293af6ffbaaf8b6",
+    "oracle_stdout": "/workspace/work/perry-queue/planning/next-candidates/12211-order/node.stdout",
+    "oracle_stdout_sha256": "aaaf6147484f6d9709510cea75896b882c84c3999436af098e93b7a6b1e8878f"
+  },
+  "compiled_acceptance": {
+    "command": "target-12390/debug/perry compile --no-cache --no-auto-optimize planning/next-candidates/12211-order/witness.js -o 12211-034b-validation/witness.bin",
+    "compile_exit": 0,
+    "compile_cap_seconds": 300,
+    "compile_log": "/workspace/work/perry-queue/12211-034b-validation/compile.log",
+    "binary": "/workspace/work/perry-queue/12211-034b-validation/witness.bin",
+    "binary_sha256": "ad1efddbc2fbd11602323f308bc4c47560146dd66b4ec52cbea56a22c27b7680",
+    "archive_overrides": {
+      "directory": "/workspace/work/perry-queue/12211-034b-validation/archive-overrides",
+      "runtime_realpath": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime-static/3bf18cdc5628ba02/out/libperry_runtime-3bf18cdc5628ba02.a",
+      "stdlib_realpath": "/workspace/work/perry-queue/target-12390/debug/build/perry-stdlib-static/6df0f927c48619b6/out/libperry_stdlib-6df0f927c48619b6.a",
+      "rationale": "Canonical archive-name symlinks point directly at the freshly built exact-head archives; avoids selecting unrelated stale target/release archives."
+    },
+    "perry_exit": 0,
+    "node_exit": 0,
+    "node_version_file": "/workspace/work/perry-queue/12211-034b-validation/node-version.txt",
+    "parity_exit": 1,
+    "oracle_exit": 0,
+    "perry_stdout": "/workspace/work/perry-queue/12211-034b-validation/perry.stdout",
+    "node_stdout": "/workspace/work/perry-queue/12211-034b-validation/node.stdout",
+    "parity_diff": "/workspace/work/perry-queue/12211-034b-validation/parity.diff",
+    "stderr": "/workspace/work/perry-queue/12211-034b-validation/perry.stderr",
+    "expected_node_lines": [
+      "rhs order B7 B7",
+      "key receiver [\"rhs\",\"key\",\"new:9\"] 9 true",
+      "throw key [\"rhs\",\"key\",\"new:9\",\"rhs\",\"throw-key\"]"
+    ],
+    "actual_perry_lines": [
+      "rhs order B7 B7",
+      "key receiver [\"key\",\"rhs\",\"new:9\"] 9 true",
+      "throw key [\"key\",\"rhs\",\"new:9\",\"throw-key\"]"
+    ],
+    "diagnosis": "Perry applies ToPropertyKey before evaluating assignment RHS for computed super property writes. Node 26.5.1 evaluates RHS first; when key coercion throws, Node still logs RHS before the throw. The second/third witness cases expose this ordering mismatch."
+  },
+  "limits": "One bounded fixture only. No test suite, source edits, claim, full lint, auto-opt build, or additional compilation performed."
+}

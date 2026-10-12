@@ -1,0 +1,13 @@
+{
+  "issue": 12211,
+  "owner": "cloud /root/luna_class_tdz",
+  "task": "12211-super-key-order",
+  "branch": "cloud/issue-12211-super-key-order",
+  "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "worktree_clean": true,
+  "observed_at_utc": "2026-10-12T16:48:47Z",
+  "phase": "implementation",
+  "source_edits_present": false,
+  "note": "Claim reserved after approved exact-main mismatch and live overlap check. This is a read-only ownership snapshot; source implementation has not yet landed."
+}
