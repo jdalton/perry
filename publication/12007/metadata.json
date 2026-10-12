@@ -5,17 +5,17 @@
   "head": "jdalton:cloud/issue-12007-class-expression-tdz",
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12007-class-expression-tdz",
-  "current_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-  "validated_final_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "current_head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+  "validated_final_head": null,
   "issues": [
     12007
   ],
   "title": "fix(hir): preserve TDZ for class expressions",
   "scope": "Repairs the remaining module TDZ defect; all original new/typeof/anonymous-name behaviors verified on final code head.",
-  "readiness": "DRAFT_CREATION_ALLOWED",
-  "draft_creation_allowed": true,
+  "readiness": "DRAFT_FINAL_HEAD_VALIDATION_PENDING",
+  "draft_creation_allowed": false,
   "ready_for_review": false,
-  "pr_number": null,
+  "pr_number": 12450,
   "no_version_bump": true,
   "body_file": "body.md",
   "title_file": "title.txt",
@@ -24,7 +24,10 @@
   "full_lint_status": "Completed: exit1,33/137 failed,2 CI-only skips; baseline/environment attribution complete, not green.",
   "fragment_instruction": "Create changelog fragment only after actual PR number is assigned.",
   "code_ready": true,
-  "publication_instruction": "Local publisher may create one draft from the exact fork head. Return actual PR number in inbox; cloud adds numbered fragment and validates resulting exact head before readiness.",
-  "fork_head_verified": "765a94d31e9b129641c5046c65b06624c6ad7358",
-  "checked_at": "2026-10-12T06:50:04.963127+00:00"
+  "publication_instruction": "Existing draft12450; do not create another PR. Final fragment-head checks pending before local ready transition.",
+  "fork_head_verified": null,
+  "checked_at": "2026-10-12T06:50:04.963127+00:00",
+  "validated_code_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "pr_url": "https://github.com/PerryTS/perry/pull/12450",
+  "fragment": "changelog.d/12450-class-expression-tdz.md"
 }

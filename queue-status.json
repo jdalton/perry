@@ -12,12 +12,12 @@
   ],
   "merged_prs_this_turn": 3,
   "coverage_counts": {
-    "uncovered": 148,
+    "uncovered": 147,
     "uncertain": 13,
-    "covered_open": 20,
+    "covered_open": 21,
     "closed": 43
   },
-  "conservative_uncovered_upper_bound": 161,
+  "conservative_uncovered_upper_bound": 160,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -25,7 +25,7 @@
   "local_workers": "paused",
   "publication_origin": "User local connection created draft PR12439; cloud PR creation count0",
   "cloud_prs_created": 0,
-  "local_prs_created": 3,
+  "local_prs_created": 4,
   "pr12439_state": "MERGED; original12390 CLOSED",
   "new_batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
@@ -56,6 +56,17 @@
         "state": "merged",
         "ready_for_review": false,
         "merged": true
+      },
+      {
+        "number": 12450,
+        "url": "https://github.com/PerryTS/perry/pull/12450",
+        "issues": [
+          12007
+        ],
+        "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
     "remaining": 18,
@@ -67,11 +78,11 @@
       "observed_at": "2026-10-12T06:27:42Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T062742Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 2,
-    "opened": 2,
-    "remaining_to_open": 18,
+    "opened": 3,
+    "remaining_to_open": 17,
     "remaining_to_good_state": 18,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2,
@@ -127,14 +138,16 @@
       "issues": [
         12007
       ],
-      "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-      "state": "Fork head verified; draft creation allowed; awaiting actual PR number and numbered fragment",
-      "draft_creation_allowed": true,
+      "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+      "state": "Draft12450; actual-number fragment pushed; final-head validation pending",
+      "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/12007/metadata.json",
       "publisher_actions": [
-        "Create draft using publication/12007 title/body, base main, exact fork head765a94d; record PR number in inbox"
-      ]
+        "Wait for final-head readiness packet; no duplicate PR"
+      ],
+      "current_head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+      "pr_number": 12450
     },
     {
       "issues": [
@@ -175,10 +188,10 @@
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
-  "actual_prs_created_in_continuation": 3,
+  "actual_prs_created_in_continuation": 4,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T07:09:12.204342+00:00",
-  "publisher_inbox_checked_at": "2026-10-12T06:39:50.884740+00:00",
+  "updated_at": "2026-10-12T07:12:25.987763+00:00",
+  "publisher_inbox_checked_at": "2026-10-12T07:12:25.987763+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,

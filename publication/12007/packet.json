@@ -4,7 +4,7 @@
   "body_file": "body.md",
   "head": {
     "branch": "cloud/issue-12007-class-expression-tdz",
-    "sha": "765a94d31e9b129641c5046c65b06624c6ad7358"
+    "sha": "7f128cf54f2c134ac730fb75e323df75af4cecc4"
   },
   "base": "main",
   "issue_state": "OPEN",
@@ -100,9 +100,10 @@
     "The gap-test wrapper stopped in setup because the validation checkout lacks root node_modules; direct pinned Node and Perry commands were run instead."
   ],
   "publication": {
-    "draft_creation_allowed": true,
-    "reason": "Required checks completed and failures classified; actual PR-number fragment and final-head validation remain.",
-    "fragment": "Create only after actual PR number is assigned."
+    "draft_creation_allowed": false,
+    "reason": "Existing draft; final fragment-head validation pending",
+    "fragment": "changelog.d/12450-class-expression-tdz.md",
+    "pr_number": 12450
   },
   "source": "/workspace/work/perry-queue/issue-12007",
   "clean_worktree": true,
