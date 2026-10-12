@@ -5,14 +5,14 @@
   "head": "jdalton:cloud/issue-12202-wtf8-class-keys",
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12202-wtf8-class-keys",
-  "current_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "current_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
   "validated_final_head": null,
   "issues": [
     12202
   ],
   "title": "Preserve WTF-8 keys for computed class members",
-  "scope": "Carry exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. The final fixture retains collision, reflection, identity, formal/rest length, setter, getter-only, own-shadow and static controls. 29 runtime Rust files plus one fixture (30 changed files total); no codegen or ABI changes.",
-  "readiness": "CURRENT_HEAD_BEHAVIOR_ACCEPTANCE_PASS; FULL_LINT_WARNING_CLEANUP_IN_PROGRESS; FINAL_LINT_PENDING",
+  "scope": "Carry exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. 30 runtime Rust files plus one focused fixture (31 changed files total); no codegen or ABI changes.",
+  "readiness": "CURRENT_HEAD_SOURCE_REVIEW_CLEAR; EXACT_HEAD_VALIDATION_PENDING",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "ready_to_publish": false,
@@ -25,16 +25,16 @@
   "body_file": "body.md",
   "title_file": "title.txt",
   "validation": "validation.json",
-  "source_review": "/workspace/work/perry-queue/publication/12202/setter-source-review.json",
+  "source_review": "/workspace/work/perry-queue/planning/12202-warning-cleanup-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
   "issue_state_snapshot": "../../planning/12202-prepublication-freshness.json",
   "checked_at": "2026-10-12T09:48:00Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
-  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready while candidate warning cleanup and full-lint validation remain incomplete.",
+  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until all validation is completed on exact source head 4e0241768d5c1031fac10fa8dcacae8629fcc038 and full-lint results are classified.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "/workspace/work/perry-queue/publication/12202/validation.json",
   "latest_acceptance_record": "b4b8-current-validation.json",
-  "current_head_validation": "b4b8 focused tests, matching trio, no-auto and genuine async-bridge auto-opt fixture parity pass; full lint pending/running",
+  "current_head_validation": "4e0241768d5c1031fac10fa8dcacae8629fcc038 is source-reviewed; all exact-head tests/build/parity/lint pending",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
   "overlap_note": "Astra exact-diff review found no duplicate or demonstrated semantic blocker in draft12263. Its broader identity/cache/ABI changes overlap13paths; disclose merge-order risk and revalidate any integration. See ../../planning/12202-12263-publication-overlap-decision.json.",
   "publication_overlap_decision": {
@@ -44,6 +44,35 @@
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   },
-  "full_lint_status": "warning delta identified against exact bc8625f baseline; cleanup underway, full lint still running and final total pending",
-  "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json"
+  "full_lint_status": "pending at 4e024; b4b8 warning delta (29 added product and host warning errors versus exact bc8625 parent) remains prior evidence; final full-lint total pending",
+  "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
+  "source_history": [
+    {
+      "commit": "07ab2db93",
+      "head": "07ab2db93",
+      "subject": "Remove obsolete UTF-8 class key adapters",
+      "classification": "source-only warning cleanup; not an independently validated head"
+    },
+    {
+      "commit": "8bbc29104",
+      "head": "8bbc29104",
+      "subject": "Restore baseline allocation helper export",
+      "classification": "source-only baseline-warning preservation; not an independently validated head"
+    },
+    {
+      "commit": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+      "subject": "Retain class prototype test re-export",
+      "classification": "source-only cfg(test) re-export correction; source-reviewed, no build/test claim"
+    }
+  ],
+  "source_scope": {
+    "changed_files_total": 31,
+    "runtime_rust_files": 30,
+    "fixture_files": 1,
+    "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+    "diffstat": "31 files changed, 1803 insertions(+), 642 deletions(-)",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+    "codegen_or_abi_changes": false
+  }
 }

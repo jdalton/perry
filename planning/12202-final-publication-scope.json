@@ -1,0 +1,18 @@
+{
+  "issue": 12202,
+  "source_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "decision": "Fixes #12202 is justified once required lint results are classified and publication head requirements are met. Whole reported issue scope is addressed; this is not a claim of universal class correctness.",
+  "original_acceptance": "Lone-surrogate computed class method is registered under empty name, so call fails. Requested correction carries method names as WTF-8 bytes, like runtime keys. No explicit default-parameter length or worker-specific acceptance in issue body.",
+  "scope_evidence": [
+    "Reviewed byte-preserving declaration/registration/lookup/reflection/function-name metadata, dynamic computed call path and instance setter follow-through",
+    "Fixture covers distinct high/low surrogates, replacement/escaped/empty/ASCII/BMP/astral controls; exact names/order/descriptors/calls/accessors; static/instance/inheritance/duplicate/evaluation identity; getter-only and own-shadow controls",
+    "Root reports exact b4b8 fresh matching trio,3+35+17 focused tests, no-auto and genuine-auto compiled fixture Node parity PASS"
+  ],
+  "limitations": [
+    "Generic computed default-parameter length mismatch is independent: equal-shaped ASCII and WTF8 both fail; source formula already present at bc8625f. Preserved standalone diagnostic, not repaired or baseline-runtime-proven. This does not leave the reported key-registration/call defect unresolved.",
+    "No dedicated worker surrogate-key fixture was demonstrated; planner-added extended validation goal must not be represented as passed or converted into an unstated issue closure requirement.",
+    "No full-suite or forced moving-GC stress claim; describe actual tests only.",
+    "Lint still completing at review time; this decision does not mark it passing."
+  ],
+  "packet_wording": "Fixes #12202. Preserve computed class member names as exact WTF-8 bytes through registration, lookup, invocation and reflection. Mention separate generic default-parameter length limitation in validation notes with diagnostic evidence; list actual scoped tests and modes."
+}
