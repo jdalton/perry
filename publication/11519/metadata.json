@@ -12,9 +12,9 @@
   ],
   "title": "fix(runtime): preserve byte-view toString with short encodings",
   "scope": "Partial repair for issue #11519: ArrayBuffer, SharedArrayBuffer, and DataView toString ignore Buffer encoding arguments.",
-  "readiness": "READY_FOR_LOCAL_REVIEW_TRANSITION",
+  "readiness": "MERGED",
   "draft_creation_allowed": false,
-  "ready_for_review": true,
+  "ready_for_review": false,
   "pr_number": 12456,
   "no_version_bump": true,
   "body_file": "body.md",
@@ -24,7 +24,7 @@
   "full_lint_status": "Completed exit1:30/137failed,2CI-onlyskips;28baseline plusxwinproxy403/docswrapperenvironment; docsbaseline drift disclosed.",
   "fragment_instruction": "Actual PR12456 fragment committed and validated",
   "code_ready": true,
-  "publication_instruction": "Update existing PR12456 body from body.md and mark ready; do not create another PR",
+  "publication_instruction": "Merged; no publication action. Original11519 remains open; partial repair only.",
   "test_correction_review": "11519-test-correction-review.json",
   "overlap_evidence": "11519-final-publication-duplicate-check.json",
   "fork_head_verified": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
@@ -32,9 +32,7 @@
   "validated_code_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
   "pr_url": "https://github.com/PerryTS/perry/pull/12456",
   "fragment": "changelog.d/12456-byte-view-tostring.md",
-  "publisher_actions": [
-    "Apply body.md to existing PR12456",
-    "Mark existing draft12456 ready for review at validated head6f2f622"
-  ],
-  "final_head_validation": "final-head-validation.json"
+  "publisher_actions": [],
+  "final_head_validation": "final-head-validation.json",
+  "merged_at": "2026-10-12T08:48:38Z"
 }

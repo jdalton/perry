@@ -186,12 +186,12 @@
       "current_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "has_uncommitted_changes": false,
       "validation": "Final6f2f fresh locked trio, fragment gates and no-auto18case Node parity PASS;5e41 unit/auto/full lint explicitly reused unchangedsource",
-      "merge_state": "DRAFT PR12456, not merged",
+      "merge_state": "MERGED PR12456",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T08:46:47.004071+00:00",
+      "refreshed_at": "2026-10-12T08:52:03.606667+00:00",
       "evidence": "Astra live OPEN, merged11627 explicit deferral, no openPR overlap; main75c80af relevant buffer_dispatch/encode/to_string_tag source identical to d744; planning/next-candidates/11519-arraybuffer-minimal.ts and11519-deferred-probe-plan.json",
-      "publication_state": "Final head validated; local ready transition authorized, observed draft",
-      "remaining": "Local ready transition and upstream review/merge; broader11519 remains uncovered",
+      "publication_state": "Merged partial repair",
+      "remaining": "Broader original11519 scope remains uncovered",
       "limitations": "Canonical buffer Symbol.toStringTag behavior is already incomplete on both paths; separate defect deferred, no custom-tag conformance claim",
       "pushed_commit": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "partial_prs": [
@@ -210,13 +210,13 @@
       "worktree": "/workspace/work/perry-queue/issue-10739",
       "current_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
       "has_uncommitted_changes": false,
-      "validation": "18 selftests, py_compile, metadata audit PASS; full lint32/137 failures:30 baseline,2 environment; no unexplained candidate failure",
+      "validation": "Final84d fresh matching trio,18architecturetests,metadata,pycompile,diff,fragmentselftest PASS; livefragmentgate notapplicable(no crates). Full32/137classified failures reused1ce",
       "merge_state": "DRAFT PR12458, not merged",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T08:46:47.004071+00:00",
+      "refreshed_at": "2026-10-12T08:52:03.606667+00:00",
       "evidence": "planning/10739-final-publication-check.json; 10739-final-validation.json",
-      "publication_state": "Numbered fragment pushed; exact final-head validation pending",
-      "remaining": "Fresh final-head trio and Python/fragment checks; priorfull lint explicitly reusable",
+      "publication_state": "Final head validated; local ready transition authorized, observed draft",
+      "remaining": "Local ready transition; upstream review/merge; broader10739 remains uncovered",
       "pushed_commit": "84d1315def71dbdcc3447f95441aea8c29789b68",
       "partial_prs": [
         12458
@@ -244,7 +244,7 @@
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T08:47:47.231087+00:00",
+  "updated_at": "2026-10-12T08:52:03.606667+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
@@ -253,7 +253,7 @@
   "session_publication": {
     "actual_new_prs": 6,
     "cloud_created_prs": 0,
-    "merges": 4,
+    "merges": 5,
     "observed_referenced_original_closures": 4,
     "cloud_issue_closure_actions": 0
   },
@@ -306,9 +306,10 @@
           11519
         ],
         "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-        "state": "draft",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true,
+        "merged_at": "2026-10-12T08:48:38Z"
       },
       {
         "number": 12458,
@@ -322,7 +323,7 @@
         "merged": false
       }
     ],
-    "remaining": 17,
+    "remaining": 16,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
       "repo_open": 190,
@@ -331,12 +332,12 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 2,
+    "drafts": 1,
     "ready_for_review": 0,
-    "merged": 3,
+    "merged": 4,
     "opened": 5,
     "remaining_to_open": 15,
-    "remaining_to_good_state": 17,
+    "remaining_to_good_state": 16,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
     "evidence_source": "live GitHub REST newer than publisher inbox",

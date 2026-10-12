@@ -24,7 +24,7 @@
   "publication_status": "2/20 additional PRs merged;10198closed,9927/8085remainopen",
   "blocker": "pr-write-blocker.json",
   "automatic_continuation": false,
-  "updated_at": "2026-10-12T08:46:47.004071+00:00",
+  "updated_at": "2026-10-12T08:52:03.606667+00:00",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
   "implementation_authorized_while_publication_blocked": true,
   "new_batch": {
@@ -76,9 +76,10 @@
           11519
         ],
         "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-        "state": "draft",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true,
+        "merged_at": "2026-10-12T08:48:38Z"
       },
       {
         "number": 12458,
@@ -92,7 +93,7 @@
         "merged": false
       }
     ],
-    "remaining": 17,
+    "remaining": 16,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
       "repo_open": 190,
@@ -101,12 +102,12 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 2,
+    "drafts": 1,
     "ready_for_review": 0,
-    "merged": 3,
+    "merged": 4,
     "opened": 5,
     "remaining_to_open": 15,
-    "remaining_to_good_state": 17,
+    "remaining_to_good_state": 16,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
     "evidence_source": "live GitHub REST newer than publisher inbox",

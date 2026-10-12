@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-10-12T08:47:47.231087+00:00",
+  "updated_at": "2026-10-12T08:52:03.606667+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification #10739 fragment84d final checks",
+  "serial_build_owner": "Idle pending reviewed12202 correction",
   "next_steps": [
-    "Local publisher apply12456 finalbody andmarkready",
-    "10739fragment84d finalchecks nextsafe boundary, thenresume12202",
-    "12202minimal runtime/trio/compiled/full lint validation"
+    "Local publisher apply12458 final body andmarkready",
+    "Luna source corrections12202 thenAstra boundedreview andserialvalidation"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -23,8 +22,7 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "10739fragmentfinal",
-    "12202validation"
+    "12202 corrected-head scoped tests, trio, compiled parity and full lint"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -77,9 +75,10 @@
           11519
         ],
         "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-        "state": "draft",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true,
+        "merged_at": "2026-10-12T08:48:38Z"
       },
       {
         "number": 12458,
@@ -93,7 +92,7 @@
         "merged": false
       }
     ],
-    "remaining": 17,
+    "remaining": 16,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
       "repo_open": 190,
@@ -102,12 +101,12 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 2,
+    "drafts": 1,
     "ready_for_review": 0,
-    "merged": 3,
+    "merged": 4,
     "opened": 5,
     "remaining_to_open": 15,
-    "remaining_to_good_state": 17,
+    "remaining_to_good_state": 16,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
     "evidence_source": "live GitHub REST newer than publisher inbox",
@@ -123,8 +122,8 @@
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "publication milestone:12456ready,12458fragmentpending",
-  "current_serial_issue": 10739,
+  "latest_handoff": "12458 finalready;12456 merged",
+  "current_serial_issue": null,
   "serial_pending": [
     12202
   ],

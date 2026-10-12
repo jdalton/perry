@@ -1,0 +1,70 @@
+{
+  "issue": 10739,
+  "pr": 12458,
+  "final_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
+  "source_head_with_full_validation": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "worktree": {
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "state": "clean, detached at final head",
+    "diff_from_source_head": "One added line in changelog.d/12458-derived-workspace-counts.md; product, test, build and non-fragment gate inputs unchanged. Fragment inputs changed and were checked separately.",
+    "diff_check": "git diff --check 1ce48b9d067c02456d49fe2257c184ba6b26e71e..HEAD passed"
+  },
+  "environment": {
+    "rust_toolchain": "nightly-2026-10-04",
+    "cargo_target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_build_jobs": 1,
+    "cargo_incremental": 0
+  },
+  "fragment": {
+    "path": "changelog.d/12458-derived-workspace-counts.md",
+    "self_test_exit": 0,
+    "self_test_log": "/workspace/work/perry-queue/10739-12458-fragment-self-test.log",
+    "live_pr_check": "exit 0; GitHub file-list check reports 'No crates/ changes - gate not applicable.' The PR adds the expected fragment; the source diff itself is documentation, policy script, and metadata rather than crates/.",
+    "live_pr_log": "/workspace/work/perry-queue/10739-12458-fragment-live-network.log"
+  },
+  "final_head_compiler_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/10739-12458-trio-build.log",
+    "artifacts": [
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "8b9914235a02d97618f81e2a6a3403d9e2cd3fe1c1975d8fcabbd2094c52327f"
+      },
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+        "sha256": "2ec88e4dcf571c017a29eefaa636d3f19bb0913357b337c8ff608039e2d92920"
+      },
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a",
+        "sha256": "15e54327be656a61de05f64c292f727e57dc1b4bd88b2ae89de46d1cbd127168"
+      }
+    ]
+  },
+  "final_head_fragment_sensitive_checks": {
+    "workspace_architecture_self_test": {
+      "result": "18 tests passed",
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/10739-12458-architecture-self-test.log"
+    },
+    "metadata_backed_architecture_check": {
+      "command": "python3 scripts/workspace_architecture.py --check --print-summary",
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/10739-12458-architecture-metadata-check.log"
+    },
+    "python_compile": {
+      "command": "python3 -m py_compile scripts/workspace_architecture.py",
+      "exit": 0
+    }
+  },
+  "reused_source_head_validation": {
+    "full_lint_record": "/workspace/work/perry-queue/10739-final-validation.json",
+    "source_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+    "full_driver": "137 gates; 32 failed; 2 CI-only skipped; not green",
+    "classification": "19 exact d744 baseline static rows; 8 additional static rows reproduced at exact parent bc862; one xwin proxy-403 environment row; compile diagnostics reproduced at bc862 (42 product warnings, 35 host warnings, 1 Clippy); one API-doc wrapper target-path setup failure. No unclassified candidate failures in the source-head record.",
+    "reuse_basis": "The final commit adds only the numbered fragment. Source-head compile/lint inputs are unchanged, while fragment-specific checks, 18 architecture tests, metadata-backed audit, Python syntax, exact-head trio, and exact PR fragment check were performed at the final head. The full driver was not rerun and is not represented as a final-head run."
+  },
+  "status": "Final-head compiler and fragment-sensitive checks pass; source-head full lint results remain non-green as classified above.",
+  "lint_base": "d74498b261d087a301b80602835bc7199a067957"
+}
