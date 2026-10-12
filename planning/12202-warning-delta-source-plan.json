@@ -1,0 +1,58 @@
+{
+  "issue": 12202,
+  "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "status": "read_only_source_triage; no edits or builds",
+  "comparison": {
+    "candidate_log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log",
+    "candidate_product_rustc_jsonl": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime/b3c337f46367bf36/fingerprint/output-lib-perry_runtime",
+    "candidate_host_rustc_jsonl": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime/87c188b04b7d1868/fingerprint/output-lib-perry_runtime",
+    "exact_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+    "parent_product_log": "/workspace/work/perry-queue/10739-bc862-replays/product-warnings.log",
+    "parent_host_log": "/workspace/work/perry-queue/10739-bc862-replays/host-warnings.log",
+    "method": "Compared rustc error message and primary source file, ignoring changed line numbers. Parent logs were the exact 42-product/35-host-error replay; candidate JSONL details were parsed from current target fingerprints.",
+    "result": {
+      "candidate_product": 71,
+      "candidate_host": 64,
+      "parent_product": 42,
+      "parent_host": 35,
+      "candidate_added_warning_errors_each_profile": 29,
+      "candidate_added_unique_message_file_signatures": 28,
+      "profile_delta_matches": true,
+      "candidate_baseline_errors_resolved": 0
+    }
+  },
+  "candidate_added_errors": {
+    "dead_code_forwarders": [
+      "crates/perry-runtime/src/closure/props.rs: declared_value_replaced, bag_define_data_with_attrs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs: class_dynamic_static_accessor_getter_value, class_dynamic_static_accessor_setter_apply",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs: class_kept_method_value",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs: class_method_bind_length",
+      "crates/perry-runtime/src/object/class_registry/declarations.rs: class_method_decl_index, class_method_decl",
+      "crates/perry-runtime/src/object/class_registry/state.rs: class_method_entry, declared_method_index, proto_member_has_no_string_key",
+      "crates/perry-runtime/src/object/class_registry/registration.rs: class_own_accessor_ptrs, class_own_setter_length",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs: evaluation_method_value",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs: evaluation_prototype_method_value",
+      "crates/perry-runtime/src/object/descriptor_state.rs: function_key_has_attrs",
+      "crates/perry-runtime/src/object/class_value.rs: static_method_property, install_declared_static_method, install_declared_static_accessor, is_internal_static_key"
+    ],
+    "unused_imports": [
+      "crates/perry-runtime/src/closure/mod.rs: bag_accessor_names_bytes",
+      "crates/perry-runtime/src/object/class_registry.rs: install_decl_prototype_accessor",
+      "crates/perry-runtime/src/object/class_registry.rs: class_method_entry and proto_member_has_no_string_key",
+      "crates/perry-runtime/src/object/class_registry.rs: class_prototype_set",
+      "crates/perry-runtime/src/object/class_registry.rs: class_own_accessor_ptrs and class_own_setter_length",
+      "crates/perry-runtime/src/object/class_registry.rs: class_dynamic_static_accessor_getter_value_bytes, class_dynamic_static_accessor_setter_apply_bytes, class_method_bind_length",
+      "crates/perry-runtime/src/object/mod.rs: set_builtin_accessor_pair"
+    ],
+    "other": [
+      "crates/perry-runtime/src/object/descriptors.rs: two unnecessary nested unsafe blocks around metadata_key_to_bytes (lines 343 and 551); both are distinct added diagnostics but collapse to one message/file signature"
+    ]
+  },
+  "source_assessment": {
+    "strongest_cause": "The 20 dead functions are UTF-8 string-key forwarding wrappers with parallel *_bytes implementations; source search finds no remaining production callers for them. This is consistent with the candidate's byte-key migration. They are pub(crate) or private Rust functions, not exported C ABI entries. Combined with seven stale imports and two nested unsafe blocks, this accounts for 29 added warning errors (28 unique message/file signatures).",
+    "minimal_correct_repair": "Remove only confirmed-unreferenced string wrappers and stale imports/re-exports; retain the byte implementations and any helper still needed by tests or UTF-8 callers. Gate test-only root re-exports such as set_builtin_accessor_pair with cfg(test) if tests still address them through crate::object. Remove the redundant unsafe around metadata_key_to_bytes only; do not add lint allows or lossy conversions.",
+    "remaining_verification": "Check each wrapper with all-target/test callsites before removal, then rerun exact product and host warning commands at an authorized build slot. No source fix is proposed/applied in this triage."
+  },
+  "not_candidate_added": "Current-only warnings around the removed streams crate, object_alloc_filled_birth, stream birth mutability, and other shape helpers also appear in the exact bc862 parent logs and are excluded from this delta.",
+  "scope_note": "This is a compact candidate-warning source map, not a whole full-lint classification or a validation result."
+}

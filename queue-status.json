@@ -221,11 +221,11 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
       "has_uncommitted_changes": false,
-      "state": "Exact-head scoped tests, fresh trio, no-auto and genuine auto-opt fixture parity PASS; full lint running",
+      "state": "BLOCKED:29 candidate-added warning errors; b4 full lint still completing; bounded source cleanup under review",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "b4b8:3 dispatch+35 WTF8+17 controls PASS; fresh matching trio PASS; current fixture Node26.5.1 parity PASS with no-auto/no-cache and genuine async-bridge archive rebuild. Full lint pending classification. Generic tiny-program optimization fallback notice disclosed; no runtime archive fallback. Separate computed-default length limitation and prior failures retained.",
+      "validation": "b4b8 focused tests/trio/noauto/genuineauto parity PASS. Full lint in progress; exact bc parent comparison proves29 added warning errors per product/host profile (20 unused wrappers,7 imports/reexports,2 nestedunsafe). Not publishable; correctedhead and validation required.",
       "current_head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b"
     }
   ],
@@ -233,7 +233,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T092328Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T10:00:45.866997+00:00",
+  "updated_at": "2026-10-12T10:18:43.619818+00:00",
   "publisher_inbox_checked_at": "2026-10-12T09:50:17.784354+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

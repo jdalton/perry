@@ -117,7 +117,20 @@
       "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
     },
     "full_lint": {
-      "status": "pending/running; no result recorded"
+      "status": "running/pending final result",
+      "candidate_warning_delta": {
+        "candidate_product_warning_errors": 71,
+        "candidate_host_warning_errors": 64,
+        "exact_parent_product_warning_errors": 42,
+        "exact_parent_host_warning_errors": 35,
+        "added_product_errors": 29,
+        "added_host_errors": 29,
+        "added_unique_message_file_signatures": 28,
+        "baseline_errors_resolved": 0,
+        "profile_delta_matches": true
+      },
+      "source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
+      "final_full_lint_total": "pending"
     },
     "auto_opt": {
       "status": "passed at b4b8; genuine async-bridge auto-optimize rebuild",
@@ -220,7 +233,7 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "CURRENT_HEAD_NO_AUTO_AND_AUTO_OPT_FIXTURE_PARITY_PASS; FULL_LINT_PENDING",
+  "readiness": "CURRENT_HEAD_BEHAVIOR_ACCEPTANCE_PASS; FULL_LINT_WARNING_CLEANUP_IN_PROGRESS; FINAL_LINT_PENDING",
   "current_head_validation": {
     "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
     "status": "no-auto/no-cache matching trio and exact compiled Node parity passed; auto-opt/full lint remain pending/running",
@@ -421,5 +434,58 @@
     "merge_order_risk": "If #12263 lands first, reconcile against its actual merged diff, preserve exact byte-key variants/cache key kind/holder deletion truth/per-evaluation brand, and rebuild plus rerun targeted acceptance.",
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
+  },
+  "candidate_warning_blocker": {
+    "status": "candidate warning-error delta blocks full-lint acceptance; cleanup approved and being implemented on canonical source, not yet validated at a new head",
+    "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+    "source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
+    "counts": {
+      "candidate_product_warning_errors": 71,
+      "candidate_host_warning_errors": 64,
+      "exact_parent_product_warning_errors": 42,
+      "exact_parent_host_warning_errors": 35,
+      "added_product_errors": 29,
+      "added_host_errors": 29,
+      "added_unique_message_file_signatures": 28,
+      "baseline_errors_resolved": 0,
+      "profile_delta_matches": true
+    },
+    "comparison_method": "Compared rustc message and primary source file ignoring line numbers against exact bc8625f64fd829af5463c8cde8368ec7947f31a1 product/host parent replay.",
+    "evidence": {
+      "candidate_lint_log": "/workspace/work/perry-queue/12202-b4b8-full-lint.log",
+      "candidate_product_fingerprint": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime/b3c337f46367bf36/fingerprint/output-lib-perry_runtime",
+      "candidate_host_fingerprint": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime/87c188b04b7d1868/fingerprint/output-lib-perry_runtime",
+      "parent_product_log": "/workspace/work/perry-queue/10739-bc862-replays/product-warnings.log",
+      "parent_host_log": "/workspace/work/perry-queue/10739-bc862-replays/host-warnings.log"
+    },
+    "diagnostic_groups": {
+      "dead_code_forwarders": [
+        "crates/perry-runtime/src/closure/props.rs: declared_value_replaced, bag_define_data_with_attrs",
+        "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs: class_dynamic_static_accessor_getter_value, class_dynamic_static_accessor_setter_apply",
+        "crates/perry-runtime/src/object/native_module/class_ref_values.rs: class_kept_method_value",
+        "crates/perry-runtime/src/object/class_registry/parent_static.rs: class_method_bind_length",
+        "crates/perry-runtime/src/object/class_registry/declarations.rs: class_method_decl_index, class_method_decl",
+        "crates/perry-runtime/src/object/class_registry/state.rs: class_method_entry, declared_method_index, proto_member_has_no_string_key",
+        "crates/perry-runtime/src/object/class_registry/registration.rs: class_own_accessor_ptrs, class_own_setter_length",
+        "crates/perry-runtime/src/object/field_get_set/class_object_template.rs: evaluation_method_value",
+        "crates/perry-runtime/src/object/native_module/class_method_values.rs: evaluation_prototype_method_value",
+        "crates/perry-runtime/src/object/descriptor_state.rs: function_key_has_attrs",
+        "crates/perry-runtime/src/object/class_value.rs: static_method_property, install_declared_static_method, install_declared_static_accessor, is_internal_static_key"
+      ],
+      "unused_imports": [
+        "crates/perry-runtime/src/closure/mod.rs: bag_accessor_names_bytes",
+        "crates/perry-runtime/src/object/class_registry.rs: install_decl_prototype_accessor",
+        "crates/perry-runtime/src/object/class_registry.rs: class_method_entry and proto_member_has_no_string_key",
+        "crates/perry-runtime/src/object/class_registry.rs: class_prototype_set",
+        "crates/perry-runtime/src/object/class_registry.rs: class_own_accessor_ptrs and class_own_setter_length",
+        "crates/perry-runtime/src/object/class_registry.rs: class_dynamic_static_accessor_getter_value_bytes, class_dynamic_static_accessor_setter_apply_bytes, class_method_bind_length",
+        "crates/perry-runtime/src/object/mod.rs: set_builtin_accessor_pair"
+      ],
+      "other": [
+        "crates/perry-runtime/src/object/descriptors.rs: two unnecessary nested unsafe blocks around metadata_key_to_bytes (lines 343 and 551); both are distinct added diagnostics but collapse to one message/file signature"
+      ]
+    },
+    "remediation": "Root approved removing only confirmed-unreferenced UTF-8 wrappers, stale imports/re-exports, and redundant unsafe blocks while retaining byte implementations. Canonical cleanup is being implemented; current head remains b4b8 until source commit is reported and checks rerun.",
+    "full_lint_final_total": "pending; full lint is still running. These interim warning counts are not the final full-lint total."
   }
 }
