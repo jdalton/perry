@@ -7,6 +7,7 @@ trap 'rm -rf "$WORK"' EXIT
 
 cp "$ROOT/run_parity_tests.sh" "$WORK/run_parity_tests.sh"
 mkdir -p "$WORK/scripts"
+cp "$ROOT/scripts/parity_final_verdict.sh" "$WORK/scripts/parity_final_verdict.sh"
 cp "$ROOT/scripts/run_gap_tests.sh" "$WORK/scripts/run_gap_tests.sh"
 cp "$ROOT/scripts/gap_snapshot.py" "$WORK/scripts/gap_snapshot.py"
 mkdir -p "$WORK/bin" "$WORK/test-files" "$WORK/test-parity/node-suite/reuse" \

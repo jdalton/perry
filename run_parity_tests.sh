@@ -3,6 +3,7 @@
 # Compares output between Node.js and Perry native compilation
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+source "$SCRIPT_DIR/scripts/parity_final_verdict.sh"
 TEST_DIR="$SCRIPT_DIR/test-files"
 NODE_SUITE_DIR="$SCRIPT_DIR/test-parity/node-suite"
 OUTPUT_DIR="$SCRIPT_DIR/test-parity/output"
@@ -1931,9 +1932,18 @@ if [[ -n "${PERRY_TEST_SUMMARY_OUT:-}" ]]; then
 EOF
 fi
 
-# Exit with error if parity is below threshold (80%). Integer arithmetic keeps
-# the Git Bash path independent of `bc`, which Git for Windows does not ship.
-if (( TOTAL_RUN == 0 || PARITY_PASS * 100 < TOTAL_RUN * 80 )); then
-    echo -e "${RED}Parity below 80% threshold${NC}"
+# Exit after report emission if this suite's journal-derived counters fail its
+# verdict. The interrupted-run branch above remains an earlier exit, and the
+# 80% threshold remains unchanged for every suite.
+if parity_final_verdict "$TEST_SUITE" "$TOTAL_RUN" "$PARITY_PASS" \
+    "$COMPILE_FAIL" "$CRASH_FAIL" "$NODE_FAIL" "$SKIPPED"; then
+    :
+else
+    verdict_status=$?
+    if (( verdict_status == 2 )); then
+        echo -e "${RED}Node suite has compile, crash/timeout, or Node oracle failures${NC}"
+    else
+        echo -e "${RED}Parity below 80% threshold${NC}"
+    fi
     exit 1
 fi

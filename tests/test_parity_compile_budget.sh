@@ -22,6 +22,8 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 cp "$SCRIPT" "$WORK/run_parity_tests.sh"
+mkdir -p "$WORK/scripts"
+cp "$ROOT/scripts/parity_final_verdict.sh" "$WORK/scripts/parity_final_verdict.sh"
 chmod +x "$WORK/run_parity_tests.sh"
 mkdir -p "$WORK/bin" "$WORK/test-files" \
     "$WORK/test-parity/output/node" "$WORK/test-parity/output/perry" "$WORK/test-parity/reports"

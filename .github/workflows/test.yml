@@ -332,6 +332,9 @@ jobs:
       - name: Parity harness compile-budget regression
         run: ./tests/test_parity_compile_budget.sh
 
+      - name: Parity node-suite final verdict regression
+        run: bash scripts/parity_final_verdict.sh --self-test
+
       - name: Install Rust toolchain
         run: rustup toolchain install nightly-2026-10-04 --profile minimal --component rustfmt --component clippy
       - uses: ./.github/actions/setup-llvm22
