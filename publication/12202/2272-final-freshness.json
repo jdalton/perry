@@ -1,0 +1,119 @@
+{
+  "issue": 12202,
+  "observed_at_utc": "2026-10-12T12:21:52Z",
+  "candidate": {
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "path_count": 34,
+    "runtime_rust_files": 31,
+    "fixture_files": 1,
+    "inventory_files": 2,
+    "fork_push": {
+      "repository": "jdalton/perry",
+      "branch": "cloud/issue-12202-wtf8-class-keys",
+      "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+      "verified": "git push accepted; exact commit"
+    }
+  },
+  "live_issue": {
+    "state": "open",
+    "comments": 0,
+    "updated_at": "2026-10-08T11:06:28Z",
+    "closed_at": null,
+    "checked_at_utc": "2026-10-12T12:21:52Z"
+  },
+  "main": {
+    "sha": "283ab130bf3c507753324d9ff842208543d9d267",
+    "ahead_by": 24,
+    "behind_by": 0,
+    "changed_path_count": 178,
+    "candidate_overlap_paths": [
+      "crates/perry-runtime/src/object/mod.rs"
+    ],
+    "overlap_hunk": "The shared object/mod.rs change adds only mod class_accessor_guard, unrelated to the candidate hunks."
+  },
+  "related_pr": {
+    "number": 12263,
+    "state": "open",
+    "merged": false,
+    "head": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+    "changed_path_count": 71,
+    "candidate_overlap_count": 14,
+    "candidate_overlap_paths": [
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+    ],
+    "decision": "No demonstrated duplicate semantics; disclose integration/merge-order risk."
+  },
+  "publisher_batch": {
+    "observed_at_utc": "2026-10-12T12:17:49Z",
+    "opened": 5,
+    "merged": 5,
+    "remaining": 15,
+    "prs": [
+      {
+        "number": 12444,
+        "merged": true,
+        "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+        "merged_at": "2026-10-12T04:59:10Z"
+      },
+      {
+        "number": 12445,
+        "merged": true,
+        "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+        "merged_at": "2026-10-12T04:58:49Z"
+      },
+      {
+        "number": 12450,
+        "merged": true,
+        "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+        "merged_at": "2026-10-12T07:28:40Z"
+      },
+      {
+        "number": 12456,
+        "merged": true,
+        "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+        "merged_at": "2026-10-12T08:48:38Z"
+      },
+      {
+        "number": 12458,
+        "merged": true,
+        "head": "84d1315def71dbdcc3447f95441aea8c29789b68",
+        "merged_at": "2026-10-12T08:55:05Z"
+      }
+    ]
+  },
+  "coverage_counts_preserved": {
+    "uncovered": 142,
+    "uncertain": 18,
+    "covered": 20,
+    "closed": 44,
+    "last_aggregate_observed": "2026-10-12T10:43:51Z"
+  },
+  "prior_repo_counts_preserved_as_historical": {
+    "repo_open": 191,
+    "original_open": 180,
+    "original_closed": 44,
+    "new_open": 11,
+    "observed_at": "2026-10-12T10:43:51Z"
+  },
+  "readiness_flags_all_false": false,
+  "readiness_flags": {
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "external_pr_created": false
+  }
+}

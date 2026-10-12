@@ -1,0 +1,73 @@
+{
+  "issue": 12202,
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "observed_at_utc": "2026-10-12T12:12:27Z",
+  "run": {
+    "status": "RUNNING; no final exit/result",
+    "started_at_utc": "2026-10-12T11:46:17Z",
+    "hard_stop_deadline_utc": "2026-10-12T12:16:17Z",
+    "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "last_log_mtime_utc": "2026-10-12T12:02:27.924426973Z",
+    "driver_pid": 1090359,
+    "elapsed_at_observation": "26m11s",
+    "active_child": {
+      "script": "scripts/regen_api_docs.sh",
+      "pid": 1110347,
+      "elapsed": "9m59s"
+    },
+    "active_cargo": {
+      "command": "cargo build --release -p perry",
+      "pid": 1110350,
+      "elapsed": "9m59s"
+    },
+    "active_rustc": {
+      "pid": 1111281,
+      "elapsed": "6m35s",
+      "cpu_percent": 99.9,
+      "profile": "release thin-LTO"
+    },
+    "build_was_interrupted": false
+  },
+  "partial_gate_accounting": {
+    "status": "PROVISIONAL; not a final summary",
+    "simple_ok_fail_rows": 135,
+    "lowercase_skip_rows": 2,
+    "log_labeled_rows_including_skip": 137,
+    "earlier_verifier_rows": 137,
+    "parser_note": "135 ok/FAIL rows plus two lowercase skip rows; count disagreement is only parser inclusion, and no final driver summary exists.",
+    "failure_rows": 31,
+    "provisional_classification": {
+      "baseline_reproduced": 29,
+      "xwin_environment": 1,
+      "clippy_unresolved": 1
+    },
+    "classification_final": false
+  },
+  "known_failures": [
+    {
+      "gate": "Type-check Windows runtime and stdlib",
+      "classification": "environment failure",
+      "evidence": "xwin-blocker.json",
+      "cause": "Official Microsoft CRT manifest fetch blocked by proxy CONNECT 403; gate failed before Perry type checking; no safe workaround/cache."
+    },
+    {
+      "gate": "Check Clippy (host-compatible)",
+      "classification": "unresolved; full replay required",
+      "evidence": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+      "next": "Replay the exact full Clippy host-compatible command after current API-doc release compile completes."
+    }
+  ],
+  "active_gate_note": "Current active child is release API-docs regeneration and its cargo build --release -p perry; rustc is still compiling at high CPU. This is separate from the completed xwin environment failure. Do not interrupt it.",
+  "disk_free_bytes": 2243264512,
+  "publication_flags": {
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "external_pr_created": false,
+    "pushed_to_fork": false,
+    "full_lint_complete": false
+  },
+  "historical_snapshot": true,
+  "superseded_by": "2272-full-lint-result.json and 2272-final-validation.json"
+}

@@ -1,6 +1,6 @@
 {
   "cohort": "original224",
-  "state_observed_at": "2026-10-12T11:34:20Z",
+  "state_observed_at": "2026-10-12T12:21:52Z",
   "classification_updated_at": "2026-10-12T10:44:58.593278+00:00",
   "counts": {
     "covered": 20,
@@ -385,10 +385,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-12202-wtf8-class-keys",
         "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-        "validation": "Static preflight PASS at 2272/tree20d752b, exact 34-path scope; exact-head tests/trio/parity/auto/full lint pending.",
-        "merge_state": "no PR",
+        "validation": "Exact 2272: 59 unique/67 focused runtime executions PASS; matching trio and no-auto/auto parity PASS. Full lint exit 1: 105 pass,32 fail,2 CI-only skipped; 30 baseline-reproduced and2 environment/path. Warn-level Clippy delta +3/-1 is informational and disclosed.",
+        "merge_state": "source fork branch pushed; no PR",
         "closure_state": "OPEN",
-        "publication_state": "Not ready; exact-head serial validation authorized and pending."
+        "publication_state": "Draft authorized; not ready for review until PR number, numbered fragment, and final-head validation."
       }
     },
     {

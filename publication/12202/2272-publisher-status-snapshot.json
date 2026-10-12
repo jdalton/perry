@@ -1,0 +1,48 @@
+{
+  "observed_at_utc": "2026-10-12T12:12:27Z",
+  "issue": {
+    "issue": 12202,
+    "state": "OPEN",
+    "comments": 0,
+    "updated_at": "2026-10-08T11:06:28Z"
+  },
+  "batch": {
+    "target": 20,
+    "opened": 5,
+    "merged": 5,
+    "remaining": 15,
+    "merged_prs": [
+      12444,
+      12445,
+      12450,
+      12456,
+      12458
+    ],
+    "verified_states": [
+      "merged",
+      "merged",
+      "merged",
+      "merged",
+      "merged"
+    ]
+  },
+  "cohort_counts": {
+    "uncovered": 142,
+    "uncertain": 18,
+    "covered": 20,
+    "closed": 44,
+    "observed_at": "2026-10-12T10:43:51Z"
+  },
+  "aggregate_repo_snapshot": {
+    "repo_open": 191,
+    "original_open": 180,
+    "original_closed": 44,
+    "new_open": 11,
+    "observed_at": "2026-10-12T10:43:51Z",
+    "note": "Preserved historical aggregate; not recounted in this milestone."
+  },
+  "validation_milestone": {
+    "full_lint_status": "completed non-green, exit 1; 32/137 failed, 2 CI-only skipped; replay/proof pending",
+    "record": "2272-full-lint-result.json"
+  }
+}

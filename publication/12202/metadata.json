@@ -6,19 +6,19 @@
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12202-wtf8-class-keys",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-  "validated_final_head": null,
+  "validated_final_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
   "issues": [
     12202
   ],
   "title": "Preserve WTF-8 keys for computed class members",
-  "scope": "Preserve exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. Exact 705cc diff: 33 paths (31 runtime Rust files, one fixture, one access-baseline inventory row); no codegen or ABI changes.",
-  "readiness": "STATIC_PREFLIGHT_CLEAR; EXACT_HEAD_VALIDATION_AUTHORIZED_AND_PENDING",
-  "draft_creation_allowed": false,
+  "scope": "Exact WTF-8 class computed-key metadata repair across runtime declaration, registration, lookup, reflection, descriptors, deletion/recreation, function names, invocation, and instance accessor writes; 34 paths (31 runtime Rust, one fixture, two inventory files), no ABI change.",
+  "readiness": "DRAFT ALLOWED; NOT READY FOR REVIEW pending actual PR number, numbered fragment, and final-head validation",
+  "draft_creation_allowed": true,
   "ready_for_review": false,
   "ready_to_publish": false,
   "external_pr_created": false,
-  "pushed_to_fork": false,
-  "full_lint_complete": false,
+  "pushed_to_fork": true,
+  "full_lint_complete": true,
   "pr_number": null,
   "pr_url": null,
   "no_version_bump": true,
@@ -27,16 +27,16 @@
   "validation": "validation.json",
   "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
-  "issue_state_snapshot": "2272-publication-freshness.json",
-  "checked_at": "2026-10-12T11:46:43Z",
+  "issue_state_snapshot": "2272-final-freshness.json",
+  "checked_at": "2026-10-12T12:21:52Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
-  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until static preflight, exact-705cc build/runtime acceptance, and complete lint-gate accounting are finished and classified.",
+  "publication_instruction": "Root authorized a draft after exact fork-head verification. Do not mark ready for review until the actual PR number is assigned, a numbered changelog fragment is created, and final-head validation is recorded.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "validation.json",
-  "latest_acceptance_record": "2272-current-acceptance-evidence.json; exact-head focused tests/trio/no-auto parity and genuine auto-opt parity pass; complete full lint is running with no final result.",
-  "current_head_validation": "At exact 2272f7b520206d8e76d4f86440f92e035e25ce63 (tree 20d752b0857dedc73a65ec1e05bab85143f5b673), 59 unique focused runtime tests passed across 67 executions; the matching dev trio and pinned Node v26.5.1 compiled-fixture parity passed. Genuine auto-opt rebuilt runtime and stdlib with async-bridge and achieved exact Node parity from fresh archives. Full lint is currently running; no completion result is claimed.",
+  "latest_acceptance_record": "2272-final-validation.json and 2272-final-failure-attribution.json; exact-head focused/trio/no-auto/auto acceptance pass; complete full lint exit 1 with 30 reproduced baseline and 2 environment/path failures.",
+  "current_head_validation": "Exact 2272 focused tests (59 unique/67 executions), matching trio, no-auto and genuine async-bridge auto-opt parity all pass. Full lint completed in 26m40s, exit 1: 105 pass, 32 fail, 2 CI-only skipped; 30 failures reproduce on the comparison parent and 2 are environment/path failures. Fatal host Clippy diagnostic matches baseline. Separate nonfatal Clippy comparison found three added and one removed warning fingerprints (net +2, 1102 vs 1100); repository workflow treats warn-level Clippy as informational. Direct API docs generation produced 91,751 bytes of Markdown while tracked reference.md is empty at both baseline and candidate; d.ts matched.",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
-  "overlap_note": "Latest main compare: 283ab130bf3c507753324d9ff842208543d9d267, only candidate overlap is object/mod.rs with unrelated class_accessor_guard module addition. PR #12263 still has 14 shared paths, no demonstrated duplicate semantics, merge-order risk remains. New allowlist path overlaps neither. Evidence: 2272-publication-freshness.json.",
+  "overlap_note": "Fresh check: #12202 OPEN, zero comments. Current main 283ab130bf3c507753324d9ff842208543d9d267 shares only object/mod.rs with unrelated class_accessor_guard addition. Open #12263 overlaps 14 paths; no duplicate semantics found, merge-order risk remains. See 2272-final-freshness.json.",
   "publication_overlap_decision": {
     "record": "/workspace/work/perry-queue/planning/12202-12263-publication-overlap-decision.json",
     "decision": "No demonstrated semantic blocker to publishing current candidate; disclose integration/merge-order risk. No external review performed.",
@@ -44,7 +44,7 @@
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   },
-  "full_lint_status": "Exact-2272 full-lint driver is running; no final gate summary or result yet. Earlier 56c6 and 266eaf drivers remain interrupted non-results.",
+  "full_lint_status": "Completed exact 2272 full lint, exit 1: 105 passed, 32 failed of 137 evaluated; 2 CI-only gates skipped. Thirty failures reproduce on the comparison parent; xwin CRT proxy 403 and API-doc wrapper target-path assumption are environment/path failures. Fatal host Clippy diagnostic matches baseline. Separate warn-level comparison: three candidate-only and one parent-only fingerprints (net +2, 1102 vs 1100), informational under workflow policy; details disclosed in reconciliation evidence.",
   "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
   "source_history": [
     {
@@ -156,5 +156,8 @@
     "external_pr_created": false,
     "pushed_to_fork": false,
     "full_lint_complete": false
-  }
+  },
+  "final_failure_attribution": "2272-final-failure-attribution.json",
+  "api_docs_proof": "2272-api-docs-proof.json",
+  "clippy_warning_delta_review": "Pending TLS reviewer decision: nonfatal warning count 1102 vs 1100; fatal host Clippy diagnostic replay exactly matches baseline."
 }

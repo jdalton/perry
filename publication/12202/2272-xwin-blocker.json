@@ -1,0 +1,36 @@
+{
+  "issue": 12202,
+  "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "checked_at_utc": "2026-10-12T12:11:13Z",
+  "gate": "Type-check Windows runtime and stdlib",
+  "command": "cargo xwin check -p perry-runtime -p perry-stdlib --target x86_64-pc-windows-msvc",
+  "recorded_full_driver_evidence": {
+    "path": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "lines": "31-37",
+    "failure": "Failed to setup MSVC CRT; HTTP GET https://aka.ms/vs/17/release/channel; CONNECT proxy failed with 403/403",
+    "phase": "xwin CRT/sysroot setup, before Perry type checking"
+  },
+  "workflow_setup": {
+    "cargo_xwin_version": "0.23.0",
+    "release_asset": "https://github.com/rust-cross/cargo-xwin/releases/download/v0.23.0/cargo-xwin-v0.23.0.x86_64-unknown-linux-musl.tar.gz",
+    "asset_sha256": "74a216f64f10ea81c909f02d6b1a84cd0fda8de4c87ee52fe63ba76ab2392b75",
+    "sysroot_cache_path": "~/.cache/cargo-xwin",
+    "sysroot_cache_key": "cargo-xwin-Linux-0.23.0",
+    "workflow_source": "/workspace/work/perry-queue/issue-12202/.github/workflows/test.yml:350-383"
+  },
+  "local_cache_probe": {
+    "home_cache_exists": false,
+    "workspace_cache_exists": false,
+    "lint_runner_temp_has_cached_asset": false,
+    "note": "The home cache is under the current agent home; /root/.cache was inaccessible and was not inspected. No local official sysroot cache was available in checked locations."
+  },
+  "bounded_official_endpoint_probe": {
+    "method": "HEAD",
+    "url": "https://aka.ms/vs/17/release/channel",
+    "network": "existing configured proxy; no bypass",
+    "result": "curl followed the aka.ms redirect to download.visualstudio.microsoft.com and failed opening the CONNECT tunnel with 403; curl reported final HTTP status 000",
+    "safe_alternative_found": false,
+    "reason": "The workflow's official cache path is absent locally, and the official Microsoft manifest endpoint is denied by the configured proxy. No proxy/TLS bypass, credential reuse, or unverified substitute is appropriate."
+  },
+  "disposition": "Environment blocker confirmed. The xwin gate already completed with this failure. A safe retry is feasible only if the normal authorized network path is corrected or the official matching cargo-xwin sysroot cache is supplied/restored; then rerun the unchanged xwin gate. Until then, report this gate as environment-failed, not passed or skipped. The currently running release-docs compilation is separate."
+}

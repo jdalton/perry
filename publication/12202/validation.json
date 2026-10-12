@@ -18,7 +18,7 @@
     "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
     "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
-    "path_list_source": "2272-publication-freshness.json",
+    "path_list_source": "2272-final-freshness.json",
     "changed_paths": [
       "crates/perry-runtime/src/closure/dynamic_props.rs",
       "crates/perry-runtime/src/closure/mod.rs",
@@ -119,15 +119,9 @@
       "evidence": "2272-current-acceptance-evidence.json"
     },
     "full_lint": {
-      "status": "RUNNING at exact 2272; no final gate summary or result yet.",
-      "prior_56c6": {
-        "status": "INTERRUPTED after 20 gate rows; no final summary",
-        "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json"
-      },
-      "prior_266": {
-        "status": "INTERRUPTED at auto-opt features; no final summary",
-        "record": "/workspace/work/perry-queue/12202-266eaf-full-lint-interruption.json"
-      }
+      "status": "COMPLETED NON-GREEN: exit1; 105 pass, 32 fail, 2 CI-only skipped; 30 reproduced baseline, 2 environment/path, 0 candidate. TLS review of nonfatal host Clippy warnings (1102 vs 1100) still pending.",
+      "validation": "2272-final-validation.json",
+      "failure_attribution": "2272-final-failure-attribution.json"
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -142,12 +136,17 @@
     "cache_growth_note": "No trustworthy incremental disk-growth estimate was available at packet preparation."
   },
   "publication": {
-    "draft_creation_allowed": false,
+    "draft_creation_allowed": true,
     "ready_for_review": false,
     "ready_to_publish": false,
     "external_pr_created": false,
-    "pushed_to_fork": false,
-    "pr_number": null
+    "pushed_to_fork": true,
+    "source_branch": "cloud/issue-12202-wtf8-class-keys",
+    "pushed_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "base": "main",
+    "title": "Preserve WTF-8 keys for computed class members",
+    "body": "body.md",
+    "pending": "actual PR number, numbered changelog fragment, and final-head validation"
   },
   "correction_source_review": {
     "status": "passed bounded source review; no remaining correction blocker",
@@ -213,7 +212,7 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "STATIC_PREFLIGHT_CLEAR; EXACT_HEAD_VALIDATION_AUTHORIZED_AND_PENDING",
+  "readiness": "DRAFT ALLOWED; NOT READY FOR REVIEW pending actual PR number, numbered fragment, and final-head validation",
   "current_head_validation": {
     "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
     "status": "source clear; static preflight and final validation pending",
@@ -258,7 +257,7 @@
     "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
     "c727637cd909fc7d4861bf9d21d65afc8cd54f5a"
   ],
-  "checked_at": "2026-10-12T11:46:43Z",
+  "checked_at": "2026-10-12T12:21:52Z",
   "previous_head_acceptance": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
@@ -813,21 +812,7 @@
   "exact_705cc_source_evidence": "705cc-source-evidence.json",
   "prior_56c6_acceptance_evidence": "prior-56c6-acceptance-evidence.json",
   "prior_266_acceptance_evidence": "previous-266-acceptance-evidence.json",
-  "freshness": {
-    "checked_at": "2026-10-12T11:34:20Z",
-    "issue_state": "OPEN; reused recent refresh at 11:28:25Z",
-    "current_main_head": "283ab130bf3c507753324d9ff842208543d9d267",
-    "current_main_changed_paths": 178,
-    "candidate_main_overlap_paths": [
-      "crates/perry-runtime/src/object/mod.rs"
-    ],
-    "candidate_main_overlap_review": "Only object/mod.rs overlaps; the reviewed hunk adds unrelated mod class_accessor_guard. The new scripts/string_validator_allowlist.txt path is absent from the complete main changed-path set.",
-    "pr_12263_state": "OPEN",
-    "pr_12263_overlap_count": 14,
-    "new_allowlist_path_overlap": false,
-    "semantic_decision": "No demonstrated duplicate semantics; merge-order risk remains.",
-    "evidence": "2272-publication-freshness.json"
-  },
+  "freshness": "2272-final-freshness.json",
   "current_head_preflight": {
     "status": "STATIC PREFLIGHT CLEAR",
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -847,11 +832,44 @@
   "current_head_acceptance": {
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
     "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
-    "evidence": "2272-current-acceptance-evidence.json",
+    "evidence": "2272-final-validation.json; 2272-final-failure-attribution.json; 2272-final-attribution-reconciliation.json",
     "focused_runtime_tests": "PASS: 59 unique / 67 executions",
     "matching_dev_trio": "PASS",
     "compiled_no_auto_node_parity": "PASS (Node v26.5.1)",
     "auto_opt": "PASS (fresh async-bridge runtime+stdlib archives; Node/Perry/diff exits all 0)",
-    "full_lint": "RUNNING; no final summary/results yet"
-  }
+    "full_lint": "COMPLETED NON-GREEN: exit 1, 105 passed, 32 failed/137 evaluated, 2 CI-only skipped. Attribution: 30 reproduced baseline failures, 2 environment/path, 0 unresolved. Fatal Clippy diagnostic matches baseline; separate warn-level comparison is +3/-1 warning fingerprints (net +2), informational under workflow policy."
+  },
+  "current_full_lint_progress": "COMPLETED NON-GREEN; full driver exit 1 and final summary/classification recorded.",
+  "full_lint_final": {
+    "status": "COMPLETED NON-GREEN",
+    "exit": 1,
+    "passed": 105,
+    "failed": 32,
+    "evaluated_non_skipped": 137,
+    "ci_only_skipped": 2,
+    "total_status_rows": 139,
+    "classification": {
+      "baseline_reproduced": 30,
+      "environment_or_path": 2,
+      "candidate_gate_failures": 0,
+      "unresolved": 0
+    },
+    "duration": "26m40s; completed before 30m hard cap",
+    "evidence": "2272-final-validation.json and 2272-final-failure-attribution.json",
+    "clippy_nonfatal_warning_delta": {
+      "candidate_only": 3,
+      "parent_only": 1,
+      "net": 2,
+      "candidate_runtime_warnings": 1102,
+      "parent_runtime_warnings": 1100,
+      "disposition": "warn-level informational per repository workflow; fully disclosed; fatal Clippy diagnostic is baseline-reproduced"
+    },
+    "note": "Full lint is non-green. Baseline failures remain failed gates, and the two environment/path failures remain failures."
+  },
+  "api_docs_result": {
+    "wrapper": "environment/path failure due to hardcoded target-12390 mismatch; cargo release build succeeded",
+    "direct_proof": "Direct markdown/d.ts generation completed: markdown 91,751 bytes vs tracked empty at both baseline and candidate; d.ts identical. Docs-drift gate after wrapper failure is not regeneration proof.",
+    "evidence": "2272-api-docs-proof.json"
+  },
+  "clippy_warning_delta_review": "Resolved for publication: fatal clippy::reversed_empty_ranges diagnostic is reproduced on the parent; nonfatal warning comparison shows three added and one removed fingerprints (net +2 runtime warnings, 1102 vs 1100). Workflow treats warn-level Clippy as informational. Delta is disclosed in PR body/evidence."
 }

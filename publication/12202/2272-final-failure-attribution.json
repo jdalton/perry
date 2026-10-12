@@ -1,0 +1,348 @@
+{
+  "issue": 12202,
+  "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "comparison_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "checked_at_utc": "2026-10-12T12:14:30Z",
+  "status": "final_failure_attribution_with_driver_summary",
+  "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+  "failure_blocks_recorded": 32,
+  "counts": {
+    "baseline": 30,
+    "candidate": 0,
+    "environment": 2,
+    "unresolved": 0
+  },
+  "summary_observed": true,
+  "note": "Final full-driver summary: 105 passed, 32 failed of 137 evaluated, and 2 CI-only skipped; driver exit 1. Thirty failures reproduce on the comparison parent, two are environment/path failures, and none remain unresolved. Baseline-attributed failures are still failures, not green gates. Separate Clippy warning replay found three added and one removed nonfatal warning fingerprints; see planning/12202-final-attribution-reconciliation.json.",
+  "rows": [
+    {
+      "gate": "Validate benchmark artifact and fallback gates",
+      "command": "./tests/test_benchmark_peer_fallback.sh",
+      "line_start": 14,
+      "line_end": 19,
+      "diagnostic_sha256": "b4c4791d5e0dc870cbd9c26714d0d087d2888cf1844b0410c647d6b22e8909e1",
+      "diagnostic_bytes": 727,
+      "classification": "baseline",
+      "basis": "Failure block byte-identical across current, b4b, d744 baseline-script, and 10739 full logs."
+    },
+    {
+      "gate": "Release pipeline failure-path regressions",
+      "command": "python3 tests/test_release_pipeline.py",
+      "line_start": 20,
+      "line_end": 30,
+      "diagnostic_sha256": "bcda2fc6e7d9d1a3323b9947735b7f58752610e562697013c97a2f707cd7be91",
+      "diagnostic_bytes": 684,
+      "classification": "baseline",
+      "basis": "Exact bc862 replay fails the same test_ancestor_test_gate_keeps_simulator_on_candidate with jq parse error and unexpected workflow dispatch; tests/test_release_pipeline.py is unchanged."
+    },
+    {
+      "gate": "Type-check Windows runtime and stdlib",
+      "command": "cargo xwin check -p perry-runtime -p perry-stdlib --target x86_64-pc-windows-msvc",
+      "line_start": 31,
+      "line_end": 37,
+      "diagnostic_sha256": "7e4b742d1c689c48ec0b6440db264c0ba536836590d0dc46e09689d9ce3c0026",
+      "diagnostic_bytes": 400,
+      "classification": "environment",
+      "basis": "HTTP CONNECT proxy 403 while fetching aka.ms MSVC CRT; see exact block in current lint log; not a source diagnostic."
+    },
+    {
+      "gate": "Check formatting",
+      "command": "cargo fmt --all -- --check",
+      "line_start": 38,
+      "line_end": 55,
+      "diagnostic_sha256": "5b4326b68771802d5ccc7bf54a35e296c030351bb6b73f5805b780b66e864c85",
+      "diagnostic_bytes": 1411,
+      "classification": "baseline",
+      "basis": "Failure block byte-identical to b4b and 10739 logs; exact d744 formatting record; reported turnloop import file is unchanged from parent."
+    },
+    {
+      "gate": "File size limit",
+      "command": "./scripts/check_file_size.sh",
+      "line_start": 64,
+      "line_end": 70,
+      "diagnostic_sha256": "b5d9df9116832da273e91e3c6d45fc01c160aaae6f192611a563c0416a674564",
+      "diagnostic_bytes": 441,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Buffer layout zero-debt gate",
+      "command": "./scripts/check_buffer_layout.sh --self-test && ./scripts/check_buffer_layout.sh",
+      "line_start": 71,
+      "line_end": 78,
+      "diagnostic_sha256": "29a25c2792aef78e187eb2f88b99c8ee96c5592f42b064331b6ddd4b07dfa7d5",
+      "diagnostic_bytes": 529,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Local binding type-proof audit",
+      "command": "python3 scripts/local_binding_type_audit.py",
+      "line_start": 79,
+      "line_end": 85,
+      "diagnostic_sha256": "c521314538fb96e6660cc3b66892053ad8815653c32d7ce08f0c90254eb873ce",
+      "diagnostic_bytes": 875,
+      "classification": "baseline",
+      "basis": "Exact bc862 replay identifies same 3 findings; all implicated perry-codegen files are unchanged."
+    },
+    {
+      "gate": "GC store-site inventory",
+      "command": "python3 scripts/gc_store_site_inventory.py",
+      "line_start": 86,
+      "line_end": 93,
+      "diagnostic_sha256": "8778281a06f7b2ed3eb73ea4560a584e8a2f6f7f798bffe77436e8be0900b1b5",
+      "diagnostic_bytes": 775,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Address-classification audit",
+      "command": "python3 scripts/addr_class_inventory.py",
+      "line_start": 94,
+      "line_end": 104,
+      "diagnostic_sha256": "e52b660b58c71747077e3090daf7976260c92cba7dae168a7c66fdfba5ca8c6a",
+      "diagnostic_bytes": 1125,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "String payload-access inventory",
+      "command": "python3 scripts/string_payload_access_inventory.py",
+      "line_start": 105,
+      "line_end": 111,
+      "diagnostic_sha256": "e581d4875b006f24dc6dcd329a686441ae5321f3b2d76f00b26077889ff563f5",
+      "diagnostic_bytes": 528,
+      "classification": "baseline",
+      "basis": "The three remaining stale rows (ext-zlib 3\u21920, stdlib 26\u219222, reader-helper runtime 13\u219211) reproduce in exact bc862 replay; runtime inline-offset row no longer fails after approved 331\u2192329 baseline decrease. planning/12202-string-payload-ratchet-decision.json."
+    },
+    {
+      "gate": "SSO string-unboxing inventory",
+      "command": "python3 scripts/sso_unbox_inventory.py",
+      "line_start": 112,
+      "line_end": 119,
+      "diagnostic_sha256": "cd32f8c24b0fad544097d32c7e21bd7979f7bef37ca32c63672cf9c471dc4484",
+      "diagnostic_bytes": 915,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Object-header shape-descriptor census",
+      "command": "python3 scripts/shape_descriptor_census.py",
+      "line_start": 120,
+      "line_end": 127,
+      "diagnostic_sha256": "edaf2a61709d649e8e9a91e02f16d048634446c609bc81728fc206d3f1028ec5",
+      "diagnostic_bytes": 1224,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "GC pin-site custody audit",
+      "command": "python3 scripts/gc_pin_sites.py",
+      "line_start": 128,
+      "line_end": 137,
+      "diagnostic_sha256": "7d15e9cacc5605d9e5cd2c7d177d17bfb067465bf770be15fe3c238ef106b32e",
+      "diagnostic_bytes": 969,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Runtime GC-pointer holder custody audit",
+      "command": "python3 scripts/gc_runtime_root_holders.py",
+      "line_start": 138,
+      "line_end": 145,
+      "diagnostic_sha256": "b98160b4429a66ffa5acc2d983f3bdb736ece993b17f90d236248545ef542cf2",
+      "diagnostic_bytes": 579,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Thread-exit custody of address-keyed globals (#11471)",
+      "command": "python3 scripts/thread_exit_address_globals.py",
+      "line_start": 146,
+      "line_end": 153,
+      "diagnostic_sha256": "d5f0d5844227c1a35f95f2083a2256a9c18222d5d20211d741c8a0a652fe124e",
+      "diagnostic_bytes": 2521,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Registry lifetime audit (#11511)",
+      "command": "python3 scripts/registry_lifetime_check.py",
+      "line_start": 154,
+      "line_end": 169,
+      "diagnostic_sha256": "1e3dd901ffacca4870b574538cf08fa0a954e7dce7684eda78f8627c6a9b2301",
+      "diagnostic_bytes": 2130,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "GC environment-knob drift audit",
+      "command": "python3 scripts/check_gc_env_knobs.py",
+      "line_start": 170,
+      "line_end": 182,
+      "diagnostic_sha256": "29c949d6bea91270c63e6fdbe82ee47145a896b02f73978e055321dfd9bf07c1",
+      "diagnostic_bytes": 1321,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "GC documentation claim audit",
+      "command": "python3 scripts/check_gc_doc_claims.py",
+      "line_start": 183,
+      "line_end": 187,
+      "diagnostic_sha256": "5976d1470790cf121fcf9b46ca0ea36a439d8598074bb84b20fe308710046c2b",
+      "diagnostic_bytes": 567,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Windows-portable text I/O in the Windows-CI audits",
+      "command": "python3 scripts/check_locale_independent_io.py",
+      "line_start": 188,
+      "line_end": 196,
+      "diagnostic_sha256": "8e5efb0f9b2e574386ff5e9ed030d5f541d3d2fbdcd39dea84de24391922a516",
+      "diagnostic_bytes": 942,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Native runtime ABI consistency",
+      "command": "python3 scripts/runtime_abi_check.py --check-wasm-abi",
+      "line_start": 197,
+      "line_end": 205,
+      "diagnostic_sha256": "a81bed0780ebc44d624b836e6cc97b0e2a2e79ea516927d5319a011e430f34b9",
+      "diagnostic_bytes": 881,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Raw-handle debt ratchet",
+      "command": "python3 scripts/raw_handle_debt.py",
+      "line_start": 206,
+      "line_end": 212,
+      "diagnostic_sha256": "bd0012a0fb8026368271ac0f0a7c270ecc57f628f4fd08da8c6efa1d6ddb981d",
+      "diagnostic_bytes": 645,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py --self-test",
+      "line_start": 213,
+      "line_end": 214,
+      "diagnostic_sha256": "95a14efec3c0f916eaba935b492bea7b18269fea60394cfa6165c5653d2ad69c",
+      "diagnostic_bytes": 237,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Native-handle ledger ratchet",
+      "command": "python3 scripts/native_handle_ledger.py",
+      "line_start": 215,
+      "line_end": 222,
+      "diagnostic_sha256": "631de861f46aa665adff2159ef09eaf7bfc89d548d4dc653f225c11c984f62c7",
+      "diagnostic_bytes": 725,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Unrooted-local shape ratchet",
+      "command": "python3 scripts/unrooted_local_shape.py --check",
+      "line_start": 223,
+      "line_end": 229,
+      "diagnostic_sha256": "49f1ddb758aa9d2751a92cf4340f304cab9b8849e51770ff18f84c1182d9625b",
+      "diagnostic_bytes": 402,
+      "classification": "baseline",
+      "basis": "planning/12202-unrooted-attribution.json and exact bc862 replay; checker input globs exclude all changed runtime paths, and the sharp file violation is present at parent."
+    },
+    {
+      "gate": "Unrooted-local shape ratchet vs. merge base",
+      "command": "python3 scripts/unrooted_local_shape.py --no-raise-vs \"$BASE_SHA\"",
+      "line_start": 230,
+      "line_end": 244,
+      "diagnostic_sha256": "470231bda7af6cb18fef0815c0561921daba83eac33cac2218361ddff2b250f7",
+      "diagnostic_bytes": 1552,
+      "classification": "baseline",
+      "basis": "planning/12202-unrooted-attribution.json and exact bc862 replay; checker input globs exclude all changed runtime paths, and the sharp file violation is present at parent."
+    },
+    {
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py --self-test",
+      "line_start": 245,
+      "line_end": 251,
+      "diagnostic_sha256": "a522d4cb3c0b8edfa1e1d0f62e711df1df1cf13eddb7a2c3d86a94aae8d86e7a",
+      "diagnostic_bytes": 860,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Test registration (dark tests)",
+      "command": "python3 scripts/check_test_registration.py",
+      "line_start": 252,
+      "line_end": 260,
+      "diagnostic_sha256": "88a07537a3dd419a964151965275eea9cb841a9ad9779264beb9172457476a50",
+      "diagnostic_bytes": 660,
+      "classification": "baseline",
+      "basis": "planning/12202-static-preflight-705ccdae.json: exact full-output comparison against clean bc862 worktree; candidate output matches base (address-class after committed path-only migration)."
+    },
+    {
+      "gate": "Per-test global sinks",
+      "command": "python3 scripts/global_sink_isolation.py",
+      "line_start": 261,
+      "line_end": 271,
+      "diagnostic_sha256": "46b92674e891dbac7f5e1b88a47bf8dbba919ef71ecff5d66e975258288544e1",
+      "diagnostic_bytes": 1453,
+      "classification": "baseline",
+      "basis": "Final source-preflight exact outputs: same 12 hazards and 70 asserted globals; duplicate reset_for_test resolver picks a different existing same-named function by rglob order. No new hazard."
+    },
+    {
+      "gate": "warnings: rustc warnings (product)",
+      "command": "RUSTFLAGS=\"-D warnings\" cargo check -p perry --bins",
+      "line_start": 273,
+      "line_end": 279,
+      "diagnostic_sha256": "b2bd856117cd62a5818454241576344635f0fc6817dfddd4dc4fd39d385600bb",
+      "diagnostic_bytes": 424,
+      "classification": "baseline",
+      "basis": "planning/12202-2272-warning-comparison.json: candidate 42 / parent 42; zero candidate-only or parent-only diagnostic signatures."
+    },
+    {
+      "gate": "warnings: rustc warnings (host-compatible, all targets)",
+      "command": "RUSTFLAGS=\"-D warnings\" cargo check --workspace --all-targets --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+      "line_start": 280,
+      "line_end": 287,
+      "diagnostic_sha256": "baf2dabf19f19e72d8f585c04659897aeb701ee3944db5677c4f0f49b3964e44",
+      "diagnostic_bytes": 674,
+      "classification": "baseline",
+      "basis": "planning/12202-2272-warning-comparison.json: candidate 35 / parent 35; zero candidate-only or parent-only diagnostic signatures."
+    },
+    {
+      "gate": "check: Clippy (host-compatible)",
+      "command": "cargo clippy --workspace --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+      "line_start": 288,
+      "line_end": 299,
+      "diagnostic_sha256": "eced1086f42b570b09a6aca199a7cae190cf034a5fe4a5f058a3486d22eeb9f6",
+      "diagnostic_bytes": 1346,
+      "classification": "baseline",
+      "basis": "Targeted exact-head replay captured full diagnostics at 12202-2272-clippy-host-replay.log (exit 101): primary `clippy::reversed_empty_ranges` at crates/perry-runtime/src/regex/instance.rs:43 exactly matches 10739-bc862-replays/host-clippy.log, including code/message/primary span. The later declare_interior_mutable_const warning is not the fatal error. Nonfatal warning fingerprints are separately reconciled in planning/12202-final-attribution-reconciliation.json: runtime warnings 1102 candidate vs 1100 parent (three candidate-only warnings, one parent-only warning; net +2)."
+    },
+    {
+      "gate": "check: Regenerate API docs",
+      "command": "./scripts/regen_api_docs.sh",
+      "classification": "environment",
+      "basis": "The driver built release successfully, then the script attempted issue-9927/target/release/perry despite CARGO_TARGET_DIR=target-12390; that path did not exist. Direct candidate generation succeeded: Markdown 91,751 bytes vs tracked 0, d.ts 135,333 bytes and exact match. Tracked Markdown is 0 bytes at d74498b, bc8625f, and candidate 2272f7b; tracked d.ts is 135,333 bytes at all three. regen_api_docs.sh and the manifest entry/emitter/lib plus CLI entrypoint source blobs are identical at all three heads. This attributes the empty tracked file to pre-existing repository artifact state without claiming historical binary regeneration. The gate failure itself is the external-target-path assumption."
+    }
+  ],
+  "references": [
+    "/workspace/work/perry-queue/planning/12202-static-preflight-705ccdae.json",
+    "/workspace/work/perry-queue/planning/12202-unrooted-attribution.json",
+    "/workspace/work/perry-queue/planning/12202-string-payload-ratchet-decision.json",
+    "/workspace/work/perry-queue/planning/12202-2272-warning-comparison.json",
+    "/workspace/work/perry-queue/10739-bc862-replays/release-pipeline.log",
+    "/workspace/work/perry-queue/10739-bc862-replays/host-clippy.log",
+    "/workspace/work/perry-queue/12202-2272-clippy-host-replay.log",
+    "/workspace/work/perry-queue/12202-2272-api-docs-direct",
+    "/workspace/work/perry-queue/planning/12202-final-attribution-reconciliation.json"
+  ],
+  "next_action": "All declared full-driver failures classified. No candidate-introduced failure was found in the 32 failed rows; baseline failures are not green gates. API docs generation has an environment path failure plus pre-existing tracked Markdown drift. Root may prepare readiness using this evidence.",
+  "driver_summary": "32 of 137 FAILED; 2 CI-only skipped; exit 1"
+}

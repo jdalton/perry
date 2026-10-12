@@ -107,9 +107,34 @@
     "compile_log": "/workspace/work/perry-queue/12202-2272-auto-acceptance/compile.stdout"
   },
   "full_lint": {
-    "status": "RUNNING; no final summary or exact-head result yet",
-    "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
-    "started_at_utc": "2026-10-12T11:46:34Z"
+    "status": "COMPLETED_NON_GREEN",
+    "exit": 1,
+    "passed": 105,
+    "failed": 32,
+    "evaluated_non_skipped": 137,
+    "ci_only_skipped": 2,
+    "total_status_rows": 139,
+    "duration": "26m40s; before 30m hard cap",
+    "classification": {
+      "baseline_reproduced": 30,
+      "environment_or_path": 2,
+      "candidate_gate_failures": 0,
+      "unresolved": 0
+    },
+    "clippy_nonfatal_warning_delta": {
+      "candidate_only": 3,
+      "parent_only": 1,
+      "net": 2,
+      "candidate_runtime_warnings": 1102,
+      "parent_runtime_warnings": 1100,
+      "review": "TLS review pending"
+    },
+    "evidence": [
+      "2272-final-validation.json",
+      "2272-final-failure-attribution.json",
+      "planning/12202-final-attribution-reconciliation.json"
+    ],
+    "note": "Full lint did not pass. Baseline reproductions remain failed gates; separate nonfatal Clippy warning delta is not zero."
   },
   "limitations": [
     "Validation is Linux-only.",

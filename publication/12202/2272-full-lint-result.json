@@ -1,0 +1,56 @@
+{
+  "issue": 12202,
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "observed_at_utc": "2026-10-12T12:21:52Z",
+  "driver": {
+    "script": "scripts/run_lint_gates.sh",
+    "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "exit": 1,
+    "started_at_utc": "2026-10-12T11:46:17Z",
+    "completed_at_utc": "2026-10-12T12:12:57Z",
+    "duration": "26m40s",
+    "hard_stop_deadline_utc": "2026-10-12T12:16:17Z",
+    "completed_before_hard_stop": true,
+    "summary": "32 of 137 failed; 2 CI-only skipped",
+    "final_summary_present": true,
+    "log_mtime_utc": "2026-10-12T12:12:57.606552038Z"
+  },
+  "failure_classification": {
+    "status": "FINAL; every failure classified, Clippy fatal replay and direct API-doc generation evidence included",
+    "baseline_reproduced": 30,
+    "candidate_gate_failures": 0,
+    "environment_or_path": 2,
+    "unresolved": 0,
+    "warn_level_clippy_delta": {
+      "candidate_only": 3,
+      "parent_only": 1,
+      "net": 2,
+      "candidate_runtime_warnings": 1102,
+      "parent_runtime_warnings": 1100,
+      "disposition": "informational under repository workflow; disclosed in body and reconciliation evidence"
+    },
+    "api_docs_direct_proof": "2272-api-docs-proof.json",
+    "final_attribution": "2272-final-failure-attribution.json"
+  },
+  "next_pending_proofs": [],
+  "resource_observation": {
+    "disk_free_bytes": 2333487104,
+    "active_owned_processes": [],
+    "no_process_or_build_interruption": true
+  },
+  "policy": {
+    "full_lint_hard_cap_minutes": 30,
+    "build_or_compiled_acceptance_hard_cap_minutes": 45,
+    "at_cap": "Cleanly stop owned tree, wait for children, preserve logs; interrupted/incomplete never counts green.",
+    "progress_updates_minutes_max": 10
+  },
+  "publication_flags": {
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "external_pr_created": false,
+    "pushed_to_fork": true,
+    "full_lint_complete": true
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "issue": 12202,
+  "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "comparison_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "checked_at_utc": "2026-10-12T12:22:00Z",
+  "full_driver": {
+    "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "exit": 1,
+    "failed": 32,
+    "evaluated_non_skipped": 137,
+    "ci_only_skipped": 2,
+    "classification": {
+      "baseline": 30,
+      "candidate": 0,
+      "environment": 2,
+      "unresolved": 0
+    },
+    "source": "/workspace/work/perry-queue/12202-2272-final-failure-attribution.json"
+  },
+  "clippy": {
+    "driver_command": "cargo clippy --workspace --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+    "candidate_full_replay": {
+      "path": "/workspace/work/perry-queue/12202-2272-clippy-host-replay.log",
+      "exit": 101,
+      "fatal": "clippy::reversed_empty_ranges at crates/perry-runtime/src/regex/instance.rs:43:26"
+    },
+    "parent_full_replay": {
+      "path": "/workspace/work/perry-queue/10739-bc862-replays/host-clippy.log",
+      "fatal": "clippy::reversed_empty_ranges at crates/perry-runtime/src/regex/instance.rs:43"
+    },
+    "fatal_attribution": "Same command shape, fatal lint, source path, and line. The regex/instance.rs blob is identical at d74498b, bc8625f, and candidate 2272f7b (42bdfa26f4466441cfe2c1b875ef68f1480217fa). The tail's declare_interior_mutable_const hint is a warning, not the fatal error.",
+    "runtime_warning_count": {
+      "parent": 1100,
+      "candidate": 1102,
+      "net_delta": 2
+    },
+    "nonfatal_warning_fingerprint_delta": {
+      "candidate_only": [
+        {
+          "count": 1,
+          "primary": "crates/perry-runtime/src/object/class_image.rs:139:37",
+          "code": "type_complexity",
+          "message": "very complex type used. Consider factoring parts into `type` definitions"
+        },
+        {
+          "count": 1,
+          "primary": "crates/perry-runtime/src/object/class_image.rs:140:44",
+          "code": "type_complexity",
+          "message": "very complex type used. Consider factoring parts into `type` definitions"
+        },
+        {
+          "count": 1,
+          "primary": "crates/perry-runtime/src/object/field_get_set/class_object_template.rs:641:65",
+          "code": "unnecessary_cast",
+          "message": "casting raw pointers to the same type and constness is unnecessary (`*const object::ObjectHeader` -> `*const object::ObjectHeader`)"
+        }
+      ],
+      "parent_only": [
+        {
+          "count": 1,
+          "primary": "crates/perry-runtime/src/object/native_module/class_ref_values.rs:76:5",
+          "code": "collapsible_if",
+          "message": "this `if` statement can be collapsed"
+        }
+      ],
+      "disposition": "Three added and one removed warning fingerprints yield the observed net increase of two runtime warnings. These are nonfatal Clippy warnings; the driver failure is independently attributed to the unchanged reversed_empty_ranges diagnostic. Do not call the warning delta zero."
+    },
+    "command_derivation": {
+      "workflow": ".github/workflows/test.yml:1222-1229",
+      "workflow_blob_d744_bc862_candidate": "5b9a90a5517b64a1ac0988fc1dde7d84dfc39464",
+      "architecture_script": "scripts/workspace_architecture.py",
+      "architecture_script_blob_d744_bc862_candidate": "3f2325826f6b1c7543ddd6c32e6ecfda0d76440f",
+      "host_exclusion_inputs": {
+        "Cargo.toml": {
+          "d744": "6ce363a74ada393ceeea8bdd4a1d8903790fd75e",
+          "bc862": "66bdb24a9bdda6a4fa2bef3408fdde3151f632ff",
+          "candidate": "66bdb24a9bdda6a4fa2bef3408fdde3151f632ff"
+        },
+        "workspace-architecture.json": {
+          "d744": "35b14b9e545edbd363d1d471e12b35cc13675f8c",
+          "bc862": "4d1ba3e883f99af4973c2a611cbd38fad298c01f",
+          "candidate": "4d1ba3e883f99af4973c2a611cbd38fad298c01f"
+        }
+      },
+      "command_mismatch_note": "The candidate driver command and targeted replay command strings match exactly. The parent replay log does not retain its shell invocation line, so raw argv equality cannot be verified from that file alone; the workflow, architecture script, and host exclusion inputs are identical between bc862 and candidate, and the parent log reproduces the same fatal diagnostic."
+    }
+  },
+  "api_docs": {
+    "tracked_markdown_bytes": {
+      "d74498b": 0,
+      "bc8625f": 0,
+      "candidate_2272f7b": 0
+    },
+    "tracked_dts_bytes": {
+      "d74498b": 135333,
+      "bc8625f": 135333,
+      "candidate_2272f7b": 135333
+    },
+    "candidate_direct_generation": {
+      "release_binary": "target-12390/release/perry",
+      "markdown_exit": 0,
+      "markdown_bytes": 91751,
+      "dts_exit": 0,
+      "dts_bytes": 135333,
+      "dts_exact_match": true,
+      "evidence_dir": "/workspace/work/perry-queue/12202-2272-api-docs-direct"
+    },
+    "generator_input_blobs_identical_at_d744_bc862_and_candidate": {
+      "scripts/regen_api_docs.sh": "9314fc42ccd7e854b7706dbee99ffa29f4db5ba2",
+      "crates/perry-api-manifest/src/entries.rs": "3cbda9db5eca41b3ee72e5831a9abeccd68702b8",
+      "crates/perry-api-manifest/src/emit.rs": "d42c99dc5441e3d0123a4191912197a229bad26e",
+      "crates/perry-api-manifest/src/lib.rs": "c9f0443985f8469525366cc99e0cdc95f3aed87d",
+      "crates/perry/src/main.rs": "8d36bea2cc6b3565f442afe515b6b59ef0255e55"
+    },
+    "disposition": "Tracked Markdown emptiness is pre-existing in the repository tree at both saved comparison bases and the candidate, and the listed generator sources are byte-identical across all three heads. Candidate direct generation confirms its fresh binary emits 91,751 bytes; it does not establish historical generation output from a bc862 or d744 binary. The full-driver docs gate itself failed because the wrapper hardcodes issue-9927/target/release/perry while the run used external CARGO_TARGET_DIR; direct candidate generation is supplemental evidence, not a retroactive wrapper pass."
+  },
+  "references": [
+    "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "/workspace/work/perry-queue/12202-2272-final-failure-attribution.json",
+    "/workspace/work/perry-queue/12202-2272-clippy-host-replay.log",
+    "/workspace/work/perry-queue/10739-bc862-replays/host-clippy.log",
+    "/workspace/work/perry-queue/12202-2272-api-docs-direct",
+    "/workspace/work/perry-queue/12202-final-validation-status.json"
+  ]
+}

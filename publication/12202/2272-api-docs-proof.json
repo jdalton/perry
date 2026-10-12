@@ -1,0 +1,15 @@
+{
+  "candidate_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "wrapper_gate": "FAIL / environment-path: built release executable was under target-12390/release/perry, while regen_api_docs.sh hardcoded issue-9927/target/release/perry under external CARGO_TARGET_DIR.",
+  "direct_generation": {
+    "markdown_exit": 0,
+    "dts_exit": 0,
+    "markdown_generated_bytes": 91751,
+    "tracked_reference_bytes_candidate": 0,
+    "tracked_reference_bytes_baseline_d744": 0,
+    "dts_identical_to_tracked": true,
+    "interpretation": "Markdown drift is pre-existing at the validated baseline and candidate; the wrapper failure itself is the external target-path assumption. The driver docs-drift check after wrapper failure is not treated as proof of regeneration."
+  },
+  "evidence": "2272-final-validation.json",
+  "direct_output_dir": "/workspace/work/perry-queue/12202-2272-api-docs-direct"
+}
