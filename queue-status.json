@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T13:09:05Z",
+  "checked_at": "2026-10-12T13:10:00Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -18,12 +18,12 @@
   ],
   "merged_prs_this_turn": 6,
   "coverage_counts": {
-    "uncovered": 141,
+    "uncovered": 139,
     "uncertain": 19,
-    "covered_open": 20,
+    "covered_open": 22,
     "closed": 44
   },
-  "conservative_uncovered_upper_bound": 160,
+  "conservative_uncovered_upper_bound": 158,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -242,7 +242,7 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "has_uncommitted_changes": false,
-      "state": "Draft PR12471 open at dfd64b7 changelog-only fragment head; not ready for review",
+      "state": "Full source behavior covered by draft PR12471; PR remains open/draft and not ready for review; issue OPEN",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
@@ -256,7 +256,13 @@
       "observed_draft": true,
       "merged": false,
       "validated_source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-      "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae"
+      "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "coverage": "covered",
+      "coverage_basis": "Full source behavior accepted at validated source head2272; draft/open state is tracked separately.",
+      "covering_prs": [
+        12471
+      ],
+      "issue_state": "OPEN"
     },
     {
       "issues": [
@@ -393,5 +399,40 @@
     "evidence": "planning/benchmark-sparse-recovery/result.json",
     "summary_sha256": "e419a448710ad555b30420c50342ff25dd228cf46b54ca46fde06d23fb4df391"
   },
-  "coverage_policy": "The 20-PR batch is a milestone, not a stop; continue toward original224 coverage. Do not submit issue-covering PR reviews/comments until coverage is complete."
+  "coverage_policy": "Coverage follows accepted source behavior and is independent of PR or issue state; a full fix can be covered while the PR is draft/open. Track opened/merged/closed-unmerged PRs and issue closures separately. Continue toward original224 coverage; do not submit issue-covering reviews/comments until coverage is complete.",
+  "coverage_reconciliations": [
+    {
+      "issue": 10327,
+      "status": "uncertain",
+      "partial_prs": [
+        10354
+      ],
+      "evidence": "planning/10327-merged-source-reconciliation.json"
+    },
+    {
+      "issue": 9843,
+      "status": "covered",
+      "covering_prs": [
+        9898
+      ],
+      "integrated_component_prs": [
+        9859
+      ],
+      "issue_state": "OPEN",
+      "evidence": "planning/9843-merged-source-reconciliation.json"
+    },
+    {
+      "issue": 12202,
+      "status": "covered",
+      "covering_prs": [
+        12471
+      ],
+      "draft_prs": [
+        12471
+      ],
+      "pr_state": "draft/open/unmerged",
+      "issue_state": "OPEN",
+      "evidence": "planning/12202-coverage-classification.json"
+    }
+  ]
 }

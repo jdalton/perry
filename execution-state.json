@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T13:09:05Z",
+  "updated_at": "2026-10-12T13:10:00Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
@@ -245,9 +245,9 @@
     "issue_12202_live_state": "OPEN; updated 2026-10-08T11:06:28Z; 0 comments"
   },
   "coverage_counts": {
-    "uncovered": 141,
+    "uncovered": 139,
     "uncertain": 19,
-    "covered": 20,
+    "covered": 22,
     "closed": 44
   }
 }

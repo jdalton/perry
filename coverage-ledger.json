@@ -1,14 +1,14 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T12:17:49Z",
-  "classification_updated_at": "2026-10-12T13:09:05Z",
+  "classification_updated_at": "2026-10-12T13:10:00Z",
   "counts": {
-    "covered": 20,
+    "covered": 22,
     "uncertain": 19,
-    "uncovered": 141,
+    "uncovered": 139,
     "closed": 44
   },
-  "policy": "Covering PRs, partial repairs, observed closures and actual contributor merges are separate; source claims and WIP are not coverage.",
+  "policy": "Classify coverage by accepted source behavior, not PR or issue state. A fully accepted fix may count as covered while its PR remains draft/open; track draft/open, merged, closed-unmerged and issue closure separately. Partial repairs remain partial; source claims and WIP are not coverage.",
   "issues": [
     {
       "issue": 12390,
@@ -376,8 +376,10 @@
     },
     {
       "issue": 12202,
-      "status": "uncovered",
-      "covering_prs": [],
+      "status": "covered",
+      "covering_prs": [
+        12471
+      ],
       "live_state": "OPEN",
       "resolution_verified": false,
       "claim": {
@@ -389,12 +391,14 @@
         "validation": "Validated implementation remains exact head2272: scoped 59 unique tests/67 executions, fresh trio and no-auto/genuine-auto parity passed; full lint 105 pass,32 fail (30 baseline,2 environment/path),2 skips; warn-level Clippy +3/-1 disclosed. PR head dfd64b7 is a changelog-only numbered fragment; source bytes remain 2272. Draft is not ready for review.",
         "merge_state": "DRAFT OPEN PR12471",
         "closure_state": "OPEN",
-        "publication_state": "Draft PR12471 open at fragment head dfd64b7; readiness false pending #12145 verifier lane/final packet synchronization.",
+        "publication_state": "Draft PR12471 open at changelog fragment head dfd64b7; not ready for review. Issue remains open; no merge or closure credit.",
         "evidence": "publication/12202/2272-final-validation.json; publication/12202/2272-final-failure-attribution.json; publication/12202/2272-final-freshness.json"
       },
       "draft_prs": [
         12471
-      ]
+      ],
+      "coverage_evidence": "planning/12202-coverage-classification.json",
+      "coverage_basis": "Full source behavior is accepted at validated source head2272; PR12471 is open draft at changelog-only fragment headdfd64b7. Draft/open state, issue-open state, and merge state are tracked separately and do not negate coverage."
     },
     {
       "issue": 12201,
@@ -1854,10 +1858,17 @@
     },
     {
       "issue": 9843,
-      "status": "uncovered",
-      "covering_prs": [],
+      "status": "covered",
+      "covering_prs": [
+        9898
+      ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "integrated_component_prs": [
+        9859
+      ],
+      "coverage_evidence": "planning/9843-merged-source-reconciliation.json",
+      "coverage_basis": "Acceptance map matches the original compiler-only issue. Introducing commit f108c75 is an ancestor of merged train9898 and merge commit0866940 is an ancestor of inspected base d3e5359. Component PR9859 was closed unmerged but integrated through9898; count9898 as covering PR, do not count9859 as independently merged. Issue remains open."
     },
     {
       "issue": 9841,

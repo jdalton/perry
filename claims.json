@@ -226,9 +226,11 @@
     {
       "issue": 12202,
       "cohort": "original224",
-      "coverage": "uncovered",
+      "coverage": "covered",
       "scope": "One coherent exact-WTF8 class computed-key metadata repair; preserve ABI, symbols, ordering and evaluation identity",
-      "covering_prs": [],
+      "covering_prs": [
+        12471
+      ],
       "owner": "cloud /root/luna_class_tdz",
       "task": "/root/luna_class_tdz",
       "branch": "cloud/issue-12202-wtf8-class-keys",
@@ -238,10 +240,10 @@
       "validation": "Validated implementation remains exact head2272: scoped 59 unique tests/67 executions, fresh trio and no-auto/genuine-auto parity passed; full lint 105 pass,32 fail (30 baseline,2 environment/path),2 skips; warn-level Clippy +3/-1 disclosed. PR head dfd64b7 is a changelog-only numbered fragment; source bytes remain 2272. Draft is not ready for review.",
       "merge_state": "DRAFT OPEN PR12471",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T13:09:05Z",
+      "refreshed_at": "2026-10-12T13:10:00Z",
       "evidence": "publication/12202/2272-final-validation.json; publication/12202/2272-final-failure-attribution.json; publication/12202/2272-final-freshness.json",
-      "publication_state": "Draft PR12471 open at fragment head dfd64b7; readiness false pending #12145 verifier lane/final packet synchronization.",
-      "remaining": "Synchronize final numbered-fragment metadata and readiness evidence after verifier slot; original issue remains open.",
+      "publication_state": "Draft PR12471 open at changelog fragment head dfd64b7; not ready for review. Issue remains open; no merge or closure credit.",
+      "remaining": "Complete final documentation/fragment readiness synchronization; PR draft and issue remain open until separately advanced.",
       "worktree_state": "Canonical issue-12202 snapshot is clean at 705cc; no validation checkout is authorized while static preflight is blocked.",
       "validation_owner": "/root/luna_verification",
       "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
@@ -250,7 +252,8 @@
       "issue_updated_at": "2026-10-08T11:06:28Z",
       "issue_comments": 0,
       "validated_source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-      "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae"
+      "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "coverage_stage": "Full source acceptance at 2272; draft PR12471 and issue-open states tracked separately."
     },
     {
       "issue": 11915,
@@ -326,7 +329,7 @@
       "remaining": "Complete the running focused timer controls and production integration acceptance; then classify full lint if applicable."
     }
   ],
-  "updated_at": "2026-10-12T13:09:05Z",
+  "updated_at": "2026-10-12T13:10:00Z",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

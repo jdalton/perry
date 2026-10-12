@@ -1,0 +1,67 @@
+{
+  "updated_at": "2026-10-12T13:10:00Z",
+  "issue": 12202,
+  "original224_membership": {
+    "member": true,
+    "source": "/workspace/shared/perry-cloud-handoff/cloud-handoff/issues.json"
+  },
+  "prior_snapshot_classification": {
+    "status": "uncovered",
+    "covering_prs": [],
+    "source": "planning/original224-coverage.json"
+  },
+  "current_coverage_decision": {
+    "status": "covered",
+    "covering_prs": [
+      12471
+    ],
+    "basis": "Accepted full source behavior at validated source head2272: 59 unique tests/67 executions; fresh trio, no-auto parity, genuine-auto parity passed; source unchanged by dfd64b7 changelog-only fragment. Full lint is non-green but failures are classified 30 baseline and 2 environment/path; no candidate failures.",
+    "final_fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae"
+  },
+  "state_separation": {
+    "pr_number": 12471,
+    "pr_state": "draft/open/unmerged",
+    "ready_for_review": false,
+    "issue_state": "OPEN",
+    "issue_closure_credit": false,
+    "merge_credit": false
+  },
+  "policy_precedent": {
+    "issue": 12306,
+    "status": "covered",
+    "covering_prs": [
+      12276
+    ],
+    "live_state": "OPEN",
+    "pr_state": "open draft",
+    "source": "coverage-ledger.json and live-open-prs.json; supports coverage independent of merge/issue closure"
+  },
+  "counts_recomputed_from_ledger": {
+    "uncovered": 139,
+    "uncertain": 19,
+    "covered": 22,
+    "closed": 44
+  },
+  "previous_change": "#10327 remains uncertain with partial PR10354; this is independent of #12202 coverage.",
+  "related_reconciliations": {
+    "10327": {
+      "status": "uncertain",
+      "partial_prs": [
+        10354
+      ],
+      "evidence": "planning/10327-merged-source-reconciliation.json"
+    },
+    "9843": {
+      "status": "covered",
+      "covering_prs": [
+        9898
+      ],
+      "integrated_component_prs": [
+        9859
+      ],
+      "issue_state": "OPEN",
+      "resolution_verified": false,
+      "evidence": "planning/9843-merged-source-reconciliation.json"
+    }
+  }
+}
