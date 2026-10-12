@@ -1,16 +1,4 @@
-PR #12439 already exists: https://github.com/PerryTS/perry/pull/12439
-Do not create another PR.
-
-Validated head: 1273aff03f8685e3d8a2f539dff9ac94088ac857
-Head: jdalton:cloud/issue-12390-remove-parked-streams
-Base: main (observed996bc5d629dfbc4b0e99a377b6eeab57c32e54c6; branch validated on d744 baseline, no rebase)
-
-Final fragment-head build/coherence, routing2, streams33 and six explicit Node26.5.1 comparisons passed. Both feature-specific auto archive sets were rebuilt and linked. See final-head-validation.json and evidence-summary.json. Full lint and the two investigated CI jobs remain non-green with documented baseline/environment attribution. Linux does not establish macOS behavior.
-
-Use the existing LOCAL GitHub connection after confirming the PR still has the exact validated head:
-  gh pr view 12439 --repo PerryTS/perry --json headRefOid,isDraft,state
-  gh pr edit 12439 --repo PerryTS/perry --body-file publication/12390/body.md
-  gh pr ready 12439 --repo PerryTS/perry
-These commands are provided for the local coordinator, not executed by cloud. No credential transfer is needed. Keep unrelated local workers paused.
-
-body.md is reconciled with the latest locally edited draft body, corrects Node Readable routing wording, supplies exact final-head Node provenance, and adds exact CI attribution. Historical body/evidence are preserved in code-commit-* files. No merge or issue closure is claimed.
+COMPLETED: local publisher applied body from handoff4f2639b and marked PR12439 READY.
+Validated head:1273aff03f8685e3d8a2f539dff9ac94088ac857.
+PR is open and unmerged; issue12390 remains open. No further local publication action requested.
+Preserve the live bot appendix. No duplicate PR.
