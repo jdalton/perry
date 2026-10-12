@@ -1,0 +1,41 @@
+{
+  "observed_at_utc": "2026-10-12T15:43:05Z",
+  "query": "repo:PerryTS/perry is:pr is:open author:jdalton",
+  "open_authored_prs": [
+    {
+      "number": 12471,
+      "url": "https://github.com/PerryTS/perry/pull/12471",
+      "state": "open",
+      "draft": true,
+      "head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+      "base": "main",
+      "commits": 17,
+      "changed_files": 35,
+      "updated_at": "2026-10-12T13:08:27Z",
+      "reviews": [],
+      "review_threads": [],
+      "comments_seen": [
+        {
+          "id": 6124210400,
+          "author": "coderabbitai[bot]",
+          "created_at": "2026-10-12T12:24:44Z",
+          "deduplicated": true
+        }
+      ],
+      "checks": {
+        "workflow_runs": [],
+        "combined_status": {
+          "state": "unavailable",
+          "api_error": "404 Ref not found, queried against both PerryTS/perry and jdalton/perry"
+        },
+        "previous_observation": "At15:29:03Z the combined status tool returned CodeRabbit:success; no workflow run data was returned then. Do not treat that as complete CI proof."
+      }
+    }
+  ],
+  "deduplication": {
+    "comment_ids_seen": [6124210400],
+    "review_ids_seen": [],
+    "thread_ids_seen": []
+  },
+  "actions": "Read-only poll only; no review, comment, or PR state changes performed."
+}

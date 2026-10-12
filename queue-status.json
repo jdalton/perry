@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T15:36:23Z",
+  "checked_at": "2026-10-12T15:43:05Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -313,26 +313,26 @@
         12145
       ],
       "branch": "cloud/issue-12145-primary-timer-scan",
-      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
       "current_head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "state": "HOLD: consolidated source head4a248 awaits fresh exact-head validation; old 2e packet is not authorized for draft creation.",
-      "validation": "Prior 2e validation remains historical: trio,37 controls,production witness,release build,format/diff passed; full lint timed out. Consolidated 4a248 exact-head checks pending.",
-      "draft_creation_allowed": false,
+      "state": "Exact one-commit fork head4a248 passed selected acceptance; one draft authorized, no actual PR assignment/number yet. Keep draft; do not mark ready.",
+      "validation": "Fresh dev trio,37 focused controls,production integration1/1,rustfmt,diff check PASS at4a248. Exact-head release and full lint not run. Historical 2e release PASS/full-lint INCOMPLETE_TIMEOUT are prior-head evidence only.",
+      "draft_creation_allowed": true,
       "ready_for_review": false,
       "push_allowed": false,
       "pr_creation_allowed": false,
       "packet": "planning/12145-full-lint-cap-milestone.json",
       "publisher_actions": [
-        "Wait for single-commit exact-head validation; do not create a draft from the old 2e packet."
+        "Local publisher may create one draft for exact pushed head4a248; verify resulting head and leave draft. Do not mark ready. Add numbered fragment only after PR assignment."
       ],
       "coverage": "uncovered",
       "covering_prs": [],
       "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json",
       "full_lint_evidence": "publication/12145/2e-final-validation.json",
-      "validation_evidence": "publication/12145/2e-final-validation.json",
+      "validation_evidence": "publication/12145/validation.json",
       "external_pr_created": false,
       "pr_number": null,
       "pr_url": null
@@ -347,8 +347,8 @@
       "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
       "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
       "has_uncommitted_changes": false,
-      "state": "QUEUED for coherent release validation after #12145; user explicitly asked to finish this lane. Prior 180-second fixture timeout preserved; no retry started yet.",
-      "validation": "Focused getter1/1 and fresh trio passed at b67a01f; 180-second compiled no-auto fixture timed out before executable. Next authorized attempt requires coherent runtime+stdlib+HTTP/net release graph; reusable cache topology is under review, no parity claim.",
+      "state": "RUNNING fresh coherent trio build after preserved180-second fixture timeout; exact graph required; bounded45-minute cap to16:26:43Z.",
+      "validation": "At b67a01f, prior focused getter1/1 and matching trio PASS. Compiled fixture timed out180s before executable. Fresh matching trio restarted15:41:43Z with inc=0/jobs=1; compiled fixture follows only if it passes.",
       "coverage": "uncovered",
       "partial_prs": [
         10354
@@ -361,7 +361,7 @@
       "pr_creation_allowed": false,
       "packet": "planning/10327-b67-source-milestone.json",
       "publisher_actions": [],
-      "validation_evidence": "planning/10327-b67-heavy-validation-parked.json; planning/12202-local-integration-and-10327-queue-20261012T153623Z.json",
+      "validation_evidence": "planning/10327-b67-heavy-validation-parked.json; /workspace/work/perry-queue/10327-committed-acceptance/final-trio.run.json; planning/10327-protected-release-archives.json",
       "source_overlap_evidence": "planning/10327-current-source-overlap.json",
       "state_evidence": "planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
     },

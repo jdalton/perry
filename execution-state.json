@@ -227,17 +227,18 @@
     "local_commit_count": 1,
     "draft_creation_allowed": false,
     "ready_for_review": false,
-    "ready_to_publish": false,
     "status": "One-commit local integration Astra-cleared; exact-head validation pending. No force-push or PR mutation.",
     "evidence": "planning/12471-current-main-integration-result.json; planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
   },
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T15:36:23Z",
-    "next_task": "Run fresh exact-head #12145 checks at consolidated 4a24802; then queue coherent #10327 release validation. #12202 ac2a402 remains pending exact-head checks; no push/ready transition.",
-    "active_validation_processes": [],
-    "census_clean": true,
-    "evidence": "planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
+    "checked_at": "2026-10-12T15:43:05Z",
+    "next_task": "Complete #10327 fresh trio by16:26:43Z; if it passes, run bounded compiled Node witness. #12145 draft authorized but no actual PR assignment; #12202 ac2a remains pending exact-head validation.",
+    "active_validation_processes": [
+      "#10327 exact-head fresh matching trio build"
+    ],
+    "census_clean": false,
+    "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/final-trio.run.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -264,19 +265,22 @@
   },
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
-    "issue": 12145,
-    "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
-    "gate": "fresh exact-head checks after single-commit consolidation",
-    "status": "PENDING; previous 2e validation is not credited to 4a248.",
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "gate": "fresh matching dev trio (perry + runtime-static + stdlib-static) after preserved fixture timeout",
+    "started_at": "2026-10-12T15:41:43Z",
+    "hard_deadline": "2026-10-12T16:26:43Z",
+    "cap_seconds": 2700,
     "owner": "cloud /root/luna_verification",
-    "evidence": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
+    "status": "RUNNING; inc=0/jobs=1; prior180s compiled fixture timed out without executable.",
+    "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/final-trio.run.json"
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T15:30:05Z",
+    "observed_at": "2026-10-12T15:42:15Z",
     "source": "/workspace/work/perry-queue/publisher-status.json",
     "source_updated_at": "2026-10-12T12:17:49Z",
-    "issue_12145_assignment": "None in inbox; live exact source-branch PR search returned zero results.",
-    "evidence": "planning/12145-inbox-check-20261012T153005Z.json"
+    "issue_12145_assignment": "None; exact live source-branch PR search returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T154215Z.json"
   },
   "next_independent_candidate": {
     "issue": 9202,
@@ -290,11 +294,11 @@
     "evidence": "publication/9202/metadata.json; publication/9202/validation.json"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T15:30:05Z",
+    "observed_at": "2026-10-12T15:42:15Z",
     "source": "/workspace/work/perry-queue/publisher-status.json",
     "source_updated_at": "2026-10-12T12:17:49Z",
-    "issue_12145_assignment": "None in inbox; live exact source-branch PR search returned zero results.",
-    "evidence": "planning/12145-inbox-check-20261012T153005Z.json"
+    "issue_12145_assignment": "None; exact live source-branch PR search returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T154215Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -306,7 +310,7 @@
     "issue": 10327,
     "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
     "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
-    "checked_at": "2026-10-12T15:12:58Z",
+    "checked_at": "2026-10-12T15:43:05Z",
     "focused_getter_test": {
       "command": "cargo test --locked -p perry-ext-http --lib connected_session_keeps_encryption_independent_of_alpn -- --test-threads=1",
       "started_at": "2026-10-12T15:04:32Z",
@@ -342,9 +346,27 @@
     "full_lint": "NOT RUN",
     "coverage": "uncovered",
     "draft_creation_allowed": false,
-    "ready_for_review": false
+    "ready_for_review": false,
+    "fresh_matching_trio_retry": {
+      "status": "RUNNING",
+      "started_at": "2026-10-12T15:41:43Z",
+      "deadline": "2026-10-12T16:26:43Z",
+      "cap_seconds": 2700,
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "target": "/workspace/work/perry-queue/target-12390",
+      "CARGO_INCREMENTAL": 0,
+      "CARGO_BUILD_JOBS": 1,
+      "run_record": "/workspace/work/perry-queue/10327-committed-acceptance/final-trio.run.json"
+    },
+    "previous_compiled_fixture_attempt": {
+      "status": "INCOMPLETE_TIMEOUT",
+      "timeout_seconds": 180,
+      "exit_code": 124,
+      "executable_produced": false,
+      "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/validation.json"
+    }
   },
-  "active_source_issue": 12202,
+  "active_source_issue": 10327,
   "10327_source_milestone": {
     "issue": 10327,
     "branch": "cloud/issue-10327-metadata-repair",
@@ -395,19 +417,47 @@
     "issue": 12145,
     "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
     "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
-    "checked_at": "2026-10-12T15:32:28Z",
-    "validated_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "status": "HOLD until consolidated head receives exact-head revalidation.",
+    "checked_at": "2026-10-12T15:43:05Z",
+    "fork_source_ref": {
+      "repository": "jdalton/perry",
+      "branch": "cloud/issue-12145-primary-timer-scan",
+      "head": "4a24802a4b90bd897a5bbea9615d5fce9acc39ed",
+      "verified_at": "2026-10-12T15:41:18Z"
+    },
+    "acceptance": {
+      "fresh_trio": "PASS",
+      "focused_controls": "37/37 PASS",
+      "production_integration": "1/1 PASS",
+      "rustfmt": "PASS",
+      "diff_check": "PASS",
+      "exact_head_release_build": "NOT RUN",
+      "exact_head_full_lint": "NOT RUN"
+    },
+    "historical_2e_release_build": "PASS at2e094d only; not exact 4a validation",
+    "historical_2e_full_lint": {
+      "status": "INCOMPLETE_TIMEOUT",
+      "exit": 124,
+      "counts": {
+        "ok": 104,
+        "fail": 31,
+        "skip": 2,
+        "footer": false
+      },
+      "not_green": true,
+      "evidence": "publication/12145/2e-final-validation.json"
+    },
     "publication": {
-      "draft_creation_allowed": false,
+      "source_branch_pushed": true,
+      "draft_creation_allowed": true,
       "ready_for_review": false,
-      "external_pr_created": false,
+      "full_lint_complete": false,
+      "actual_pr_created": false,
       "pr_number": null,
       "pr_url": null
     },
-    "evidence": "publication/12145/metadata.json; planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
+    "evidence": "publication/12145/validation.json; publication/12145/2e-final-validation.json"
   },
-  "checked_at": "2026-10-12T15:36:23Z",
+  "checked_at": "2026-10-12T15:43:05Z",
   "9202_source_claim": {
     "issue": 9202,
     "branch": "cloud/issue-9202-parity-fatal-verdict",
@@ -468,9 +518,17 @@
   "10327_queued_release_validation": {
     "issue": 10327,
     "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
-    "status": "QUEUED after #12145 for a coherent release runtime+stdlib+HTTP/net-wrapper build; prior180s timeout preserved; no retry started.",
-    "reuse_review": "root/Astra checking safe Cargo dependency-cache reuse via symlink, not stamp-only skipping.",
+    "status": "RUNNING fresh matching trio since15:41:43Z,45-minute cap to16:26:43Z; if pass, bounded compiled fixture next.",
+    "previous_fixture_timeout": "180s exit124, no executable; preserved.",
     "protected_archives": "planning/10327-protected-release-archives.json",
-    "evidence": "planning/10327-b67-heavy-validation-parked.json; planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
+    "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/final-trio.run.json"
+  },
+  "authored_open_pr_poll": {
+    "observed_at": "2026-10-12T15:43:05Z",
+    "open_prs": [
+      12471
+    ],
+    "pr12471_state": "OPEN/DRAFT at dfd64b7;17 commits; no reviews or review threads; one CodeRabbit bot notice deduplicated. Workflow runs empty; combined status API404 on upstream and fork.",
+    "evidence": "planning/authored-open-pr-poll-20261012T154305Z.json"
   }
 }

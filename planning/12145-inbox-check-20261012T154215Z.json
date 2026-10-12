@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-10-12T15:42:15Z",
+  "publisher_status_source": "/workspace/work/perry-queue/publisher-status.json",
+  "publisher_status_updated_at": "2026-10-12T12:17:49Z",
+  "publisher_status_batch_pr_numbers": [12444, 12445, 12450, 12456, 12458],
+  "issue_12145_assignment": null,
+  "live_branch_search": {
+    "repository": "PerryTS/perry",
+    "query": "head:jdalton:cloud/issue-12145-primary-timer-scan",
+    "results": [],
+    "existing_pr": false
+  },
+  "conclusion": "No #12145 draft number or URL was assigned. The publisher snapshot is stale; the exact source-branch search also found no PR.",
+  "scope": "One inbox refresh at the consolidated-head publication milestone; no PR creation or mutation."
+}
