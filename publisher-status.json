@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T07:28:04.662135+00:00",
+  "updated_at": "2026-10-12T07:31:55.330509+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
@@ -37,24 +37,24 @@
           12007
         ],
         "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
-        "state": "open",
-        "ready_for_review": true,
-        "merged": false
+        "state": "merged",
+        "ready_for_review": false,
+        "merged": true
       }
     ],
     "remaining": 17,
     "owner": "cloud implements; local coordinates and publishes",
     "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf",
     "live_issue_snapshot": {
-      "repo_open": 186,
-      "original_open": 181,
-      "original_closed": 43,
-      "observed_at": "2026-10-12T06:27:42Z",
-      "evidence": "cloud handoff queue-status.json; refreshed 06:27 UTC"
+      "repo_open": 190,
+      "original_open": 180,
+      "original_closed": 44,
+      "observed_at": "2026-10-12T07:28:51Z",
+      "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
     "drafts": 0,
-    "ready_for_review": 1,
-    "merged": 2,
+    "ready_for_review": 0,
+    "merged": 3,
     "opened": 3,
     "remaining_to_open": 17,
     "remaining_to_good_state": 17,
