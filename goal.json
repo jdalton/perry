@@ -1,0 +1,82 @@
+{
+  "goal": "Clear PerryTS/perry original 224-issue queue",
+  "status": "active implementation/validation; publication delegated to local connection",
+  "milestone": "fewer than 200 confirmed uncovered open original issues; then all covered; track maintainer closure separately",
+  "cohort_source": "/workspace/shared/perry-cloud-handoff/cloud-handoff/issues.json",
+  "claim_owner": "cloud /root",
+  "local_workers": "paused",
+  "planning_model": "gpt-6-astra",
+  "implementation_model": "gpt-6-luna",
+  "implementation_reasoning": "low",
+  "state_preservation": "Original mirror and shallow boundary immutable; reconstruct needed worktrees only",
+  "counts_policy": "Count merged PRs, closed original issues, confirmed covered open issues, uncovered open issues, uncertain open issues, and new issues separately",
+  "completion": "All original issues cleared by evidence and maintainer action; never quota closures",
+  "refresh_policy": "Refresh issue/covering PR/reviews before each claim and publication",
+  "scheduled_execution": false,
+  "scheduled_execution_note": "No ongoing-goal API exposed; durable cloud goal established here. No background scheduler claimed.",
+  "platform_goal_status": "User reports UI Failed to set goal; no create_goal/get_goal tools exposed; unsupported here",
+  "milestone_status": {
+    "original224_under200_confirmed": true,
+    "basis": "150 uncovered +13 uncertain=163 conservative unresolved;20 covered/open;41 closed",
+    "coverage_ledger": "planning/original224-coverage.json",
+    "recorded_at": "2026-10-12T02:40:33.042288+00:00"
+  },
+  "platform_goal_checked_at": "2026-10-12T01:49:48.702752+00:00",
+  "publication_status": "2/20 additional PRs merged;10198closed,9927/8085remainopen",
+  "blocker": "pr-write-blocker.json",
+  "automatic_continuation": false,
+  "updated_at": "2026-10-12T05:36:27.182098+00:00",
+  "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
+  "implementation_authorized_while_publication_blocked": true,
+  "new_batch": {
+    "started_at": "2026-10-12T04:46:36.454607+00:00",
+    "target": 20,
+    "baseline_last_pr": 12439,
+    "baseline_previous_batch_opened": 20,
+    "baseline_previous_batch_merged": 20,
+    "new_prs": [
+      {
+        "number": 12444,
+        "url": "https://github.com/PerryTS/perry/pull/12444",
+        "issues": [
+          9927,
+          8085
+        ],
+        "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+        "state": "merged",
+        "ready_for_review": false,
+        "merged": true
+      },
+      {
+        "number": 12445,
+        "url": "https://github.com/PerryTS/perry/pull/12445",
+        "issues": [
+          10198
+        ],
+        "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+        "state": "merged",
+        "ready_for_review": false,
+        "merged": true
+      }
+    ],
+    "remaining": 18,
+    "owner": "cloud implements; local coordinates and publishes",
+    "live_issue_snapshot": {
+      "repo_open": 188,
+      "original_closed": 40,
+      "original_open": 184,
+      "note": "Historical full inventory, superseded for original issue counts by current coverage_counts: 41 closed, 183 open; not a current repository-wide issue total."
+    },
+    "drafts": 0,
+    "ready_for_review": 0,
+    "merged": 2,
+    "opened": 2,
+    "remaining_to_open": 18,
+    "remaining_to_good_state": 18,
+    "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
+    "code_ready_packets": 2,
+    "original_issues_closed": 1,
+    "evidence_source": "live GitHub REST newer than publisher inbox"
+  },
+  "publisher_inbox": "jdalton/perry cloud/local-publisher-inbox publisher-status.json"
+}

@@ -1,13 +1,16 @@
 {
   "issue": 10739,
   "scope": "partial: derive redundant workspace member and decision aggregates; no whole-issue coverage credit",
-  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-  "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "base": "main",
+  "head": "jdalton:cloud/issue-10739-derived-workspace-counts",
   "branch": "cloud/issue-10739-derived-workspace-counts",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "external_pr_created": false,
   "full_lint_complete": false,
   "publisher_actions": [],
-  "validation": "publication/10739/validation.json"
+  "validation": "validation.json",
+  "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "current_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "pushed_to_fork": false
 }

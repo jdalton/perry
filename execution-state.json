@@ -1,0 +1,40 @@
+{
+  "updated_at": "2026-10-12T05:36:27.182098+00:00",
+  "owner": "cloud /root",
+  "local_workers": "paused",
+  "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
+  "serial_build_owner": "/root/luna_worker_lifecycle #12285 committed-head validation",
+  "next_steps": [
+    "Finish12285 full lint/classification after safe disk recovery",
+    "Validate12007 then11519 in fixed issue-9927 checkout; canonical branches unchanged",
+    "Run10739 full lint; review12202 actual source before compilation",
+    "Publish exact-head packets and consume actual PR numbers from local relay"
+  ],
+  "prohibited": [
+    "No source mirror changes or unshallow",
+    "No old archive binaries or WIP as validation",
+    "No issue closures for counts",
+    "No new exemption or baseline raise to hide regressions"
+  ],
+  "resource_note": "32GB filesystem; avoid broad perry cargo test integration build. Use --bin perry filters, serial runtime/stdlib tests; require OWNER and announcement before target cleanup.",
+  "publication_blocker": "pr-write-blocker.json",
+  "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
+  "implementation_authorized_while_publication_blocked": true,
+  "publication_packet_12390": "/workspace/work/perry-queue/publication/12390",
+  "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
+  "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
+  "serial_priority": [
+    "12285 full lint rerun with CARGO_INCREMENTAL=0",
+    "12007 committed-head build/compiled acceptance/full lint",
+    "11519 committed-head build/compiled acceptance/full lint",
+    "10739 full lint and classification",
+    "12202 only after source review; matching build/compiled acceptance/full lint"
+  ],
+  "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
+  "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
+  "new_batch": {
+    "target": 20,
+    "merged": 2,
+    "remaining_to_good_state": 18
+  }
+}
