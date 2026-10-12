@@ -1,0 +1,361 @@
+{
+  "checked_at": "2026-10-12T04:53:57.367476+00:00",
+  "original224": true,
+  "repo_open_issues": 188,
+  "original_open": 184,
+  "original_closed": 40,
+  "counts": {
+    "closed": 40,
+    "uncertain": 10,
+    "uncovered": 154,
+    "covered": 20
+  },
+  "conservative_bound": 164,
+  "new_external_closures": [
+    {
+      "issue": 12310,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:56Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:56Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 12237,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:28:31Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:28:32Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 12148,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:28:34Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:28:34Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 12099,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:54Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:54Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11935,
+      "previous_status": "uncertain",
+      "closedAt": "2026-10-12T03:25:51Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:52Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11828,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:25:49Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:49Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11460,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:25:47Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:47Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11379,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:44Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:44Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11378,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:42Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:42Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 11377,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:39Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:39Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10884,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:25:36Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:37Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10642,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:34Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:34Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10641,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:31Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:31Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10365,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:25:28Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:28Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10351,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:25Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:25Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10334,
+      "previous_status": "uncovered",
+      "closedAt": "2026-10-12T03:25:22Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:22Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10323,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:20Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:20Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10321,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:28:28Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:28:29Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10310,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:18Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:18Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 10308,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:15Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:16Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 8821,
+      "previous_status": "uncertain",
+      "closedAt": "2026-10-12T03:25:12Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:13Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    },
+    {
+      "issue": 8549,
+      "previous_status": "covered",
+      "closedAt": "2026-10-12T03:25:09Z",
+      "stateReason": "COMPLETED",
+      "events": [
+        {
+          "createdAt": "2026-10-12T03:25:09Z",
+          "actor": {
+            "login": "proggeramlug"
+          },
+          "closer": null
+        }
+      ]
+    }
+  ],
+  "priority_states": {
+    "9927": "OPEN",
+    "8085": "OPEN",
+    "10198": "OPEN",
+    "12285": "OPEN",
+    "12007": "OPEN",
+    "11519": "OPEN",
+    "10365": "CLOSED"
+  },
+  "batch_attribution": "All22 newlyreconciledclosures areexternalmaintaineractions, notouradditional20 batchclosures. Historicalproposalcoverage retained perrow.",
+  "new_batch_credits": 0,
+  "evidence": [
+    "live-open-reconcile-oct12.json",
+    "new-closures-live.json"
+  ]
+}

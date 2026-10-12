@@ -1,0 +1,59 @@
+{
+  "pr_number": 12445,
+  "pr_url": "https://github.com/PerryTS/perry/pull/12445",
+  "repo": "PerryTS/perry",
+  "base": "main",
+  "head_repo": "jdalton/perry",
+  "branch": "jdalton:cloud/issue-10198-compound-test-cfg",
+  "implementation_head": "af0c2a033db40117c63099751964d467accd35ae",
+  "final_pr_head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+  "fragment_path": "changelog.d/12445-compound-test-cfg.md",
+  "fragment_commit_only": true,
+  "changed_paths_between_implementation_and_final": [
+    "changelog.d/12445-compound-test-cfg.md"
+  ],
+  "implementation_source_identity": {
+    "passed": true,
+    "python_checker_unchanged": true,
+    "command": "git diff --quiet <implementation_head>..HEAD -- scripts/check_thread_locals.py"
+  },
+  "post_fragment_checks": {
+    "python3 scripts/check_thread_locals.py --self-test": "PASS",
+    "python3 -m py_compile scripts/check_thread_locals.py": "PASS",
+    "git diff af0c2a033db40117c63099751964d467accd35ae..HEAD --check": "PASS"
+  },
+  "full_lint": {
+    "reuse_from_implementation_head": "af0c2a033db40117c63099751964d467accd35ae",
+    "result": "NON_GREEN; prior complete unchanged driver reused because the final commit adds only the changelog fragment; no new full run claimed.",
+    "exit": 1,
+    "failed": 30,
+    "total": 137,
+    "ci_only_skipped": 2,
+    "log": "../../staging/full-lint-10198.log"
+  },
+  "github_readback": {
+    "state": "OPEN",
+    "is_draft": true,
+    "base": "main",
+    "head_ref_name": "cloud/issue-10198-compound-test-cfg",
+    "head_ref_oid": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+    "head_repository_owner": "jdalton",
+    "head_verified_after_push": true
+  },
+  "pr_body_update": {
+    "result": "BLOCKED",
+    "details": "gh pr edit GraphQL update failed with projectCards deprecation error; direct REST PATCH returned HTTP 403 Resource not accessible by integration. Remote PR body remains unchanged. Corrected body.md is staged for authorized local publisher to apply.",
+    "no_remote_body_change": true
+  },
+  "no_ready_transition": true,
+  "no_comment": true,
+  "code_ready": true,
+  "packet_ready_for_review": true,
+  "observed_draft": true,
+  "remote_ready_transition": false,
+  "publisher_actions": [
+    "apply supplied final body from body.md",
+    "verify the existing PR head still equals validated_final_head",
+    "mark the existing PR ready for review"
+  ]
+}

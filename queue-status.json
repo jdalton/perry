@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-12T04:52:34.221866+00:00",
+  "checked_at": "2026-10-12T04:57:38.795510+00:00",
   "original224_total": 224,
-  "original_open": 206,
-  "original_closed": 18,
+  "original_open": 184,
+  "original_closed": 40,
   "open_new_excluded": [
     12396,
     12408,
@@ -13,12 +13,12 @@
   "merged_prs_this_turn": 1,
   "original_issues_closed_this_turn": 1,
   "coverage_counts": {
-    "uncovered": 160,
-    "uncertain": 12,
-    "covered_open": 34,
-    "closed": 18
+    "uncovered": 154,
+    "uncertain": 10,
+    "covered_open": 20,
+    "closed": 40
   },
-  "conservative_uncovered_upper_bound": 172,
+  "conservative_uncovered_upper_bound": 164,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -29,15 +29,52 @@
   "local_prs_created": 1,
   "pr12439_state": "MERGED; original12390 CLOSED",
   "new_batch": {
+    "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
     "baseline_last_pr": 12439,
-    "previous_batch_merged": 20,
-    "new_prs": [],
-    "merged": 0,
+    "baseline_previous_batch_opened": 20,
+    "baseline_previous_batch_merged": 20,
+    "new_prs": [
+      {
+        "number": 12444,
+        "url": "https://github.com/PerryTS/perry/pull/12444",
+        "issues": [
+          9927,
+          8085
+        ],
+        "head": "1bba095359ba0bc3a91efd3060119965c172327d",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
+      },
+      {
+        "number": 12445,
+        "url": "https://github.com/PerryTS/perry/pull/12445",
+        "issues": [
+          10198
+        ],
+        "head": "af0c2a033db40117c63099751964d467accd35ae",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
+      }
+    ],
+    "remaining": 18,
+    "owner": "cloud implements; local coordinates and publishes",
+    "live_issue_snapshot": {
+      "repo_open": 188,
+      "original_closed": 40,
+      "original_open": 184,
+      "note": "Fresh API counts; substantial other-maintainer closures since prior ledger. Refresh candidate states and coverage before further work/publication."
+    },
+    "drafts": 2,
     "ready_for_review": 0,
-    "drafts": 0,
-    "remaining": 20,
-    "count_policy": "20 distinct substantive contributor PRs after12439; count only merged or good reviewable state; no artificial splits"
+    "merged": 0,
+    "opened": 2,
+    "remaining_to_open": 18,
+    "remaining_to_good_state": 20,
+    "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
+    "code_ready_packets": 2
   },
   "packets": [
     {
@@ -45,21 +82,35 @@
         9927,
         8085
       ],
-      "head": "1bba095359ba0bc3a91efd3060119965c172327d",
-      "state": "draft_creation_allowed",
-      "draft_creation_allowed": true,
-      "ready_for_review": false,
-      "packet": "publication/9927/metadata.json"
+      "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+      "state": "code ready; local body application and ready transition pending",
+      "draft_creation_allowed": false,
+      "ready_for_review": true,
+      "packet": "publication/9927/metadata.json",
+      "pr_number": 12444,
+      "observed_draft": true,
+      "publisher_actions": [
+        "apply body.md",
+        "verify exact head",
+        "mark existing draft ready"
+      ]
     },
     {
       "issues": [
         10198
       ],
-      "head": "af0c2a033db40117c63099751964d467accd35ae",
-      "state": "draft_creation_allowed",
-      "draft_creation_allowed": true,
-      "ready_for_review": false,
-      "packet": "publication/10198/metadata.json"
+      "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
+      "state": "code ready; local body application and ready transition pending",
+      "draft_creation_allowed": false,
+      "ready_for_review": true,
+      "packet": "publication/10198/metadata.json",
+      "pr_number": 12445,
+      "observed_draft": true,
+      "publisher_actions": [
+        "apply body.md",
+        "verify exact head",
+        "mark existing draft ready"
+      ]
     },
     {
       "issues": [
@@ -81,5 +132,5 @@
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
-  "coverage_freshness": "Last full open-state refresh2026-10-12T02:51:13Z;12390 merge/closure and claimed-issue overlap refreshed at this milestone."
+  "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit."
 }

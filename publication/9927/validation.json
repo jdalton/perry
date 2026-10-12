@@ -208,5 +208,58 @@
     "historical_replay": "PASS; baseline mixed-page checker result null, fixed checker recovers selected-job failure from run 38145723062 at 2026-10-11T14:05:29Z, age 9.8365h under unchanged 30h threshold; 43 logical GETs, cap 256; contemporaneous-page limitation documented in replay result"
   },
   "review": "Astra source review clear; no blocking findings.",
-  "publication": "Pushed branch exists; no PR or fragment created. Full lint exit 1 and classification must be included in any PR packet."
+  "publication": "Pushed branch exists; no PR or fragment created. Full lint exit 1 and classification must be included in any PR packet.",
+  "final_pr_head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+  "numbered_fragment": "changelog.d/12444-gate-freshness-search.md",
+  "post_fragment_validation": {
+    "pr_number": 12444,
+    "pr_url": "https://github.com/PerryTS/perry/pull/12444",
+    "repo": "PerryTS/perry",
+    "base": "main",
+    "head_repo": "jdalton/perry",
+    "branch": "jdalton:cloud/issue-9927-freshness-search",
+    "implementation_head": "1bba095359ba0bc3a91efd3060119965c172327d",
+    "final_pr_head": "8b948e1f994cbede27584e3ebf985f992ed75676",
+    "fragment_path": "changelog.d/12444-gate-freshness-search.md",
+    "fragment_commit_only": true,
+    "changed_paths_between_implementation_and_final": [
+      "changelog.d/12444-gate-freshness-search.md"
+    ],
+    "implementation_source_identity": {
+      "passed": true,
+      "python_checker_unchanged": true,
+      "command": "git diff --quiet <implementation_head>..HEAD -- scripts/check_gate_freshness.py"
+    },
+    "post_fragment_checks": {
+      "python3 scripts/check_gate_freshness.py --self-test": "PASS",
+      "python3 -m py_compile scripts/check_gate_freshness.py": "PASS",
+      "git diff 1bba095359ba0bc3a91efd3060119965c172327d..HEAD --check": "PASS"
+    },
+    "full_lint": {
+      "reuse_from_implementation_head": "1bba095359ba0bc3a91efd3060119965c172327d",
+      "result": "NON_GREEN; prior complete unchanged driver reused because the final commit adds only the changelog fragment; no new full run claimed.",
+      "exit": 1,
+      "failed": 33,
+      "total": 137,
+      "ci_only_skipped": 2,
+      "log": "../../staging/full-lint-9927.log"
+    },
+    "github_readback": {
+      "state": "OPEN",
+      "is_draft": true,
+      "base": "main",
+      "head_ref_name": "cloud/issue-9927-freshness-search",
+      "head_ref_oid": "8b948e1f994cbede27584e3ebf985f992ed75676",
+      "head_repository_owner": "jdalton",
+      "head_verified_after_push": true
+    },
+    "pr_body_update": {
+      "result": "BLOCKED",
+      "details": "gh pr edit GraphQL update failed with projectCards deprecation error; direct REST PATCH returned HTTP 403 Resource not accessible by integration. Remote PR body remains unchanged. Corrected body.md is staged for authorized local publisher to apply.",
+      "no_remote_body_change": true
+    },
+    "no_ready_transition": true,
+    "no_comment": true
+  },
+  "full_lint_reuse": "The recorded full lint run applies to implementation head 1bba095359ba0bc3a91efd3060119965c172327d and remains exit 1; final PR head differs only by the numbered changelog fragment. No new full lint run is claimed."
 }
