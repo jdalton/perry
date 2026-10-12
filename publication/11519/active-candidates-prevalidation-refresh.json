@@ -1,0 +1,93 @@
+{
+  "repository": "PerryTS/perry",
+  "checked_at": "2026-10-12T07:41:19Z",
+  "read_only": true,
+  "issues": [
+    {
+      "number": 11519,
+      "state": "open",
+      "updated_at": "2026-09-28T13:28:43Z",
+      "timeline_latest": {
+        "event": "commented",
+        "created_at": "2026-09-28T13:28:43Z",
+        "actor": "proggeramlug",
+        "summary": "#11627 landed; issue explicitly left open for remaining SSO sites."
+      },
+      "pr_refresh": {
+        "issue_search_ids": [11627],
+        "same_as_prior_inventory": true,
+        "pr_11627": {
+          "state": "closed",
+          "merged": true,
+          "head_sha": "5eee8f26d5c95ba7a587a49d62879960aa0a85fe",
+          "merge_commit_sha": "fe7fec9b49ffb3a2eb5d34f6a4566a1af219b617"
+        },
+        "new_or_open_overlap": []
+      },
+      "coverage_conclusion": "Partially covered by #11627; remaining recorded ArrayBuffer.toString(runtime-built short encoding) and typed-string Symbol.iterator identity cases remain uncovered. No newly surfaced overlapping PR; issue stays open."
+    },
+    {
+      "number": 10739,
+      "state": "open",
+      "updated_at": "2026-09-19T22:32:09Z",
+      "timeline_latest": {
+        "event": "referenced",
+        "created_at": "2026-09-23T12:35:38Z",
+        "actor": "proggeramlug",
+        "commit_id": "636beb98f558116e7637a023db301111c82c634e"
+      },
+      "pr_refresh": {
+        "issue_search_ids": [10704,11123,11110,11109,10680,10677,10795,10783,10712,10708,10765,10764,10693,10691,10679,10748],
+        "same_as_prior_inventory": true,
+        "open_path_searches": {
+          "scripts/workspace_architecture.py": [],
+          "workspace-architecture.json": []
+        },
+        "new_or_open_overlap": []
+      },
+      "coverage_conclusion": "The current issue remains open. The existing removal/train PRs do not repair the recurring absolute-count derivation problem. No new relevant PR surfaced; the candidate's schema/count derivation change remains a partial proposed repair rather than upstream coverage."
+    },
+    {
+      "number": 12202,
+      "state": "open",
+      "updated_at": "2026-10-08T11:06:28Z",
+      "timeline_latest": null,
+      "pr_refresh": {
+        "issue_reference_search_ids": [],
+        "current_open_pr_count": 24,
+        "prior_open_pr_inventory_count": 26,
+        "open_inventory_removed_since_prior": [12444,12445],
+        "open_inventory_added_since_prior": [],
+        "relevant_path_searches": {
+          "crates/perry-runtime/src/object/class_registry/registration.rs": [],
+          "crates/perry-runtime/src/object/class_registry/parent_static.rs": []
+        },
+        "newly_merged_adjacent_pr": {
+          "number": 12450,
+          "merged_at": "2026-10-12T07:28:40Z",
+          "head_sha": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+          "merge_commit_sha": "ccbd617c6e7acc37761e22157a4ce00aaaae1845",
+          "scope_note": "#12007 HIR/test class-expression TDZ change; saved #12007 changed-path evidence is disjoint from #12202's runtime class-key metadata path group.",
+          "overlap_conclusion": "Adjacent topic only; no duplicate runtime-key fix."
+        },
+        "previously_seen_merged_prs": [
+          {
+            "number": 12444,
+            "scope": "gate freshness checker"
+          },
+          {
+            "number": 12445,
+            "scope": "TLS checker"
+          }
+        ]
+      },
+      "coverage_conclusion": "Uncovered by upstream PRs. No current open PR overlaps the planned runtime class-key paths. The newly merged #12450 is a distinct HIR/TDZ repair. The local implementation remains subject to its separate validation gate."
+    }
+  ],
+  "timeline_method": "Read issue states, then read each issue timeline endpoint; no new issue comments or events were found after the saved snapshots. Comment timestamps for #11519/#10739 agree with the latest timeline event; #12202 has no timeline events.",
+  "limits": [
+    "No PR reviews, feedback, broad diffs, or mutations performed.",
+    "Searches were limited to issue references and the candidate-specific production paths; historic PR records were reused.",
+    "No source validation or coverage credit was performed."
+  ]
+}

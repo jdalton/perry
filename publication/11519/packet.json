@@ -35,9 +35,126 @@
     "typed-string Symbol.iterator identity is outside scope"
   ],
   "publication": {
-    "draft_creation_allowed": false,
+    "draft_creation_allowed": true,
     "ready_for_review": false,
-    "fragment": "Only after actual PR number is assigned."
+    "reason": "Requiredcheckscomplete; failuresclassified; actual-numberfragment/final-headchecksremain",
+    "fragment": "Only afteractualPRnumberassigned"
   },
-  "candidate_test_correction_commit": "5e41d1d8b19c030754975afeca52a9c277eda739"
+  "candidate_test_correction_commit": "5e41d1d8b19c030754975afeca52a9c277eda739",
+  "validation_history": [
+    {
+      "head": "210e8b72caddf77d45de81cc5c731e7b58b7a453",
+      "event": "First test-only correction adjusted the unified string pointer result to the StringHeader pointer type and rooted the returned JS value before possible short-string materialization. The next focused compile identified missing unsafe blocks at the three bytes_mut calls."
+    },
+    {
+      "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "event": "Added narrowly scoped unsafe blocks with safety rationale around the three writes. Follow-up compile and focused test pass on this head."
+    },
+    {
+      "event": "An earlier test invocation selected zero tests because it was not restricted to the library target. The later --lib invocation selected the intended test and reported 1 passed, 5,797 filtered out."
+    },
+    {
+      "event": "The first default auto-optimization fixture compile timed out at 180 seconds (exit 124). The retry completed successfully, rebuilt runtime and stdlib archives using panic=abort and async-bridge, ran successfully, and matched the Node stdout. The no-auto-optimize compile/run also passed and matched Node."
+    },
+    {
+      "event": "An earlier focused compile reported E0308 because js_get_string_pointer_unified returns i64; corrected in the test-only follow-up before the passing verification run."
+    }
+  ],
+  "validation_record": "validation.json",
+  "validation": {
+    "issue": 11519,
+    "candidate_commit": "5e41d1d8b19c030754975afeca52a9c277eda739",
+    "base": "d74498b261d087a301b80602835bc7199a067957",
+    "worktree_clean": true,
+    "diff_stat": "crates/perry-runtime/src/object/buffer_dispatch.rs |  8 ++\n .../src/value/to_string_buffer_tests.rs            | 98 +++++++++++++++++++++-\n ...p_11519_arraybuffer_to_string_short_encoding.ts | 25 ++++++\n 3 files changed, 130 insertions(+), 1 deletion(-)",
+    "checked_at_utc": "2026-10-12T07:57:47.341266+00:00",
+    "environment": {
+      "rust": "nightly-2026-10-04",
+      "node": "/workspace/.toolchains/node-26.5.1/bin/node",
+      "target_dir": "/workspace/work/perry-queue/target-12390",
+      "cargo_incremental": 0,
+      "cargo_build_jobs": 1
+    },
+    "focused_unit": {
+      "command": "cargo test -p perry-runtime buffer_dispatch_to_string_uses_object_tags_for_non_indexed_views -- --test-threads=1",
+      "result": "passed: 1 test, 5797 filtered; an earlier invocation with --exact selected zero tests and is not counted",
+      "log": "/workspace/work/perry-queue/11519-5e41-unit-test-filtered.log",
+      "exit": 0
+    },
+    "trio_build": {
+      "result": "passed",
+      "log": "/workspace/work/perry-queue/11519-5e41-build.log",
+      "hashes": [
+        "afe03ba5d1a3fa30c0bd7f5870a41a3f421d175d939f0964f9a5bbe2930f03de  /workspace/work/perry-queue/target-12390/debug/perry",
+        "22b8e1c47ffe124b6ee50040b878c3cf6dcc4648fd0f6fd4d40d2bc1c7d2caf2  /workspace/work/perry-queue/target-12390/debug/build/perry-runtime-static/3bf18cdc5628ba02/out/libperry_runtime-3bf18cdc5628ba02.a",
+        "6f13b452ff33209bde8c7951ade6b19379311c0a5c6e8badac80b596e4dfc1ab  /workspace/work/perry-queue/target-12390/debug/build/perry-stdlib-static/6df0f927c48619b6/out/libperry_stdlib-6df0f927c48619b6.a"
+      ]
+    },
+    "no_auto_optimize": {
+      "result": "passed; 18-case Node parity",
+      "compile_log": "/workspace/work/perry-queue/11519-5e41-noauto-compile.log",
+      "run_stdout": "/workspace/work/perry-queue/11519-5e41-noauto.stdout",
+      "diff": "/workspace/work/perry-queue/11519-5e41-noauto.diff",
+      "exit": 0
+    },
+    "auto_optimize": {
+      "result": "passed genuine auto-optimize build and 18-case parity; first 180-second compile attempt timed out with exit 124, second 600-second retry succeeded",
+      "compile_log": "/workspace/work/perry-queue/11519-5e41-auto-retry-compile.log",
+      "run_stdout": "/workspace/work/perry-queue/11519-5e41-auto-retry.stdout",
+      "diff": "/workspace/work/perry-queue/11519-5e41-auto-retry.diff",
+      "archive_hashes": [
+        "49eab4efb227ebb2cc062ea61eead86c2490f3f2fe882e82a2e094df5c2bc0a5  /workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+        "f3d2cc0c2301f2ddfd221a65f2b80db078dab09c54b0d555a2146762cf3bf755  /workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a"
+      ],
+      "exit": 0
+    },
+    "full_lint": {
+      "command": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957; CARGO_TARGET_DIR=target-12390 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 RUST_TEST_THREADS=1; PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python; RUNNER_TEMP/GITHUB_PATH=/workspace/work/perry-queue/11519-lint-runner-temp; bash scripts/run_lint_gates.sh",
+      "log": "/workspace/work/perry-queue/11519-full-lint-5e41.log",
+      "exit": 1,
+      "failed": 30,
+      "total": 137,
+      "ci_only_skipped": 2,
+      "failure_partition": {
+        "static_rows": 26,
+        "static_exact_baseline": 24,
+        "static_same_release_pipeline_failure_elapsed_only": 1,
+        "static_xwin_environment_unproven_proxy_403": 1,
+        "compile_product_warnings": {
+          "errors": 37,
+          "classification": "exact baseline match against d744 A/B command; see 12390-compile-ab-comparison.json"
+        },
+        "compile_host_warnings": {
+          "errors": 30,
+          "classification": "exact baseline match against d744 A/B command; see 12390-compile-ab-comparison.json"
+        },
+        "host_clippy": {
+          "errors": 1,
+          "classification": "exact baseline match against d744 A/B command; see 12390-compile-ab-comparison.json"
+        },
+        "api_docs_wrapper": {
+          "classification": "wrapper failed because scripts/regen_api_docs.sh hardcodes checkout/target/release/perry while external CARGO_TARGET_DIR is target-12390; direct manifest runs were done with the freshly built candidate binary",
+          "direct_generated_markdown_sha256": "4b8253e5150a81d1c4252477d7f70e8122597397999d134e50335121a0f49c37",
+          "prior_12007_generated_markdown_sha256": "4b8253e5150a81d1c4252477d7f70e8122597397999d134e50335121a0f49c37",
+          "direct_markdown_matches_prior_candidate": true,
+          "direct_generated_dts_sha256": "becae15a56707ed81430238343dbe0db899cf85bebd3c975beafbc917e469d35",
+          "prior_12007_generated_dts_sha256": "becae15a56707ed81430238343dbe0db899cf85bebd3c975beafbc917e469d35",
+          "direct_dts_matches_prior_candidate": true,
+          "tracked_reference_bytes": 0,
+          "tracked_dts_matches_generated": true,
+          "generated_output_sha_file": "/workspace/work/perry-queue/11519-api-docs-direct-check.sha256"
+        }
+      }
+    },
+    "static_comparison": {
+      "map": "/workspace/work/perry-queue/planning/11519-static-lint-baseline-map.json",
+      "method": "Pair gate and exact command; compare full emitted diagnostic block after normalizing only checkout root issue-9927 to baseline. For same-failure test timing, normalize only elapsed seconds. Any other difference is not called baseline-reproduced. Then compare git blob IDs at d744 and candidate for source paths named in candidate failure diagnostics.",
+      "candidate_vs_base_source_blobs": "all matching for the 49 paths named in candidate static diagnostics",
+      "diagnostic_source_paths_checked": 49,
+      "changed_or_unavailable_diagnostic_source_paths": 0
+    },
+    "compile_baseline_evidence": "/workspace/work/perry-queue/12390-compile-ab-comparison.json",
+    "known_docs_caveat": "Direct regenerated reference is 91,751 bytes while tracked docs/src/api/reference.md is 0 bytes; this same output was produced by the earlier validated candidate and not caused by #11519. The driver docs-drift check itself said pass because the regeneration wrapper stopped before writing the file.",
+    "status": "Ready for parent review/publication: focused build/tests and both optimization modes pass; full lint completed with failures classified as above. Do not describe full lint as green."
+  }
 }

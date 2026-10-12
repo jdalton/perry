@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-12T07:59:25.864402+00:00",
+  "issue": {
+    "number": 11519,
+    "state": "open",
+    "updated_at": "2026-09-28T13:28:43Z"
+  },
+  "prs": [
+    {
+      "number": 11627,
+      "state": "closed",
+      "title": "fix(runtime,stdlib,codegen,ext): short (SSO) strings at native string entry points (#11519)"
+    }
+  ],
+  "total": 1
+}

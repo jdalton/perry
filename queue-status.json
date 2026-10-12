@@ -163,12 +163,15 @@
       ],
       "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
       "branch": "cloud/issue-11519-byte-family-tostring",
-      "state": "Exact-head focused checks pass; defaultauto and full lint pending",
-      "draft_creation_allowed": false,
+      "state": "Validatedforkhead; draftcreationallowed; actualPRnumberpending",
+      "draft_creation_allowed": true,
       "ready_for_review": false,
       "packet": "publication/11519/metadata.json",
       "current_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
-      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained."
+      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained.",
+      "publisher_actions": [
+        "Createone draft from5e41d1d using11519packet; writeactualPRnumbertoinbox"
+      ]
     },
     {
       "issues": [
@@ -176,7 +179,7 @@
       ],
       "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
       "branch": "cloud/issue-10739-derived-workspace-counts",
-      "state": "committed; focused18tests and metadata audit pass; full lint queued",
+      "state": "Exact-head full lint running serially",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/10739/metadata.json"
@@ -198,7 +201,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
   "actual_prs_created_in_continuation": 4,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T07:28:51Z",
+  "updated_at": "2026-10-12T08:00:40.124838+00:00",
   "publisher_inbox_checked_at": "2026-10-12T07:12:25.987763+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

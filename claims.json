@@ -185,14 +185,15 @@
       "worktree": "/workspace/work/perry-queue/issue-11519",
       "current_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
       "has_uncommitted_changes": false,
-      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained.",
+      "validation": "Exactheadtrio, focusedunit1PASS/5797filtered,18case noauto+genuinedefaultautoNode26.5.1parityPASS. Full lint30/137failures2skipsclassifiedbaseline/environment; initialtestdefects/zero-testinvocation/autotimeoutretained.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T05:02:36.635642+00:00",
+      "refreshed_at": "2026-10-12T08:00:40.124838+00:00",
       "evidence": "Astra live OPEN, merged11627 explicit deferral, no openPR overlap; main75c80af relevant buffer_dispatch/encode/to_string_tag source identical to d744; planning/next-candidates/11519-arraybuffer-minimal.ts and11519-deferred-probe-plan.json",
-      "publication_state": "Committed locally; not pushed; validation queued after12007",
+      "publication_state": "Draftcreationallowed; noPRyet; actualnumberfragment/final-headchecksremain",
       "remaining": "Exact-head matching build/runtime/compiled acceptance/full lint with CARGO_INCREMENTAL=0; source review complete",
-      "limitations": "Canonical buffer Symbol.toStringTag behavior is already incomplete on both paths; separate defect deferred, no custom-tag conformance claim"
+      "limitations": "Canonical buffer Symbol.toStringTag behavior is already incomplete on both paths; separate defect deferred, no custom-tag conformance claim",
+      "pushed_commit": "5e41d1d8b19c030754975afeca52a9c277eda739"
     },
     {
       "issue": 10739,
@@ -236,7 +237,7 @@
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T07:28:51Z",
+  "updated_at": "2026-10-12T08:00:40.124838+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

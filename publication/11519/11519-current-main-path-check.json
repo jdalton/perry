@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-12T07:31:00Z",
+  "repository": "PerryTS/perry",
+  "upstream_ref": "main",
+  "upstream_head": "ccbd617c6e7acc37761e22157a4ce00aaaae1845",
+  "comparison_base": "d74498b261d087a301b80602835bc7199a067957",
+  "paths": [
+    {
+      "path": "crates/perry-runtime/src/object/buffer_dispatch.rs",
+      "base_blob": "49878fc91aa544a53b88cda1182933e1f7f36aef",
+      "main_blob": "49878fc91aa544a53b88cda1182933e1f7f36aef",
+      "result": "unchanged"
+    },
+    {
+      "path": "crates/perry-runtime/src/value/to_string_buffer_tests.rs",
+      "base_blob": "91ed12b6c47edeece849a27b934addf99c17aea0",
+      "main_blob": "91ed12b6c47edeece849a27b934addf99c17aea0",
+      "result": "unchanged"
+    }
+  ],
+  "new_fixture": {
+    "path": "test-files/test_gap_11519_arraybuffer_to_string_short_encoding.ts",
+    "main_check": "GitHub Contents API returned 404 Not Found; root test-files tree listing also has no entry",
+    "result": "not present on checked main"
+  },
+  "evidence": {
+    "local_base": "git ls-tree d74498b261d087a301b80602835bc7199a067957 for the two source paths",
+    "upstream": "GitHub REST branch/main and Git Trees API at ccbd617c6e7acc37761e22157a4ce00aaaae1845; Contents API for fixture path",
+    "scope": "read-only path/blob check; no full fetch, build, or source edit"
+  },
+  "conclusion": "The two production/test source paths have no main-vs-d744 merge drift. The new fixture path is absent on main, so no pre-existing path collision was found."
+}

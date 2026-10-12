@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-12T07:28:51Z",
+  "updated_at": "2026-10-12T08:00:40.124838+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification #11519 full lint",
+  "serial_build_owner": "/root/luna_verification #10739 full lint",
   "next_steps": [
-    "PR12450merged and12007closed; no pendingpublisher action",
-    "Finish11519full lintclassification; publishdraftpacket immediately",
-    "Serial10739full lint then12202boundedruntimechecks/full lint",
-    "Consume actualPRnumbers; add fragments and final-head readiness withoutqueueing behindotherlonglanes"
+    "Localpublisher maycreate11519draftat5e41d1d; cloudawaitsactualPRnumber",
+    "Finish10739full lintclassificationandpublishimmediately",
+    "Prioritizeactual11519fragmentfinalheadatnextsafevalidationboundary",
+    "Then12202boundedruntimevalidation/full lint"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
