@@ -5,13 +5,10 @@
   "head": "jdalton:cloud/issue-10739-derived-workspace-counts",
   "branch": "cloud/issue-10739-derived-workspace-counts",
   "draft_creation_allowed": false,
-  "ready_for_review": true,
+  "ready_for_review": false,
   "external_pr_created": true,
   "full_lint_complete": true,
-  "publisher_actions": [
-    "Apply body.md to existing PR12458",
-    "Mark existing draft12458 ready at validated84d1315; do not create another PR"
-  ],
+  "publisher_actions": [],
   "validation": "validation.json",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
   "current_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
@@ -23,5 +20,6 @@
   "fragment": "changelog.d/12458-derived-workspace-counts.md",
   "validated_final_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
   "final_head_validation": "final-head-validation.json",
-  "readiness": "READY_FOR_LOCAL_REVIEW_TRANSITION"
+  "readiness": "MERGED",
+  "merged_at": "2026-10-12T08:55:05Z"
 }

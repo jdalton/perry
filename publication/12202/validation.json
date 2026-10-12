@@ -1,0 +1,154 @@
+{
+  "issue": 12202,
+  "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+  "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "worktree_retired": true,
+  "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
+  "source_scope": {
+    "changed_files_total": 28,
+    "runtime_rust_files": 27,
+    "fixture_files": 1,
+    "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+    "codegen_or_abi_changes": false,
+    "diffstat": "27 runtime Rust files + 1 fixture; 1598 insertions, 565 deletions (from bc8625f64fd829af5463c8cde8368ec7947f31a1 to current head)"
+  },
+  "issue_state": {
+    "state": "open",
+    "updated_at": "2026-10-08T11:06:28Z",
+    "comments": 0,
+    "checked_at": "2026-10-12T06:16:56.712832Z",
+    "source": "/workspace/work/perry-queue/planning/active-issue-milestone-states.json",
+    "current_live_refresh_performed": false
+  },
+  "overlap_evidence": {
+    "issue_specific_pr_search": "No result for repo:PerryTS/perry is:pr 12202 lone surrogate computed method name.",
+    "search_record": "/workspace/work/perry-queue/planning/active-issue-freshness-2026-10-12.json",
+    "related_pr": "#12193 is contextual; its method lookup/call-forwarding optimization did not cover HIR computed method-name lowering or claim the surrogate-key defect."
+  },
+  "source_review": {
+    "verdict": "SOURCE_REVIEW_CLEAR_TO_COMPILE_WITH_ROOT_SLOT_APPROVAL",
+    "record": "/workspace/work/perry-queue/planning/12202-source-review-fifth.json",
+    "remaining_known_source_blockers": [],
+    "not_runtime_acceptance": true
+  },
+  "node_oracle": {
+    "status": "passed",
+    "node_version": "v26.5.1",
+    "command": "/workspace/.toolchains/node-26.5.1/bin/node --experimental-strip-types test-files/test_issue_12202_wtf8_class_keys.ts",
+    "exit": 0,
+    "fixture_sha256": "5313661ad5c2d0f01cb8da3c9e64df95b48e4e0e95fabfd95592c8a94a634ef0",
+    "stdout": "/workspace/work/perry-queue/planning/12202-node-expanded.stdout",
+    "stderr": "/workspace/work/perry-queue/planning/12202-node-expanded.stderr",
+    "record": "/workspace/work/perry-queue/planning/12202-node-expanded-result.json",
+    "perry_validated": false
+  },
+  "acceptance_matrix": {
+    "collision_keys": [
+      "lone high surrogate",
+      "lone low surrogate",
+      "U+FFFD",
+      "literal escaped text",
+      "empty",
+      "ASCII",
+      "BMP",
+      "valid astral scalar"
+    ],
+    "member_paths": [
+      "instance/static methods",
+      "instance/static getters and setters",
+      "function names and lengths",
+      "descriptors and attributes",
+      "duplicate keys and getter/setter composition",
+      "delete/re-add ordering",
+      "per-evaluation class identity",
+      "inheritance and own-descriptor ownership",
+      "symbol control",
+      "static prototype rejection",
+      "single ToPropertyKey coercion"
+    ],
+    "focused_runtime_units": {
+      "status": "pending (retry at current head; prior attempts at 6ed4487 and a4e7dd7 failed before tests)",
+      "planned_command": "cargo test -p perry-runtime --lib wtf8",
+      "expected_tests": [
+        "computed_member_name_round_trips_wtf8_bytes_without_replacement",
+        "declaration_method_lookup_matches_exact_wtf8_bytes"
+      ]
+    },
+    "matching_dev_trio": {
+      "status": "pending",
+      "packages": [
+        "perry",
+        "perry-runtime-static",
+        "perry-stdlib-static"
+      ]
+    },
+    "compiled_fixture_vs_node": "pending",
+    "full_lint": "pending"
+  },
+  "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
+  "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
+  "resource_policy": {
+    "serial_order": "Run only after #12007, #11519, and #10739 release their validation slots.",
+    "target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_incremental": 0,
+    "cargo_jobs": 1,
+    "new_target_dirs_allowed": false,
+    "cache_growth_estimate": null,
+    "cache_growth_note": "No trustworthy incremental disk-growth estimate was available at packet preparation."
+  },
+  "publication": {
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "external_pr_created": false,
+    "pr_number": null
+  },
+  "correction_source_review": {
+    "status": "passed bounded source review; no remaining correction blocker",
+    "record": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
+    "correction_commit": "a4e7dd746236a02d12565b480bab8ca16cfbbe20",
+    "reviewer_builds": false
+  },
+  "prior_compile_attempt": {
+    "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+    "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+    "exit": 101,
+    "diagnostic_count": 21,
+    "tests_executed": 0,
+    "log": "/workspace/work/perry-queue/12202-wtf8-tests.log",
+    "record": "/workspace/work/perry-queue/12202-initial-build-failure.json",
+    "status": "failed before tests; this is a prior pre-correction head, not the current head"
+  },
+  "compile_retry": {
+    "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+    "status": "pending serial validation slot",
+    "runtime_or_compiler_result": null
+  },
+  "pointer_correction": {
+    "commit": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+    "scope": "Explicit ClosureHeader type on the two accessor RuntimeHandle with_mut_ptr callbacks; source-only correction for E0641 pointer casts.",
+    "source_review": "No semantic change; type follows js_closure_alloc -> *mut ClosureHeader. No build run by source owner."
+  },
+  "prior_compile_attempts": [
+    {
+      "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+      "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+      "exit": 101,
+      "diagnostic_count": 21,
+      "tests_executed": 0,
+      "log": "/workspace/work/perry-queue/12202-wtf8-tests.log",
+      "record": "/workspace/work/perry-queue/12202-initial-build-failure.json",
+      "status": "failed before tests; prior pre-correction head"
+    },
+    {
+      "head": "a4e7dd746236a02d12565b480bab8ca16cfbbe20",
+      "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+      "exit": 101,
+      "diagnostic_count": 4,
+      "tests_executed": 0,
+      "log": "/workspace/work/perry-queue/12202-a4e7-wtf8-tests.log",
+      "record": "/workspace/work/perry-queue/12202-a4e7-initial-build-failure.json",
+      "status": "failed before tests with four E0641 pointer-type errors; this is not the current head"
+    }
+  ]
+}

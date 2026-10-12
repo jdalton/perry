@@ -1,0 +1,1 @@
+Preserve WTF-8 keys for computed class members

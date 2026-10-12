@@ -1,0 +1,26 @@
+{
+  "issue": 12202,
+  "head": "a4e7dd746236a02d12565b480bab8ca16cfbbe20",
+  "checkout": "/workspace/work/perry-queue/issue-9927",
+  "worktree_clean": true,
+  "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+  "environment": {
+    "cargo_target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_build_jobs": 1,
+    "cargo_incremental": 0
+  },
+  "exit": 101,
+  "tests_executed": 0,
+  "error_count": 4,
+  "errors": [
+    {
+      "code": "E0641",
+      "location": "crates/perry-runtime/src/object/class_registry/registration.rs:464",
+      "message": "cannot cast from a pointer of an unknown kind",
+      "repeated_at": [465, 487, 489]
+    }
+  ],
+  "log": "/workspace/work/perry-queue/12202-a4e7-wtf8-tests.log",
+  "previous_head_attempt": "/workspace/work/perry-queue/12202-initial-build-failure.json",
+  "status": "Stopped at first scoped build failure; no tests ran. No validation source edits, trio, fixtures, auto-opt, or lint were attempted at this head."
+}

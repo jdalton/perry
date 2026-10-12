@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-12T08:52:03.606667+00:00",
+  "updated_at": "2026-10-12T08:55:51.844653+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "Idle pending reviewed12202 correction",
+  "serial_build_owner": "/root/luna_verification #12202 corrected70123b7",
   "next_steps": [
-    "Local publisher apply12458 final body andmarkready",
-    "Luna source corrections12202 thenAstra boundedreview andserialvalidation"
+    "Finish12202 scoped runtime/trio/parity/full lint at corrected head; stop on candidate failure",
+    "Continue bounded uncovered-issue selection without duplicate or speculative changes"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -87,12 +87,13 @@
           10739
         ],
         "head": "84d1315def71dbdcc3447f95441aea8c29789b68",
-        "state": "draft",
+        "state": "merged",
         "ready_for_review": false,
-        "merged": false
+        "merged": true,
+        "merged_at": "2026-10-12T08:55:05Z"
       }
     ],
-    "remaining": 16,
+    "remaining": 15,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
       "repo_open": 190,
@@ -101,12 +102,12 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 1,
+    "drafts": 0,
     "ready_for_review": 0,
-    "merged": 4,
+    "merged": 5,
     "opened": 5,
     "remaining_to_open": 15,
-    "remaining_to_good_state": 16,
+    "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
     "evidence_source": "live GitHub REST newer than publisher inbox",
@@ -116,16 +117,14 @@
       12007
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
-    "ready_transition_packets": 1,
+    "ready_transition_packets": 0,
     "draft_creation_packets_available": 0
   },
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "12458 finalready;12456 merged",
-  "current_serial_issue": null,
-  "serial_pending": [
-    12202
-  ],
+  "current_serial_issue": 12202,
+  "serial_pending": [],
   "10739_publication": "Draft creation packet authorized at1ce48b9; awaiting local number"
 }
