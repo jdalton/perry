@@ -1,0 +1,29 @@
+{
+  "repository": "PerryTS/perry",
+  "base": "main",
+  "validated_branch_base": "d74498b261d087a301b80602835bc7199a067957",
+  "head": "jdalton:cloud/issue-11519-byte-family-tostring",
+  "head_repo": "jdalton/perry",
+  "branch": "cloud/issue-11519-byte-family-tostring",
+  "current_head": "bb154789600c483aaaf305bc6879ba2a62f71fc8",
+  "validated_final_head": "bb154789600c483aaaf305bc6879ba2a62f71fc8",
+  "issues": [
+    11519
+  ],
+  "title": "fix(runtime): preserve byte-view toString with short encodings",
+  "scope": "Partial repair for issue #11519: ArrayBuffer, SharedArrayBuffer, and DataView toString ignore Buffer encoding arguments.",
+  "readiness": "PENDING_COMPILED_ACCEPTANCE_AND_FULL_LINT",
+  "draft_creation_allowed": false,
+  "ready_for_review": false,
+  "pr_number": null,
+  "no_version_bump": true,
+  "body_file": "body.md",
+  "title_file": "title.txt",
+  "validation": "../../planning/next-candidates/11519-implementation-status.json",
+  "source_review": "../../planning/11519-source-review.json",
+  "oracle": "../../planning/next-candidates/11519-candidate-node.stdout",
+  "full_lint_status": "pending; no candidate Perry validation has run",
+  "fragment_instruction": "Create changelog fragment only after actual PR number is assigned.",
+  "code_ready": false,
+  "publication_instruction": "Do not push, create a PR, or imply a PR number until exact-head candidate build, focused tests, compiled parity, and full lint are complete and classified."
+}

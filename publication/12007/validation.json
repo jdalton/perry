@@ -1,0 +1,74 @@
+{
+  "issue": 12007,
+  "commit": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "validation_checkout": "/workspace/work/perry-queue/issue-9927",
+  "canonical_source_worktree": "/workspace/work/perry-queue/issue-12007",
+  "checkout_state": "detached at exact candidate commit; clean",
+  "target_dir": "/workspace/work/perry-queue/target-12390",
+  "environment": {
+    "profile": "dev",
+    "cargo_build_jobs": 1,
+    "cargo_incremental": 0,
+    "node_binary": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "node_version": "v26.5.1",
+    "perry_workspace_root": "/workspace/work/perry-queue/issue-9927"
+  },
+  "trio_build": {
+    "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12007-765a94-build.log",
+    "artifact_sha256": {
+      "perry": "98bf5f7e3672bc63a94ddaef78e2f67fae47b407f6d64ad8da3d825b43ea0ba8",
+      "libperry_runtime.a": "c058a7c7a7b21055eef84bed2778ea23a2b082a18dbf6282ac45413e0eb39807",
+      "libperry_stdlib.a": "d3c2bd4dbaa382a0583b39a42b280906f7edfade6b4af71ef4c13bde88de6dbd"
+    },
+    "artifact_mtimes_utc": {
+      "perry": "2026-10-12T06:09:46.261338695Z",
+      "libperry_runtime.a": "2026-10-12T06:09:47.609335298Z",
+      "libperry_stdlib.a": "2026-10-12T06:09:47.161336374Z"
+    }
+  },
+  "focused_hir_unit": {
+    "status": "reused previously recorded passing focused test; `git diff e8ad66b00b45646a174f02092c33bb59f727a25c 765a94d31e9b129641c5046c65b06624c6ad7358 -- crates/perry-hir` is empty, so the HIR implementation and test source are unchanged",
+    "recorded_result": "1 passed, 644 filtered out",
+    "recorded_command": "cargo test -p perry-hir module_lexical_class_expression_binding_is_tdz_checked",
+    "record_source": "/workspace/work/perry-queue/issue12007-status.json"
+  },
+  "aggregate_fixture": {
+    "source": "test-files/test_gap_12007_class_expression_tdz.ts",
+    "node_command": "/workspace/.toolchains/node-26.5.1/bin/node --experimental-strip-types test-files/test_gap_12007_class_expression_tdz.ts",
+    "node_exit": 0,
+    "node_stdout": "/workspace/work/perry-queue/12007-765a94-node.stdout",
+    "perry_command": "perry compile --no-auto-optimize test-files/test_gap_12007_class_expression_tdz.ts -o /workspace/work/perry-queue/12007-765a94-aggregate.bin",
+    "perry_compile_exit": 0,
+    "perry_run_command": "timeout 30s /workspace/work/perry-queue/12007-765a94-aggregate.bin",
+    "perry_run_exit": 0,
+    "stdout_diff_exit": 0,
+    "perry_stdout": "/workspace/work/perry-queue/12007-765a94-aggregate.stdout",
+    "perry_stderr": "/workspace/work/perry-queue/12007-765a94-aggregate.stderr",
+    "diff": "/workspace/work/perry-queue/12007-765a94-aggregate.diff"
+  },
+  "direct_anonymous_tdz_witness": {
+    "source": "test-files/_helpers/issue_12007_anonymous_self_tdz.ts",
+    "node_exit": 1,
+    "node_stderr_contains_expected_reference_error": true,
+    "perry_compile_exit": 0,
+    "perry_run_exit": 1,
+    "perry_stderr_contains_expected_reference_error": true,
+    "perry_stdout": "/workspace/work/perry-queue/12007-765a94-anonymous-direct.stdout",
+    "perry_stderr": "/workspace/work/perry-queue/12007-765a94-anonymous-direct.stderr",
+    "expected_message": "ReferenceError: Cannot access 'Anonymous' before initialization"
+  },
+  "history": {
+    "prior_e8ad66b_aggregate_attempt": "compiled but run exit 1 because dynamically imported self-TDZ rejection escaped its handler and prevented later module progress; corrected fixture commit 765a94d31 replaced that witness with aggregate top-level catch and preserved direct self-initializer as isolated subprocess test. Earlier logs remain intact; this is not hidden or relabeled as a pass."
+  },
+  "full_lint": {
+    "status": "pending",
+    "reason": "waiting for serial full-lint gate and adequate disk headroom"
+  },
+  "run_gap_tests_wrapper": {
+    "exit": 2,
+    "reason": "validation checkout lacks root node_modules; wrapper stopped at preflight before running fixture. Direct pinned Node and Perry compile/runtime commands above were run instead."
+  },
+  "prior_interrupted_build": "/workspace/work/perry-queue/12007-committed-build-result.json"
+}

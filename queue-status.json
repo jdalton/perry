@@ -141,7 +141,8 @@
       "branch": "cloud/issue-11519-byte-family-tostring",
       "state": "committed and source-cleared; compiled acceptance/full lint queued",
       "draft_creation_allowed": false,
-      "ready_for_review": false
+      "ready_for_review": false,
+      "packet": "publication/11519/metadata.json"
     },
     {
       "issues": [
@@ -163,15 +164,16 @@
       "has_uncommitted_changes": false,
       "state": "Committed, Astra source clear; runtime-only build plan prepared; compiled validation queued",
       "draft_creation_allowed": false,
-      "ready_for_review": false
+      "ready_for_review": false,
+      "validation_plan": "planning/12202-minimal-validation-plan.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
   "actual_prs_created_in_continuation": 3,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T06:29:21.546162+00:00",
-  "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00",
+  "updated_at": "2026-10-12T06:39:50.884740+00:00",
+  "publisher_inbox_checked_at": "2026-10-12T06:39:50.884740+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,

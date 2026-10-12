@@ -1,0 +1,59 @@
+{
+  "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+  "scope": "27 runtime Rust source files plus standalone fixture; runtime implementation changes, unchanged codegen/ABI",
+  "build_policy": [
+    "After12007/11519/10739, root grants sole slot and switches clean fixed validation checkout to exact candidate head",
+    "Reuse existing owned target with CARGO_INCREMENTAL=0 and pinned environment; let Cargo rebuild all invalidated units normally, no artifact copying or gate skips",
+    "Do not reconstruct canonical checkout unless source correction needed; preserve tested head/path/hash manifest",
+    "No trustworthy new cache-growth estimate available; measure free space and actual build outputs, stop cleanly on storage limit"
+  ],
+  "order": [
+    {
+      "step": "First runtime --lib compile and new byte tests",
+      "command_shape": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+      "expected_named_tests": [
+        "computed_member_name_round_trips_wtf8_bytes_without_replacement",
+        "declaration_method_lookup_matches_exact_wtf8_bytes"
+      ],
+      "note": "Verify test listing and nonzero executed count; this compiles one runtime test executable, not merely changed source files."
+    },
+    {
+      "step": "Reuse same runtime test executable for focused existing controls",
+      "required_filters": [
+        "computed_member_keeps_classbody_order_across_an_early_birth",
+        "symbol_computed_member_does_not_stop_the_string_members",
+        "reevaluated_computed_member_keeps_the_holder_bounded",
+        "holder_namespace_separates_names_values_and_private_statics",
+        "method_value_is_kept_on_the_holder",
+        "class_expression_evaluations_keep_their_own_computed_names",
+        "class_value_is_one_pinned_function_object_per_class",
+        "name_and_length_are_own_data_of_the_function_object",
+        "static_accessors_are_accessor_properties_of_the_function_object",
+        "a_full_collection_keeps_the_class_statics_bag",
+        "young_values_in_an_old_class_survive_moving_minors",
+        "a_class_stays_remembered_while_its_referent_is_young",
+        "test_class_inheritance_side_table_roots_mark_and_rewrite",
+        "full_cycle_prototype_method_store_after_root_scan_preserves_new_value",
+        "full_cycle_class_static_field_store_after_root_scan_preserves_new_value",
+        "method_value_read_without_own_property_allocates_no_key",
+        "own_property_shadows_the_method_without_allocating_a_key"
+      ],
+      "command_shape": "cargo test -p perry-runtime --lib FILTER -- --test-threads=1",
+      "note": "Each filter is an existing function name verified in committed source; inspect --list before execution and record selected fully qualified tests. No Cargo rebuild expected absent source/env changes; run serial."
+    },
+    {
+      "step": "Build matching compiler/runtime-static/stdlib-static trio at same exact head",
+      "note": "Unchanged compiler source does not justify reusing a stale compiler/archive mixture. Reuse Cargo cache normally; record resulting three artifact hashes/head/path."
+    },
+    {
+      "step": "Compile and execute test-files/test_issue_12202_wtf8_class_keys.ts against pinned Node26.5.1 oracle with matching artifacts",
+      "note": "--no-auto-optimize first avoids implicit rebuild; retained normal Unicode/ASCII/symbol, descriptor getter/setter/name, static/instance, inherited-own negative, per-evaluation method identity, deletion/readdition/order and coercion controls must all match."
+    },
+    {
+      "step": "Run unchanged required full lint driver at exact head",
+      "note": "Classify baseline/environment/candidate-only failures, no gate exemptions or false full-pass claims; required auto-optimized acceptance follows repository driver/guide rather than being silently waived."
+    }
+  ],
+  "gc_limit": "Existing selected tests cover class-root rewriting, moving minors and incremental/full-cycle stores, but do not specifically force evacuation of a lone-surrogate key during the newly byte-preserving prototype/static setter materialization. No such dedicated stress witness was identified. Record this limit; a narrow deterministic hook test would close it if runtime evidence shows a concern, rather than claiming the generic wtf8 tests prove GC safety.",
+  "execution_performed": false
+}

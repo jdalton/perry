@@ -6,12 +6,12 @@
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12007-class-expression-tdz",
   "current_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-  "validated_final_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "validated_final_head": null,
   "issues": [
     12007
   ],
   "title": "fix(hir): preserve TDZ for class expressions",
-  "scope": "Partial repair for issue #12007; #11995 covers a separate exported-cycle/CJS-identity mechanism.",
+  "scope": "Repairs the remaining module TDZ defect; final-head original anonymous-name control and full lint classification pending.",
   "readiness": "PENDING_FULL_LINT",
   "draft_creation_allowed": false,
   "ready_for_review": false,
@@ -19,7 +19,7 @@
   "no_version_bump": true,
   "body_file": "body.md",
   "title_file": "title.txt",
-  "validation": "../12007-validated-765a94.json",
+  "validation": "validation.json",
   "overlap_evidence": "../../planning/12007-11995-overlap-decision.json",
   "full_lint_status": "pending; do not claim pass or add provisional gate counts",
   "fragment_instruction": "Create changelog fragment only after actual PR number is assigned.",

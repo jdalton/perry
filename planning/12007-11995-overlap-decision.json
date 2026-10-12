@@ -1,0 +1,30 @@
+{
+  "decision": "Proceed with12007validation;11995doesnotcover residual",
+  "candidate": "e8ad66b00b45646a174f02092c33bb59f727a25c",
+  "related_pr": 11995,
+  "merged_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+  "ancestry": {
+    "local_merge_base_is_ancestor_to_d744_exit": 0,
+    "baseline": {
+      "ahead_by": 857,
+      "base_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+      "behind_by": 0,
+      "merge_base_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+      "status": "ahead"
+    },
+    "main": {
+      "ahead_by": 872,
+      "base_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+      "behind_by": 0,
+      "merge_base_commit": "155cb3b8e106fe73736d319a64fab264a3b61516",
+      "status": "ahead"
+    }
+  },
+  "mechanism_comparison": {
+    "11995": "module_tdz.rs exportedESMsentinels oncycles; ir/module.rs sharedCJSwrapidentity; codegen/cjs_exports.rs usesidentity. Explicitly states class-expression const TDZ outofscope.",
+    "12007": "lower_module_fn.rs defines ordinaryLocalId/module_lexical_ids/pre_registered_module_vars for let/const class expression predeclaration references; retains varClassRefpath. ExistingTDZrewriter then sees those references."
+  },
+  "existing_fresh_baseline_evidence": "next-candidates/issue-12007-result.json: coherent d744 alreadyincluding11995 compilesexit0; Perrynew-beforeC{} andtypeof-beforeundefined vsNodeReferenceErrortrueboth; nameC alreadypassesbaseline.",
+  "coverage": "No upgrade/closure; issue remainsuncovereduntil actual candidatepublication/coverage policy.",
+  "no_actions": "No build/runtime/source edits or broad inventory performed."
+}

@@ -1,0 +1,7 @@
+Partial repair for issue #11519, covering the `ArrayBuffer`-family `toString` residual left open by #11627. When `ArrayBuffer`, `SharedArrayBuffer`, or `DataView` reaches the shared Buffer dispatcher, its inherited `Object.prototype.toString` behavior must ignore all arguments. The dispatcher now routes these non-indexed byte views to the canonical object-tag path before interpreting a Buffer encoding. Buffer's own encoding behavior remains unchanged.
+
+Regression coverage includes a direct dispatcher test for the byte-view brands, short and heap encoding arguments, and a Buffer hex control, plus a compiled-runtime fixture covering no argument, short/literal encodings, range arguments, throwing coercion, and Buffer controls. The direct test roots the receiver and encoding across allocations and reloads the receiver address before dispatch.
+
+Validation is pending at `bb154789600c483aaaf305bc6879ba2a62f71fc8`. The pinned Node 26.5.1 oracle ran the 18-case fixture and its outputs match the expected behavior. That oracle is not candidate Perry validation: no candidate Perry compile/run or candidate Cargo test has been performed yet. Exact-head coherent build, direct runtime test, compiled fixture comparison, and full lint remain pending.
+
+This validation is Linux-only. The existing limitation for custom `Symbol.toStringTag` overrides on registered byte-view receivers is outside this change. No broader short-string audit or fix to typed-string `Symbol.iterator` identity is claimed.

@@ -1,0 +1,41 @@
+{
+  "issue": 11519,
+  "title": "fix(runtime): preserve byte-view toString with short encodings",
+  "head": {
+    "branch": "cloud/issue-11519-byte-family-tostring",
+    "sha": "bb154789600c483aaaf305bc6879ba2a62f71fc8"
+  },
+  "base": "main",
+  "body_file": "/workspace/work/perry-queue/publication/11519/body.md",
+  "metadata_file": "/workspace/work/perry-queue/publication/11519/metadata.json",
+  "scope": "Partial issue repair; exact non-indexed ArrayBuffer/SAB/DataView toString handling only.",
+  "evidence": {
+    "source_review": "/workspace/work/perry-queue/planning/11519-source-review.json",
+    "implementation_status": "/workspace/work/perry-queue/planning/next-candidates/11519-implementation-status.json",
+    "candidate_node_oracle": {
+      "version": "v26.5.1",
+      "path": "/workspace/.toolchains/node-26.5.1/bin/node",
+      "cases": 18,
+      "exit": 0,
+      "candidate_perry_run": false,
+      "stdout": "/workspace/work/perry-queue/planning/next-candidates/11519-candidate-node.stdout"
+    },
+    "baseline_repro": "/workspace/work/perry-queue/planning/next-candidates/11519-deferred-probe-plan.json"
+  },
+  "validation_pending": [
+    "candidate coherent dev trio build at exact head",
+    "direct runtime unit test",
+    "compiled fixture parity against pinned Node",
+    "full lint gates"
+  ],
+  "limitations": [
+    "Linux-only validation pending",
+    "custom Symbol.toStringTag override behavior remains pre-existing and unclaimed",
+    "typed-string Symbol.iterator identity is outside scope"
+  ],
+  "publication": {
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "fragment": "Only after actual PR number is assigned."
+  }
+}
