@@ -1,13 +1,37 @@
 {
-  "updated_at": "2026-10-12T04:53:19.723321+00:00",
+  "updated_at": "2026-10-12T04:53:29.126491+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
     "baseline_last_pr": 12439,
     "baseline_previous_batch_opened": 20,
     "baseline_previous_batch_merged": 20,
-    "new_prs": [],
-    "remaining": 20,
+    "new_prs": [
+      {
+        "number": 12444,
+        "url": "https://github.com/PerryTS/perry/pull/12444",
+        "issues": [
+          9927,
+          8085
+        ],
+        "head": "1bba095359ba0bc3a91efd3060119965c172327d",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
+      },
+      {
+        "number": 12445,
+        "url": "https://github.com/PerryTS/perry/pull/12445",
+        "issues": [
+          10198
+        ],
+        "head": "af0c2a033db40117c63099751964d467accd35ae",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
+      }
+    ],
+    "remaining": 18,
     "owner": "cloud implements; local coordinates and publishes",
     "task_url": "https://chatgpt.com/local/01a12d81-95ee-7129-ab76-6d1dbf4000cf",
     "live_issue_snapshot": {
@@ -15,7 +39,14 @@
       "original_closed": 40,
       "original_open": 184,
       "note": "Fresh API counts; substantial other-maintainer closures since prior ledger. Refresh candidate states and coverage before further work/publication."
-    }
+    },
+    "drafts": 2,
+    "ready_for_review": 0,
+    "merged": 0,
+    "opened": 2,
+    "remaining_to_open": 18,
+    "remaining_to_good_state": 20,
+    "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits"
   },
   "previous_pr": {
     "number": 12439,
