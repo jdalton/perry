@@ -1,0 +1,32 @@
+{
+  "issue": 10327,
+  "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+  "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+  "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
+  "status": "Parked after required compiled fixture timed out; no publication authorization.",
+  "passed": {
+    "focused_getter": "1/1",
+    "fresh_matching_trio": "PASS for perry, perry-runtime-static, and perry-stdlib-static"
+  },
+  "compiled_fixture": {
+    "status": "INCOMPLETE_TIMEOUT",
+    "timeout_seconds": 180,
+    "exit": 124,
+    "executable_produced": false,
+    "node_parity": "not run",
+    "diagnosis": "The fixture requested missing release HTTP and net wrapper archives and entered the coherent no-auto runtime+stdlib+wrapper rebuild. The dedicated release target contained build-script outputs but no compiled dependency graph. The build was still active at timeout.",
+    "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/validation.json"
+  },
+  "retry_decision": {
+    "status": "PARKED",
+    "reason": "A valid retry requires a dedicated coherent release graph for runtime, stdlib, HTTP/net wrappers, and linked dependencies. No legitimate warm-artifact shortcut was found; mixing profiles/features would break graph coherence.",
+    "retry_command": "/workspace/work/perry-queue/target-12390/debug/perry compile --no-auto-optimize --no-cache test-files/test_gap_http2_session_transport_metadata.ts -o /workspace/work/perry-queue/10327-committed-acceptance/metadata-witness.bin",
+    "full_lint": "not run",
+    "auto_opt": "not run",
+    "publication_authorized": false
+  },
+  "coverage": "uncovered",
+  "partial_prs": [10354],
+  "covering_prs": [],
+  "issue_state": "OPEN"
+}

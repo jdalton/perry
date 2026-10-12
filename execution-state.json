@@ -227,14 +227,12 @@
     "evidence": "publication/12202/dfd64-final-validation.json; publication/12202/dfd64-publisher-refresh.json"
   },
   "serial_slot_status": {
-    "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T15:08:11Z",
-    "next_task": "Complete #10327 trio by15:51:31Z; if it passes run bounded compiled Node witness. Do not start full lint/release in this focused lane.",
-    "active_validation_processes": [
-      "#10327 exact-head trio build"
-    ],
-    "census_clean": false,
-    "evidence": "planning/10327-b67-acceptance-in-progress.json"
+    "owner": "none",
+    "checked_at": "2026-10-12T15:17:47Z",
+    "next_task": "#10327 parked after bounded compiled fixture timeout; #9202 candidate is pending Astra GO. No runtime/build slot active for #10327.",
+    "active_validation_processes": [],
+    "census_clean": true,
+    "evidence": "planning/10327-b67-heavy-validation-parked.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -263,21 +261,20 @@
   "current_validation_gate": {
     "issue": 10327,
     "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
-    "gate": "fresh matching trio build (perry + runtime-static + stdlib-static)",
-    "started_at": "2026-10-12T15:06:31Z",
-    "hard_deadline": "2026-10-12T15:51:31Z",
-    "cap_seconds": 2700,
+    "gate": "compiled no-auto TLS metadata fixture",
+    "started_at": "2026-10-12T15:09:58Z",
+    "hard_deadline": "2026-10-12T15:12:58Z",
+    "cap_seconds": 180,
     "owner": "cloud /root/luna_verification",
-    "status": "RUNNING; focused getter test PASS1/1; trio output pending; compiled fixture follows if trio passes.",
-    "evidence": "planning/10327-b67-acceptance-in-progress.json"
+    "status": "PARKED: getter1/1 and matching trio PASS; compiled fixture timed out after180s before executable. No Perry/Node parity, auto-opt, or full lint. No publication authorization.",
+    "evidence": "planning/10327-b67-heavy-validation-parked.json"
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T15:08:11Z",
-    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
-    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "No #12145 assignment in inbox; #12471 inbox head remains stale at2272, last direct check confirmed OPEN/DRAFT at dfd64b7.",
-    "evidence": "planning/12471-refresh-20261012T150811Z.json"
+    "observed_at": "2026-10-12T15:17:47Z",
+    "source": "/workspace/work/perry-queue/publisher-status.json",
+    "source_updated_at": "2026-10-12T12:17:49Z",
+    "issue_12145_assignment": "None; live searches for issue12145 and branch cloud/issue-12145-primary-timer-scan returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T151747Z.json"
   },
   "next_independent_candidate": {
     "issue": 12145,
@@ -293,12 +290,11 @@
     "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T15:08:11Z",
-    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
-    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
-    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "No #12145 assignment in inbox; #12471 inbox head remains stale at2272, last direct check confirmed OPEN/DRAFT at dfd64b7.",
-    "evidence": "planning/12471-refresh-20261012T150811Z.json"
+    "observed_at": "2026-10-12T15:17:47Z",
+    "source": "/workspace/work/perry-queue/publisher-status.json",
+    "source_updated_at": "2026-10-12T12:17:49Z",
+    "issue_12145_assignment": "None; live searches for issue12145 and branch cloud/issue-12145-primary-timer-scan returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T151747Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -310,7 +306,7 @@
     "issue": 10327,
     "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
     "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
-    "checked_at": "2026-10-12T15:08:11Z",
+    "checked_at": "2026-10-12T15:12:58Z",
     "focused_getter_test": {
       "command": "cargo test --locked -p perry-ext-http --lib connected_session_keeps_encryption_independent_of_alpn -- --test-threads=1",
       "started_at": "2026-10-12T15:04:32Z",
@@ -321,17 +317,27 @@
       "run_record": "/workspace/work/perry-queue/10327-focused-getter.run.json"
     },
     "fresh_matching_trio": {
-      "status": "RUNNING",
+      "status": "PASS",
       "started_at": "2026-10-12T15:06:31Z",
-      "cap_seconds": 2700,
-      "deadline": "2026-10-12T15:51:31Z",
+      "exit_code": 0,
       "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
       "target": "/workspace/work/perry-queue/target-12390",
       "CARGO_INCREMENTAL": 0,
-      "CARGO_BUILD_JOBS": 1
+      "CARGO_BUILD_JOBS": 1,
+      "run_record": "/workspace/work/perry-queue/10327-trio.run.json",
+      "log": "/workspace/work/perry-queue/10327-trio.log"
     },
-    "next_if_trio_passes": "Run the bounded compiled localhost TLS no-ALPN/negotiated-h2/plaintext control fixture against pinned Node26.5.1. No full lint or release build is in this focused acceptance sequence.",
-    "runtime_fixture": "PENDING",
+    "next_if_trio_passes": "No retry authorized in this lane; a valid retry requires a dedicated coherent release runtime+stdlib+HTTP/net-wrapper graph.",
+    "runtime_fixture": {
+      "status": "INCOMPLETE_TIMEOUT",
+      "started_at": "2026-10-12T15:09:58Z",
+      "deadline": "2026-10-12T15:12:58Z",
+      "timeout_seconds": 180,
+      "exit_code": 124,
+      "executable_produced": false,
+      "node_parity": "NOT RUN",
+      "evidence": "/workspace/work/perry-queue/10327-committed-acceptance/validation.json"
+    },
     "auto_opt": "NOT RUN",
     "full_lint": "NOT RUN",
     "coverage": "uncovered",
@@ -347,15 +353,15 @@
     "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
     "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
     "worktree_clean": true,
-    "status": "Source-clear implementation committed; Perry validation pending serial slot after #12145.",
+    "status": "Parked after compiled fixture timed out before producing an executable; source remains clear but acceptance is incomplete.",
     "source_review": "Astra source review cleared. Scoped formatting check passed.",
     "behavior_evidence": "Pinned Node no-ALPN witness passes: TLS remains encrypted, session ALPN absent; candidate metadata observation reproduces source-level discrepancy (false/h2c). This establishes mismatch evidence, not compiled Perry acceptance.",
     "validation": {
       "pinned_node_witness": "PASS",
       "scoped_format": "PASS",
-      "perry_runtime": "PENDING; serial slot held by #12145 full lint",
-      "fresh_trio": "NOT RUN",
-      "compiled_parity": "NOT RUN",
+      "focused_getter_test": "PASS 1/1",
+      "fresh_trio": "PASS",
+      "compiled_parity": "NOT RUN; fixture compile timed out without executable",
       "auto_opt": "NOT RUN",
       "full_lint": "NOT RUN"
     },
@@ -376,7 +382,7 @@
       "planning/10327-merged-source-reconciliation.json",
       "/workspace/work/perry-queue/10327-probe/result.json"
     ],
-    "checked_at": "2026-10-12T14:52:43Z"
+    "checked_at": "2026-10-12T15:12:58Z"
   },
   "12390_sparse_recovery": {
     "record": "planning/12390-sparse-recovery-milestone.json",
@@ -435,5 +441,6 @@
     "source_validation_evidence": "publication/12145/2e-final-validation.json",
     "handoff_packet": "publication/12145/metadata.json",
     "checked_at_relay": "2026-10-12T15:08:11Z"
-  }
+  },
+  "checked_at": "2026-10-12T15:17:47Z"
 }

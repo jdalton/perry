@@ -1,0 +1,21 @@
+{
+  "observed_at_utc": "2026-10-12T15:17:47Z",
+  "publisher_status_source": "/workspace/work/perry-queue/publisher-status.json",
+  "publisher_status_updated_at": "2026-10-12T12:17:49Z",
+  "publisher_status_batch_pr_numbers": [12444, 12445, 12450, 12456, 12458],
+  "issue_12145_assignment": null,
+  "live_pr_searches": [
+    {
+      "query": "is:pr 12145",
+      "repository": "PerryTS/perry",
+      "result_count": 0
+    },
+    {
+      "query": "head:jdalton:cloud/issue-12145-primary-timer-scan",
+      "repository": "PerryTS/perry",
+      "result_count": 0
+    }
+  ],
+  "conclusion": "No actual #12145 PR assignment, number, URL, head, or state was available to relay. The publisher status file was stale at observation time; live search also returned no PR.",
+  "scope": "One inbox check at the #10327 acceptance milestone; no PR creation or mutation."
+}
