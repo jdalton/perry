@@ -92,7 +92,8 @@
       8085,
       10198
     ],
-    "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs"
+    "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
+    "ready_transition_packets": 1
   },
   "packets": [
     {
@@ -139,15 +140,16 @@
         12007
       ],
       "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
-      "state": "Draft12450; actual-number fragment pushed; final-head validation pending",
+      "state": "Draft12450 validated exact final head; local ready transition authorized",
       "draft_creation_allowed": false,
-      "ready_for_review": false,
+      "ready_for_review": true,
       "packet": "publication/12007/metadata.json",
       "publisher_actions": [
-        "Wait for final-head readiness packet; no duplicate PR"
+        "Apply publication/12007/body.md and mark existing draft12450 ready at7f128cf"
       ],
       "current_head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
-      "pr_number": 12450
+      "pr_number": 12450,
+      "observed_draft": true
     },
     {
       "issues": [
@@ -190,7 +192,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
   "actual_prs_created_in_continuation": 4,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T07:12:25.987763+00:00",
+  "updated_at": "2026-10-12T07:27:00.953860+00:00",
   "publisher_inbox_checked_at": "2026-10-12T07:12:25.987763+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,

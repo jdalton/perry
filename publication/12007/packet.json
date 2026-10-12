@@ -16,11 +16,11 @@
     "fresh_coherent_dev_build": {
       "status": "passed",
       "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
-      "record": "/workspace/work/perry-queue/12007-validated-765a94.json",
+      "record": "final-validation.json",
       "artifacts_sha256": {
-        "perry": "98bf5f7e3672bc63a94ddaef78e2f67fae47b407f6d64ad8da3d825b43ea0ba8",
-        "libperry_runtime.a": "c058a7c7a7b21055eef84bed2778ea23a2b082a18dbf6282ac45413e0eb39807",
-        "libperry_stdlib.a": "d3c2bd4dbaa382a0583b39a42b280906f7edfade6b4af71ef4c13bde88de6dbd"
+        "perry": "58db360f014b0ad3470622b0fe833049c7f5f4a592270a84f64e4d82aeb7d3d3",
+        "libperry_runtime-3bf18cdc5628ba02.a": "cc13dcfcc38d0817632f846d4594086e6a3e4e3e5e18d250c6ec14c416f85d3f",
+        "libperry_stdlib-6df0f927c48619b6.a": "8f5c05030bee47fef27b7711fb0e3c67cdbf92f4e56cb3972ef0dc3427f4ddf0"
       }
     },
     "compiled_parity": {
@@ -29,7 +29,7 @@
       "node": "/workspace/.toolchains/node-26.5.1/bin/node v26.5.1",
       "main_fixture": "compiled Perry output matched pinned Node output; exit 0",
       "direct_anonymous_initializer": "Node and Perry both exit 1 with expected ReferenceError",
-      "record": "/workspace/work/perry-queue/12007-validated-765a94.json"
+      "record": "final-validation.json"
     },
     "focused_hir_test": {
       "status": "reused unchanged-source pass",
@@ -62,7 +62,9 @@
         "Windows xwin compile unavailable: proxy403.",
         "Full lint is non-green with classified baseline/environment failures.",
         "Linux only; no macOS runtime proof."
-      ]
+      ],
+      "reused_at_final_head": true,
+      "only_changed_path": "changelog.d/12450-class-expression-tdz.md"
     },
     "original_probes": {
       "primary_only_source": "/workspace/work/perry-queue/12007-primary-only.ts",
@@ -101,14 +103,15 @@
   ],
   "publication": {
     "draft_creation_allowed": false,
-    "reason": "Existing draft; final fragment-head validation pending",
+    "reason": "Fresh final-head matching trio and scopedacceptance PASS; prior full-lint sourceidentity confirmed; local publisher may mark existing draft ready.",
     "fragment": "changelog.d/12450-class-expression-tdz.md",
-    "pr_number": 12450
+    "pr_number": 12450,
+    "ready_for_review": true
   },
   "source": "/workspace/work/perry-queue/issue-12007",
   "clean_worktree": true,
   "overlap_review": "/workspace/work/perry-queue/planning/12007-11995-overlap-decision.json",
-  "validation_record": "validation.json",
+  "validation_record": "final-validation.json",
   "checkout_retirement": {
     "canonical_worktree": "/workspace/work/perry-queue/issue-12007 was removed after clean/idle checks; exact candidate commit 765a94d31e9b129641c5046c65b06624c6ad7358 is retained by branch and verified snapshot bundle.",
     "active_validation_checkout": "/workspace/work/perry-queue/issue-9927 is detached and must not be switched during active validation.",

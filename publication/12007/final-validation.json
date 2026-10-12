@@ -1,0 +1,88 @@
+{
+  "issue": 12007,
+  "head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+  "validation_checkout": "/workspace/work/perry-queue/issue-9927",
+  "checkout_clean": true,
+  "head_delta_from_fully_linted_source": {
+    "base_validation_commit": "765a94d31e9b129641c5046c65b06624c6ad7358",
+    "changed_paths": [
+      "changelog.d/12450-class-expression-tdz.md"
+    ],
+    "product_and_test_sources_unchanged": true,
+    "diff_check": "passed"
+  },
+  "build": {
+    "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "profile": "dev",
+    "CARGO_INCREMENTAL": "0",
+    "CARGO_BUILD_JOBS": "1",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12007-7f128-build.log",
+    "sha256_file": "/workspace/work/perry-queue/12007-7f128-build.sha256",
+    "artifact_sha256": {
+      "perry": "58db360f014b0ad3470622b0fe833049c7f5f4a592270a84f64e4d82aeb7d3d3",
+      "libperry_runtime-3bf18cdc5628ba02.a": "cc13dcfcc38d0817632f846d4594086e6a3e4e3e5e18d250c6ec14c416f85d3f",
+      "libperry_stdlib-6df0f927c48619b6.a": "8f5c05030bee47fef27b7711fb0e3c67cdbf92f4e56cb3972ef0dc3427f4ddf0"
+    }
+  },
+  "node": {
+    "path": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "version": "v26.5.1"
+  },
+  "no_auto_optimize_acceptance": {
+    "aggregate_fixture": {
+      "source": "test-files/test_gap_12007_class_expression_tdz.ts",
+      "node_exit": 0,
+      "compile_exit": 0,
+      "run_exit": 0,
+      "stdout_diff_exit": 0,
+      "evidence_prefix": "/workspace/work/perry-queue/12007-7f128-aggregate"
+    },
+    "primary_module_tdz_probe": {
+      "source": "/workspace/work/perry-queue/12007-primary-only.ts",
+      "node_exit": 0,
+      "compile_exit": 0,
+      "run_exit": 0,
+      "stdout_diff_exit": 0,
+      "covers": [
+        "direct read before init",
+        "typeof before init",
+        "new before init",
+        "earlier closure and class-method reads",
+        "post-init construction/name controls"
+      ],
+      "evidence_prefix": "/workspace/work/perry-queue/12007-7f128-primary"
+    },
+    "anonymous_direct_self_initializer": {
+      "source": "test-files/_helpers/issue_12007_anonymous_self_tdz.ts",
+      "node_expected_exit": 1,
+      "compile_exit": 0,
+      "run_expected_exit": 1,
+      "reference_error_message_match": 0,
+      "expected_message": "ReferenceError: Cannot access 'Anonymous' before initialization",
+      "evidence_prefix": "/workspace/work/perry-queue/12007-7f128-direct"
+    },
+    "anonymous_class_name_inference": {
+      "source": "/workspace/work/perry-queue/12007-765a94-anon-name.ts",
+      "node_exit": 0,
+      "compile_exit": 0,
+      "run_exit": 0,
+      "stdout_diff_exit": 0,
+      "assertion": "C.name === 'C'",
+      "evidence_prefix": "/workspace/work/perry-queue/12007-7f128-anon-name"
+    }
+  },
+  "full_lint": {
+    "reused": true,
+    "source_validation_commit": "765a94d31e9b129641c5046c65b06624c6ad7358",
+    "source_identity_basis": "The only commit delta is the changelog fragment; product/test source blobs are identical.",
+    "log": "/workspace/work/perry-queue/12007-full-lint-765a94.log",
+    "result": "33/137 commands failed, 2 CI-only skips; see /workspace/work/perry-queue/12007-validated-765a94.json for the complete failure classification and targeted replay evidence.",
+    "limitations": [
+      "xwin permissioned replay is blocked by CONNECT proxy 403 for aka.ms",
+      "API-doc generation wrapper references checkout/target instead of external CARGO_TARGET_DIR; source-equivalent full-lint findings are preserved and classified separately"
+    ],
+    "classification_record": "validation.json"
+  },
+  "earlier_history": "The initial e8ad aggregate run failed because a dynamic-import TDZ rejection escaped its handler. The fixture-only 765a correction passed aggregate and isolated direct-witness checks; original failure logs are preserved."
+}

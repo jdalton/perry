@@ -1,14 +1,15 @@
 {
   "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
-  "checked_at": "2026-10-12T07:09:12.204342+00:00",
+  "checked_at": "2026-10-12T07:22:20.789197+00:00",
   "matching_trio": "PASS;11519-5e41-build.sha256",
   "focused_unit": "PASS:1passed,5797filtered;11519-5e41-unit-test-filtered.log",
   "compiled_no_auto_parity": "PASS:18outputs match pinnedNode26.5.1;compile/run/diff exits0",
-  "auto_optimize": "pending",
+  "auto_optimize": "PASS on600s retry: real async-bridge feature rebuild, linked exact rebuilt archives, compiled/runtime/Node parity exits0; first180s timeout retained",
   "full_lint": "pending",
   "history": [
     "bb154:E0308 candidate test failure",
     "210e8:E0133 candidate test failure",
     "First5e41 invocation with incomplete --exact filter ran0tests; not counted; corrected filterran1test"
-  ]
+  ],
+  "auto_archive_hash_record": "11519-5e41-auto-retry-archives.sha256"
 }
