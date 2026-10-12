@@ -6,7 +6,7 @@
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-12202-wtf8-class-keys",
   "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
-  "validated_final_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+  "validated_final_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
   "issues": [
     12202
   ],
@@ -14,7 +14,7 @@
   "scope": "Exact WTF-8 class computed-key metadata repair across runtime declaration, registration, lookup, reflection, descriptors, deletion/recreation, function names, invocation, and instance accessor writes; 34 paths (31 runtime Rust, one fixture, two inventory files), no ABI change.",
   "readiness": "READY FOR REVIEW HANDOFF; live PR12471 remains OPEN/DRAFT pending publisher transition.",
   "draft_creation_allowed": false,
-  "ready_for_review": true,
+  "ready_for_review": false,
   "ready_to_publish": false,
   "external_pr_created": true,
   "pushed_to_fork": true,
@@ -28,13 +28,13 @@
   "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
   "issue_state_snapshot": "2272-final-freshness.json",
-  "checked_at": "2026-10-12T14:02:05Z",
+  "checked_at": "2026-10-12T15:36:23Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
   "publication_instruction": "This handoff is ready for publisher review. Do not create another PR or change the live PR state in this packet update; live PR12471 was observed open/draft at exact head dfd64b7.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "dfd64-final-validation.json",
   "latest_acceptance_record": "dfd64-final-validation.json; inherited 2272 full-lint evidence and attribution are explicitly reused because the dfd64 delta is only the numbered fragment.",
-  "current_head_validation": "Exact numbered-fragment head dfd64b7: fresh matching trio PASS; focused runtime acceptance 53 unique tests/55 executions PASS; no-auto compiled fixture parity with pinned Node v26.5.1 PASS; fragment self-test and live PR changeset gate PASS. Genuine async-bridge auto-opt parity and full lint are inherited only from source head2272 because dfd64 changes only the numbered fragment; no fresh auto-opt or full-lint run at dfd64.",
+  "current_head_validation": "Prior dfd64 validation only. Local ac2a402 has Astra source review, scoped rustfmt, and diff check pass; fresh exact-head validation pending.",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
   "overlap_note": "Fresh check: #12202 OPEN, zero comments. Current main 283ab130bf3c507753324d9ff842208543d9d267 shares only object/mod.rs with unrelated class_accessor_guard addition. Open #12263 overlaps 14 paths; no duplicate semantics found, merge-order risk remains. See 2272-final-freshness.json.",
   "publication_overlap_decision": {
@@ -169,5 +169,10 @@
     "validated": "fresh trio;53 unique runtime tests/55 executions; pinned Node v26.5.1 fixture parity; fragment self-test and live PR fragment gate",
     "reused": "genuine async-bridge auto-opt parity and full-lint outcome/classification from source head2272 only; no fresh dfd64 auto/full lint",
     "evidence": "dfd64-final-validation.json"
-  }
+  },
+  "local_integration_head": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01",
+  "local_integration_tree": "b55cdfcb365ea874e1322bee41c18066bdba5c67",
+  "pushed_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+  "publication_hold": "Local source consolidated to one commit at ac2a402. Existing PR12471 remains draft at dfd64. Do not push or mark ready until exact-head checks pass.",
+  "full_lint_complete_at_local_head": false
 }

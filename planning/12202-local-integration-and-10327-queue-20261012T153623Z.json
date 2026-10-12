@@ -1,0 +1,42 @@
+{
+  "observed_at_utc": "2026-10-12T15:36:23Z",
+  "issue_12202_pr_12471": {
+    "local_branch": "cloud/issue-12202-wtf8-class-keys",
+    "local_head": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01",
+    "local_tree": "b55cdfcb365ea874e1322bee41c18066bdba5c67",
+    "base_parent": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+    "commit_count_from_base": 1,
+    "changed_paths": 35,
+    "source_review": "Astra cleared the one-commit integration; conflict resolved by retaining the required export and wasm cfg.",
+    "scoped_rustfmt": "PASS",
+    "diff_check": "PASS",
+    "fresh_validation": "PENDING behind #12145/#10327; do not reuse prior-head validation as exact-head acceptance.",
+    "pushed_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+    "validated_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+    "remote_pr_state": "OPEN/DRAFT at the prior dfd64 head; no force-push or PR mutation performed.",
+    "ready_for_review": false,
+    "evidence": "planning/12471-current-main-integration-result.json"
+  },
+  "issue_10327": {
+    "state": "QUEUED for coherent release validation after #12145; user explicitly asked to finish this lane.",
+    "previous_fixture_attempt": "180-second timeout with no executable; retained in planning/10327-b67-heavy-validation-parked.json.",
+    "reuse_decision": "No stamp-only shortcut. Root/Astra are checking safe reuse of Cargo dependency cache via symlink while preserving required coherent runtime+stdlib+HTTP/net archive graph.",
+    "protected_archives": {
+      "record": "planning/10327-protected-release-archives.json",
+      "archives": [
+        {
+          "path": "/tmp/perry-cloud-owned-cache/10327-protected-release-archives/libperry_ext_net.a",
+          "bytes": 41202682,
+          "sha256": "9131333cbb53c12085f06a639b8d990ea1d2eb352f3959b8bc61be0dea22b0a0"
+        },
+        {
+          "path": "/tmp/perry-cloud-owned-cache/10327-protected-release-archives/libperry_ext_http.a",
+          "bytes": 68209778,
+          "sha256": "017758e79905480e24ef582a429094855b2f7260fa172aeac556c58277a80485"
+        }
+      ],
+      "source_files_unmodified": true
+    }
+  },
+  "counts": "No PR/issue/coverage counts changed."
+}

@@ -216,23 +216,28 @@
     "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
   "12202_publication_status": {
-    "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
-    "source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-    "draft_creation_allowed": false,
-    "ready_for_review": true,
-    "ready_to_publish": false,
+    "issue": 12202,
     "pr_number": 12471,
-    "pr_state": "OPEN/DRAFT; no transition performed by this handoff",
-    "inbox_check": "2026-10-12T14:03:07Z; inbox blob still stale at source2272, direct PR read confirms dfd64",
-    "evidence": "publication/12202/dfd64-final-validation.json; publication/12202/dfd64-publisher-refresh.json"
+    "pr_url": "https://github.com/PerryTS/perry/pull/12471",
+    "remote_state": "OPEN/DRAFT at dfd64b7",
+    "local_head": "ac2a4029acd57b63cf2d605a20bd4d76a3525c01",
+    "local_tree": "b55cdfcb365ea874e1322bee41c18066bdba5c67",
+    "pushed_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+    "validated_head": "dfd64b7e0cf97dcad31c1ce0371bce793a773f54c",
+    "local_commit_count": 1,
+    "draft_creation_allowed": false,
+    "ready_for_review": false,
+    "ready_to_publish": false,
+    "status": "One-commit local integration Astra-cleared; exact-head validation pending. No force-push or PR mutation.",
+    "evidence": "planning/12471-current-main-integration-result.json; planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
   },
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T15:32:28Z",
-    "next_task": "Run fresh exact-head #12145 checks at consolidated 4a24802; #10327 coherent release build resumes when resources allow. #9202 packet awaits local draft.",
+    "checked_at": "2026-10-12T15:36:23Z",
+    "next_task": "Run fresh exact-head #12145 checks at consolidated 4a24802; then queue coherent #10327 release validation. #12202 ac2a402 remains pending exact-head checks; no push/ready transition.",
     "active_validation_processes": [],
     "census_clean": true,
-    "evidence": "planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
+    "evidence": "planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -339,7 +344,7 @@
     "draft_creation_allowed": false,
     "ready_for_review": false
   },
-  "active_source_issue": 9202,
+  "active_source_issue": 12202,
   "10327_source_milestone": {
     "issue": 10327,
     "branch": "cloud/issue-10327-metadata-repair",
@@ -402,7 +407,7 @@
     },
     "evidence": "publication/12145/metadata.json; planning/resource-and-open-pr-maintenance-20261012T153228Z.json"
   },
-  "checked_at": "2026-10-12T15:32:28Z",
+  "checked_at": "2026-10-12T15:36:23Z",
   "9202_source_claim": {
     "issue": 9202,
     "branch": "cloud/issue-9202-parity-fatal-verdict",
@@ -459,5 +464,13 @@
     "external_pr_created": false,
     "status": "One-commit packet relayed; awaiting local publisher assignment.",
     "evidence": "publication/9202/metadata.json"
+  },
+  "10327_queued_release_validation": {
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "status": "QUEUED after #12145 for a coherent release runtime+stdlib+HTTP/net-wrapper build; prior180s timeout preserved; no retry started.",
+    "reuse_review": "root/Astra checking safe Cargo dependency-cache reuse via symlink, not stamp-only skipping.",
+    "protected_archives": "planning/10327-protected-release-archives.json",
+    "evidence": "planning/10327-b67-heavy-validation-parked.json; planning/12202-local-integration-and-10327-queue-20261012T153623Z.json"
   }
 }
