@@ -115,11 +115,11 @@
       "prior_56c6": "PASS no-auto; prior-56c6-acceptance-evidence.json"
     },
     "auto_opt": {
-      "status": "PENDING at exact 2272; no result claimed.",
-      "prior_266": "PASS genuine auto-opt; previous-266-acceptance-evidence.json"
+      "status": "PASS at exact 2272; genuine runtime+stdlib feature rebuild with async-bridge, fresh archive hashes and exact Node v26.5.1 parity",
+      "evidence": "2272-current-acceptance-evidence.json"
     },
     "full_lint": {
-      "status": "PENDING at exact 2272; no result claimed.",
+      "status": "RUNNING at exact 2272; no final gate summary or result yet.",
       "prior_56c6": {
         "status": "INTERRUPTED after 20 gate rows; no final summary",
         "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json"
@@ -258,7 +258,7 @@
     "fe5c2d204ef18bee4010e7f0c5b687f7e4ec769e",
     "c727637cd909fc7d4861bf9d21d65afc8cd54f5a"
   ],
-  "checked_at": "2026-10-12T11:34:20Z",
+  "checked_at": "2026-10-12T11:46:43Z",
   "previous_head_acceptance": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
@@ -843,5 +843,15 @@
     "evidence": "2272-static-preflight-summary.json",
     "full_scanner_provenance": "2272-static-preflight-source.json",
     "allowlist_path_migration": "2272-allowlist-path-proof.json"
+  },
+  "current_head_acceptance": {
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+    "evidence": "2272-current-acceptance-evidence.json",
+    "focused_runtime_tests": "PASS: 59 unique / 67 executions",
+    "matching_dev_trio": "PASS",
+    "compiled_no_auto_node_parity": "PASS (Node v26.5.1)",
+    "auto_opt": "PASS (fresh async-bridge runtime+stdlib archives; Node/Perry/diff exits all 0)",
+    "full_lint": "RUNNING; no final summary/results yet"
   }
 }

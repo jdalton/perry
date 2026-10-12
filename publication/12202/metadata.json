@@ -28,13 +28,13 @@
   "source_review": "/workspace/work/perry-queue/planning/12202-hardening-source-review.json",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
   "issue_state_snapshot": "2272-publication-freshness.json",
-  "checked_at": "2026-10-12T11:34:20Z",
+  "checked_at": "2026-10-12T11:46:43Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
   "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready until static preflight, exact-705cc build/runtime acceptance, and complete lint-gate accounting are finished and classified.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "validation.json",
-  "latest_acceptance_record": "2272-static-preflight-summary.json; static preflight clear for authorized serial validation; exact-head build/test/runtime/full-lint remain pending.",
-  "current_head_validation": "At exact source head 2272f7b520206d8e76d4f86440f92e035e25ce63 (tree 20d752b0857dedc73a65ec1e05bab85143f5b673), static preflight is clear. The 34-path scope is 31 runtime Rust files, one fixture and two inventory files. Full scanner comparison provenance is retained in the static proof; the one post-705 commit moves an existing exception path without increasing its count. Exact-head acceptance remains pending.",
+  "latest_acceptance_record": "2272-current-acceptance-evidence.json; exact-head focused tests/trio/no-auto parity and genuine auto-opt parity pass; complete full lint is running with no final result.",
+  "current_head_validation": "At exact 2272f7b520206d8e76d4f86440f92e035e25ce63 (tree 20d752b0857dedc73a65ec1e05bab85143f5b673), 59 unique focused runtime tests passed across 67 executions; the matching dev trio and pinned Node v26.5.1 compiled-fixture parity passed. Genuine auto-opt rebuilt runtime and stdlib with async-bridge and achieved exact Node parity from fresh archives. Full lint is currently running; no completion result is claimed.",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
   "overlap_note": "Latest main compare: 283ab130bf3c507753324d9ff842208543d9d267, only candidate overlap is object/mod.rs with unrelated class_accessor_guard module addition. PR #12263 still has 14 shared paths, no demonstrated duplicate semantics, merge-order risk remains. New allowlist path overlaps neither. Evidence: 2272-publication-freshness.json.",
   "publication_overlap_decision": {
@@ -44,7 +44,7 @@
     "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
     "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   },
-  "full_lint_status": "No exact-2272 full lint result yet; validation authorized and pending. Do not reuse older-head full-lint interruptions as a pass.",
+  "full_lint_status": "Exact-2272 full-lint driver is running; no final gate summary or result yet. Earlier 56c6 and 266eaf drivers remain interrupted non-results.",
   "candidate_warning_source_plan": "/workspace/work/perry-queue/planning/12202-warning-delta-source-plan.json",
   "source_history": [
     {

@@ -1,0 +1,120 @@
+{
+  "issue": 12202,
+  "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+  "tree": "20d752b0857dedc73a65ec1e05bab85143f5b673",
+  "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "focused_runtime_tests": {
+    "status": "PASS",
+    "unique_tests": 59,
+    "executions": 67,
+    "groups": [
+      {
+        "filter": "invalid_utf8_method",
+        "passed": 3,
+        "executions": 3,
+        "log": "/workspace/work/perry-queue/12202-2272-invalid-utf8-method.log"
+      },
+      {
+        "filter": "wtf8",
+        "passed": 35,
+        "executions": 35,
+        "log": "/workspace/work/perry-queue/12202-2272-wtf8-tests.log"
+      },
+      {
+        "filter": "focused class registry controls",
+        "unique": 17,
+        "executions": 17,
+        "log": "/workspace/work/perry-queue/12202-2272-controls-results.txt"
+      },
+      {
+        "filter": "object::class_value::tests",
+        "passed": 12,
+        "executions": 12,
+        "log": "/workspace/work/perry-queue/12202-2272-class-value-module.log",
+        "incremental_unique_tests": 6,
+        "overlapping_reexecutions": 6
+      }
+    ],
+    "sum": "3 + 35 + 17 + 12 = 67 executions; six moved-module tests overlap prior groups, yielding 59 unique tests."
+  },
+  "warning_comparison": {
+    "status": "BASELINE_EQUIVALENT_NON_GREEN",
+    "product": {
+      "candidate_count": 42,
+      "base_count": 42,
+      "candidate_only": [],
+      "base_only": [],
+      "candidate_exit": 101,
+      "base_exit": 101
+    },
+    "host": {
+      "candidate_count": 35,
+      "base_count": 35,
+      "candidate_only": [],
+      "base_only": [],
+      "candidate_exit": 101,
+      "base_exit": 101
+    },
+    "comparison": "/workspace/work/perry-queue/12202-2272-warning-comparison.json",
+    "product_log": "/workspace/work/perry-queue/12202-2272-warnings-product.log",
+    "host_log": "/workspace/work/perry-queue/12202-2272-warnings-host.log"
+  },
+  "matching_dev_trio": {
+    "status": "PASS",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12202-2272-trio-build.log",
+    "shared_target": "/workspace/work/perry-queue/target-12390"
+  },
+  "compiled_fixture_parity": {
+    "status": "PASS",
+    "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+    "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+    "node": "/workspace/.toolchains/node-26.5.1/bin/node --experimental-strip-types test-files/test_issue_12202_wtf8_class_keys.ts",
+    "node_version": "v26.5.1",
+    "node_exit": 0,
+    "perry_exit": 0,
+    "parity_exit": 0,
+    "parity_diff_bytes": 0,
+    "node_output": "/workspace/work/perry-queue/12202-2272-acceptance/node.stdout",
+    "perry_output": "/workspace/work/perry-queue/12202-2272-acceptance/perry.stdout",
+    "compile_exit": 0,
+    "perry_binary_sha256": "099f2e5cf730cca9dda81de3f32f41068957224888b74ff4320b11954b4c81db"
+  },
+  "debug_artifacts": {
+    "target_perry_sha256": "14c614e7337a6a3abc814135bf139edda19f046e9ba6dea6619eae61fcf73c44",
+    "perry_runtime_staticlib_sha256": "a51bb568b500d1f049831399ce1e8f538a179c9985a1a99565dafa759ed762be",
+    "perry_stdlib_staticlib_sha256": "018ce63fcb1ff8ca67a9999d351dc5458330d1b5642a6d4b810023fbbfe27c99",
+    "hash_file": "/workspace/work/perry-queue/12202-2272-acceptance/debug-artifact-hashes.sha256"
+  },
+  "auto_opt": {
+    "status": "PASS",
+    "mode": "genuine auto-opt runtime+stdlib feature rebuild; async-bridge enabled; fresh archives used; no runtime-archive fallback observed",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "compile_exit": 0,
+    "node_version": "v26.5.1",
+    "node_exit": 0,
+    "perry_exit": 0,
+    "parity_exit": 0,
+    "parity_diff_bytes": 0,
+    "fixture_sha256": "7643995558df7b9c5041f8d881cb042e527d6ad57aebd4a98ef02d2392045db7",
+    "archive_hashes": [
+      "01a3be4e0a6b80e6a0d6d75a9564ec4c0258869c1a327c5fc4142effabe08861  target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+      "8b8d67277b8d89a8a5a6c4ecd6d6f5c4c65e2073bef4c87a2f39f797d4d63fa3  target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a",
+      "3cd45d083233950165168d93b259e925f7a69c208df1dfe7024eb4f22d0fb7de  /workspace/work/perry-queue/12202-2272-auto-acceptance/perry.bin"
+    ],
+    "perry_binary_sha256": "3cd45d083233950165168d93b259e925f7a69c208df1dfe7024eb4f22d0fb7de",
+    "evidence_dir": "/workspace/work/perry-queue/12202-2272-auto-acceptance",
+    "compile_log": "/workspace/work/perry-queue/12202-2272-auto-acceptance/compile.stdout"
+  },
+  "full_lint": {
+    "status": "RUNNING; no final summary or exact-head result yet",
+    "log": "/workspace/work/perry-queue/12202-2272-full-lint.log",
+    "started_at_utc": "2026-10-12T11:46:34Z"
+  },
+  "limitations": [
+    "Validation is Linux-only.",
+    "The generic computed-method default-parameter .length behavior remains a separate known limitation for ASCII and WTF-8 keys.",
+    "No dedicated forced-evacuation stress witness covers the byte-aware setter/prototype-materialization paths.",
+    "Prior 56c6 and 266eaf full-lint drivers were interrupted and have no final summaries; neither is a 2272 full-lint result."
+  ]
+}
