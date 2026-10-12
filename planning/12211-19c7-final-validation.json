@@ -1,0 +1,182 @@
+{
+  "task": "#12211 exact-candidate validation",
+  "status": "SCOPED_ACCEPTANCE_PASS_WITH_PREEXISTING_REGISTRATION_CHECK_FAILURES",
+  "source": {
+    "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+    "parent": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "tree": "a822e25c5de916eec48d7f44b16745da02a51ad8",
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "worktree_clean": true
+  },
+  "environment": {
+    "rust_toolchain": "nightly-2026-10-04",
+    "target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_incremental": 0,
+    "cargo_build_jobs": 1,
+    "rust_test_threads": 1,
+    "node": "/workspace/.toolchains/node-26.5.1/bin/node"
+  },
+  "resources": {
+    "current_workspace_free_bytes": 1390538752,
+    "current_tmp_free_bytes": 1756549120,
+    "low_water_bytes": 300000000,
+    "cleanup": "No cleanup performed by validator; root performed hash-verified, reversible relocation of completed idle caches."
+  },
+  "fresh_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "started_utc": "2026-10-12T16:57:52Z",
+    "finished_utc": "2026-10-12T17:00:16Z",
+    "exit": 0,
+    "elapsed": "2m24s (Cargo output)",
+    "cap_seconds": 2700,
+    "log": "/workspace/work/perry-queue/12211-19c7-validation/trio.log",
+    "artifacts": {
+      "compiler": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "3eeb05d5abacfb6b994f0c0c28532b40286f072505cd188c3a047cf28d798802"
+      },
+      "runtime_archive": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime-static/3bf18cdc5628ba02/out/libperry_runtime-3bf18cdc5628ba02.a",
+        "sha256": "39d0a100ac088960dc25ca49eecb75fcf13725813fdbfc58e69b914edef167dd",
+        "fresh_output_hash": "3bf18cdc5628ba02"
+      },
+      "stdlib_archive": {
+        "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-stdlib-static/6df0f927c48619b6/out/libperry_stdlib-6df0f927c48619b6.a",
+        "sha256": "f139cab7490f333ec5304a117c32b05ddf2933e5577bfc4591a42d3cb182a916",
+        "fresh_output_hash": "6df0f927c48619b6"
+      }
+    }
+  },
+  "focused_ir_test": {
+    "command": "cargo test --locked -p perry-codegen --lib computed_super_assignment_defers_key_coercion_until_put_value -- --test-threads=1",
+    "started_utc": "2026-10-12T17:09:20Z",
+    "finished_utc": "2026-10-12T17:10:32Z",
+    "exit": 0,
+    "result": "1 passed, 0 failed, 2274 filtered out",
+    "log": "/workspace/work/perry-queue/12211-19c7-validation/ir-lib-retry.log",
+    "note": "The earlier unrestricted cargo test attempt was interrupted before linking (143); retry without --lib then failed at linker with SIGBUS on unrelated integration test concat_site_agent_ownership when /tmp was exhausted. Those attempts are retained separately and are not counted as results."
+  },
+  "compiled_acceptance": {
+    "compiler": {
+      "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+      "sha256": "3eeb05d5abacfb6b994f0c0c28532b40286f072505cd188c3a047cf28d798802"
+    },
+    "archive_overrides": {
+      "directory": "/workspace/work/perry-queue/12211-19c7-validation/archive-overrides",
+      "runtime_path": "/workspace/work/perry-queue/target-12390/debug/build/perry-runtime-static/3bf18cdc5628ba02/out/libperry_runtime-3bf18cdc5628ba02.a",
+      "runtime_sha256": "39d0a100ac088960dc25ca49eecb75fcf13725813fdbfc58e69b914edef167dd",
+      "stdlib_path": "/workspace/work/perry-queue/target-12390/debug/build/perry-stdlib-static/6df0f927c48619b6/out/libperry_stdlib-6df0f927c48619b6.a",
+      "stdlib_sha256": "f139cab7490f333ec5304a117c32b05ddf2933e5577bfc4591a42d3cb182a916",
+      "selection": "PERRY_RUNTIME_DIR and PERRY_LIB_DIR both pointed to this directory; canonical archive symlinks resolve to these exact trio outputs."
+    },
+    "build_mode": "--no-cache --no-auto-optimize; one fixture per compiler invocation; runtime outputs compared byte-for-byte with pinned Node 26.5.1.",
+    "node": {
+      "path": "/workspace/.toolchains/node-26.5.1/bin/node",
+      "version": "v26.5.1"
+    },
+    "new_issue_fixture": {
+      "source": "/workspace/work/perry-queue/issue-9927/test-files/test_gap_12211_super_key_order.ts",
+      "source_sha256": "6bf76c239224cae165842e7387f92a7120670ac0ef899d2e8e3d8aced923d460",
+      "compile_exit": 0,
+      "compile_log": "/workspace/work/perry-queue/12211-19c7-validation/new-fixture-compile.log",
+      "binary": "/workspace/work/perry-queue/12211-19c7-validation/new-fixture.bin",
+      "binary_sha256": "3af612c0e1ee336c5eae8184c485b8827bbe1eb482472d867f32ed3887511d00",
+      "perry_exit": 0,
+      "node_exit": 0,
+      "node_stdout_sha256": "6ff30b1dcc8e11ad46dc7144ab1e18a26b5e3428df0e4ce1fb9146c9249977c9",
+      "perry_stdout_sha256": "6ff30b1dcc8e11ad46dc7144ab1e18a26b5e3428df0e4ce1fb9146c9249977c9",
+      "parity_exit": 0,
+      "stdout": "/workspace/work/perry-queue/12211-19c7-validation/new-fixture.perry.stdout",
+      "node_stdout": "/workspace/work/perry-queue/12211-19c7-validation/new-fixture.node.stdout",
+      "diff": "/workspace/work/perry-queue/12211-19c7-validation/new-fixture.parity.diff"
+    },
+    "upstream_issue_fixture": {
+      "source": "/workspace/work/perry-queue/issue-9927/test-files/test_gap_classsem_12211_super_write.ts",
+      "source_sha256": "5435432f9f1916a28c01a660d6bf859c09d1363daaa8e1f45882566eb284605d",
+      "compile_exit": 0,
+      "compile_log": "/workspace/work/perry-queue/12211-19c7-validation/upstream-compile.log",
+      "binary": "/workspace/work/perry-queue/12211-19c7-validation/upstream.bin",
+      "binary_sha256": "b38684267f216a228936b73941739723faad487592f83dd714d65411b05ce2ba",
+      "perry_exit": 0,
+      "node_exit": 0,
+      "node_stdout_sha256": "35ce11813df3e58d03ea03491937aa6734c64d2e8f60819738aff87c00b4e3e9",
+      "perry_stdout_sha256": "35ce11813df3e58d03ea03491937aa6734c64d2e8f60819738aff87c00b4e3e9",
+      "parity_exit": 0,
+      "stdout": "/workspace/work/perry-queue/12211-19c7-validation/upstream.perry.stdout",
+      "node_stdout": "/workspace/work/perry-queue/12211-19c7-validation/upstream.node.stdout",
+      "diff": "/workspace/work/perry-queue/12211-19c7-validation/upstream.parity.diff"
+    },
+    "same_scope_discriminator": {
+      "source": "/workspace/work/perry-queue/planning/next-candidates/12211-order/witness.js",
+      "source_sha256": "57372ba970d59b7d817c95d7b5248c23863d165454e879bfd293af6ffbaaf8b6",
+      "compile_exit": 0,
+      "compile_log": "/workspace/work/perry-queue/12211-19c7-validation/control-compile.log",
+      "binary": "/workspace/work/perry-queue/12211-19c7-validation/control.bin",
+      "binary_sha256": "bc2f55520270aa763e850b3dcebc5eb98efd2b4d174cb256e5c85d61d88a2732",
+      "perry_exit": 0,
+      "node_exit": 0,
+      "node_stdout_sha256": "aaaf6147484f6d9709510cea75896b882c84c3999436af098e93b7a6b1e8878f",
+      "perry_stdout_sha256": "aaaf6147484f6d9709510cea75896b882c84c3999436af098e93b7a6b1e8878f",
+      "parity_exit": 0,
+      "stdout": "/workspace/work/perry-queue/12211-19c7-validation/control.perry.stdout",
+      "node_stdout": "/workspace/work/perry-queue/12211-19c7-validation/control.node.stdout",
+      "diff": "/workspace/work/perry-queue/12211-19c7-validation/control.parity.diff",
+      "scope_note": "This is the previously planned same-scope discriminator; the upstream issue fixture is recorded separately above."
+    }
+  },
+  "remaining": [],
+  "not_run": [
+    "full lint",
+    "auto-opt build",
+    "GC stress"
+  ],
+  "focused_ir_test_retry": {
+    "command": "cargo test --locked -p perry-codegen computed_super_assignment_defers_key_coercion_until_put_value -- --test-threads=1",
+    "started_utc": "2026-10-12T17:03:32Z",
+    "exit": 101,
+    "status": "Link failed before test execution: collect2/ld terminated with signal 7 (Bus error) while linking integration test concat_site_agent_ownership; at command end /tmp had 4096 B free (100%). No requested test assertion/result.",
+    "log": "/workspace/work/perry-queue/12211-19c7-validation/ir-test-retry.log",
+    "exit_file": "/workspace/work/perry-queue/12211-19c7-validation/ir-test-retry.exit"
+  },
+  "registration": {
+    "actual_check_command": "python3 scripts/check_test_registration.py",
+    "actual_exit_candidate": 1,
+    "self_test_command": "python3 scripts/check_test_registration.py --self-test",
+    "self_test_exit_candidate": 1,
+    "exact_base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "actual_exit_base": 1,
+    "self_test_exit_base": 1,
+    "candidate_vs_base_actual_stdout_diff_exit": 0,
+    "candidate_vs_base_self_test_stdout_diff_exit": 0,
+    "status": "Both checker invocations report the same six pre-existing dark tests on exact base and candidate; these are not marked pass. The new module is registered via mod super_property_set_order_tests in expr/mod.rs.",
+    "dark_tests": [
+      "test-files/test_gap_gc_fetch_streaming_chunks.ts",
+      "test-files/test_gap_gc_global_scalar_snapshot.ts",
+      "test-files/test_gap_gc_ic_leaf_json.ts",
+      "test-files/test_gap_gc_protected_poll_reclaim.ts",
+      "test-files/test_gap_gc_worker_transfer_ownership.ts",
+      "crates/perry-runtime/src/gc/tests/rooted_array_accessors.rs"
+    ],
+    "logs": [
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-check.log",
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-base-check.log",
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-self-test.log",
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-base-self-test.log"
+    ],
+    "byte_identical_diffs": [
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-check-base-comparison.diff",
+      "/workspace/work/perry-queue/12211-19c7-validation/registration-self-test-base-comparison.diff"
+    ]
+  },
+  "scoped_format": {
+    "command": "rustfmt --edition 2021 --config skip_children=true --check crates/perry-codegen/src/expr/super_method.rs crates/perry-codegen/src/expr/super_property_set_order_tests.rs",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12211-19c7-validation/scoped-rustfmt.log",
+    "scope_note": "Checks the two changed implementation/test Rust files; expr/mod.rs is excluded from this scoped check due known baseline formatting differences."
+  },
+  "diff_check": {
+    "command": "git diff --check 034b1357c3baf4a22e5b006940176cf99ba8a5de..19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/12211-19c7-validation/diff-check.log"
+  }
+}

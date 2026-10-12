@@ -1,0 +1,49 @@
+{
+  "checked_at_utc": "2026-10-12T17:17:14Z",
+  "repository": "PerryTS/perry",
+  "issue": {
+    "number": 12211,
+    "title": "Make class super property writes follow the live home prototype",
+    "state": "open",
+    "comments": 0,
+    "url": "https://github.com/PerryTS/perry/issues/12211",
+    "body_scope": "live home prototype, original receiver, strict [[Set]], required evaluation order, rooting, and setter/data/non-writable/proxy/static/extends-null cases"
+  },
+  "related_pull_requests": [
+    {
+      "number": 12487,
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-12T16:01:40Z",
+      "merge_commit": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+      "title": "fix(classes): lexical class homes for super, live-home super writes, lone-surrogate method names, WeakMap/WeakSet subclass new.target",
+      "body_claim": "Fixes #12211; super writes follow the live home prototype",
+      "assessment": "The exact compiled 034b baseline discriminator demonstrates a remaining computed-key coercion/RHS-order mismatch in this issue; the issue remains open. No other related open PR appeared in targeted searches."
+    }
+  ],
+  "targeted_open_pr_searches": {
+    "queries": ["12211", "super assignment", "ToPropertyKey super"],
+    "results": []
+  },
+  "current_upstream_main": {
+    "sha": "9d8b1d5138e1d41cf4e7baffc094bdc1cad5081c",
+    "checked_by_ls_remote": true,
+    "changes_since_validated_base": [
+      "changelog.d/nursery-page-reuse.md",
+      "crates/perry-runtime/src/gc/cycle_malloc_trim.rs",
+      "crates/perry-runtime/src/gc/idle_compact.rs",
+      "crates/perry-runtime/src/gc/idle_reclaim.rs",
+      "crates/perry-runtime/src/gc/tests/telemetry_verifier.rs",
+      "test-files/test_gc_native_purge_reclaim.ts"
+    ],
+    "affected_codegen_paths_changed": false,
+    "merge_tree": "clean; preview tree 1c5c2deaa9aae58eca68a39f136a225aab57db2a"
+  },
+  "fork_branch": {
+    "repository": "jdalton/perry",
+    "branch": "cloud/issue-12211-super-key-order",
+    "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+    "remote_head_verified": true,
+    "pr_created": false
+  }
+}

@@ -1,0 +1,1 @@
+Computed `super[key]` assignments now defer key coercion until PutValue, after evaluating the assignment value and capturing the current home prototype. This preserves observable key-conversion order for instance and static super writes.

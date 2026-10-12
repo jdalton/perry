@@ -1,0 +1,84 @@
+{
+  "issue": 12211,
+  "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+  "branch": "cloud/issue-12211-super-key-order",
+  "single_commit_after_base": true,
+  "worktree_clean": true,
+  "source_review": {
+    "status": "clear",
+    "review": "planning/12211-key-order-source-review.json",
+    "reviewed_diff_sha256": "4664cefc018a51eee1df8c6c0e4c0bd547ec9a264098808fac84e286973414bc"
+  },
+  "baseline_discriminator": {
+    "source_head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+    "validation": "12211-034b-validation/validation.json",
+    "fresh_trio_and_compile": "pass",
+    "node_version": "v26.5.1",
+    "node_exit": 0,
+    "perry_exit": 0,
+    "stdout_parity": "fail: Node logs key-expression,RHS,ToPropertyKey; Perry logs key-expression,ToPropertyKey,RHS; throwing conversion skips RHS only in Perry"
+  },
+  "candidate_node_oracle": {
+    "fixture": "test-files/test_gap_12211_super_key_order.ts",
+    "fixture_sha256": "6bf76c239224cae165842e7387f92a7120670ac0ef899d2e8e3d8aced923d460",
+    "node_version": "v26.5.1",
+    "exit": 0,
+    "stdout": "12211-node-oracle/stdout",
+    "stderr": "12211-node-oracle/stderr"
+  },
+  "source_checks": {
+    "rustfmt_affected_implementation_and_test_files": "pass",
+    "git_diff_check": "pass",
+    "check_test_registration_list": "exit 0; the new test_gap fixture is discovered by the gap-suite glob",
+    "test_registration_self_test": "not claimed; sparse checkout omits benchmark files needed by that script's clean-tree self-test"
+  },
+  "candidate_validation": {
+    "fresh_trio": {
+      "status": "pass",
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "target": "/workspace/work/perry-queue/target-12390",
+      "settings": "CARGO_BUILD_JOBS=1, CARGO_INCREMENTAL=0, RUST_TEST_THREADS=1, nightly-2026-10-04",
+      "elapsed": "2m24s",
+      "compiler_sha256": "3eeb05d5abacfb6b994f0c0c28532b40286f072505cd188c3a047cf28d798802",
+      "runtime_archive_sha256": "39d0a100ac088960dc25ca49eecb75fcf13725813fdbfc58e69b914edef167dd",
+      "stdlib_archive_sha256": "f139cab7490f333ec5304a117c32b05ddf2933e5577bfc4591a42d3cb182a916",
+      "log": "/workspace/work/perry-queue/12211-19c7-validation/trio.log"
+    },
+    "focused_codegen_test": {
+      "status": "pass: 1 passed, 0 failed, 2274 filtered out",
+      "command": "cargo test --locked -p perry-codegen --lib computed_super_assignment_defers_key_coercion_until_put_value -- --test-threads=1",
+      "log": "/workspace/work/perry-queue/12211-19c7-validation/ir-lib-retry.log"
+    },
+    "compiled_parity_fixtures": [
+      {
+        "fixture": "test_gap_12211_super_key_order.ts",
+        "status": "pass; output matches pinned Node 26.5.1",
+        "stdout_sha256": "6ff30b1dcc8e11ad46dc7144ab1e18a26b5e3428df0e4ce1fb9146c9249977c9"
+      },
+      {
+        "fixture": "test_gap_classsem_12211_super_write.ts",
+        "status": "pass; output matches pinned Node 26.5.1",
+        "stdout_sha256": "35ce11813df3e58d03ea03491937aa6734c64d2e8f60819738aff87c00b4e3e9"
+      },
+      {
+        "fixture": "planning/next-candidates/12211-order/witness.js",
+        "status": "pass; output matches pinned Node 26.5.1",
+        "stdout_sha256": "aaaf6147484f6d9709510cea75896b882c84c3999436af098e93b7a6b1e8878f"
+      }
+    ],
+    "registration_checker": {
+      "status": "candidate and exact base both report the same six unrelated dark tests; candidate/base output byte-identical; not claimed as a pass",
+      "evidence": "/workspace/work/perry-queue/12211-19c7-validation/registration-check-base-comparison.diff"
+    },
+    "rustfmt": "pass on changed implementation and test files; expr/mod.rs omitted because it has known baseline formatting differences",
+    "diff_check": "pass",
+    "full_lint": "not run",
+    "auto_opt_build": "not run",
+    "gc_stress": "not run"
+  },
+  "current_upstream_main_at_final_check": "9d8b1d5138e1d41cf4e7baffc094bdc1cad5081c",
+  "current_upstream_main_path_check": "No changes to affected codegen files; merge-tree with 19c7 was clean",
+  "remote_fork_branch_verified": "jdalton/perry:cloud/issue-12211-super-key-order at 19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+  "checked_at_utc": "2026-10-12T17:18:24Z"
+}

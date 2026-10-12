@@ -1,0 +1,56 @@
+{
+  "observed_at_utc": "2026-10-12T17:05:53Z",
+  "scope": "One read-only maintenance poll for authored open PRs, #12471 duplicate state, and publisher assignments #12145/#9202.",
+  "authored_open_prs": [
+    {
+      "number": 12471,
+      "url": "https://github.com/PerryTS/perry/pull/12471",
+      "state": "OPEN",
+      "draft": true,
+      "mergeable": false,
+      "head_branch": "cloud/issue-12202-wtf8-class-keys",
+      "head_sha": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "base": "main",
+      "updated_at": "2026-10-12T13:08:27Z",
+      "closed_at": null,
+      "merged": false
+    }
+  ],
+  "pr_12471_feedback": {
+    "comments": [
+      {"id": 6124210400, "updated_at": "2026-10-12T12:24:44Z", "new_or_changed": false, "summary": "CodeRabbit draft-not-reviewed notice; no code feedback."}
+    ],
+    "reviews": [],
+    "inline_review_threads": [],
+    "actionable_feedback_since_prior_checkpoint": []
+  },
+  "pr_12471_checks": {
+    "commit_sha": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+    "check_runs_total": 130,
+    "check_runs_counts": {
+      "completed_failure": 21,
+      "completed_skipped": 96,
+      "completed_success": 12,
+      "completed_cancelled": 1
+    },
+    "failed_check_examples": ["pr-gate", "gc-stress", "gap-suite (12)", "gc-stress matrix (1/1)", "cargo-test", "warnings", "lint", "check"],
+    "combined_statuses": [{"context": "CodeRabbit", "state": "success"}],
+    "workflow_runs": [
+      {"name": "GC / scheduled / 12471/merge", "status": "completed", "conclusion": "success"},
+      {"name": "Extended Tests / pull_request / 12471/merge", "status": "completed", "conclusion": "failure"},
+      {"name": "CI / scheduled / 12471/merge", "status": "completed", "conclusion": "failure"}
+    ],
+    "note": "PR is not green; combined status lists only the CodeRabbit success context, while check-runs include failures. This is observed CI state, not local validation or baseline attribution."
+  },
+  "publisher_inbox": {
+    "repository": "jdalton/perry",
+    "branch": "cloud/local-publisher-inbox",
+    "path": "publisher-status.json",
+    "checked_at_utc": "2026-10-12T17:05:53Z",
+    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "stale": true,
+    "assignments_12145_9202": [],
+    "new_assignment": false
+  },
+  "scope_note": "Recent authored-open-PR query returned only #12471. No PR was created, closed, or otherwise mutated."
+}

@@ -4,10 +4,22 @@
   "task": "12211-super-key-order",
   "branch": "cloud/issue-12211-super-key-order",
   "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
-  "head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
   "worktree_clean": true,
-  "observed_at_utc": "2026-10-12T16:48:47Z",
-  "phase": "implementation",
-  "source_edits_present": false,
-  "note": "Claim reserved after approved exact-main mismatch and live overlap check. This is a read-only ownership snapshot; source implementation has not yet landed."
+  "observed_at_utc": "2026-10-12T17:18:24Z",
+  "phase": "draft_creation_allowed_waiting_for_pr_number_and_fragment",
+  "source_edits_present": true,
+  "note": "Claim reserved after approved exact-main mismatch and live overlap check. This is a read-only ownership snapshot; source implementation has not yet landed.",
+  "parent": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "single_commit": true,
+  "validation_status": "SCOPED_ACCEPTANCE_PASS_WITH_PREEXISTING_REGISTRATION_CHECK_FAILURES",
+  "validation_evidence": "publication/12211/validation.json",
+  "full_lint": "not run",
+  "auto_opt_build": "not run",
+  "preserved_prior_attempts": [
+    "unrestricted IR test interrupted before link (exit 143)",
+    "non-lib retry failed before requested test execution while linking unrelated integration test with SIGBUS (exit 101); exact --lib focused test later passed"
+  ],
+  "publication_status": "remote branch verified; packet permits draft creation; no PR exists; numbered fragment and review readiness remain pending",
+  "metadata": "publication/12211/metadata.json"
 }

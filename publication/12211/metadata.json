@@ -1,0 +1,35 @@
+{
+  "issue": 12211,
+  "scope": "partial: preserve computed super assignment evaluation order by deferring ToPropertyKey until PutValue; no whole-issue closure claim",
+  "base_branch": "main",
+  "validated_branch_base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+  "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+  "branch": "cloud/issue-12211-super-key-order",
+  "title": "fix(codegen): defer computed super key coercion until PutValue",
+  "draft_creation_allowed": true,
+  "ready_for_review": false,
+  "external_pr_created": false,
+  "full_lint_complete": false,
+  "validation_status": "scoped acceptance passes on exact head: fresh trio, 1 focused IR test, and three compiled Node 26.5.1 parity fixtures; six registration findings are identical on exact base; full lint, auto-opt, and GC stress not run",
+  "validation": "validation.json",
+  "fragment_draft": "changelog-fragment-draft.md",
+  "source_review": "source-review.json",
+  "live_duplicate_check": "live-overlap.json",
+  "publisher_actions": [
+    "one-commit branch pushed normally to the owner fork and remote head verified",
+    "draft creation is allowed; no PR was created under this task",
+    "keep any created draft not ready until a numbered changelog fragment is added after PR assignment"
+  ],
+  "scope_limits": [
+    "Refs #12211 for computed super property key/RHS ordering only",
+    "Leaves the RHS-before-home-prototype-capture order intact; the base capture remains before ToPropertyKey",
+    "Existing js_put_value_set runtime coercion/rooting path is reused; no runtime ABI change",
+    "No GC-stress or full-suite validation is claimed",
+    "Do not create a numbered changelog fragment until an actual PR number is assigned"
+  ],
+  "current_upstream_main_at_overlap_check": "9d8b1d5138e1d41cf4e7baffc094bdc1cad5081c",
+  "fork_remote_head_verified": true,
+  "remote_branch_url": "https://github.com/jdalton/perry/tree/cloud/issue-12211-super-key-order",
+  "checked_at_utc": "2026-10-12T17:18:24Z",
+  "head_ref": "jdalton:cloud/issue-12211-super-key-order"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "clear",
+  "reviewer": "astra_planning",
+  "reviewed_diff_sha256": "4664cefc018a51eee1df8c6c0e4c0bd547ec9a264098808fac84e286973414bc",
+  "scope": "ObjectSuperPropertySet codegen arm only; rooted raw key, home, receiver, and RHS; post-RHS prototype lookup then existing js_put_value_set",
+  "review_note": "RootedGroup protects the captured operands and reread refreshes them after allocation. Runtime helper roots operands and converted key. Node-visible ordering, throw behavior, home mutation, and receiver are represented by the focused controls.",
+  "validation_clearance": true
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:48:47Z",
+  "updated_at": "2026-10-12T17:18:24Z",
   "original224_total": 224,
   "original_open": 179,
   "original_closed": 45,
@@ -350,33 +350,40 @@
       "issues": [
         12211
       ],
-      "head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+      "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
       "branch": "cloud/issue-12211-super-key-order",
       "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
       "owner": "cloud /root/luna_class_tdz",
       "task": "12211-super-key-order",
-      "phase": "implementation",
+      "phase": "draft_creation_allowed_waiting_for_pr_number_and_fragment",
       "coverage": "uncovered residual; #12487 partial only",
       "partial_prs": [
         12487
       ],
-      "state": "implementation authorized after exact-main compiled mismatch and overlap review; no source candidate yet",
+      "state": "source pushed and exact head verified; draft allowed, no PR assigned, ready-for-review false",
       "pr": null,
       "pr_number": null,
       "pr_url": null,
-      "packet": "planning/12211-key-coercion-residual-go.json",
+      "packet": "publication/12211/metadata.json",
       "evidence": [
-        "planning/12211-key-coercion-residual-go.json",
-        "planning/12211-034b-validation.json",
-        "planning/12211-current-claim.json"
+        "publication/12211/metadata.json",
+        "publication/12211/validation.json",
+        "planning/12211-current-claim.json",
+        "planning/authored-pr-maintenance-20261012T170553Z.json"
       ],
       "flags": {
-        "draft_creation_allowed": false,
+        "draft_creation_allowed": true,
         "ready_for_review": false,
         "pr_creation_allowed": false,
         "push_allowed": false,
-        "has_uncommitted_changes": false
-      }
+        "has_uncommitted_changes": false,
+        "external_pr_created": false
+      },
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "pr_creation_allowed": false,
+      "push_allowed": false,
+      "external_pr_created": false
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
@@ -386,20 +393,20 @@
     "snapshot": "planning/publisher-inbox-20261012T163215Z.json",
     "result": "Inbox stale; no new #12145 or #9202 draft assignment. Direct PR API confirms #12471 remains OPEN/DRAFT at dfd64b7."
   },
-  "draft_creation_packets_available": 2,
+  "draft_creation_packets_available": 3,
   "ready_transition_packets": 0,
   "active_source_issue": 12211,
   "current_validation_slot": {
     "owner": "none",
-    "checked_at": "2026-10-12T16:48:47Z",
+    "checked_at": "2026-10-12T17:18:24Z",
     "issue": 12211,
-    "head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
-    "gate": "source implementation; no candidate validation run active",
-    "status": "IDLE; Luna class lane implementing the authorized narrow fix. Preserve 45-minute build/compiled acceptance cap and 30-minute full lint cap.",
+    "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+    "gate": "scoped validation complete; wait for PR number and numbered fragment",
+    "status": "IDLE; fork head verified and packet permits draft creation. Full lint/auto-opt/GC stress not run.",
     "started_at": null,
     "deadline": null,
     "cap_seconds": 2700,
-    "evidence": "planning/12211-key-coercion-residual-go.json"
+    "evidence": "publication/12211/validation.json"
   },
   "command_caps": {
     "full_lint_minutes": 30,
@@ -455,9 +462,16 @@
       "confirmed_main_failure": "Computed key coercion occurs before RHS on 034b, unlike Node v26.5.1; minimal repair authorized.",
       "owner": "cloud /root/luna_class_tdz",
       "branch": "cloud/issue-12211-super-key-order",
-      "phase": "implementation",
+      "phase": "draft_creation_allowed_waiting_for_pr_number_and_fragment",
       "evidence": "planning/12211-key-coercion-residual-go.json",
-      "claim_snapshot": "planning/12211-current-claim.json"
+      "claim_snapshot": "planning/12211-current-claim.json",
+      "head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
+      "validation_status": "scoped acceptance passes; full lint/auto-opt/GC stress not run",
+      "validation_evidence": "publication/12211/validation.json",
+      "packet": "publication/12211/metadata.json",
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "external_pr_created": false
     },
     "four_uncertain_issues": [
       11560,

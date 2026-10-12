@@ -366,17 +366,18 @@
         "owner": "cloud /root/luna_class_tdz",
         "task": "12211-super-key-order",
         "branch": "cloud/issue-12211-super-key-order",
-        "current_head": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
+        "current_head": "19c7d980436e99e52fd141ff9a9c66e7dfd67575",
         "base": "034b1357c3baf4a22e5b006940176cf99ba8a5de",
-        "phase": "implementation",
+        "phase": "draft_creation_allowed_waiting_for_pr_number_and_fragment",
         "has_uncommitted_changes": false,
-        "validation": "Fresh matching main trio passed; pinned Node v26.5.1 compiled discriminator reproduces the key-coercion/RHS ordering mismatch. No candidate source implementation or acceptance validation yet.",
+        "validation": "Exact 19c7 head: fresh trio, focused IR 1/1, three compiled Node26.5.1 parity fixtures, scoped format and diff pass; six registration findings byte-identical to base. Full lint/auto-opt/GC stress not run; prior 143 and 101 attempts preserved.",
         "merge_state": "Partial upstream implementation in #12487; do not claim full issue coverage.",
         "closure_state": "OPEN",
-        "publication_state": "Source implementation authorized after live-overlap review; no PR or publication packet.",
+        "publication_state": "Fork branch verified; draft creation allowed, ready_for_review=false until PR number and numbered fragment are added.",
         "evidence": [
-          "planning/12211-key-coercion-residual-go.json",
-          "planning/12211-034b-validation.json"
+          "publication/12211/metadata.json",
+          "publication/12211/validation.json",
+          "planning/12211-current-claim.json"
         ]
       }
     },
