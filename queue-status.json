@@ -226,12 +226,28 @@
       "draft_creation_allowed": true,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
-      "validation": "59 unique tests /67 executions; fresh trio and both Node parity modes PASS. Full lint exit1:105 pass,32 fail (30 baseline,2 environment/path),2 CI skips. Clippy informational warnings +3/-1 disclosed.",
+      "validation": "59 unique tests/67 executions, fresh trio and both Node parity modes PASS. Full lint exit1:105 pass,32 fail (30 baseline,2 environment/path),2 CI skips; warn-level Clippy +3/-1 disclosed as informational.",
       "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
       "packet": "publication/12202/metadata.json",
       "publisher_actions": [
         "Create draft using publication/12202 exact title/body/base/head; report assigned PR in publisher inbox."
       ]
+    },
+    {
+      "issues": [
+        11915
+      ],
+      "branch": "cloud/issue-11915-reflective-callee",
+      "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+      "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+      "has_uncommitted_changes": false,
+      "state": "Source-cleared committed; validation pending",
+      "draft_creation_allowed": false,
+      "ready_for_review": false,
+      "validation_plan": "planning/next-candidates/11915-reflective-callee-go-plan.json",
+      "validation": "Source checks and Node oracle PASS; TLS static preflight and verifier-owned early HIR test pending. No Perry build/runtime claim.",
+      "packet": "planning/11915-source-milestone-e190.json",
+      "publisher_actions": []
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
@@ -263,5 +279,16 @@
     "full_lint_minutes": 30,
     "build_or_compiled_acceptance_minutes": 45,
     "incomplete_on_timeout": true
-  }
+  },
+  "draft_creation_packets_available": 1,
+  "ready_transition_packets": 0,
+  "milestone_updated_at": "2026-10-12T12:30:51Z",
+  "latest_source_milestone": {
+    "issue": 11915,
+    "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+    "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+    "status": "source-cleared-committed-awaiting-validation",
+    "evidence": "planning/11915-source-milestone-e190.json"
+  },
+  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-source-milestone.json"
 }

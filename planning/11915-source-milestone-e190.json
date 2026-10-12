@@ -1,0 +1,36 @@
+{
+  "issue": 11915,
+  "observed_at_utc": "2026-10-12T12:30:51Z",
+  "status": "source-cleared-committed-awaiting-validation",
+  "base": {
+    "head": "283ab130bf3c507753324d9ff842208543d9d267",
+    "tree": "3469d171bb07613671248a3bd4f6dde4ae23c2be"
+  },
+  "candidate": {
+    "branch": "cloud/issue-11915-reflective-callee",
+    "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+    "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+    "clean": true,
+    "changed_paths": 10
+  },
+  "scope": "Partial Refs #11915: ordinary reflective callee resolution for Object.prototype call/apply and borrowed built-in prototype call/apply only.",
+  "source_checks": {
+    "pinned_node_26_5_1_oracle": "PASS",
+    "scoped_rustfmt": "PASS",
+    "diff_check": "PASS",
+    "Astra_source_review": "CLEAR"
+  },
+  "validation": {
+    "early_hir_test_owner": "Verifier; sole early HIR test slot",
+    "cheap_static_preflight": "TLS in progress",
+    "matching_dev_trio": "NOT RUN",
+    "compiled_node_parity": "NOT RUN",
+    "full_lint": "NOT RUN"
+  },
+  "evidence": [
+    "source-review-packet.json",
+    "source-review-decision.json",
+    "claim.json"
+  ],
+  "limits": "Derived #12202 compiler reproduction was diagnostic only; no Perry build/runtime result claimed."
+}

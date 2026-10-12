@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-10-12T12:25:05.623379+00:00",
+  "updated_at": "2026-10-12T12:30:51Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": null,
   "next_steps": [
-    "Local publisher may create12202 draft from exact2272 packet; no new PR counted until assignment",
-    "Complete11915 bounded source repair and Astra review before new builds"
+    "Local publisher may create #12202 draft from exact 2272 packet; no new PR counted until assignment",
+    "TLS completes cheap static preflight for #11915; verifier owns the sole early HIR test slot",
+    "After preflight and HIR test, wait for root to grant the serial matching-trio/runtime slot for #11915"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -22,8 +23,8 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "11915 source review and static preflight, then serial validation",
-    "12202 numbered fragment and final-head validation when PR number arrives"
+    "#11915 source-cleared head: TLS cheap static preflight and verifier-owned early HIR test, then root-granted serial validation",
+    "#12202 exact 2272 draft creation pending publisher assignment; ready-for-review remains false until numbered fragment and final-head checks"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -127,7 +128,7 @@
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
   "current_serial_issue": null,
   "serial_pending": [
-    "11915 implementation/source review",
+    "11915 static preflight and early HIR test; matching trio/runtime/full lint not yet authorized",
     "12202 local draft PR assignment"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
@@ -148,5 +149,27 @@
     "build_or_compiled_acceptance_hard_cap_minutes": 45,
     "at_cap": "Cleanly stop owned tree, wait for children, preserve logs; interrupted/incomplete never counts green.",
     "progress_updates_minutes_max": 10
+  },
+  "11915_source_milestone": {
+    "base": "283ab130bf3c507753324d9ff842208543d9d267",
+    "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+    "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+    "worktree_clean": true,
+    "source_review": "Astra source-cleared; source packet and decision attached",
+    "node_oracle": "PASS pinned Node v26.5.1",
+    "scoped_rustfmt": "PASS",
+    "diff_check": "PASS",
+    "tls_static_preflight": "in progress",
+    "early_hir_test_owner": "verifier; sole early HIR test owner",
+    "matching_trio_runtime_full_lint": "not run; awaiting root serial slot",
+    "evidence": "planning/11915-source-milestone-e190.json"
+  },
+  "12202_publication_status": {
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "pr_number": null,
+    "inbox_check": "2026-10-12T12:30:51Z snapshot; no #12202 assignment",
+    "evidence": "planning/12202-publisher-inbox-at-11915-source-milestone.json"
   }
 }

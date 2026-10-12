@@ -1,0 +1,100 @@
+{
+  "issue": 11915,
+  "status": "source-cleared-committed-awaiting-validation",
+  "base_head": "283ab130bf3c507753324d9ff842208543d9d267",
+  "base_tree": "3469d171bb07613671248a3bd4f6dde4ae23c2be",
+  "worktree": "/workspace/work/perry-queue/issue-11915",
+  "branch": "cloud/issue-11915-reflective-callee",
+  "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+  "worktree_clean": true,
+  "scope": "Remove only the HIR shortcuts that replace Object.prototype call/apply and borrowed built-in prototype call/apply with hard-coded helpers or receiver-name dispatch. Preserve native-module/namespace rewrites. Remove alias-only pre-scan state used solely by the borrowed-builtin shortcut.",
+  "changed_files": [
+    {
+      "path": "crates/perry-hir/src/lower/context_new.rs",
+      "sha256": "d92d0eae58ad0ab11568dc96959b20c2a85c04141805d472efd4136bd367488a"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/expr_call/intrinsics.rs",
+      "sha256": "679aeeb16b4fda5d5f7a6722a23093f8dc99c45f5d1c7b0e1268c8c2d06873b2"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/expr_call/intrinsics/apply_call.rs",
+      "sha256": "878fab8ba6ab4e8079ce4d5729085b591541d6429b9531be39fdbd96c2f4a731"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/expr_call/mod.rs",
+      "sha256": "471743add24c6c22ab7a88e7116d06aea8a7b38832eea32cf5004a9157755e43"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/expr_call/post_args_dispatch.rs",
+      "sha256": "e193a9cb2a7c426e556cc9b8da4fa9cfbb3f850f452e9a0f44d2033920fecbd3"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/lower_expr/arm_unary.rs",
+      "sha256": "d142485c0993b6c543e1c1510c2eb1033e76faaa32395d9dcd312ac92a2fe28b"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/lowering_context.rs",
+      "sha256": "af79cde62d5a826ea5503606d2416a16e65437f53fa915f25489f00995794636"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/pre_scan/weakref_locals.rs",
+      "sha256": "04980df0f330d8903cb42581f110eff48c75f889278ab8fb4d06c04c1a58aede"
+    },
+    {
+      "path": "crates/perry-hir/src/lower/expr_call/reflective_prototype_call_tests.rs",
+      "sha256": "a50eb0e73fb51ad337208b07f02fd132de0e1b41a44d7124ddb9a807ebe1b3c6"
+    },
+    {
+      "path": "test-files/test_gap_11915_reflective_builtin_callee.ts",
+      "sha256": "63cfc0eaad72a6c499c7df658bec11b9211de9124751a23e02bf77f6d4e69ced"
+    }
+  ],
+  "design_notes": [
+    "Ordinary HIR callee/property lowering preserves the selected function value and lets generic Function.prototype call/apply handle receiver and arguments.",
+    "Removed Object.prototype.hasOwnProperty/propertyIsEnumerable/toString/Annex B direct ExternFuncRef substitutions.",
+    "Removed ArrayLikeMethod and receiver-member synthesis exclusive to the built-in prototype call/apply hook.",
+    "Kept native-module method apply/call rewrite and namespace static apply/call/bind rewrite unchanged.",
+    "Source inspection confirms populated built-in prototype method values are installed by perry-runtime object/global_this/proto_methods.rs and exposed through constructor prototype values; no new runtime surface is required."
+  ],
+  "checks": {
+    "node_oracle": {
+      "executable": "/workspace/.toolchains/node-26.5.1/bin/node",
+      "version": "v26.5.1",
+      "command": "/workspace/.toolchains/node-26.5.1/bin/node --experimental-strip-types test-files/test_gap_11915_reflective_builtin_callee.ts",
+      "exit": 0,
+      "stdout_path": "/workspace/work/perry-queue/planning/next-candidates/11915-reflective-callee/node.stdout",
+      "stdout_sha256": "40b9ddf0e75a824dd1ef81468a224ff63260795d907a680d18670da4a192fde9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "covers": [
+        "replaced Object.prototype.hasOwnProperty via Object.prototype and Object constructor lookup",
+        "replaced and saved Array.prototype.slice call/apply",
+        "receiver-own slice control",
+        "method getter once before argument effects and selected value retained when argument replaces property",
+        "throwing callee getter prevents argument evaluation",
+        "array-like map/reduce/slice controls",
+        "Object toString/hasOwnProperty/propertyIsEnumerable and Annex B getter controls",
+        "String.prototype.toString brand checks and null array receiver errors",
+        "exact Object.prototype and Array.prototype spelling exercised directly, alongside aliases"
+      ]
+    },
+    "rustfmt": "PASS: pinned repository rustfmt 1.11.0-nightly, edition 2021, skip_children=true, exact nine changed Rust paths",
+    "git_diff_check": "PASS",
+    "obsolete_rewrite_symbol_search": "PASS: no remaining references to removed hook names or alias state under crates/perry-hir/src",
+    "cargo_or_perry": "NOT RUN by instruction"
+  },
+  "review_requests": {
+    "astra_source_review": "cleared",
+    "review_before_compile": true
+  },
+  "validation_limits": [
+    "Diagnostic reproduced mismatch only on derived #12202 2272 artifacts, not a pristine current-main toolchain.",
+    "No Cargo test, Perry compile/run, full lint, or compiled parity claim."
+  ],
+  "source_review": {
+    "reviewer": "/root/astra_planning",
+    "status": "source-clear-to-commit",
+    "finding_resolved": "Direct prototype call/getter/throw forms added; HIR assertions isolated by shape.",
+    "validation_caveat": "Source review only; no Cargo/Perry execution or compiled acceptance."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "milestone": "11915 committed source-cleared milestone; #12202 assignment check",
+  "observed_at_utc": "2026-10-12T12:30:51Z",
+  "inbox_updated_at": "2026-10-12T12:17:49Z",
+  "issue_12202_assignments": [],
+  "assignment_found": false,
+  "batch_counts": {
+    "opened": 5,
+    "merged": 5,
+    "remaining": 15
+  },
+  "note": "Read-only publisher inbox snapshot; no issue #12202 PR assignment observed."
+}

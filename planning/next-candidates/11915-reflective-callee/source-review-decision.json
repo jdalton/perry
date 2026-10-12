@@ -1,0 +1,37 @@
+{
+  "issue": 11915,
+  "base": "283ab130bf3c507753324d9ff842208543d9d267",
+  "review": "uncommittedsource",
+  "decision": "Source clear to commit corrected current tree; exact clean committed head required before validation",
+  "scope_clear": [
+    "Removal of two Object-specific call shortcuts and borrowed-builtin prototype call/apply hook is within approved partial repair",
+    "Alias-only prescan/context removal coherent; native module and namespace rewrites remain",
+    "typeof builtin callable folding remains untouched behavior and excluded; no claim to fixall11915"
+  ],
+  "findings": [
+    {
+      "severity": "validationblocker",
+      "detail": "Compiled primary patched/getter/throw cases use objectPrototype/arrayPrototype locals instead of direct Object.prototype/Array.prototype AST shapes targeted by removed hooks. Add direct forms matching actual failed diagnostic; keep alias controls."
+    },
+    {
+      "severity": "testprecision",
+      "detail": "HIR singlecombined debugstring propertypresence may be satisfied by other cases. Isolate directObject/directArray/savedalias cases or inspecteach expression structurally."
+    }
+  ],
+  "runtime_contract": "Existing populated builtin prototype callable values support intended ordinary lowering, but source-only review cannot establish all generic ArrayLike/AnnexB/brand paths. Focused compiled pristine controls are required before acceptance; if fail stop/reassess precise runtime path, no broad automatic expansion.",
+  "static_preflight": [
+    "Pinned rustfmt on everychangedRustpath includingnewtest, diffcheck,file-size",
+    "Repositorywide removedsymbol references includingcfgtest/platform",
+    "FocusedHIR tests; warning/product+host diagnostics scopedwithfulloutputs, nottailcomparison",
+    "Testregistration and otheraffectedsourceinventories; no baseline/allow raises"
+  ],
+  "serial_validation": [
+    "Commitcleanhead first; rootserialslot only",
+    "Focused HIR tests then fresh matching compiler/runtime-static/stdlib-static with45mincap",
+    "PinnedNode26.5.1 direct+aliasfixture and generic arraylike/brand controls usingfreshartifacts; capturegetter/args order andthrows",
+    "Requiredfull lint30mincap, preserveallgateresultsandresumeunfinishedonlyifneeded; no monolithicrestart or timeoutgreen",
+    "Refs11915partial; noDate/Map/Set/Symbol/typeofwholecoverage credit"
+  ],
+  "findings_resolved": "Compiled fixture now includes exact Object.prototype/Array.prototype patched and getter/throw spellings, aliascontrols retained. HIR directObject, Objectconstructor, directArray and savedalias cases isolated. No additional source blocker found.",
+  "compile_status": "No Cargo/Perry executed; runtime ordinary builtin function parity remains acceptance obligation."
+}
