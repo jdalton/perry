@@ -1,0 +1,32 @@
+{
+  "issue": "12007",
+  "path": "/workspace/work/perry-queue/issue-12007",
+  "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+  "tree": "e2ffd892070d92582633a0758e8a2334c167c0c4",
+  "branch": "cloud/issue-12007-class-expression-tdz",
+  "status": "",
+  "ignored": [],
+  "containing_refs": [
+    "refs/heads/cloud/issue-12007-class-expression-tdz"
+  ],
+  "common": "/workspace/perry/.git",
+  "nonstandard_index_flags": 0,
+  "nested_git": [],
+  "symlinks": [
+    {
+      "path": "benchmarks/honest_bench/workloads/3_image_convolution/bun/image_conv.ts",
+      "target": "../node/image_conv.ts"
+    },
+    {
+      "path": "benchmarks/honest_bench/workloads/1_json_pipeline/bun/json_pipeline.ts",
+      "target": "../node/json_pipeline.ts"
+    }
+  ],
+  "allocated_size": "1.3G",
+  "source_bundle_sha256": "afa50ee9aa1c8a19340632741f8d5c21d9fcf63976d325cc2a89bc5f0aa07b27",
+  "source_bundle_prerequisite": "d74498b261d087a301b80602835bc7199a067957",
+  "free_bytes_before": 2212282368,
+  "retired": true,
+  "retired_at": "2026-10-12T06:15:34.494867+00:00",
+  "free_bytes_after": 3598123008
+}

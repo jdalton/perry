@@ -1,0 +1,68 @@
+{
+  "issue": 12007,
+  "title": "fix(hir): preserve TDZ for class expressions",
+  "body_file": "/workspace/work/perry-queue/publication/12007/pr-body.md",
+  "head": {
+    "branch": "cloud/issue-12007-class-expression-tdz",
+    "sha": "765a94d31e9b129641c5046c65b06624c6ad7358"
+  },
+  "base": "main",
+  "issue_state": "OPEN",
+  "related_issue_11995": {
+    "decision": "Non-overlapping residual; 11995 handles exported ESM cycle sentinels and CJS wrapper identity, and explicitly left class-expression const TDZ out of scope.",
+    "evidence": "/workspace/work/perry-queue/planning/12007-11995-overlap-decision.json"
+  },
+  "tested_scope": {
+    "fresh_coherent_dev_build": {
+      "status": "passed",
+      "command": "cargo build -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "record": "/workspace/work/perry-queue/12007-validated-765a94.json",
+      "artifacts_sha256": {
+        "perry": "98bf5f7e3672bc63a94ddaef78e2f67fae47b407f6d64ad8da3d825b43ea0ba8",
+        "libperry_runtime.a": "c058a7c7a7b21055eef84bed2778ea23a2b082a18dbf6282ac45413e0eb39807",
+        "libperry_stdlib.a": "d3c2bd4dbaa382a0583b39a42b280906f7edfade6b4af71ef4c13bde88de6dbd"
+      }
+    },
+    "compiled_parity": {
+      "status": "passed",
+      "optimization": "no-auto-optimize",
+      "node": "/workspace/.toolchains/node-26.5.1/bin/node v26.5.1",
+      "main_fixture": "compiled Perry output matched pinned Node output; exit 0",
+      "direct_anonymous_initializer": "Node and Perry both exit 1 with expected ReferenceError",
+      "record": "/workspace/work/perry-queue/12007-validated-765a94.json"
+    },
+    "focused_hir_test": {
+      "status": "reused unchanged-source pass",
+      "result": "1 passed, 644 filtered out",
+      "command": "cargo test -p perry-hir module_lexical_class_expression_binding_is_tdz_checked",
+      "basis": "HIR implementation/test diff between tested commit and 765a94 is empty; not rerun at exact head"
+    },
+    "full_lint": {
+      "status": "pending",
+      "command": "./scripts/run_lint_gates.sh",
+      "log": "/workspace/work/perry-queue/12007-full-lint-765a94.log",
+      "current_observation": "Windows xwin check reports network access denied while fetching Microsoft CRT metadata; driver remains active and final result is pending."
+    }
+  },
+  "limitations_and_history": [
+    "Earlier build attempt was interrupted when disk reserve fell below 295 MB; a clean retry completed the matching three-package dev build successfully. See 12007-committed-build-result.json and 12007-validated-765a94.json.",
+    "The initial e8ad66b fixture run surfaced Perry dynamic-import module-evaluation rejection behavior that escaped the fixture rejection handler and prevented later control output. The follow-up commit 765a94 isolates the direct self-initializer ReferenceError in a separate process and uses a non-dynamic-import aggregate fixture. This is a fixture isolation; dynamic-import rejection behavior remains a separate limitation.",
+    "Compiled acceptance covers no-auto-optimize only; optimized compiled parity was not run.",
+    "The gap-test wrapper stopped in setup because the validation checkout lacks root node_modules; direct pinned Node and Perry commands were run instead."
+  ],
+  "publication": {
+    "draft_creation_allowed": false,
+    "reason": "Mandatory full lint gate results have not yet been classified. Do not push or create PR until complete.",
+    "fragment": "Create only after actual PR number is assigned."
+  },
+  "source": "/workspace/work/perry-queue/issue-12007",
+  "clean_worktree": true,
+  "overlap_review": "/workspace/work/perry-queue/planning/12007-11995-overlap-decision.json",
+  "validation_record": "/workspace/work/perry-queue/12007-validated-765a94.json",
+  "checkout_retirement": {
+    "canonical_worktree": "/workspace/work/perry-queue/issue-12007 was removed after clean/idle checks; exact candidate commit 765a94d31e9b129641c5046c65b06624c6ad7358 is retained by branch and verified snapshot bundle.",
+    "active_validation_checkout": "/workspace/work/perry-queue/issue-9927 is detached and must not be switched during active validation.",
+    "fragment_after_real_pr_number": "Reconstruct canonical checkout with `git -C /workspace/perry worktree add /workspace/work/perry-queue/issue-12007 cloud/issue-12007-class-expression-tdz`, or use an idle fixed checkout already on the branch. Never switch the active validation checkout.",
+    "push": "Can use the common repository without a checkout."
+  }
+}

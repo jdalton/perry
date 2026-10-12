@@ -68,7 +68,7 @@
       "task": "/root/luna_class_tdz",
       "branch": "cloud/issue-12007-class-expression-tdz",
       "worktree": "/workspace/work/perry-queue/issue-12007",
-      "validation": "Exact corrected head765a94d: matching compiler/runtime/stdlib trio PASS with incremental=0; aggregate and direct ReferenceError witnesses running; full lint pending. Prior interruptions and dynamic-import fixture failure preserved.",
+      "validation": "Exact765a94d matching trio PASS; aggregate no-auto Node parity PASS; separate direct ReferenceError subprocess PASS; unchanged-source HIR unit1pass reused; full lint running",
       "merge_state": "no PR",
       "closure_state": "OPEN",
       "evidence": "issue12007-status.json; refreshed 25 open PR inventories with no exact-path overlap",
@@ -77,7 +77,8 @@
       "current_head": "765a94d31e9b129641c5046c65b06624c6ad7358",
       "has_uncommitted_changes": false,
       "remaining": "Serial matching build, compiled acceptance and full lint in fixed issue-9927 validation checkout after12285 releases",
-      "validation_owner": "/root/luna_verification"
+      "validation_owner": "/root/luna_verification",
+      "worktree_state": "Redundant canonical checkout retired; branch/tree/source bundle retained; active validation in issue-9927"
     },
     {
       "issue": 10198,
@@ -220,18 +221,19 @@
       "task": "/root/luna_class_tdz",
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "worktree": "/workspace/work/perry-queue/issue-12202",
-      "current_head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-      "has_uncommitted_changes": true,
-      "validation": "Astra source clear at diff SHA d8db10835698527f416be5e2372a6f80d2a06a2938a26b23c29e8baa915cc047; pinned Node oracle PASS; no Cargo/Perry validation yet",
+      "current_head": "6ed44871f1a2d45920433242236f98a5772681c7",
+      "has_uncommitted_changes": false,
+      "validation": "Astra source clear; expanded Node oracle PASS; no candidate Cargo/Perry or full lint yet",
       "merge_state": "no PR",
       "closure_state": "OPEN",
       "refreshed_at": "2026-10-12T05:29:00.306974+00:00",
       "evidence": "planning/12202-go-no-go.json and referenced byte-metadata plan",
-      "publication_state": "Implementation authorized; source review required before compilation",
-      "remaining": "Runtime byte-metadata migration/Node fixtures, bounded source review, committed-head matching build/scoped compiled tests/full lint; no publication before validation"
+      "publication_state": "Committed source; serial validation queued after12007/11519/10739",
+      "remaining": "Runtime byte-metadata migration/Node fixtures, bounded source review, committed-head matching build/scoped compiled tests/full lint; no publication before validation",
+      "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T06:10:44.090203+00:00",
+  "updated_at": "2026-10-12T06:17:39.188264+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

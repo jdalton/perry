@@ -1,0 +1,32 @@
+{
+  "issue": "12202",
+  "path": "/workspace/work/perry-queue/issue-12202",
+  "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+  "tree": "7262e69cc2abfa9e0a9458b4efbaf528c5ecdf28",
+  "branch": "cloud/issue-12202-wtf8-class-keys",
+  "status": "",
+  "ignored": [],
+  "containing_refs": [
+    "refs/heads/cloud/issue-12202-wtf8-class-keys"
+  ],
+  "common": "/workspace/perry/.git",
+  "nonstandard_index_flags": 0,
+  "nested_git": [],
+  "symlinks": [
+    {
+      "path": "benchmarks/honest_bench/workloads/3_image_convolution/bun/image_conv.ts",
+      "target": "../node/image_conv.ts"
+    },
+    {
+      "path": "benchmarks/honest_bench/workloads/1_json_pipeline/bun/json_pipeline.ts",
+      "target": "../node/json_pipeline.ts"
+    }
+  ],
+  "allocated_size": "1.3G",
+  "source_bundle_sha256": "82020c96e02e2cca57666c20cbf197637f1d1fd9b15bc3e409550f82c071d624",
+  "source_bundle_prerequisite": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "free_bytes_before": 3598098432,
+  "retired": true,
+  "retired_at": "2026-10-12T06:15:35.448848+00:00",
+  "free_bytes_after": 4984225792
+}

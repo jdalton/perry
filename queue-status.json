@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T06:10:44.090203+00:00",
+  "checked_at": "2026-10-12T06:17:39.188264+00:00",
   "original224_total": 224,
   "original_open": 182,
   "original_closed": 42,
@@ -122,9 +122,10 @@
         12007
       ],
       "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
-      "state": "Exact corrected-head trio PASS; aggregate/direct-error acceptance running; full lint pending",
+      "state": "Exact corrected-head trio and both no-auto acceptance witnesses PASS; full lint running",
       "draft_creation_allowed": false,
-      "ready_for_review": false
+      "ready_for_review": false,
+      "packet": "publication/12007/packet.json"
     },
     {
       "issues": [
@@ -152,9 +153,9 @@
         12202
       ],
       "branch": "cloud/issue-12202-wtf8-class-keys",
-      "head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-      "has_uncommitted_changes": true,
-      "state": "Astra source clear; bounded build plan being prepared; no Cargo/Perry validation",
+      "head": "6ed44871f1a2d45920433242236f98a5772681c7",
+      "has_uncommitted_changes": false,
+      "state": "Committed, Astra source clear; runtime-only build plan prepared; compiled validation queued",
       "draft_creation_allowed": false,
       "ready_for_review": false
     }
@@ -162,7 +163,7 @@
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit.",
   "actual_prs_created_in_continuation": 3,
-  "validation_resource_event": "Only one validation owner. Retired redundant clean10198 and baseline checkouts with source refs/tree/snapshots preserved; idle archives retained losslessly compressed. Previous build interruptions and fixture failure remain disclosed.",
+  "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
   "updated_at": "2026-10-12T05:48:03.894965+00:00",
   "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00",
   "upstream_reconciliation_12285": {
@@ -180,5 +181,6 @@
     10739,
     12202
   ],
-  "cargo_incremental": 0
+  "cargo_incremental": 0,
+  "active_issue_state_evidence": "planning/active-issue-milestone-states.json"
 }
