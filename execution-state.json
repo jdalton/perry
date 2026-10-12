@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-12T11:18:56.127327+00:00",
+  "updated_at": "2026-10-12T11:28:25Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": null,
   "next_steps": [
-    "Finish12202 scoped runtime/trio/parity/full lint at corrected head; stop on candidate failure",
-    "Continue bounded uncovered-issue selection without duplicate or speculative changes"
+    "Resolve the migrated test allowance/count preflight blocker at 705cc and rerun candidate-sensitive static gates",
+    "Only after static preflight clears, run exact-head focused tests, matching trio, compiled Node parity, auto-opt and complete lint accounting"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -126,13 +126,14 @@
   "latest_handoff": "705sourcehardeningclear; Cargohelduntilstaticpreflight",
   "current_serial_issue": 12202,
   "serial_pending": [
-    "705staticpreflight thenexactvalidation"
+    "705cc migrated-test allowance/count correction and static-preflight rerun",
+    "exact-head validation only after preflight clears"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
   "validation_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
   "pending_validation_head": null,
   "serial_concurrency_incident": "Warningcheck briefly overlappedfocusedcompile; stopped; no resultclaimed; ownedchildexitverification andserialrerun required",
-  "validation_policy": "Runtimecodechangedafterformat-only56; old705behaviornotvalidated. Exact-head checks required aftercandidate-sensitive staticclear.",
+  "validation_policy": "Cargo/Perry validation is blocked pending correction of the existing migrated-test allowance/count at class_value/tests.rs:271; do not treat prior-head passes as current-head acceptance.",
   "serial_static_owner": "/root/luna_tls_checker"
 }

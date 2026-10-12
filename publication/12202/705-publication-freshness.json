@@ -1,0 +1,229 @@
+{
+  "issue": 12202,
+  "observed_at_utc": "2026-10-12T11:28:25Z",
+  "candidate": {
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+    "candidate_path_count": 33,
+    "rust_path_count": 31,
+    "non_rust_paths": [
+      "scripts/string_payload_access_baseline.txt",
+      "test-files/test_issue_12202_wtf8_class_keys.ts"
+    ],
+    "changed_paths": [
+      "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "crates/perry-runtime/src/closure/mod.rs",
+      "crates/perry-runtime/src/closure/props.rs",
+      "crates/perry-runtime/src/object/accessor_pair.rs",
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+      "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/class_value/tests.rs",
+      "crates/perry-runtime/src/object/descriptor_state.rs",
+      "crates/perry-runtime/src/object/descriptors.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+      "scripts/string_payload_access_baseline.txt",
+      "test-files/test_issue_12202_wtf8_class_keys.ts"
+    ]
+  },
+  "live_issue": {
+    "state": "open",
+    "updated_at": "2026-10-08T11:06:28Z",
+    "comments": 0,
+    "closed_at": null,
+    "url": "https://github.com/PerryTS/perry/issues/12202",
+    "title": "class method with a lone-surrogate computed name (`[\"\\uD800\"]() {}`) is registered under an empty name",
+    "comment_timeline_count": 0
+  },
+  "current_main": {
+    "ref": "main",
+    "latest_observed_commit": "8e5224dc6844d2bf60aa536a6cc4c88926c6da63",
+    "commit_message": "perf(alloc): one native TLS address per function; complete fresh constructor births omit redundant barriers (binary-trees −12%, root-survival −13%)",
+    "commit_time": "2026-10-12T10:23:12Z",
+    "comparison": {
+      "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+      "head": "main",
+      "status": "ahead",
+      "ahead_by": 23,
+      "behind_by": 0,
+      "changed_path_count": 163,
+      "overlap_paths": [
+        "crates/perry-runtime/src/object/mod.rs"
+      ],
+      "overlap_hunk": "crates/perry-runtime/src/object/mod.rs gains only mod class_accessor_guard; relative to bc862; unrelated to the WTF-8 candidate hunks."
+    }
+  },
+  "pr_12263": {
+    "number": 12263,
+    "title": "test: inspect deleted evaluation methods without invoking them",
+    "state": "open",
+    "merged": false,
+    "base": "main",
+    "base_sha": "abb472dacd3f0eec9b7869c86f30363a08bd9d26",
+    "head": "test/s7b-evaluation-deletion-control",
+    "head_sha": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+    "changed_path_count": 71,
+    "overlap_paths": [
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+    ],
+    "overlap_count": 14,
+    "body_scope": "Open class identity-word / method-slot / cache / ABI stack with test-only title; body references #10502/#12240 and does not claim #12202.",
+    "fresh_hunk_review": "The current candidate PR overlap is 14 paths. In class_value.rs, PR 12263 changes class_value_band visibility to pub(super), already so at candidate 705cc; candidate changes are WTF-8 byte handling and moving cfg(test) module contents to a child file. In native_call_method.rs its hunks expose class_holder and use class_method_slot_target; candidate's with_const_ptr(nanbox_string_key) change is elsewhere. For the other overlapping paths, see existing semantic review planning/12202-12263-publication-overlap-decision.json: no duplicate WTF-8 migration or demonstrated semantic blocker; integration/merge-order risk remains."
+  },
+  "duplicate_search": {
+    "query": "repo:PerryTS/perry 12202",
+    "result_count": 0,
+    "results": []
+  },
+  "status_metadata": {
+    "packet": {
+      "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+      "checked_at": "2026-10-12T10:37:42Z",
+      "scope": "Preserve exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. Candidate scope includes 30 runtime Rust files, one fixture, and one access-baseline inventory row; final head adds formatter-only changes to 14 Rust files; no codegen or ABI changes.",
+      "source_review": "/workspace/work/perry-queue/planning/12202-warning-cleanup-review.json",
+      "issue_state_snapshot": "../../planning/12202-prepublication-freshness.json",
+      "readiness": "SOURCE_CLEAR; STATIC_PREFLIGHT_AND_FINAL_VALIDATION_PENDING",
+      "flags": {
+        "draft_creation_allowed": false,
+        "ready_for_review": false,
+        "ready_to_publish": false,
+        "external_pr_created": false,
+        "pushed_to_fork": false,
+        "full_lint_complete": false
+      },
+      "validation_issue_state": {
+        "state": "open",
+        "updated_at": "2026-10-08T11:06:28Z",
+        "comments": 0,
+        "checked_at": "2026-10-12T06:16:56.712832Z",
+        "source": "/workspace/work/perry-queue/planning/active-issue-milestone-states.json",
+        "current_live_refresh_performed": false
+      },
+      "validation_source_scope": {
+        "changed_files_total": 32,
+        "runtime_rust_files": 30,
+        "fixture_files": 1,
+        "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
+        "inventory_files": 1,
+        "inventory_file": "scripts/string_payload_access_baseline.txt",
+        "codegen_or_abi_changes": false,
+        "diffstat": "32 files changed, 1804 insertions(+), 643 deletions(-)",
+        "path_list_source": "git diff --name-only bc8625f64fd829af5463c8cde8368ec7947f31a1..266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
+        "provenance_after_4e": {
+          "parent_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
+          "changed_paths": [
+            "scripts/string_payload_access_baseline.txt"
+          ],
+          "rust_source_changed": false,
+          "meaning": "53 unique focused tests (55 executions) passed at 4e; this file-only inventory update does not make those results an exact-266 run."
+        },
+        "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+        "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
+      }
+    },
+    "claim": {
+      "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+      "refreshed_at": "2026-10-12T05:29:00.306974+00:00",
+      "validation": "705cc sourceclear, scopedfmt/diff/rawhandle-no-raisePASS; file-sizeonly3baselineoffenders. Runtime/buildsnotrun. Prior56freshtrio/fixturePASS butnewrawhandle+1 andclass_value2061failed;56full driverinterrupted20rows. 266autoresultspriorheadonly; no matchingnewvalidationclaim.",
+      "worktree_state": "Canonical restored and clean; sole validation checkout issue-9927 detached at b4b8",
+      "remaining": "Finishallcandidate-sensitive staticpreflight; thenexact705runtime/warnings/trio/parity/auto/full lint; refreshbeforepublication",
+      "publication_state": "Not ready; staticpreflight blocks Cargo"
+    },
+    "execution": {
+      "updated_at": "2026-10-12T11:18:56.127327+00:00",
+      "current_serial_issue": 12202,
+      "serial_pending": [
+        "705staticpreflight thenexactvalidation"
+      ],
+      "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+      "validation_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+      "pending_validation_head": null,
+      "validation_policy": "Runtimecodechangedafterformat-only56; old705behaviornotvalidated. Exact-head checks required aftercandidate-sensitive staticclear."
+    },
+    "validation_slot_owner": {
+      "checked_at": "2026-10-12T07:58:45.831174+00:00",
+      "owner": "cloud /root/luna_verification",
+      "checkout": "/workspace/work/perry-queue/issue-9927",
+      "next_task": "10739 full lint at1ce48b9d067c02456d49fe2257c184ba6b26e71e; afterlocal11519PR assignment prioritizeactualfragmentfinalhead at nextsafe boundary.",
+      "active_processes": "Verifier confirmed no active cargo/rustc before switching"
+    },
+    "publisher_snapshot": {
+      "path": "planning/12202-publisher-status-snapshot.json",
+      "sha256": "4b8f2e1640711aec258092222c4e71dc7c90de1be46442ebb42e481d43df4691",
+      "updated_at": "2026-10-12T08:57:48.728555+00:00",
+      "live_issue_snapshot": {
+        "repo_open": 190,
+        "original_open": 180,
+        "original_closed": 44,
+        "observed_at": "2026-10-12T07:28:51Z",
+        "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
+      },
+      "batch_counts": {
+        "opened": 5,
+        "remaining": 15,
+        "merged": 5
+      }
+    },
+    "latest_counts_from_parent_ledger": {
+      "observed_at": "2026-10-12T10:43:51Z",
+      "repo_open": 191,
+      "original_open": 180,
+      "original_closed": 44,
+      "new_open": 11,
+      "coverage": {
+        "uncovered": 142,
+        "uncertain": 18,
+        "covered": 20,
+        "closed": 44
+      }
+    },
+    "stale_notes": [
+      "Packet checked_at is 10:37 and validation issue_state says current_live_refresh_performed=false; live #12202 is still open, zero comments, updated 2026-10-08, but packet timestamp is stale.",
+      "Packet metadata scope/source_review and validation source_scope still describe pre-705 scope (32 total, 30 Rust, old 266 head); exact 705 diff is 33 paths: 31 Rust plus fixture and inventory. Readiness flags remain false and were not changed.",
+      "claims.json claim refreshed_at remains 05:29 and worktree_state says issue-9927 detached at b4b8; actual issue-9927 checkout is 56c6, while canonical issue-12202 is clean at 705. Claim validation text itself describes 705 static checks as passed and builds/tests pending.",
+      "execution-state was updated 11:18; current serial issue/head/validation head 12202/705 and serial_pending static preflight then exact validation are consistent. validation-slot-owner.json is stale at 07:58 and still names 10739; parent says verifier will refresh it at GO.",
+      "publisher-status inbox is stale at 08:57 with a live issue snapshot at 07:28 (repo 190 open). claims current new_batch snapshot is 10:43 (repo 191 open); do not replace the newer original224 counts with inbox counts."
+    ]
+  },
+  "actions": {
+    "readiness_changed": false,
+    "ledger_changed": false,
+    "claims_or_execution_edited": false,
+    "source_edited": false,
+    "external_writes": false,
+    "builds": false
+  }
+}

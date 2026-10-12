@@ -5,33 +5,59 @@
   "worktree_retired": false,
   "source_bundle": "/workspace/work/perry-queue/snapshots/retired-12202",
   "source_scope": {
-    "changed_files_total": 32,
-    "runtime_rust_files": 30,
+    "changed_files_total": 33,
+    "runtime_rust_files": 31,
     "fixture_files": 1,
     "fixture": "test-files/test_issue_12202_wtf8_class_keys.ts",
     "inventory_files": 1,
     "inventory_file": "scripts/string_payload_access_baseline.txt",
     "codegen_or_abi_changes": false,
-    "diffstat": "32 files changed, 1804 insertions(+), 643 deletions(-)",
-    "path_list_source": "git diff --name-only bc8625f64fd829af5463c8cde8368ec7947f31a1..266eaf0af23bcef433f50b4b6bb9daf4df87db8d",
-    "provenance_after_4e": {
-      "parent_head": "4e0241768d5c1031fac10fa8dcacae8629fcc038",
-      "changed_paths": [
-        "scripts/string_payload_access_baseline.txt"
-      ],
-      "rust_source_changed": false,
-      "meaning": "53 unique focused tests (55 executions) passed at 4e; this file-only inventory update does not make those results an exact-266 run."
-    },
-    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-    "head": "266eaf0af23bcef433f50b4b6bb9daf4df87db8d"
+    "base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "path_list_source": "705-publication-freshness.json",
+    "changed_paths": [
+      "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "crates/perry-runtime/src/closure/mod.rs",
+      "crates/perry-runtime/src/closure/props.rs",
+      "crates/perry-runtime/src/object/accessor_pair.rs",
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_accessors.rs",
+      "crates/perry-runtime/src/object/class_registry/decl_prototype_birth.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations.rs",
+      "crates/perry-runtime/src/object/class_registry/declarations_tests.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/static_accessor_call.rs",
+      "crates/perry-runtime/src/object/class_registry/prototype_methods.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/class_value/tests.rs",
+      "crates/perry-runtime/src/object/descriptor_state.rs",
+      "crates/perry-runtime/src/object/descriptors.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_props.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name.rs",
+      "crates/perry-runtime/src/object/field_set_by_name/tail.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_call_method/invalid_utf8_method_tests.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs",
+      "scripts/string_payload_access_baseline.txt",
+      "test-files/test_issue_12202_wtf8_class_keys.ts"
+    ]
   },
   "issue_state": {
     "state": "open",
     "updated_at": "2026-10-08T11:06:28Z",
     "comments": 0,
-    "checked_at": "2026-10-12T06:16:56.712832Z",
-    "source": "/workspace/work/perry-queue/planning/active-issue-milestone-states.json",
-    "current_live_refresh_performed": false
+    "checked_at": "2026-10-12T11:28:25Z",
+    "source": "705-publication-freshness.json",
+    "current_live_refresh_performed": true
   },
   "overlap_evidence": {
     "issue_specific_pr_search": "No result for repo:PerryTS/perry is:pr 12202 lone surrogate computed method name.",
@@ -60,7 +86,7 @@
   },
   "acceptance_matrix": {
     "static_preflight": {
-      "status": "PENDING; root preflight required before build authorization"
+      "status": "BLOCKED on migrated test allowance correction; rerun candidate-sensitive static checks before authorizing Cargo."
     },
     "source_checks": {
       "status": "PASS at exact 705cc",
@@ -72,23 +98,23 @@
       "evidence": "705cc-source-evidence.json"
     },
     "focused_runtime_units": {
-      "status": "NOT RUN at 705cc; pending static preflight",
+      "status": "NOT RUN at 705cc; blocked by static preflight.",
       "prior_56c6": "53 unique tests across 55 executions at 4e; not 705cc evidence"
     },
     "matching_dev_trio": {
-      "status": "NOT RUN at 705cc; pending static preflight",
+      "status": "NOT RUN at 705cc; blocked by static preflight.",
       "prior_56c6": "PASS; prior-56c6-acceptance-evidence.json"
     },
     "compiled_fixture_vs_node": {
-      "status": "NOT RUN at 705cc; pending static preflight",
+      "status": "NOT RUN at 705cc; blocked by static preflight.",
       "prior_56c6": "PASS no-auto; prior-56c6-acceptance-evidence.json"
     },
     "auto_opt": {
-      "status": "NOT RUN at 705cc",
+      "status": "NOT RUN at 705cc; blocked by static preflight.",
       "prior_266": "PASS genuine auto-opt; previous-266-acceptance-evidence.json"
     },
     "full_lint": {
-      "status": "NOT RUN at 705cc; complete gate accounting pending",
+      "status": "NOT RUN at 705cc; complete gate accounting pending and static preflight blocks execution.",
       "prior_56c6": {
         "status": "INTERRUPTED after 20 gate rows; no final summary",
         "record": "/workspace/work/perry-queue/12202-56c6-full-lint-interruption.json"
@@ -115,6 +141,7 @@
     "ready_for_review": false,
     "ready_to_publish": false,
     "external_pr_created": false,
+    "pushed_to_fork": false,
     "pr_number": null
   },
   "correction_source_review": {
@@ -136,7 +163,7 @@
   "compile_retry": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
     "status": "matching trio and focused tests pass; compiled fixture mismatch blocks further acceptance",
-    "runtime_or_compiler_result": "compile successful; Perry fixture exits 1 with TypeError: ��� is not a function"
+    "runtime_or_compiler_result": "compile successful; Perry fixture exits 1 with TypeError: \ufffd\ufffd\ufffd is not a function"
   },
   "pointer_correction": {
     "commit": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
@@ -181,7 +208,7 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "SOURCE_CLEAR; STATIC_PREFLIGHT_AND_FINAL_VALIDATION_PENDING",
+  "readiness": "SOURCE_REVIEWED; STATIC_PREFLIGHT_BLOCKED_ON_MIGRATED_TEST_ALLOWANCE; FINAL_VALIDATION_PENDING",
   "current_head_validation": {
     "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
     "status": "source clear; static preflight and final validation pending",
@@ -249,7 +276,7 @@
       "node_version": "v26.5.1",
       "perry_exit": 1,
       "parity_exit": 1,
-      "observed_error": "TypeError: ��� is not a function",
+      "observed_error": "TypeError: \ufffd\ufffd\ufffd is not a function",
       "evidence_directory": "/workspace/work/perry-queue/12202-70123-acceptance"
     },
     "diagnostic_status": "Exact d047 JSON leaves identify accessor outputs as the only target-value mismatch; computed default length is a separate generic mismatch. Factory outputs were equal in original d047 fixture.",
@@ -780,5 +807,46 @@
   "node_12211_probe_disclosure": "Separate derived-artifact #12211 diagnostic; no #12202 test or validation credit.",
   "exact_705cc_source_evidence": "705cc-source-evidence.json",
   "prior_56c6_acceptance_evidence": "prior-56c6-acceptance-evidence.json",
-  "prior_266_acceptance_evidence": "previous-266-acceptance-evidence.json"
+  "prior_266_acceptance_evidence": "previous-266-acceptance-evidence.json",
+  "freshness": {
+    "checked_at": "2026-10-12T11:28:25Z",
+    "issue_state": "OPEN",
+    "current_main_head": "8e5224dc6844d2bf60aa536a6cc4c88926c6da63",
+    "current_main_changed_paths": 163,
+    "candidate_main_overlap_paths": [
+      "crates/perry-runtime/src/object/mod.rs"
+    ],
+    "candidate_main_overlap_review": "crates/perry-runtime/src/object/mod.rs gains only mod class_accessor_guard; relative to bc862; unrelated to the WTF-8 candidate hunks.",
+    "pr_12263_state": "OPEN",
+    "pr_12263_overlap_count": 14,
+    "pr_12263_overlap_paths": [
+      "crates/perry-runtime/src/object/class_image.rs",
+      "crates/perry-runtime/src/object/class_registry.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static.rs",
+      "crates/perry-runtime/src/object/class_registry/parent_static/private_and_dynamic.rs",
+      "crates/perry-runtime/src/object/class_registry/registration.rs",
+      "crates/perry-runtime/src/object/class_registry/state.rs",
+      "crates/perry-runtime/src/object/class_value.rs",
+      "crates/perry-runtime/src/object/field_get_set/class_object_template.rs",
+      "crates/perry-runtime/src/object/field_get_set/get_field_by_name.rs",
+      "crates/perry-runtime/src/object/mod.rs",
+      "crates/perry-runtime/src/object/native_call_method.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_bind.rs",
+      "crates/perry-runtime/src/object/native_module/class_method_values.rs",
+      "crates/perry-runtime/src/object/native_module/class_ref_values.rs"
+    ],
+    "semantic_decision": "No demonstrated duplicate semantics; merge-order risk remains.",
+    "evidence": "705-publication-freshness.json"
+  },
+  "current_head_preflight": {
+    "status": "BLOCKED; migrated test allowance/count correction and rerun required before Cargo.",
+    "head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
+    "blocker": "class_value/tests.rs:271 migrated tests lack the existing direct classify_heap_generation allowance and retain stale old write_once_then_minors count; minimal correction under Astra review.",
+    "raw_handle_no_raise": "PASS; 1203 total, equal to base",
+    "scoped_rustfmt": "PASS",
+    "git_diff_check": "PASS",
+    "file_size": "class_value.rs 1588 lines; three unrelated parent-known offenders",
+    "builds_or_runtime": "NOT RUN; preflight blocks",
+    "evidence": "705cc-source-evidence.json"
+  }
 }

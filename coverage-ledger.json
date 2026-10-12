@@ -1,6 +1,6 @@
 {
   "cohort": "original224",
-  "state_observed_at": "2026-10-12T10:43:51Z",
+  "state_observed_at": "2026-10-12T11:28:25Z",
   "classification_updated_at": "2026-10-12T10:44:58.593278+00:00",
   "counts": {
     "covered": 20,
@@ -385,10 +385,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-12202-wtf8-class-keys",
         "current_head": "705ccdae079d6aa0c8680ef90bbfb9ec93739c40",
-        "validation": "705cc sourceclear, scopedfmt/diff/rawhandle-no-raisePASS; file-sizeonly3baselineoffenders. Runtime/buildsnotrun. Prior56freshtrio/fixturePASS butnewrawhandle+1 andclass_value2061failed;56full driverinterrupted20rows. 266autoresultspriorheadonly; no matchingnewvalidationclaim.",
+        "validation": "705cc raw-handle no-raise PASS (1203 equals base), scoped format/diff PASS; class_value.rs 1588. Static preflight BLOCKED by migrated-test allowance/count mismatch at class_value/tests.rs:271; no build/runtime/full-lint at 705. Freshness/overlap: publication/12202/705-publication-freshness.json.",
         "merge_state": "no PR",
         "closure_state": "OPEN",
-        "publication_state": "Not ready; staticpreflight blocks Cargo"
+        "publication_state": "Not ready; migrated-test static preflight correction and rerun required before Cargo."
       }
     },
     {
