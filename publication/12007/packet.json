@@ -1,7 +1,7 @@
 {
   "issue": 12007,
   "title": "fix(hir): preserve TDZ for class expressions",
-  "body_file": "/workspace/work/perry-queue/publication/12007/pr-body.md",
+  "body_file": "/workspace/work/perry-queue/publication/12007/body.md",
   "head": {
     "branch": "cloud/issue-12007-class-expression-tdz",
     "sha": "765a94d31e9b129641c5046c65b06624c6ad7358"
@@ -52,7 +52,7 @@
   ],
   "publication": {
     "draft_creation_allowed": false,
-    "reason": "Mandatory full lint gate results have not yet been classified. Do not push or create PR until complete.",
+    "reason": "Full lint is pending; keep ready_for_review false until all mandatory checks are complete and classified.",
     "fragment": "Create only after actual PR number is assigned."
   },
   "source": "/workspace/work/perry-queue/issue-12007",
@@ -64,5 +64,13 @@
     "active_validation_checkout": "/workspace/work/perry-queue/issue-9927 is detached and must not be switched during active validation.",
     "fragment_after_real_pr_number": "Reconstruct canonical checkout with `git -C /workspace/perry worktree add /workspace/work/perry-queue/issue-12007 cloud/issue-12007-class-expression-tdz`, or use an idle fixed checkout already on the branch. Never switch the active validation checkout.",
     "push": "Can use the common repository without a checkout."
+  },
+  "relay_metadata_file": "/workspace/work/perry-queue/publication/12007/metadata.json",
+  "body_validation_limitations": {
+    "platform": "Linux only; no macOS runtime result claimed.",
+    "optimization": "Compiled parity exercised with --no-auto-optimize only.",
+    "dynamic_import": "The separate dynamic-import module-evaluation rejection behavior remains unfixed; the acceptance fixture isolates the TDZ witness in a separate process.",
+    "wrapper": "Gap-test wrapper did not run because validation checkout lacks root node_modules; direct pinned Node and Perry commands were used.",
+    "full_lint": "Pending; no provisional counts or pass claim."
   }
 }

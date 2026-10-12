@@ -143,7 +143,7 @@
     {
       "issue": 8085,
       "cohort": "original224",
-      "coverage": "uncovered",
+      "coverage": "closed",
       "covering_prs": [],
       "scope": "Bounded freshness-checker false missing-execution alert; does not repair actual npm publication failures",
       "owner": "cloud /root/luna_tls_checker",
@@ -152,14 +152,14 @@
       "worktree": "/workspace/work/perry-queue/issue-9927",
       "validation": "Fragment-head scoped Python checks PASS; only numbered fragment changed; prior full lint non-green reused, not repeated",
       "merge_state": "MERGED PR12444",
-      "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T02:00:56.836454+00:00",
-      "evidence": "planning/next-candidates/9927-8085-bounded-plan.json; fresh issue JSON and 24 open PR overlap scan",
-      "publication_state": "Merged partial repair",
+      "closure_state": "CLOSED",
+      "refreshed_at": "2026-10-12T06:29:21.546162+00:00",
+      "evidence": "planning/original224-state-refresh-2026-10-12T062742Z.json",
+      "publication_state": "Partial PR12444 merged; issue separately observed closed by bot",
       "current_head": "8b948e1f994cbede27584e3ebf985f992ed75676",
       "has_uncommitted_changes": false,
       "pushed_commit": "8b948e1f994cbede27584e3ebf985f992ed75676",
-      "remaining": "Residual original issue scope unresolved",
+      "remaining": "No current original issue action; no whole-scope resolution attributed to partial repair",
       "publication_coverage_policy": "Refs-only partial repair; a future draft is not by itself whole-issue coverage or closure. Keep uncovered unless separate full-scope evidence establishes coverage.",
       "local_publication_packet": "publication/9927",
       "partial_prs": [
@@ -233,7 +233,7 @@
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T06:17:39.188264+00:00",
+  "updated_at": "2026-10-12T06:29:21.546162+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
@@ -279,10 +279,11 @@
     "remaining": 18,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
-      "repo_open": 188,
-      "original_closed": 40,
-      "original_open": 184,
-      "note": "Historical full inventory, superseded for original issue counts by current coverage_counts: 41 closed, 183 open; not a current repository-wide issue total."
+      "repo_open": 186,
+      "original_closed": 43,
+      "original_open": 181,
+      "observed_at": "2026-10-12T06:27:42Z",
+      "evidence": "planning/original224-state-refresh-2026-10-12T062742Z.json"
     },
     "drafts": 0,
     "ready_for_review": 0,
@@ -292,7 +293,12 @@
     "remaining_to_good_state": 18,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2,
-    "original_issues_closed": 1,
-    "evidence_source": "live GitHub REST newer than publisher inbox"
+    "original_issues_closed": 2,
+    "evidence_source": "live GitHub REST newer than publisher inbox",
+    "observed_closed_referenced_originals": [
+      8085,
+      10198
+    ],
+    "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs"
   }
 }

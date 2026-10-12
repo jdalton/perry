@@ -1,23 +1,23 @@
 {
-  "checked_at": "2026-10-12T06:17:39.188264+00:00",
+  "checked_at": "2026-10-12T06:29:21.546162+00:00",
   "original224_total": 224,
-  "original_open": 182,
-  "original_closed": 42,
+  "original_open": 181,
+  "original_closed": 43,
   "open_new_excluded": [
     12396,
     12408,
     12425,
-    12435
+    12435,
+    12448
   ],
   "merged_prs_this_turn": 3,
-  "original_issues_closed_this_turn": 2,
   "coverage_counts": {
-    "uncovered": 149,
+    "uncovered": 148,
     "uncertain": 13,
     "covered_open": 20,
-    "closed": 42
+    "closed": 43
   },
-  "conservative_uncovered_upper_bound": 162,
+  "conservative_uncovered_upper_bound": 161,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -61,10 +61,11 @@
     "remaining": 18,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
-      "repo_open": 188,
-      "original_closed": 40,
-      "original_open": 184,
-      "note": "Historical full inventory, superseded for original issue counts by current coverage_counts: 41 closed, 183 open; not a current repository-wide issue total."
+      "repo_open": 186,
+      "original_closed": 43,
+      "original_open": 181,
+      "observed_at": "2026-10-12T06:27:42Z",
+      "evidence": "planning/original224-state-refresh-2026-10-12T062742Z.json"
     },
     "drafts": 0,
     "ready_for_review": 0,
@@ -74,8 +75,13 @@
     "remaining_to_good_state": 18,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2,
-    "original_issues_closed": 1,
-    "evidence_source": "live GitHub REST newer than publisher inbox"
+    "original_issues_closed": 2,
+    "evidence_source": "live GitHub REST newer than publisher inbox",
+    "observed_closed_referenced_originals": [
+      8085,
+      10198
+    ],
+    "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs"
   },
   "packets": [
     {
@@ -125,7 +131,7 @@
       "state": "Exact corrected-head trio and both no-auto acceptance witnesses PASS; full lint running",
       "draft_creation_allowed": false,
       "ready_for_review": false,
-      "packet": "publication/12007/packet.json"
+      "packet": "publication/12007/metadata.json"
     },
     {
       "issues": [
@@ -161,10 +167,10 @@
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
-  "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit.",
+  "coverage_freshness": "planning/original224-state-refresh-2026-10-12T062742Z.json",
   "actual_prs_created_in_continuation": 3,
   "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T05:48:03.894965+00:00",
+  "updated_at": "2026-10-12T06:29:21.546162+00:00",
   "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
@@ -173,7 +179,7 @@
     "new_batch_credit": 0
   },
   "cloud_issue_closure_actions": 0,
-  "original_closures_associated_with_our_merged_prs": 2,
+  "original_closures_associated_with_our_merged_prs": 3,
   "serial_validation_owner": "/root/luna_verification",
   "serial_priority": [
     12007,
@@ -182,5 +188,6 @@
     12202
   ],
   "cargo_incremental": 0,
-  "active_issue_state_evidence": "planning/active-issue-milestone-states.json"
+  "active_issue_state_evidence": "planning/active-issue-milestone-states.json",
+  "closure_attribution": "Issue states observed independently; cloud closed no issues. Referenced issues closing does not prove partial PRs resolved their whole scope."
 }
