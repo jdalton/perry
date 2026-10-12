@@ -1,0 +1,103 @@
+{
+  "issue": 11915,
+  "observed_at_utc": "2026-10-12T12:35:19Z",
+  "candidate_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+  "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
+  "static_preflight": {
+    "status": "clear for candidate changes; only unchanged baseline failures remain",
+    "evidence": "/workspace/work/perry-queue/planning/11915-static-preflight.json",
+    "scoped_rustfmt": "PASS",
+    "git_diff_check": "PASS",
+    "test_registration": "exit 1 on six unrelated baseline paths; no candidate dark test",
+    "file_size": "exit 1 on three unchanged baseline files; every changed path below 2000 lines",
+    "candidate_sensitive_checks_clear": true
+  },
+  "cache_relocation": {
+    "status": "completed lossless relocation; all files preserved with SHA256 manifests and canonical symlinks",
+    "source_record": "/workspace/work/perry-queue/planning/idle-cache-relocation-20261012.json",
+    "source_record_sha256": "a85a0e6dd35b8e1f0114b4749014d5a6ad778b97743b3f5d702902cb0dbd73fa",
+    "subtree_count": 3,
+    "total_bytes": 2575846078,
+    "entry_count": 8692,
+    "file_count": 3504,
+    "directory_count": 5188,
+    "subtrees": [
+      {
+        "cache": "perry",
+        "bytes": 1386854511,
+        "entries": 7700,
+        "files": 3276,
+        "directories": 4424,
+        "entry_manifest_sha256": "129dbfd76f8540debb6a950a658ae7ef574454efbcf82ec6a28e839c9932f047",
+        "relocated_to": "/tmp/perry-cloud-owned-cache/target-12390/debug/build/perry",
+        "status": "relocated; all contents retained and canonical symlink verified; redundant original cache copy removed while idle"
+      },
+      {
+        "cache": "perry-codegen",
+        "bytes": 796092392,
+        "entries": 494,
+        "files": 126,
+        "directories": 368,
+        "entry_manifest_sha256": "cfbefe3ba8ce55f1a915d100bf9bacbff8176586a201258cf9d742197dff5550",
+        "relocated_to": "/tmp/perry-cloud-owned-cache/target-12390/debug/build/perry-codegen",
+        "status": "relocated; all contents retained and canonical symlink verified; redundant original cache copy removed while idle"
+      },
+      {
+        "cache": "perry-hir",
+        "bytes": 392899175,
+        "entries": 498,
+        "files": 102,
+        "directories": 396,
+        "entry_manifest_sha256": "a509d22ec24d6a255a9d00441b04c5a86e1479be9a0fa8e5edc3c5727f6f442e",
+        "relocated_to": "/tmp/perry-cloud-owned-cache/target-12390/debug/build/perry-hir",
+        "status": "relocated; all contents retained and canonical symlink verified; redundant original cache copy removed while idle"
+      }
+    ],
+    "workspace_free": "3.0 GiB",
+    "tmp_free": "5.2 GiB",
+    "debug_deps_note": "The missing debug/deps view was normal nightly per-crate layout, not lost dependencies."
+  },
+  "serial_slot": {
+    "owner": "cloud /root/luna_verification",
+    "coordinator": "cloud /root",
+    "checked_at": "2026-10-12T12:36:28.989186+00:00",
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "target": "/workspace/work/perry-queue/target-12390",
+    "next_task": "#11915 exact e190 fresh compiler/runtime-static/stdlib-static build and compiled fixture acceptance",
+    "settings": {
+      "CARGO_INCREMENTAL": 0,
+      "CARGO_BUILD_JOBS": 1,
+      "RUST_TEST_THREADS": 1
+    },
+    "active_validation_processes": [],
+    "census_clean": true,
+    "source_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5"
+  },
+  "validation_state": {
+    "focused_hir_tests": "authorized and assigned to verifier; not yet claimed passed",
+    "matching_trio": "pending",
+    "compiled_acceptance": "pending",
+    "full_lint": "pending",
+    "hard_caps_minutes": {
+      "build_or_compiled_acceptance": 45,
+      "full_lint": 30
+    }
+  },
+  "publication_state": {
+    "issue_12202_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "issue_12202_pr_number": null
+  },
+  "coverage_counts_preserved": {
+    "uncovered": 142,
+    "uncertain": 18,
+    "covered": 20,
+    "closed": 44
+  },
+  "batch_counts_preserved": {
+    "opened": 5,
+    "merged": 5,
+    "remaining": 15
+  }
+}

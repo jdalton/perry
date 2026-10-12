@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-10-12T12:30:51Z",
+  "updated_at": "2026-10-12T12:35:19Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": null,
+  "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Local publisher may create #12202 draft from exact 2272 packet; no new PR counted until assignment",
-    "TLS completes cheap static preflight for #11915; verifier owns the sole early HIR test slot",
-    "After preflight and HIR test, wait for root to grant the serial matching-trio/runtime slot for #11915"
+    "Verifier runs the authorized focused #11915 HIR tests in the owned slot; current slot census reports no active validation process yet",
+    "Verifier then runs matching trio and compiled acceptance serially under45min cap; full lint under30min cap",
+    "Keep #12202 draft-allowed at exact2272; wait for actual PR assignment before numbered fragment/final-head checks"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -23,8 +23,8 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#11915 source-cleared head: TLS cheap static preflight and verifier-owned early HIR test, then root-granted serial validation",
-    "#12202 exact 2272 draft creation pending publisher assignment; ready-for-review remains false until numbered fragment and final-head checks"
+    "#11915: verifier-owned focused HIR tests, matching trio/compiled acceptance, then full lint within the recorded caps",
+    "#12202: exact2272 draft allowed; no assigned PR number in latest publisher inbox"
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -126,9 +126,9 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": null,
+  "current_serial_issue": 11915,
   "serial_pending": [
-    "11915 static preflight and early HIR test; matching trio/runtime/full lint not yet authorized",
+    "11915 focused HIR tests, matching trio, compiled parity, full lint",
     "12202 local draft PR assignment"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
@@ -139,10 +139,12 @@
   "validation_policy": "12202 exact2272 completed; baseline/environment failures and informational Clippy delta disclosed. Root authorized draft creation. Ready-for-review awaits numbered fragment and exact final-head checks. Serial CARGO_INCREMENTAL=0; full lint30min and builds/compiled acceptance45min hard caps.",
   "serial_static_owner": null,
   "current_validation_progress": {
-    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-    "full_lint": "completed exit1; 105 pass/32 fail/2 CI skips; 30 baseline/2 environment-path/0 candidate",
-    "pending": "No validation hold on2272; awaiting local PR assignment",
-    "evidence": "publication/12202/2272-final-validation.json and 2272-final-failure-attribution.json"
+    "issue": 11915,
+    "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
+    "status": "static preflight clear; verifier-owned HIR test authorized and pending",
+    "slot_owner": "cloud /root/luna_verification",
+    "active_processes_at_slot_census": [],
+    "evidence": "planning/11915-resource-preflight-milestone-e190.json"
   },
   "validation_resource_policy": {
     "full_lint_hard_cap_minutes": 30,
@@ -155,14 +157,13 @@
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
     "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
     "worktree_clean": true,
-    "source_review": "Astra source-cleared; source packet and decision attached",
-    "node_oracle": "PASS pinned Node v26.5.1",
-    "scoped_rustfmt": "PASS",
-    "diff_check": "PASS",
-    "tls_static_preflight": "in progress",
-    "early_hir_test_owner": "verifier; sole early HIR test owner",
-    "matching_trio_runtime_full_lint": "not run; awaiting root serial slot",
-    "evidence": "planning/11915-source-milestone-e190.json"
+    "source_review": "Astra cleared",
+    "static_preflight": "candidate-specific checks clear; fmt/diff pass; test-registration/file-size fail only on unchanged baseline findings",
+    "focused_hir_tests": "authorized and assigned to verifier; not yet run/passed",
+    "slot_owner": "cloud /root/luna_verification",
+    "slot_observed_active_processes": [],
+    "matching_trio_runtime_full_lint": "pending",
+    "resource_evidence": "planning/11915-resource-preflight-milestone-e190.json"
   },
   "12202_publication_status": {
     "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -171,5 +172,33 @@
     "pr_number": null,
     "inbox_check": "2026-10-12T12:30:51Z snapshot; no #12202 assignment",
     "evidence": "planning/12202-publisher-inbox-at-11915-source-milestone.json"
+  },
+  "serial_slot_status": {
+    "owner": "cloud /root/luna_verification",
+    "checked_at": "2026-10-12T12:36:28.989186+00:00",
+    "next_task": "#11915 exact e190 fresh compiler/runtime-static/stdlib-static build and compiled fixture acceptance",
+    "active_validation_processes": [],
+    "census_clean": true,
+    "checkout": "/workspace/work/perry-queue/issue-9927",
+    "target": "/workspace/work/perry-queue/target-12390",
+    "settings": {
+      "CARGO_INCREMENTAL": 0,
+      "CARGO_BUILD_JOBS": 1,
+      "RUST_TEST_THREADS": 1
+    }
+  },
+  "cache_relocation_summary": {
+    "record": "planning/idle-cache-relocation-20261012.json",
+    "sha256": "a85a0e6dd35b8e1f0114b4749014d5a6ad778b97743b3f5d702902cb0dbd73fa",
+    "subtrees": 3,
+    "bytes": 2575846078,
+    "entry_count": 8692,
+    "files": 3504,
+    "directories": 5188,
+    "workspace_free": "3.0 GiB",
+    "tmp_free": "5.2 GiB",
+    "contents_preserved": true,
+    "canonical_symlinks_verified": true,
+    "debug_deps_note": "Normal nightly per-crate layout; no dependencies were lost."
   }
 }

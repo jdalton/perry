@@ -241,12 +241,12 @@
       "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
       "has_uncommitted_changes": false,
-      "state": "Source-cleared committed; validation pending",
+      "state": "Static preflight clear; verifier-owned HIR test pending",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/next-candidates/11915-reflective-callee-go-plan.json",
-      "validation": "Source checks and Node oracle PASS; TLS static preflight and verifier-owned early HIR test pending. No Perry build/runtime claim.",
-      "packet": "planning/11915-source-milestone-e190.json",
+      "validation": "Scoped fmt/diff pass. Test-registration and file-size checks report unchanged baseline failures only; no candidate-specific blocker. HIR test not run yet.",
+      "packet": "planning/11915-resource-preflight-milestone-e190.json",
       "publisher_actions": []
     }
   ],
@@ -282,13 +282,26 @@
   },
   "draft_creation_packets_available": 1,
   "ready_transition_packets": 0,
-  "milestone_updated_at": "2026-10-12T12:30:51Z",
+  "milestone_updated_at": "2026-10-12T12:35:19Z",
   "latest_source_milestone": {
     "issue": 11915,
     "head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
     "tree": "bfa46acf90562a44c177f3afc6dd398fde607a5c",
-    "status": "source-cleared-committed-awaiting-validation",
-    "evidence": "planning/11915-source-milestone-e190.json"
+    "status": "static-preflight-clear-awaiting-verifier-HIR-test",
+    "evidence": "planning/11915-resource-preflight-milestone-e190.json"
   },
-  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-source-milestone.json"
+  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-source-milestone.json",
+  "resource_milestone": {
+    "record": "planning/11915-resource-preflight-milestone-e190.json",
+    "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",
+    "manifest_sha256": "a85a0e6dd35b8e1f0114b4749014d5a6ad778b97743b3f5d702902cb0dbd73fa",
+    "relocated_bytes": 2575846078,
+    "subtrees": 3,
+    "workspace_free": "3.0 GiB",
+    "tmp_free": "5.2 GiB",
+    "slot_owner": "cloud /root/luna_verification",
+    "slot_checked_at": "2026-10-12T12:36:28.989186+00:00",
+    "active_processes": [],
+    "next_task": "#11915 exact e190 fresh compiler/runtime-static/stdlib-static build and compiled fixture acceptance"
+  }
 }

@@ -665,10 +665,10 @@
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-11915-reflective-callee",
         "current_head": "e1905483faa355e5d5daa9e1d06280666a1b77b5",
-        "validation": "Committed source-cleared head e1905483; Node v26.5.1 oracle, scoped rustfmt and diff check PASS. TLS static preflight and verifier-owned early HIR test pending; no Cargo/Perry run.",
+        "validation": "Static preflight clear for candidate-specific changes; scoped fmt/diff pass; registration/file-size gates only report unchanged baseline findings. Verifier-owned HIR tests and serial acceptance remain pending.",
         "merge_state": "No PR",
         "closure_state": "OPEN",
-        "publication_state": "Source-cleared; no fork push or PR; validation pending."
+        "publication_state": "No PR; candidate source and static preflight are ready for verifier HIR test."
       }
     },
     {
