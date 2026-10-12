@@ -140,6 +140,6 @@
   },
   "historical_evidence": "code-commit-evidence-summary.json",
   "ci_baseline_attribution": "ci-baseline-attribution.json",
-  "metadata_correction": "Historical evidence had ambient Node v24.19.0 metadata conflicting with the pinned task oracle. Preserved unchanged for audit. Final runs use the explicit recorded Node26.5.1 executable, resolving oracle identity for current-head acceptance.",
+  "metadata_correction": "Historical evidence recorded Node v24.19.0 metadata conflicting with the pinned task oracle. Preserved unchanged for audit. Final runs use the explicit recorded Node26.5.1 executable, resolving oracle identity for current-head acceptance.",
   "artifact_scope": "Hashes describe artifacts at validation time. Shared target may be reused by subsequent lanes; no binaries or credentials are packaged."
 }
