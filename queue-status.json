@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-12T05:36:27.182098+00:00",
+  "checked_at": "2026-10-12T05:48:03.894965+00:00",
   "original224_total": 224,
-  "original_open": 183,
-  "original_closed": 41,
+  "original_open": 182,
+  "original_closed": 42,
   "open_new_excluded": [
     12396,
     12408,
@@ -12,12 +12,12 @@
   "merged_prs_this_turn": 3,
   "original_issues_closed_this_turn": 2,
   "coverage_counts": {
-    "uncovered": 150,
+    "uncovered": 149,
     "uncertain": 13,
     "covered_open": 20,
-    "closed": 41
+    "closed": 42
   },
-  "conservative_uncovered_upper_bound": 163,
+  "conservative_uncovered_upper_bound": 162,
   "platform_goal": "unsupported; no create_goal/get_goal tools, no platform goal verified",
   "scheduled_execution": false,
   "publication_blocker": "Cloud PR creation remains unavailable; local coordinator successfully created12439. Forkpush permitted. No retries planned.",
@@ -112,9 +112,10 @@
         12285
       ],
       "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
-      "state": "8/8 compiled fixtures pass; full lint running",
+      "state": "retired: upstream12447 merged and closed12285",
       "draft_creation_allowed": false,
-      "ready_for_review": false
+      "ready_for_review": false,
+      "publisher_actions": []
     },
     {
       "issues": [
@@ -153,7 +154,7 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
       "has_uncommitted_changes": true,
-      "state": "Node oracle passes; source implementation in progress; Astra review required before compilation",
+      "state": "20 runtime-file source draft plus Node-passing fixture under Astra review; candidate Cargo/Perry pending",
       "draft_creation_allowed": false,
       "ready_for_review": false
     }
@@ -161,7 +162,13 @@
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit.",
   "actual_prs_created_in_continuation": 3,
-  "validation_resource_event": "12285 full lint rerun with incremental=0 still reaches low disk; owner stopping at gate boundary, full lint remains pending; no protected archives/source deleted",
-  "updated_at": "2026-10-12T05:36:27.182098+00:00",
-  "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00"
+  "validation_resource_event": "12285 retired after upstream12447 closure; lint gate9 PASS, gate10 interrupted, gate11 not run. Slot released with1.1GB. Four updater archives preserved losslessly compressed with verified restoration manifests.",
+  "updated_at": "2026-10-12T05:48:03.894965+00:00",
+  "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00",
+  "upstream_reconciliation_12285": {
+    "pr": 12447,
+    "issue_closed": true,
+    "cloud_candidate_retired": true,
+    "new_batch_credit": 0
+  }
 }

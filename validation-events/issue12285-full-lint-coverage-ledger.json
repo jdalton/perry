@@ -1,0 +1,86 @@
+{
+  "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
+  "inventory": {
+    "source": "/workspace/work/perry-queue/issue12285-full-lint-gate-inventory.txt",
+    "driver": "scripts/run_lint_gates.sh",
+    "static_commands": 128,
+    "compile_commands": 11,
+    "total_commands": 139,
+    "derived_by_driver": true
+  },
+  "run1": {
+    "log": "/workspace/work/perry-queue/issue12285-full-lint.log",
+    "exit": 130,
+    "incremental": "repository default (historical; unchanged)",
+    "static": {
+      "configured": 128,
+      "result_lines": 126,
+      "passed": 100,
+      "failed": 26,
+      "skipped": 2
+    },
+    "compile": {
+      "configured": 11,
+      "result_lines": 8,
+      "results": [
+        "1 warnings-product FAIL",
+        "2 warnings-host-compatible FAIL",
+        "3 clippy-product FAIL",
+        "4 clippy-host-compatible FAIL",
+        "5-8 lean-dependency checks PASS"
+      ],
+      "remaining_or_interrupted": "9-11; run1 interrupted before captured completion"
+    },
+    "status": "interrupted; not full lint pass"
+  },
+  "run2": {
+    "log": "/workspace/work/perry-queue/issue12285-full-lint-incremental0.log",
+    "exit": 143,
+    "incremental": "CARGO_INCREMENTAL=0",
+    "static": {
+      "configured": 128,
+      "result_lines": 126,
+      "passed": 100,
+      "failed": 26,
+      "skipped": 2,
+      "skips": [
+        "Require a changelog.d/ fragment for crates/ changes (CI-only PR context)",
+        "CI plan policy self-test + docs table freshness (workflow expression context)"
+      ]
+    },
+    "compile": {
+      "configured": 11,
+      "result_lines": 8,
+      "results": [
+        "1 warnings-product FAIL",
+        "2 warnings-host-compatible FAIL",
+        "3 clippy-product PASS",
+        "4 clippy-host-compatible FAIL",
+        "5-8 lean-dependency checks PASS"
+      ],
+      "next": "9 auto-optimize feature matrix started and was interrupted for disk safety; classify INTERRUPTED, not pass/fail",
+      "remaining": [
+        "9 ./scripts/check_auto_optimize_features.sh \u2014 PASS, exit 0, five feature variants completed; /workspace/work/perry-queue/issue12285-lint-gate09-auto-optimize.log",
+        "10 ./scripts/regen_api_docs.sh \u2014 INTERRUPTED by retirement decision while cargo build --release -p perry was compiling; exit 130 recorded in /workspace/work/perry-queue/issue12285-lint-gate10-regen-api-docs.exit; no docs generation began",
+        "11 git diff --quiet -- docs/src/api/reference.md docs/api/perry.d.ts \u2014 NOT RUN"
+      ]
+    },
+    "status": "interrupted after duplicate retirement decision; no full lint pass; all static commands completed and compile commands 1-9 completed except previously interrupted 9 which was rerun successfully; command 10 interrupted due upstream merged coverage, command 11 not run"
+  },
+  "restoration": {
+    "manifests": [
+      "/workspace/work/perry-queue/issue12285-cold-storage-8eeb46b69e52b306.json",
+      "/workspace/work/perry-queue/issue12285-cold-storage-3ab04b21b0bca787.json",
+      "/workspace/work/perry-queue/issue12285-cold-storage-540aefc5a53663ef.json",
+      "/workspace/work/perry-queue/issue12285-cold-storage-b378a03b8ab1c6c7.json"
+    ],
+    "helper": "/workspace/work/perry-queue/restore-cold-archive.py"
+  },
+  "honesty_note": "No uninterrupted full lint run passed. Static gates completed in interrupted run2; all 11 compile commands are not covered because command 10 was interrupted at upstream retirement and command 11 was not run. Do not claim full lint pass or publish this duplicate candidate.",
+  "retirement": {
+    "reason": "live issue #12285 was closed by merged PR #12447 with scope covering once/close/liveness and production-path overlap; root directed stop",
+    "evidence": "/workspace/work/perry-queue/planning/12285-fresh-duplicate-evidence.json",
+    "publishable": false,
+    "current_main_residual_reproduction_required_before_any_future_claim": true
+  }
+}

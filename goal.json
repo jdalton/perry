@@ -17,7 +17,7 @@
   "platform_goal_status": "User reports UI Failed to set goal; no create_goal/get_goal tools exposed; unsupported here",
   "milestone_status": {
     "original224_under200_confirmed": true,
-    "basis": "150 uncovered +13 uncertain=163 conservative unresolved;20 covered/open;41 closed",
+    "basis": "149 uncovered +13 uncertain=162 conservative unresolved;20 covered/open;42 closed",
     "coverage_ledger": "planning/original224-coverage.json",
     "recorded_at": "2026-10-12T02:40:33.042288+00:00"
   },
@@ -25,7 +25,7 @@
   "publication_status": "2/20 additional PRs merged;10198closed,9927/8085remainopen",
   "blocker": "pr-write-blocker.json",
   "automatic_continuation": false,
-  "updated_at": "2026-10-12T05:36:27.182098+00:00",
+  "updated_at": "2026-10-12T05:48:03.894965+00:00",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
   "implementation_authorized_while_publication_blocked": true,
   "new_batch": {

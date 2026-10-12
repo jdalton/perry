@@ -82,5 +82,69 @@
     "partial #10739 implementation only",
     "no whole-issue closure claim",
     "no external PR write"
-  ]
+  ],
+  "live_issue_refresh": {
+    "checked_at": "2026-10-12",
+    "issue": 10739,
+    "state": "OPEN",
+    "url": "https://github.com/PerryTS/perry/issues/10739",
+    "issue_updated_at": "2026-09-19T22:32:09Z",
+    "latest_comment_seen": {
+      "id": 5745795227,
+      "created_at": "2026-09-19T22:32:08Z",
+      "topic": "Generated API docs can retain stale counts and stale body blocks after clean merge; regenerate full docs from a fresh binary."
+    },
+    "latest_timeline_event": {
+      "type": "referenced",
+      "created_at": "2026-09-23T12:35:38Z",
+      "commit": "636beb98f558116e7637a023db301111c82c634e"
+    },
+    "partial_scope_still_uncovered": [
+      "issue also describes native_result_ledger.py/tsv absolute row counts",
+      "issue also describes string payload baseline and governance/pins absolute counts",
+      "issue also describes generated API documentation drift"
+    ],
+    "recommendation": "Keep the patch claim limited to derived workspace member/decision aggregates and exact closure preservation. Issue remains open; no whole-issue coverage claim."
+  },
+  "open_pr_overlap_refresh": {
+    "cached_inventory": "/workspace/work/perry-queue/live-open-prs.json (24 open PRs)",
+    "focused_live_searches": [
+      {
+        "query": "repo:PerryTS/perry workspace architecture",
+        "open_results": 0
+      },
+      {
+        "query": "repo:PerryTS/perry workspace-architecture.json",
+        "open_results": 0
+      }
+    ],
+    "target_paths": [
+      "scripts/workspace_architecture.py",
+      "workspace-architecture.json",
+      "docs/src/contributing/crate-policy.md"
+    ],
+    "selectively_refreshed_open_prs": [
+      {
+        "number": 12276,
+        "head": "ci-repair-20261009",
+        "head_sha": "e8fa5fe9edbd358586575f8f1c04ba700d40007c",
+        "overlap_with_target_paths": [],
+        "note": "broad CI repair; includes unrelated runtime/arena/page_meta changes"
+      },
+      {
+        "number": 12120,
+        "head": "steiny/ci2-api-reference",
+        "head_sha": "a6c46cdc9ebb427f17a13cb642471ca39a942e38",
+        "overlap_with_target_paths": []
+      },
+      {
+        "number": 12116,
+        "head": "steiny/ci2-file-size-cap",
+        "head_sha": "ada1b587d26b1f348cf29cd335f9dc121055c822",
+        "overlap_with_target_paths": []
+      }
+    ],
+    "changed_filenames_checked": true,
+    "duplicate_or_path_overlap_found": false
+  }
 }

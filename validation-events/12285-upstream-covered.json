@@ -1,0 +1,57 @@
+{
+  "issue": 12285,
+  "retrieved_at_utc": "2026-10-12",
+  "issue_current": {
+    "state": "closed",
+    "state_reason": "completed",
+    "closed_at": "2026-10-12T05:26:09Z",
+    "updated_at": "2026-10-12T05:26:09Z",
+    "body": "Worker: after parentPort.once('message'), exit was not delivered; parentPort.close was missing; without top-level await, async worker work did not run.",
+    "comments": 0,
+    "snapshot_was_stale": "local issue snapshot had OPEN state updated 2026-10-09"
+  },
+  "resolution_pr": {
+    "number": 12447,
+    "url": "https://github.com/PerryTS/perry/pull/12447",
+    "title": "fix(worker): parentPort shares MessagePort ref/close state; workers end when agent work finishes (#12285)",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-10-12T05:26:08Z",
+    "base": "main",
+    "base_sha": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "head": "fix/workerexit",
+    "head_sha": "28e4ef7b548adc3ee79f4a3a6c9a696f910ce23f",
+    "merge_commit_sha": "16735744146515169225c82699c9193eb3fd8e47",
+    "changed_file_count": 24,
+    "body_scope": "Fixes #12285; shares MessagePort listener/ref/close state, consumed once no longer keeps worker alive, parentPort.close exists, and workers recheck agent liveness after checkpoints. Body reports 9/9 new Node-parity witnesses, worker suite 42/44, worker/HIR tests, base negative control and cargo check."
+  },
+  "candidate": {
+    "commit": "804c6b6e8080b584f0e804ff637800d91636deb2",
+    "parent": "d74498b261d087a301b80602835bc7199a067957",
+    "subject": "fix(worker_threads): honor parentPort lifecycle and liveness",
+    "changed_path_count": 25,
+    "merge_pr_changed_path_count": 24,
+    "same_path_intersection_count": 5,
+    "same_paths": [
+      "crates/perry-stdlib/src/worker_threads.rs",
+      "crates/perry-stdlib/src/worker_threads/inbox.rs",
+      "crates/perry-stdlib/src/worker_threads/parent_port.rs",
+      "crates/perry-stdlib/src/worker_threads/worker_pump.rs",
+      "crates/perry-stdlib/src/worker_threads/worker_surface.rs"
+    ],
+    "candidate_only_path_count": 20,
+    "pr_only_path_count": 19,
+    "interpretation": "Different file sets do not imply independent fixes: the merged PR directly addresses the issue's three reported behaviors, and five production paths overlap. The candidate uses older d74498 baseline; merged PR was based on bc8625. Issue scope is resolved; candidate should not be newly published for #12285 without a separately demonstrated residual."
+  },
+  "other_open_pr_overlap_refresh": {
+    "saved_inventory": "coverage-prs/coverage-reconciliation.json plus live-open-prs.json (24 cached open PRs)",
+    "candidate_path_intersections_in_cached_open_prs": [],
+    "current_targeted_searches": [
+      {"query": "repo:PerryTS/perry is:pr is:open parentPort", "results": []},
+      {"query": "repo:PerryTS/perry is:pr is:open worker_threads", "results": []},
+      {"query": "repo:PerryTS/perry is:pr is:open worker exit", "results": [12263, 10204], "relevance": "search results do not mention the issue resolution and neither intersects candidate paths in saved inventory"}
+    ],
+    "limitations": "Search is a bounded textual PR search, not proof that no unrelated-title PR could touch these paths; saved 24-PR changed-file inventory had no candidate path intersections. The linked exact-scope PR #12447 is merged and closes the issue."
+  },
+  "recommendation": "Do not publish the candidate as fresh #12285 work. The issue was closed as completed by merged PR #12447. Reopen only if a concrete residual in the three original behaviors is separately reproduced against current main."
+}

@@ -1,0 +1,18 @@
+{
+  "issue": 12285,
+  "candidate_commit": "804c6b6e8080b584f0e804ff637800d91636deb2",
+  "branch": "cloud/issue-12285-parentport-lifecycle",
+  "retired": true,
+  "reason": "issue #12285 closed by merged PR #12447 with once/close/liveness coverage and overlap across five production paths",
+  "evidence": "/workspace/work/perry-queue/planning/12285-fresh-duplicate-evidence.json",
+  "publication": "none",
+  "full_lint": "not completed; compile gate 10 interrupted on retirement, gate 11 not run",
+  "validation_logs": [
+    "/workspace/work/perry-queue/issue12285-committed-build.log",
+    "/workspace/work/perry-queue/issue12285-committed-parity.log",
+    "/workspace/work/perry-queue/issue12285-full-lint-incremental0.log",
+    "/workspace/work/perry-queue/issue12285-lint-gate09-auto-optimize.log",
+    "/workspace/work/perry-queue/issue12285-lint-gate10-regen-api-docs.log"
+  ],
+  "current_main_residual_reproduction_required_before_any_future_claim": true
+}

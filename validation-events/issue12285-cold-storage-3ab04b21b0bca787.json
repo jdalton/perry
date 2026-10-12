@@ -1,0 +1,30 @@
+{
+  "purpose": "lossless cold storage of completed task-owned debug perry-updater archive",
+  "original_path": "/workspace/work/perry-queue/target-12390/debug/build/perry-updater/3ab04b21b0bca787/out/libperry_updater-3ab04b21b0bca787.a",
+  "compressed_path": "/workspace/work/perry-queue/target-12390/debug/build/perry-updater/3ab04b21b0bca787/out/libperry_updater-3ab04b21b0bca787.a.zst",
+  "temporary_path": "/workspace/work/perry-queue/target-12390/debug/build/perry-updater/3ab04b21b0bca787/out/libperry_updater-3ab04b21b0bca787.a.zst.tmp.775343",
+  "original_size_bytes": 250039240,
+  "original_sha256": "d482aca345a1dce0c04d7ad90c333f90d904568ab7cdd4c9d341506e87df33c6",
+  "original_mode": 384,
+  "original_mtime_ns": 1791773792886423070,
+  "original_uid": 1000,
+  "original_gid": 1000,
+  "compressed_size_bytes": 41425807,
+  "compressed_sha256": "700bb17419b3fcd386dc8771d4427624018fad4ffe6f2734a370b1559a3151b1",
+  "sibling_rlib": {
+    "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-updater/3ab04b21b0bca787/out/libperry_updater-3ab04b21b0bca787.rlib",
+    "size_bytes": 1392078
+  },
+  "sibling_rmeta": {
+    "path": "/workspace/work/perry-queue/target-12390/debug/build/perry-updater/3ab04b21b0bca787/out/libperry_updater-3ab04b21b0bca787.rmeta",
+    "size_bytes": 147673
+  },
+  "owner_file": "/workspace/work/perry-queue/target-12390/OWNER",
+  "task": "/root/luna_worker_lifecycle #12285",
+  "head": "804c6b6e8080b584f0e804ff637800d91636deb2",
+  "restore": "python3 /workspace/work/perry-queue/restore-cold-archive.py /workspace/work/perry-queue/issue12285-cold-storage-3ab04b21b0bca787.json",
+  "verified": {
+    "zstd_test": true,
+    "decompressed_sha256_matches": true
+  }
+}

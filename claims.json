@@ -41,21 +41,23 @@
     {
       "issue": 12285,
       "cohort": "original224",
-      "coverage": "uncovered",
-      "covering_prs": [],
+      "coverage": "closed",
+      "covering_prs": [
+        12447
+      ],
       "owner": "cloud /root/luna_worker_lifecycle",
       "task": "/root/luna_worker_lifecycle",
       "branch": "cloud/issue-12285-parentport-lifecycle",
       "worktree": "/workspace/work/perry-queue/issue-12285",
       "validation": "Exact804c6b6e fresh compiler/runtime-static/stdlib-static build PASS; both manifest regression filters1/1; compiled fixtures8/8 PASS with pinned Node26.5.1. Prior pre-fix6/8 preserved. Full lint pending.",
-      "merge_state": "no PR",
-      "closure_state": "OPEN",
-      "evidence": "issue12285-status.json; refreshed 25 open PR inventories with no exact-path overlap",
-      "refreshed_at": "2026-10-12T04:58:50.209429+00:00",
-      "publication_state": "Committed locally; 8/8 compiled acceptance passed; full lint rerun pending completion under disk pressure",
+      "merge_state": "Covered by upstream merged PR12447, not our candidate",
+      "closure_state": "CLOSED",
+      "evidence": "planning/12285-fresh-duplicate-evidence.json",
+      "refreshed_at": "2026-10-12T05:48:03.894965+00:00",
+      "publication_state": "RETIRED; do not publish duplicate",
       "current_head": "804c6b6e8080b584f0e804ff637800d91636deb2",
       "has_uncommitted_changes": false,
-      "remaining": "Required full lint and failure classification, then contributor packet and local draft publication"
+      "remaining": "None for original issue; residual work requires fresh reproduction against current main"
     },
     {
       "issue": 12007,
@@ -228,7 +230,7 @@
       "remaining": "Runtime byte-metadata migration/Node fixtures, bounded source review, committed-head matching build/scoped compiled tests/full lint; no publication before validation"
     }
   ],
-  "updated_at": "2026-10-12T05:36:27.182098+00:00",
+  "updated_at": "2026-10-12T05:48:03.894965+00:00",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
