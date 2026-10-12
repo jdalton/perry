@@ -6,15 +6,15 @@
   "head_repo": "jdalton/perry",
   "branch": "cloud/issue-11519-byte-family-tostring",
   "current_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-  "validated_final_head": null,
+  "validated_final_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
   "issues": [
     11519
   ],
   "title": "fix(runtime): preserve byte-view toString with short encodings",
   "scope": "Partial repair for issue #11519: ArrayBuffer, SharedArrayBuffer, and DataView toString ignore Buffer encoding arguments.",
-  "readiness": "DRAFT_FINAL_HEAD_VALIDATION_PENDING",
+  "readiness": "READY_FOR_LOCAL_REVIEW_TRANSITION",
   "draft_creation_allowed": false,
-  "ready_for_review": false,
+  "ready_for_review": true,
   "pr_number": 12456,
   "no_version_bump": true,
   "body_file": "body.md",
@@ -22,14 +22,19 @@
   "validation": "validation.json",
   "source_review": "11519-source-review.json",
   "full_lint_status": "Completed exit1:30/137failed,2CI-onlyskips;28baseline plusxwinproxy403/docswrapperenvironment; docsbaseline drift disclosed.",
-  "fragment_instruction": "Create changelog fragment only after actual PR number is assigned.",
+  "fragment_instruction": "Actual PR12456 fragment committed and validated",
   "code_ready": true,
-  "publication_instruction": "Existing draft12456; do notcreateanotherPR. Finalfragment-head matchingbuild/scopedchecks pendingbefore localreadytransition.",
+  "publication_instruction": "Update existing PR12456 body from body.md and mark ready; do not create another PR",
   "test_correction_review": "11519-test-correction-review.json",
   "overlap_evidence": "11519-final-publication-duplicate-check.json",
-  "fork_head_verified": null,
-  "checked_at": "2026-10-12T08:00:40.124838+00:00",
+  "fork_head_verified": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+  "checked_at": "2026-10-12T08:46:47.004071+00:00",
   "validated_code_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
   "pr_url": "https://github.com/PerryTS/perry/pull/12456",
-  "fragment": "changelog.d/12456-byte-view-tostring.md"
+  "fragment": "changelog.d/12456-byte-view-tostring.md",
+  "publisher_actions": [
+    "Apply body.md to existing PR12456",
+    "Mark existing draft12456 ready for review at validated head6f2f622"
+  ],
+  "final_head_validation": "final-head-validation.json"
 }

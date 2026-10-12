@@ -24,7 +24,7 @@
   "publication_status": "2/20 additional PRs merged;10198closed,9927/8085remainopen",
   "blocker": "pr-write-blocker.json",
   "automatic_continuation": false,
-  "updated_at": "2026-10-12T08:38:01.358311+00:00",
+  "updated_at": "2026-10-12T08:46:47.004071+00:00",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",
   "implementation_authorized_while_publication_blocked": true,
   "new_batch": {
@@ -79,6 +79,17 @@
         "state": "draft",
         "ready_for_review": false,
         "merged": false
+      },
+      {
+        "number": 12458,
+        "url": "https://github.com/PerryTS/perry/pull/12458",
+        "issues": [
+          10739
+        ],
+        "head": "84d1315def71dbdcc3447f95441aea8c29789b68",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
     "remaining": 17,
@@ -90,11 +101,11 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 1,
+    "drafts": 2,
     "ready_for_review": 0,
     "merged": 3,
-    "opened": 4,
-    "remaining_to_open": 16,
+    "opened": 5,
+    "remaining_to_open": 15,
     "remaining_to_good_state": 17,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
@@ -105,8 +116,8 @@
       12007
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
-    "ready_transition_packets": 0,
-    "draft_creation_packets_available": 1
+    "ready_transition_packets": 1,
+    "draft_creation_packets_available": 0
   },
   "publisher_inbox": "jdalton/perry cloud/local-publisher-inbox publisher-status.json"
 }

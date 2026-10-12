@@ -1,0 +1,85 @@
+{
+  "issue": 11519,
+  "pr": 12456,
+  "validated_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+  "previous_source_validated_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+  "base": "d74498b261d087a301b80602835bc7199a067957",
+  "worktree": {
+    "path": "/workspace/work/perry-queue/issue-9927",
+    "detached_head": true,
+    "clean": true,
+    "only_final_head_delta": "changelog.d/12456-byte-view-tostring.md (one line)",
+    "diff_check": "git diff --check 5e41d1d8b19c030754975afeca52a9c277eda739..HEAD passed"
+  },
+  "environment": {
+    "rust_toolchain": "nightly-2026-10-04",
+    "node": "/workspace/.toolchains/node-26.5.1/bin/node",
+    "node_version": "v26.5.1",
+    "cargo_target_dir": "/workspace/work/perry-queue/target-12390",
+    "cargo_build_jobs": 1,
+    "cargo_incremental": 0
+  },
+  "fragment_checks": {
+    "exact_path": "changelog.d/12456-byte-view-tostring.md",
+    "self_test_command": "bash scripts/check_changeset_fragment.sh --self-test",
+    "self_test_exit": 0,
+    "self_test_log": "/workspace/work/perry-queue/11519-12456-fragment-self-test.log",
+    "exact_pr_command": "bash scripts/check_changeset_fragment.sh PerryTS/perry 12456",
+    "exact_pr_exit": 0,
+    "exact_pr_log": "/workspace/work/perry-queue/11519-12456-fragment-live.log"
+  },
+  "final_head_compiler_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit": 0,
+    "log": "/workspace/work/perry-queue/11519-12456-trio-build.log",
+    "artifacts": [
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/perry",
+        "sha256": "3bcf174cba1e592a42c0af55aa3b47e5fac6659b2f5b0f0bc223241f7063b666"
+      },
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_runtime.a",
+        "sha256": "fd4270497cb8fc6e6a2971c308df038bcaffdcdec86456e65f29a727e6821ce8",
+        "matches_generated_out_archive": true
+      },
+      {
+        "path": "/workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a",
+        "sha256": "7771e42fe8aaba4bf1cce3730f390aa17595e6dd865deb0d11a76f0ff5fa6d23",
+        "matches_generated_out_archive": true
+      }
+    ]
+  },
+  "final_head_scoped_acceptance": {
+    "fixture": "test-files/test_gap_11519_arraybuffer_to_string_short_encoding.ts",
+    "fixture_sha256": "a6a9ca1480811ec38218ba368fcf481c00e42beefcfab3d4b9683b19cb6095c2",
+    "mode": "no-auto-optimize, no-cache",
+    "node_oracle_exit": 0,
+    "perry_compile_exit": 0,
+    "perry_run_exit": 0,
+    "stdout_parity_exit": 0,
+    "evidence_dir": "/workspace/work/perry-queue/11519-12456-acceptance"
+  },
+  "reused_unchanged_source_evidence": {
+    "policy": "/workspace/work/perry-queue/planning/fragment-validation-reuse-decision.json",
+    "focused_unit": {
+      "result": "passed, 1 test",
+      "source_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "log": "/workspace/work/perry-queue/11519-5e41-unit-test-filtered.log"
+    },
+    "genuine_auto_optimize": {
+      "result": "passed, 18-case Node parity; first compile attempt timed out and a retry succeeded",
+      "source_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "log": "/workspace/work/perry-queue/11519-5e41-auto-retry-compile.log"
+    },
+    "full_lint": {
+      "source_head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+      "log": "/workspace/work/perry-queue/11519-full-lint-5e41.log",
+      "exit": 1,
+      "failed": 30,
+      "total": 137,
+      "ci_only_skipped": 2,
+      "classification": "24 static diagnostics exact baseline matches; one release-pipeline test had the same one failure among seven with elapsed-time-only variance; one xwin environment row hit proxy 403; product warnings (37), host warnings (30), and one host Clippy error were exact baseline matches; API-doc wrapper limitation is described in source-head record. This was not rerun at the fragment-only head."
+    }
+  },
+  "validation_scope_note": "The only final-head change is the numbered changelog fragment. Compiler trio and fragment-sensitive checks were rerun at the exact PR head. Focused unit, genuine auto-optimize parity, and the full lint driver's classified results are reused from the unchanged source head 5e41 under the explicit fragment-only reuse review; they are not represented as fresh final-head runs."
+}

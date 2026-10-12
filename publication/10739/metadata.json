@@ -4,18 +4,21 @@
   "base": "main",
   "head": "jdalton:cloud/issue-10739-derived-workspace-counts",
   "branch": "cloud/issue-10739-derived-workspace-counts",
-  "draft_creation_allowed": true,
+  "draft_creation_allowed": false,
   "ready_for_review": false,
-  "external_pr_created": false,
+  "external_pr_created": true,
   "full_lint_complete": true,
   "publisher_actions": [
-    "Create one draft using title.txt/body.md, base main, head jdalton:cloud/issue-10739-derived-workspace-counts",
-    "Record PR number in local-publisher-inbox; cloud will add numbered fragment and validate final head before ready"
+    "Wait for exact fragment-head readiness packet; do not create another PR"
   ],
   "validation": "validation.json",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
-  "current_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "current_head": "84d1315def71dbdcc3447f95441aea8c29789b68",
   "pushed_to_fork": true,
-  "checked_at": "2026-10-12T08:38:01.358311+00:00",
-  "validated_code_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e"
+  "checked_at": "2026-10-12T08:46:47.004071+00:00",
+  "validated_code_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "pr_number": 12458,
+  "pr_url": "https://github.com/PerryTS/perry/pull/12458",
+  "fragment": "changelog.d/12458-derived-workspace-counts.md",
+  "validated_final_head": null
 }
