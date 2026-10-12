@@ -7,7 +7,7 @@
     "sha": "7f128cf54f2c134ac730fb75e323df75af4cecc4"
   },
   "base": "main",
-  "issue_state": "OPEN",
+  "issue_state": "CLOSED",
   "related_issue_11995": {
     "decision": "Non-overlapping residual; 11995 handles exported ESM cycle sentinels and CJS wrapper identity, and explicitly left class-expression const TDZ out of scope.",
     "evidence": "/workspace/work/perry-queue/planning/12007-11995-overlap-decision.json"
@@ -103,10 +103,11 @@
   ],
   "publication": {
     "draft_creation_allowed": false,
-    "reason": "Fresh final-head matching trio and scopedacceptance PASS; prior full-lint sourceidentity confirmed; local publisher may mark existing draft ready.",
+    "reason": "PR12450merged at validated7f128cf; original12007closed; no publisher action.",
     "fragment": "changelog.d/12450-class-expression-tdz.md",
     "pr_number": 12450,
-    "ready_for_review": true
+    "ready_for_review": false,
+    "merged": true
   },
   "source": "/workspace/work/perry-queue/issue-12007",
   "clean_worktree": true,

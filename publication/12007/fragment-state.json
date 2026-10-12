@@ -4,8 +4,8 @@
   "parent": "765a94d31e9b129641c5046c65b06624c6ad7358",
   "only_change": "changelog.d/12450-class-expression-tdz.md",
   "validation": "PASS: fresh exact-head matchingtrio and scopedparity, fragmentdiffcheck; full lintreused onsourceidentity",
-  "status": "draft, not merged/closed",
+  "status": "merged; originalissueclosed",
   "received_body_matches_prior_packet": true,
-  "ready_for_review": true,
-  "observed_pr_state": "OPEN_DRAFT"
+  "ready_for_review": false,
+  "observed_pr_state": "MERGED"
 }
