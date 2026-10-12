@@ -1,0 +1,57 @@
+{
+  "repository": "PerryTS/perry",
+  "checked_at": "2026-10-12T07:28:51Z",
+  "purpose": "Read-only refresh of original-224 issue states, keeping later-created issues separate. Central ledger not modified.",
+  "comparison": {
+    "prior_refresh": "planning/original224-state-refresh-2026-10-12T062742Z.json",
+    "prior_checked_at": "2026-10-12T06:27:42Z",
+    "prior_repo_open": 186,
+    "prior_original_open": 181,
+    "prior_original_closed": 43,
+    "prior_new_open_excluded": [12396, 12408, 12425, 12435, 12448]
+  },
+  "current_counts": {
+    "repo_open_issues": 190,
+    "original_count": 224,
+    "original_open": 180,
+    "original_closed": 44,
+    "new_open_excluded_from_original": [12396, 12408, 12425, 12435, 12448, 12451, 12452, 12453, 12454, 12455]
+  },
+  "deltas_since_prior_refresh": {
+    "repo_open": 4,
+    "original_open": -1,
+    "original_closed": 1,
+    "newly_closed_originals": [12007],
+    "reopened_originals": [],
+    "new_open_issues_excluded_from_original": [12451, 12452, 12453, 12454, 12455]
+  },
+  "direct_state_check": {
+    "issue": 12007,
+    "state": "closed",
+    "closed_at": "2026-10-12T07:28:41Z",
+    "state_reason": "completed",
+    "updated_at": "2026-10-12T07:28:41Z"
+  },
+  "batch_pr_lifecycle_separately_observed": {
+    "pr": 12450,
+    "state": "closed",
+    "merged": true,
+    "draft": false,
+    "created_at": "2026-10-12T06:51:25Z",
+    "closed_at": "2026-10-12T07:28:40Z",
+    "merged_at": "2026-10-12T07:28:40Z",
+    "base": "main",
+    "base_sha": "3c2f9b065af16f916c7d2cba1462716cacc29d8b",
+    "head": "cloud/issue-12007-class-expression-tdz",
+    "head_sha": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
+    "merge_commit_sha": "ccbd617c6e7acc37761e22157a4ce00aaaae1845",
+    "changed_files": 7
+  },
+  "method": {
+    "open_issue_search": "repo:PerryTS/perry is:issue is:open with creation-date partitions May through Oct 12, 2026; pull requests excluded; all partitions returned fewer than 100 results.",
+    "newly_absent_original_verification": "Direct GitHub issue fetch for #12007.",
+    "pr_verification": "Read-only PR metadata fetch for #12450; no review/comment or diff retrieval."
+  },
+  "attribution": "Issue and PR states are recorded separately. No issue closure is attributed to any contributor PR.",
+  "coverage": "This is state-only reconciliation; it does not update or reclassify the original-224 coverage ledger."
+}

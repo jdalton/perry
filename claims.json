@@ -62,7 +62,7 @@
     {
       "issue": 12007,
       "cohort": "original224",
-      "coverage": "covered",
+      "coverage": "closed",
       "covering_prs": [
         12450
       ],
@@ -71,11 +71,11 @@
       "branch": "cloud/issue-12007-class-expression-tdz",
       "worktree": "/workspace/work/perry-queue/issue-12007",
       "validation": "Final7f128 freshmatchingtrio and4scopednoauto acceptance witnesses PASS; full lint765 reusedfragment-onlydelta,33/137failures2skips classifiedbaseline/environment. Linuxonly; no full lintgreen claim.",
-      "merge_state": "DRAFT PR12450, not merged",
-      "closure_state": "OPEN",
-      "evidence": "issue12007-status.json; refreshed 25 open PR inventories with no exact-path overlap",
-      "refreshed_at": "2026-10-12T07:27:00.953860+00:00",
-      "publication_state": "Final-head ready packet; observed PR12450stilldraft; local publisher authorizedready transition",
+      "merge_state": "MERGED PR12450",
+      "closure_state": "CLOSED",
+      "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json",
+      "refreshed_at": "2026-10-12T07:28:51Z",
+      "publication_state": "Merged at validated7f128cf; originalissueclosed independentlyverified",
       "current_head": "7f128cf54f2c134ac730fb75e323df75af4cecc4",
       "has_uncommitted_changes": false,
       "remaining": "Serial matching build, compiled acceptance and full lint in fixed issue-9927 validation checkout after12285 releases",
@@ -236,7 +236,7 @@
       "worktree_state": "Canonical checkout retired; exact branch/tree/source bundle retained; restore or use idle fixed checkout for validation"
     }
   ],
-  "updated_at": "2026-10-12T07:27:00.953860+00:00",
+  "updated_at": "2026-10-12T07:28:51Z",
   "publication_blocker": "pr-write-blocker.json",
   "new_implementation": "resumed by explicit user instruction",
   "publication_policy": "Local publication only; do not retry denied cloud PR integration or copy credentials",

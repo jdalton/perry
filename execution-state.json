@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-12T06:51:11.393892+00:00",
+  "updated_at": "2026-10-12T07:28:51Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "/root/luna_verification #11519 exact-head validation",
+  "serial_build_owner": "/root/luna_verification #11519 full lint",
   "next_steps": [
-    "Local publisher may create12007 draft from765a94d; cloud waits for actual PRnumber beforefragment",
-    "Serial11519 validation then10739 then12202; no overlapping builds",
-    "12202 Astra source review complete; bounded validation plan available",
-    "Publish completed packets immediately; consume actual PRnumbers from inbox at milestones"
+    "PR12450merged and12007closed; no pendingpublisher action",
+    "Finish11519full lintclassification; publishdraftpacket immediately",
+    "Serial10739full lint then12202boundedruntimechecks/full lint",
+    "Consume actualPRnumbers; add fragments and final-head readiness withoutqueueing behindotherlonglanes"
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -32,11 +32,13 @@
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
   "new_batch": {
     "target": 20,
-    "merged": 2,
-    "remaining_to_good_state": 18
+    "merged": 3,
+    "remaining_to_good_state": 17,
+    "opened": 3,
+    "drafts": 0
   },
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "4da2b0b"
+  "latest_handoff": "c5060df"
 }
