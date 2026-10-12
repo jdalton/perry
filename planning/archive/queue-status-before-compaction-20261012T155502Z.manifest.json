@@ -1,0 +1,8 @@
+{
+  "archived_at_utc": "2026-10-12T15:55:02Z",
+  "original_path": "queue-status.json",
+  "archive_path": "planning/archive/queue-status-before-compaction-20261012T155502Z.json",
+  "bytes": 26229,
+  "sha256": "5dcfd9d7cc0ece77141fe51757b92a6a9c2e823adbe6c3ea4f3df3f7a846f030",
+  "purpose": "Exact pre-compaction snapshot; retain all historical status before compact live queue rewrite."
+}
