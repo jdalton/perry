@@ -1,0 +1,1 @@
+This partial #12145 change restricts thread-exit timer cleanup to the existing primary-agent partition. It does not resolve callbacks being dropped when primary-reachable values live in a helper thread's arena.

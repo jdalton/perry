@@ -1,0 +1,304 @@
+{
+  "kind": "exact_base_static_ab_attribution",
+  "checked_at_utc": "2026-10-12T14:56:21Z",
+  "exact_base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "pre_fix_candidate_head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+  "committed_candidate_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "candidate_commit_paths": [
+    "crates/perry-runtime/src/timer/store.rs"
+  ],
+  "comparison_worktrees": {
+    "base": "/tmp/12145-d3-static",
+    "candidate": "/tmp/12145-head-static",
+    "profile": "shared-object detached worktrees with matching sparse cones including scripts, crates, docs, tests, benchmarks, registries, and workflow/config roots; no build performed"
+  },
+  "raw_logs_dir": "/workspace/work/perry-queue/12145-base-static-results",
+  "full_lint_log": "/workspace/work/perry-queue/12145-full-lint.log",
+  "full_lint_run_record": "/workspace/work/perry-queue/12145-full-lint-run.json",
+  "full_lint_status": "incomplete: exact-head run exited 124 at timeout during API release build; no full-driver footer",
+  "candidate_diff_summary": "The additional commit changes only the opening/closing delimiters of an existing per_test_global! macro invocation in timer/store.rs; declarations and initializers, exact counter assertions, and production logic are unchanged.",
+  "comparisons": [
+    {
+      "gate": "benchmark_peer_fallback",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "byte-identical output",
+      "evidence": "invalid benchmark artifact: 02_loop_overhead has invalid zero RSS sample; same output SHA-256 03946dc485f1ea840e6343a6ace543f8687f3839d7a14a93c8eec4e954731c83",
+      "candidate_attribution": "reproduced at exact base; test itself and benchmark sources unchanged"
+    },
+    {
+      "gate": "release_pipeline",
+      "base_status": "fail (1 of 7)",
+      "candidate_status": "fail (1 of 7)",
+      "equivalence": "same failing test and same gh/jq assertion; differences are temporary checkout path and runtime only",
+      "evidence": "test_ancestor_test_gate_keeps_simulator_on_candidate; unexpected workflow dispatch call after jq parse error",
+      "candidate_attribution": "reproduced at exact base; workflow and test source unchanged"
+    },
+    {
+      "gate": "file_size",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "byte-identical output; SHA-256 e46fa5fbda7ee6d10c66c61cb0342668b375f70bbcd6c32d139ecebcfee1968a",
+      "evidence": [
+        "crates/perry-runtime/src/arena/page_meta/mod.rs: 2020",
+        "crates/perry-runtime/src/arena/tests.rs: 2020",
+        "crates/perry-runtime/src/json/replacer.rs: 2004"
+      ],
+      "candidate_attribution": "all three paths outside candidate diff; delimiter fix adds no lines"
+    },
+    {
+      "gate": "test_registration_self_test_and_check",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "byte-identical full-profile output at d3 vs 22726",
+      "evidence": [
+        "dark GC corpus entries: test_gap_gc_fetch_streaming_chunks.ts, test_gap_gc_global_scalar_snapshot.ts, test_gap_gc_ic_leaf_json.ts, test_gap_gc_protected_poll_reclaim.ts, test_gap_gc_worker_transfer_ownership.ts",
+        "dark Rust module: crates/perry-runtime/src/gc/tests/rooted_array_accessors.rs",
+        "same category counts: 121/116, 25/22, 23/21, 309/308"
+      ],
+      "candidate_attribution": "no timer_thread_exit integration-test registration delta; it is an external integration test, and no changed source is named"
+    },
+    {
+      "gate": "unrooted_local_check",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "byte-identical output; SHA-256 675d80e55ac494a12b7a93968925ee84fe77d5b30937aec7d82535108844e729",
+      "evidence": "same per-file candidate counts",
+      "candidate_attribution": "exact source results unchanged"
+    },
+    {
+      "gate": "unrooted_local_vs_base",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "same full diagnostic text",
+      "evidence": "recorded 309 -> 309, measured 299; sole violation crates/perry-ext-sharp/src/lib.rs",
+      "candidate_attribution": "exact source result unchanged"
+    },
+    {
+      "gate": "thread_exit_address_globals",
+      "base_status": "fail (13 findings)",
+      "candidate_status": "fail (13 findings)",
+      "equivalence": "byte-identical output; SHA-256 7daa5f1d85b98c9390875cf0b23e57ef0c2ac989405b01bb2903b97f36342f63",
+      "evidence": "same 13 findings, including seven stale/missing verdicts/hooks and six live candidates; no timer-store finding",
+      "candidate_attribution": "no candidate delta"
+    },
+    {
+      "gate": "global_sink_isolation",
+      "base_status": "fail",
+      "candidate_pre_fix_status": "fail",
+      "candidate_post_fix_status": "fail, same baseline-level 12 findings",
+      "equivalence": "post-fix base/candidate both 12 bare-global findings and asserted count 70; the previous candidate had 16 bare findings from four timer counters",
+      "evidence": {
+        "base_log": "12145-base-static-results/base-global_sink_isolation.log",
+        "pre_fix_candidate_log": "12145-base-static-results/candidate-global_sink_isolation.log",
+        "post_fix_candidate_log": "12145-base-static-results/global_sink_after_fix.log",
+        "removed_candidate_only_findings": [
+          "timer/store.rs::PRIMARY_ANY_PENDING",
+          "timer/store.rs::PRIMARY_CHECK_PENDING",
+          "timer/store.rs::PRIMARY_REFED_CHECK",
+          "timer/store.rs::PRIMARY_REFED_TIMERS"
+        ]
+      },
+      "candidate_attribution": "brace delimiters keep all four existing per_test_global! declarations inside the checker-recognized block; no counter/test changes. Remaining 12 bare globals also fail at exact base."
+    },
+    {
+      "gate": "locale_independent_io",
+      "base_status": "fail",
+      "candidate_status": "fail",
+      "equivalence": "same unchanged checker/source path in full-lint outputs",
+      "evidence": "scripts/gc_runtime_root_holders.py:1199 read_text without encoding",
+      "candidate_attribution": "diagnostic path outside diff"
+    },
+    {
+      "gate": "cargo_fmt",
+      "base_status": "not run (Cargo prohibited for this A/B)",
+      "candidate_status": "full-run failed with clipped import-order excerpt/path omitted",
+      "equivalence": "unresolved; candidate changed timer/store.rs is rustfmt-clean",
+      "evidence": "pinned rustfmt --edition 2021 --check crates/perry-runtime/src/timer/store.rs passed on committed head"
+    },
+    {
+      "gate": "windows_xwin",
+      "base_status": "not rerun",
+      "candidate_status": "fail",
+      "equivalence": "environment blocker",
+      "evidence": "GET https://aka.ms/vs/17/release/channel via configured proxy returned 403/403"
+    },
+    {
+      "gate": "rustc_warnings_and_clippy",
+      "base_status": "not rerun",
+      "candidate_status": "fail in full driver",
+      "equivalence": "unresolved/candidate-sensitive; verifier has full run diagnostics",
+      "evidence": "do not attribute without verifier full diagnostic and comparison"
+    }
+  ],
+  "limitations": [
+    "No Cargo, Rust compilation, or full lint was run for this A/B.",
+    "The full driver output clipped some diagnostics; compiler and Clippy failures remain verifier-owned and unresolved here.",
+    "The temporary sparse checkout used for an earlier ad hoc candidate registration run was excluded; the retained full-profile A/B outputs use matching sparse cones and no missing registry files."
+  ],
+  "static_only": true,
+  "current_2e_full_lint": {
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "started_at": "2026-10-12T14:26:21Z",
+    "deadline": "2026-10-12T14:56:21Z",
+    "exit_code": 124,
+    "outcome": "driver timed out at the cap during the API release build; no footer or final gate totals",
+    "last_completed_gate": "Auto-optimize pruned feature builds",
+    "log": "../../12145-2e-full-lint.log",
+    "log_sha256": "0976c18464312cb24f5a3684701dbdb55ff8337b8031e015f6f58c40f140660a",
+    "run_record": "../../12145-2e-full-lint.run.json",
+    "classification": [
+      {
+        "gate": "benchmark_peer_fallback",
+        "attribution": "exact-base reproduction",
+        "evidence": "Base and candidate output byte-identical: invalid zero RSS sample for 02_loop_overhead; saved A/B log SHA 03946dc485f1ea840e6343a6ace543f8687f3839d7a14a93c8eec4e954731c83."
+      },
+      {
+        "gate": "release_pipeline",
+        "attribution": "exact-base reproduction",
+        "evidence": "Same single failing test and unexpected gh workflow-dispatch call at base and candidate; only temporary checkout path and timing differ."
+      },
+      {
+        "gate": "windows_xwin",
+        "attribution": "environment failure",
+        "evidence": "Full log reports official channel GET blocked by proxy 403/403."
+      },
+      {
+        "gate": "cargo_fmt",
+        "attribution": "unresolved",
+        "evidence": "Full-driver excerpt omits diagnostic file path; changed timer/store.rs passes pinned rustfmt check. No exact-base workspace fmt run."
+      },
+      {
+        "gate": "file_size",
+        "attribution": "exact-base reproduction",
+        "evidence": "Byte-identical base/candidate output lists unchanged page_meta/mod.rs (2020), arena/tests.rs (2020), json/replacer.rs (2004)."
+      },
+      {
+        "gate": "buffer_layout",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Named forbidden write is canonical_keys_minor_prune.rs:69, outside candidate diff; checker unchanged."
+      },
+      {
+        "gate": "local_binding",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "All named functions are in unchanged codegen files; checker and policy unchanged."
+      },
+      {
+        "gate": "gc_store_site",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named weakref/zlib write sites are unchanged; checker unchanged."
+      },
+      {
+        "gate": "addr_class",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named sweep/method sites are unchanged; checker unchanged."
+      },
+      {
+        "gate": "string_payload_inventory",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Stale baseline counts concern unchanged zlib/runtime/stdlib paths; no timer store paths."
+      },
+      {
+        "gate": "sso_inventory",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named symbol/thread/value paths are unchanged."
+      },
+      {
+        "gate": "shape_descriptor_census",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "All named codegen callsites are unchanged."
+      },
+      {
+        "gate": "gc_pin_sites",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Named value/addr_class/image.rs finding is unchanged."
+      },
+      {
+        "gate": "gc_runtime_root_holders",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Named object/property_key.rs finding is unchanged."
+      },
+      {
+        "gate": "thread_exit_address_globals",
+        "attribution": "exact-base reproduction",
+        "evidence": "Base and candidate scanner outputs byte-identical with the same 13 findings."
+      },
+      {
+        "gate": "registry_lifetime",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named class_registry/census findings and stale allowlist path are unchanged."
+      },
+      {
+        "gate": "gc_env_knobs",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Findings concern unchanged docs/weakmap files and GC env parsers."
+      },
+      {
+        "gate": "gc_doc_claims",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named docs and arena/block.rs are unchanged."
+      },
+      {
+        "gate": "locale_independent_io",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Named scripts/gc_runtime_root_holders.py:1199 is unchanged."
+      },
+      {
+        "gate": "runtime_abi_wasm",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Stale wasm runtime_abi.tsv is unchanged."
+      },
+      {
+        "gate": "raw_handle_debt",
+        "attribution": "candidate path not implicated; exact-base replay not run",
+        "evidence": "Named value/dynamic_object.rs is unchanged."
+      },
+      {
+        "gate": "native_handle_ledger_self_test_and_check",
+        "attribution": "candidate paths not implicated; exact-base replay not run",
+        "evidence": "Named node_stream, buffer/layout, dynamic_key_read, and object/mod files are unchanged."
+      },
+      {
+        "gate": "unrooted_local_check_and_vs_base",
+        "attribution": "exact-base reproduction",
+        "evidence": "Check output hashes match; vs-base report is the same sharp.rs violation."
+      },
+      {
+        "gate": "test_registration",
+        "attribution": "same matched-profile A/B; current full-driver profile mismatch caveat",
+        "evidence": "Matched base/candidate sparse-profile outputs are byte-identical. Full-lint excerpt omits gc-repsel registry category seen in matched profile; do not treat it as complete-tree registration proof."
+      },
+      {
+        "gate": "global_sink_isolation",
+        "attribution": "candidate delta fixed; baseline failure persists",
+        "evidence": "Before delimiter normalization the candidate had four additional PRIMARY_* findings. After it, exact base and candidate both have 12 bare globals and asserted count 70; command still fails at base."
+      },
+      {
+        "gate": "rustc_warnings_product",
+        "attribution": "unresolved compiler fingerprints",
+        "evidence": "Only clipped tail and 42-error summary retained; no complete per-diagnostic candidate/base comparison artifact."
+      },
+      {
+        "gate": "rustc_warnings_all_targets",
+        "attribution": "unresolved compiler fingerprints",
+        "evidence": "Only clipped tail and 35-error summary retained; no complete per-diagnostic candidate/base comparison artifact."
+      },
+      {
+        "gate": "clippy_host",
+        "attribution": "unresolved compiler fingerprint",
+        "evidence": "Retained tail has one-error/1101-warning summary and a help excerpt, but not the primary diagnostic path/message or exact-base counterpart."
+      },
+      {
+        "gate": "API_release_build",
+        "attribution": "incomplete at timeout",
+        "evidence": "Driver reached API release build and hit timeout cap; no completed result."
+      }
+    ],
+    "exact_base_proof_limits": [
+      "Source/checker identity and named unchanged paths are not treated as proof of exact-base gate behavior.",
+      "Only entries explicitly marked exact-base reproduction have direct A/B result evidence.",
+      "Compiler and Clippy failures remain unresolved because complete diagnostics are absent."
+    ]
+  }
+}

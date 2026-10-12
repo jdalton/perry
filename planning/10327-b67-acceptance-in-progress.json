@@ -1,0 +1,32 @@
+{
+  "issue": 10327,
+  "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+  "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+  "checked_at": "2026-10-12T15:08:11Z",
+  "focused_getter_test": {
+    "command": "cargo test --locked -p perry-ext-http --lib connected_session_keeps_encryption_independent_of_alpn -- --test-threads=1",
+    "started_at": "2026-10-12T15:04:32Z",
+    "exit_code": 0,
+    "passed": 1,
+    "failed": 0,
+    "log": "/workspace/work/perry-queue/10327-focused-getter.log",
+    "run_record": "/workspace/work/perry-queue/10327-focused-getter.run.json"
+  },
+  "fresh_matching_trio": {
+    "status": "RUNNING",
+    "started_at": "2026-10-12T15:06:31Z",
+    "cap_seconds": 2700,
+    "deadline": "2026-10-12T15:51:31Z",
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "target": "/workspace/work/perry-queue/target-12390",
+    "CARGO_INCREMENTAL": 0,
+    "CARGO_BUILD_JOBS": 1
+  },
+  "next_if_trio_passes": "Run the bounded compiled localhost TLS no-ALPN/negotiated-h2/plaintext control fixture against pinned Node26.5.1. No full lint or release build is in this focused acceptance sequence.",
+  "runtime_fixture": "PENDING",
+  "auto_opt": "NOT RUN",
+  "full_lint": "NOT RUN",
+  "coverage": "uncovered",
+  "draft_creation_allowed": false,
+  "ready_for_review": false
+}

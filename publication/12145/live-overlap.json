@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-10-12T15:06:29Z",
+  "sources": [
+    "GitHub read-only issue and PR search",
+    "PerryTS/perry main content API",
+    "verified fork git ref"
+  ],
+  "candidate_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "fork_branch": "jdalton:cloud/issue-12145-primary-timer-scan",
+  "fork_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "issue": {
+    "number": 12145,
+    "state": "open",
+    "updated_at": "2026-10-07T07:44:52Z",
+    "closed_at": null,
+    "comments": 0,
+    "scope": "Issue remains broader: helper-arena callback loss plus primary-only freed-range scan."
+  },
+  "duplicate_search": {
+    "query": "repo:PerryTS/perry is:pr is:open 12145",
+    "open_results": 0
+  },
+  "overlap": {
+    "current_main_blob_checks": {
+      "crates/perry-runtime/src/timer/store.rs": {
+        "main_blob": "081b89d075c985b9a4550760390a3a370d38e596",
+        "base_blob": "081b89d075c985b9a4550760390a3a370d38e596",
+        "candidate_change_unmerged": true
+      },
+      "crates/perry-runtime/src/timer/store_tests.rs": {
+        "main_blob": "2b50f865a9199a15d65f91e8aee5d94e662bb765",
+        "base_blob": "2b50f865a9199a15d65f91e8aee5d94e662bb765",
+        "candidate_change_unmerged": true
+      },
+      "crates/perry-runtime/tests/timer_thread_exit.rs": {
+        "main": "404; absent",
+        "base": "absent"
+      }
+    },
+    "open_adjacent_prs": [
+      {
+        "number": 12121,
+        "head": "07857a06ce57ffcfa538eb5a0d80d8e881c36bb2",
+        "state": "open draft",
+        "changed_files": 103,
+        "candidate_path_overlap": []
+      },
+      {
+        "number": 5811,
+        "state": "open; prior filename list reused",
+        "changed_files": 47,
+        "candidate_path_overlap": []
+      }
+    ],
+    "duplicate_or_path_conflict": false
+  },
+  "conclusion": "Fresh issue/open-PR check found no covering duplicate. Scope remains partial; do not close issue."
+}

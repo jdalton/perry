@@ -1,0 +1,51 @@
+{
+  "issue": 12145,
+  "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "checked_at": "2026-10-12T15:04:11Z",
+  "fork_source_ref": {
+    "repository": "jdalton/perry",
+    "branch": "cloud/issue-12145-primary-timer-scan",
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "verified_at": "2026-10-12T15:07:57Z"
+  },
+  "acceptance": {
+    "fresh_trio": "PASS",
+    "focused_controls": "37/37 PASS",
+    "production_integration": "1/1 PASS",
+    "api_docs_release_compiler_build": "PASS",
+    "pinned_rustfmt_and_diff_check": "PASS"
+  },
+  "full_lint": {
+    "status": "INCOMPLETE_TIMEOUT",
+    "started_at": "2026-10-12T14:26:21Z",
+    "deadline": "2026-10-12T14:56:21Z",
+    "exit": 124,
+    "counts": {
+      "ok": 104,
+      "fail": 31,
+      "skip": 2,
+      "footer": false
+    },
+    "interrupted_at": "API docs regeneration; cargo build --release -p perry",
+    "last_completed_gate": "Auto-optimize pruned feature builds",
+    "classification": "31 failed rows retained; not fully independently attributed. Host Clippy fatal fingerprint remains unresolved; no green/full pass claim.",
+    "log": "/workspace/work/perry-queue/12145-2e-full-lint.log"
+  },
+  "publication": {
+    "source_branch_pushed": true,
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "full_lint_complete": false,
+    "actual_pr_created": false,
+    "pr_number": null,
+    "pr_url": null
+  },
+  "body_sha256": "52e25561d15b4fea0870f123ff14e66eb365a89448388ca24af32f86412b1d2a",
+  "metadata_sha256": "6f0e57a766bd292b2ef1ef3d84a527e41ab08190aa78b88c9f74276619690916",
+  "validation_json_sha256": "b6c092779231dd02b8693b32e5778c7fa2c1c27c300f2f0264dd795a62431575",
+  "source_validation_evidence": "publication/12145/2e-final-validation.json",
+  "handoff_packet": "publication/12145/metadata.json",
+  "checked_at_relay": "2026-10-12T15:08:11Z"
+}

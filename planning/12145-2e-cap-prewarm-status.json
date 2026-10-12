@@ -1,0 +1,43 @@
+{
+  "issue": 12145,
+  "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "checked_at": "2026-10-12T14:57:20Z",
+  "acceptance_before_lint": {
+    "fresh_matching_trio": "PASS",
+    "focused_controls": "37/37 PASS (19 store,14 inline timer,3 agent,1 thread exit)",
+    "production_integration": "1/1 PASS"
+  },
+  "full_lint": {
+    "command": "bash scripts/run_lint_gates.sh",
+    "started_at": "2026-10-12T14:26:21Z",
+    "hard_deadline": "2026-10-12T14:56:21Z",
+    "cap_seconds": 1800,
+    "exit_code": 124,
+    "status": "INTERRUPTED AT HARD CAP; no footer, incomplete, not classified",
+    "interrupted_gate": "API docs cargo build --release -p perry",
+    "last_completed_gate": "Auto-optimize pruned-feature checks PASS",
+    "log": "/workspace/work/perry-queue/12145-2e-full-lint.log",
+    "exit_file": "/workspace/work/perry-queue/12145-2e-full-lint.exit",
+    "run_record": "/workspace/work/perry-queue/12145-2e-full-lint.run.json",
+    "docs_drift_gate": "not established as completed after interruption"
+  },
+  "next_validation": {
+    "status": "RELEASE PREWARM RUNNING",
+    "command": "cargo build --locked --release -p perry",
+    "started_at": "2026-10-12T14:56:40Z",
+    "hard_deadline": "2026-10-12T15:41:40Z",
+    "cap_seconds": 2700,
+    "target": "target-12390",
+    "CARGO_INCREMENTAL": 0,
+    "CARGO_BUILD_JOBS": 1,
+    "started_marker": "/workspace/work/perry-queue/12145-2e-release-prebuild.started",
+    "run_record": "not yet present at relay update"
+  },
+  "next_after_prewarm": "One full 30-minute lint rerun, preserving prior interrupted run. Source candidate #10327 remains next after validation slot releases.",
+  "coverage": "uncovered",
+  "draft_creation_allowed": false,
+  "ready_for_review": false,
+  "pr_creation_allowed": false
+}

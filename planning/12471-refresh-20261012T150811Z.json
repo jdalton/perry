@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-12T15:08:11Z",
+  "repo": "jdalton/perry",
+  "branch": "cloud/local-publisher-inbox",
+  "path": "publisher-status.json",
+  "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+  "updated_at": "2026-10-12T12:24:51.074087+00:00",
+  "batch_pr_numbers": [
+    12444,
+    12445,
+    12450,
+    12456,
+    12458,
+    12471
+  ],
+  "no_12145_assignment": true,
+  "inbox_12471": {
+    "state": "draft",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63"
+  },
+  "previous_direct_12471_check": {
+    "checked_at": "2026-10-12T14:57:20Z",
+    "url": "https://github.com/PerryTS/perry/pull/12471",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae"
+  },
+  "conclusion": "Inbox remains stale at 2272 and shows no #12145 assignment. Direct #12471 was last confirmed open/draft at dfd64. No new PR number or URL exists for #12145."
+}

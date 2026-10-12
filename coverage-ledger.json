@@ -505,11 +505,11 @@
         "branch": "cloud/issue-12145-primary-timer-scan",
         "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
         "has_uncommitted_changes": false,
-        "validation": "Exact2e094 fresh trio,37 focused controls,production integration1/1 PASS; full lint running from14:26:21Z to14:56:21Z cap, final result/classification pending.",
-        "merge_state": "no PR",
+        "validation": "Exact-head trio,37 controls,production integration,release compiler build pass. Full lint incomplete at cap:104 ok,31 fail,2 skips,no footer; unresolved Clippy fingerprint.",
+        "merge_state": "draft authorized, no PR assigned",
         "closure_state": "OPEN",
-        "publication_state": "Unvalidated source update; no PR or coverage credit.",
-        "evidence": "planning/12145-2e-full-lint-start.json"
+        "publication_state": "Partial draft creation authorized; ready_for_review=false; full lint incomplete.",
+        "evidence": "planning/12145-2e-publication-milestone.json"
       }
     },
     {
@@ -1577,6 +1577,11 @@
         "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
         "validation": "Pinned Node no-ALPN witness and scoped format PASS; Perry validation pending serial slot.",
         "evidence": "planning/10327-b67-source-milestone.json"
+      },
+      "claim": {
+        "current_head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+        "validation": "Source/format and pinned Node witness pass; connected-session getter unit passes1/1. Fresh matching trio running; compiled fixture pending.",
+        "evidence": "planning/10327-b67-acceptance-in-progress.json"
       }
     },
     {

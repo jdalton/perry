@@ -127,7 +127,7 @@
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "Inbox refreshed 2026-10-12T14:52:43Z (blob 59b919bfb3084932b47572495c47557b0f2c37ed) remains stale at PR12471 head2272; direct PR metadata confirms open/draft/unmerged at dfd64b7. Snapshot: planning/12471-refresh-20261012T145243Z.json.",
+    "evidence_source": "Inbox refreshed at2026-10-12T15:08:11Z (blob59b919b) still lists PR12471 at stale2272 and no #12145 assignment; last direct PR metadata check14:57 confirms #12471 OPEN/DRAFT at dfd64b7. Snapshot planning/12471-refresh-20261012T150811Z.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -137,13 +137,13 @@
     "ready_transition_packets": 0,
     "draft_creation_packets_available": 0,
     "pr_state_counts": {
-      "as_of": "2026-10-12T14:52:43Z",
+      "as_of": "2026-10-12T15:08:11Z",
       "opened": 6,
       "merged": 5,
       "closed_unmerged": 0,
       "currently_open": 1,
       "drafts": 1,
-      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the only open draft; direct PR metadata confirms dfd64b7. Inbox branch still lists stale 2272."
+      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the only current open draft. #12145 has an authorized draft packet but no actual PR assignment; do not increment counts until inbox reports it."
     }
   },
   "packets": [
@@ -314,18 +314,24 @@
       "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
       "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "state": "Exact2e094 acceptance passed; full lint running under 30-minute cap started14:26:21Z, deadline14:56:21Z.",
-      "validation": "Exact2e094 fresh matching trio PASS; 37 focused controls PASS; production integration1/1 PASS. Full run_lint_gates.sh running, final exit/classification pending.",
-      "draft_creation_allowed": false,
+      "state": "Source pushed at fork head2e094d; partial draft creation authorized. Ready-for-review remains false; full lint incomplete.",
+      "validation": "Exact-head trio,37 focused controls,production witness,release compiler build,pinned formatting/diff pass. Full lint incomplete: cap exit124 in API-doc release build;104 ok,31 failed,2 skipped,no footer; Clippy fatal fingerprint unresolved.",
+      "draft_creation_allowed": true,
       "ready_for_review": false,
       "push_allowed": false,
       "pr_creation_allowed": false,
       "packet": "planning/12145-full-lint-cap-milestone.json",
-      "publisher_actions": [],
+      "publisher_actions": [
+        "Create a draft for the exact pushed source head using the supplied body; verify PR head2e094d7; leave draft and do not mark ready because full lint is incomplete."
+      ],
       "coverage": "uncovered",
       "covering_prs": [],
       "failure_evidence": "/workspace/work/perry-queue/12145-38a-validation-result.json",
-      "full_lint_evidence": "planning/12145-2e-full-lint-start.json"
+      "full_lint_evidence": "publication/12145/2e-final-validation.json",
+      "validation_evidence": "publication/12145/2e-final-validation.json",
+      "external_pr_created": false,
+      "pr_number": null,
+      "pr_url": null
     },
     {
       "issues": [
@@ -337,8 +343,8 @@
       "base": "38bc59e28bfe952a607a153d2a56103ba15580c0",
       "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
       "has_uncommitted_changes": false,
-      "state": "Source-clear local candidate; Perry validation pending serial slot after #12145.",
-      "validation": "Astra source review and scoped formatting check PASS; pinned Node TLS/no-ALPN witness PASS. Perry validation, matching trio, compiled parity, auto-opt, and full lint are pending.",
+      "state": "Focused getter unit PASS1/1; fresh matching trio in progress; compiled fixture pending if trio passes.",
+      "validation": "At exact b67a01f, connected-session getter unit passes1/1; fresh matching trio started15:06:31Z (45-minute cap, output pending). Compiled localhost TLS/Node witness is next if trio passes; full lint/release not included in this lane.",
       "coverage": "uncovered",
       "partial_prs": [
         10354
@@ -351,7 +357,7 @@
       "pr_creation_allowed": false,
       "packet": "planning/10327-b67-source-milestone.json",
       "publisher_actions": [],
-      "validation_evidence": "planning/10327-b67-source-milestone.json",
+      "validation_evidence": "planning/10327-b67-acceptance-in-progress.json",
       "source_overlap_evidence": "planning/10327-current-source-overlap.json"
     }
   ],
@@ -359,8 +365,8 @@
   "coverage_freshness": "planning/original224-state-refresh-20261012T141340Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T14:52:43Z",
-  "publisher_inbox_checked_at": "2026-10-12T14:52:43Z",
+  "updated_at": "2026-10-12T15:08:11Z",
+  "publisher_inbox_checked_at": "2026-10-12T15:08:11Z",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,
@@ -371,10 +377,10 @@
   "original_closures_associated_with_our_merged_prs": 4,
   "serial_validation_owner": null,
   "serial_priority": [
-    "#12145 exact2e094: fresh trio,37 focused controls,production integration pass; full lint running from14:26:21Z to14:56:21Z; outcome pending. Evidence planning/12145-2e-full-lint-start.json.",
-    "#10327 source-clear b67a01f: pinned Node TLS/no-ALPN witness and scoped format pass; Perry acceptance pending behind #12145. Remains uncovered/partial10354; no PR.",
-    "#10027 exact6f21d9c parked after payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
-    "#12471 exact dfd64 ready packet; live PR open/draft/unmerged, direct metadata current; inbox stale.",
+    "#10327 exact b67a01f: focused getter PASS1/1; matching trio started15:06:31Z and is running; compiled TLS/Node witness pending. No full lint/release in current focused policy. See planning/10327-b67-acceptance-in-progress.json.",
+    "#12145 exact2e094: trio,37 controls,production witness,release compiler PASS; partial draft creation authorized at pushed fork head. Full lint incomplete (exit124,104/31/2,no footer); do not mark ready. See planning/12145-2e-publication-milestone.json.",
+    "#10027 exact6f21d9c parked after focused payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
+    "#12471 exact dfd64 ready packet; actual PR remains OPEN/DRAFT/unmerged; inbox stale.",
     "#11915 parked open/unresolved/unpublished at e190."
   ],
   "cargo_incremental": 0,
@@ -391,7 +397,7 @@
   },
   "draft_creation_packets_available": 1,
   "ready_transition_packets": 0,
-  "milestone_updated_at": "2026-10-12T14:52:43Z",
+  "milestone_updated_at": "2026-10-12T15:08:11Z",
   "latest_source_milestone": {
     "issue": 10327,
     "branch": "cloud/issue-10327-metadata-repair",
@@ -400,7 +406,7 @@
     "status": "Source-clear commit; Node witness and scoped formatting pass; Perry validation pending serial slot.",
     "evidence": "planning/10327-b67-source-milestone.json"
   },
-  "publisher_inbox_snapshot": "planning/12471-refresh-20261012T145243Z.json",
+  "publisher_inbox_snapshot": "planning/12471-refresh-20261012T150811Z.json",
   "resource_milestone": {
     "record": "planning/12390-sparse-recovery-milestone.json",
     "issue": 12390,
@@ -412,12 +418,12 @@
   },
   "current_validation_slot": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T14:26:21Z",
+    "checked_at": "2026-10-12T15:08:11Z",
     "active_validation_processes": [
-      "#12145 exact2e094 full run_lint_gates.sh in progress; started14:26:21Z, hard deadline14:56:21Z"
+      "#10327 matching trio started15:06:31Z; result pending, then compiled fixture if pass"
     ],
-    "next_task": "Finish/classify the exact2e094 full lint by the hard cap; then report result. #10027 parked at6f21d9c with focused payload-movement assertion failure.",
-    "evidence": "planning/12145-2e-full-lint-start.json"
+    "next_task": "Finish exact b67a01f trio; if pass run bounded compiled localhost TLS no-ALPN and controls against pinned Node26.5.1. Do not start full lint/release in this focused lane.",
+    "evidence": "planning/10327-b67-acceptance-in-progress.json"
   },
   "next_independent_candidate": {
     "issue": 12145,
@@ -489,27 +495,27 @@
     }
   ],
   "next_steps": [
-    "Complete and classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
-    "After #12145 releases serial slot, obtain authorized exact-head Perry validation for #10327 b67a01f; no acceptance claims before compiled witness.",
+    "Finish #10327 exact-head matching trio and, if it passes, bounded compiled TLS no-ALPN/Node witness; do not start full lint/release under current focused policy.",
+    "Local publisher may create the authorized #12145 draft at exact pushed head2e094d7; keep it draft because full lint is incomplete.",
     "Keep #10027 parked at6f21d9c after the focused payload-movement failure.",
-    "#12471 ready packet is published; live PR remains open/draft pending publisher.",
+    "#12471 remains open/draft; inbox state is stale and direct metadata confirms dfd64.",
     "#11915 remains parked open/unresolved/unpublished at e190."
   ],
   "latest_validation_milestone": {
-    "issue": 12145,
-    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "status": "Fresh trio,37 focused controls,production integration pass; full lint running under30-minute cap.",
-    "started_at": "2026-10-12T14:26:21Z",
-    "hard_deadline": "2026-10-12T14:56:21Z",
-    "evidence": "planning/12145-2e-full-lint-start.json"
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "status": "Focused getter passes1/1; matching trio running; compiled fixture pending.",
+    "getter_checked_at": "2026-10-12T15:04:32Z",
+    "trio_started_at": "2026-10-12T15:06:31Z",
+    "evidence": "planning/10327-b67-acceptance-in-progress.json"
   },
   "publisher_inbox_refresh": {
-    "checked_at": "2026-10-12T14:52:43Z",
+    "checked_at": "2026-10-12T15:08:11Z",
     "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
     "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "snapshot": "planning/12471-refresh-20261012T145243Z.json",
-    "actual_12471_state": "open/draft/unmerged at dfd64b7, confirmed by direct PR metadata; inbox lists stale 2272 head."
+    "snapshot": "planning/12471-refresh-20261012T150811Z.json",
+    "actual_12471_state": "Last direct metadata check14:57 confirmed OPEN/DRAFT/unmerged at dfd64b7; current inbox is stale and no #12145 assignment appears."
   },
   "latest_disk_recovery": {
     "issue": 12390,
@@ -518,5 +524,17 @@
     "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
     "validation_checkout_untouched": true,
     "evidence": "planning/12390-sparse-recovery-milestone.json"
+  },
+  "latest_publication_milestone": {
+    "issue": 12145,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "fork_branch": "jdalton:cloud/issue-12145-primary-timer-scan",
+    "source_push_verified_at": "2026-10-12T15:07:57Z",
+    "draft_creation_allowed": true,
+    "ready_for_review": false,
+    "full_lint_complete": false,
+    "actual_pr_number": null,
+    "actual_pr_url": null,
+    "evidence": "planning/12145-2e-publication-milestone.json"
   }
 }

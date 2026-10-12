@@ -1,0 +1,31 @@
+{
+  "issue": 12145,
+  "scope": "partial: limit freed-range cleanup to the existing PRIMARY_AGENT timer partition; helper-arena callback-loss behavior remains unresolved",
+  "base_branch": "main",
+  "validated_branch_base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "branch": "cloud/issue-12145-primary-timer-scan",
+  "title": "fix(timer): limit freed-range cleanup to the primary partition",
+  "draft_creation_allowed": true,
+  "ready_for_review": false,
+  "external_pr_created": false,
+  "full_lint_complete": false,
+  "validation_status": "exact-head trio, 37 focused controls, production witness, and release compiler build pass; full lint incomplete; draft creation allowed, not ready for review",
+  "validation": "validation.json",
+  "live_duplicate_check": "live-overlap.json",
+  "fragment_draft": "changelog-fragment.txt",
+  "checked_at": "2026-10-12T15:06:29Z",
+  "publisher_actions": [
+    "create supplied draft body for this exact source head",
+    "verify the created PR head",
+    "leave draft; do not mark ready until full lint classification is complete"
+  ],
+  "scope_limits": [
+    "Refs #12145 only; no whole-issue closure claim",
+    "Does not prevent timer callbacks or other primary-reachable values allocated in a helper arena from being dropped at thread exit",
+    "Validation is Linux-only; macOS behavior is unverified",
+    "No measured speedup claim",
+    "Do not create a numbered changelog file until an actual PR number is assigned"
+  ],
+  "static_attribution": "static-failure-attribution.json"
+}

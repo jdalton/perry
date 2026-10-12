@@ -1,0 +1,109 @@
+{
+  "issue": 12145,
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "validated_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "checkout": "/workspace/work/perry-queue/issue-9927",
+  "worktree_clean": true,
+  "settings": {
+    "CARGO_INCREMENTAL": "0",
+    "CARGO_BUILD_JOBS": "1",
+    "RUST_TEST_THREADS": "1",
+    "CARGO_TARGET_DIR": "/workspace/work/perry-queue/target-12390",
+    "toolchain": "nightly-2026-10-04"
+  },
+  "source_delta": "Compared with 22726d3c, only timer/store.rs macro delimiters changed; this keeps the four primary timer counters inside the existing per_test_global block. No counter, storage, or test semantics changed.",
+  "fresh_trio": {
+    "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+    "exit_code": 0,
+    "run_record": "/workspace/work/perry-queue/12145-2e-trio.run.json",
+    "log": "/workspace/work/perry-queue/12145-2e-trio.log",
+    "artifact_hashes": "/workspace/work/perry-queue/12145-2e-artifact-hashes.sha256",
+    "compiler_sha256": "5a8f49b59fdaebb6d52e3f45e67125501a99424eb1270a68e4a2f8a48463cb8f",
+    "runtime_archive_sha256": "1d025a24c20d0d22ab235241209bfa2c5a28ca20e5ac08999feaae4efdd54b5d",
+    "stdlib_archive_sha256": "d812337bde4a9a0a5fc0e5c8cfa70c84be894b796d0a21c602cc0567164e36b4"
+  },
+  "focused_acceptance": [
+    {
+      "filter": "timer::store::tests",
+      "passed": 19,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-store-tests.log",
+      "run_record": "/workspace/work/perry-queue/12145-2e-store-tests.run.json"
+    },
+    {
+      "filter": "timer::tests_inline",
+      "passed": 14,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-timer-inline.log",
+      "run_record": "/workspace/work/perry-queue/12145-2e-timer-inline.run.json"
+    },
+    {
+      "filter": "agent::tests",
+      "passed": 3,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-agent-tests.log",
+      "run_record": "/workspace/work/perry-queue/12145-2e-agent-tests.run.json"
+    },
+    {
+      "filter": "arena::thread_exit::tests",
+      "passed": 1,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-thread-exit-tests.log",
+      "run_record": "/workspace/work/perry-queue/12145-2e-thread-exit-tests.run.json"
+    },
+    {
+      "filter": "timer_thread_exit::primary_timers_are_released_when_helper_thread_arenas_exit",
+      "passed": 1,
+      "failed": 0,
+      "exit_code": 0,
+      "log": "/workspace/work/perry-queue/12145-2e-production-integration.log",
+      "run_record": "/workspace/work/perry-queue/12145-2e-production-integration.run.json",
+      "meaning": "Production-linked test confirms helper-thread timer removal after actual arena destruction while a main-owned timer remains live, then final clearing succeeds."
+    }
+  ],
+  "api_docs_release_compiler": {
+    "command": "cargo build --locked --release -p perry",
+    "exit_code": 0,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "run_record": "/workspace/work/perry-queue/12145-2e-release-prebuild.run.json",
+    "log": "/workspace/work/perry-queue/12145-2e-release-prebuild.log",
+    "release_compiler_sha256": "26090cc4b4f835493c0834fee23df65e732323ae8f028ad5e3f9495cb69bed4a",
+    "scope": "Separate exact-head prebuild only. No API docs regeneration or drift result is claimed."
+  },
+  "full_lint": {
+    "status": "INCOMPLETE_TIMEOUT",
+    "command": "BASE_SHA=d3e535944edbe7f7cf858c9ec932da355a7de26b CARGO_TARGET_DIR=target-12390 CARGO_INCREMENTAL=0 CARGO_BUILD_JOBS=1 RUST_TEST_THREADS=1 PIP_TARGET=/workspace/.toolchains/lint-python PYTHONPATH=/workspace/.toolchains/lint-python:/workspace/.toolchains/python-build-tools RUNNER_TEMP=12145-2e-lint-runner-temp GITHUB_PATH=12145-2e-lint-runner-temp/GITHUB_PATH timeout --signal=TERM --kill-after=30s 1800s bash scripts/run_lint_gates.sh",
+    "start_utc": "2026-10-12T14:26:21Z",
+    "deadline_utc": "2026-10-12T14:56:21Z",
+    "exit_code": 124,
+    "log": "/workspace/work/perry-queue/12145-2e-full-lint.log",
+    "counts": {
+      "ok": 104,
+      "fail": 31,
+      "skip": 2,
+      "footer": false
+    },
+    "last_completed_gate": "Auto-optimize pruned feature builds",
+    "interrupted_gate": "API docs regeneration: the full driver was building the release perry compiler at timeout. The same-head release build was then completed separately; the driver was not rerun and no full lint pass is claimed.",
+    "classification": "31 failed status rows are retained as failures; not all independently attributed in this run. Existing exact-base diagnostics and static A/B artifacts are linked at publication/12145/static-failure-attribution.json. Host-compatible Clippy has one fatal diagnostic, but its source/code is absent from the clipped tail; attribution remains unresolved. The visible declare_interior_mutable_const entry is only known to be a warning, not the fatal error."
+  },
+  "prior_full_lint": {
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "status": "INCOMPLETE_TIMEOUT",
+    "log": "/workspace/work/perry-queue/12145-full-lint.log",
+    "candidate_failure": "4 timer counters were outside checker-recognized per_test_global! block; exact-base comparison found 16 bare globals vs 12 base."
+  },
+  "candidate_fix_evidence": "/workspace/work/perry-queue/publication/12145/static-failure-attribution.json",
+  "parked_10027": {
+    "head": "6f21d9c5707b2bf9e67299ecb6a8c867204a3429",
+    "focused_status": "failed at tests.rs:395: payload address unchanged across forced minor GC",
+    "log": "/workspace/work/perry-queue/10027-6f21-focused.log",
+    "diagnostic_branch_not_publishable": true
+  },
+  "acceptance_scope": "#12145 focused tests and the real production thread-exit witness pass on exact 2e094d head. Full lint is incomplete and not green. No source changes were made by validator.",
+  "checked_at_utc": "2026-10-12T15:04:11Z"
+}

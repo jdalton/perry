@@ -1,0 +1,119 @@
+{
+  "candidate_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+  "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+  "source_review": {
+    "reviewer": "Astra planning agent",
+    "status": "source clear for primary-partition scan and delimiter-only global-sink normalization",
+    "scope": "partial primary-partition freed-range scan only; callback-loss behavior remains unresolved"
+  },
+  "final_head_checks": [
+    {
+      "check": "fresh candidate build trio",
+      "result": "pass per verifier",
+      "duration": "about 1m50s",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "log": "../../12145-2e-trio.log",
+      "run_record": "../../12145-2e-trio.run.json"
+    },
+    {
+      "check": "pinned rustfmt --edition 2021 --check crates/perry-runtime/src/timer/store.rs",
+      "result": "pass",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb"
+    },
+    {
+      "check": "git diff --check",
+      "result": "pass",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb"
+    },
+    {
+      "check": "focused timer/store controls and production thread-exit witness",
+      "result": "37/37 focused controls passed; production witness 1/1 passed",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "evidence": "verifier report"
+    },
+    {
+      "check": "focused controls aggregate",
+      "result": "37 passed",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "evidence": "verifier report"
+    },
+    {
+      "check": "production thread-exit integration witness",
+      "result": "1 passed",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "evidence": "verifier report"
+    }
+  ],
+  "prior_head_focused_results": {
+    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+    "status": "previously passed; not presented as exact-final-head acceptance",
+    "checks": [
+      "timer_thread_exit integration witness 1 passed",
+      "timer store tests 19 passed",
+      "timer inline controls 14 passed",
+      "agent controls 3 passed",
+      "thread-exit FreedRanges membership/value decoding 1 passed"
+    ],
+    "note": "These results predate the delimiter-only change; exact-current-head results are listed in final_head_checks."
+  },
+  "delimiter_fix": {
+    "commit": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "change": "Only changes the delimiters around the existing per_test_global! declaration for four PRIMARY_* counters; declarations, initializers, runtime behavior, and exact 2\u21921\u21920 assertions are unchanged.",
+    "static_a_b": "Before the fix the candidate had four additional global-sink findings. After the fix, base and candidate report the same 12 bare-global findings and the same asserted-static count (70). The global-sink command still fails at exact base on those pre-existing findings.",
+    "evidence": "static-failure-attribution.json; raw logs in ../../12145-base-static-results/"
+  },
+  "full_lint": {
+    "candidate_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "status": "incomplete_timeout",
+    "started_at": "2026-10-12T14:26:21Z",
+    "timed_out_at": "2026-10-12T14:56:21Z",
+    "exit_code": 124,
+    "last_completed_gate": "Auto-optimize pruned feature builds",
+    "interrupted": "API release build",
+    "complete": false,
+    "classification_complete": false,
+    "green_claim": false,
+    "log": "../../12145-2e-full-lint.log",
+    "run_record": "../../12145-2e-full-lint.run.json",
+    "static_attribution": "static-failure-attribution.json",
+    "prior_attempt": {
+      "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
+      "status": "timed out at 2026-10-12T13:50:22Z",
+      "completed_steps": {
+        "passed": 104,
+        "failed": 31,
+        "skipped": 2
+      },
+      "interrupted": "release/API-doc step",
+      "log": "../../12145-full-lint.log",
+      "run_record": "../../12145-full-lint-run.json"
+    },
+    "diagnostic_attribution": {
+      "status": "incomplete; compiler/Clippy fingerprints unresolved",
+      "rustc_product": "42-error summary and clipped diagnostics; no exact-base fingerprint comparison",
+      "rustc_host_all_targets": "35-error summary and clipped diagnostics; no exact-base fingerprint comparison",
+      "clippy_host": "one-error summary and 1101 warnings; fatal primary diagnostic unresolved; tail-only declare_interior_mutable_const text is not proof of the fatal diagnostic",
+      "claim": "No compiler or Clippy failure is declared baseline solely from counts, source identity, or a clipped tail."
+    }
+  },
+  "claims": {
+    "partial_issue_reference_only": true,
+    "callback_loss_resolved": false,
+    "macos_behavior_verified": false,
+    "performance_measured": false
+  },
+  "static_failure_attribution_status": "partial: exact-base replays recorded for selected gates; candidate-path-only findings are explicitly not called proven baseline; compiler/Clippy fingerprints unresolved",
+  "draft_creation_gate": {
+    "allowed_now": true,
+    "condition": "Exact-head release compiler build and targeted acceptance checks passed. This permits creating only a draft; full lint remains incomplete.",
+    "ready_for_review": false,
+    "full_lint_required_for_ready": true
+  },
+  "release_compiler": {
+    "result": "pass",
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "sha256": "26090cc4 (recorded by verifier)",
+    "command": "cargo build --locked --release -p perry",
+    "note": "Exact-head release compiler build passed; API documentation generation/drift was not run, and this does not complete the full lint driver."
+  }
+}

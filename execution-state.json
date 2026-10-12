@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-12T14:52:43Z",
+  "updated_at": "2026-10-12T15:08:11Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Complete and classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
-    "After #12145 releases serial slot, obtain authorized exact-head Perry validation for #10327 b67a01f; no acceptance claims before compiled witness.",
+    "Finish #10327 exact-head matching trio and, if it passes, bounded compiled TLS no-ALPN/Node witness; do not start full lint/release under current focused policy.",
+    "Local publisher may create the authorized #12145 draft at exact pushed head2e094d7; keep it draft because full lint is incomplete.",
     "Keep #10027 parked at6f21d9c after the focused payload-movement failure.",
-    "#12471 ready packet is published; live PR remains open/draft pending publisher.",
+    "#12471 remains open/draft; inbox state is stale and direct metadata confirms dfd64.",
     "#11915 remains parked open/unresolved/unpublished at e190."
   ],
   "prohibited": [
@@ -25,10 +25,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 exact2e094: fresh trio,37 focused controls,production integration pass; full lint running from14:26:21Z to14:56:21Z; outcome pending. Evidence planning/12145-2e-full-lint-start.json.",
-    "#10327 source-clear b67a01f: pinned Node TLS/no-ALPN witness and scoped format pass; Perry acceptance pending behind #12145. Remains uncovered/partial10354; no PR.",
-    "#10027 exact6f21d9c parked after payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
-    "#12471 exact dfd64 ready packet; live PR open/draft/unmerged, direct metadata current; inbox stale.",
+    "#10327 exact b67a01f: focused getter PASS1/1; matching trio started15:06:31Z and is running; compiled TLS/Node witness pending. No full lint/release in current focused policy. See planning/10327-b67-acceptance-in-progress.json.",
+    "#12145 exact2e094: trio,37 controls,production witness,release compiler PASS; partial draft creation authorized at pushed fork head. Full lint incomplete (exit124,104/31/2,no footer); do not mark ready. See planning/12145-2e-publication-milestone.json.",
+    "#10027 exact6f21d9c parked after focused payload-address-movement assertion failed at tests.rs:395; no broader acceptance.",
+    "#12471 exact dfd64 ready packet; actual PR remains OPEN/DRAFT/unmerged; inbox stale.",
     "#11915 parked open/unresolved/unpublished at e190."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
@@ -128,7 +128,7 @@
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "Inbox refreshed 2026-10-12T14:52:43Z (blob 59b919bfb3084932b47572495c47557b0f2c37ed) remains stale at PR12471 head2272; direct PR metadata confirms open/draft/unmerged at dfd64b7. Snapshot: planning/12471-refresh-20261012T145243Z.json.",
+    "evidence_source": "Inbox refreshed 2026-10-12T15:08:11Z remains stale at PR12471 head2272; direct metadata confirms #12471 OPEN/DRAFT at dfd64b7. No #12145 PR number/URL is assigned in this inbox snapshot. Evidence planning/12471-refresh-20261012T145720Z.json.",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -138,25 +138,25 @@
     "ready_transition_packets": 0,
     "draft_creation_packets_available": 0,
     "pr_state_counts": {
-      "as_of": "2026-10-12T14:52:43Z",
+      "as_of": "2026-10-12T15:08:11Z",
       "opened": 6,
       "merged": 5,
       "closed_unmerged": 0,
       "currently_open": 1,
       "drafts": 1,
-      "note": "Five merged PRs are GitHub-closed but not closed-unmerged. #12471 is the only open draft; direct PR metadata confirms dfd64b7. Inbox branch still lists stale 2272."
+      "note": "Only #12471 is currently an open PR draft. #12145 is authorized for draft creation but no PR assignment is yet observed; do not increment actual PR counts until it appears in inbox."
     }
   },
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": 12145,
+  "current_serial_issue": 10327,
   "serial_pending": [
-    "#12145 exact2e094 full lint running14:26:21Z–14:56:21Z; trio,37 focused controls,production integration passed.",
-    "#10327 b67a01f source clear with Node no-ALPN witness and scoped format PASS; Perry validation pending after #12145.",
-    "#10027 6f21d9c parked after focused payload-address-movement assertion failure; no broader acceptance.",
-    "#12471 dfd64 ready packet; live PR open/draft/unmerged.",
+    "#10327 exact b67a01f getter unit PASS1/1; trio started15:06:31Z and is running; compiled TLS/Node witness pending. No full lint/release per focused policy.",
+    "#12145 exact2e094 source pushed and partial draft authorized; exact-head trio/37 controls/production witness/release compiler pass, but full lint incomplete at cap; keep draft not ready.",
+    "#10027 6f21d9c parked after payload-address-movement assertion failure.",
+    "#12471 dfd64 ready packet; current PR remains open/draft.",
     "#11915 parked at e190."
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
@@ -167,17 +167,36 @@
   "validation_policy": "#12202 exact dfd64 numbered-fragment head has fresh trio,53 unique runtime tests/55 executions, no-auto Node26.5.1 parity, and fragment gates PASS. Auto-opt and full lint are explicitly reused from unchanged source head2272; full lint is non-green with classified failures. The publisher-ready packet does not transition the live PR.",
   "serial_static_owner": null,
   "current_validation_progress": {
-    "issue": 12145,
-    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "status": "full lint running under 30-minute cap",
-    "started_at": "2026-10-12T14:26:21Z",
-    "hard_deadline": "2026-10-12T14:56:21Z",
-    "prior_gates": {
-      "trio": "PASS",
-      "focused_controls": "37 PASS (19 store,14 inline timer,3 agent,1 thread exit)",
-      "production_integration": "1/1 PASS"
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+    "checked_at": "2026-10-12T15:08:11Z",
+    "focused_getter_test": {
+      "command": "cargo test --locked -p perry-ext-http --lib connected_session_keeps_encryption_independent_of_alpn -- --test-threads=1",
+      "started_at": "2026-10-12T15:04:32Z",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "log": "/workspace/work/perry-queue/10327-focused-getter.log",
+      "run_record": "/workspace/work/perry-queue/10327-focused-getter.run.json"
     },
-    "evidence": "planning/12145-2e-full-lint-start.json"
+    "fresh_matching_trio": {
+      "status": "RUNNING",
+      "started_at": "2026-10-12T15:06:31Z",
+      "cap_seconds": 2700,
+      "deadline": "2026-10-12T15:51:31Z",
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "target": "/workspace/work/perry-queue/target-12390",
+      "CARGO_INCREMENTAL": 0,
+      "CARGO_BUILD_JOBS": 1
+    },
+    "next_if_trio_passes": "Run the bounded compiled localhost TLS no-ALPN/negotiated-h2/plaintext control fixture against pinned Node26.5.1. No full lint or release build is in this focused acceptance sequence.",
+    "runtime_fixture": "PENDING",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN",
+    "coverage": "uncovered",
+    "draft_creation_allowed": false,
+    "ready_for_review": false
   },
   "validation_resource_policy": {
     "full_lint_hard_cap_minutes": 30,
@@ -209,13 +228,13 @@
   },
   "serial_slot_status": {
     "owner": "cloud /root/luna_verification",
-    "checked_at": "2026-10-12T14:26:21Z",
-    "next_task": "Complete/classify #12145 exact2e094 full lint by14:56:21Z hard deadline.",
+    "checked_at": "2026-10-12T15:08:11Z",
+    "next_task": "Complete #10327 trio by15:51:31Z; if it passes run bounded compiled Node witness. Do not start full lint/release in this focused lane.",
     "active_validation_processes": [
-      "run_lint_gates.sh for #12145 exact2e094"
+      "#10327 exact-head trio build"
     ],
     "census_clean": false,
-    "evidence": "planning/12145-2e-full-lint-start.json"
+    "evidence": "planning/10327-b67-acceptance-in-progress.json"
   },
   "cache_relocation_summary": {
     "record": "planning/idle-cache-relocation-20261012.json",
@@ -242,24 +261,23 @@
   },
   "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
   "current_validation_gate": {
-    "issue": 12145,
-    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "gate": "full scripts/run_lint_gates.sh (128-command/75-step inventory)",
-    "started_at": "2026-10-12T14:26:21Z",
-    "hard_deadline": "2026-10-12T14:56:21Z",
-    "cap_seconds": 1800,
-    "kill_grace_seconds": 30,
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "gate": "fresh matching trio build (perry + runtime-static + stdlib-static)",
+    "started_at": "2026-10-12T15:06:31Z",
+    "hard_deadline": "2026-10-12T15:51:31Z",
+    "cap_seconds": 2700,
     "owner": "cloud /root/luna_verification",
-    "status": "RUNNING; exact-head trio,37 focused controls,and production integration passed; full lint final result and classification pending.",
-    "evidence": "planning/12145-2e-full-lint-start.json"
+    "status": "RUNNING; focused getter test PASS1/1; trio output pending; compiled fixture follows if trio passes.",
+    "evidence": "planning/10327-b67-acceptance-in-progress.json"
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T14:52:43Z",
+    "observed_at": "2026-10-12T15:08:11Z",
     "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
     "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "PR12471 remains open/draft/unmerged at dfd64b7 by direct metadata; inbox snapshot is stale at 2272.",
-    "evidence": "planning/12471-refresh-20261012T145243Z.json"
+    "issue_12202_assignment": "No #12145 assignment in inbox; #12471 inbox head remains stale at2272, last direct check confirmed OPEN/DRAFT at dfd64b7.",
+    "evidence": "planning/12471-refresh-20261012T150811Z.json"
   },
   "next_independent_candidate": {
     "issue": 12145,
@@ -275,12 +293,12 @@
     "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T14:52:43Z",
+    "observed_at": "2026-10-12T15:08:11Z",
     "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
     "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
     "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
-    "issue_12202_assignment": "PR12471 remains open/draft/unmerged at dfd64b7 by direct metadata; inbox snapshot is stale at 2272.",
-    "evidence": "planning/12471-refresh-20261012T145243Z.json"
+    "issue_12202_assignment": "No #12145 assignment in inbox; #12471 inbox head remains stale at2272, last direct check confirmed OPEN/DRAFT at dfd64b7.",
+    "evidence": "planning/12471-refresh-20261012T150811Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -289,55 +307,38 @@
     "closed": 44
   },
   "current_validation_results": {
-    "issue": 12145,
-    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
-    "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
-    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-    "checked_at": "2026-10-12T14:26:21Z",
-    "fresh_matching_trio": {
-      "result": "PASS",
-      "started_at": "2026-10-12T14:18:32Z",
-      "exit": 0,
-      "log": "/workspace/work/perry-queue/12145-2e-trio.log"
-    },
-    "focused_controls": {
-      "result": "PASS",
-      "tests": {
-        "store": 19,
-        "inline_timer": 14,
-        "agent": 3,
-        "thread_exit": 1
-      },
-      "total": 37,
-      "logs": [
-        "/workspace/work/perry-queue/12145-2e-store-tests.log",
-        "/workspace/work/perry-queue/12145-2e-timer-inline.log",
-        "/workspace/work/perry-queue/12145-2e-agent-tests.log",
-        "/workspace/work/perry-queue/12145-2e-thread-exit-tests.log"
-      ]
-    },
-    "production_integration": {
-      "result": "PASS",
+    "issue": 10327,
+    "head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
+    "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
+    "checked_at": "2026-10-12T15:08:11Z",
+    "focused_getter_test": {
+      "command": "cargo test --locked -p perry-ext-http --lib connected_session_keeps_encryption_independent_of_alpn -- --test-threads=1",
+      "started_at": "2026-10-12T15:04:32Z",
+      "exit_code": 0,
       "passed": 1,
       "failed": 0,
-      "started_at": "2026-10-12T14:22:51Z",
-      "log": "/workspace/work/perry-queue/12145-2e-production-integration.log"
+      "log": "/workspace/work/perry-queue/10327-focused-getter.log",
+      "run_record": "/workspace/work/perry-queue/10327-focused-getter.run.json"
     },
-    "full_lint": {
-      "command": "timeout -s TERM -k 30s 1800s bash scripts/run_lint_gates.sh",
-      "started_at": "2026-10-12T14:26:21Z",
-      "hard_deadline": "2026-10-12T14:56:21Z",
-      "kill_grace_seconds": 30,
-      "status": "RUNNING; final exit and classification pending",
-      "log": "/workspace/work/perry-queue/12145-2e-full-lint.log",
-      "started_marker": "/workspace/work/perry-queue/12145-2e-full-lint.started",
-      "ready_for_review": false
+    "fresh_matching_trio": {
+      "status": "RUNNING",
+      "started_at": "2026-10-12T15:06:31Z",
+      "cap_seconds": 2700,
+      "deadline": "2026-10-12T15:51:31Z",
+      "command": "cargo build --locked -p perry -p perry-runtime-static -p perry-stdlib-static",
+      "target": "/workspace/work/perry-queue/target-12390",
+      "CARGO_INCREMENTAL": 0,
+      "CARGO_BUILD_JOBS": 1
     },
+    "next_if_trio_passes": "Run the bounded compiled localhost TLS no-ALPN/negotiated-h2/plaintext control fixture against pinned Node26.5.1. No full lint or release build is in this focused acceptance sequence.",
+    "runtime_fixture": "PENDING",
+    "auto_opt": "NOT RUN",
+    "full_lint": "NOT RUN",
     "coverage": "uncovered",
-    "pr_creation_allowed": false,
+    "draft_creation_allowed": false,
     "ready_for_review": false
   },
-  "active_source_issue": 12145,
+  "active_source_issue": 10327,
   "10327_source_milestone": {
     "issue": 10327,
     "branch": "cloud/issue-10327-metadata-repair",
@@ -383,5 +384,56 @@
     "preserved_ignored_cache_files": 5,
     "manifest_sha256": "cf17311f2b46d2b8cfb210cf00f5a6404c27a4168af2c8923b5a562d54a9d3af",
     "validation_checkout_untouched": true
+  },
+  "12145_publication_status": {
+    "issue": 12145,
+    "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+    "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "checked_at": "2026-10-12T15:04:11Z",
+    "fork_source_ref": {
+      "repository": "jdalton/perry",
+      "branch": "cloud/issue-12145-primary-timer-scan",
+      "head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "verified_at": "2026-10-12T15:07:57Z"
+    },
+    "acceptance": {
+      "fresh_trio": "PASS",
+      "focused_controls": "37/37 PASS",
+      "production_integration": "1/1 PASS",
+      "api_docs_release_compiler_build": "PASS",
+      "pinned_rustfmt_and_diff_check": "PASS"
+    },
+    "full_lint": {
+      "status": "INCOMPLETE_TIMEOUT",
+      "started_at": "2026-10-12T14:26:21Z",
+      "deadline": "2026-10-12T14:56:21Z",
+      "exit": 124,
+      "counts": {
+        "ok": 104,
+        "fail": 31,
+        "skip": 2,
+        "footer": false
+      },
+      "interrupted_at": "API docs regeneration; cargo build --release -p perry",
+      "last_completed_gate": "Auto-optimize pruned feature builds",
+      "classification": "31 failed rows retained; not fully independently attributed. Host Clippy fatal fingerprint remains unresolved; no green/full pass claim.",
+      "log": "/workspace/work/perry-queue/12145-2e-full-lint.log"
+    },
+    "publication": {
+      "source_branch_pushed": true,
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "full_lint_complete": false,
+      "actual_pr_created": false,
+      "pr_number": null,
+      "pr_url": null
+    },
+    "body_sha256": "52e25561d15b4fea0870f123ff14e66eb365a89448388ca24af32f86412b1d2a",
+    "metadata_sha256": "6f0e57a766bd292b2ef1ef3d84a527e41ab08190aa78b88c9f74276619690916",
+    "validation_json_sha256": "b6c092779231dd02b8693b32e5778c7fa2c1c27c300f2f0264dd795a62431575",
+    "source_validation_evidence": "publication/12145/2e-final-validation.json",
+    "handoff_packet": "publication/12145/metadata.json",
+    "checked_at_relay": "2026-10-12T15:08:11Z"
   }
 }

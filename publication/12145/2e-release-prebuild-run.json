@@ -1,0 +1,1 @@
+{"head":"2e094d796cf675911cbc5fce87a55bf7128adfdb","start_utc":"2026-10-12T14:56:40Z","cap_seconds":2700,"command":"cargo build --locked --release -p perry","exit_code":0,"log":"/workspace/work/perry-queue/12145-2e-release-prebuild.log","purpose":"Prewarm the exact required API-docs compiler build separately; does not replace or skip the full lint driver."}

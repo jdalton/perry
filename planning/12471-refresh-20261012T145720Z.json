@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-12T14:57:20Z",
+  "repo": "jdalton/perry",
+  "branch": "cloud/local-publisher-inbox",
+  "path": "publisher-status.json",
+  "blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+  "updated_at": "2026-10-12T12:24:51.074087+00:00",
+  "inbox_12471": {
+    "state": "draft",
+    "head": "2272f7b520206d8e76d4f86440f92e035e25ce63"
+  },
+  "direct_pr_12471": {
+    "url": "https://github.com/PerryTS/perry/pull/12471",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+    "base": "main",
+    "updated_at": "2026-10-12T13:08:27Z"
+  },
+  "conclusion": "Publisher inbox is stale. Direct PR metadata confirms #12471 remains OPEN/DRAFT at exact fragment head dfd64; no state transition."
+}

@@ -320,13 +320,17 @@
       "current_head": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
       "tree": "b8fbfa80c56d48ec34c1ce0371bce793a773f54c",
       "has_uncommitted_changes": false,
-      "validation": "Exact2e094: fresh matching trio PASS; 37 focused controls PASS (19 store,14 inline timer,3 agent,1 thread exit); production integration1/1 PASS. Full run_lint_gates.sh started 2026-10-12T14:26:21Z with 30-minute hard deadline14:56:21Z; currently running, result/classification pending.",
+      "validation": "Exact-head fresh trio,37 focused controls,production integration1/1,release compiler build,pinned rustfmt/diff check PASS. Full lint remains INCOMPLETE_TIMEOUT: exit124 at30-minute cap in API-doc release build,104 ok/31 failed/2 skipped/no footer; 31 rows remain unclassified and host Clippy fatal fingerprint is unresolved. Source branch confirmed pushed at fork head2e094; partial draft authorized but not ready for review.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T14:26:21Z",
-      "evidence": "planning/12145-2e-full-lint-start.json; /workspace/work/perry-queue/12145-2e-trio.run.json; /workspace/work/perry-queue/12145-2e-production-integration.run.json",
-      "publication_state": "Unvalidated source update at2e094; full lint on prior head22726 was capped/incomplete. Draft creation and review readiness false; no PR authorization.",
-      "remaining": "Obtain serial authorization for fresh exact-head 2e094 build and focused acceptance, then complete/classify required lint; no publication until all gates are reviewed."
+      "refreshed_at": "2026-10-12T15:08:11Z",
+      "evidence": "planning/12145-2e-publication-milestone.json",
+      "publication_state": "Draft creation authorized for local publisher at pushed source head2e094; no PR number/URL assigned yet. ready_for_review=false because full lint is incomplete.",
+      "remaining": "Local publisher may create the authorized draft for exact fork head2e094. Full lint remains incomplete; do not mark ready or claim whole-issue coverage.",
+      "pushed_commit": "2e094d796cf675911cbc5fce87a55bf7128adfdb",
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "full_lint_complete": false
     },
     {
       "issue": 10327,
@@ -345,11 +349,11 @@
       "current_head": "b67a01f35c704d70c047b2108bd94a79f1fb02ef",
       "tree": "10dd40ef3dc596f82c5b7358ccafcbb912354ae9",
       "has_uncommitted_changes": false,
-      "validation": "Source review and scoped formatting pass; pinned Node TLS/no-ALPN witness passes. Exact-head Perry build/runtime, trio, compiled parity, auto-opt, and full lint remain pending the serial validation slot currently occupied by #12145.",
+      "validation": "At exact source head b67a01f, focused connected-session metadata getter unit passes 1/1. Fresh matching trio started15:06:31Z and is running; bounded compiled TLS no-ALPN/Node witness pending. No full lint/release build is scheduled under current focused acceptance policy.",
       "merge_state": "no PR",
       "closure_state": "OPEN",
-      "refreshed_at": "2026-10-12T14:52:43Z",
-      "evidence": "planning/10327-b67-source-milestone.json; planning/10327-metadata-repair-go.json; planning/10327-current-source-overlap.json",
+      "refreshed_at": "2026-10-12T15:08:11Z",
+      "evidence": "planning/10327-b67-source-milestone.json; planning/10327-b67-acceptance-in-progress.json",
       "publication_state": "Committed local source candidate; no PR and no publication readiness. #10354 remains partial; do not attribute full issue coverage.",
       "remaining": "Obtain exact-head Perry validation after #12145 releases the serial slot; acceptance must prove secure+no-ALPN client metadata without changing TLS transport."
     }
