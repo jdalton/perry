@@ -6,11 +6,11 @@
     "sha": "5e41d1d8b19c030754975afeca52a9c277eda739"
   },
   "base": "main",
-  "body_file": "/workspace/work/perry-queue/publication/11519/body.md",
-  "metadata_file": "/workspace/work/perry-queue/publication/11519/metadata.json",
+  "body_file": "body.md",
+  "metadata_file": "metadata.json",
   "scope": "Partial issue repair; exact non-indexed ArrayBuffer/SAB/DataView toString handling only.",
   "evidence": {
-    "source_review": "/workspace/work/perry-queue/planning/11519-source-review.json",
+    "source_review": "11519-source-review.json",
     "implementation_status": "/workspace/work/perry-queue/planning/next-candidates/11519-implementation-status.json",
     "candidate_node_oracle": {
       "version": "v26.5.1",
@@ -18,19 +18,17 @@
       "cases": 18,
       "exit": 0,
       "candidate_perry_run": false,
-      "stdout": "/workspace/work/perry-queue/planning/next-candidates/11519-candidate-node.stdout"
+      "stdout": "/workspace/work/perry-queue/planning/next-candidates/11519-candidate-node.stdout",
+      "historical_record_only": true,
+      "note": "Original Node-only oracle record; completed candidatePerryparity is in validation.json"
     },
     "baseline_repro": "/workspace/work/perry-queue/planning/next-candidates/11519-deferred-probe-plan.json"
   },
   "validation_pending": [
-    "run focused direct runtime test after unsafe-scope correction; prior compile reported E0133 at three bytes_mut calls",
-    "candidate coherent dev trio build at exact head",
-    "direct runtime unit test",
-    "compiled fixture parity against pinned Node",
-    "full lint gates"
+    "ActualPR-numberfragment andexactresulting-headchecks before readiness"
   ],
   "limitations": [
-    "Linux-only validation pending",
+    "Validation performed onLinux; no macOS behavior claimed",
     "custom Symbol.toStringTag override behavior remains pre-existing and unclaimed",
     "typed-string Symbol.iterator identity is outside scope"
   ],
