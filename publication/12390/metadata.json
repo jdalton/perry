@@ -8,7 +8,7 @@
   "code_commit": "c9e720b17f959c0052819939bd1328c7a56fd415",
   "validated_base": "d74498b261d087a301b80602835bc7199a067957",
   "draft": true,
-  "readiness": "Draft published locally; PR-numbered fragment and exact resulting-head validation in progress; not ready",
+  "readiness": "Draft with fragment pushed; final-head build and2routingtests pass; streams/6smokes pending",
   "fragment_path": "changelog.d/12439-remove-unused-streams.md",
   "no_version_bump": true,
   "local_workers": "remain paused; local publication uses existing local GitHub connection",
@@ -32,5 +32,8 @@
   "pr_number": 12439,
   "pr_url": "https://github.com/PerryTS/perry/pull/12439",
   "publication_method": "existing local GitHub connection; no cloud PR creation",
-  "observed_upstream_base": "996bc5d629dfbc4b0e99a377b6eeab57c32e54c6"
+  "observed_upstream_base": "996bc5d629dfbc4b0e99a377b6eeab57c32e54c6",
+  "current_head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+  "fragment_present": true,
+  "ci_baseline_attribution": "ci-baseline-attribution.json"
 }

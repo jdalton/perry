@@ -1,0 +1,1564 @@
+{
+  "checked_at": "2026-10-12T02:57:19.266148+00:00",
+  "pr": 12439,
+  "head": "1273aff03f8685e3d8a2f539dff9ac94088ac857",
+  "actual_ci_checkout": "429dabe838705910dd3cdbb2005716026336aaf1",
+  "merge_base": "996bc5d629dfbc4b0e99a377b6eeab57c32e54c6",
+  "reproduced_baseline": "d74498b261d087a301b80602835bc7199a067957",
+  "jobs": {
+    "warnings": 114643197500,
+    "tls": 114643665090
+  },
+  "log_access": "CLI redirect failed; github_fetch_workflow_job_logs connector succeeded, full decoded logs persisted.",
+  "warnings_unique_diagnostics": [
+    {
+      "message": "unused imports: `I1` and `I64`",
+      "file": "crates/perry-codegen/src/expr/index_get/runtime_key.rs",
+      "line": 19,
+      "column": 28,
+      "log_line": 1174,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused imports: `I1` and `I64`",
+          "file": "crates/perry-codegen/src/expr/index_get/runtime_key.rs",
+          "line": 19,
+          "column": 28,
+          "log_line": 414,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "variable does not need to be mutable",
+      "file": "crates/perry-codegen/src/inprocess.rs",
+      "line": 113,
+      "column": 13,
+      "log_line": 1183,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "variable does not need to be mutable",
+          "file": "crates/perry-codegen/src/inprocess.rs",
+          "line": 113,
+          "column": 13,
+          "log_line": 422,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused import: `call_compiled_closure_this`",
+      "file": "crates/perry-runtime/src/closure/mod.rs",
+      "line": 72,
+      "column": 30,
+      "log_line": 1196,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused import: `call_compiled_closure_this`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 71,
+          "column": 30,
+          "log_line": 137,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "unused import: `call_compiled_closure_this`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 71,
+          "column": 30,
+          "log_line": 137,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "unused import: `call_compiled_closure_this`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 71,
+          "column": 30,
+          "log_line": 136,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused imports: `prune_dead_closure_side_table_owners_young` and `prune_dead_closure_side_table_owners`",
+      "file": "crates/perry-runtime/src/closure/mod.rs",
+      "line": 97,
+      "column": 39,
+      "log_line": 1205,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused imports: `prune_dead_closure_side_table_owners_young` and `prune_dead_closure_side_table_owners`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 96,
+          "column": 39,
+          "log_line": 146,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "unused imports: `prune_dead_closure_side_table_owners_young` and `prune_dead_closure_side_table_owners`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 96,
+          "column": 39,
+          "log_line": 146,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "unused imports: `prune_dead_closure_side_table_owners_young` and `prune_dead_closure_side_table_owners`",
+          "file": "crates/perry-runtime/src/closure/mod.rs",
+          "line": 96,
+          "column": 39,
+          "log_line": 144,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused import: `shape::shape_method`",
+      "file": "crates/perry-runtime/src/node_stream_event_emitter.rs",
+      "line": 8,
+      "column": 16,
+      "log_line": 1213,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused import: `shape::shape_method`",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter.rs",
+          "line": 8,
+          "column": 16,
+          "log_line": 154,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "unused import: `shape::shape_method`",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter.rs",
+          "line": 8,
+          "column": 16,
+          "log_line": 154,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "unused import: `shape::shape_method`",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter.rs",
+          "line": 8,
+          "column": 16,
+          "log_line": 152,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused import: `builtin_receiver::shape_proof as builtin_shape_proof`",
+      "file": "crates/perry-runtime/src/object/method_site.rs",
+      "line": 94,
+      "column": 16,
+      "log_line": 1219,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused import: `builtin_receiver::shape_proof as builtin_shape_proof`",
+          "file": "crates/perry-runtime/src/object/method_site.rs",
+          "line": 94,
+          "column": 16,
+          "log_line": 160,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused import: `stamp_linked_final_shape`",
+      "file": "crates/perry-runtime/src/object/shapes.rs",
+      "line": 62,
+      "column": 34,
+      "log_line": 1225,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused import: `stamp_linked_final_shape`",
+          "file": "crates/perry-runtime/src/object/shapes.rs",
+          "line": 62,
+          "column": 34,
+          "log_line": 166,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unused variable: `method`",
+      "file": "crates/perry-runtime/src/array/iter_object.rs",
+      "line": 499,
+      "column": 9,
+      "log_line": 1231,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unused variable: `method`",
+          "file": "crates/perry-runtime/src/array/iter_object.rs",
+          "line": 499,
+          "column": 9,
+          "log_line": 172,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "unused variable: `method`",
+          "file": "crates/perry-runtime/src/array/iter_object.rs",
+          "line": 499,
+          "column": 9,
+          "log_line": 160,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "unused variable: `method`",
+          "file": "crates/perry-runtime/src/array/iter_object.rs",
+          "line": 499,
+          "column": 9,
+          "log_line": 158,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "unnecessary `unsafe` block",
+      "file": "crates/perry-runtime/src/object/shapes.rs",
+      "line": 2762,
+      "column": 9,
+      "log_line": 1240,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "unnecessary `unsafe` block",
+          "file": "crates/perry-runtime/src/object/shapes.rs",
+          "line": 2762,
+          "column": 9,
+          "log_line": 181,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "unnecessary `unsafe` block",
+          "file": "crates/perry-runtime/src/object/shapes.rs",
+          "line": 2762,
+          "column": 9,
+          "log_line": 169,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "unnecessary `unsafe` block",
+          "file": "crates/perry-runtime/src/object/shapes.rs",
+          "line": 2762,
+          "column": 9,
+          "log_line": 166,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_lifecycle_state`",
+      "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+      "line": 80,
+      "column": 1,
+      "log_line": 1249,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_lifecycle_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 80,
+          "column": 1,
+          "log_line": 190,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_lifecycle_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 80,
+          "column": 1,
+          "log_line": 178,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_lifecycle_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 80,
+          "column": 1,
+          "log_line": 174,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_readable_state`",
+      "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+      "line": 233,
+      "column": 1,
+      "log_line": 1267,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_readable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 233,
+          "column": 1,
+          "log_line": 208,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_readable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 233,
+          "column": 1,
+          "log_line": 196,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_readable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 233,
+          "column": 1,
+          "log_line": 191,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_writable_state`",
+      "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+      "line": 338,
+      "column": 1,
+      "log_line": 1283,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_writable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 338,
+          "column": 1,
+          "log_line": 224,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_writable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 338,
+          "column": 1,
+          "log_line": 212,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "type `PublicInit` is more private than the item `node_stream::constructors::init_writable_state`",
+          "file": "crates/perry-runtime/src/node_stream_constructors.rs",
+          "line": 338,
+          "column": 1,
+          "log_line": 207,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "methods `generation` and `is_current_thread` are never used",
+      "file": "crates/perry-runtime/src/arena/region/reservation.rs",
+      "line": 263,
+      "column": 19,
+      "log_line": 1299,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "methods `generation` and `is_current_thread` are never used",
+          "file": "crates/perry-runtime/src/arena/region/reservation.rs",
+          "line": 263,
+          "column": 19,
+          "log_line": 240,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "methods `generation` and `is_current_thread` are never used",
+          "file": "crates/perry-runtime/src/arena/region/reservation.rs",
+          "line": 263,
+          "column": 19,
+          "log_line": 228,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "methods `generation` and `is_current_thread` are never used",
+          "file": "crates/perry-runtime/src/arena/region/reservation.rs",
+          "line": 263,
+          "column": 19,
+          "log_line": 223,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "method `contains` is never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+      "line": 82,
+      "column": 8,
+      "log_line": 1313,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "method `contains` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 82,
+          "column": 8,
+          "log_line": 254,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "method `contains` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 82,
+          "column": 8,
+          "log_line": 242,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "method `contains` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 82,
+          "column": 8,
+          "log_line": 236,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "method `find` is never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+      "line": 95,
+      "column": 8,
+      "log_line": 1322,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "method `find` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 95,
+          "column": 8,
+          "log_line": 263,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "method `find` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 95,
+          "column": 8,
+          "log_line": 251,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "method `find` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 95,
+          "column": 8,
+          "log_line": 245,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "fields `key`, `range`, and `valid` are never read",
+      "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+      "line": 123,
+      "column": 5,
+      "log_line": 1331,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "fields `key`, `range`, and `valid` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 123,
+          "column": 5,
+          "log_line": 272,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "fields `key`, `range`, and `valid` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 123,
+          "column": 5,
+          "log_line": 260,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "fields `key`, `range`, and `valid` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 123,
+          "column": 5,
+          "log_line": 254,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `hot_page_generations` is never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+      "line": 318,
+      "column": 4,
+      "log_line": 1345,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `hot_page_generations` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 318,
+          "column": 4,
+          "log_line": 286,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `hot_page_generations` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 318,
+          "column": 4,
+          "log_line": 274,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `hot_page_generations` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/mod.rs",
+          "line": 318,
+          "column": 4,
+          "log_line": 268,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "fields `range` and `epoch` are never read",
+      "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+      "line": 14,
+      "column": 5,
+      "log_line": 1351,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "fields `range` and `epoch` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 14,
+          "column": 5,
+          "log_line": 292,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "fields `range` and `epoch` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 14,
+          "column": 5,
+          "log_line": 280,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "fields `range` and `epoch` are never read",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 14,
+          "column": 5,
+          "log_line": 274,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "associated constant `DEAD` is never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+      "line": 23,
+      "column": 11,
+      "log_line": 1363,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "associated constant `DEAD` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 23,
+          "column": 11,
+          "log_line": 304,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "associated constant `DEAD` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 23,
+          "column": 11,
+          "log_line": 292,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "associated constant `DEAD` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 23,
+          "column": 11,
+          "log_line": 286,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "constant `PAGE_CLASS_TABLE_MAX_SPAN` is never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+      "line": 88,
+      "column": 7,
+      "log_line": 1372,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "constant `PAGE_CLASS_TABLE_MAX_SPAN` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 88,
+          "column": 7,
+          "log_line": 313,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "constant `PAGE_CLASS_TABLE_MAX_SPAN` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 88,
+          "column": 7,
+          "log_line": 301,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "constant `PAGE_CLASS_TABLE_MAX_SPAN` is never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 88,
+          "column": 7,
+          "log_line": 295,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "methods `lookup`, `insert`, and `rebase_to_cover` are never used",
+      "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+      "line": 229,
+      "column": 19,
+      "log_line": 1378,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "methods `lookup`, `insert`, and `rebase_to_cover` are never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 229,
+          "column": 19,
+          "log_line": 319,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "methods `lookup`, `insert`, and `rebase_to_cover` are never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 229,
+          "column": 19,
+          "log_line": 307,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "methods `lookup`, `insert`, and `rebase_to_cover` are never used",
+          "file": "crates/perry-runtime/src/arena/page_meta/page_class.rs",
+          "line": 229,
+          "column": 19,
+          "log_line": 301,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `buffer_alloc_foreign` is never used",
+      "file": "crates/perry-runtime/src/buffer/store/layout.rs",
+      "line": 666,
+      "column": 15,
+      "log_line": 1393,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `buffer_alloc_foreign` is never used",
+          "file": "crates/perry-runtime/src/buffer/store/layout.rs",
+          "line": 666,
+          "column": 15,
+          "log_line": 334,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `buffer_alloc_foreign` is never used",
+          "file": "crates/perry-runtime/src/buffer/store/layout.rs",
+          "line": 666,
+          "column": 15,
+          "log_line": 322,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `buffer_alloc_foreign` is never used",
+          "file": "crates/perry-runtime/src/buffer/store/layout.rs",
+          "line": 666,
+          "column": 15,
+          "log_line": 316,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `call_compiled_closure_this` is never used",
+      "file": "crates/perry-runtime/src/closure/dispatch/value_call.rs",
+      "line": 274,
+      "column": 22,
+      "log_line": 1399,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `call_compiled_closure_this` is never used",
+          "file": "crates/perry-runtime/src/closure/dispatch/value_call.rs",
+          "line": 265,
+          "column": 22,
+          "log_line": 340,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `call_compiled_closure_this` is never used",
+          "file": "crates/perry-runtime/src/closure/dispatch/value_call.rs",
+          "line": 265,
+          "column": 22,
+          "log_line": 328,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `call_compiled_closure_this` is never used",
+          "file": "crates/perry-runtime/src/closure/dispatch/value_call.rs",
+          "line": 265,
+          "column": 22,
+          "log_line": 322,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `prune_dead_closure_side_table_owners` is never used",
+      "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "line": 138,
+      "column": 15,
+      "log_line": 1405,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `prune_dead_closure_side_table_owners` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 138,
+          "column": 15,
+          "log_line": 346,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `prune_dead_closure_side_table_owners` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 138,
+          "column": 15,
+          "log_line": 334,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `prune_dead_closure_side_table_owners` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 138,
+          "column": 15,
+          "log_line": 328,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `prune_dead_closure_side_table_owners_young` is never used",
+      "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+      "line": 213,
+      "column": 15,
+      "log_line": 1411,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `prune_dead_closure_side_table_owners_young` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 213,
+          "column": 15,
+          "log_line": 352,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `prune_dead_closure_side_table_owners_young` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 213,
+          "column": 15,
+          "log_line": 340,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `prune_dead_closure_side_table_owners_young` is never used",
+          "file": "crates/perry-runtime/src/closure/dynamic_props.rs",
+          "line": 213,
+          "column": 15,
+          "log_line": 334,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "method `scan_slot` is never used",
+      "file": "crates/perry-runtime/src/gc/copying.rs",
+      "line": 152,
+      "column": 26,
+      "log_line": 1417,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "method `scan_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/copying.rs",
+          "line": 152,
+          "column": 26,
+          "log_line": 358,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "method `scan_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/copying.rs",
+          "line": 152,
+          "column": 26,
+          "log_line": 346,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "method `scan_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/copying.rs",
+          "line": 152,
+          "column": 26,
+          "log_line": 340,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "method `visit_slot_with_parent` is never used",
+      "file": "crates/perry-runtime/src/gc/copying_parent_facts.rs",
+      "line": 271,
+      "column": 26,
+      "log_line": 1426,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "method `visit_slot_with_parent` is never used",
+          "file": "crates/perry-runtime/src/gc/copying_parent_facts.rs",
+          "line": 271,
+          "column": 26,
+          "log_line": 367,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "method `visit_slot_with_parent` is never used",
+          "file": "crates/perry-runtime/src/gc/copying_parent_facts.rs",
+          "line": 271,
+          "column": 26,
+          "log_line": 355,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "method `visit_slot_with_parent` is never used",
+          "file": "crates/perry-runtime/src/gc/copying_parent_facts.rs",
+          "line": 271,
+          "column": 26,
+          "log_line": 349,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `rewrite_slot` is never used",
+      "file": "crates/perry-runtime/src/gc/verify.rs",
+      "line": 199,
+      "column": 22,
+      "log_line": 1435,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `rewrite_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 199,
+          "column": 22,
+          "log_line": 376,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `rewrite_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 199,
+          "column": 22,
+          "log_line": 364,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `rewrite_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 199,
+          "column": 22,
+          "log_line": 358,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `verify_slot` is never used",
+      "file": "crates/perry-runtime/src/gc/verify.rs",
+      "line": 214,
+      "column": 22,
+      "log_line": 1441,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `verify_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 214,
+          "column": 22,
+          "log_line": 382,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `verify_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 214,
+          "column": 22,
+          "log_line": 370,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `verify_slot` is never used",
+          "file": "crates/perry-runtime/src/gc/verify.rs",
+          "line": 214,
+          "column": 22,
+          "log_line": 364,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `shape_prototype` is never used",
+      "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+      "line": 100,
+      "column": 15,
+      "log_line": 1447,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `shape_prototype` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 100,
+          "column": 15,
+          "log_line": 388,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `shape_prototype` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 100,
+          "column": 15,
+          "log_line": 376,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `shape_prototype` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 100,
+          "column": 15,
+          "log_line": 370,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `shape_method` is never used",
+      "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+      "line": 135,
+      "column": 31,
+      "log_line": 1453,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `shape_method` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 135,
+          "column": 31,
+          "log_line": 394,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "function `shape_method` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 135,
+          "column": 31,
+          "log_line": 382,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "function `shape_method` is never used",
+          "file": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs",
+          "line": 135,
+          "column": 31,
+          "log_line": 376,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `shape_proof` is never used",
+      "file": "crates/perry-runtime/src/object/method_site/builtin_receiver.rs",
+      "line": 1020,
+      "column": 22,
+      "log_line": 1459,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `shape_proof` is never used",
+          "file": "crates/perry-runtime/src/object/method_site/builtin_receiver.rs",
+          "line": 1020,
+          "column": 22,
+          "log_line": 400,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "struct `ProtoWay` is never constructed",
+      "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+      "line": 107,
+      "column": 8,
+      "log_line": 1465,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "struct `ProtoWay` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 107,
+          "column": 8,
+          "log_line": 406,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "struct `ProtoWay` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 107,
+          "column": 8,
+          "log_line": 388,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "struct `ProtoWay` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 107,
+          "column": 8,
+          "log_line": 382,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "struct `ProtoSlotMemo` is never constructed",
+      "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+      "line": 114,
+      "column": 19,
+      "log_line": 1471,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "struct `ProtoSlotMemo` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 114,
+          "column": 19,
+          "log_line": 412,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "struct `ProtoSlotMemo` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 114,
+          "column": 19,
+          "log_line": 394,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "struct `ProtoSlotMemo` is never constructed",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 114,
+          "column": 19,
+          "log_line": 388,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "associated items `cacheable_key`, `new`, `slot`, and `prime` are never used",
+      "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+      "line": 123,
+      "column": 8,
+      "log_line": 1477,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "associated items `cacheable_key`, `new`, `slot`, and `prime` are never used",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 123,
+          "column": 8,
+          "log_line": 418,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        },
+        {
+          "message": "associated items `cacheable_key`, `new`, `slot`, and `prime` are never used",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 123,
+          "column": 8,
+          "log_line": 400,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-host.log"
+        },
+        {
+          "message": "associated items `cacheable_key`, `new`, `slot`, and `prime` are never used",
+          "file": "crates/perry-runtime/src/object/method_site/own_slot_memo.rs",
+          "line": 123,
+          "column": 8,
+          "log_line": 394,
+          "severity": "warning",
+          "evidence_log": "baseline-build-retry3.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `accessor_entry_pair` is never used",
+      "file": "crates/perry-runtime/src/object/method_site/read_holder.rs",
+      "line": 753,
+      "column": 11,
+      "log_line": 1495,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `accessor_entry_pair` is never used",
+          "file": "crates/perry-runtime/src/object/method_site/read_holder.rs",
+          "line": 753,
+          "column": 11,
+          "log_line": 436,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `plain_birth_rep_by_id` is never used",
+      "file": "crates/perry-runtime/src/object/shapes.rs",
+      "line": 2756,
+      "column": 15,
+      "log_line": 1501,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `plain_birth_rep_by_id` is never used",
+          "file": "crates/perry-runtime/src/object/shapes.rs",
+          "line": 2756,
+          "column": 15,
+          "log_line": 442,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "function `stamp_linked_final_shape` is never used",
+      "file": "crates/perry-runtime/src/object/shapes_linked_birth.rs",
+      "line": 25,
+      "column": 22,
+      "log_line": 1507,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "function `stamp_linked_final_shape` is never used",
+          "file": "crates/perry-runtime/src/object/shapes_linked_birth.rs",
+          "line": 25,
+          "column": 22,
+          "log_line": 448,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    },
+    {
+      "message": "method `admits_plain_birth` is never used",
+      "file": "crates/perry-runtime/src/object/shapes_store/kind.rs",
+      "line": 29,
+      "column": 30,
+      "log_line": 1513,
+      "severity": "error",
+      "baseline_matches": [
+        {
+          "message": "method `admits_plain_birth` is never used",
+          "file": "crates/perry-runtime/src/object/shapes_store/kind.rs",
+          "line": 29,
+          "column": 30,
+          "log_line": 454,
+          "severity": "error",
+          "evidence_log": "baseline-warnings-product.log"
+        }
+      ],
+      "changed_by_pr": false,
+      "classification": "baseline diagnostic reproduced; no PR hunk in implicated source"
+    }
+  ],
+  "tls_baseline_replay_exit": 1,
+  "tls_diagnostics": [
+    {
+      "signature": "crates/perry-runtime/src/alloc_census.rs: 2 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        84
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/async_context.rs: lost raw `thread_local!` declarations (3 recorded, 2 found). Convert it, or run --update to re-record.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        85,
+        305
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/buffer/bytes.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        23,
+        57
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/builtins/globals.rs: lost raw `thread_local!` declarations (4 recorded, 2 found). Convert it, or run --update to re-record.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        591
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/gc/allocation_pacing.rs: 2 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        180
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/gc/cycle_malloc_trim.rs: gained raw `thread_local!` declarations (1 recorded, 3 found). Convert it, or run --update to re-record.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        14,
+        46,
+        223,
+        300,
+        336
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/gc/ephemeron.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        81
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/native_handle.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        84
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/node_stream_constructors/event_emitter_new.rs: 2 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        47,
+        245
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/node_stream_event_emitter_shape.rs: 6 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        124,
+        168,
+        371
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/object/alloc_basic.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        273
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/object/native_module/callable_exports/builtin_closure_metadata.rs: lost raw `thread_local!` declarations (2 recorded, 1 found). Convert it, or run --update to re-record.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        3,
+        14
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/shared_sab.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        29
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/wasi_net/mod.rs: 1 raw `thread_local!` declaration(s), none allowed.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [
+        112
+      ],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/native_arena.rs: recorded as having 3 cold `thread_local!` declaration(s), but has none. A stale entry is one nobody has to justify \u2014 delete it with --update.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [],
+      "changed_by_pr": false
+    },
+    {
+      "signature": "crates/perry-runtime/src/typedarray_view.rs: recorded as having 1 cold `thread_local!` declaration(s), but has none. A stale entry is one nobody has to justify \u2014 delete it with --update.",
+      "baseline_exact_match": true,
+      "source_raw_macro_lines": [],
+      "changed_by_pr": false
+    }
+  ],
+  "limits": [
+    "CI ran synthetic merge onto newer main, not branch head alone. Baseline line shifts in closure files derive from upstream bindbirth change; diagnostics matched by file and exact message, and both line/column retained.",
+    "Codegen warnings are reproduced in clean baseline build as warnings; CI -D warnings promotes them to errors. Saved baseline warnings checks fail in runtime before codegen, so no identicalfullwarning-job rerun is claimed.",
+    "No unrelated source changes or allowances added. This attribution is not a green CI verdict."
+  ],
+  "summary": {
+    "unique_warning_errors": 39,
+    "matched_baseline": 39,
+    "unresolved": 0,
+    "tls_rows": 16,
+    "tls_exact_baseline_matches": 16,
+    "conclusion": "All39 distinct compilerdiagnostics and all16TLSrows supported as baseline/source-inherited; zero unmatched withinthese2jobs. This does not classify otherCIjobs."
+  },
+  "evidence": [
+    "12439-warnings-ci.log",
+    "12439-tls-ci.log",
+    "12439-tls-baseline-replay.log",
+    "12439-merge-vs-main.json",
+    "../baseline-warnings-product.log",
+    "../baseline-warnings-host.log",
+    "../baseline-build-retry3.log"
+  ],
+  "warning_step_counts": {
+    "product": {
+      "perry_codegen": 2,
+      "perry_runtime": 37
+    },
+    "host_compatible_all_targets": {
+      "perry_codegen": 2,
+      "perry_runtime": 30
+    },
+    "distinct_union": 39
+  },
+  "alloc_census_focus": {
+    "file": "crates/perry-runtime/src/alloc_census.rs",
+    "source": [
+      {
+        "line": 84,
+        "code": "std::thread_local! {"
+      },
+      {
+        "line": 87,
+        "code": "static CREDIT: Cell<i64> = const { Cell::new(1 << 20) };"
+      },
+      {
+        "line": 89,
+        "code": "static IN_SAMPLER: Cell<bool> = const { Cell::new(false) };"
+      }
+    ],
+    "diagnostic": "2 raw `thread_local!` declaration(s), none allowed.",
+    "baseline_exact_match": true,
+    "pr_changes_file": false
+  }
+}

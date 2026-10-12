@@ -1,0 +1,9 @@
+PR #12439 CI attribution, fragment head 1273aff03f8685e3d8a2f539dff9ac94088ac857
+
+CI actually checked out synthetic merge 429dabe838705910dd3cdbb2005716026336aaf1, combining this head with upstream main996bc5d629dfbc4b0e99a377b6eeab57c32e54c6. Our reproduced pristine baseline is d74498b261d087a301b80602835bc7199a067957.
+
+Warnings job114643197500 reports37 runtime diagnostics in product scope and30 in host scope, with2 additional codegen diagnostics in each. All39 distinct diagnostics match messages/files in saved baseline logs; upstream line shifts are recorded individually. I1/I64 at runtime_key.rs19 and unnecessary mut mllvm at inprocess.rs113 were baseline codegen warnings, promoted by -Dwarnings.
+
+TLS job114643665090 reports16 diagnostics, all exactly reproduced by the checker on pristine d744 baseline. alloc_census.rs has2 raw thread_local declarations and no allowed entries: blockline84, CREDIT87, IN_SAMPLER89. These source files are unchanged by this PR.
+
+This attributes the two specified jobs to inherited baseline findings. It does not claim a fresh full baseline build of996bc5 or classify unrelated CI jobs. Full lint remains non-green. See ci-baseline-attribution.json for individual signatures, locations, original log references and job IDs.
