@@ -1,0 +1,1 @@
+fix(parity): fail node-suite on compile, crash, and Node failures

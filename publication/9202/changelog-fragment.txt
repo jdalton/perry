@@ -1,0 +1,5 @@
+fix(parity): fail node-suite on compile, crash, and Node failures
+
+Make compile, crash/timeout, and Node-oracle status counters fatal in the node-suite final verdict, even when aggregate parity exceeds 80%. Preserve ordinary parity thresholds, report emission, resume behavior, and other suite policies.
+
+Refs #9202

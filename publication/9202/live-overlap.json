@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-12T15:29:28Z",
+  "issue": {
+    "number": 9202,
+    "state": "open",
+    "title": "node-suite parity audit on macOS arm64: 635 non-PASS results, including 24 crashes",
+    "updated_at": "2026-10-12T10:16:29Z",
+    "url": "https://github.com/PerryTS/perry/issues/9202",
+    "latest_timeline_event": {
+      "type": "referenced",
+      "created_at": "2026-10-12T13:46:34Z",
+      "commit": "c2bd54b67ce4bc4c110957a2dbdf9d4125c52e92"
+    },
+    "scope_note": "Issue remains an umbrella; earlier maintainer comments explicitly say targeted fixes do not close the historical failures."
+  },
+  "targeted_open_pr_searches": [
+    {
+      "query": "9202 in:title,body",
+      "results": []
+    },
+    {
+      "query": "run_parity_tests.sh in:files",
+      "results": []
+    },
+    {
+      "query": "node-suite parity in:title,body",
+      "results": []
+    }
+  ],
+  "overlap_assessment": {
+    "cached_related_pr": 12149,
+    "cached_scope": "stderr normalization and expected-output Node-crash classification",
+    "relationship": "orthogonal to the final verdict change; no same behavior overlap",
+    "duplicate_or_conflicting_open_pr_found": false
+  },
+  "source_base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+  "fork_branch_pushed": true,
+  "fork_head_verified": "073131fc900ac2e769cdd9a171d506b9df3b107b"
+}

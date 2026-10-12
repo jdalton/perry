@@ -270,31 +270,29 @@
     "evidence": "planning/10327-b67-heavy-validation-parked.json"
   },
   "publisher_inbox_refresh": {
-    "observed_at": "2026-10-12T15:17:47Z",
+    "observed_at": "2026-10-12T15:30:05Z",
     "source": "/workspace/work/perry-queue/publisher-status.json",
     "source_updated_at": "2026-10-12T12:17:49Z",
-    "issue_12145_assignment": "None; live searches for issue12145 and branch cloud/issue-12145-primary-timer-scan returned zero results.",
-    "evidence": "planning/12145-inbox-check-20261012T151747Z.json"
+    "issue_12145_assignment": "None in inbox; live exact source-branch PR search returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T153005Z.json"
   },
   "next_independent_candidate": {
-    "issue": 12145,
+    "issue": 9202,
     "owner": "cloud /root/luna_tls_checker",
-    "branch": "cloud/issue-12145-primary-timer-scan",
-    "worktree": "/workspace/work/perry-queue/issue-12145",
-    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
-    "head": "22726d3c2dc7c05db6fd1ef997326accb1f46b29",
-    "tree": "ee1e68815280105cdbb86acf0cd7d72dc378dff4",
-    "claim_status": "source reviewed; corrected integration-witness test is under fresh acceptance",
-    "heavy_build_authorized": "fresh matching trio and production integration; full lint only if acceptance passes",
-    "prior_failure": "38a896 production integration result exit101 caused by invalid test API argument; planning result preserved at12145-38a-validation-result.json",
-    "evidence": "planning/12145-source-review.json; 12145-38a-validation-result.json; 12145-227-trio.started"
+    "branch": "cloud/issue-9202-parity-fatal-verdict",
+    "worktree": "/workspace/work/perry-queue/issue-9202",
+    "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+    "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+    "claim_status": "single commit pushed and verified; partial draft packet ready; build-reuse failure is exact-base fixture limitation; no Cargo/full lint",
+    "heavy_build_authorized": false,
+    "evidence": "publication/9202/metadata.json; publication/9202/validation.json"
   },
   "publication_inbox_refresh": {
-    "observed_at": "2026-10-12T15:17:47Z",
+    "observed_at": "2026-10-12T15:30:05Z",
     "source": "/workspace/work/perry-queue/publisher-status.json",
     "source_updated_at": "2026-10-12T12:17:49Z",
-    "issue_12145_assignment": "None; live searches for issue12145 and branch cloud/issue-12145-primary-timer-scan returned zero results.",
-    "evidence": "planning/12145-inbox-check-20261012T151747Z.json"
+    "issue_12145_assignment": "None in inbox; live exact source-branch PR search returned zero results.",
+    "evidence": "planning/12145-inbox-check-20261012T153005Z.json"
   },
   "coverage_counts": {
     "uncovered": 139,
@@ -344,7 +342,7 @@
     "draft_creation_allowed": false,
     "ready_for_review": false
   },
-  "active_source_issue": 10327,
+  "active_source_issue": 9202,
   "10327_source_milestone": {
     "issue": 10327,
     "branch": "cloud/issue-10327-metadata-repair",
@@ -442,5 +440,26 @@
     "handoff_packet": "publication/12145/metadata.json",
     "checked_at_relay": "2026-10-12T15:08:11Z"
   },
-  "checked_at": "2026-10-12T15:17:47Z"
+  "checked_at": "2026-10-12T15:30:05Z",
+  "9202_source_claim": {
+    "issue": 9202,
+    "branch": "cloud/issue-9202-parity-fatal-verdict",
+    "worktree": "/workspace/work/perry-queue/issue-9202",
+    "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+    "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+    "tree": "0b73eae7dae857c3ae1fbcef0a34ffa636e17063",
+    "worktree_clean": true,
+    "status": "Single-commit fork head pushed and verified; verdict self-test, shell syntax, compile-budget test and diff check pass; build-reuse regression partial with exact-base .node-version fixture failure.",
+    "coverage": "uncovered",
+    "partial_prs": [],
+    "covering_prs": [],
+    "issue_state": "OPEN",
+    "publication": {
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "pr_creation_allowed": false,
+      "external_pr_created": false
+    },
+    "evidence": "publication/9202/metadata.json; publication/9202/validation.json; publication/9202/live-overlap.json"
+  }
 }

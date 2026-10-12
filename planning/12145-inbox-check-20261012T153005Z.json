@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-10-12T15:30:05Z",
+  "publisher_status_source": "/workspace/work/perry-queue/publisher-status.json",
+  "publisher_status_updated_at": "2026-10-12T12:17:49Z",
+  "publisher_status_batch_pr_numbers": [12444, 12445, 12450, 12456, 12458],
+  "issue_12145_assignment": null,
+  "live_pr_search": {
+    "repository": "PerryTS/perry",
+    "query": "is:pr is:open head:jdalton:cloud/issue-12145-primary-timer-scan",
+    "result_count": 0
+  },
+  "conclusion": "No #12145 PR assignment, number, or URL appeared. The publisher status snapshot remains stale; the exact live source-branch PR search returned no result.",
+  "scope": "Single publisher inbox refresh at the #9202 packet milestone; no PR creation or mutation."
+}

@@ -1,0 +1,42 @@
+{
+  "observed_at_utc": "2026-10-12T15:29:03Z",
+  "query": "repo:PerryTS/perry is:pr is:open author:jdalton",
+  "open_authored_prs": [
+    {
+      "number": 12471,
+      "url": "https://github.com/PerryTS/perry/pull/12471",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_branch": "cloud/issue-12202-wtf8-class-keys",
+      "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+      "base": "main",
+      "commits": 17,
+      "changed_files": 35,
+      "updated_at": "2026-10-12T13:08:27Z",
+      "reviews": [],
+      "review_threads": [],
+      "comments": [
+        {
+          "id": 6124210400,
+          "url": "https://github.com/PerryTS/perry/pull/12471#issuecomment-6124210400",
+          "author": "coderabbitai[bot]",
+          "created_at": "2026-10-12T12:24:44Z",
+          "kind": "automated draft-not-reviewed notice"
+        }
+      ],
+      "combined_statuses": [
+        {
+          "context": "CodeRabbit",
+          "state": "success"
+        }
+      ]
+    }
+  ],
+  "deduplication": {
+    "comment_ids_seen": [6124210400],
+    "review_ids_seen": [],
+    "thread_ids_seen": []
+  },
+  "actions": "Read-only poll; no review, comment, or PR state changes performed."
+}

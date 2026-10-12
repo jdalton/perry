@@ -1,0 +1,31 @@
+{
+  "issue": 9202,
+  "scope": "partial: make compile, crash/timeout, and Node-oracle statuses fatal in the node-suite final verdict; broader historical failures remain uncovered",
+  "base_branch": "main",
+  "validated_branch_base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+  "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+  "branch": "cloud/issue-9202-parity-fatal-verdict",
+  "head_ref": "jdalton:cloud/issue-9202-parity-fatal-verdict",
+  "title": "fix(parity): fail node-suite on compile, crash, and Node failures",
+  "draft_creation_allowed": true,
+  "ready_for_review": false,
+  "external_pr_created": false,
+  "full_lint_complete": false,
+  "validation_status": "single-commit head pushed; focused shell and verdict tests pass; build-reuse test partial after exact-base reproduction of its .node-version fixture failure; Cargo/full lint not run",
+  "validation": "validation.json",
+  "live_duplicate_check": "live-overlap.json",
+  "fragment_draft": "changelog-fragment.txt",
+  "checked_at": "2026-10-12T15:29:28Z",
+  "publisher_actions": [
+    "create a draft from the supplied body for this exact source head",
+    "verify the resulting PR head",
+    "leave it as draft; do not mark ready for review"
+  ],
+  "scope_limits": [
+    "Refs #9202 only; no whole-issue closure claim",
+    "Does not address other historical node-suite failures or macOS behavior",
+    "Does not change the aggregate denominator or percentage report schema",
+    "No Cargo build or full lint validation was run",
+    "Do not add a numbered changelog file until an actual PR number is assigned"
+  ]
+}

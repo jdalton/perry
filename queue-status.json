@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T15:17:47Z",
+  "checked_at": "2026-10-12T15:30:05Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -359,6 +359,34 @@
       "publisher_actions": [],
       "validation_evidence": "planning/10327-b67-heavy-validation-parked.json",
       "source_overlap_evidence": "planning/10327-current-source-overlap.json"
+    },
+    {
+      "issues": [
+        9202
+      ],
+      "branch": "cloud/issue-9202-parity-fatal-verdict",
+      "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+      "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+      "has_uncommitted_changes": false,
+      "state": "Exact single-commit fork head pushed and verified; partial draft packet ready. No PR number assigned; leave draft, not ready for review.",
+      "validation": "Verdict self-test, shell syntax, compile-budget regression, and diff check pass. Build-reuse regression is partial and reproduced at exact base due .node-version missing from temp fixture. No Cargo/full lint.",
+      "coverage": "uncovered",
+      "partial_prs": [],
+      "covering_prs": [],
+      "issue_state": "OPEN",
+      "draft_creation_allowed": true,
+      "ready_for_review": false,
+      "pr_creation_allowed": false,
+      "packet": "publication/9202/metadata.json",
+      "publisher_actions": [
+        "Create one draft from this packet for exact fork head; keep it draft and do not mark ready."
+      ],
+      "validation_evidence": "publication/9202/validation.json",
+      "current_head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+      "tree": "0b73eae7dae857c3ae1fbcef0a34ffa636e17063",
+      "external_pr_created": false,
+      "full_lint_complete": false,
+      "live_overlap_evidence": "publication/9202/live-overlap.json"
     }
   ],
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",

@@ -1,0 +1,73 @@
+{
+  "head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+  "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+  "commit_count": 1,
+  "checks": {
+    "shell_syntax": {
+      "status": "pass",
+      "command": "bash -n run_parity_tests.sh scripts/parity_final_verdict.sh tests/test_parity_compile_budget.sh tests/test_parity_build_reuse.sh"
+    },
+    "verdict_self_test": {
+      "status": "pass",
+      "command": "bash scripts/parity_final_verdict.sh --self-test",
+      "coverage": [
+        "compile, crash/timeout, and Node failure each fail node-suite at high parity",
+        "clean and skipped node-suite behavior",
+        "ordinary parity pass above 80%, exact 80%, below 80%, and zero executed tests",
+        "non-node-suite policy remains percentage-based",
+        "mock actual runner resume journal reports before hard failure"
+      ]
+    },
+    "compile_budget_regression": {
+      "status": "pass",
+      "command": "./tests/test_parity_compile_budget.sh"
+    },
+    "build_reuse_regression": {
+      "status": "partial_exact_base_fixture_failure",
+      "command": "./tests/test_parity_build_reuse.sh",
+      "candidate_exit_code": 1,
+      "candidate_result": "reuse checks and Windows timeout path passed; final gap-wrapper subtest failed because its temporary tree lacks .node-version",
+      "exact_base_ab": {
+        "base": "243bdd7abbf5f81034ad29b4a05f6fc2946492a4",
+        "command": "bash -x /tmp/9202-base-ab.ZVJSjp/tests/test_parity_build_reuse.sh",
+        "exit_code": 1,
+        "result": "same gap-wrapper failure at scripts/run_gap_tests.sh:49: .node-version: No such file or directory"
+      },
+      "interpretation": "The gap-wrapper failure is an exact-base fixture issue. The candidate test is not reported as wholly passing."
+    },
+    "diff_check": {
+      "status": "pass",
+      "command": "git diff --check HEAD^ HEAD"
+    },
+    "cargo_or_full_lint": {
+      "status": "not_run",
+      "reason": "No Cargo/full-lint authorization in this lane's validation scope."
+    }
+  },
+  "changed_paths": [
+    ".github/workflows/test.yml",
+    "run_parity_tests.sh",
+    "scripts/parity_final_verdict.sh",
+    "tests/test_parity_build_reuse.sh",
+    "tests/test_parity_compile_budget.sh"
+  ],
+  "source_review": {
+    "reviewer": "Astra planning agent",
+    "status": "source cleared",
+    "findings_addressed": [
+      "copied the new helper into existing isolated harness fixtures",
+      "described the allowlist limitation without claiming it was loaded",
+      "kept the interruption assertion explicitly limited to source-order preservation"
+    ]
+  },
+  "publication_limits": [
+    "partial Refs #9202 scope only",
+    "Linux shell validation only",
+    "no PR created by this lane"
+  ],
+  "fork_remote": {
+    "branch": "cloud/issue-9202-parity-fatal-verdict",
+    "verified_head": "073131fc900ac2e769cdd9a171d506b9df3b107b",
+    "command": "git ls-remote origin refs/heads/cloud/issue-9202-parity-fatal-verdict"
+  }
+}

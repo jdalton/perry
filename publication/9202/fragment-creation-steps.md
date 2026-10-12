@@ -1,0 +1,1 @@
+After the local publisher assigns the actual PR number N, create `changelog.d/N-node-suite-fatal-verdict.md` from `changelog-fragment.txt`, run the repository's fragment validator on that file, and verify the PR head is `073131fc900ac2e769cdd9a171d506b9df3b107b`. Keep the PR as a draft and do not claim whole-issue coverage.
