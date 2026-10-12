@@ -111,7 +111,7 @@
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
     "ready_transition_packets": 0,
-    "draft_creation_packets_available": 0
+    "draft_creation_packets_available": 1
   },
   "packets": [
     {
@@ -122,7 +122,7 @@
       "head": "8b948e1f994cbede27584e3ebf985f992ed75676",
       "state": "merged",
       "draft_creation_allowed": false,
-      "ready_for_review": true,
+      "ready_for_review": false,
       "packet": "publication/9927/metadata.json",
       "pr_number": 12444,
       "observed_draft": false,
@@ -136,7 +136,7 @@
       "head": "bfd853da176092391898cfaf2dd68adb78d0bb22",
       "state": "merged",
       "draft_creation_allowed": false,
-      "ready_for_review": true,
+      "ready_for_review": false,
       "packet": "publication/10198/metadata.json",
       "pr_number": 12445,
       "observed_draft": false,
@@ -174,12 +174,12 @@
       ],
       "head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
       "branch": "cloud/issue-11519-byte-family-tostring",
-      "state": "Draft12456; numberedfragmentpushed; exact final-head validation pending afteractive10739",
+      "state": "Draft12456 final fragment-head matching trio and no-auto parity running serially",
       "draft_creation_allowed": false,
       "ready_for_review": false,
       "packet": "publication/11519/metadata.json",
       "current_head": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
-      "validation": "Exact5e41 focusedunit1PASS,matchingtrioPASS,18case no-auto parityPASS. Defaultauto/full lintpending. Earliercandidate test failures andzero-testinvocationretained.",
+      "validation": "Code5e41 unit1,18case no-auto and genuine auto parity PASS; full lint30/137 failures classified. Fragment6f2f final checks running.",
       "publisher_actions": [
         "Waitfor final-headready packet; no duplicatePR"
       ],
@@ -192,10 +192,14 @@
       ],
       "head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
       "branch": "cloud/issue-10739-derived-workspace-counts",
-      "state": "Exact-head full lint running serially",
-      "draft_creation_allowed": false,
+      "state": "Validated code pushed; local draft creation allowed; numbered fragment/final head pending",
+      "draft_creation_allowed": true,
       "ready_for_review": false,
-      "packet": "publication/10739/metadata.json"
+      "packet": "publication/10739/metadata.json",
+      "publisher_actions": [
+        "Create one draft using title.txt/body.md, base main, head jdalton:cloud/issue-10739-derived-workspace-counts",
+        "Record PR number in local-publisher-inbox; cloud will add numbered fragment and validate final head before ready"
+      ]
     },
     {
       "issues": [
@@ -213,9 +217,9 @@
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
   "actual_prs_created_in_continuation": 5,
-  "validation_resource_event": "Single validation owner; redundant clean canonical12007/12202 checkouts retired preserving exact refs/trees and verified source bundles; ~4.6GiB free at milestone. Active issue-9927 and caches untouched.",
-  "updated_at": "2026-10-12T08:07:18.946428+00:00",
-  "publisher_inbox_checked_at": "2026-10-12T07:12:25.987763+00:00",
+  "validation_resource_event": "One serial validator with CARGO_INCREMENTAL=0; no cache deletion at this milestone.",
+  "updated_at": "2026-10-12T08:38:01.358311+00:00",
+  "publisher_inbox_checked_at": "2026-10-12T08:38:01.358311+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
     "issue_closed": true,
@@ -226,9 +230,7 @@
   "original_closures_associated_with_our_merged_prs": 4,
   "serial_validation_owner": "/root/luna_verification",
   "serial_priority": [
-    12007,
     11519,
-    10739,
     12202
   ],
   "cargo_incremental": 0,

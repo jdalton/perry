@@ -1,0 +1,83 @@
+{
+  "issue": 10739,
+  "candidate_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+  "candidate_parent": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+  "lint_base": "d74498b261d087a301b80602835bc7199a067957",
+  "checked_at_utc": "2026-10-12T08:35:16.651901+00:00",
+  "full_lint": {
+    "command": "BASE_SHA=d74498b261d087a301b80602835bc7199a067957; CARGO_TARGET_DIR=target-12390; CARGO_BUILD_JOBS=1; CARGO_INCREMENTAL=0; PIP_TARGET=/workspace/.toolchains/lint-python; PYTHONPATH=/workspace/.toolchains/lint-python; bash scripts/run_lint_gates.sh",
+    "log": "/workspace/work/perry-queue/10739-full-lint-1ce48b9.log",
+    "exit": 1,
+    "failed": 32,
+    "total": 137,
+    "ci_only_skipped": 2,
+    "architecture_gate": "both workspace_architecture.py --self-test and --check --print-summary passed",
+    "release_docs_gate": "failed because regen_api_docs.sh hardcodes issue-9927/target/release/perry while the fresh release binary was built under target-12390/release/perry; docs drift follow-up command reported pass after the wrapper aborted before writing."
+  },
+  "static_failure_classification": {
+    "candidate_precompile_rows": 28,
+    "exact_d744_baseline_rows": 19,
+    "targeted_replays_at_parent_bc862": {
+      "commands": 8,
+      "result": "All 8 targeted failure rows reproduced at the exact candidate parent. Nine commands ran because the native-handle ratchet includes a supplemental --self-test invocation; that self-test is already one of the 19 exact d744 rows. Candidate delta from parent has no Rust, Cargo, or checker input except workspace_architecture.py/JSON/documentation.",
+      "directory": "/workspace/work/perry-queue/10739-bc862-replays",
+      "logs": [
+        "/workspace/work/perry-queue/10739-bc862-replays/file-size.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/gc-pin-sites.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/host-clippy.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/host-warnings.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/local-binding.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/native-handle-ledger.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/native-handle-self-test.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/product-warnings.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/release-pipeline.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/string-payload.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/unrooted-local.log",
+        "/workspace/work/perry-queue/10739-bc862-replays/unrooted-vs-d744.log"
+      ],
+      "notes": "Release pipeline: same 7 tests / one mocked-GitHub failure, timing only differs. Other replayed gates reproduce the same upstream diagnostics; where the full lint driver excerpt truncates details, inputs are source-identical at bc862 and the candidate parent.",
+      "gate_rows": 8,
+      "command_invocations": 9
+    },
+    "xwin": "not replayed: full lint already records a permissioned network failure fetching MSVC CRT (`CONNECT proxy 403` for aka.ms); classify as environment-blocked, not product baseline.",
+    "environment_only_rows": 1,
+    "arithmetic": "19 exact d744 + 8 exact-parent targeted static gate rows + 1 xwin environment row = 28 precompile failures; + 3 compile gate failures + 1 API-doc wrapper setup failure = 32 full-driver failures."
+  },
+  "compile_comparison": {
+    "commands_replayed_at_bc862": [
+      "RUSTFLAGS=-D warnings cargo check -p perry --bins",
+      "RUSTFLAGS=-D warnings cargo check --workspace --all-targets --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui",
+      "cargo clippy --workspace --exclude perry-ui-android --exclude perry-ui-gtk4 --exclude perry-ui-ios --exclude perry-ui-macos --exclude perry-ui-tvos --exclude perry-ui-visionos --exclude perry-ui-watchos --exclude perry-ui-windows --exclude perry-ui-windows-winui"
+    ],
+    "parent_results": {
+      "product_warning_errors": 42,
+      "host_warning_errors": 35,
+      "host_clippy_errors": 1
+    },
+    "candidate_summary_same_counts": {
+      "product_warning_errors": 42,
+      "host_warning_errors": 35,
+      "host_clippy_errors": 1
+    },
+    "classification": "These compile diagnostics are present at candidate parent bc862 and candidate head with the same exact command scopes/counts. Candidate changes only crate-policy documentation, scripts/workspace_architecture.py, and workspace-architecture.json; there are no Rust or Cargo input changes.",
+    "logs": [
+      "/workspace/work/perry-queue/10739-bc862-replays/product-warnings.log",
+      "/workspace/work/perry-queue/10739-bc862-replays/host-warnings.log",
+      "/workspace/work/perry-queue/10739-bc862-replays/host-clippy.log"
+    ]
+  },
+  "candidate_diff_from_parent": [
+    "docs/src/contributing/crate-policy.md",
+    "scripts/workspace_architecture.py",
+    "workspace-architecture.json"
+  ],
+  "unclassified_candidate_failures": 0,
+  "worktree_state_at_record": {
+    "current_fixed_checkout": "/workspace/work/perry-queue/issue-9927",
+    "current_head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
+    "clean": true
+  },
+  "limitations": [
+    "Full lint is not green: 32/137 gates failed. Twenty-seven observed failure rows are classified as existing at the candidate parent (19 exact d744 rows plus 8 targeted parent replays); xwin is environment-blocked; compile diagnostics reproduce at the parent; the API-doc wrapper uses the wrong target path. No source changes were made by validation."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:00:40.124838+00:00",
+  "updated_at": "2026-10-12T08:38:01.358311+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
@@ -40,5 +40,10 @@
   "validation_checkout": "/workspace/work/perry-queue/issue-9927 (detached candidate; canonical branches remain stable)",
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
-  "latest_handoff": "c5060df"
+  "latest_handoff": "c5060df",
+  "current_serial_issue": 11519,
+  "serial_pending": [
+    12202
+  ],
+  "10739_publication": "Draft creation packet authorized at1ce48b9; awaiting local number"
 }

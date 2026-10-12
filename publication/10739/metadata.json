@@ -4,13 +4,18 @@
   "base": "main",
   "head": "jdalton:cloud/issue-10739-derived-workspace-counts",
   "branch": "cloud/issue-10739-derived-workspace-counts",
-  "draft_creation_allowed": false,
+  "draft_creation_allowed": true,
   "ready_for_review": false,
   "external_pr_created": false,
-  "full_lint_complete": false,
-  "publisher_actions": [],
+  "full_lint_complete": true,
+  "publisher_actions": [
+    "Create one draft using title.txt/body.md, base main, head jdalton:cloud/issue-10739-derived-workspace-counts",
+    "Record PR number in local-publisher-inbox; cloud will add numbered fragment and validate final head before ready"
+  ],
   "validation": "validation.json",
   "validated_branch_base": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
   "current_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
-  "pushed_to_fork": false
+  "pushed_to_fork": true,
+  "checked_at": "2026-10-12T08:38:01.358311+00:00",
+  "validated_code_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e"
 }

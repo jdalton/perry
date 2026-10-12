@@ -70,12 +70,19 @@
       "record_correction": "An earlier wrapper call failed to surface the exit code and was mistakenly reported as passing. A captured rerun returned exit 1; this record is authoritative."
     },
     "full_lint": {
-      "status": "pending_serial_slot",
-      "command": "./scripts/run_lint_gates.sh"
+      "status": "completed_non_green_classified",
+      "tested_head": "1ce48b9d067c02456d49fe2257c184ba6b26e71e",
+      "failed": 32,
+      "total": 137,
+      "ci_only_skipped": 2,
+      "baseline_failure_rows": 30,
+      "environment_failure_rows": 2,
+      "unclassified_candidate_failures": 0,
+      "details": "full-lint-classification.json"
     },
     "cargo_build_or_runtime_tests": {
-      "status": "not_run",
-      "reason": "Python-only change; serial Cargo slot not assigned"
+      "status": "full_driver_compile_checks_and_release_compiler_build_completed",
+      "runtime_tests": "not required for Python/policy-only delta; no runtime behavior claim"
     }
   },
   "scope_limits": [
@@ -146,5 +153,6 @@
     ],
     "changed_filenames_checked": true,
     "duplicate_or_path_overlap_found": false
-  }
+  },
+  "final_duplicate_check": "final-publication-check.json"
 }

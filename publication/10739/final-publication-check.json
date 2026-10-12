@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-10-12T08:33:26Z",
+  "repository": "PerryTS/perry",
+  "issue": {
+    "number": 10739,
+    "state": "open",
+    "closed_at": null,
+    "updated_at": "2026-09-19T22:32:09Z",
+    "latest_timeline_event": {
+      "event": "referenced",
+      "created_at": "2026-09-23T12:35:38Z",
+      "actor": "proggeramlug",
+      "commit": "636beb98f558116e7637a023db301111c82c634e"
+    },
+    "coverage_conclusion": "Still uncovered: issue concerns the maintenance hazard from checked-in absolute aggregate counts; no issue-state or timeline change covers the proposed count-removal/schema migration partial fix."
+  },
+  "upstream": {
+    "branch": "main",
+    "head": "da6d104c7c2961d386e438515918ea95842ec58f",
+    "candidate_base": "bc8625f64fd829af5463c8cde8368ec7947f31a",
+    "path_blobs": [
+      {
+        "path": "scripts/workspace_architecture.py",
+        "base_blob": "3f2325826f6b1c7543ddd6c32e6ecfda0d76440f",
+        "main_blob": "3f2325826f6b1c7543ddd6c32e6ecfda0d76440f",
+        "result": "unchanged"
+      },
+      {
+        "path": "workspace-architecture.json",
+        "base_blob": "4d1ba3e883f99af4973c2a611cbd38fad298c01f",
+        "main_blob": "4d1ba3e883f99af4973c2a611cbd38fad298c01f",
+        "result": "unchanged"
+      },
+      {
+        "path": "docs/src/contributing/crate-policy.md",
+        "base_blob": "11231d20da99ccc9094187d34962ca547ec2f23c",
+        "main_blob": "11231d20da99ccc9094187d34962ca547ec2f23c",
+        "result": "unchanged"
+      }
+    ]
+  },
+  "pull_requests": {
+    "open_count": 25,
+    "focused_open_searches": {
+      "issue_10739": [],
+      "workspace_architecture": [],
+      "workspace_architecture_json": []
+    },
+    "new_open_inventory_delta_since_prior_24_pr_snapshot": {
+      "added": [12456],
+      "removed_or_merged": [12444, 12445, 12450]
+    },
+    "new_prs_checked": [
+      {
+        "number": 12456,
+        "title": "fix(runtime): preserve byte-view toString with short encodings",
+        "head_sha": "6f2f622f228f93ce6d56026b5041c7b456ca2195",
+        "changed_paths": [
+          "changelog.d/12456-byte-view-tostring.md",
+          "crates/perry-runtime/src/object/buffer_dispatch.rs",
+          "crates/perry-runtime/src/value/to_string_buffer_tests.rs",
+          "test-files/test_gap_11519_arraybuffer_to_string_short_encoding.ts"
+        ],
+        "relation": "Unrelated #11519 runtime work; it does not touch the workspace architecture checker, policy JSON, or crate-policy documentation. No duplicate/conflict for #10739."
+      }
+    ],
+    "existing_inventory": "planning/active-candidates-prevalidation-refresh.json records the prior focused PR/path searches and no relevant overlap."
+  },
+  "evidence_method": "Read-only GitHub issue/timeline/search/PR endpoints and Git Trees API at current main; local git ls-tree at candidate base bc8625. No full fetch/build/source edits."
+}
