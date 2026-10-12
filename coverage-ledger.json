@@ -1,11 +1,11 @@
 {
   "cohort": "original224",
   "state_observed_at": "2026-10-12T12:17:49Z",
-  "classification_updated_at": "2026-10-12T12:25:05.623379+00:00",
+  "classification_updated_at": "2026-10-12T13:09:05Z",
   "counts": {
     "covered": 20,
-    "uncertain": 18,
-    "uncovered": 142,
+    "uncertain": 19,
+    "uncovered": 141,
     "closed": 44
   },
   "policy": "Covering PRs, partial repairs, observed closures and actual contributor merges are separate; source claims and WIP are not coverage.",
@@ -384,12 +384,17 @@
         "owner": "cloud /root/luna_class_tdz",
         "task": "/root/luna_class_tdz",
         "branch": "cloud/issue-12202-wtf8-class-keys",
-        "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
-        "validation": "Exact 2272 scoped tests/trio/no-auto/auto parity PASS. Full lint completed non-green: 105 pass,32 fail,2 CI-only skipped; failure attribution 30 reproduced baseline,2 environment/path,0 candidate. TLS review of nonfatal Clippy warning count 1102 vs1100 pending; no readiness claim.",
-        "merge_state": "no PR",
+        "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+        "has_uncommitted_changes": false,
+        "validation": "Validated implementation remains exact head2272: scoped 59 unique tests/67 executions, fresh trio and no-auto/genuine-auto parity passed; full lint 105 pass,32 fail (30 baseline,2 environment/path),2 skips; warn-level Clippy +3/-1 disclosed. PR head dfd64b7 is a changelog-only numbered fragment; source bytes remain 2272. Draft is not ready for review.",
+        "merge_state": "DRAFT OPEN PR12471",
         "closure_state": "OPEN",
-        "publication_state": "Waiting for final TLS Clippy warning-delta review and root GO; all publish flags false."
-      }
+        "publication_state": "Draft PR12471 open at fragment head dfd64b7; readiness false pending #12145 verifier lane/final packet synchronization.",
+        "evidence": "publication/12202/2272-final-validation.json; publication/12202/2272-final-failure-attribution.json; publication/12202/2272-final-freshness.json"
+      },
+      "draft_prs": [
+        12471
+      ]
     },
     {
       "issue": 12201,
@@ -489,7 +494,19 @@
         12149
       ],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root/luna_tls_checker",
+        "task": "/root/luna_tls_checker",
+        "branch": "cloud/issue-12145-primary-timer-scan",
+        "current_head": "38a89678c1fe0387d03781730fbfc18584152a23",
+        "has_uncommitted_changes": false,
+        "validation": "Astra source-clear. Three focused timer-store tests passed at prior head7cbb (1 pass each, 5825 filtered). Fresh matching trio passed on final head38a896 in 3m08 (exit0); scoped timer controls and production integration acceptance are now running. Started 2026-10-12T13:04:57Z, 45-minute deadline 13:49:57Z.",
+        "merge_state": "no PR",
+        "closure_state": "OPEN",
+        "publication_state": "Source validation in progress; no PR and no issue coverage credited.",
+        "evidence": "planning/12145-source-review.json; planning/next-candidates/12145-worker-retirement-proof.json; 12145-focused-1.log; 12145-focused-2.log; 12145-focused-3.log"
+      }
     },
     {
       "issue": 12135,
@@ -1530,10 +1547,14 @@
     },
     {
       "issue": 10327,
-      "status": "uncovered",
+      "status": "uncertain",
       "covering_prs": [],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "partial_prs": [
+        10354
+      ],
+      "classification_evidence": "planning/10327-merged-source-reconciliation.json"
     },
     {
       "issue": 10324,
@@ -1718,7 +1739,19 @@
       "status": "uncovered",
       "covering_prs": [],
       "live_state": "OPEN",
-      "resolution_verified": false
+      "resolution_verified": false,
+      "claim": {
+        "owner": "cloud /root",
+        "task": "/root",
+        "branch": "cloud/issue-10027-root-ws-dispatch",
+        "current_head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+        "has_uncommitted_changes": false,
+        "validation": "Committed source head 2816d18; Astra source review and static checks clear. Cargo/runtime and focused tests not run (slot held by #12145). Deployed MB24 browser retest remains required before issue closure.",
+        "merge_state": "no PR",
+        "closure_state": "OPEN",
+        "publication_state": "Committed local candidate; provisional packet only; draft creation/push/PR publication not authorized.",
+        "evidence": "planning/provisional-10027/metadata.json; planning/provisional-10027/validation.json"
+      }
     },
     {
       "issue": 9980,

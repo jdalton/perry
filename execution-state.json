@@ -1,13 +1,14 @@
 {
-  "updated_at": "2026-10-12T12:47:18Z",
+  "updated_at": "2026-10-12T13:09:05Z",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
   "serial_build_owner": "cloud /root/luna_verification",
   "next_steps": [
-    "Keep #11915 open/unresolved/unpublished at e190; no further runs or fixes authorized under that lane",
-    "Luna_tls begins the bounded #12145 source-only implementation after its local claim is recorded; no base/head is assigned centrally yet and no heavy build is authorized",
-    "Preserve #12202 draft-allowed at exact2272; no actual PR number in publisher inbox"
+    "Finish #12145 focused controls and production integration; the final-head matching trio passed in3m08.",
+    "Keep #10027 committed at2816d18; source/static review clear, Cargo/runtime acceptance pending, MB24 retest required before closure.",
+    "Keep #11915 parked at e190.",
+    "#12202 draft PR12471 remains open at changelog-only fragment head dfd64b7; readiness false; implementation validation is at2272."
   ],
   "prohibited": [
     "No source mirror changes or unshallow",
@@ -23,9 +24,10 @@
   "12390_committed_head_validation": "Merged12439 and closed12390 verified live; completed previous batch",
   "publication_handoff_branch": "https://github.com/jdalton/perry/tree/cloud/publication-handoffs",
   "serial_priority": [
-    "#12145 sole independent source lane: Luna_tls implements narrow PRIMARY_AGENT timer-scan restriction; await local claim before recording base/head, no heavy build yet",
-    "#11915 parked at e190; no further runs authorized",
-    "#12202 draft allowed at exact2272; await actual publisher assignment"
+    "#12145 final-head trio passed38a896 (3m08, exit0); focused timer controls and production integration running; deadline13:49:57Z.",
+    "#10027 committed candidate2816d18; source/static checks clear, no Cargo/runtime tests; MB24 retest required before closure.",
+    "#11915 parked open/unresolved/unpublished at e190.",
+    "#12202 draft PR12471 at fragment headdfd64b7, not ready for review; source acceptance at2272."
   ],
   "coordination": "Luna-low owns implementation/tests/failure classification; Astra bounded decisions/reviews only",
   "publisher_inbox": "cloud/local-publisher-inbox/publisher-status.json",
@@ -127,11 +129,12 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "c03045fd0a040088e6bef5a9375ebcf001a8d55d",
-  "current_serial_issue": null,
+  "current_serial_issue": 12145,
   "serial_pending": [
-    "12145 local source claim and bounded source implementation; no head/base until claim arrives",
-    "11915 parked, open/unresolved/unpublished; no further runs authorized",
-    "12202 local draft PR assignment"
+    "12145 focused timer controls and production integration acceptance are running on final head38a896; full lint only after this phase if acceptance passes",
+    "10027 focused tests and matching build/runtime acceptance after serial slot release; provisional packet, MB24 browser retest required before closure",
+    "11915 parked open/unresolved/unpublished at e190; no further runs authorized",
+    "12202 draft PR12471 open at fragment head dfd64b7, source validation remains head2272, not ready for review"
   ],
   "10739_publication": "Merged12458; partial repair; original10739 remains open",
   "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
@@ -204,5 +207,47 @@
     "local_claim": "pending; no base or head assigned centrally",
     "heavy_build_authorized": false,
     "evidence": "planning/next-candidates/next-independent-ranked-plan.json and planning/next-candidates/12145-worker-retirement-proof.json"
+  },
+  "benchmark_sparse_recovery": "3,983,720,448 bytes recovered reversibly; benchmark-only sparse checkouts preserved, source trees/heads unchanged, validation checkout untouched; planning/benchmark-sparse-recovery/result.json.",
+  "current_validation_gate": {
+    "issue": 12145,
+    "head": "38a89678c1fe0387d03781730fbfc18584152a23",
+    "gate": "scoped timer controls and production integration acceptance",
+    "started_at": "2026-10-12T13:04:57Z",
+    "hard_deadline": "2026-10-12T13:49:57Z",
+    "owner": "cloud /root/luna_verification",
+    "status": "fresh matching trio PASS on final head38a896 (3m08, exit0); controls/integration running"
+  },
+  "publisher_inbox_refresh": {
+    "observed_at": "2026-10-12T13:06:21Z",
+    "source": "publisher-status.json",
+    "source_updated_at": "2026-10-12T12:17:49Z",
+    "issue_12202_assignment": "none observed; no newer local inbox snapshot available"
+  },
+  "next_independent_candidate": {
+    "issue": 12145,
+    "owner": "cloud /root/luna_tls_checker",
+    "branch": "cloud/issue-12145-primary-timer-scan",
+    "worktree": "/workspace/work/perry-queue/issue-12145",
+    "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+    "head": "38a89678c1fe0387d03781730fbfc18584152a23",
+    "tree": "dc833214eee0541f90ec463fdb01b5b133158c45",
+    "claim_status": "committed candidate; validation in progress",
+    "heavy_build_authorized": "matching trio, scoped controls, production integration, then full lint if passes",
+    "evidence": "planning/12145-source-review.json; planning/next-candidates/12145-worker-retirement-proof.json"
+  },
+  "publication_inbox_refresh": {
+    "observed_at": "2026-10-12T13:07:10Z",
+    "source": "jdalton/perry cloud/local-publisher-inbox/publisher-status.json",
+    "source_blob_sha": "59b919bfb3084932b47572495c47557b0f2c37ed",
+    "source_updated_at": "2026-10-12T12:24:51.074087+00:00",
+    "issue_12202_assignment": "PR12471 draft at head2272; subsequent source-branch fragment head dfd64b7 pushed and API-confirmed open/unmerged; not ready for review",
+    "issue_12202_live_state": "OPEN; updated 2026-10-08T11:06:28Z; 0 comments"
+  },
+  "coverage_counts": {
+    "uncovered": 141,
+    "uncertain": 19,
+    "covered": 20,
+    "closed": 44
   }
 }

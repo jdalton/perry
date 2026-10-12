@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T08:55:51.844653+00:00",
+  "checked_at": "2026-10-12T13:09:05Z",
   "original224_total": 224,
   "original_open": 180,
   "original_closed": 44,
@@ -18,8 +18,8 @@
   ],
   "merged_prs_this_turn": 6,
   "coverage_counts": {
-    "uncovered": 142,
-    "uncertain": 18,
+    "uncovered": 141,
+    "uncertain": 19,
     "covered_open": 20,
     "closed": 44
   },
@@ -98,9 +98,20 @@
         "ready_for_review": false,
         "merged": true,
         "merged_at": "2026-10-12T08:55:05Z"
+      },
+      {
+        "number": 12471,
+        "url": "https://github.com/PerryTS/perry/pull/12471",
+        "issues": [
+          12202
+        ],
+        "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
-    "remaining": 15,
+    "remaining": 14,
     "owner": "cloud implements; local coordinates and publishes",
     "live_issue_snapshot": {
       "repo_open": 191,
@@ -109,15 +120,15 @@
       "observed_at": "2026-10-12T10:43:51Z",
       "evidence": "planning/original224-state-refresh-20261012T104351Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 5,
-    "opened": 5,
-    "remaining_to_open": 15,
+    "opened": 6,
+    "remaining_to_open": 14,
     "remaining_to_good_state": 15,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "original_issues_closed": 3,
-    "evidence_source": "live GitHub REST newer than publisher inbox",
+    "evidence_source": "Fetched jdalton/perry cloud/local-publisher-inbox/publisher-status.json (blob 59b919b); direct issue fetch confirms #12202 OPEN; snapshot planning/12202-milestone-refresh-20261012T130710Z.json",
     "observed_closed_referenced_originals": [
       8085,
       10198,
@@ -125,7 +136,16 @@
     ],
     "closure_attribution": "Observed states of referenced original issues; no causal closure credit assigned to partial contributor PRs",
     "ready_transition_packets": 0,
-    "draft_creation_packets_available": 0
+    "draft_creation_packets_available": 0,
+    "pr_state_counts": {
+      "as_of": "2026-10-12T13:09:05Z",
+      "opened": 6,
+      "merged": 5,
+      "closed_unmerged": 0,
+      "currently_open": 1,
+      "drafts": 1,
+      "note": "The five merged PRs are GitHub-closed but not closed-unmerged. #12471 is one currently open draft; PR state is separate from issue state and coverage."
+    }
   },
   "packets": [
     {
@@ -220,18 +240,23 @@
         12202
       ],
       "branch": "cloud/issue-12202-wtf8-class-keys",
-      "head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+      "head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "has_uncommitted_changes": false,
-      "state": "Validated source pushed; local draft creation authorized, PR number pending",
-      "draft_creation_allowed": true,
+      "state": "Draft PR12471 open at dfd64b7 changelog-only fragment head; not ready for review",
+      "draft_creation_allowed": false,
       "ready_for_review": false,
       "validation_plan": "planning/12202-minimal-validation-plan.json",
       "validation": "59 unique tests/67 executions, fresh trio and both Node parity modes PASS. Full lint exit1:105 pass,32 fail (30 baseline,2 environment/path),2 CI skips; warn-level Clippy +3/-1 disclosed as informational.",
-      "current_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+      "current_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae",
       "packet": "publication/12202/metadata.json",
       "publisher_actions": [
-        "Create draft using publication/12202 exact title/body/base/head; report assigned PR in publisher inbox."
-      ]
+        "Luna_class owns numbered-fragment/source-branch follow-up; verifier will resume after #12145."
+      ],
+      "pr_number": 12471,
+      "observed_draft": true,
+      "merged": false,
+      "validated_source_head": "2272f7b520206d8e76d4f86440f92e035e25ce63",
+      "fragment_head": "dfd64b7e0cf97dcad31cde995aabeaddb340dfae"
     },
     {
       "issues": [
@@ -247,6 +272,45 @@
       "validation_plan": "planning/next-candidates/11915-reflective-callee-go-plan.json",
       "validation": "HIR3/trio/fixture compile passed; Perry aborts before reflective call while writing Array.prototype.slice. Timeboxed diagnosis isolated runtime invariant outside changed source; no fix attempted.",
       "packet": "planning/11915-parked-e190-diagnosis.json",
+      "publisher_actions": []
+    },
+    {
+      "issues": [
+        10027
+      ],
+      "branch": "cloud/issue-10027-root-ws-dispatch",
+      "head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+      "current_head": "2816d18eb55d80b80bf148d9b8ff6e7ae7ce845e",
+      "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+      "tree": "8232aa984ba812dc490bccf346392d85c3c31f10",
+      "has_uncommitted_changes": false,
+      "state": "Committed local source candidate; Astra source review and static checks clear; acceptance pending",
+      "draft_creation_allowed": false,
+      "ready_for_review": false,
+      "validation": "Source review/static checks pass; Cargo/runtime tests pending serial slot. MB24 deployed retest is required before closure.",
+      "packet": "planning/provisional-10027/metadata.json",
+      "publisher_actions": [],
+      "validation_evidence": "planning/provisional-10027/validation.json",
+      "push_allowed": false,
+      "pr_creation_allowed": false
+    },
+    {
+      "issues": [
+        12145
+      ],
+      "branch": "cloud/issue-12145-primary-timer-scan",
+      "head": "38a89678c1fe0387d03781730fbfc18584152a23",
+      "current_head": "38a89678c1fe0387d03781730fbfc18584152a23",
+      "base": "d3e535944edbe7f7cf858c9ec932da355a7de26b",
+      "tree": "dc833214eee0541f90ec463fdb01b5b133158c45",
+      "has_uncommitted_changes": false,
+      "state": "Final-head trio PASS; focused controls/production integration running",
+      "validation": "Astra source-clear. Three focused timer-store tests passed at prior head7cbb. Fresh final-head trio passed on38a896 (3m08, exit0); scoped controls and production integration acceptance are running under 13:49:57Z deadline.",
+      "draft_creation_allowed": false,
+      "ready_for_review": false,
+      "push_allowed": false,
+      "pr_creation_allowed": false,
+      "packet": "planning/12145-source-review.json",
       "publisher_actions": []
     }
   ],
@@ -290,7 +354,7 @@
     "status": "parked-open-unresolved-unpublished",
     "evidence": "planning/11915-parked-e190-diagnosis.json"
   },
-  "publisher_inbox_snapshot": "planning/12202-publisher-inbox-at-11915-park-milestone.json",
+  "publisher_inbox_snapshot": "planning/12202-milestone-refresh-20261012T130710Z.json",
   "resource_milestone": {
     "record": "planning/11915-resource-preflight-milestone-e190.json",
     "cache_relocation_manifest": "planning/idle-cache-relocation-20261012.json",
@@ -321,5 +385,13 @@
     "head": null,
     "heavy_build_authorized": false,
     "evidence": "planning/next-candidates/next-independent-ranked-plan.json; planning/next-candidates/12145-worker-retirement-proof.json"
-  }
+  },
+  "resource_recovery": {
+    "observed_at": "2026-10-12T13:00:35Z",
+    "recovered_bytes": 3983720448,
+    "method": "Reversible benchmark-only sparse checkouts; source trees and heads unchanged, validation checkout untouched.",
+    "evidence": "planning/benchmark-sparse-recovery/result.json",
+    "summary_sha256": "e419a448710ad555b30420c50342ff25dd228cf46b54ca46fde06d23fb4df391"
+  },
+  "coverage_policy": "The 20-PR batch is a milestone, not a stop; continue toward original224 coverage. Do not submit issue-covering PR reviews/comments until coverage is complete."
 }
