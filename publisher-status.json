@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T07:31:55.330509+00:00",
+  "updated_at": "2026-10-12T08:02:58.885119+00:00",
   "batch": {
     "started_at": "2026-10-12T04:46:36.454607+00:00",
     "target": 20,
@@ -40,6 +40,17 @@
         "state": "merged",
         "ready_for_review": false,
         "merged": true
+      },
+      {
+        "number": 12456,
+        "url": "https://github.com/PerryTS/perry/pull/12456",
+        "issues": [
+          11519
+        ],
+        "head": "5e41d1d8b19c030754975afeca52a9c277eda739",
+        "state": "draft",
+        "ready_for_review": false,
+        "merged": false
       }
     ],
     "remaining": 17,
@@ -52,11 +63,11 @@
       "observed_at": "2026-10-12T07:28:51Z",
       "evidence": "planning/original224-state-refresh-2026-10-12T072851Z.json"
     },
-    "drafts": 0,
+    "drafts": 1,
     "ready_for_review": 0,
     "merged": 3,
-    "opened": 3,
-    "remaining_to_open": 17,
+    "opened": 4,
+    "remaining_to_open": 16,
     "remaining_to_good_state": 17,
     "count_policy": "20 distinct substantive contributor PRs after12439; drafts tracked separately and do not count toward good reviewable or merged target; no artificial splits",
     "code_ready_packets": 2
