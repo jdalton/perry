@@ -1,0 +1,58 @@
+{
+  "assessed_at": "2026-10-12T06:05:53.180927+00:00",
+  "decision": "SAFE_CONDITIONAL_REDUNDANT_CHECKOUT_RETIREMENT",
+  "mutation_performed": true,
+  "checkout": "/workspace/work/perry-queue/baseline",
+  "head": "d74498b261d087a301b80602835bc7199a067957",
+  "tree": "b6797ea8631b500c20dba7e86a3cc911e3f4ad41",
+  "common_repository": "/workspace/perry/.git",
+  "tracked_and_untracked_status": "",
+  "nonstandard_index_flags": 0,
+  "nested_git_repositories": 0,
+  "tracked_symlinks": "Two relative benchmark links within checkout; no external targets",
+  "reachable_local_refs": [
+    "refs/heads/cloud/issue-10198-compound-test-cfg",
+    "refs/heads/cloud/issue-10739-derived-workspace-counts",
+    "refs/heads/cloud/issue-11519-byte-family-tostring",
+    "refs/heads/cloud/issue-12007-class-expression-tdz",
+    "refs/heads/cloud/issue-12202-wtf8-class-keys",
+    "refs/heads/cloud/issue-12285-parentport-lifecycle",
+    "refs/heads/cloud/issue-12390-remove-parked-streams",
+    "refs/heads/cloud/issue-9927-freshness-search"
+  ],
+  "ignored_files": {
+    "count": 29,
+    "bytes": 960066,
+    "kind": "All Python __pycache__ .pyc files; no logs, archives, native binaries, or unique source",
+    "hash_inventory": "planning/baseline-ignored-inventory.json"
+  },
+  "estimated_recovery": "1.3 GiB allocated checkout; preserve 960066-byte cache inventory if strict byte preservation desired",
+  "external_uses": [
+    "baseline-compile-ab.sh changes directory into baseline",
+    "planning/next-candidates/12279-probe/run.py references baseline",
+    "planning/next-candidates/11519-deferred-probe-plan.json references baseline",
+    "Other saved historical commands may embed baseline; restore exact checkout before replay"
+  ],
+  "idle_evidence": "Root owner explicitly confirms no ongoing baseline process or probe; owner must reconfirm immediately before removal",
+  "preservation": [
+    "Keep all local branch refs and common repository objects; no gc/prune/ref deletion",
+    "Leave immutable handoff/mirror and all snapshots untouched; no claim that mirror contains this head independently verified here",
+    "Leave separate target-baseline including cold archives and retained compiler untouched",
+    "Leave all probe results and logs outside checkout untouched"
+  ],
+  "execution_plan": [
+    "Root rechecks status and idle ownership immediately before action",
+    "Optionally copy all 29 hashed .pyc files to external evidence/cache-preservation directory and verify hashes; only then remove these positively inventoried cache paths if needed",
+    "Use ordinary git worktree remove for baseline, without force; stop if Git refuses or unexpected files appear",
+    "Verify common repository can still resolve exact head and tree and branch ancestry after removal"
+  ],
+  "restore_command": "git -C /workspace/perry worktree add --detach /workspace/work/perry-queue/baseline d74498b261d087a301b80602835bc7199a067957",
+  "limitations": [
+    "Removal is redundant checkout retirement, not deletion of source history or artifacts",
+    "Saved baseline commands require restoration first; no active validation may depend on that path"
+  ],
+  "free_bytes_before": 888705024,
+  "retired": true,
+  "retired_at": "2026-10-12T06:07:17.620701+00:00",
+  "free_bytes_after": 2275553280
+}

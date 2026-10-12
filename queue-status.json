@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T06:00:31.988971+00:00",
+  "checked_at": "2026-10-12T06:10:44.090203+00:00",
   "original224_total": 224,
   "original_open": 182,
   "original_closed": 42,
@@ -121,8 +121,8 @@
       "issues": [
         12007
       ],
-      "head": "e8ad66b00b45646a174f02092c33bb59f727a25c",
-      "state": "Exact-head trio retry authorized after disk recovery; prior attempt interrupted; compiled acceptance/full lint pending",
+      "head": "765a94d31e9b129641c5046c65b06624c6ad7358",
+      "state": "Exact corrected-head trio PASS; aggregate/direct-error acceptance running; full lint pending",
       "draft_creation_allowed": false,
       "ready_for_review": false
     },
@@ -154,7 +154,7 @@
       "branch": "cloud/issue-12202-wtf8-class-keys",
       "head": "bc8625f64fd829af5463c8cde8368ec7947f31a1",
       "has_uncommitted_changes": true,
-      "state": "20 runtime-file source draft plus Node-passing fixture under Astra review; candidate Cargo/Perry pending",
+      "state": "Astra source clear; bounded build plan being prepared; no Cargo/Perry validation",
       "draft_creation_allowed": false,
       "ready_for_review": false
     }
@@ -162,7 +162,7 @@
   "publisher_inbox": "https://github.com/jdalton/perry/blob/cloud/local-publisher-inbox/publisher-status.json",
   "coverage_freshness": "Full live original224 state refresh; planning/closure-reconciliation-40.json.22 newly recorded closures by another maintainer, no batch credit.",
   "actual_prs_created_in_continuation": 3,
-  "validation_resource_event": "Two idle baseline archives preserved losslessly compressed. Completedclean10198 checkout retired retainingexactbranch/tree/fork andsnapshot; free2487009280bytes.12007trio priorattempt interrupted; retryauthorized afterstorageowneridle.",
+  "validation_resource_event": "Only one validation owner. Retired redundant clean10198 and baseline checkouts with source refs/tree/snapshots preserved; idle archives retained losslessly compressed. Previous build interruptions and fixture failure remain disclosed.",
   "updated_at": "2026-10-12T05:48:03.894965+00:00",
   "publisher_inbox_checked_at": "2026-10-12T05:36:27.182098+00:00",
   "upstream_reconciliation_12285": {
@@ -170,5 +170,15 @@
     "issue_closed": true,
     "cloud_candidate_retired": true,
     "new_batch_credit": 0
-  }
+  },
+  "cloud_issue_closure_actions": 0,
+  "original_closures_associated_with_our_merged_prs": 2,
+  "serial_validation_owner": "/root/luna_verification",
+  "serial_priority": [
+    12007,
+    11519,
+    10739,
+    12202
+  ],
+  "cargo_incremental": 0
 }

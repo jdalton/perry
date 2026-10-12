@@ -1,0 +1,14 @@
+{
+  "state": "failed_verification",
+  "source_target": "/workspace/work/perry-queue/issue-12390/target/perry-auto-7780ff4430753bb1",
+  "archive_path": "/workspace/work/perry-queue/cold-storage-issue12390-auto/perry-auto-7780ff4430753bb1.pax.tar.zst.tmp",
+  "archive_size_bytes": 162944457,
+  "archive_sha256": "8c6ea8d1224079102224728eb7218beb1a86b6842a8af84f23da232501d444c1",
+  "attempted_command": "python3 /workspace/work/perry-queue/pax_tree_coldstore.py create <source-target> <archive-path>",
+  "failure": "Archive verification failed: one-layer zstd decompression yielded invalid tar header (tarfile.ReadError); discovered create pipeline compressed an already zstd-compressed estimate stream, so this is not a valid tar archive.",
+  "checks": "Outer and inner zstd -t passed; tar verification failed.",
+  "process_exit": 130,
+  "source_target_modified": false,
+  "archive_is_valid_evidence": false,
+  "cleanup_authorization": "Root authorized removal of this positively identified failed temporary output after preserving command/error/hash metadata; no retry authorized."
+}
