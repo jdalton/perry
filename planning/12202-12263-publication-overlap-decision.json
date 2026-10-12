@@ -1,0 +1,20 @@
+{
+  "candidate": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+  "overlap_pr": 12263,
+  "overlap_head": "41a3ae2b588fe51dda7c960604a4951abe1acbb2",
+  "decision": "No demonstrated semantic blocker to publishing current candidate; disclose integration/merge-order risk. No external review performed.",
+  "exact_diff": "planning/12263-prepublication.diff",
+  "findings": [
+    "Actual PR diff is substantially broader than its test-only title/body: class identity words, method slot lookup, cache tuple kinds, codegen ABI changes and deletion tests. Do not characterize entire diff as test-only.",
+    "class_method_bind.rs PR resulting blob584ab16687 equals candidate base blob exactly: path overlap alone includes already-present content.",
+    "PR evaluation_prototype_method_value change uses existing materialized prototype and capture0 brand; candidate byte variant retains precisely that mechanism with exact bytes.",
+    "PR class_has_own_method queries actual holder chain instead of vtable; candidate byte variant retains holder/chain query with additional selected identity handling, not stale-registry recovery.",
+    "No WTF8 key migration or duplicate12202 acceptance demonstrated in inspected PR diff. Current main comparison supplied by freshness evidence has no candidate-path drift."
+  ],
+  "integration_requirements": [
+    "If12263 lands first, reconcile from its actual merge diff, preserving byte-key variants, cache key kind, holder/deletion truth and per-evaluation brand; rebuild and rerun targeted acceptance on resulting head.",
+    "Do not apply stale draft diff wholesale or replace byte APIs with its older String interfaces.",
+    "No need to block current useful PR solely on overlapping filenames."
+  ],
+  "limitations": "Bounded targeted semantic comparison, not a full correctness review or simulated merge/build of12263."
+}

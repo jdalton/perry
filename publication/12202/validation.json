@@ -43,7 +43,9 @@
     "stdout": "/workspace/work/perry-queue/12202-b4b8-acceptance/node.stdout",
     "stderr": "/workspace/work/perry-queue/12202-b4b8-acceptance/node.stderr",
     "perry_validated": true,
-    "compiled_acceptance_record": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
+    "compiled_acceptance_record": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json",
+    "auto_opt_acceptance_record": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json",
+    "auto_opt_perry_parity_passed": true
   },
   "acceptance_matrix": {
     "collision_keys": [
@@ -115,10 +117,25 @@
       "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
     },
     "full_lint": {
-      "status": "pending/running"
+      "status": "pending/running; no result recorded"
     },
     "auto_opt": {
-      "status": "pending/running"
+      "status": "passed at b4b8; genuine async-bridge auto-optimize rebuild",
+      "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "runtime_archive": "/workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+      "runtime_archive_sha256": "01e56e80dd5b9798c73be85300b1e30afcec651df187f521863be7ac39145372",
+      "stdlib_archive": "/workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a",
+      "stdlib_archive_sha256": "879f2baffe9c6353036dad77daae2004e1f57cca218bde1f378ddf4b98420f2a",
+      "link_evidence": "/workspace/work/perry-queue/12202-b4b8-auto-acceptance/compile.stderr",
+      "fallback_distinction": {
+        "tiny_program_fallback_notice": "argument is not a proven effect-free string",
+        "runtime_archive_fallback": "none observed; compiler explicitly reports rebuilt runtime and stdlib archives, and link line resolves the rebuilt async-bridge runtime archive."
+      }
     }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
@@ -203,7 +220,7 @@
       "status": "not built; superseded during source review"
     }
   ],
-  "readiness": "CURRENT_HEAD_NO_AUTO_BUILD_AND_FIXTURE_PARITY_PASS; AUTO_OPT_AND_FULL_LINT_PENDING",
+  "readiness": "CURRENT_HEAD_NO_AUTO_AND_AUTO_OPT_FIXTURE_PARITY_PASS; FULL_LINT_PENDING",
   "current_head_validation": {
     "head": "b4b8f0488b8a76e65b2d6bceefd445deb267711b",
     "status": "no-auto/no-cache matching trio and exact compiled Node parity passed; auto-opt/full lint remain pending/running",
@@ -226,8 +243,18 @@
       "stdout_parity_exit": 0,
       "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
     },
-    "auto_opt": "pending/running",
-    "full_lint": "pending/running"
+    "auto_opt": {
+      "status": "passed",
+      "mode": "genuine async-bridge rebuild",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "runtime_archive_sha256": "01e56e80dd5b9798c73be85300b1e30afcec651df187f521863be7ac39145372",
+      "stdlib_archive_sha256": "879f2baffe9c6353036dad77daae2004e1f57cca218bde1f378ddf4b98420f2a",
+      "evidence": "/workspace/work/perry-queue/publication-repo/publication/12202/b4b8-current-validation.json"
+    },
+    "full_lint": "pending/running; no result recorded"
   },
   "source_review_history": {
     "latest": "/workspace/work/perry-queue/planning/12202-call-fallback-review.json",
@@ -354,7 +381,45 @@
       "status": "exact stdout parity passed",
       "evidence_directory": "/workspace/work/perry-queue/12202-b4b8-acceptance"
     },
-    "auto_opt": "pending/running",
+    "auto_opt": {
+      "status": "passed",
+      "mode": "genuine auto-optimize rebuild with async-bridge; no-auto fallback disabled",
+      "compile_exit": 0,
+      "node_version": "v26.5.1",
+      "node_exit": 0,
+      "perry_exit": 0,
+      "stdout_parity_exit": 0,
+      "exact_stdout_parity": true,
+      "stdout_sha256": "b1b5100ad4ec43c7938f7f62d4a039ca51e36f2854167f1310304f2786fa4cd3",
+      "generated_archives": {
+        "runtime": {
+          "path": "/workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+          "size_bytes": 39907778,
+          "sha256": "01e56e80dd5b9798c73be85300b1e30afcec651df187f521863be7ac39145372"
+        },
+        "stdlib": {
+          "path": "/workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_stdlib.a",
+          "size_bytes": 41712216,
+          "sha256": "879f2baffe9c6353036dad77daae2004e1f57cca218bde1f378ddf4b98420f2a"
+        },
+        "features": "async-bridge"
+      },
+      "runtime_archive_used_for_link": "/workspace/work/perry-queue/issue-9927/target/perry-auto-7780ff4430753bb1/release/libperry_runtime.a",
+      "link_evidence": "/workspace/work/perry-queue/12202-b4b8-auto-acceptance/compile.stderr",
+      "compiler_output": "/workspace/work/perry-queue/12202-b4b8-auto-acceptance/compile.stdout",
+      "parity_evidence": "/workspace/work/perry-queue/12202-b4b8-auto-acceptance",
+      "fallback_distinction": {
+        "tiny_program_fallback_notice": "argument is not a proven effect-free string",
+        "runtime_archive_fallback": "none observed; compiler explicitly reports rebuilt runtime and stdlib archives, and link line resolves the rebuilt async-bridge runtime archive."
+      }
+    },
     "full_lint": "pending/running"
+  },
+  "publication_overlap_decision": {
+    "record": "/workspace/work/perry-queue/planning/12202-12263-publication-overlap-decision.json",
+    "decision": "No demonstrated semantic blocker to publishing current candidate; disclose integration/merge-order risk. No external review performed.",
+    "merge_order_risk": "If #12263 lands first, reconcile against its actual merged diff, preserve exact byte-key variants/cache key kind/holder deletion truth/per-evaluation brand, and rebuild plus rerun targeted acceptance.",
+    "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
+    "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
   }
 }

@@ -1,0 +1,52 @@
+{
+  "decision": "NEXT_DIAGNOSTIC12211; no implementation claim",
+  "ranked": [
+    {
+      "issue": 12211,
+      "rank": 1,
+      "witness": "Existing5-line instance-super setter after prototype relink",
+      "cost": "One compile/link and one bounded run; no Cargo or extra archive; no package/network",
+      "why": "Existing code evidence explicitly selects declared parent; observed B1 vs A1 would isolate the exact semantic defect. Correct whole issue fix may still require lexical-home12210 work."
+    },
+    {
+      "issue": 12231,
+      "rank": 2,
+      "cost": "One compile but must establish forced multiple chunks; current witness may be promoted correctly and fail to reach missing-cell branch",
+      "evidence": "next-candidates/12231-forced-outline-probe.json"
+    },
+    {
+      "issue": 10243,
+      "rank": 3,
+      "cost": "Two compile/link runs plus verified cache hit; existing Wasm witness lacks validated matching host archive",
+      "evidence": "next-candidates/10243-probe/plan.json"
+    }
+  ],
+  "execution": "Not run. Root grants serial slot only after12202 validation/publication and no active owner. Use final validated12202 head/trio that still occupies fixed checkout; if publication fragment changes source head, require matching freshly built trio provenance first.",
+  "preconditions": [
+    "Confirm fixed checkout issue-9927 is at the exact head recorded by validator and idle",
+    "Confirm compiler/runtime/stdlib hash manifest matches current validated trio; expected .a paths must exist uncompressed. Do not restore older archives or initiate Cargo automatically",
+    "Ensure no inherited PERRY_EXTRA_LINK_ARGS or override changes provenance; retain validated environment only",
+    "Capture each command exit status separately; do not run binary after compile failure; preserve failures/timeouts"
+  ],
+  "commands_in_order": [
+    "source /workspace/work/perry-queue/env.sh",
+    "export PERRY_WORKSPACE_ROOT=/workspace/work/perry-queue/issue-9927",
+    "export PERRY_RUNTIME_DIR=/workspace/work/perry-queue/target-12390/debug",
+    "export PERRY_LIB_DIR=/workspace/work/perry-queue/target-12390/debug",
+    "mkdir -p /workspace/work/perry-queue/planning/next-candidates/12211-next-probe",
+    "git -C /workspace/work/perry-queue/issue-9927 rev-parse HEAD > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/source-head.txt",
+    "sha256sum /workspace/work/perry-queue/planning/next-candidates/issue-12211.ts /workspace/work/perry-queue/target-12390/debug/perry /workspace/work/perry-queue/target-12390/debug/libperry_runtime.a /workspace/work/perry-queue/target-12390/debug/libperry_stdlib.a > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/inputs.sha256",
+    "/workspace/.toolchains/node-26.5.1/bin/node --version > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/node.version",
+    "timeout 15s /workspace/.toolchains/node-26.5.1/bin/node /workspace/work/perry-queue/planning/next-candidates/issue-12211.ts > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/node.stdout 2> /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/node.stderr",
+    "timeout 180s /workspace/work/perry-queue/target-12390/debug/perry compile --no-auto-optimize --no-cache --verbose /workspace/work/perry-queue/planning/next-candidates/issue-12211.ts -o /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/probe.bin > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/compile.stdout 2> /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/compile.stderr",
+    "timeout 15s /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/probe.bin > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/perry.stdout 2> /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/perry.stderr",
+    "diff -u /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/node.stdout /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/perry.stdout > /workspace/work/perry-queue/planning/next-candidates/12211-next-probe/parity.diff"
+  ],
+  "oracle": "Node must print B1 newline: method home C.prototype now inherits B.prototype, while this remains new C. Perry A1 indicates stale declared-parent resolution.",
+  "interpretation": {
+    "match": "Only this relinked instance setter shape passes; no whole issue coverage credit",
+    "mismatch": "Concrete reproduction; refresh live overlap before root claim and assess smallest correct lexical-home-aware fix, not receiver-derived shortcut",
+    "compile_or_environment_failure": "No semantic conclusion; preserve log, do not build/retry without slot/provenance review"
+  },
+  "next_scope_if_reproduced": "One follow-up source plan focused on this mechanism and original full acceptance; no automatic large12210 rewrite."
+}

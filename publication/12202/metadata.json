@@ -12,7 +12,7 @@
   ],
   "title": "Preserve WTF-8 keys for computed class members",
   "scope": "Carry exact WTF-8 bytes for computed class member keys through runtime declaration metadata, registration, lookup, reflection, descriptors, deletion/recreation, function names, method invocation, and instance accessor writes. The final fixture retains collision, reflection, identity, formal/rest length, setter, getter-only, own-shadow and static controls. 29 runtime Rust files plus one fixture (30 changed files total); no codegen or ABI changes.",
-  "readiness": "CURRENT_HEAD_NO_AUTO_BUILD_AND_FIXTURE_PARITY_PASS; AUTO_OPT_AND_FULL_LINT_PENDING",
+  "readiness": "CURRENT_HEAD_NO_AUTO_AND_AUTO_OPT_FIXTURE_PARITY_PASS; FULL_LINT_PENDING",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "ready_to_publish": false,
@@ -30,11 +30,18 @@
   "issue_state_snapshot": "../../planning/12202-prepublication-freshness.json",
   "checked_at": "2026-10-12T09:48:00Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
-  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready while current-head focused tests, coherent build and compiled fixture parity are pending.",
+  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready while full lint remains pending.",
   "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
   "validation_result": "/workspace/work/perry-queue/publication/12202/validation.json",
   "latest_acceptance_record": "b4b8-current-validation.json",
-  "current_head_validation": "b4b8 no-auto/no-cache trio, focused tests and compiled Node parity passed; auto-opt/full lint pending/running",
+  "current_head_validation": "b4b8 focused tests, matching trio, no-auto and genuine async-bridge auto-opt fixture parity pass; full lint pending/running",
   "prior_head_failure": "Prior d047 fixture mismatch is preserved separately as prior_d047_acceptance; b4b8 current fixture parity passes. The computed default-parameter length diagnostic remains a separate item and is not claimed as fixed.",
-  "overlap_note": "Draft12263 does not cover12202;13 shared source paths create merge-order risk, bounded hunk review pending. Currentmain51e9fa has no overlap with30 candidate paths."
+  "overlap_note": "Astra exact-diff review found no duplicate or demonstrated semantic blocker in draft12263. Its broader identity/cache/ABI changes overlap13paths; disclose merge-order risk and revalidate any integration. See ../../planning/12202-12263-publication-overlap-decision.json.",
+  "publication_overlap_decision": {
+    "record": "/workspace/work/perry-queue/planning/12202-12263-publication-overlap-decision.json",
+    "decision": "No demonstrated semantic blocker to publishing current candidate; disclose integration/merge-order risk. No external review performed.",
+    "merge_order_risk": "If #12263 lands first, reconcile against its actual merged diff, preserve exact byte-key variants/cache key kind/holder deletion truth/per-evaluation brand, and rebuild plus rerun targeted acceptance.",
+    "scope_disclosure": "#12263 actual PR diff is broader than its test-only title/body; it changes class identity words, method slot lookup, cache tuple kinds, codegen ABI and deletion tests, so do not describe the whole diff as test-only.",
+    "interpretation": "No WTF-8 key migration or duplicate #12202 acceptance was demonstrated; overlapping paths alone do not block the candidate."
+  }
 }
