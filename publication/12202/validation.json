@@ -67,23 +67,42 @@
       "single ToPropertyKey coercion"
     ],
     "focused_runtime_units": {
-      "status": "pending (retry at current head; prior attempts at 6ed4487 and a4e7dd7 failed before tests)",
-      "planned_command": "cargo test -p perry-runtime --lib wtf8",
-      "expected_tests": [
-        "computed_member_name_round_trips_wtf8_bytes_without_replacement",
-        "declaration_method_lookup_matches_exact_wtf8_bytes"
+      "status": "passed at 70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+      "command": "cargo test -p perry-runtime --lib wtf8 -- --test-threads=1",
+      "result": "33 passed; 0 failed",
+      "additional_controls": "17 individually selected controls passed",
+      "evidence": [
+        "/workspace/work/perry-queue/12202-70123-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-70123-control-results.txt"
       ]
     },
     "matching_dev_trio": {
-      "status": "pending",
+      "status": "passed at 70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
       "packages": [
         "perry",
         "perry-runtime-static",
         "perry-stdlib-static"
-      ]
+      ],
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-70123-trio-build.log"
     },
-    "compiled_fixture_vs_node": "pending",
-    "full_lint": "pending"
+    "compiled_fixture_vs_node": {
+      "status": "failed: Node oracle passed, Perry fixture raised TypeError; outputs are not parity",
+      "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+      "node_version": "v26.5.1",
+      "compile_exit": 0,
+      "node_exit": 0,
+      "perry_exit": 1,
+      "parity_exit": 1,
+      "error": "TypeError: \ufffd\ufffd\ufffd is not a function",
+      "evidence": "/workspace/work/perry-queue/12202-70123-acceptance"
+    },
+    "full_lint": {
+      "status": "not run after compiled fixture mismatch"
+    },
+    "auto_opt": {
+      "status": "not run after compiled fixture mismatch"
+    }
   },
   "gc_stress_limit": "The planned class-root tests cover moving minors and full-cycle stores, but there is no dedicated stress witness forcing evacuation of a lone-surrogate key during the newly byte-aware setter/prototype-materialization paths. Do not claim the generic WTF-8 tests prove that path.",
   "validation_plan": "/workspace/work/perry-queue/planning/12202-committed-validation-plan.txt",
@@ -121,8 +140,8 @@
   },
   "compile_retry": {
     "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
-    "status": "pending serial validation slot",
-    "runtime_or_compiler_result": null
+    "status": "matching trio and focused tests pass; compiled fixture mismatch blocks further acceptance",
+    "runtime_or_compiler_result": "compile successful; Perry fixture exits 1 with TypeError: \ufffd\ufffd\ufffd is not a function"
   },
   "pointer_correction": {
     "commit": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
@@ -138,7 +157,7 @@
       "tests_executed": 0,
       "log": "/workspace/work/perry-queue/12202-wtf8-tests.log",
       "record": "/workspace/work/perry-queue/12202-initial-build-failure.json",
-      "status": "failed before tests; prior pre-correction head"
+      "status": "failed before tests; earlier head"
     },
     {
       "head": "a4e7dd746236a02d12565b480bab8ca16cfbbe20",
@@ -148,7 +167,37 @@
       "tests_executed": 0,
       "log": "/workspace/work/perry-queue/12202-a4e7-wtf8-tests.log",
       "record": "/workspace/work/perry-queue/12202-a4e7-initial-build-failure.json",
-      "status": "failed before tests with four E0641 pointer-type errors; this is not the current head"
+      "status": "failed before tests with E0641 pointer-type errors; earlier head"
     }
-  ]
+  ],
+  "readiness": "CURRENT_HEAD_COMPILES; FOCUSED_RUNTIME_TESTS_PASS; COMPILED_FIXTURE_MISMATCH",
+  "current_head_acceptance": {
+    "head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff",
+    "source": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json",
+    "matching_dev_trio": {
+      "exit": 0,
+      "log": "/workspace/work/perry-queue/12202-70123-trio-build.log"
+    },
+    "focused_runtime": {
+      "wtf8_tests_passed": 33,
+      "controls_passed": 17,
+      "failed": 0,
+      "evidence": [
+        "/workspace/work/perry-queue/12202-70123-wtf8-tests.log",
+        "/workspace/work/perry-queue/12202-70123-control-results.txt"
+      ]
+    },
+    "compiled_fixture": {
+      "compile_exit": 0,
+      "node_exit": 0,
+      "node_version": "v26.5.1",
+      "perry_exit": 1,
+      "parity_exit": 1,
+      "observed_error": "TypeError: \ufffd\ufffd\ufffd is not a function",
+      "evidence_directory": "/workspace/work/perry-queue/12202-70123-acceptance"
+    },
+    "diagnostic_status": "The current acceptance proves the compiled fixture fails when invoking the expected method. No source-owner diagnostic record was found that establishes whether an independent read operation succeeds; that distinction is intentionally not inferred.",
+    "auto_opt": "not run",
+    "full_lint": "not run"
+  }
 }

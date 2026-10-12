@@ -1,0 +1,46 @@
+{
+  "decisions": [
+    {
+      "issue": 10470,
+      "classification": "uncertain",
+      "evidence": "next-two-http-upgrade-assessments.json; d744 source and11084 fragment repair untouched socket/Bufferhead with helper tests",
+      "reason": "Direct substantive existing repair contradicts prior open-PR-only absence inference. Whole external keyed-handshake variants not verified; no documented current residual established.",
+      "related_partial_or_candidate_prs": [
+        11084
+      ]
+    },
+    {
+      "issue": 10471,
+      "classification": "uncertain",
+      "evidence": "next-two-http-upgrade-assessments.json; headBuffer repaired11084; inboundread only old report",
+      "reason": "Known partial repair plus unresolved current inbound acceptance. Old report alone after shared-path changes does not prove residual still uncovered.",
+      "related_partial_or_candidate_prs": [
+        11084
+      ]
+    },
+    {
+      "issue": 10391,
+      "classification": "uncertain",
+      "evidence": "next-one-10391-assessment.json; turnloop_link ownership checks directly describe/fix echoedclose cancellation race; history11309",
+      "reason": "Existing matching mechanism repair; external-client close frame beforeFIN still unverified. Neither coverage nor a remaining current failure proven.",
+      "related_partial_or_candidate_prs": [
+        11309,
+        10354
+      ]
+    },
+    {
+      "issue": 9974,
+      "classification": "uncertain",
+      "evidence": "next-static-failure-9974-assessment.json; lint extraction/productwarnings and7254pin repaired; old exact failures not all reconciled",
+      "reason": "Mixed historical tracker. Current otherwarnings/inventory/fallback failures do not prove original exact residuals; public-baseline drift needs exact current gate mapping rather than generic benchmark-failure inference. No wholeissue proof or confirmed current residual acceptance in saved assessment.",
+      "related_partial_or_candidate_prs": [
+        9969,
+        9970,
+        9971
+      ]
+    }
+  ],
+  "ledger_mutated": false,
+  "count_effect_if_applied": "uncovered -4, uncertain +4; conservative uncovered+uncertain bound unchanged; covered/closed unchanged",
+  "policy": "Uncertain means unresolved present coverage evidence; not no-cheap-fix. No coverage credit from source alone; root owns ledger updates."
+}

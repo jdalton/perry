@@ -12,7 +12,7 @@
   ],
   "title": "Preserve WTF-8 keys for computed class members",
   "scope": "Carry exact WTF-8 bytes for computed class member keys through runtime declarations, registration, lookup, reflection, descriptors, deletion/recreation, and function names. 27 runtime Rust files plus one focused fixture (28 changed files total); no codegen or ABI changes.",
-  "readiness": "SOURCE_REVIEW_CLEAR; COMPILER_RETRY_PENDING",
+  "readiness": "CURRENT_HEAD_COMPILES; FOCUSED_RUNTIME_TESTS_PASS; COMPILED_FIXTURE_MISMATCH; SOURCE_DIAGNOSIS_PENDING",
   "draft_creation_allowed": false,
   "ready_for_review": false,
   "ready_to_publish": false,
@@ -30,6 +30,8 @@
   "issue_state_snapshot": "/workspace/work/perry-queue/planning/active-issue-milestone-states.json",
   "checked_at": "2026-10-12T06:16:56.712832Z",
   "fragment_instruction": "Create a changelog fragment only after an actual PR number is assigned.",
-  "publication_instruction": "Text-only provisional packet. Do not create a draft PR, push a branch, or mark ready before exact-head compiled acceptance and full-lint results are recorded.",
-  "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json"
+  "publication_instruction": "Text-only provisional packet. Do not push, create a draft PR, or mark ready while the current-head compiled fixture mismatch and full-lint checks remain unresolved.",
+  "correction_source_review": "/workspace/work/perry-queue/planning/12202-compile-correction-source-review.json",
+  "validation_result": "/workspace/work/perry-queue/publication/12202/validation.json",
+  "latest_acceptance_record": "/workspace/work/perry-queue/12202-70123-acceptance-failure.json"
 }

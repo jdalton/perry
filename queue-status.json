@@ -17,8 +17,8 @@
   ],
   "merged_prs_this_turn": 6,
   "coverage_counts": {
-    "uncovered": 147,
-    "uncertain": 13,
+    "uncovered": 143,
+    "uncertain": 17,
     "covered_open": 20,
     "closed": 44
   },
@@ -232,7 +232,7 @@
   "coverage_freshness": "planning/original224-state-refresh-2026-10-12T072851Z.json",
   "actual_prs_created_in_continuation": 6,
   "validation_resource_event": "Completed idle11519 canonical retired after verified self-contained source bundle; branch/logs/archives/snapshots preserved. ~2.9GiB free; active target untouched.",
-  "updated_at": "2026-10-12T09:00:33.457509+00:00",
+  "updated_at": "2026-10-12T09:01:02.035175+00:00",
   "publisher_inbox_checked_at": "2026-10-12T08:55:51.844653+00:00",
   "upstream_reconciliation_12285": {
     "pr": 12447,
@@ -249,5 +249,7 @@
   "cargo_incremental": 0,
   "active_issue_state_evidence": "planning/active-issue-milestone-states.json",
   "closure_attribution": "Issue states observed independently; cloud closed no issues. Referenced issues closing does not prove partial PRs resolved their whole scope.",
-  "coverage_counts_observed_at": "2026-10-12T07:28:51Z"
+  "coverage_counts_observed_at": "2026-10-12T07:28:51Z",
+  "coverage_classification_refreshed_at": "2026-10-12T09:01:02.035175+00:00",
+  "coverage_classification_evidence": "planning/four-hold-coverage-classification.json"
 }

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T09:00:33.457509+00:00",
+  "updated_at": "2026-10-12T09:03:26.552127+00:00",
   "owner": "cloud /root",
   "local_workers": "paused",
   "platform_goal": "unsupported; no create_goal/get_goal exposed, no scheduled continuation created",
-  "serial_build_owner": "Idle after12202 compiled fixture failure; source diagnosis underway",
+  "serial_build_owner": "/root/luna_class_tdz bounded diagnostic probes only; no Cargo builds",
   "next_steps": [
     "Finish12202 scoped runtime/trio/parity/full lint at corrected head; stop on candidate failure",
     "Continue bounded uncovered-issue selection without duplicate or speculative changes"
@@ -124,7 +124,8 @@
   "cargo_incremental": 0,
   "publication_packet_12007": "publication/12007/metadata.json",
   "latest_handoff": "12458 finalready;12456 merged",
-  "current_serial_issue": null,
+  "current_serial_issue": 12202,
   "serial_pending": [],
-  "10739_publication": "Draft creation packet authorized at1ce48b9; awaiting local number"
+  "10739_publication": "Draft creation packet authorized at1ce48b9; awaiting local number",
+  "probe_head": "70123b76d8f0e9f8b0847b367138d0f8b82e32ff"
 }
